@@ -75,6 +75,11 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("segmented-button") },
             )
             SBBListItem(
+                title = "LoadingIndicator",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("loading-indicator") },
+            )
+            SBBListItem(
                 title = "Switch",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("switch") },
