@@ -11,15 +11,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ch.sbb.compose_mds.R
 import ch.sbb.compose_mds.composables.header.SBBHeader
 import ch.sbb.compose_mds.composables.header.Small
 import ch.sbb.compose_mds.example.pages.ButtonPage
@@ -27,6 +22,7 @@ import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
+import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
 import ch.sbb.compose_mds.example.pages.MainPage
 import ch.sbb.compose_mds.example.pages.ModalViewPage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
@@ -62,6 +58,7 @@ class MainActivity : ComponentActivity() {
                             composable("color") { ColorPage() }
                             composable("checkbox") { CheckboxPage() }
                             composable("button") { ButtonPage() }
+                            composable("loading-indicator") { LoadingIndicatorPage() }
                             composable("switch") { SwitchPage() }
                             composable("header") { HeaderPage() }
                             composable("modal-view") { ModalViewPage() }
