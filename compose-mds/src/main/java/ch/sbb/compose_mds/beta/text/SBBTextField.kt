@@ -21,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.semantics.invisibleToUser
+import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
@@ -58,7 +58,7 @@ fun SBBTextField(
     val decoratedLeadingIcon: @Composable (() -> Unit)? = leadingIcon?.let {
         @Composable {
             Icon(
-                modifier = Modifier.semantics { invisibleToUser() to true },
+                modifier = Modifier.semantics { hideFromAccessibility() },
                 imageVector = leadingIcon,
                 contentDescription = null,
             )
@@ -67,7 +67,7 @@ fun SBBTextField(
     val decoratedTrailingIcon: @Composable (() -> Unit)? = trailingIcon?.let {
         @Composable {
             Icon(
-                modifier = Modifier.semantics { invisibleToUser() to true },
+                modifier = Modifier.semantics { hideFromAccessibility() },
                 imageVector = trailingIcon,
                 contentDescription = null,
             )

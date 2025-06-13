@@ -108,6 +108,11 @@ fun MainPage(navController: NavController) {
                 title = "NotificationBox",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("notification-box") },
+            )
+            SBBListItem(
+                title = "TabBar",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("tab-bar") },
                 isLastElement = true,
             )
         }
