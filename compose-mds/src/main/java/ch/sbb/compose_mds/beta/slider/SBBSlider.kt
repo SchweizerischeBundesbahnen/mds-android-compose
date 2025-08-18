@@ -34,7 +34,7 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.MinusSmall
 import ch.sbb.compose_mds.sbbicons.small.PlusSmall
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @ExperimentalSBBComponent
@@ -72,7 +72,7 @@ fun SBBSlider(
                         )
                         .indication(
                             interactionSource = interactionSource,
-                            indication = ripple(bounded = false, 18.dp, color = SBBColors.smoke),
+                            indication = ripple(bounded = false, 18.dp, color = PrimitiveColors.smoke),
                         ),
                 )
             },
@@ -93,8 +93,8 @@ object SBBSliderDefaults {
     @Composable
     fun colors(): SliderColors {
         val trackColor = MaterialTheme.colorScheme.primary
-        val inactiveTrackColor = if (isSystemInDarkTheme()) SBBColors.metal else SBBColors.smoke
-        val thumbColor = if (isSystemInDarkTheme()) SBBColors.iron else SBBColors.white
+        val inactiveTrackColor = if (isSystemInDarkTheme()) PrimitiveColors.metal else PrimitiveColors.smoke
+        val thumbColor = if (isSystemInDarkTheme()) PrimitiveColors.iron else PrimitiveColors.white
         return SliderDefaults.colors(
             activeTrackColor = trackColor,
             disabledActiveTrackColor = trackColor,

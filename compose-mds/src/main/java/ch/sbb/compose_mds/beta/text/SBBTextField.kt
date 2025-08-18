@@ -26,7 +26,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @ExperimentalSBBComponent
 @Composable
@@ -107,18 +107,18 @@ fun SBBTextField(
 
 @Composable
 private fun colors(): TextFieldColors {
-    val textColor = themedValue(SBBColors.black, SBBColors.white)
-    val containerColor = SBBColors.transparent
+    val textColor = themedValue(PrimitiveColors.black, PrimitiveColors.white)
+    val containerColor = PrimitiveColors.transparent
     val cursorColor = Color(0xFF007AFF)
-    val unfocusedIndicatorColor = themedValue(SBBColors.cloud, SBBColors.iron)
-    val iconColor = themedValue(SBBColors.black, SBBColors.white)
-    val labelColor = themedValue(SBBColors.granite, SBBColors.graphite)
-    val placeholderColor = themedValue(SBBColors.granite, SBBColors.graphite)
+    val unfocusedIndicatorColor = themedValue(PrimitiveColors.cloud, PrimitiveColors.iron)
+    val iconColor = themedValue(PrimitiveColors.black, PrimitiveColors.white)
+    val labelColor = themedValue(PrimitiveColors.granite, PrimitiveColors.graphite)
+    val placeholderColor = themedValue(PrimitiveColors.granite, PrimitiveColors.graphite)
     return TextFieldDefaults.colors(
         focusedTextColor = textColor,
         unfocusedTextColor = textColor,
-        disabledTextColor = themedValue(SBBColors.granite, SBBColors.graphite),
-        errorTextColor = themedValue(SBBColors.red, SBBColors.redDarkMode),
+        disabledTextColor = themedValue(PrimitiveColors.granite, PrimitiveColors.graphite),
+        errorTextColor = themedValue(PrimitiveColors.red, PrimitiveColors.redDarkMode),
         focusedContainerColor = containerColor,
         unfocusedContainerColor = containerColor,
         disabledContainerColor = containerColor,
@@ -126,20 +126,20 @@ private fun colors(): TextFieldColors {
         cursorColor = cursorColor,
         errorCursorColor = cursorColor,
         selectionColors = TextSelectionColors(
-            handleColor = SBBColors.red,
-            backgroundColor = SBBColors.red.copy(alpha = 0.38f)
+            handleColor = PrimitiveColors.red,
+            backgroundColor = PrimitiveColors.red.copy(alpha = 0.38f)
         ),
-        focusedIndicatorColor = themedValue(SBBColors.black, SBBColors.white),
+        focusedIndicatorColor = themedValue(PrimitiveColors.black, PrimitiveColors.white),
         unfocusedIndicatorColor = unfocusedIndicatorColor,
         disabledIndicatorColor = unfocusedIndicatorColor,
-        errorIndicatorColor = SBBColors.red,
+        errorIndicatorColor = PrimitiveColors.red,
         focusedLeadingIconColor = iconColor,
         unfocusedLeadingIconColor = iconColor,
-        disabledLeadingIconColor = themedValue(SBBColors.granite, SBBColors.graphite),
-        errorLeadingIconColor = SBBColors.red,
+        disabledLeadingIconColor = themedValue(PrimitiveColors.granite, PrimitiveColors.graphite),
+        errorLeadingIconColor = PrimitiveColors.red,
         focusedTrailingIconColor = iconColor,
         unfocusedTrailingIconColor = iconColor,
-        disabledTrailingIconColor = themedValue(SBBColors.granite, SBBColors.graphite),
+        disabledTrailingIconColor = themedValue(PrimitiveColors.granite, PrimitiveColors.graphite),
         errorTrailingIconColor = iconColor,
         focusedLabelColor = labelColor,
         unfocusedLabelColor = labelColor,

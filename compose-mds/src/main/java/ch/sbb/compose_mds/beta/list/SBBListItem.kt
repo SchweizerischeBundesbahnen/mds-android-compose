@@ -39,7 +39,7 @@ fun SBBListItem(
     ) {
         Row(
             modifier = modifier
-                .elementPadding
+                .elementPadding()
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
@@ -66,8 +66,7 @@ fun SBBListItem(
 private fun SBBListItemPreview() {
     SBBTheme {
         SBBListItem(
-            title = "test",
-            trailingIcon = SBBIcons.Small.AppIconSmall
+            title = "test", trailingIcon = SBBIcons.Small.AppIconSmall
         )
     }
 }

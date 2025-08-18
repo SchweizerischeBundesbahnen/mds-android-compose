@@ -39,7 +39,7 @@ fun SBBSecondaryButton(
     ) {
         Text(
             text = label,
-            style = SBBTheme.typography.bodyMedium,
+            style = SBBTheme.materialTypography.bodyMedium,
         )
     }
 }

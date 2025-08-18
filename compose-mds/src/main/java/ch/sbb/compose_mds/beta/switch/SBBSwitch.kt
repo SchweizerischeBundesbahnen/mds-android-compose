@@ -43,8 +43,8 @@ import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TickSmall
-import ch.sbb.compose_mds.theme.SBBColors
-import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 @ExperimentalSBBComponent
 @Composable
@@ -58,7 +58,7 @@ fun SBBSwitch(
     val color by animateColorAsState(
         targetValue = when (checked) {
             true -> MaterialTheme.colorScheme.primary
-            false -> SBBColors.graphite
+            false -> PrimitiveColors.graphite
         }
     )
     val knobSize = 26.dp
@@ -107,7 +107,7 @@ fun SBBSwitch(
                 .offset { knobOffset }
                 .size(knobSize)
                 .shadow(elevation = shadow, shape = CircleShape)
-                .background(SBBColors.white, shape = CircleShape)
+                .background(PrimitiveColors.white, shape = CircleShape)
                 .border(border = BorderStroke(width = 1.dp, color = color), shape = CircleShape),
             contentAlignment = Alignment.Center,
         ) {
@@ -137,12 +137,12 @@ fun SBBSwitchPreview() {
     SBBTheme {
         Column(
             modifier = Modifier
-                .background(if (darkTheme) SBBColors.black else SBBColors.white)
-                .padding(SBBConst.DEFAULT_PADDING),
-            verticalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
+                .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
+                .padding(SBBSpacing.Medium),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBSwitch(
                     checked = firstChecked.value,
@@ -154,7 +154,7 @@ fun SBBSwitchPreview() {
                 )
             }
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBSwitch(
                     checked = firstChecked.value,

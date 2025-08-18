@@ -26,15 +26,16 @@ import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ColorPage() {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 125.dp),
-        verticalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-        horizontalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-        contentPadding = PaddingValues(SBBConst.HALF_PADDING),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+        horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(text = "Colors") }
         item { ColorEntry(name = "red", color = PrimitiveColors.red) }
@@ -103,7 +104,7 @@ private fun ColorEntry(
             modifier =
                 Modifier.padding(
                     start = SBBConst.DEFAULT_HORIZONTAL_PADDING,
-                    top = SBBConst.HALF_PADDING,
+                    top = SBBSpacing.XSmall,
                     end = SBBConst.DEFAULT_HORIZONTAL_PADDING,
                 ),
             text = name,
@@ -114,7 +115,7 @@ private fun ColorEntry(
                 Modifier.padding(
                     start = SBBConst.DEFAULT_HORIZONTAL_PADDING,
                     end = SBBConst.DEFAULT_HORIZONTAL_PADDING,
-                    bottom = SBBConst.HALF_PADDING,
+                    bottom = SBBSpacing.XSmall,
                 ),
             text = "#${color.toArgb().toHexString(format = HexFormat.UpperCase)}",
             style = MaterialTheme.typography.bodySmall,

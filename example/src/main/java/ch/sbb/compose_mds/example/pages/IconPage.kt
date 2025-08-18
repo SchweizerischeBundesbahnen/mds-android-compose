@@ -21,18 +21,19 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.all
 import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun IconPage() {
     Column {
-        SBBGroup(modifier = Modifier.defaultPadding) {
+        SBBGroup(modifier = Modifier.defaultPadding()) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(24.dp),
-                verticalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-                horizontalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-                contentPadding = PaddingValues(SBBConst.HALF_PADDING),
+                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                contentPadding = PaddingValues(SBBSpacing.XSmall),
                 userScrollEnabled = false
             ) {
                 items(SBBIcons.Small.all) {
@@ -43,12 +44,12 @@ fun IconPage() {
                 }
             }
         }
-        SBBGroup(modifier = Modifier.defaultPadding) {
+        SBBGroup(modifier = Modifier.defaultPadding()) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(36.dp),
-                verticalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-                horizontalArrangement = Arrangement.spacedBy(SBBConst.HALF_PADDING),
-                contentPadding = PaddingValues(SBBConst.HALF_PADDING),
+                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                contentPadding = PaddingValues(SBBSpacing.XSmall),
                 userScrollEnabled = false
             ) {
                 items(SBBIcons.Medium.all) {

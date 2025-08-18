@@ -6,16 +6,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @Composable
 fun Placeholder(
     modifier: Modifier = Modifier
 ) {
     Box(
-        modifier = modifier.background(SBBColors.pink),
+        modifier = modifier.background(PrimitiveColors.pink),
         contentAlignment = Alignment.Center,
     ) {
-        Text(text = "Placeholder", color = SBBColors.white)
+        Text(text = "Placeholder", color = PrimitiveColors.white)
     }
 }

@@ -36,7 +36,7 @@ fun SBBPrimaryButton(
     ) {
         Text(
             text = label,
-            style = SBBTheme.typography.bodyMedium,
+            style = SBBTheme.materialTypography.bodyMedium,
         )
     }
 }

@@ -15,7 +15,7 @@ import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 internal enum class SBBStatusType(
     val color: Color,
@@ -23,24 +23,24 @@ internal enum class SBBStatusType(
     val tint: Color? = null,
 ) {
     Alert(
-        color = SBBColors.red,
+        color = PrimitiveColors.red,
         icon = SBBIcons.Small.CircleCrossSmall,
-        tint = SBBColors.white,
+        tint = PrimitiveColors.white,
     ),
     Warning(
-        color = SBBColors.peach,
+        color = PrimitiveColors.peach,
         icon = SBBIcons.Small.CircleExclamationPointSmall,
-        tint = SBBColors.black,
+        tint = PrimitiveColors.black,
     ),
     Success(
-        color = SBBColors.green,
+        color = PrimitiveColors.green,
         icon = SBBIcons.Small.CircleTickSmall,
-        tint = SBBColors.white,
+        tint = PrimitiveColors.white,
     ),
     Information(
-        color = SBBColors.smoke,
+        color = PrimitiveColors.smoke,
         icon = SBBIcons.Small.CircleInformationSmall,
-        tint = SBBColors.white,
+        tint = PrimitiveColors.white,
     );
 
     @Composable

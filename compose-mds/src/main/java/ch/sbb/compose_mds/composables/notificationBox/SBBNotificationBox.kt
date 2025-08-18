@@ -1,8 +1,9 @@
 package ch.sbb.compose_mds.beta.notificationBox
 
+import SBBTheme
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -15,39 +16,27 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
 import ch.sbb.compose_mds.sbbicons.small.CrossSmall
-import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
-
-class NotificationBoxStyle(
-    val icon: ImageVector,
-    val iconColor: Color,
-    val backgroundColor: Color,
-    val interactionIcon: ImageVector?,
-)
 
 typealias OnCloseCallback = () -> Unit
 
 object SBBNotificationBox {
-    @ExperimentalSBBComponent
     @Composable
     fun Alert(
         modifier: Modifier = Modifier,
@@ -57,16 +46,17 @@ object SBBNotificationBox {
         onClose: OnCloseCallback? = null,
         interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
     ) {
-        val style = NotificationBoxStyle(
-            icon = SBBIcons.Small.CircleCrossSmall,
-            iconColor = SBBColors.red,
-            backgroundColor = SBBColors.red,
-            interactionIcon = interactionIcon,
+        SBBNotificationBox(
+            modifier = modifier,
+            style = SBBTheme.notificationBox.alert,
+            title = title,
+            text = text,
+            isCloseable = isCloseable,
+            onClose = onClose,
+            interactionIcon = interactionIcon
         )
-        SBBNotificationBox(modifier, style, title, text, isCloseable, onClose)
     }
 
-    @ExperimentalSBBComponent
     @Composable
     fun Warning(
         modifier: Modifier = Modifier,
@@ -76,16 +66,17 @@ object SBBNotificationBox {
         onClose: OnCloseCallback? = null,
         interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
     ) {
-        val style = NotificationBoxStyle(
-            icon = SBBIcons.Small.CircleExclamationPointSmall,
-            iconColor = if (isSystemInDarkTheme()) SBBColors.peach else SBBColors.black,
-            backgroundColor = SBBColors.peach,
-            interactionIcon = interactionIcon,
+        SBBNotificationBox(
+            modifier = modifier,
+            style = SBBTheme.notificationBox.warning,
+            title = title,
+            text = text,
+            isCloseable = isCloseable,
+            onClose = onClose,
+            interactionIcon = interactionIcon
         )
-        SBBNotificationBox(modifier, style, title, text, isCloseable, onClose)
     }
 
-    @ExperimentalSBBComponent
     @Composable
     fun Success(
         modifier: Modifier = Modifier,
@@ -95,16 +86,17 @@ object SBBNotificationBox {
         onClose: OnCloseCallback? = null,
         interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
     ) {
-        val style = NotificationBoxStyle(
-            icon = SBBIcons.Small.CircleTickSmall,
-            iconColor = SBBColors.green,
-            backgroundColor = SBBColors.green,
-            interactionIcon = interactionIcon,
+        SBBNotificationBox(
+            modifier = modifier,
+            style = SBBTheme.notificationBox.success,
+            title = title,
+            text = text,
+            isCloseable = isCloseable,
+            onClose = onClose,
+            interactionIcon = interactionIcon
         )
-        SBBNotificationBox(modifier, style, title, text, isCloseable, onClose)
     }
 
-    @ExperimentalSBBComponent
     @Composable
     fun Information(
         modifier: Modifier = Modifier,
@@ -114,30 +106,33 @@ object SBBNotificationBox {
         onClose: OnCloseCallback? = null,
         interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
     ) {
-        val style = NotificationBoxStyle(
-            icon = SBBIcons.Small.CircleInformationSmall,
-            iconColor = if (isSystemInDarkTheme()) SBBColors.white else SBBColors.black,
-            backgroundColor = SBBColors.smoke,
-            interactionIcon = interactionIcon,
+        SBBNotificationBox(
+            modifier = modifier,
+            style = SBBTheme.notificationBox.information,
+            title = title,
+            text = text,
+            isCloseable = isCloseable,
+            onClose = onClose,
+            interactionIcon = interactionIcon
         )
-        SBBNotificationBox(modifier, style, title, text, isCloseable, onClose)
     }
 }
 
 @Composable
 private fun SBBNotificationBox(
     modifier: Modifier = Modifier,
-    style: NotificationBoxStyle,
+    style: SBBNotificationBoxStyle,
     title: String?,
     text: String,
     isCloseable: Boolean,
     onClose: OnCloseCallback?,
+    interactionIcon: ImageVector? = null,
 ) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(16.dp))
             .background(color = style.backgroundColor)
-            .padding(start = SBBConst.HALF_PADDING)
+            .padding(start = SBBSpacing.XSmall)
             .padding(all = 1.dp)
             .fillMaxWidth()
     ) {
@@ -151,7 +146,8 @@ private fun SBBNotificationBox(
                         bottomEnd = 15.dp,
                     )
                 )
-                .background(MaterialTheme.colorScheme.surface.copy(alpha = .6f)).defaultPadding,
+                .background(MaterialTheme.colorScheme.surface.copy(alpha = .95f))
+                .defaultPadding(),
         ) {
             if (title != null) {
                 Row {
@@ -161,10 +157,7 @@ private fun SBBNotificationBox(
                 }
                 Row {
                     TextBody(text)
-                    InteractionIcon(
-                        Modifier.align(Alignment.CenterVertically),
-                        style.interactionIcon
-                    )
+                    InteractionIcon(Modifier.align(Alignment.CenterVertically), interactionIcon)
                 }
             } else {
                 Row(Modifier.height(IntrinsicSize.Max)) {
@@ -172,10 +165,7 @@ private fun SBBNotificationBox(
                     TextBody(text)
                     Column(Modifier.fillMaxHeight()) {
                         CloseButton(isCloseable, onClose)
-                        InteractionIcon(
-                            Modifier.weight(1f),
-                            style.interactionIcon
-                        )
+                        InteractionIcon(Modifier.weight(1f), interactionIcon)
                     }
                 }
             }
@@ -184,7 +174,7 @@ private fun SBBNotificationBox(
 }
 
 @Composable
-private fun TypeIcon(style: NotificationBoxStyle) {
+private fun TypeIcon(style: SBBNotificationBoxStyle) {
     Icon(
         modifier = Modifier.padding(start = 6.dp),
         imageVector = style.icon,
@@ -209,7 +199,7 @@ private fun RowScope.TitleBody(title: String) {
     Text(
         modifier = Modifier
             .weight(1.0f)
-            .padding(start = SBBConst.HALF_PADDING),
+            .padding(start = SBBSpacing.XSmall),
         text = title,
         style = MaterialTheme.typography.titleMedium,
     )
@@ -237,4 +227,15 @@ private fun InteractionIcon(modifier: Modifier, vector: ImageVector?) {
         imageVector = vector,
         contentDescription = null,
     )
+}
+
+@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun Preview_SBBNotificationBox() {
+    SBBTheme {
+        Surface {
+            SBBNotificationBox.Alert(text = "test")
+        }
+    }
 }

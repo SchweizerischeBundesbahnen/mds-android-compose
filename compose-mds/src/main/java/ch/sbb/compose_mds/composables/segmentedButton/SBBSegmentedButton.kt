@@ -20,7 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @ExperimentalSBBComponent
 data class SBBButtonSegment<T>(
@@ -46,7 +46,7 @@ fun <T> SBBSegmentedButton(
             .wrapContentHeight()
             .fillMaxWidth()
             .clip(shape = RoundedCornerShape(22.dp))
-            .background(color = if (isSystemInDarkTheme()) SBBColors.charcoal else SBBColors.cloud),
+            .background(color = if (isSystemInDarkTheme()) PrimitiveColors.charcoal else PrimitiveColors.cloud),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
         val totalWeight = segments.size.toFloat()
@@ -96,24 +96,24 @@ private fun ButtonSegment(
 
 @Composable
 private fun lightModeColors(active: Boolean): ButtonColors = ButtonDefaults.buttonColors(
-    containerColor = if (active) SBBColors.white else SBBColors.cloud,
-    contentColor = SBBColors.black,
-    disabledContainerColor = if (active) SBBColors.white else SBBColors.cloud,
-    disabledContentColor = SBBColors.graphite
+    containerColor = if (active) PrimitiveColors.white else PrimitiveColors.cloud,
+    contentColor = PrimitiveColors.black,
+    disabledContainerColor = if (active) PrimitiveColors.white else PrimitiveColors.cloud,
+    disabledContentColor = PrimitiveColors.graphite
 )
 
 @Composable
 private fun darkModeColors(active: Boolean): ButtonColors = ButtonDefaults.buttonColors(
-    containerColor = if (active) SBBColors.iron else SBBColors.charcoal,
-    contentColor = SBBColors.white,
-    disabledContainerColor = if (active) SBBColors.iron else SBBColors.charcoal,
-    disabledContentColor = SBBColors.smoke
+    containerColor = if (active) PrimitiveColors.iron else PrimitiveColors.charcoal,
+    contentColor = PrimitiveColors.white,
+    disabledContainerColor = if (active) PrimitiveColors.iron else PrimitiveColors.charcoal,
+    disabledContentColor = PrimitiveColors.smoke
 )
 
 @Composable
 private fun lightModeBorder(active: Boolean, enabled: Boolean): BorderStroke? =
-    if (active) BorderStroke(1.dp, if (enabled) SBBColors.granite else SBBColors.graphite) else null
+    if (active) BorderStroke(1.dp, if (enabled) PrimitiveColors.granite else PrimitiveColors.graphite) else null
 
 @Composable
 private fun darkModeBorder(active: Boolean, enabled: Boolean): BorderStroke? =
-    if (active) BorderStroke(1.dp, if (enabled) SBBColors.graphite else SBBColors.granite) else null
+    if (active) BorderStroke(1.dp, if (enabled) PrimitiveColors.graphite else PrimitiveColors.granite) else null

@@ -18,11 +18,11 @@ import ch.sbb.compose_mds.theme.elementPadding
 @Composable
 fun SliderPage() {
     SBBGroup(
-        modifier = Modifier.defaultPadding
+        modifier = Modifier.defaultPadding()
     ) {
         val sliderState = SliderState(value = .25f)
-        SBBSlider(modifier = Modifier.elementPadding, state = sliderState)
-        SBBSlider(modifier = Modifier.elementPadding, state = sliderState, enabled = false)
+        SBBSlider(modifier = Modifier.elementPadding(), state = sliderState)
+        SBBSlider(modifier = Modifier.elementPadding(), state = sliderState, enabled = false)
     }
 }
 

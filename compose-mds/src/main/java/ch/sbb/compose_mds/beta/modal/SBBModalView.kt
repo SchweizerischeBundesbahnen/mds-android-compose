@@ -23,7 +23,7 @@ import ch.sbb.compose_mds.beta.button.SBBTertiaryButton
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CrossSmall
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 import kotlinx.coroutines.launch
 
 /**
@@ -46,7 +46,7 @@ fun SBBModalView(
     ModalBottomSheet(
         onDismissRequest = onDismissRequest,
         sheetState = sheetState,
-        containerColor = if (isSystemInDarkTheme()) SBBColors.midnight else SBBColors.milk,
+        containerColor = if (isSystemInDarkTheme()) PrimitiveColors.midnight else PrimitiveColors.milk,
         shape = RoundedCornerShape(16.dp),
         dragHandle = null,
     ) {
