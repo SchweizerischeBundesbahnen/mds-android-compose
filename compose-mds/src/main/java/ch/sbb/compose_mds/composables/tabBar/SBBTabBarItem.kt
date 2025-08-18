@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.toSize
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @Composable
 internal fun RowScope.SBBTabBarItem(
@@ -57,7 +57,7 @@ internal fun RowScope.SBBTabBarItem(
 
     val backgroundColor by animateColorAsState(
         targetValue = when (state) {
-            SBBTabBarItemState.None -> SBBColors.transparent
+            SBBTabBarItemState.None -> PrimitiveColors.transparent
             SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.onSurfaceVariant
             SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.primary
         },

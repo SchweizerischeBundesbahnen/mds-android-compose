@@ -9,6 +9,9 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
+import ch.sbb.compose_mds.beta.notificationBox.LocalSBBNotificationBoxTheme
+import ch.sbb.compose_mds.beta.notificationBox.SBBNotificationBoxTokens
+import ch.sbb.compose_mds.beta.notificationBox.configSBBNotificationBoxTokens
 import ch.sbb.compose_mds.theme.LocalSBBTypography
 import ch.sbb.compose_mds.theme.SBBTypography
 import ch.sbb.compose_mds.theme.context.LocalThemeContext
@@ -67,6 +70,11 @@ object SBBTheme {
         @ReadOnlyComposable
         @Composable
         get() = LocalThemeContext.current.contextName
+
+    val notificationBox: SBBNotificationBoxTokens
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBNotificationBoxTheme.current
 }
 
 @Composable
@@ -81,6 +89,7 @@ fun SBBTheme(
         LocalThemeContext provides themeContext,
         LocalSBBIsDarkMode provides darkTheme,
         LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
+        LocalSBBNotificationBoxTheme provides configSBBNotificationBoxTokens()
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,

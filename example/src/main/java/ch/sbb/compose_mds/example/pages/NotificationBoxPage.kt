@@ -8,11 +8,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.notificationBox.SBBNotificationBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ArrowCircleSmall
 import ch.sbb.compose_mds.sbbicons.small.ArrowsCircleSmall
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.defaultPadding
@@ -20,11 +18,10 @@ import ch.sbb.compose_mds.theme.defaultPadding
 private const val text =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris justo sapien, laoreet vel bibendum in, aliquet id libero. Mauris pellentesque nisl at urna semper porta. Nulla in justo sit amet ante tristique porttitor ac sit amet urna. In convallis neque sed nunc hendrerit convallis."
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun NotificationBoxPage() {
     Column(
-        modifier = Modifier.defaultPadding,
+        modifier = Modifier.defaultPadding(),
         verticalArrangement = Arrangement.spacedBy(SBBConst.DEFAULT_HORIZONTAL_PADDING)
     ) {
         SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)

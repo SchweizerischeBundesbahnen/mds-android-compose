@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.composables.checkbox
 
 import androidx.compose.ui.graphics.Color
-import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.PrimitiveColors
 
 internal enum class SBBCheckboxColors(
     val borderColor: Color,
@@ -11,31 +11,31 @@ internal enum class SBBCheckboxColors(
     val backgroundColor: Color
 ) {
     LIGHT_ENABLED(
-        borderColor = SBBColors.granite,
-        checkColor = SBBColors.red,
-        indeterminateColor = SBBColors.red,
-        textColor = SBBColors.black,
-        backgroundColor = SBBColors.white,
+        borderColor = PrimitiveColors.granite,
+        checkColor = PrimitiveColors.red,
+        indeterminateColor = PrimitiveColors.red,
+        textColor = PrimitiveColors.black,
+        backgroundColor = PrimitiveColors.white,
     ),
     DARK_ENABLED(
-        borderColor = SBBColors.cloud,
-        checkColor = SBBColors.red,
-        indeterminateColor = SBBColors.red,
-        textColor = SBBColors.white,
-        backgroundColor = SBBColors.black,
+        borderColor = PrimitiveColors.cloud,
+        checkColor = PrimitiveColors.red,
+        indeterminateColor = PrimitiveColors.red,
+        textColor = PrimitiveColors.white,
+        backgroundColor = PrimitiveColors.black,
     ),
     LIGHT_DISABLED(
-        borderColor = SBBColors.cloud,
-        checkColor = SBBColors.granite,
-        indeterminateColor = SBBColors.granite,
-        textColor = SBBColors.granite,
-        backgroundColor = SBBColors.white,
+        borderColor = PrimitiveColors.cloud,
+        checkColor = PrimitiveColors.granite,
+        indeterminateColor = PrimitiveColors.granite,
+        textColor = PrimitiveColors.granite,
+        backgroundColor = PrimitiveColors.white,
     ),
     DARK_DISABLED(
-        borderColor = SBBColors.iron,
-        checkColor = SBBColors.graphite,
-        indeterminateColor = SBBColors.graphite,
-        textColor = SBBColors.graphite,
-        backgroundColor = SBBColors.black,
+        borderColor = PrimitiveColors.iron,
+        checkColor = PrimitiveColors.graphite,
+        indeterminateColor = PrimitiveColors.graphite,
+        textColor = PrimitiveColors.graphite,
+        backgroundColor = PrimitiveColors.black,
     );
 }

@@ -27,7 +27,7 @@ fun MainPage(navController: NavController) {
 
     Column(
         modifier = Modifier
-            .defaultPadding
+            .defaultPadding()
             .fillMaxSize()
             .verticalScroll(
                 state = rememberScrollState(),

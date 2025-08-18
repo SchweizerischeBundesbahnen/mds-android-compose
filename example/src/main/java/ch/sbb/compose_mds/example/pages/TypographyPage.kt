@@ -18,6 +18,7 @@ import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTypography
 
 private const val DEFAULT_TEXT = "The quick brown fox jumps over the lazy dog"
@@ -28,7 +29,7 @@ fun TypographyPage() {
         modifier =
             Modifier
                 .verticalScroll(rememberScrollState())
-                .padding(vertical = SBBConst.HALF_PADDING),
+                .padding(vertical = SBBSpacing.XSmall),
     ) {
         MaterialTypography()
         SBBTypographySection()
@@ -91,7 +92,7 @@ private fun TextStylePreview(
         Text(
             text = DEFAULT_TEXT,
             style = style,
-            modifier = Modifier.padding(all = SBBConst.DEFAULT_PADDING),
+            modifier = Modifier.padding(all = SBBSpacing.XSmall),
         )
         HorizontalDivider()
         TextStyleInfos(style = style)
@@ -103,7 +104,7 @@ private fun TextStyleInfos(style: TextStyle) {
     Text(
         text = "fontWeight: ${style.fontWeight}\n" + "fontSize: ${style.fontSize}\n" + "lineHeight: ${style.lineHeight}",
         style = MaterialTheme.typography.bodyMedium,
-        modifier = Modifier.padding(all = SBBConst.DEFAULT_PADDING),
+        modifier = Modifier.padding(all = SBBSpacing.XSmall),
     )
 }
 

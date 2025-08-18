@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.center
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.round
-import ch.sbb.compose_mds.theme.SBBConst
+import ch.sbb.compose_mds.theme.SBBSpacing
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
@@ -141,7 +141,7 @@ class SBBTabBarController internal constructor(
     internal fun animatedTextPosition(width: Float): State<IntOffset> {
         val selected by selected
         val position = positions[selected].topCenter.round()
-        val padding = with (LocalDensity.current) { SBBConst.DEFAULT_PADDING.roundToPx() }
+        val padding = with (LocalDensity.current) { SBBSpacing.Medium.roundToPx() }
         val pos = when (LocalInspectionMode.current) {
             true -> textSize.value.center.x
             false -> min(
