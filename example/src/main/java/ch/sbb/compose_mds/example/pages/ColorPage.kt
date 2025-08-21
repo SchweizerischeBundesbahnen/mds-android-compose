@@ -22,8 +22,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
@@ -88,10 +88,10 @@ private fun ColorEntry(
     name: String,
     color: Color,
 ) {
-    SBBGroup(
+    SBBContentBox(
         modifier =
-            Modifier
-                .size(100.dp),
+            Modifier.size(100.dp),
+        contentPadding = PaddingValues(0.dp),
     ) {
         Box(
             modifier =

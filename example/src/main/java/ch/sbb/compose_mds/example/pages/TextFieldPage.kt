@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.text.SBBTextField
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
@@ -34,7 +34,7 @@ fun TextFieldPage() {
                 horizontal = 8.dp,
             )
     ) {
-        SBBGroup {
+        SBBContentBox {
             Column {
                 SBBTextField(
                     value = text,

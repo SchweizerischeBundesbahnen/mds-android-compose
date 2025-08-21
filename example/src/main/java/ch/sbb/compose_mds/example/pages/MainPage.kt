@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.example.pages
 import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -10,12 +11,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.beta.list.SBBListItem
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
@@ -34,7 +36,7 @@ fun MainPage(navController: NavController) {
             )
     ) {
         SBBListHeader(text = "Basics")
-        SBBGroup {
+        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
             SBBListItem(
                 title = "Icon",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
@@ -53,11 +55,11 @@ fun MainPage(navController: NavController) {
             )
         }
         SBBListHeader(text = "Components")
-        SBBGroup {
+        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
             SBBListItem(
-                title = "Modal View",
+                title = "Button",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("modal-view") },
+                onClick = { navController.navigate("button") },
             )
             SBBListItem(
                 title = "Checkbox",
@@ -65,24 +67,9 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("checkbox") },
             )
             SBBListItem(
-                title = "Button",
+                title = "Container",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("button") },
-            )
-            SBBListItem(
-                title = "SegmentedButton",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("segmented-button") },
-            )
-            SBBListItem(
-                title = "LoadingIndicator",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("loading-indicator") },
-            )
-            SBBListItem(
-                title = "Switch",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("switch") },
+                onClick = { navController.navigate("container") },
             )
             SBBListItem(
                 title = "Header",
@@ -90,19 +77,14 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("header") },
             )
             SBBListItem(
-                title = "TextField",
+                title = "LoadingIndicator",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("text-field") },
+                onClick = { navController.navigate("loading-indicator") },
             )
             SBBListItem(
-                title = "Status",
+                title = "Modal View",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("status") },
-            )
-            SBBListItem(
-                title = "Slider",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("slider") },
+                onClick = { navController.navigate("modal-view") },
             )
             SBBListItem(
                 title = "NotificationBox",
@@ -110,9 +92,34 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("notification-box") },
             )
             SBBListItem(
+                title = "SegmentedButton",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("segmented-button") },
+            )
+            SBBListItem(
+                title = "Slider",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("slider") },
+            )
+            SBBListItem(
+                title = "Status",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("status") },
+            )
+            SBBListItem(
+                title = "Switch",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("switch") },
+            )
+            SBBListItem(
                 title = "TabBar",
                 trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("tab-bar") },
+            )
+            SBBListItem(
+                title = "TextField",
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                onClick = { navController.navigate("text-field") },
                 isLastElement = true,
             )
         }

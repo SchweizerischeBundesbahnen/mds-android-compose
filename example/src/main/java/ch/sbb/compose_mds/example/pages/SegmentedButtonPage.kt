@@ -18,15 +18,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.button.SBBButtonSegment
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.button.SBBSegmentedButton
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SegmentedButtonPage() {
     val context = LocalContext.current
 
-    SBBGroup(modifier = Modifier.padding(8.dp)) {
+    SBBContentBox {
 
         Column(
             modifier = Modifier.padding(16.dp),

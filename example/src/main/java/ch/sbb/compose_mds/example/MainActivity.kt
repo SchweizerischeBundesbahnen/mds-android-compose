@@ -20,6 +20,7 @@ import ch.sbb.compose_mds.composables.header.Small
 import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
+import ch.sbb.compose_mds.example.pages.ContainerPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
 import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
@@ -69,6 +70,7 @@ class MainActivity : ComponentActivity() {
                             composable("slider") { SliderPage() }
                             composable("notification-box") { NotificationBoxPage() }
                             composable("tab-bar") { TabBarPage() }
+                            composable("container") { ContainerPage() }
                         }
                     }
                 }

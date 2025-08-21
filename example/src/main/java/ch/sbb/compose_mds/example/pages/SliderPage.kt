@@ -9,17 +9,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.slider.SBBSlider
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.elementPadding
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
 @Composable
 fun SliderPage() {
-    SBBGroup(
-        modifier = Modifier.defaultPadding()
-    ) {
+    SBBContentBox {
         val sliderState = SliderState(value = .25f)
         SBBSlider(modifier = Modifier.elementPadding(), state = sliderState)
         SBBSlider(modifier = Modifier.elementPadding(), state = sliderState, enabled = false)

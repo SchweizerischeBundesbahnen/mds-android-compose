@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.example.pages
 import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -14,12 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
 import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.SBBTypography
 
 private const val DEFAULT_TEXT = "The quick brown fox jumps over the lazy dog"
 
@@ -29,7 +30,7 @@ fun TypographyPage() {
         modifier =
             Modifier
                 .verticalScroll(rememberScrollState())
-                .padding(vertical = SBBSpacing.XSmall),
+                .padding(all = SBBSpacing.XSmall),
     ) {
         MaterialTypography()
         SBBTypographySection()
@@ -77,8 +78,6 @@ private fun SBBTypographySection() {
     TextStylePreview(name = "XSmallBold", SBBTheme.sbbTypography.XSmallBold)
     TextStylePreview(name = "XXSmallLight", SBBTheme.sbbTypography.XXSmallLight)
     TextStylePreview(name = "XXSmallBold", SBBTheme.sbbTypography.XXSmallBold)
-
-
 }
 
 @OptIn(ExperimentalSBBComponent::class)
@@ -88,7 +87,7 @@ private fun TextStylePreview(
     style: TextStyle,
 ) {
     SBBListHeader(text = name)
-    SBBGroup(modifier = Modifier.padding(horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING)) {
+    SBBContentBox(contentPadding = PaddingValues(horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING)) {
         Text(
             text = DEFAULT_TEXT,
             style = style,
