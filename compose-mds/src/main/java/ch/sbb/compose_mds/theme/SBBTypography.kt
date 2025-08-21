@@ -118,6 +118,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val mediumBold: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = mediumFontSize,
                     lineHeight = mediumFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -126,6 +127,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val smallLight: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = smallFontSize,
                     lineHeight = smallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -134,6 +136,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val smallBold: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = smallFontSize,
                     lineHeight = smallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -142,6 +145,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val XSmallLight: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = xSmallFontSize,
                     lineHeight = xSmallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -150,6 +154,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val XSmallBold: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = xSmallFontSize,
                     lineHeight = xSmallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -158,6 +163,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val XXSmallLight: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = xxSmallFontSize,
                     lineHeight = xxSmallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -166,6 +172,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val XXSmallBold: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = xxSmallFontSize,
                     lineHeight = xxSmallFontHeight,
                     fontStyle = FontStyle.Normal,
@@ -174,6 +181,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
         override val helpersLabel: TextStyle
             get() =
                 TextStyle(
+                    fontFamily = fontFamily,
                     fontSize = 10.sp,
                     lineHeight = 12.sp,
                     fontStyle = FontStyle.Normal,
@@ -185,7 +193,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
 class SBBTypography(
     val fontFamily: FontFamily? = null,
 ) : SBBTypographyTokens by configSBBTypographyTokens(fontFamily) {
-    val materialTypography: Typography get() =
+    val materialTypography: Typography =
         Typography(
             displayLarge = // TODO needs mapping
                 TextStyle(
