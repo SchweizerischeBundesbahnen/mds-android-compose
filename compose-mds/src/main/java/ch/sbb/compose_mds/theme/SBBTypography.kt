@@ -185,7 +185,7 @@ internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypog
 class SBBTypography(
     val fontFamily: FontFamily? = null,
 ) : SBBTypographyTokens by configSBBTypographyTokens(fontFamily) {
-    val materialTypography: Typography =
+    val materialTypography: Typography get() =
         Typography(
             displayLarge = // TODO needs mapping
                 TextStyle(
