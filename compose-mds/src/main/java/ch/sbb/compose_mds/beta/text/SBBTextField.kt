@@ -3,7 +3,6 @@
 package ch.sbb.compose_mds.beta.text
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -154,7 +153,7 @@ private fun colors(): TextFieldColors {
 
 @Composable
 private fun <T> themedValue(lightThemeValue: T, darkThemeValue: T): T {
-    if (isSystemInDarkTheme()) {
+    if (SBBTheme.isDarkMode) {
         return darkThemeValue
     }
     return lightThemeValue

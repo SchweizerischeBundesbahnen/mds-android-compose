@@ -3,12 +3,10 @@ package ch.sbb.compose_mds.example.pages
 import SBBTheme
 import android.content.res.Configuration
 import android.widget.Toast
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -32,15 +30,6 @@ fun ButtonPage() {
     val context = LocalContext.current
 
     Column(Modifier.fillMaxWidth()) {
-        Row(
-            Modifier
-                .padding(vertical = 8.dp, horizontal = 16.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-        ) {
-            Text("Context: ${SBBTheme.contextName}")
-            Text("Dark Mode: ${SBBTheme.isDarkMode}")
-        }
         SBBPrimaryButton(
             modifier =
                 Modifier

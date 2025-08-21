@@ -17,54 +17,50 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.button.SBBButtonSegment
-import ch.sbb.compose_mds.beta.button.SBBSegmentedButton
-import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SegmentedButtonPage() {
     val context = LocalContext.current
 
-    SBBContentBox {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
 
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
+        // DEFAULT
 
-            // DEFAULT
+        // Default with three segments
+        var defaultSelection1: String by remember { mutableStateOf("Selection 1") }
+        SBBSegmentedButton(
+            onSelectionChanged = { selected ->
+                defaultSelection1 = selected
+                toastSelection(context, selected)
+            },
+            selection = defaultSelection1,
+            segments = threeButtonSegments()
+        )
 
-            // Default with three segments
-            var defaultSelection1: String by remember { mutableStateOf("Selection 1") }
-            SBBSegmentedButton(
-                onSelectionChanged = { selected ->
-                    defaultSelection1 = selected
-                    toastSelection(context, selected)
-                },
-                selection = defaultSelection1,
-                segments = threeButtonSegments()
-            )
+        // Default with two segments
+        var defaultSelection2: String by remember { mutableStateOf("Selection 1") }
+        SBBSegmentedButton(
+            onSelectionChanged = { selected ->
+                defaultSelection2 = selected
+                toastSelection(context, selected)
+            },
+            selection = defaultSelection2,
+            segments = twoButtonSegments()
+        )
 
-            // Default with two segments
-            var defaultSelection2: String by remember { mutableStateOf("Selection 1") }
-            SBBSegmentedButton(
-                onSelectionChanged = { selected ->
-                    defaultSelection2 = selected
-                    toastSelection(context, selected)
-                },
-                selection = defaultSelection2,
-                segments = twoButtonSegments()
-            )
-
-            // Default with two segments, disabled
-            SBBSegmentedButton(
-                onSelectionChanged = {},
-                selection = "Selection 1",
-                segments = twoButtonSegments(),
-                enabled = false,
-            )
-        }
+        // Default with two segments, disabled
+        SBBSegmentedButton(
+            onSelectionChanged = {},
+            selection = "Selection 1",
+            segments = twoButtonSegments(),
+            enabled = false,
+        )
     }
 }
 

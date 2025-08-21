@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.beta.modal
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -46,7 +45,7 @@ fun SBBModalView(
     ModalBottomSheet(
         onDismissRequest = onDismissRequest,
         sheetState = sheetState,
-        containerColor = if (isSystemInDarkTheme()) PrimitiveColors.midnight else PrimitiveColors.milk,
+        containerColor = if (SBBTheme.isDarkMode) PrimitiveColors.midnight else PrimitiveColors.milk,
         shape = RoundedCornerShape(16.dp),
         dragHandle = null,
     ) {

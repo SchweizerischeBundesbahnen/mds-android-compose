@@ -9,9 +9,9 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
-import ch.sbb.compose_mds.beta.notificationBox.LocalSBBNotificationBoxTheme
-import ch.sbb.compose_mds.beta.notificationBox.SBBNotificationBoxTokens
-import ch.sbb.compose_mds.beta.notificationBox.configSBBNotificationBoxTokens
+import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxTheme
+import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
+import ch.sbb.compose_mds.composables.notificationBox.configSBBNotificationBoxTokens
 import ch.sbb.compose_mds.theme.LocalSBBTypography
 import ch.sbb.compose_mds.theme.SBBTypography
 import ch.sbb.compose_mds.theme.context.LocalThemeContext

@@ -1,8 +1,8 @@
 package ch.sbb.compose_mds.composables.checkbox
 
+import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -55,7 +55,7 @@ fun SBBCheckbox(
     disabled: Boolean = false
 ) {
     val colors = when {
-        isSystemInDarkTheme() -> if (disabled) SBBCheckboxColors.DARK_DISABLED else SBBCheckboxColors.DARK_ENABLED
+        SBBTheme.isDarkMode -> if (disabled) SBBCheckboxColors.DARK_DISABLED else SBBCheckboxColors.DARK_ENABLED
         else -> if (disabled) SBBCheckboxColors.LIGHT_DISABLED else SBBCheckboxColors.LIGHT_ENABLED
     }
 

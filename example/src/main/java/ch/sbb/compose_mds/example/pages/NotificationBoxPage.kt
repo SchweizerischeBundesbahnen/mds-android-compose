@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ch.sbb.compose_mds.beta.notificationBox.SBBNotificationBox
+import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ArrowsCircleSmall

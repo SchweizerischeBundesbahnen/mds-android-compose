@@ -1,8 +1,7 @@
-package ch.sbb.compose_mds.beta.button
+package ch.sbb.compose_mds.composables.segmentedButton
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -46,7 +45,7 @@ fun <T> SBBSegmentedButton(
             .wrapContentHeight()
             .fillMaxWidth()
             .clip(shape = RoundedCornerShape(22.dp))
-            .background(color = if (isSystemInDarkTheme()) PrimitiveColors.charcoal else PrimitiveColors.cloud),
+            .background(color = if (SBBTheme.isDarkMode) PrimitiveColors.charcoal else PrimitiveColors.cloud),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
         val totalWeight = segments.size.toFloat()
@@ -76,14 +75,14 @@ private fun ButtonSegment(
         onClick = onClick,
         enabled = enabled,
         shape = RoundedCornerShape(22.dp),
-        border = if (isSystemInDarkTheme()) darkModeBorder(
+        border = if (SBBTheme.isDarkMode) darkModeBorder(
             active = active,
             enabled = enabled
         ) else lightModeBorder(
             active = active,
             enabled = enabled
         ),
-        colors = if (isSystemInDarkTheme()) darkModeColors(active) else lightModeColors(active),
+        colors = if (SBBTheme.isDarkMode) darkModeColors(active) else lightModeColors(active),
     ) {
         Text(
             text = label,
