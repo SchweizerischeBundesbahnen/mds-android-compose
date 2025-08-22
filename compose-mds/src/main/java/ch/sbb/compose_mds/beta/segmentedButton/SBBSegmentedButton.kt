@@ -1,4 +1,4 @@
-package ch.sbb.compose_mds.composables.segmentedButton
+package ch.sbb.compose_mds.beta.segmentedButton
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

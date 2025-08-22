@@ -25,8 +25,8 @@ import androidx.navigation.compose.rememberNavController
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.header.SBBHeader
 import ch.sbb.compose_mds.composables.header.Small
-import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
-import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
+import ch.sbb.compose_mds.beta.segmentedButton.SBBButtonSegment
+import ch.sbb.compose_mds.beta.segmentedButton.SBBSegmentedButton
 import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage

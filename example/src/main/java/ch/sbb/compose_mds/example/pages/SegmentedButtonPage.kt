@@ -20,8 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
-import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
+import ch.sbb.compose_mds.beta.segmentedButton.SBBButtonSegment
+import ch.sbb.compose_mds.beta.segmentedButton.SBBSegmentedButton
 import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
