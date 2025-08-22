@@ -25,7 +25,6 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MainPage(navController: NavController) {
-
     Column(
         modifier = Modifier
             .defaultPadding()
@@ -36,93 +35,63 @@ fun MainPage(navController: NavController) {
     ) {
         SBBListHeader(text = "Basics")
         SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            SBBListItem(
-                title = "Icon",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("icon") },
-            )
-            SBBListItem(
+            ComponentListItem(title = "Icon", onClick = { navController.navigate("icon") })
+            ComponentListItem(
                 title = "Typography",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("typography") },
             )
-            SBBListItem(
+            ComponentListItem(
                 title = "Color",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("color") },
                 isLastElement = true,
             )
         }
         SBBListHeader(text = "Components")
         SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            SBBListItem(
-                title = "Button",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("button") },
-            )
-            SBBListItem(
-                title = "Checkbox",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("checkbox") },
-            )
-            SBBListItem(
+            ComponentListItem(title = "Button", onClick = { navController.navigate("button") })
+            ComponentListItem(title = "Checkbox", onClick = { navController.navigate("checkbox") })
+            ComponentListItem(
                 title = "Container",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("container") },
-            )
-            SBBListItem(
-                title = "Header",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("header") },
-            )
-            SBBListItem(
+                onClick = { navController.navigate("container") })
+            ComponentListItem(title = "Header", onClick = { navController.navigate("header") })
+            ComponentListItem(
                 title = "LoadingIndicator",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("loading-indicator") },
-            )
-            SBBListItem(
+                onClick = { navController.navigate("loading-indicator") })
+            ComponentListItem(
                 title = "Modal View",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("modal-view") },
-            )
-            SBBListItem(
+                onClick = { navController.navigate("modal-view") })
+            ComponentListItem(
                 title = "NotificationBox",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("notification-box") },
-            )
-            SBBListItem(
+                onClick = { navController.navigate("notification-box") })
+            ComponentListItem(
                 title = "SegmentedButton",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("segmented-button") },
-            )
-            SBBListItem(
-                title = "Slider",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("slider") },
-            )
-            SBBListItem(
-                title = "Status",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("status") },
-            )
-            SBBListItem(
-                title = "Switch",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("switch") },
-            )
-            SBBListItem(
-                title = "TabBar",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
-                onClick = { navController.navigate("tab-bar") },
-            )
-            SBBListItem(
+                onClick = { navController.navigate("segmented-button") })
+            ComponentListItem(title = "Slider", onClick = { navController.navigate("slider") })
+            ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
+            ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
+            ComponentListItem(title = "TabBar", onClick = { navController.navigate("tab-bar") })
+            ComponentListItem(
                 title = "TextField",
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
                 onClick = { navController.navigate("text-field") },
                 isLastElement = true,
             )
         }
     }
+}
+
+@OptIn(ExperimentalSBBComponent::class)
+@Composable
+private fun ComponentListItem(
+    title: String,
+    onClick: (() -> Unit)? = null,
+    isLastElement: Boolean = false,
+) {
+    SBBListItem(
+        title = title,
+        trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+        onClick = onClick,
+        isLastElement = isLastElement
+    )
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
