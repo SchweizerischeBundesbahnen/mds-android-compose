@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file. See [standa
 # Unversioned
 
 ### Features
-* **SBBContentBox:** added component
+* **SBBContentBox:** added component which replaces SBBGroup
 
 # 0.1.8
 
