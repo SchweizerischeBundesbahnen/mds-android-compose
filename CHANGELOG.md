@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 * **SBBContentBox:** added component
 
+# 0.1.8
+
+### Bugfix
+* Fonts can be overridden
+
 # 0.1.7
 
 ### Features
