@@ -3,38 +3,67 @@ package ch.sbb.compose_mds.example.pages
 import SBBTheme
 import android.content.res.Configuration
 import android.widget.Toast
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.button.SBBPrimaryButton
 import ch.sbb.compose_mds.beta.button.SBBSecondaryButton
 import ch.sbb.compose_mds.beta.button.SBBTertiaryButton
 import ch.sbb.compose_mds.beta.button.SBBTertiaryButtonSmall
+import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.preview.SBBThemeConfigProvider
 import ch.sbb.compose_mds.preview.ThemePreviewConfig
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
+import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ButtonPage() {
     val context = LocalContext.current
 
-    Column(Modifier.fillMaxWidth()) {
+    Column(
+        Modifier
+            .defaultPadding()
+            .fillMaxWidth()
+            .verticalScroll(
+                state = rememberScrollState(),
+            ),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+    ) {
+        SBBContentBox(
+            modifier = Modifier.fillMaxWidth(),
+            contentPadding = PaddingValues(SBBSpacing.XSmall)
+        ) {
+            Row(horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+                Icon(
+                    imageVector = SBBIcons.Small.CircleInformationSmall,
+                    contentDescription = null,
+                )
+                Text("Context: ${SBBTheme.contextName}")
+            }
+        }
+        SBBListHeader(text = "Primary")
         SBBPrimaryButton(
             modifier =
                 Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .fillMaxWidth(),
             label = "Primary Button",
         ) {
             Toast.makeText(context, "Primary Button clicked", Toast.LENGTH_SHORT).show()
@@ -42,8 +71,7 @@ fun ButtonPage() {
         SBBPrimaryButton(
             modifier =
                 Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .fillMaxWidth(),
             enabled = false,
             label = "Primary Button disabled",
         ) {
@@ -51,11 +79,11 @@ fun ButtonPage() {
                 .makeText(context, "Primary Button disabled clicked", Toast.LENGTH_SHORT)
                 .show()
         }
+        SBBListHeader(text = "Secondary")
         SBBSecondaryButton(
             modifier =
                 Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .fillMaxWidth(),
             label = "Secondary Button",
         ) {
             Toast.makeText(context, "Secondary Button clicked", Toast.LENGTH_SHORT).show()
@@ -63,8 +91,7 @@ fun ButtonPage() {
         SBBSecondaryButton(
             modifier =
                 Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
+                    .fillMaxWidth(),
             enabled = false,
             label = "Secondary Button disabled",
         ) {
@@ -72,14 +99,12 @@ fun ButtonPage() {
                 .makeText(context, "Secondary Button disabled clicked", Toast.LENGTH_SHORT)
                 .show()
         }
+        SBBListHeader(text = "Tertiary")
         Row(
-            Modifier.padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
             SBBTertiaryButton(
                 icon = SBBIcons.Small.DogSmall,
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(context, "Tertiary Button with icon clicked", Toast.LENGTH_SHORT)
@@ -88,9 +113,6 @@ fun ButtonPage() {
             SBBTertiaryButton(
                 icon = SBBIcons.Small.DogSmall,
                 label = "dog",
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -102,9 +124,6 @@ fun ButtonPage() {
             SBBTertiaryButton(
                 enabled = false,
                 icon = SBBIcons.Small.DogSmall,
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(context, "Tertiary Button with icon clicked", Toast.LENGTH_SHORT)
@@ -114,9 +133,6 @@ fun ButtonPage() {
                 enabled = false,
                 icon = SBBIcons.Small.DogSmall,
                 label = "dog",
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -126,14 +142,12 @@ fun ButtonPage() {
                     ).show()
             }
         }
+        SBBListHeader(text = "Tertiary Small")
         Row(
-            Modifier.padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
             SBBTertiaryButtonSmall(
                 icon = SBBIcons.Small.DogSmall,
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -145,9 +159,6 @@ fun ButtonPage() {
             SBBTertiaryButtonSmall(
                 icon = SBBIcons.Small.DogSmall,
                 label = "dog",
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -159,9 +170,6 @@ fun ButtonPage() {
             SBBTertiaryButtonSmall(
                 enabled = false,
                 icon = SBBIcons.Small.DogSmall,
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -174,9 +182,6 @@ fun ButtonPage() {
                 enabled = false,
                 icon = SBBIcons.Small.DogSmall,
                 label = "dog",
-                modifier =
-                    Modifier
-                        .padding(start = 8.dp),
             ) {
                 Toast
                     .makeText(
@@ -189,11 +194,13 @@ fun ButtonPage() {
     }
 }
 
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(showBackground = false, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun ButtonPagePreview(
+fun Preview_ButtonPage(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
-    SBBTheme(themeContext = config.themeContext, includeSurface = true) { ButtonPage() }
+    SBBTheme(themeContext = config.themeContext, includeSurface = true) {
+        ButtonPage()
+    }
 }

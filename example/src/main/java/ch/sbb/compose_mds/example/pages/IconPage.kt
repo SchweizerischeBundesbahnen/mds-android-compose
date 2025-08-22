@@ -13,7 +13,6 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,12 +25,14 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.all
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun IconPage() {
     Column(
         modifier = Modifier
+            .defaultPadding()
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
@@ -72,13 +73,11 @@ fun IconPage() {
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun IconPagePreview() {
-    SBBTheme {
-        Surface {
-            IconPage()
-        }
+fun Preview_IconPage() {
+    SBBTheme(includeSurface = true) {
+        IconPage()
     }
 }

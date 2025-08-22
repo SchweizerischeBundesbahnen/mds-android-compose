@@ -5,6 +5,8 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -49,12 +51,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var isDarkTheme by remember { mutableStateOf(false) }
+            val isSystemInDarkTheme = isSystemInDarkTheme()
+            var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
             SBBTheme(darkTheme = isDarkTheme) {
                 val navController = rememberNavController()
                 Scaffold(
                     topBar = {
-                        Column {
+                        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
                             SBBHeader.Small(
                                 title = "SBB DSM Android",
                                 navController = navController
@@ -103,7 +106,7 @@ private fun DarkLightThemeSelection(
     onSelectionChanged: (Boolean) -> Unit
 ) {
     SBBSegmentedButton(
-        modifier = Modifier.padding(SBBSpacing.XSmall),
+        modifier = Modifier.padding(horizontal = SBBSpacing.XSmall),
         onSelectionChanged = onSelectionChanged,
         selection = selection,
         segments = listOf(

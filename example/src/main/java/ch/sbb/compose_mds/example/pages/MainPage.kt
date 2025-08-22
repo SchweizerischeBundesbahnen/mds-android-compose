@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -126,13 +125,11 @@ fun MainPage(navController: NavController) {
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun MainPagePreview() {
-    SBBTheme {
-        Surface {
-            MainPage(navController = rememberNavController())
-        }
+private fun MainPagePreview() {
+    SBBTheme(includeSurface = true) {
+        MainPage(navController = rememberNavController())
     }
 }

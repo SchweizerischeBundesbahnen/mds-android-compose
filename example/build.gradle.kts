@@ -64,7 +64,7 @@ roborazzi {
     generateComposePreviewRobolectricTests {
         enable = true
         packages = listOf("ch.sbb.compose_mds.example.pages",)
-        includePrivatePreviews = true
+        includePrivatePreviews = false
     }
     outputDir.set(file("../goldenfiles"))
 }

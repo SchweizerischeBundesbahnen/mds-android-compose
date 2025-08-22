@@ -1,5 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
+import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -35,23 +36,42 @@ fun HeaderPage() {
         SBBListHeader(text = "Default")
         SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController())
         SBBListHeader(text = "Default mit Zurück-Button")
-        SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController(), navigationType = NavigationType.Back)
+        SBBHeader.Default(
+            title = "SBB Header Default",
+            navController = rememberNavController(),
+            navigationType = NavigationType.Back
+        )
         SBBListHeader(text = "Default mit Abbrechen-Button")
-        SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController(), navigationType = NavigationType.Cancel)
+        SBBHeader.Default(
+            title = "SBB Header Default",
+            navController = rememberNavController(),
+            navigationType = NavigationType.Cancel
+        )
         Spacer(modifier = Modifier.padding(vertical = 20.dp))
 
         SBBListHeader(text = "Small")
         SBBHeader.Small(title = "SBB Header Small", navController = rememberNavController())
         SBBListHeader(text = "Default mit Zurück-Button")
-        SBBHeader.Small(title = "SBB Header Small", navController = rememberNavController(), navigationType = NavigationType.Back)
+        SBBHeader.Small(
+            title = "SBB Header Small",
+            navController = rememberNavController(),
+            navigationType = NavigationType.Back
+        )
         SBBListHeader(text = "Default mit Abbrechen-Button")
-        SBBHeader.Small(title = "SBB Header Small", navController = rememberNavController(), navigationType = NavigationType.Cancel)
+        SBBHeader.Small(
+            title = "SBB Header Small",
+            navController = rememberNavController(),
+            navigationType = NavigationType.Cancel
+        )
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun HeaderPagePreview() {
-    HeaderPage()
+fun Preview_HeaderPage() {
+    SBBTheme(includeSurface = true) {
+        HeaderPage()
+    }
 }

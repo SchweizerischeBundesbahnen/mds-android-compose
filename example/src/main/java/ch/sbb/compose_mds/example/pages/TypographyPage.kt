@@ -9,7 +9,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,6 +19,7 @@ import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.defaultPadding
 
 private const val DEFAULT_TEXT = "The quick brown fox jumps over the lazy dog"
 
@@ -28,8 +28,8 @@ fun TypographyPage() {
     Column(
         modifier =
             Modifier
-                .verticalScroll(rememberScrollState())
-                .padding(all = SBBSpacing.XSmall),
+                .defaultPadding()
+                .verticalScroll(rememberScrollState()),
     ) {
         MaterialTypography()
         SBBTypographySection()
@@ -106,13 +106,11 @@ private fun TextStyleInfos(style: TextStyle) {
     )
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun Preview_TypographyPage() {
-    SBBTheme {
-        Surface {
-            TypographyPage()
-        }
+fun Preview_TypographyPage() {
+    SBBTheme(includeSurface = true) {
+        TypographyPage()
     }
 }
