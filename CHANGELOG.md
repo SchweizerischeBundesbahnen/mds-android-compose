@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 * **SBBContentBox:** added component which replaces SBBGroup
+* **SBBMessage:** added component
 
 # 0.1.8
 

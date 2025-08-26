@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.composables.container
 import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -13,6 +14,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
@@ -31,6 +33,8 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 fun SBBContentBox(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(all = SBBSpacing.Medium),
+    verticalArrangement: Arrangement.Vertical = Arrangement.Top,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Column(
@@ -39,6 +43,8 @@ fun SBBContentBox(
             .background(color = MaterialTheme.colorScheme.surfaceVariant)
             .padding(contentPadding)
             .clipToBounds(),
+        verticalArrangement = verticalArrangement,
+        horizontalAlignment = horizontalAlignment,
         content = content,
     )
 }
