@@ -2,9 +2,11 @@ package ch.sbb.compose_mds.example.pages
 
 import SBBTheme
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -13,28 +15,32 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
+import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.beta.text.SBBTextField
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun TextFieldPage() {
     var text by remember { mutableStateOf("Value") }
 
-    Box(
+    Column(
         modifier = Modifier
-            .padding(
-                vertical = 16.dp,
-                horizontal = 8.dp,
-            )
+            .defaultPadding()
+            .fillMaxWidth()
+            .verticalScroll(
+                state = rememberScrollState(),
+            ),
     ) {
-        SBBGroup {
+        SBBListHeader(text = "Default")
+        SBBContentBox(contentPadding = PaddingValues(SBBSpacing.XSmall)) {
             Column {
                 SBBTextField(
                     value = text,
@@ -56,12 +62,6 @@ fun TextFieldPage() {
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Error") },
-                    isError = true,
-                )
-                SBBTextField(
-                    value = text,
-                    onValueChange = { text = it },
                     label = { Text("Leading icon") },
                     leadingIcon = SBBIcons.Small.DogSmall,
                 )
@@ -78,6 +78,11 @@ fun TextFieldPage() {
                     leadingIcon = SBBIcons.Small.DogSmall,
                     trailingIcon = SBBIcons.Small.CircleInformationSmall,
                 )
+            }
+        }
+        SBBListHeader(text = "Error")
+        SBBContentBox(contentPadding = PaddingValues(SBBSpacing.XSmall)) {
+            Column {
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
@@ -86,16 +91,22 @@ fun TextFieldPage() {
                     trailingIcon = SBBIcons.Small.CircleInformationSmall,
                     isError = true,
                 )
+                SBBTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    label = { Text("Error") },
+                    isError = true,
+                )
             }
         }
     }
 }
 
-@Preview(showBackground = true)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun TextFieldPagePreview() {
-    SBBTheme {
+fun Preview_TextFieldPage() {
+    SBBTheme(includeSurface = true) {
         TextFieldPage()
     }
 }

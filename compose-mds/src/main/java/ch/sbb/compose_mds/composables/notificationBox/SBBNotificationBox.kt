@@ -1,4 +1,4 @@
-package ch.sbb.compose_mds.beta.notificationBox
+package ch.sbb.compose_mds.composables.notificationBox
 
 import SBBTheme
 import android.content.res.Configuration

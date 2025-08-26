@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import androidx.compose.foundation.border
 import androidx.compose.foundation.indication
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
@@ -93,8 +92,8 @@ object SBBSliderDefaults {
     @Composable
     fun colors(): SliderColors {
         val trackColor = MaterialTheme.colorScheme.primary
-        val inactiveTrackColor = if (isSystemInDarkTheme()) PrimitiveColors.metal else PrimitiveColors.smoke
-        val thumbColor = if (isSystemInDarkTheme()) PrimitiveColors.iron else PrimitiveColors.white
+        val inactiveTrackColor = if (SBBTheme.isDarkMode) PrimitiveColors.metal else PrimitiveColors.smoke
+        val thumbColor = if (SBBTheme.isDarkMode) PrimitiveColors.iron else PrimitiveColors.white
         return SliderDefaults.colors(
             activeTrackColor = trackColor,
             disabledActiveTrackColor = trackColor,

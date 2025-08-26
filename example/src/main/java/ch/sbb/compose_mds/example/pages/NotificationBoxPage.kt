@@ -4,11 +4,13 @@ import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ch.sbb.compose_mds.beta.notificationBox.SBBNotificationBox
+import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ArrowsCircleSmall
@@ -21,23 +23,33 @@ private const val text =
 @Composable
 fun NotificationBoxPage() {
     Column(
-        modifier = Modifier.defaultPadding(),
+        modifier = Modifier
+            .defaultPadding()
+            .fillMaxWidth()
+            .verticalScroll(
+                state = rememberScrollState(),
+            ),
         verticalArrangement = Arrangement.spacedBy(SBBConst.DEFAULT_HORIZONTAL_PADDING)
     ) {
         SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)
         SBBNotificationBox.Warning(text = text, interactionIcon = null)
-        SBBNotificationBox.Success(title = "Title", text = text, interactionIcon = SBBIcons.Small.ArrowsCircleSmall)
-        SBBNotificationBox.Information(text = text, interactionIcon = SBBIcons.Small.ArrowsCircleSmall)
+        SBBNotificationBox.Success(
+            title = "Title",
+            text = text,
+            interactionIcon = SBBIcons.Small.ArrowsCircleSmall
+        )
+        SBBNotificationBox.Information(
+            text = text,
+            interactionIcon = SBBIcons.Small.ArrowsCircleSmall
+        )
     }
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun NotificationBoxPagePreview() {
-    SBBTheme {
-        Surface {
-            NotificationBoxPage()
-        }
+fun Preview_NotificationBoxPage() {
+    SBBTheme(includeSurface = true) {
+        NotificationBoxPage()
     }
 }

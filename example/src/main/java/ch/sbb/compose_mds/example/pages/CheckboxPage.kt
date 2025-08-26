@@ -1,5 +1,7 @@
 package ch.sbb.compose_mds.example.pages
 
+import SBBTheme
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -18,9 +20,9 @@ import ch.sbb.compose_mds.composables.checkbox.SBBCheckbox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.AppIconSmall
+import ch.sbb.compose_mds.theme.defaultPadding
 
 @Composable
-@Preview(showBackground = true)
 fun CheckboxPage() {
     Column(
         modifier = Modifier
@@ -28,10 +30,7 @@ fun CheckboxPage() {
             .verticalScroll(
                 state = rememberScrollState(),
             )
-            .padding(
-                vertical = 16.dp,
-                horizontal = 8.dp,
-            ),
+            .defaultPadding(),
     ) {
         Text("Checkbox")
         var checkedState: Boolean? by remember { mutableStateOf(false) }
@@ -67,5 +66,14 @@ fun CheckboxPage() {
             disabled = true,
             onCheckedChange = { checkedState3 = it },
         )
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_CheckboxPage() {
+    SBBTheme(includeSurface = true) {
+        CheckboxPage()
     }
 }

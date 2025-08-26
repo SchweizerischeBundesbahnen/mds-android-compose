@@ -1,6 +1,5 @@
-package ch.sbb.compose_mds.beta.notificationBox
+package ch.sbb.compose_mds.composables.notificationBox
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -45,7 +44,7 @@ internal fun configSBBNotificationBoxTokens(): SBBNotificationBoxTokens =
         override val warning: SBBNotificationBoxStyle
             @Composable get() = SBBNotificationBoxStyle(
                 icon = SBBIcons.Small.CircleExclamationPointSmall,
-                iconColor = if (isSystemInDarkTheme()) PrimitiveColors.peach else PrimitiveColors.black,
+                iconColor = if (SBBTheme.isDarkMode) PrimitiveColors.peach else PrimitiveColors.black,
                 backgroundColor = PrimitiveColors.peach,
             )
         override val success: SBBNotificationBoxStyle
@@ -57,7 +56,7 @@ internal fun configSBBNotificationBoxTokens(): SBBNotificationBoxTokens =
         override val information: SBBNotificationBoxStyle
             @Composable get() = SBBNotificationBoxStyle(
                 icon = SBBIcons.Small.CircleInformationSmall,
-                iconColor = if (isSystemInDarkTheme()) PrimitiveColors.white else PrimitiveColors.black,
+                iconColor = if (SBBTheme.isDarkMode) PrimitiveColors.white else PrimitiveColors.black,
                 backgroundColor = PrimitiveColors.smoke,
             )
     }

@@ -63,8 +63,8 @@ android {
 roborazzi {
     generateComposePreviewRobolectricTests {
         enable = true
-        packages = listOf("ch.sbb.compose_mds.example.pages",)
-        includePrivatePreviews = true
+        packages = listOf("ch.sbb.compose_mds.example.pages")
+        includePrivatePreviews = false
     }
     outputDir.set(file("../goldenfiles"))
 }
@@ -79,8 +79,8 @@ dependencies {
     implementation(libs.material3)
     implementation(project(":compose-mds"))
     implementation(libs.androidx.navigation.compose)
-    testImplementation(libs.junit)
 
+    testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.ui.test.android)
     testImplementation(libs.androidx.ui.test.junit4.android)

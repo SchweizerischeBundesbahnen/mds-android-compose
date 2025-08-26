@@ -1,34 +1,56 @@
 package ch.sbb.compose_mds.example.pages
 
+import SBBTheme
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Switch
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.container.SBBGroup
+import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.beta.switch.SBBSwitch
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SwitchPage() {
-    SBBGroup(modifier = Modifier.padding(8.dp)) {
+    Column(
+        modifier = Modifier
+            .defaultPadding()
+            .fillMaxWidth()
+            .verticalScroll(
+                state = rememberScrollState(),
+            ),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+    ) {
+        var checkedState: Boolean by remember { mutableStateOf(true) }
 
-        Row(
-            modifier = Modifier.padding(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            var checkedState: Boolean by remember { mutableStateOf(true) }
-            SBBSwitch(checked = checkedState, onCheckedChange = { checked -> checkedState = checked })
+        SBBListHeader(text = "Default")
+        SBBSwitch(
+            checked = checkedState,
+            onCheckedChange = { checked -> checkedState = checked }
+        )
 
-            SBBSwitch(checked = true, enabled = false, onCheckedChange = {  })
-            SBBSwitch(checked = false, enabled = false, onCheckedChange = {  })
-        }
+        SBBListHeader(text = "Disabled")
+        SBBSwitch(checked = true, enabled = false, onCheckedChange = { })
+        SBBSwitch(checked = false, enabled = false, onCheckedChange = { })
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_SwitchPage() {
+    SBBTheme(includeSurface = true) {
+        SwitchPage()
     }
 }
