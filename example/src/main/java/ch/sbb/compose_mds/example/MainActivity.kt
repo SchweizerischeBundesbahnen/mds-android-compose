@@ -23,10 +23,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.header.SBBHeader
-import ch.sbb.compose_mds.composables.header.Small
 import ch.sbb.compose_mds.beta.segmentedButton.SBBButtonSegment
 import ch.sbb.compose_mds.beta.segmentedButton.SBBSegmentedButton
+import ch.sbb.compose_mds.composables.header.SBBHeader
+import ch.sbb.compose_mds.composables.header.Small
 import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
@@ -35,6 +35,7 @@ import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
 import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
 import ch.sbb.compose_mds.example.pages.MainPage
+import ch.sbb.compose_mds.example.pages.MessagePage
 import ch.sbb.compose_mds.example.pages.ModalViewPage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
 import ch.sbb.compose_mds.example.pages.SegmentedButtonPage
@@ -91,6 +92,7 @@ class MainActivity : ComponentActivity() {
                             composable("notification-box") { NotificationBoxPage() }
                             composable("tab-bar") { TabBarPage() }
                             composable("container") { ContainerPage() }
+                            composable("message") { MessagePage() }
                         }
                     }
                 }
