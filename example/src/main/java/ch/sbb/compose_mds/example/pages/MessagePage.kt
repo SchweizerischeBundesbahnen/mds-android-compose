@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.message.Custom
 import ch.sbb.compose_mds.composables.message.Default
 import ch.sbb.compose_mds.composables.message.Error
 import ch.sbb.compose_mds.composables.message.Loading
@@ -47,6 +48,8 @@ fun MessagePage() {
         SBBMessageLoading()
         SBBListHeader(text = "Error")
         SBBMessageError()
+        SBBListHeader(text = "No Illustration")
+        SBBMessageNoIllustration()
     }
 }
 
@@ -102,6 +105,20 @@ private fun SBBMessageError() {
 }
 
 @Composable
+private fun SBBMessageNoIllustration() {
+    MessageContainer {
+        val context = LocalContext.current
+        SBBMessage.Custom(
+            title = "Title, single line",
+            message = MESSAGE,
+            onInteraction = {
+                Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
+}
+
+@Composable
 private fun MessageContainer(
     content: @Composable ColumnScope.() -> Unit
 ) {
@@ -136,5 +153,14 @@ fun Preview_MessageDefaultCustom() {
 fun Preview_MessageError() {
     SBBTheme(includeSurface = true) {
         SBBMessageError()
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_MessageNoIllustration() {
+    SBBTheme(includeSurface = true) {
+        SBBMessageNoIllustration()
     }
 }

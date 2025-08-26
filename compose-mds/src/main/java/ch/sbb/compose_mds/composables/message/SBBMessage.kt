@@ -44,7 +44,7 @@ enum class SBBMessageIllustration {
 @Composable
 fun SBBMessage.Custom(
     modifier: Modifier = Modifier,
-    illustration: @Composable () -> Unit,
+    illustration: (@Composable () -> Unit)? = null,
     title: String,
     message: String,
     secondaryMessage: String? = null,
@@ -145,6 +145,7 @@ fun SBBMessage.Loading(
 /***
  * Implementation of the SBB Message.
  *
+ * @param illustration Illustration of the message
  * @param title The title of the message
  * @param message The body of the message. Used to give a longer explanation of what has happened.
  * @param secondaryMessage Optional text displayed below the [message]. Usually depicts an error code. Example: 'Error-Code: XYZ-9999'
@@ -157,7 +158,7 @@ fun SBBMessage.Loading(
 @Composable
 private fun SBBMessageInternal(
     modifier: Modifier = Modifier,
-    illustration: @Composable () -> Unit,
+    illustration: (@Composable () -> Unit)? = null,
     title: String,
     message: String,
     secondaryMessage: String? = null,
@@ -168,8 +169,11 @@ private fun SBBMessageInternal(
         modifier = modifier.padding(SBBSpacing.Medium),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        illustration()
-        Spacer(Modifier.height(SBBSpacing.Large))
+        if (illustration != null) {
+            illustration()
+            Spacer(Modifier.height(SBBSpacing.Large))
+        }
+
         Text(
             title,
             style = SBBTheme.sbbTypography.mediumLight,
@@ -178,7 +182,8 @@ private fun SBBMessageInternal(
         )
 
         Spacer(Modifier.height(SBBSpacing.Medium))
-        val secondaryTextColor = if (SBBTheme.isDarkMode) SBBTheme.colors.graphite else SBBTheme.colors.granite
+        val secondaryTextColor =
+            if (SBBTheme.isDarkMode) SBBTheme.colors.graphite else SBBTheme.colors.granite
         Text(
             message,
             style = SBBTheme.sbbTypography.smallLight,
