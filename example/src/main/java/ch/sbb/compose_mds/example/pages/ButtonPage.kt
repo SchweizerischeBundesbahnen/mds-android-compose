@@ -1,6 +1,7 @@
 package ch.sbb.compose_mds.example.pages
 
 import SBBTheme
+import android.content.Context
 import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -18,11 +19,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.button.SBBPrimaryButton
-import ch.sbb.compose_mds.beta.button.SBBSecondaryButton
-import ch.sbb.compose_mds.beta.button.SBBTertiaryButton
-import ch.sbb.compose_mds.beta.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.button.SBBPrimaryButton
+import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
+import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
+import ch.sbb.compose_mds.composables.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.preview.SBBThemeConfigProvider
 import ch.sbb.compose_mds.preview.ThemePreviewConfig
@@ -36,8 +37,6 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ButtonPage() {
-    val context = LocalContext.current
-
     Column(
         Modifier
             .defaultPadding()
@@ -59,149 +58,254 @@ fun ButtonPage() {
                 Text("Context: ${SBBTheme.contextName}")
             }
         }
+        SBBPrimaryButtonSection()
+        SBBSecondaryButtonSection()
+        SBBTertiaryButtonSection()
+        SBBTertiarySmallButtonSection()
+    }
+}
+
+@OptIn(ExperimentalSBBComponent::class)
+@Composable
+private fun SBBPrimaryButtonSection() {
+    val context = LocalContext.current
+
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall)
+    ) {
         SBBListHeader(text = "Primary")
-        SBBPrimaryButton(
-            modifier = Modifier.fillMaxWidth(),
-            label = "Primary Button",
+        Column(
+            Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
-            Toast.makeText(context, "Primary Button clicked", Toast.LENGTH_SHORT).show()
+            SBBPrimaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                label = "Primary Button",
+            ) {
+                showToast(context, "Primary Button clicked")
+            }
+            SBBPrimaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                enabled = false,
+                label = "Primary Button disabled",
+            ) {
+                showToast(context, "Primary Button disabled clicked")
+            }
+            SBBPrimaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                isLoading = true,
+                label = "Primary Button loading",
+            ) {
+                showToast(context, "Primary Button loading clicked")
+            }
         }
-        SBBPrimaryButton(
-            modifier = Modifier.fillMaxWidth(),
-            enabled = false,
-            label = "Primary Button disabled",
-        ) {
-            Toast
-                .makeText(context, "Primary Button disabled clicked", Toast.LENGTH_SHORT)
-                .show()
-        }
-        SBBPrimaryButton(
-            modifier = Modifier.fillMaxWidth(),
-            isLoading = true,
-            label = "Primary Button loading",
-        ) {
-            Toast
-                .makeText(context, "Primary Button disabled clicked", Toast.LENGTH_SHORT)
-                .show()
-        }
+    }
+}
+
+@OptIn(ExperimentalSBBComponent::class)
+@Composable
+private fun SBBSecondaryButtonSection() {
+    val context = LocalContext.current
+
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall)
+    ) {
         SBBListHeader(text = "Secondary")
-        SBBSecondaryButton(
-            modifier = Modifier.fillMaxWidth(),
-            label = "Secondary Button",
+        Column(
+            Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
-            Toast.makeText(context, "Secondary Button clicked", Toast.LENGTH_SHORT).show()
+            SBBSecondaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                label = "Secondary Button",
+            ) {
+                showToast(context, "Secondary Button clicked")
+            }
+            SBBSecondaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                enabled = false,
+                label = "Secondary Button disabled",
+            ) {
+                showToast(context, "Secondary Button disabled clicked")
+            }
+            SBBSecondaryButton(
+                modifier = Modifier.fillMaxWidth(),
+                isLoading = true,
+                label = "Secondary Button loading",
+            ) {
+                showToast(context, "Secondary Button loading clicked")
+            }
         }
-        SBBSecondaryButton(
-            modifier = Modifier.fillMaxWidth(),
-            enabled = false,
-            label = "Secondary Button disabled",
-        ) {
-            Toast
-                .makeText(context, "Secondary Button disabled clicked", Toast.LENGTH_SHORT)
-                .show()
-        }
+    }
+}
+
+@OptIn(ExperimentalSBBComponent::class)
+@Composable
+private fun SBBTertiaryButtonSection() {
+    val context = LocalContext.current
+
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall)
+    ) {
         SBBListHeader(text = "Tertiary")
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+        Column(
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
-            SBBTertiaryButton(
-                icon = SBBIcons.Small.DogSmall,
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
             ) {
-                Toast
-                    .makeText(context, "Tertiary Button with icon clicked", Toast.LENGTH_SHORT)
-                    .show()
+                SBBTertiaryButton(
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button with icon and text clicked")
+                }
+                SBBTertiaryButton(
+                    enabled = false,
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button with icon and text clicked")
+                }
+                SBBTertiaryButton(
+                    isLoading = true,
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button loading with icon and text clicked")
+                }
             }
-            SBBTertiaryButton(
-                icon = SBBIcons.Small.DogSmall,
-                label = "dog",
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
             ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button with icon and text clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-            }
-            SBBTertiaryButton(
-                enabled = false,
-                icon = SBBIcons.Small.DogSmall,
-            ) {
-                Toast
-                    .makeText(context, "Tertiary Button with icon clicked", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            SBBTertiaryButton(
-                enabled = false,
-                icon = SBBIcons.Small.DogSmall,
-                label = "dog",
-            ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button with icon and text clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                SBBTertiaryButton(
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button with icon clicked")
+                }
+                SBBTertiaryButton(
+                    enabled = false,
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button with icon clicked")
+                }
+                SBBTertiaryButton(
+                    isLoading = true,
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button loading with icon clicked")
+                }
             }
         }
+    }
+}
+
+
+@OptIn(ExperimentalSBBComponent::class)
+@Composable
+private fun SBBTertiarySmallButtonSection() {
+    val context = LocalContext.current
+
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall)
+    ) {
         SBBListHeader(text = "Tertiary Small")
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+        Column(
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
         ) {
-            SBBTertiaryButtonSmall(
-                icon = SBBIcons.Small.DogSmall,
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
             ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button small with icon clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                SBBTertiaryButtonSmall(
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button small with icon and text clicked")
+                }
+                SBBTertiaryButtonSmall(
+                    enabled = false,
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button small with icon and text clicked")
+                }
+                SBBTertiaryButtonSmall(
+                    isLoading = true,
+                    icon = SBBIcons.Small.DogSmall,
+                    label = "dog",
+                ) {
+                    showToast(context, "Tertiary Button small loading with icon and text clicked")
+                }
             }
-            SBBTertiaryButtonSmall(
-                icon = SBBIcons.Small.DogSmall,
-                label = "dog",
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
             ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button small with icon and text clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-            }
-            SBBTertiaryButtonSmall(
-                enabled = false,
-                icon = SBBIcons.Small.DogSmall,
-            ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button small with icon clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-            }
-            SBBTertiaryButtonSmall(
-                enabled = false,
-                icon = SBBIcons.Small.DogSmall,
-                label = "dog",
-            ) {
-                Toast
-                    .makeText(
-                        context,
-                        "Tertiary Button small with icon and text clicked",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                SBBTertiaryButtonSmall(
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button small with icon clicked")
+                }
+                SBBTertiaryButtonSmall(
+                    enabled = false,
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button small with icon clicked")
+                }
+                SBBTertiaryButtonSmall(
+                    isLoading = true,
+                    icon = SBBIcons.Small.DogSmall,
+                ) {
+                    showToast(context, "Tertiary Button small loading with icon clicked")
+                }
             }
         }
+    }
+}
+
+private fun showToast(context: Context, text: String) {
+    Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_SBBPrimaryButton(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBTheme(themeContext = config.themeContext, includeSurface = true) {
+        SBBPrimaryButtonSection()
     }
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun Preview_ButtonPage(
+fun Preview_SBBSecondaryButton(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBTheme(themeContext = config.themeContext, includeSurface = true) {
-        ButtonPage()
+        SBBSecondaryButtonSection()
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_SBBTertiaryButton() {
+    SBBTheme(includeSurface = true) {
+        SBBTertiaryButtonSection()
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Preview_SBBTertiarySmallButton() {
+    SBBTheme(includeSurface = true) {
+        SBBTertiarySmallButtonSection()
     }
 }
