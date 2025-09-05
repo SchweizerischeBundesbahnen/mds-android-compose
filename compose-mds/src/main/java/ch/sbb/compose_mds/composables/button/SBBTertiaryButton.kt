@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
 import ch.sbb.compose_mds.theme.PrimitiveColors
@@ -30,6 +31,7 @@ import ch.sbb.compose_mds.theme.PrimitiveColors
  * Button can be used with either a [label], [icon] or both.
  *
  * @param label label of button
+ * @param icon icon of button
  * @param enabled controls the enabled state of this button
  * @param isLoading show loading indicator instead of [label] and disables button
  * @param onClick called when this button is clicked
@@ -45,24 +47,88 @@ fun SBBTertiaryButton(
     icon: ImageVector? = null,
     onClick: () -> Unit,
 ) {
+    SBBTertiaryButtonImpl(
+        modifier = modifier,
+        enabled = enabled,
+        isLoading = isLoading,
+        label = label,
+        icon = icon,
+        size = SBBTertiaryButtonSize.Regular,
+        onClick = onClick,
+    )
+}
+
+
+/***
+ * Implementation of the SBB Tertiary Small Button.
+ *
+ * Button can be used with either a [label], [icon] or both.
+ *
+ * @param label label of button
+ * @param icon icon of button
+ * @param enabled controls the enabled state of this button
+ * @param isLoading show loading indicator instead of [label] and disables button
+ * @param onClick called when this button is clicked
+ *
+ * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/button/)
+ */
+@Composable
+fun SBBTertiaryButtonSmall(
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    isLoading: Boolean = false,
+    label: String? = null,
+    icon: ImageVector? = null,
+    onClick: () -> Unit,
+) {
+    SBBTertiaryButtonImpl(
+        modifier = modifier,
+        enabled = enabled,
+        isLoading = isLoading,
+        label = label,
+        icon = icon,
+        size = SBBTertiaryButtonSize.Small,
+        onClick = onClick,
+    )
+}
+
+private enum class SBBTertiaryButtonSize(
+    val height: Dp,
+    val iconOnlyWidth: Dp,
+    val verticalPadding: Dp,
+) {
+    Regular(height = 44.dp, iconOnlyWidth = 44.dp, verticalPadding = 10.dp),
+    Small(height = 32.dp, iconOnlyWidth = 32.dp, verticalPadding = 4.dp),
+}
+
+@Composable
+private fun SBBTertiaryButtonImpl(
+    modifier: Modifier,
+    enabled: Boolean,
+    isLoading: Boolean,
+    label: String?,
+    icon: ImageVector?,
+    size: SBBTertiaryButtonSize,
+    onClick: () -> Unit,
+) {
     val interactionSource = remember { MutableInteractionSource() }
     val pressed by interactionSource.collectIsPressedAsState()
     val isEnabled = enabled && !isLoading
     val colors = buttonColors(pressed)
 
-    var buttonModifier = modifier
+    var buttonModifier = modifier.height(size.height)
     if (label == null) {
-        buttonModifier = buttonModifier.width(44.dp)
+        buttonModifier = buttonModifier.width(size.iconOnlyWidth)
     }
 
     Button(
-        modifier = buttonModifier.height(44.dp),
+        modifier = buttonModifier,
         enabled = isEnabled,
         onClick = onClick,
         shape = RoundedCornerShape(22.dp),
         border = borderColors(isEnabled),
         colors = colors,
-        contentPadding = contentPadding(label),
+        contentPadding = contentPadding(size, label),
         interactionSource = interactionSource,
     ) {
         if (isLoading) {
@@ -86,12 +152,15 @@ fun SBBTertiaryButton(
     }
 }
 
-private fun contentPadding(label: String?): PaddingValues =
+private fun contentPadding(
+    size: SBBTertiaryButtonSize,
+    label: String?,
+): PaddingValues =
     PaddingValues(
         start = if (label == null) 0.dp else 16.dp,
-        top = 10.dp,
+        top = size.verticalPadding,
         end = if (label == null) 0.dp else 16.dp,
-        bottom = 10.dp,
+        bottom = size.verticalPadding,
     )
 
 @Composable
