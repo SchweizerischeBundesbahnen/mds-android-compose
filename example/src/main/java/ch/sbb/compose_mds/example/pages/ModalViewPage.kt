@@ -14,7 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.button.SBBSecondaryButton
+import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.beta.modal.SBBModalView
 import ch.sbb.compose_mds.example.composeable.Placeholder
