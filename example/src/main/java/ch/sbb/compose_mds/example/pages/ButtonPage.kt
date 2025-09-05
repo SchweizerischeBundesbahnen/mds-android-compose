@@ -18,7 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.button.SBBPrimaryButton
+import ch.sbb.compose_mds.composables.button.SBBPrimaryButton
 import ch.sbb.compose_mds.beta.button.SBBSecondaryButton
 import ch.sbb.compose_mds.beta.button.SBBTertiaryButton
 import ch.sbb.compose_mds.beta.button.SBBTertiaryButtonSmall
@@ -61,17 +61,13 @@ fun ButtonPage() {
         }
         SBBListHeader(text = "Primary")
         SBBPrimaryButton(
-            modifier =
-                Modifier
-                    .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             label = "Primary Button",
         ) {
             Toast.makeText(context, "Primary Button clicked", Toast.LENGTH_SHORT).show()
         }
         SBBPrimaryButton(
-            modifier =
-                Modifier
-                    .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             enabled = false,
             label = "Primary Button disabled",
         ) {
@@ -79,19 +75,24 @@ fun ButtonPage() {
                 .makeText(context, "Primary Button disabled clicked", Toast.LENGTH_SHORT)
                 .show()
         }
+        SBBPrimaryButton(
+            modifier = Modifier.fillMaxWidth(),
+            isLoading = true,
+            label = "Primary Button loading",
+        ) {
+            Toast
+                .makeText(context, "Primary Button disabled clicked", Toast.LENGTH_SHORT)
+                .show()
+        }
         SBBListHeader(text = "Secondary")
         SBBSecondaryButton(
-            modifier =
-                Modifier
-                    .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             label = "Secondary Button",
         ) {
             Toast.makeText(context, "Secondary Button clicked", Toast.LENGTH_SHORT).show()
         }
         SBBSecondaryButton(
-            modifier =
-                Modifier
-                    .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             enabled = false,
             label = "Secondary Button disabled",
         ) {
