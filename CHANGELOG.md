@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 * **SBBContentBox:** added component which replaces SBBGroup
 * **SBBMessage:** added component
+* **SBBPrimaryButton:** finished component and out of beta state
+* **SBBSecondaryButton:** finished component and out of beta state
+* **SBBTertiaryButton:** finished component and out of beta state
 
 # 0.1.8
 
