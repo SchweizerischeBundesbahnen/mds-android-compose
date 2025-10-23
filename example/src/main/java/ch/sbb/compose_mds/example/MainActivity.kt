@@ -31,6 +31,7 @@ import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.ContainerPage
+import ch.sbb.compose_mds.example.pages.HeaderBoxPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
 import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
@@ -84,6 +85,7 @@ class MainActivity : ComponentActivity() {
                             composable("loading-indicator") { LoadingIndicatorPage() }
                             composable("switch") { SwitchPage() }
                             composable("header") { HeaderPage() }
+                            composable("header-box") { HeaderBoxPage() }
                             composable("modal-view") { ModalViewPage() }
                             composable("text-field") { TextFieldPage() }
                             composable("segmented-button") { SegmentedButtonPage() }

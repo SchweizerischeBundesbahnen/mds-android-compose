@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -20,14 +21,14 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MainPage(navController: NavController) {
     Column(
         modifier = Modifier
-            .defaultPadding()
+            .padding(horizontal = SBBSpacing.Small)
             .fillMaxSize()
             .verticalScroll(
                 state = rememberScrollState(),
@@ -54,6 +55,7 @@ fun MainPage(navController: NavController) {
                 title = "Container",
                 onClick = { navController.navigate("container") })
             ComponentListItem(title = "Header", onClick = { navController.navigate("header") })
+            ComponentListItem(title = "HeaderBox", onClick = { navController.navigate("header-box") })
             ComponentListItem(
                 title = "LoadingIndicator",
                 onClick = { navController.navigate("loading-indicator") })
