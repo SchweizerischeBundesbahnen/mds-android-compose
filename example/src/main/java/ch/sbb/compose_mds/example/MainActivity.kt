@@ -1,7 +1,6 @@
 package ch.sbb.compose_mds.example
 
 import SBBTheme
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,7 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -38,6 +37,7 @@ import ch.sbb.compose_mds.example.pages.MainPage
 import ch.sbb.compose_mds.example.pages.MessagePage
 import ch.sbb.compose_mds.example.pages.ModalViewPage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
+import ch.sbb.compose_mds.example.pages.RadioButtonPage
 import ch.sbb.compose_mds.example.pages.SegmentedButtonPage
 import ch.sbb.compose_mds.example.pages.SliderPage
 import ch.sbb.compose_mds.example.pages.StatusPage
@@ -93,6 +93,7 @@ class MainActivity : ComponentActivity() {
                             composable("tab-bar") { TabBarPage() }
                             composable("container") { ContainerPage() }
                             composable("message") { MessagePage() }
+                            composable("radio-button") { RadioButtonPage() }
                         }
                     }
                 }
@@ -124,8 +125,7 @@ private fun DarkLightThemeSelection(
     )
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
 private fun Preview_MainPage() {
     SBBTheme {
