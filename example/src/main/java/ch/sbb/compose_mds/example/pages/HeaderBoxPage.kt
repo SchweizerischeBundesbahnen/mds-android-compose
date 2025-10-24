@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.headerBox.SBBHeaderBox
-import ch.sbb.compose_mds.beta.headerBox.SBBHeaderBoxFlap
+import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox
+import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBoxFlap
 import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.example.composeable.Placeholder
 import ch.sbb.compose_mds.sbbicons.SBBIcons

@@ -1,4 +1,4 @@
-package ch.sbb.compose_mds.beta.headerBox
+package ch.sbb.compose_mds.composables.headerBox
 
 import SBBTheme
 import androidx.compose.foundation.background
@@ -20,14 +20,35 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Custom
+import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Default
+import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.WithButton
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 
-@ExperimentalSBBComponent
+/**
+ * SBB HeaderBox component.
+ *
+ * Provides a red header stripe with a rounded content container and an optional
+ * bottom "flap" area for additional metadata or actions.
+ *
+ * Use [Default] for a simple title/subtext header, [WithButton] to show
+ * a trailing action, or [Custom] to supply fully custom content.
+ *
+ *  For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/header-box/)
+ */
 object SBBHeaderBox {
+
+    /**
+     * Standard HeaderBox with optional [icon], required [title] and optional [subtext].
+     *
+     * @param icon optional icon shown left to the title
+     * @param title main headline
+     * @param subtext optional secondary text under the title
+     * @param headerBoxFlap optional flap rendered below the box (defaults to none)
+     */
     @Composable
     fun Default(
         icon: ImageVector? = null,
@@ -46,6 +67,17 @@ object SBBHeaderBox {
         }
     }
 
+    /**
+     * HeaderBox with a trailing action button.
+     *
+     * @param icon optional icon shown left to the title
+     * @param title main headline
+     * @param subtext optional secondary text under the title
+     * @param headerBoxFlap optional flap rendered below the box (defaults to none)
+     * @param actionIcon optional icon inside the action button
+     * @param actionLabel optional label of the action button
+     * @param onClickAction click handler for the action button (required to show it)
+     */
     @Composable
     fun WithButton(
         icon: ImageVector? = null,
@@ -70,6 +102,12 @@ object SBBHeaderBox {
         }
     }
 
+    /**
+     * Fully custom HeaderBox content.
+     *
+     * @param headerBoxFlap optional flap rendered below the box (defaults to none)
+     * @param content body of the header box
+     */
     @Composable
     fun Custom(
         headerBoxFlap: SBBHeaderBoxFlap = SBBHeaderBoxFlap.None,
@@ -115,7 +153,6 @@ object SBBHeaderBox {
         }
     }
 
-    @OptIn(ExperimentalSBBComponent::class)
     @Composable
     private fun DefaultContent(
         icon: ImageVector? = null,
@@ -140,7 +177,7 @@ object SBBHeaderBox {
                         Icon(
                             modifier = Modifier.width(24.dp),
                             imageVector = icon,
-                            contentDescription = "",
+                            contentDescription = null,
                             tint = iconColor(),
                         )
                     Text(
@@ -149,7 +186,7 @@ object SBBHeaderBox {
                         modifier = Modifier.padding(top = 2.dp, bottom = 2.dp)
                     )
                 }
-                if (subtext != null)
+                if (!subtext.isNullOrEmpty())
                     Text(
                         subtext,
                         style = SBBTheme.sbbTypography.smallLight,
@@ -169,20 +206,12 @@ object SBBHeaderBox {
     @Composable
     private fun iconColor(): Color {
         val colors = SBBTheme.colors
-        return if (SBBTheme.isDarkMode) {
-            colors.white
-        } else {
-            colors.black
-        }
+        return if (SBBTheme.isDarkMode) colors.white else colors.black
     }
 
     @Composable
     private fun flapBackgroundColor(): Color {
         val colors = SBBTheme.colors
-        return if (SBBTheme.isDarkMode) {
-            colors.midnight
-        } else {
-            colors.cloud
-        }
+        return if (SBBTheme.isDarkMode) colors.midnight else colors.cloud
     }
 }

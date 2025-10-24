@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalSBBComponent::class)
 
-package ch.sbb.compose_mds.beta.headerBox
+package ch.sbb.compose_mds.composables.headerBox
 
 import SBBTheme
 import androidx.compose.foundation.background
