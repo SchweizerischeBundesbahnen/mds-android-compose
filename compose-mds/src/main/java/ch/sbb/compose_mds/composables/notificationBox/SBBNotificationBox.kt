@@ -150,7 +150,7 @@ private fun SBBNotificationBox(
                 .defaultPadding(),
         ) {
             if (title != null) {
-                Row {
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     TypeIcon(style)
                     TitleBody(title)
                     CloseButton(isCloseable, onClose)
