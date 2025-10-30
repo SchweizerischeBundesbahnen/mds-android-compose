@@ -42,7 +42,12 @@ val backgroundBorderWidth = 1.dp
 /***
  * Implementation of the SBB Radio Button.
  *
- * TODO:
+ * @param label label of the radio button
+ * @param enabled controls the enabled state of this radio button
+ * @param selected controls the selected state of this radio button
+ * @param icon optional icon that is displayed between radio button and label
+ * @param onClick callback when radio button is clicked
+ * @param interactionSource an optional hoisted MutableInteractionSource for observing and emitting Interactions for this switch.
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/radio-button/)
  */
@@ -51,13 +56,13 @@ fun SBBRadioButton(
     modifier: Modifier = Modifier,
     label: String,
     selected: Boolean,
-    disabled: Boolean = false,
+    enabled: Boolean = true,
     icon: ImageVector? = null,
     interactionSource: MutableInteractionSource? = null,
     onClick: () -> Unit,
 ) {
-    val colors = if (SBBTheme.isDarkMode) darkRadioButtonColors(disabled = disabled)
-    else lightRadioButtonColors(disabled = disabled)
+    val colors = if (SBBTheme.isDarkMode) darkRadioButtonColors(enabled = enabled)
+    else lightRadioButtonColors(enabled = enabled)
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
@@ -65,7 +70,7 @@ fun SBBRadioButton(
             .clip(RoundedCornerShape(8.dp))
             .clickable(
                 onClick = onClick,
-                enabled = !disabled,
+                enabled = enabled,
                 role = Role.RadioButton,
                 interactionSource = interactionSource,
                 indication = ripple(),
@@ -148,7 +153,7 @@ private fun SBBSwitchPreview() {
                 selected = true,
                 label = "Disabled",
                 icon = SBBIcons.Small.UnicornSmall,
-                disabled = true,
+                enabled = false,
                 onClick = {},
             )
         }

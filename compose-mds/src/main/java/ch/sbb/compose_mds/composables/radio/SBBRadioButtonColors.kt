@@ -5,24 +5,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 @Composable
-internal fun lightRadioButtonColors(disabled: Boolean): SBBRadioButtonColors {
+internal fun lightRadioButtonColors(enabled: Boolean): SBBRadioButtonColors {
     val colors = SBBTheme.colors
     return SBBRadioButtonColors(
-        tickColor = if (disabled) colors.granite else colors.primary,
-        tickBorderColor = if (disabled) colors.cloud else colors.granite,
-        iconColor = if (disabled) colors.granite else colors.black,
-        textColor = if (disabled) colors.granite else colors.black,
+        tickColor = if (enabled) colors.primary else colors.granite,
+        tickBorderColor = if (enabled) colors.granite else colors.cloud,
+        iconColor = if (enabled) colors.black else colors.granite,
+        textColor = if (enabled) colors.black else colors.granite,
     )
 }
 
 @Composable
-internal fun darkRadioButtonColors(disabled: Boolean): SBBRadioButtonColors {
+internal fun darkRadioButtonColors(enabled: Boolean): SBBRadioButtonColors {
     val colors = SBBTheme.colors
     return SBBRadioButtonColors(
-        tickColor = if (disabled) colors.graphite else colors.primary,
-        tickBorderColor = if (disabled) colors.iron else colors.cement,
-        iconColor = if (disabled) colors.graphite else colors.white,
-        textColor = if (disabled) colors.graphite else colors.white,
+        tickColor = if (enabled) colors.primary else colors.graphite,
+        tickBorderColor = if (enabled) colors.cement else colors.iron,
+        iconColor = if (enabled) colors.white else colors.graphite,
+        textColor = if (enabled) colors.white else colors.graphite,
     )
 }
 

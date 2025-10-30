@@ -50,7 +50,7 @@ fun RadioButtonPage() {
             label = "Label",
             selected = true,
             icon = SBBIcons.Small.TrainSmall,
-            disabled = true,
+            enabled = false,
             onClick = {  },
         )
     }
