@@ -18,6 +18,7 @@ mavenPublish = "0.34.0"
 
 robolectric = "4.15.1"
 roborazzi = "1.49.0"
+foundation = "1.9.4"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +45,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
 roborazzi-previewScannerSupport = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose-preview-scanner-support", version.ref = "roborazzi" }
 composablePreviewScanner = { group = "io.github.sergio-sastre.ComposablePreviewScanner", name = "android", version = "0.7.0"}
+androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
