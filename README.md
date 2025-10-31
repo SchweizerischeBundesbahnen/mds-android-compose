@@ -73,7 +73,22 @@ SBBTheme(fontFamily = fontFamily) {
 
 This project uses [Roborazzi](https://github.com/takahirom/roborazzi) for screenshot testing to 
 prevent unintended visual regressions. The tests generate "golden file" images from the `@Preview` 
-composables located in the `example` module and compare them against previously recorded versions.
+composables located in the `example` module and compare them against previously recorded versions. 
+
+> **Important:**  
+> - The `@Preview` composables must **not** be declared as `private`, otherwise Roborazzi will ignore them.
+> - When wrapping the preview in `SBBTheme`, set the parameter `includeSurface = true` — otherwise dark mode rendering will not work correctly.
+
+Example:
+```kotlin
+@PreviewLightDark
+@Composable
+fun ExamplePagePreview() {
+    SBBTheme(includeSurface = true) {
+        ExamplePage()
+    }
+}
+```
 
 All golden files are stored in the `/goldenfiles` directory at the root of the project.
 

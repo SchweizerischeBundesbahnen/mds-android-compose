@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **SBBPrimaryButton:** finished component and out of beta state
 * **SBBSecondaryButton:** finished component and out of beta state
 * **SBBTertiaryButton:** finished component and out of beta state
+* **SBBHeaderBox:** added component
 * **SBBSwitch:** finished component and out of beta state
 
 # 0.1.8
