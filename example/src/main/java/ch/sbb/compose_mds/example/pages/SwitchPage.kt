@@ -25,11 +25,11 @@ import ch.sbb.compose_mds.theme.defaultPadding
 fun SwitchPage() {
     Column(
         modifier = Modifier
-            .defaultPadding()
             .fillMaxWidth()
             .verticalScroll(
                 state = rememberScrollState(),
-            ),
+            )
+            .defaultPadding(),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
     ) {
         var checkedState: Boolean by remember { mutableStateOf(true) }

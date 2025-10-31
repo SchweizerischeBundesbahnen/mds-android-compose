@@ -1,7 +1,6 @@
 package ch.sbb.compose_mds.composables.switch
 
 import SBBTheme
-import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntOffsetAsState
@@ -23,18 +22,22 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.dropShadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.shadow.Shadow
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -47,6 +50,7 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 
 private val knobSize = 28.dp
 private val trackWidth = 52.dp
+private val trackHeight = 20.dp
 
 /***
  * Implementation of the SBB Switch.
@@ -66,11 +70,11 @@ fun SBBSwitch(
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
-    val colors = if (SBBTheme.isDarkMode) lightSwitchColors() else darkSwitchColors()
+    val colors = if (SBBTheme.isDarkMode) darkSwitchColors(enabled) else lightSwitchColors(enabled)
     Box(
         modifier = modifier
-            .alpha(if (enabled) 1f else 0.5f)
             .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
+            .minimumInteractiveComponentSize()
             .padding(end = 1.dp)
             .toggleable(
                 enabled = enabled,
@@ -83,17 +87,15 @@ fun SBBSwitch(
         contentAlignment = Alignment.CenterStart,
     ) {
         SwitchTrack(checked, colors)
-        SwitchKnob(checked, enabled, colors)
+        SwitchKnob(checked, colors)
     }
 }
 
 @Composable
 private fun SwitchKnob(
     checked: Boolean,
-    enabled: Boolean = true,
     colors: SBBSwitchColors,
 ) {
-    val shadow = if (enabled) 4.dp else 0.dp
     val borderColor by animateColorAsState(
         targetValue = if (checked) colors.checkedKnobBorderColor else colors.knobBorderColor
     )
@@ -101,7 +103,7 @@ private fun SwitchKnob(
         targetValue = IntOffset(
             x = with(LocalDensity.current) {
                 when (checked) {
-                    true -> 52.dp - knobSize
+                    true -> trackWidth - knobSize
                     false -> 0.dp
                 }.roundToPx()
             },
@@ -112,7 +114,13 @@ private fun SwitchKnob(
         modifier = Modifier
             .offset { knobOffset }
             .size(knobSize)
-            .shadow(elevation = shadow, shape = CircleShape)
+            .dropShadow(
+                shape = RoundedCornerShape(knobSize), shadow = Shadow(
+                    radius = 4.dp,
+                    color = Color.Black.copy(alpha = 0.3f),
+                    offset = DpOffset(0.dp, 1.dp)
+                )
+            )
             .background(colors.knobBackgroundColor, shape = CircleShape)
             .border(border = BorderStroke(width = 1.dp, color = borderColor), shape = CircleShape),
         contentAlignment = Alignment.Center,
@@ -143,13 +151,12 @@ private fun SwitchTrack(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(20.dp)
+            .height(trackHeight)
             .background(color = backgroundColor, shape = CircleShape),
     )
 }
 
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
 fun SBBSwitchPreview() {
     val darkTheme = isSystemInDarkTheme()
