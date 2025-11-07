@@ -67,6 +67,9 @@ fun MainPage(navController: NavController) {
                 title = "NotificationBox",
                 onClick = { navController.navigate("notification-box") })
             ComponentListItem(
+                title = "RadioButton",
+                onClick = { navController.navigate("radio-button") })
+            ComponentListItem(
                 title = "SegmentedButton",
                 onClick = { navController.navigate("segmented-button") })
             ComponentListItem(title = "Slider", onClick = { navController.navigate("slider") })

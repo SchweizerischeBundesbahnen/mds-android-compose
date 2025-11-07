@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
@@ -129,8 +130,7 @@ private fun MessageContainer(
     )
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
 fun Preview_MessageDefault() {
     SBBTheme(includeSurface = true) {
@@ -138,8 +138,7 @@ fun Preview_MessageDefault() {
     }
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
 fun Preview_MessageDefaultCustom() {
     SBBTheme(includeSurface = true) {
@@ -147,8 +146,7 @@ fun Preview_MessageDefaultCustom() {
     }
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
 fun Preview_MessageError() {
     SBBTheme(includeSurface = true) {
