@@ -1,7 +1,6 @@
-package ch.sbb.compose_mds.beta.switch
+package ch.sbb.compose_mds.composables.switch
 
 import SBBTheme
-import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntOffsetAsState
@@ -23,30 +22,46 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.dropShadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.shadow.Shadow
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TickSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 
-@ExperimentalSBBComponent
+
+private val knobSize = 28.dp
+private val trackWidth = 52.dp
+private val trackHeight = 20.dp
+
+/***
+ * Implementation of the SBB Switch.
+ *
+ * @param checked whether or not this switch is checked
+ * @param enabled controls the enabled state of this switch
+ * @param onCheckedChange called when this switch is clicked. If null, then this switch will not be interactable, unless something else handles its input events and updates its state.
+ * @param interactionSource an optional hoisted MutableInteractionSource for observing and emitting Interactions for this switch.
+ *
+ * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/switch/)
+ */
 @Composable
 fun SBBSwitch(
     modifier: Modifier = Modifier,
@@ -55,36 +70,11 @@ fun SBBSwitch(
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
-    val color by animateColorAsState(
-        targetValue = when (checked) {
-            true -> MaterialTheme.colorScheme.primary
-            false -> PrimitiveColors.graphite
-        }
-    )
-    val knobSize = 26.dp
-    val knobOffset by animateIntOffsetAsState(
-        targetValue = IntOffset(
-            x = with(LocalDensity.current) {
-                when (checked) {
-                    true -> 52.dp - knobSize
-                    false -> 0.dp
-                }.roundToPx()
-            },
-            y = 0,
-        ),
-    )
-    val alpha = when (enabled) {
-        true -> 1f
-        false -> 0.5f
-    }
-    val shadow = when (enabled) {
-        true -> 4.dp
-        false -> 0.dp
-    }
+    val colors = if (SBBTheme.isDarkMode) darkSwitchColors(enabled) else lightSwitchColors(enabled)
     Box(
         modifier = modifier
-            .alpha(alpha)
-            .size(DpSize(53.dp, knobSize + 2.dp))
+            .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
+            .minimumInteractiveComponentSize()
             .padding(end = 1.dp)
             .toggleable(
                 enabled = enabled,
@@ -96,39 +86,77 @@ fun SBBSwitch(
             ),
         contentAlignment = Alignment.CenterStart,
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(20.dp)
-                .background(color = color, shape = CircleShape),
-        )
-        Box(
-            modifier = Modifier
-                .offset { knobOffset }
-                .size(knobSize)
-                .shadow(elevation = shadow, shape = CircleShape)
-                .background(PrimitiveColors.white, shape = CircleShape)
-                .border(border = BorderStroke(width = 1.dp, color = color), shape = CircleShape),
-            contentAlignment = Alignment.Center,
-        ) {
-            AnimatedVisibility(
-                visible = checked,
-                enter = fadeIn(),
-                exit = fadeOut(),
-            ) {
-                Icon(
-                    imageVector = SBBIcons.Small.TickSmall,
-                    tint = color,
-                    contentDescription = null
+        SwitchTrack(checked, colors)
+        SwitchKnob(checked, colors)
+    }
+}
+
+@Composable
+private fun SwitchKnob(
+    checked: Boolean,
+    colors: SBBSwitchColors,
+) {
+    val borderColor by animateColorAsState(
+        targetValue = if (checked) colors.checkedKnobBorderColor else colors.knobBorderColor
+    )
+    val knobOffset by animateIntOffsetAsState(
+        targetValue = IntOffset(
+            x = with(LocalDensity.current) {
+                when (checked) {
+                    true -> trackWidth - knobSize
+                    false -> 0.dp
+                }.roundToPx()
+            },
+            y = 0,
+        ),
+    )
+    Box(
+        modifier = Modifier
+            .offset { knobOffset }
+            .size(knobSize)
+            .dropShadow(
+                shape = RoundedCornerShape(knobSize), shadow = Shadow(
+                    radius = 4.dp,
+                    color = Color.Black.copy(alpha = 0.3f),
+                    offset = DpOffset(0.dp, 1.dp)
                 )
-            }
+            )
+            .background(colors.knobBackgroundColor, shape = CircleShape)
+            .border(border = BorderStroke(width = 1.dp, color = borderColor), shape = CircleShape),
+        contentAlignment = Alignment.Center,
+    ) {
+        AnimatedVisibility(
+            visible = checked,
+            enter = fadeIn(),
+            exit = fadeOut(),
+        ) {
+            Icon(
+                imageVector = SBBIcons.Small.TickSmall,
+                tint = colors.iconColor,
+                contentDescription = null
+            )
         }
     }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
-@Preview(showBackground = true)
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun SwitchTrack(
+    checked: Boolean,
+    colors: SBBSwitchColors,
+) {
+    val backgroundColor by animateColorAsState(
+        targetValue = if (checked) colors.checkedBackgroundColor else colors.backgroundColor
+    )
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(trackHeight)
+            .background(color = backgroundColor, shape = CircleShape),
+    )
+}
+
+@PreviewLightDark
 @Composable
 fun SBBSwitchPreview() {
     val darkTheme = isSystemInDarkTheme()
