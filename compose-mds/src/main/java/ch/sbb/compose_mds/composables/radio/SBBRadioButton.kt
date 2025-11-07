@@ -67,7 +67,7 @@ fun SBBRadioButton(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
             .minimumInteractiveComponentSize()
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(SBBSpacing.XSmall))
             .clickable(
                 onClick = onClick,
                 enabled = enabled,
@@ -75,10 +75,10 @@ fun SBBRadioButton(
                 interactionSource = interactionSource,
                 indication = ripple(),
             )
-            .padding(8.dp),
+            .padding(SBBSpacing.XSmall),
     ) {
         DrawRadio(
-            modifier = Modifier.padding(end = 8.dp),
+            modifier = Modifier.padding(end = SBBSpacing.XSmall),
             selected = selected,
             colors = colors,
         )
@@ -86,7 +86,7 @@ fun SBBRadioButton(
             Icon(
                 modifier = Modifier
                     .semantics { hideFromAccessibility() }
-                    .padding(end = 8.dp),
+                    .padding(end = SBBSpacing.XSmall),
                 imageVector = icon,
                 contentDescription = null,
                 tint = colors.iconColor,
