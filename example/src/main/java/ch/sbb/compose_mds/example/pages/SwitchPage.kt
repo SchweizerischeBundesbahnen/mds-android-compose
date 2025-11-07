@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.beta.switch.SBBSwitch
+import ch.sbb.compose_mds.composables.switch.SBBSwitch
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
 
@@ -25,11 +25,11 @@ import ch.sbb.compose_mds.theme.defaultPadding
 fun SwitchPage() {
     Column(
         modifier = Modifier
-            .defaultPadding()
             .fillMaxWidth()
             .verticalScroll(
                 state = rememberScrollState(),
-            ),
+            )
+            .defaultPadding(),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
     ) {
         var checkedState: Boolean by remember { mutableStateOf(true) }
