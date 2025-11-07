@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **SBBTertiaryButton:** finished component and out of beta state
 * **SBBHeaderBox:** added component
 * **SBBSwitch:** finished component and out of beta state
+* **SBBRadioButton:** added component
 
 # 0.1.8
 
