@@ -55,7 +55,7 @@ fun TextFieldPage() {
                 SBBTextField(
                     value = "",
                     onValueChange = { text = it },
-                    label = { Text("Placeholder") },
+                    label = { Text("Label") },
                     placeholder = { Text("Placeholder") },
                 )
                 SBBTextField(
@@ -95,6 +95,7 @@ fun TextFieldPage() {
                     onValueChange = { text = it },
                     label = { Text("Error") },
                     isError = true,
+                    errorText = "Test",
                 )
             }
         }
