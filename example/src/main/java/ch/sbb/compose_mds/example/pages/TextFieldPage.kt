@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.beta.modal.SBBModalView
 import ch.sbb.compose_mds.beta.text.SBBTextField
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -25,10 +28,24 @@ import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
 
-@OptIn(ExperimentalSBBComponent::class)
+@OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
 @Composable
 fun TextFieldPage() {
-    var text by remember { mutableStateOf("Value") }
+    var text by remember { mutableStateOf("") }
+    var showSheet by remember { mutableStateOf(false) }
+
+    if (showSheet) {
+        SBBModalView(
+            onDismissRequest = {
+                showSheet = false
+            },
+            sheetState = rememberModalBottomSheetState(),
+            showCloseButton = true,
+            title = "Information"
+        ) {
+            Text("Lorem ipsum.")
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -44,38 +61,44 @@ fun TextFieldPage() {
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Label") },
+                    label = "Label",
                 )
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Disabled") },
+                    label = "Disabled",
                     enabled = false,
                 )
                 SBBTextField(
-                    value = "",
+                    value = text,
                     onValueChange = { text = it },
-                    label = { Text("Label") },
-                    placeholder = { Text("Placeholder") },
+                    label = "Label",
+                    //placeholder = "Placeholder",
                 )
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Leading icon") },
+                    label = "Leading icon",
                     leadingIcon = SBBIcons.Small.DogSmall,
                 )
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Trailing icon") },
+                    label = "Trailing icon",
                     trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                    onClickTrailingIcon = {
+                        showSheet = true
+                    }
                 )
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Leading and trailing icons") },
+                    label = "Leading and trailing icons",
                     leadingIcon = SBBIcons.Small.DogSmall,
                     trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                    onClickTrailingIcon = {
+                        showSheet = true
+                    }
                 )
             }
         }
@@ -85,15 +108,18 @@ fun TextFieldPage() {
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Error with leading and trailing icons") },
+                    label = "Error with leading and trailing icons",
                     leadingIcon = SBBIcons.Small.DogSmall,
                     trailingIcon = SBBIcons.Small.CircleInformationSmall,
                     isError = true,
+                    onClickTrailingIcon = {
+                        showSheet = true
+                    }
                 )
                 SBBTextField(
                     value = text,
                     onValueChange = { text = it },
-                    label = { Text("Error") },
+                    label = "Error",
                     isError = true,
                     errorText = "Test",
                 )

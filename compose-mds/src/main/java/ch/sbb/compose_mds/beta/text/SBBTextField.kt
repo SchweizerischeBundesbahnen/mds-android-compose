@@ -2,7 +2,9 @@
 
 package ch.sbb.compose_mds.beta.text
 
+import SBBTheme
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Box
@@ -23,7 +25,6 @@ import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -42,6 +43,20 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.theme.PrimitiveColors
 
+private enum class InputPhase {
+    // Text field is focused and value is empty
+    FocusedEmpty,
+
+    // Text field is focused and value is empty
+    FocusedNotEmpty,
+
+    // Text field is not focused and value is empty
+    UnfocusedEmpty,
+
+    // Text field is not focused but value is not empty
+    UnfocusedNotEmpty
+}
+
 @ExperimentalSBBComponent
 @Composable
 fun SBBTextField(
@@ -51,12 +66,11 @@ fun SBBTextField(
     enabled: Boolean = true,
     readOnly: Boolean = false,
     textStyle: TextStyle = LocalTextStyle.current,
-    label: @Composable (() -> Unit)? = null,
-    placeholder: @Composable (() -> Unit)? = null,
+    label: String? = null,
+    placeholder: String? = null,
     leadingIcon: ImageVector? = null,
     trailingIcon: ImageVector? = null,
-    prefix: @Composable (() -> Unit)? = null,
-    suffix: @Composable (() -> Unit)? = null,
+    onClickTrailingIcon: (() -> Unit)? = null,
     supportingText: @Composable (() -> Unit)? = null,
     errorText: String? = null,
     isError: Boolean = false,
@@ -123,16 +137,24 @@ fun SBBTextField(
             minLines = minLines,
             decorationBox = @Composable { innerTextField ->
                 Column {
-                    if (label != null) {
-                        CompositionLocalProvider(LocalContentColor provides labelColor) {
-                            ProvideTextStyle(SBBTheme.sbbTypography.helpersLabel) {
-                                label()
-                            }
+
+                    val isFocused = interactionSource.collectIsFocusedAsState().value
+                    val inputState =
+                        when {
+                            isFocused && value.isEmpty() -> InputPhase.FocusedEmpty
+                            isFocused -> InputPhase.FocusedNotEmpty
+                            value.isEmpty() -> InputPhase.UnfocusedEmpty
+                            else -> InputPhase.UnfocusedNotEmpty
+                        }
+
+                    CompositionLocalProvider(LocalContentColor provides labelColor) {
+                        ProvideTextStyle(SBBTheme.sbbTypography.XXSmallLight) {
+                            Text(if (inputState != InputPhase.UnfocusedEmpty && label != null) label else "")
                         }
                     }
 
                     Row(
-                        modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
+                        modifier = Modifier.padding(top = 2.dp, bottom = 4.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         if (leadingIcon != null) {
@@ -144,38 +166,33 @@ fun SBBTextField(
                             )
                             Spacer(Modifier.width(8.dp))
                         }
-                        if (prefix != null) {
-                            CompositionLocalProvider(LocalContentColor provides inputTextColor) {
-                                ProvideTextStyle(textStyle) {
-                                    prefix()
-                                }
-                            }
-                            Spacer(Modifier.width(4.dp))
-                        }
 
                         Box(modifier = Modifier.weight(1f)) {
-                            if (value.isEmpty() && placeholder != null) {
+                            if (value.isEmpty() && placeholder != null && inputState == InputPhase.FocusedEmpty) {
                                 CompositionLocalProvider(LocalContentColor provides placeholderColor) {
                                     ProvideTextStyle(textStyle) {
-                                        placeholder()
+                                        Text(placeholder)
+                                    }
+                                }
+                            }
+                            if (value.isEmpty() && label != null && inputState == InputPhase.UnfocusedEmpty) {
+                                CompositionLocalProvider(LocalContentColor provides placeholderColor) {
+                                    ProvideTextStyle(textStyle) {
+                                        Text(label)
                                     }
                                 }
                             }
                             innerTextField()
                         }
 
-                        if (suffix != null) {
-                            Spacer(Modifier.width(4.dp))
-                            CompositionLocalProvider(LocalContentColor provides inputTextColor) {
-                                ProvideTextStyle(textStyle) {
-                                    suffix()
-                                }
-                            }
-                        }
                         if (trailingIcon != null) {
                             Spacer(Modifier.width(8.dp))
                             Icon(
-                                modifier = Modifier.semantics { hideFromAccessibility() },
+                                modifier = Modifier
+                                    .semantics { hideFromAccessibility() }
+                                    .clickable(
+                                        enabled = onClickTrailingIcon != null,
+                                        onClick = onClickTrailingIcon ?: {}),
                                 imageVector = trailingIcon,
                                 contentDescription = null,
                                 tint = trailingIconColor
@@ -187,7 +204,7 @@ fun SBBTextField(
                         Text(
                             text = errorText,
                             color = errorSupportingTextColor,
-                            style = SBBTheme.sbbTypography.helpersLabel,
+                            style = SBBTheme.sbbTypography.XXSmallBold,
                             modifier = Modifier.padding(bottom = 4.dp)
                         )
                     }
@@ -195,7 +212,7 @@ fun SBBTextField(
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(if (isFocused || isError) 2.dp else 1.dp)
+                            .height(1.dp)
                             .background(indicatorColor)
                     )
 
