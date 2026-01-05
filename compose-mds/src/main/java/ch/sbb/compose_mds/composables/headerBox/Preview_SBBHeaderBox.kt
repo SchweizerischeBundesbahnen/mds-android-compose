@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalSBBComponent::class)
-
 package ch.sbb.compose_mds.composables.headerBox
 
 import SBBTheme
@@ -11,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
@@ -19,8 +16,7 @@ import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
 
-
-@PreviewLightDark()
+@PreviewLightDark
 @Composable
 private fun PreviewSBBHeaderBox() {
     SBBTheme {
@@ -37,7 +33,7 @@ private fun PreviewSBBHeaderBox() {
     }
 }
 
-@PreviewLightDark()
+@PreviewLightDark
 @Composable
 private fun PreviewSBBHeaderBoxWithButton() {
     SBBTheme {
@@ -51,7 +47,7 @@ private fun PreviewSBBHeaderBoxWithButton() {
     }
 }
 
-@PreviewLightDark()
+@PreviewLightDark
 @Composable
 private fun PreviewSBBHeaderBoxCustom() {
     SBBTheme {

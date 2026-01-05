@@ -54,7 +54,7 @@ fun SBBHeader.Default(
 ) {
     SBBHeaderInternal(
         modifier
-            .background(PrimitiveColors.red)
+            .background(SBBTheme.colors.primary)
             .padding(horizontal = 14.dp)
             .padding(bottom = 30.dp),
         title,
@@ -88,7 +88,7 @@ fun SBBHeader.Small(
 ) {
     SBBHeaderInternal(
         modifier
-            .background(PrimitiveColors.red)
+            .background(SBBTheme.colors.primary)
             .padding(horizontal = 14.dp),
         title,
         navController,
@@ -135,7 +135,7 @@ private fun SBBHeaderInternal(
     CenterAlignedTopAppBar(
         modifier = modifier,
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = PrimitiveColors.red,
+            containerColor = SBBTheme.colors.primary,
             titleContentColor = PrimitiveColors.white,
         ),
         title = {
