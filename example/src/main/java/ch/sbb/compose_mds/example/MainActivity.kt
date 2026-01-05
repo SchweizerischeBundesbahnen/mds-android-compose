@@ -44,7 +44,8 @@ import ch.sbb.compose_mds.example.pages.SliderPage
 import ch.sbb.compose_mds.example.pages.StatusPage
 import ch.sbb.compose_mds.example.pages.SwitchPage
 import ch.sbb.compose_mds.example.pages.TabBarPage
-import ch.sbb.compose_mds.example.pages.TextFieldPage
+import ch.sbb.compose_mds.example.pages.TextInputPage
+import ch.sbb.compose_mds.example.pages.TextareaPage
 import ch.sbb.compose_mds.example.pages.TypographyPage
 import ch.sbb.compose_mds.theme.SBBSpacing
 
@@ -87,7 +88,8 @@ class MainActivity : ComponentActivity() {
                             composable("header") { HeaderPage() }
                             composable("header-box") { HeaderBoxPage() }
                             composable("modal-view") { ModalViewPage() }
-                            composable("text-field") { TextFieldPage() }
+                            composable("text-input") { TextInputPage() }
+                            composable("textarea") { TextareaPage() }
                             composable("segmented-button") { SegmentedButtonPage() }
                             composable("status") { StatusPage() }
                             composable("slider") { SliderPage() }

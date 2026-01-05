@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 TBD
 
+# 0.1.10
+* **SBBTextInput:** renamed from SBBTextField
+* **SBBTextInput:** refactored API and component
+* **SBBTextarea:** added component
+
 # 0.1.9
 
 ### Features
