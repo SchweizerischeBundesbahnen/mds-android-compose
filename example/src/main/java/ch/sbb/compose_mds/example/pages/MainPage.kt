@@ -55,7 +55,9 @@ fun MainPage(navController: NavController) {
                 title = "Container",
                 onClick = { navController.navigate("container") })
             ComponentListItem(title = "Header", onClick = { navController.navigate("header") })
-            ComponentListItem(title = "HeaderBox", onClick = { navController.navigate("header-box") })
+            ComponentListItem(
+                title = "HeaderBox",
+                onClick = { navController.navigate("header-box") })
             ComponentListItem(
                 title = "LoadingIndicator",
                 onClick = { navController.navigate("loading-indicator") })
@@ -76,6 +78,7 @@ fun MainPage(navController: NavController) {
             ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
             ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
             ComponentListItem(title = "TabBar", onClick = { navController.navigate("tab-bar") })
+            ComponentListItem(title = "Textarea", onClick = { navController.navigate("textarea") })
             ComponentListItem(
                 title = "TextField",
                 onClick = { navController.navigate("text-field") },
