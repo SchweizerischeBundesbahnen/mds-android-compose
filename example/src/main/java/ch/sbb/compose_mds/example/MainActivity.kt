@@ -30,6 +30,7 @@ import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.ContainerPage
+import ch.sbb.compose_mds.example.pages.DropdownPage
 import ch.sbb.compose_mds.example.pages.HeaderBoxPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
@@ -90,6 +91,7 @@ class MainActivity : ComponentActivity() {
                             composable("modal-view") { ModalViewPage() }
                             composable("text-input") { TextInputPage() }
                             composable("textarea") { TextareaPage() }
+                            composable("dropdown") { DropdownPage() }
                             composable("segmented-button") { SegmentedButtonPage() }
                             composable("status") { StatusPage() }
                             composable("slider") { SliderPage() }

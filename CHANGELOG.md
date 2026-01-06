@@ -11,6 +11,8 @@ TBD
 * **SBBTextInput:** renamed from SBBTextField
 * **SBBTextInput:** refactored API and component
 * **SBBTextarea:** added component
+* **SBBDropdown:** added component
+* **SBBListItem:** added textStyle property and made trailingIcon optional
 
 # 0.1.9
 

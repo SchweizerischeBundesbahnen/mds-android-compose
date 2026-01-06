@@ -78,6 +78,7 @@ fun MainPage(navController: NavController) {
             ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
             ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
             ComponentListItem(title = "TabBar", onClick = { navController.navigate("tab-bar") })
+            ComponentListItem(title = "Dropdown", onClick = { navController.navigate("dropdown") })
             ComponentListItem(title = "Textarea", onClick = { navController.navigate("textarea") })
             ComponentListItem(
                 title = "TextField",
