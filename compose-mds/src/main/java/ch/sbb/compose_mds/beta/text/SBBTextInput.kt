@@ -42,6 +42,7 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 /***
  * Implementation of the SBB Text-Input.
@@ -137,7 +138,7 @@ fun SBBTextInput(
                                 contentDescription = null,
                                 tint = resolvedColors.iconColor
                             )
-                            Spacer(Modifier.width(8.dp))
+                            Spacer(Modifier.width(SBBSpacing.XSmall))
                         }
 
                         Column {
@@ -177,7 +178,7 @@ fun SBBTextInput(
                                     innerTextField()
                                 }
                                 if (trailingIcon != null) {
-                                    Spacer(Modifier.width(8.dp))
+                                    Spacer(Modifier.width(SBBSpacing.XSmall))
                                     Icon(
                                         modifier = Modifier
                                             .semantics { hideFromAccessibility() }
@@ -198,7 +199,7 @@ fun SBBTextInput(
                             text = errorText,
                             color = resolvedColors.errorColor,
                             style = SBBTheme.sbbTypography.XXSmallBold,
-                            modifier = Modifier.padding(bottom = 4.dp)
+                            modifier = Modifier.padding(bottom = SBBSpacing.XXSmall)
                         )
                     }
 
@@ -215,7 +216,7 @@ fun SBBTextInput(
                     )
 
                     if (supportingText != null && (!isError || errorText.isNullOrEmpty())) {
-                        Box(modifier = Modifier.padding(top = 4.dp)) {
+                        Box(modifier = Modifier.padding(top = SBBSpacing.XXSmall)) {
                             CompositionLocalProvider(LocalContentColor provides resolvedColors.labelColor) {
                                 ProvideTextStyle(SBBTheme.sbbTypography.helpersLabel) {
                                     supportingText()
