@@ -25,19 +25,16 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Custom
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Default
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.WithButton
-import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 
 /**
  * SBB HeaderBox component.
  *
- * Provides a red header stripe with a rounded content container and an optional
- * bottom "flap" area for additional metadata or actions.
+ * Provides header stripe with a rounded content container and an optional bottom "flap" area for additional metadata or actions.
  *
- * Use [Default] for a simple title/subtext header, [WithButton] to show
- * a trailing action, or [Custom] to supply fully custom content.
+ * Use [Default] for a simple title/subtext header, [WithButton] to show a trailing action, or [Custom] to supply fully custom content.
  *
- *  For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/header-box/)
+ * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/header-box/)
  */
 object SBBHeaderBox {
 
@@ -116,7 +113,7 @@ object SBBHeaderBox {
         Box {
             Box(
                 modifier = Modifier
-                    .background(PrimitiveColors.red)
+                    .background(SBBTheme.colors.primary)
                     .fillMaxWidth()
                     .height(SBBSpacing.Large)
             )
@@ -134,19 +131,23 @@ object SBBHeaderBox {
     ) {
         Column(
             modifier = Modifier
-                .padding(start = SBBSpacing.Medium, end = SBBSpacing.Medium)
+                .padding(start = SBBSpacing.XSmall, end = SBBSpacing.XSmall)
                 .clip(RoundedCornerShape(SBBSpacing.Medium))
                 .background(color = flapBackgroundColor())
         ) {
             SBBContentBox(
-                modifier = Modifier
-                    .fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             ) {
                 headerBoxContent()
             }
 
             if (headerBoxFlap !is SBBHeaderBoxFlap.None) {
-                Box(modifier = Modifier.padding(horizontal = SBBSpacing.Medium, vertical = SBBSpacing.XSmall)) {
+                Box(
+                    modifier = Modifier.padding(
+                        horizontal = SBBSpacing.Medium,
+                        vertical = SBBSpacing.XSmall
+                    )
+                ) {
                     headerBoxFlap.Render()
                 }
             }

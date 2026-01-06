@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 TBD
 
+# 0.1.10
+* **SBBHeaderBox:** reduced margin to fit design specs
+
 # 0.1.9
 
 ### Features
