@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 TBD
 
 # 0.1.10
+* **SBBHeaderBox:** reduced margin to fit design specs
 * **SBBTextInput:** renamed from SBBTextField
 * **SBBTextInput:** refactored API and component
 * **SBBTextarea:** added component
