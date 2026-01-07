@@ -13,6 +13,7 @@ TBD
 * **SBBTextarea:** added component
 * **SBBDropdown:** added component
 * **SBBListItem:** added textStyle property and made trailingIcon optional
+* **SBBModalView:** use correct title font style
 
 # 0.1.9
 

@@ -1,5 +1,6 @@
 package ch.sbb.compose_mds.beta.modal
 
+import SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -8,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
@@ -66,7 +66,7 @@ fun SBBModalView(
             ) {
                 Text(
                     title,
-                    style = MaterialTheme.typography.titleLarge,
+                    style = SBBTheme.sbbTypography.largeLight,
                 )
                 if (showCloseButton) {
                     // TODO: Only small icons supported
