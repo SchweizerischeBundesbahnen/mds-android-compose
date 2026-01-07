@@ -65,6 +65,7 @@ roborazzi {
         enable = true
         packages = listOf("ch.sbb.compose_mds.example.pages")
         includePrivatePreviews = false
+        generatedTestClassCount = 4
     }
     outputDir.set(file("../goldenfiles"))
 }

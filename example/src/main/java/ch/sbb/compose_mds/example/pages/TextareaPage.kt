@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.beta.modal.SBBModalView
+import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.beta.text.SBBTextarea
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -36,10 +36,9 @@ fun TextareaPage() {
     var showSheet by remember { mutableStateOf(false) }
 
     if (showSheet) {
-        SBBModalView(
+        SBBBottomSheet(
             onDismissRequest = { showSheet = false },
             sheetState = rememberModalBottomSheetState(),
-            showCloseButton = true,
             title = "Information"
         ) {
             Text("Lorem ipsum.")
