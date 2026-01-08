@@ -9,7 +9,8 @@ import ch.sbb.compose_mds.theme.context.colors.ThemeContextColors
 
 @Composable
 @ReadOnlyComposable
-fun ThemeContextColors.colorScheme(isDarkTheme: Boolean): ColorScheme = createSBBMaterialTheme(isDarkTheme, this)
+fun ThemeContextColors.colorScheme(isDarkTheme: Boolean): ColorScheme =
+    createSBBMaterialTheme(isDarkTheme, this)
 
 fun createSBBMaterialTheme(
     isDarkTheme: Boolean,
@@ -24,6 +25,8 @@ fun createSBBMaterialTheme(
             surfaceVariant = themeContext.colors.charcoal,
             onSurfaceVariant = themeContext.colors.white,
             surfaceContainerHighest = themeContext.colors.charcoal,
+            onBackground = themeContext.colors.white,
+            background = themeContext.colors.black,
         )
     } else {
         lightColorScheme(
@@ -34,5 +37,7 @@ fun createSBBMaterialTheme(
             surfaceVariant = themeContext.colors.white,
             onSurfaceVariant = themeContext.colors.black,
             surfaceContainerHighest = themeContext.colors.white,
+            onBackground = themeContext.colors.black,
+            background = themeContext.colors.milk,
         )
     }

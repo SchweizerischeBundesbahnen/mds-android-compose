@@ -39,6 +39,7 @@ fun NotificationBoxPage() {
         )
         SBBNotificationBox.Information(
             text = text,
+            onClick = {},
             interactionIcon = SBBIcons.Small.ArrowsCircleSmall
         )
     }

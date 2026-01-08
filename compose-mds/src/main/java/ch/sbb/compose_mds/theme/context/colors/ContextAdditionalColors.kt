@@ -6,6 +6,7 @@ import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @Immutable
 data class ContextAdditionalColors(
+    // light colors
     val sky: Color = PrimitiveColors.sky,
     val night: Color = PrimitiveColors.night,
     val violet: Color = PrimitiveColors.violet,
@@ -17,4 +18,17 @@ data class ContextAdditionalColors(
     val brown: Color = PrimitiveColors.brown,
     val green: Color = PrimitiveColors.green,
     val turquoise: Color = PrimitiveColors.turquoise,
+
+    // dark colors
+    val skyDark: Color = PrimitiveColors.skyDark,
+    val nightDark: Color = PrimitiveColors.nightDark,
+    val violetDark: Color = PrimitiveColors.violetDark,
+    val pinkDark: Color = PrimitiveColors.pinkDark,
+    val autumnDark: Color = PrimitiveColors.autumnDark,
+    val orangeDark: Color = PrimitiveColors.orangeDark,
+    val peachDark: Color = PrimitiveColors.peachDark,
+    val lemonDark: Color = PrimitiveColors.lemonDark,
+    val brownDark: Color = PrimitiveColors.brownDark,
+    val greenDark: Color = PrimitiveColors.greenDark,
+    val turquoiseDark: Color = PrimitiveColors.turquoiseDark,
 )
