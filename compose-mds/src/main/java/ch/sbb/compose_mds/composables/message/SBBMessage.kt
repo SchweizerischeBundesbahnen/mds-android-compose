@@ -15,7 +15,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import ch.sbb.compose_mds.R
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
 import ch.sbb.compose_mds.sbbicons.Medium
@@ -154,7 +153,6 @@ fun SBBMessage.Loading(
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/message/)
  */
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBMessageInternal(
     modifier: Modifier = Modifier,

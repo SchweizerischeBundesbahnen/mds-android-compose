@@ -58,7 +58,6 @@ fun SBBTabBar(
         modifier = Modifier
             .drawBehind {
                 drawIntoCanvas { canvas ->
-                    width = size.width
                     val path by controller.path(size)
                     val shadowPaint = Paint().asFrameworkPaint().apply {
                         isAntiAlias = true

@@ -28,7 +28,7 @@ object PrimitiveColors {
     val blue = Color(0xFF2D327D)
     val transparent = Color(0x00000000)
 
-    // usually used in functional colors
+    // additional colors
     val sky = Color(0xFF0079C7)
     val night = Color(0xFF143A85)
     val violet = Color(0xFF6F2282)
@@ -40,6 +40,19 @@ object PrimitiveColors {
     val brown = Color(0xFFB76000)
     val green = Color(0xFF008A36)
     val turquoise = Color(0xFF00a59b)
+
+    // additional colors dark
+    val skyDark = Color(0xFF128EDE)
+    val nightDark = Color(0xFF6587CA)
+    val violetDark = Color(0xFFB36CC5)
+    val pinkDark = Color(0xFFE45295)
+    val autumnDark = Color(0xFFF05313)
+    val orangeDark = Color(0xFFFB8E19)
+    val peachDark = Color(0xFFFFC727)
+    val lemonDark = Color(0xFFFFE547)
+    val brownDark = Color(0xFFCF6F04)
+    val greenDark = Color(0xFF109D47)
+    val turquoiseDark = Color(0xFF00A59B)
 
     // usually used ind off brand colors
     val royal: Color = Color(0xFF06348B)

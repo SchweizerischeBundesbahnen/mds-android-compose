@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.composables.notificationBox
 
-import androidx.compose.material3.MaterialTheme
+import SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -12,19 +12,19 @@ import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
 
 class SBBNotificationBoxStyle(
     val icon: ImageVector,
     val iconColor: Color,
     val backgroundColor: Color,
+    val borderColor: Color,
 )
 
 interface SBBNotificationBoxTokens {
-    val alert: SBBNotificationBoxStyle @Composable get() = TODO()
-    val warning: SBBNotificationBoxStyle @Composable get() = TODO()
-    val success: SBBNotificationBoxStyle @Composable get() = TODO()
-    val information: SBBNotificationBoxStyle @Composable get() = TODO()
+    val alert: SBBNotificationBoxStyle @Composable get
+    val warning: SBBNotificationBoxStyle @Composable get
+    val success: SBBNotificationBoxStyle @Composable get
+    val information: SBBNotificationBoxStyle @Composable get
 }
 
 internal val LocalSBBNotificationBoxTheme =
@@ -36,27 +36,54 @@ class SBBNotificationBoxTheme() : SBBNotificationBoxTokens by configSBBNotificat
 internal fun configSBBNotificationBoxTokens(): SBBNotificationBoxTokens =
     object : SBBNotificationBoxTokens {
         override val alert: SBBNotificationBoxStyle
-            @Composable get() = SBBNotificationBoxStyle(
-                icon = SBBIcons.Small.CircleCrossSmall,
-                iconColor = MaterialTheme.colorScheme.primary,
-                backgroundColor = MaterialTheme.colorScheme.primary,
-            )
+            @Composable get() {
+                val alertColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.functionalColors.errorDark else SBBTheme.functionalColors.error
+                val backgroundColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.colors.black else SBBTheme.colors.white
+                return SBBNotificationBoxStyle(
+                    icon = SBBIcons.Small.CircleCrossSmall,
+                    iconColor = alertColor,
+                    backgroundColor = backgroundColor.copy(alpha = 0.95f),
+                    borderColor = alertColor,
+                )
+            }
         override val warning: SBBNotificationBoxStyle
-            @Composable get() = SBBNotificationBoxStyle(
-                icon = SBBIcons.Small.CircleExclamationPointSmall,
-                iconColor = if (SBBTheme.isDarkMode) PrimitiveColors.peach else PrimitiveColors.black,
-                backgroundColor = PrimitiveColors.peach,
-            )
+            @Composable get() {
+                val warningColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.functionalColors.warning else SBBTheme.functionalColors.warningDark
+                val backgroundColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.colors.black else SBBTheme.colors.white
+                return SBBNotificationBoxStyle(
+                    icon = SBBIcons.Small.CircleExclamationPointSmall,
+                    iconColor = if (SBBTheme.isDarkMode) warningColor else SBBTheme.colors.black,
+                    backgroundColor = backgroundColor.copy(alpha = 0.95f),
+                    borderColor = warningColor,
+                )
+            }
         override val success: SBBNotificationBoxStyle
-            @Composable get() = SBBNotificationBoxStyle(
-                icon = SBBIcons.Small.CircleTickSmall,
-                iconColor = PrimitiveColors.green,
-                backgroundColor = PrimitiveColors.green,
-            )
+            @Composable get() {
+                val successColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.functionalColors.success else SBBTheme.functionalColors.successDark
+                val backgroundColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.colors.black else SBBTheme.colors.white
+                return SBBNotificationBoxStyle(
+                    icon = SBBIcons.Small.CircleTickSmall,
+                    iconColor = successColor,
+                    backgroundColor = backgroundColor.copy(alpha = 0.95f),
+                    borderColor = successColor,
+                )
+            }
         override val information: SBBNotificationBoxStyle
-            @Composable get() = SBBNotificationBoxStyle(
-                icon = SBBIcons.Small.CircleInformationSmall,
-                iconColor = if (SBBTheme.isDarkMode) PrimitiveColors.white else PrimitiveColors.black,
-                backgroundColor = PrimitiveColors.smoke,
-            )
+            @Composable get() {
+                val informationColor = SBBTheme.colors.smoke
+                val backgroundColor =
+                    if (SBBTheme.isDarkMode) SBBTheme.colors.black else SBBTheme.colors.white
+                return SBBNotificationBoxStyle(
+                    icon = SBBIcons.Small.CircleInformationSmall,
+                    iconColor = if (SBBTheme.isDarkMode) SBBTheme.colors.white else SBBTheme.colors.black,
+                    backgroundColor = backgroundColor.copy(alpha = 0.95f),
+                    borderColor = informationColor,
+                )
+            }
     }

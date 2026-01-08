@@ -7,10 +7,18 @@ All notable changes to this project will be documented in this file. See [standa
 TBD
 
 # 0.1.10
+
+### Features
 * **SBBHeaderBox:** reduced margin to fit design specs
 * **SBBTextInput:** renamed from SBBTextField
 * **SBBTextInput:** refactored API and component
 * **SBBTextarea:** added component
+* **SBBTheme:** added dark variants of functional and additional colors
+* **SBBNotificationBox:** added onClick, maxLines and hasIcon. Renamed OnCloseCallback to OnClose.
+* **SBBNotificationBox:** improved colors, spacings to fit design spec
+
+### Bugfix
+* **SBBTheme:** add correct color for background and onBackground
 
 # 0.1.9
 
