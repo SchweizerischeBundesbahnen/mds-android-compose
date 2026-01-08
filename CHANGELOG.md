@@ -11,6 +11,8 @@ TBD
 * **SBBTextInput:** renamed from SBBTextField
 * **SBBTextInput:** refactored API and component
 * **SBBTextarea:** added component
+* **SBBModalView:** renamed to SBBBottomSheet
+* **SBBBottomSheet:** finished component, added isClosable and full-screen mode
 
 # 0.1.9
 

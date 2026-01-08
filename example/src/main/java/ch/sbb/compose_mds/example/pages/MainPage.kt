@@ -63,8 +63,8 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("loading-indicator") })
             ComponentListItem(title = "Message", onClick = { navController.navigate("message") })
             ComponentListItem(
-                title = "Modal View",
-                onClick = { navController.navigate("modal-view") })
+                title = "Bottom-Sheet",
+                onClick = { navController.navigate("bottom-sheet") })
             ComponentListItem(
                 title = "NotificationBox",
                 onClick = { navController.navigate("notification-box") })
