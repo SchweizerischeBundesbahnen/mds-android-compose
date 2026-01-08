@@ -150,11 +150,11 @@ fun SBBTextInput(
                                     else -> InputPhase.UNFOCUSED_NOT_EMPTY
                                 }
 
-                            CompositionLocalProvider(LocalContentColor provides resolvedColors.labelColor) {
-                                ProvideTextStyle(SBBTheme.sbbTypography.XXSmallLight) {
-                                    Text(if (inputState != InputPhase.UNFOCUSED_EMPTY && label != null) label else "")
-                                }
-                            }
+                            Text(
+                                if (inputState != InputPhase.UNFOCUSED_EMPTY && label != null) label else "",
+                                style = SBBTheme.sbbTypography.XXSmallLight,
+                                color = resolvedColors.labelColor
+                            )
 
                             Row(
                                 modifier = Modifier.padding(top = 2.dp, bottom = 4.dp),
@@ -162,18 +162,18 @@ fun SBBTextInput(
                             ) {
                                 Box(modifier = Modifier.weight(1f)) {
                                     if (value.isEmpty() && placeholder != null && inputState == InputPhase.FOCUSED_EMPTY) {
-                                        CompositionLocalProvider(LocalContentColor provides resolvedColors.placeholderColor) {
-                                            ProvideTextStyle(textStyle) {
-                                                Text(placeholder)
-                                            }
-                                        }
+                                        Text(
+                                            placeholder,
+                                            style = textStyle,
+                                            color = resolvedColors.placeholderColor
+                                        )
                                     }
                                     if (value.isEmpty() && label != null && inputState == InputPhase.UNFOCUSED_EMPTY) {
-                                        CompositionLocalProvider(LocalContentColor provides resolvedColors.placeholderColor) {
-                                            ProvideTextStyle(textStyle) {
-                                                Text(label)
-                                            }
-                                        }
+                                        Text(
+                                            label,
+                                            style = textStyle,
+                                            color = resolvedColors.placeholderColor
+                                        )
                                     }
                                     innerTextField()
                                 }

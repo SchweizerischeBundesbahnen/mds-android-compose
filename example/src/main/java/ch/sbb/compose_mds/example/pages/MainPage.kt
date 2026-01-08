@@ -63,8 +63,8 @@ fun MainPage(navController: NavController) {
                 onClick = { navController.navigate("loading-indicator") })
             ComponentListItem(title = "Message", onClick = { navController.navigate("message") })
             ComponentListItem(
-                title = "Modal View",
-                onClick = { navController.navigate("modal-view") })
+                title = "Bottom-Sheet",
+                onClick = { navController.navigate("bottom-sheet") })
             ComponentListItem(
                 title = "NotificationBox",
                 onClick = { navController.navigate("notification-box") })
@@ -78,6 +78,7 @@ fun MainPage(navController: NavController) {
             ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
             ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
             ComponentListItem(title = "TabBar", onClick = { navController.navigate("tab-bar") })
+            ComponentListItem(title = "Dropdown", onClick = { navController.navigate("dropdown") })
             ComponentListItem(title = "Textarea", onClick = { navController.navigate("textarea") })
             ComponentListItem(
                 title = "TextField",

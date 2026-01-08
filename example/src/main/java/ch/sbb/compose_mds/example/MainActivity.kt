@@ -30,13 +30,14 @@ import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.ContainerPage
+import ch.sbb.compose_mds.example.pages.DropdownPage
 import ch.sbb.compose_mds.example.pages.HeaderBoxPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
 import ch.sbb.compose_mds.example.pages.IconPage
 import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
 import ch.sbb.compose_mds.example.pages.MainPage
 import ch.sbb.compose_mds.example.pages.MessagePage
-import ch.sbb.compose_mds.example.pages.ModalViewPage
+import ch.sbb.compose_mds.example.pages.BottomSheetPage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
 import ch.sbb.compose_mds.example.pages.RadioButtonPage
 import ch.sbb.compose_mds.example.pages.SegmentedButtonPage
@@ -87,9 +88,10 @@ class MainActivity : ComponentActivity() {
                             composable("switch") { SwitchPage() }
                             composable("header") { HeaderPage() }
                             composable("header-box") { HeaderBoxPage() }
-                            composable("modal-view") { ModalViewPage() }
+                            composable("bottom-sheet") { BottomSheetPage() }
                             composable("text-input") { TextInputPage() }
                             composable("textarea") { TextareaPage() }
+                            composable("dropdown") { DropdownPage() }
                             composable("segmented-button") { SegmentedButtonPage() }
                             composable("status") { StatusPage() }
                             composable("slider") { SliderPage() }

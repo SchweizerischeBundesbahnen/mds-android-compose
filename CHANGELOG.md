@@ -13,6 +13,10 @@ TBD
 * **SBBTextInput:** renamed from SBBTextField
 * **SBBTextInput:** refactored API and component
 * **SBBTextarea:** added component
+* **SBBModalView:** renamed to SBBBottomSheet
+* **SBBBottomSheet:** finished component, added isClosable and full-screen mode
+* **SBBDropdown:** added component
+* **SBBListItem:** added textStyle property and made trailingIcon optional
 * **SBBTheme:** added dark variants of functional and additional colors
 * **SBBNotificationBox:** added onClick, maxLines and hasIcon. Renamed OnCloseCallback to OnClose.
 * **SBBNotificationBox:** improved colors, spacings to fit design spec
