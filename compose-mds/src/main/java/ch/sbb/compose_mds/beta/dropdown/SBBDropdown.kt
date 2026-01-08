@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListItem
-import ch.sbb.compose_mds.beta.modal.SBBModalView
+import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -196,7 +196,7 @@ internal fun <T> SelectionSheet(
     onClose: () -> Unit,
     onSelected: (T) -> Unit,
 ) {
-    SBBModalView(
+    SBBBottomSheet(
         onDismissRequest = {
             onClose()
         },
