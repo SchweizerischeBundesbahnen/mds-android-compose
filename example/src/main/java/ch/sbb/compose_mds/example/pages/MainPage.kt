@@ -16,8 +16,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.beta.list.SBBListItem
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
@@ -97,8 +97,8 @@ private fun ComponentListItem(
     isLastElement: Boolean = false,
 ) {
     SBBListItem(
-        title = title,
-        trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+        text = title,
+        trailing = SBBIcons.Small.ChevronSmallRightSmall,
         onClick = onClick,
         isLastElement = isLastElement
     )
