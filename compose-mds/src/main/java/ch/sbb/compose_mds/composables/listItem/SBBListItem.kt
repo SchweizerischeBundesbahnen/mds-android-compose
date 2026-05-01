@@ -18,8 +18,6 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
@@ -31,21 +29,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.medium.AirplaneMedium
 import ch.sbb.compose_mds.sbbicons.medium.AlarmClockMedium
-import ch.sbb.compose_mds.sbbicons.medium.AppIconMedium
 import ch.sbb.compose_mds.sbbicons.medium.ArchiveBoxMedium
 import ch.sbb.compose_mds.sbbicons.medium.ArrowRightMedium
-import ch.sbb.compose_mds.theme.SBBSpacing
 
 // States & variants
-enum class SBBListItemState { Default, Pressed, Disabled, Loading, SwipeLeft, SwipeRight }
+enum class SBBListItemState { Default, Pressed, Disabled }
 
 enum class SBBListItemVariant { Listed, Boxed }
 
@@ -63,13 +60,14 @@ fun SBBListItem(
     isLastElement: Boolean = false,
 ) {
     val bgColor =
-        when (state) {
-            SBBListItemState.Default -> LocalSBBListItemTokens.current.colors.background
-            SBBListItemState.Pressed -> LocalSBBListItemTokens.current.colors.pressedBackground
-            SBBListItemState.Disabled -> LocalSBBListItemTokens.current.colors.disabledBackground
-            SBBListItemState.Loading -> LocalSBBListItemTokens.current.colors.loadingBackground
-            SBBListItemState.SwipeLeft -> LocalSBBListItemTokens.current.colors.swipeLeftBackground
-            SBBListItemState.SwipeRight -> LocalSBBListItemTokens.current.colors.swipeRightBackground
+        if (variant == SBBListItemVariant.Listed) {
+            Color.Transparent
+        } else {
+            when (state) {
+                SBBListItemState.Default -> LocalSBBListItemTokens.current.colors.background
+                SBBListItemState.Pressed -> LocalSBBListItemTokens.current.colors.pressedBackground
+                SBBListItemState.Disabled -> LocalSBBListItemTokens.current.colors.disabledBackground
+            }
         }
 
     val contentColor =
@@ -79,7 +77,7 @@ fun SBBListItem(
         }
 
     val shape =
-        if (variant == SBBListItemVariant.Boxed) RoundedCornerShape(12.dp) else LocalSBBListItemTokens.current.layout.shape
+        if (variant == SBBListItemVariant.Boxed) LocalSBBListItemTokens.current.layout.shape else RectangleShape
 
     val paddingH = LocalSBBListItemTokens.current.layout.paddingHorizontal
     val paddingV = LocalSBBListItemTokens.current.layout.paddingVertical
@@ -92,7 +90,7 @@ fun SBBListItem(
     val indication = LocalIndication.current
 
     val clickableModifier =
-        if (onClick != null && state != SBBListItemState.Disabled && state != SBBListItemState.Loading) {
+        if (onClick != null && state != SBBListItemState.Disabled) {
             modifier
                 .clip(shape)
                 .background(animatedBg)
@@ -105,9 +103,7 @@ fun SBBListItem(
                     role = Role.Button,
                 )
         } else {
-            modifier
-                .clip(shape)
-                .background(animatedBg)
+            modifier.clip(shape).background(animatedBg)
         }
 
     Column {
@@ -138,14 +134,12 @@ fun SBBListItem(
                     Text(
                         text,
                         style = LocalSBBListItemTokens.current.typography.title,
-                        color = LocalContentColor.current,
                     )
                     if (subtext != null) {
                         Spacer(Modifier.height(gapTitleSub))
                         Text(
                             subtext,
                             style = LocalSBBListItemTokens.current.typography.subtext,
-                            color = LocalContentColor.current.copy(alpha = 0.8f),
                         )
                     }
                 }
@@ -163,19 +157,10 @@ fun SBBListItem(
                         )
                     }
                 }
-
-                if (state == SBBListItemState.Loading) {
-                    Spacer(Modifier.width(SBBSpacing.XSmall))
-                    CircularProgressIndicator(
-                        strokeWidth = 2.dp,
-                        modifier = Modifier.size(16.dp),
-                        color = contentColor,
-                    )
-                }
             }
         }
-        if (!isLastElement && variant == SBBListItemVariant.Listed) HorizontalDivider()
     }
+    if (!isLastElement && variant == SBBListItemVariant.Listed) HorizontalDivider()
 }
 
 @Preview(showBackground = true, name = "ListItem - Default")
@@ -211,19 +196,6 @@ fun PreviewSBBListItem_Disabled() {
             text = "Disabled item",
             state = SBBListItemState.Disabled,
             leading = SBBIcons.Medium.ArchiveBoxMedium,
-            isLastElement = true,
-        )
-    }
-}
-
-@Preview(showBackground = true, name = "ListItem - Loading")
-@Composable
-fun PreviewSBBListItem_Loading() {
-    SBBTheme {
-        SBBListItem(
-            text = "Loading item",
-            state = SBBListItemState.Loading,
-            leading = SBBIcons.Medium.AppIconMedium,
             isLastElement = true,
         )
     }

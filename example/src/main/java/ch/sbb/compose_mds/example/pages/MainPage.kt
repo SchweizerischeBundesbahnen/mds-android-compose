@@ -27,12 +27,13 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 @Composable
 fun MainPage(navController: NavController) {
     Column(
-        modifier = Modifier
-            .padding(horizontal = SBBSpacing.Small)
-            .fillMaxSize()
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
+        modifier =
+            Modifier
+                .padding(horizontal = SBBSpacing.Small)
+                .fillMaxSize()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ),
     ) {
         SBBListHeader(text = "Basics")
         SBBContentBox(contentPadding = PaddingValues(0.dp)) {
@@ -53,27 +54,34 @@ fun MainPage(navController: NavController) {
             ComponentListItem(title = "Checkbox", onClick = { navController.navigate("checkbox") })
             ComponentListItem(
                 title = "Container",
-                onClick = { navController.navigate("container") })
+                onClick = { navController.navigate("container") },
+            )
             ComponentListItem(title = "Header", onClick = { navController.navigate("header") })
             ComponentListItem(
                 title = "HeaderBox",
-                onClick = { navController.navigate("header-box") })
+                onClick = { navController.navigate("header-box") },
+            )
             ComponentListItem(
                 title = "LoadingIndicator",
-                onClick = { navController.navigate("loading-indicator") })
+                onClick = { navController.navigate("loading-indicator") },
+            )
             ComponentListItem(title = "Message", onClick = { navController.navigate("message") })
             ComponentListItem(
                 title = "Bottom-Sheet",
-                onClick = { navController.navigate("bottom-sheet") })
+                onClick = { navController.navigate("bottom-sheet") },
+            )
             ComponentListItem(
                 title = "NotificationBox",
-                onClick = { navController.navigate("notification-box") })
+                onClick = { navController.navigate("notification-box") },
+            )
             ComponentListItem(
                 title = "RadioButton",
-                onClick = { navController.navigate("radio-button") })
+                onClick = { navController.navigate("radio-button") },
+            )
             ComponentListItem(
                 title = "SegmentedButton",
-                onClick = { navController.navigate("segmented-button") })
+                onClick = { navController.navigate("segmented-button") },
+            )
             ComponentListItem(title = "Slider", onClick = { navController.navigate("slider") })
             ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
             ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
@@ -83,6 +91,10 @@ fun MainPage(navController: NavController) {
             ComponentListItem(
                 title = "TextField",
                 onClick = { navController.navigate("text-field") },
+            )
+            ComponentListItem(
+                title = "ListItem",
+                onClick = { navController.navigate("list-item") },
                 isLastElement = true,
             )
         }
@@ -100,7 +112,7 @@ private fun ComponentListItem(
         text = title,
         trailing = SBBIcons.Small.ChevronSmallRightSmall,
         onClick = onClick,
-        isLastElement = isLastElement
+        isLastElement = isLastElement,
     )
 }
 

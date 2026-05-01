@@ -51,7 +51,7 @@ object SBBTheme {
     val typography: Typography
         @ReadOnlyComposable
         @Composable
-        get() = LocalSBBTypography.current.materialTypography //LocalSBBTypography.current
+        get() = LocalSBBTypography.current.materialTypography // LocalSBBTypography.current
 
     val materialTypography: Typography
         @ReadOnlyComposable
@@ -92,12 +92,15 @@ fun SBBTheme(
         LocalSBBIsDarkMode provides darkTheme,
         LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
         LocalSBBNotificationBoxTheme provides configSBBNotificationBoxTokens(),
-        LocalSBBListItemTokens provides defaultSBBListItemTokens()
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,
             typography = SBBTheme.materialTypography,
-            content = { if (includeSurface) Surface { content() } else content() },
+            content = {
+                CompositionLocalProvider(
+                    LocalSBBListItemTokens provides defaultSBBListItemTokens(),
+                ) { if (includeSurface) Surface { content() } else content() }
+            },
         )
     }
 }

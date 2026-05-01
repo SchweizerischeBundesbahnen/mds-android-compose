@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.composables.listItem
 
-import androidx.compose.foundation.isSystemInDarkTheme
+import SBBTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -22,9 +22,6 @@ data class SBBListItemColorTokens(
     val disabledBackground: Color,
     val disabledContent: Color,
     val pressedBackground: Color,
-    val loadingBackground: Color,
-    val swipeLeftBackground: Color,
-    val swipeRightBackground: Color,
 )
 
 @Immutable
@@ -53,37 +50,27 @@ data class SBBListItemTokens(
 
 @Composable
 fun defaultSBBListItemTokens(): SBBListItemTokens {
-    // Prefer PrimitiveColors so tokens are consistent with the design system
-    // primitive palette. We still respect dark vs light mode using
-    // isSystemInDarkTheme(). Consumers can override tokens via
-    // ProvideSBBListItemTokens if needed.
-    val dark = isSystemInDarkTheme()
+    val dark = SBBTheme.isDarkMode
     val typography = MaterialTheme.typography
 
-    val background = if (dark) PrimitiveColors.midnight else PrimitiveColors.white
-    val content = if (dark) PrimitiveColors.white else PrimitiveColors.black
-    val disabledBackground = if (dark) PrimitiveColors.anthracite else PrimitiveColors.milk
+    val background = MaterialTheme.colorScheme.surfaceVariant
+    val content = MaterialTheme.colorScheme.onSurfaceVariant
     val disabledContent = if (dark) PrimitiveColors.graphite else PrimitiveColors.granite
     val pressedBackground = if (dark) PrimitiveColors.iron else PrimitiveColors.platinum
-    val loadingBackground = background
-    val swipeLeft = if (dark) PrimitiveColors.red150 else PrimitiveColors.red
-    val swipeRight = if (dark) PrimitiveColors.turquoiseDark else PrimitiveColors.turquoise
+    val subtextColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
 
     return SBBListItemTokens(
         colors =
             SBBListItemColorTokens(
                 background = background,
                 content = content,
-                disabledBackground = disabledBackground,
+                disabledBackground = background,
                 disabledContent = disabledContent,
                 pressedBackground = pressedBackground,
-                loadingBackground = loadingBackground,
-                swipeLeftBackground = swipeLeft,
-                swipeRightBackground = swipeRight,
             ),
         layout =
             SBBListItemLayoutTokens(
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(16.dp),
                 paddingHorizontal = SBBSpacing.Medium,
                 paddingVertical = SBBSpacing.Small,
                 minHeight = 48.dp,
@@ -94,20 +81,11 @@ fun defaultSBBListItemTokens(): SBBListItemTokens {
         typography =
             SBBListItemTypographyTokens(
                 title = typography.bodyMedium,
-                subtext = typography.bodySmall,
+                subtext = typography.bodySmall.copy(color = subtextColor),
             ),
     )
 }
 
-// CompositionLocal
-// The static composition local must not call @Composable functions during its
-// initialization. `defaultSBBListItemTokens()` is a @Composable that reads
-// `MaterialTheme`, so calling it here would cause a compiler/runtime error
-// "Composable invocations can only happen from the context of a @Composable
-// function". To avoid that we provide a simple non-composable fallback tokens
-// instance that can be safely used as the static default. When `ProvideSBBListItemTokens`
-// is used the composable default (which reads MaterialTheme) will be used as the
-// base instead of this static fallback.
 private val StaticDefaultSBBListItemTokens =
     SBBListItemTokens(
         colors =
@@ -117,13 +95,10 @@ private val StaticDefaultSBBListItemTokens =
                 disabledBackground = PrimitiveColors.milk,
                 disabledContent = PrimitiveColors.black.copy(alpha = 0.6f),
                 pressedBackground = PrimitiveColors.platinum,
-                loadingBackground = PrimitiveColors.white,
-                swipeLeftBackground = PrimitiveColors.red,
-                swipeRightBackground = PrimitiveColors.turquoise,
             ),
         layout =
             SBBListItemLayoutTokens(
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(16.dp),
                 paddingHorizontal = SBBSpacing.Medium,
                 paddingVertical = SBBSpacing.Small,
                 minHeight = 48.dp,
