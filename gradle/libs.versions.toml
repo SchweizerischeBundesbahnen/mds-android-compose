@@ -19,6 +19,8 @@ mavenPublish = "0.34.0"
 robolectric = "4.15.1"
 roborazzi = "1.55.0"
 foundation = "1.9.4"
+ktlint = "14.2.0"
+ktlint-composable = "0.5.7"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,6 +48,8 @@ robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "
 roborazzi-previewScannerSupport = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose-preview-scanner-support", version.ref = "roborazzi" }
 composablePreviewScanner = { group = "io.github.sergio-sastre.ComposablePreviewScanner", name = "android", version = "0.7.0"}
 androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+ktlint-composable = { group = "io.nlopez.compose.rules", name = "ktlint", version.ref = "ktlint-composable" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -54,4 +58,4 @@ jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "composePlugin"
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
-
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }

@@ -68,12 +68,13 @@ class SBBCheckboxTests {
                     label = "MyCheckbox",
                     checked = checked,
                     onCheckedChange = { checked = it },
-                    triStateEnabled = true
+                    triStateEnabled = true,
                 )
             }
         }
 
-        composeTestRule.onNodeWithText("MyCheckbox")
+        composeTestRule
+            .onNodeWithText("MyCheckbox")
             .assertIsIndeterminate()
             .performClick()
             .assertIsOff()
@@ -84,10 +85,13 @@ class SBBCheckboxTests {
     }
 }
 
-fun SemanticsNodeInteraction.assertIsIndeterminate(): SemanticsNodeInteraction = assert(
-    isIndeterminate()
-)
+fun SemanticsNodeInteraction.assertIsIndeterminate(): SemanticsNodeInteraction =
+    assert(
+        isIndeterminate(),
+    )
 
-fun isIndeterminate(): SemanticsMatcher = SemanticsMatcher.expectValue(
-    SemanticsProperties.ToggleableState, ToggleableState.Indeterminate
-)
+fun isIndeterminate(): SemanticsMatcher =
+    SemanticsMatcher.expectValue(
+        SemanticsProperties.ToggleableState,
+        ToggleableState.Indeterminate,
+    )

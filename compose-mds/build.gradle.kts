@@ -6,6 +6,34 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
+    alias(libs.plugins.ktlint)
+}
+
+// ktlint configuration (modern plugin DSL). Re-add this block to enable
+// Gradle tasks `ktlintCheck` and `ktlintFormat` for this module. The plugin
+// is applied via the version catalog alias above (`libs.plugins.ktlint`).
+ktlint {
+    // enable Android-specific rule set
+    android.set(true)
+
+    // print results to console and be verbose
+    verbose.set(true)
+    outputToConsole.set(true)
+
+    // fail the build on violations (set to true to be permissive locally)
+    ignoreFailures.set(false)
+
+    // reporters (optional)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+    }
+
+    // exclude generated code and icon assets from linting
+    filter {
+        exclude("**/generated/**")
+        exclude("**/sbbicons/**")
+    }
 }
 
 android {
@@ -73,4 +101,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.android)
     androidTestImplementation(libs.androidx.ui.test.junit4.android)
     debugImplementation(libs.ui.tooling)
+    ktlintRuleset(libs.ktlint.composable)
 }

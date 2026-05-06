@@ -9,6 +9,8 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
+import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemTokens
+import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemTokens
 import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxTheme
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
 import ch.sbb.compose_mds.composables.notificationBox.configSBBNotificationBoxTokens
@@ -49,7 +51,7 @@ object SBBTheme {
     val typography: Typography
         @ReadOnlyComposable
         @Composable
-        get() = LocalSBBTypography.current.materialTypography //LocalSBBTypography.current
+        get() = LocalSBBTypography.current.materialTypography // LocalSBBTypography.current
 
     val materialTypography: Typography
         @ReadOnlyComposable
@@ -89,12 +91,16 @@ fun SBBTheme(
         LocalThemeContext provides themeContext,
         LocalSBBIsDarkMode provides darkTheme,
         LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
-        LocalSBBNotificationBoxTheme provides configSBBNotificationBoxTokens()
+        LocalSBBNotificationBoxTheme provides configSBBNotificationBoxTokens(),
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,
             typography = SBBTheme.materialTypography,
-            content = { if (includeSurface) Surface { content() } else content() },
+            content = {
+                CompositionLocalProvider(
+                    LocalSBBListItemTokens provides defaultSBBListItemTokens(),
+                ) { if (includeSurface) Surface { content() } else content() }
+            },
         )
     }
 }
