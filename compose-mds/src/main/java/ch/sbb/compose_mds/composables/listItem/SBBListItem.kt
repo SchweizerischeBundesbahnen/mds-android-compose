@@ -1,175 +1,405 @@
 package ch.sbb.compose_mds.composables.listItem
 
-// medium icons imported above
 import SBBTheme
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.foundation.LocalIndication
-import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.indication
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
+import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.medium.AirplaneMedium
 import ch.sbb.compose_mds.sbbicons.medium.AlarmClockMedium
 import ch.sbb.compose_mds.sbbicons.medium.ArchiveBoxMedium
 import ch.sbb.compose_mds.sbbicons.medium.ArrowRightMedium
+import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
+import ch.sbb.compose_mds.sbbicons.small.FaceKingSmall
 
-// States & variants
-enum class SBBListItemState { Default, Pressed, Disabled }
+object SBBListItem {
+    object Boxed {
+        @Composable
+        fun Default(
+            modifier: Modifier = Modifier,
+            leading: ImageVector? = null,
+            title: String,
+            subtitle: String? = null,
+            trailing: ImageVector? = null,
+            onClick: (() -> Unit)? = null,
+            enabled: Boolean = true,
+        ) {
+            Custom(
+                modifier = modifier,
+                leadingIcon = leading,
+                titleText = title,
+                subtitleText = subtitle,
+                trailingIcon = trailing,
+                onClick = onClick,
+                enabled = enabled,
+            )
+        }
 
-enum class SBBListItemVariant { Listed, Boxed }
+        @Composable
+        fun Disabled(
+            modifier: Modifier = Modifier,
+            leading: ImageVector? = null,
+            title: String,
+            subtitle: String? = null,
+            trailing: ImageVector? = null,
+            onClick: (() -> Unit)? = null,
+        ) {
+            Default(
+                modifier = modifier,
+                leading = leading,
+                title = title,
+                subtitle = subtitle,
+                trailing = trailing,
+                onClick = onClick,
+                enabled = false,
+            )
+        }
 
-// The composable
-@Composable
-fun SBBListItem(
-    modifier: Modifier = Modifier,
-    variant: SBBListItemVariant = SBBListItemVariant.Listed,
-    state: SBBListItemState = SBBListItemState.Default,
-    text: String,
-    subtext: String? = null,
-    onClick: (() -> Unit)? = null,
-    leading: ImageVector? = null,
-    trailing: ImageVector? = null,
-    isLastElement: Boolean = false,
-) {
-    val bgColor =
-        if (variant == SBBListItemVariant.Listed) {
-            Color.Transparent
-        } else {
-            when (state) {
-                SBBListItemState.Default -> LocalSBBListItemTokens.current.colors.background
-                SBBListItemState.Pressed -> LocalSBBListItemTokens.current.colors.pressedBackground
-                SBBListItemState.Disabled -> LocalSBBListItemTokens.current.colors.disabledBackground
+        @Composable
+        fun Link(
+            modifier: Modifier = Modifier,
+            title: String,
+            subtitle: String? = null,
+            leading: ImageVector? = null,
+            onClick: (() -> Unit),
+        ) {
+            Custom(
+                modifier = modifier,
+                titleText = title,
+                subtitleText = subtitle,
+                leadingIcon = leading,
+                onClick = onClick,
+                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+            )
+        }
+
+        @Composable
+        fun Custom(
+            modifier: Modifier = Modifier,
+            interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
+            leading: (@Composable (() -> Unit))? = null,
+            leadingIcon: ImageVector? = null,
+            title: (@Composable (() -> Unit))? = null,
+            titleText: String? = null,
+            subtitle: (@Composable (() -> Unit))? = null,
+            subtitleText: String? = null,
+            trailing: (@Composable (() -> Unit))? = null,
+            trailingIcon: ImageVector? = null,
+            onClick: (() -> Unit)? = null,
+            onLongClick: (() -> Unit)? = null,
+            enabled: Boolean = (onClick != null) || (onLongClick != null),
+            padding: PaddingValues = LocalSBBListItemStyle.current.layout.padding,
+            trailingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
+            leadingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
+            subtitleGapHeight: Dp = LocalSBBListItemStyle.current.layout.gapBetweenTitleAndSubtitle,
+            minHeight: Dp = LocalSBBListItemStyle.current.layout.minHeight,
+            titleStyle: TextStyle = LocalSBBListItemStyle.current.typography.title,
+            subtitleStyle: TextStyle = LocalSBBListItemStyle.current.typography.subtitle,
+            contentColor: Color = LocalSBBListItemStyle.current.colors.content,
+            disabledContentColor: Color = LocalSBBListItemStyle.current.colors.disabledContent,
+            titleMaxLines: Int = 1,
+            subtitleMaxLines: Int = 1,
+        ) {
+            SBBContentBox(contentPadding = PaddingValues.Zero) {
+                SBBListItem.Custom(
+                    modifier = modifier,
+                    interactionSource = interactionSource,
+                    leading = leading,
+                    leadingIcon = leadingIcon,
+                    title = title,
+                    titleText = titleText,
+                    subtitle = subtitle,
+                    subtitleText = subtitleText,
+                    trailing = trailing,
+                    trailingIcon = trailingIcon,
+                    onClick = onClick,
+                    onLongClick = onLongClick,
+                    enabled = enabled,
+                    padding = padding,
+                    trailingGapWidth = trailingGapWidth,
+                    leadingGapWidth = leadingGapWidth,
+                    subtitleGapHeight = subtitleGapHeight,
+                    titleStyle = titleStyle,
+                    subtitleStyle = subtitleStyle,
+                    titleMaxLines = titleMaxLines,
+                    contentColor = contentColor,
+                    disabledContentColor = disabledContentColor,
+                    subtitleMaxLines = subtitleMaxLines,
+                    minHeight = minHeight,
+                )
             }
         }
+    }
 
-    val contentColor =
-        when (state) {
-            SBBListItemState.Disabled -> LocalSBBListItemTokens.current.colors.disabledContent
-            else -> LocalSBBListItemTokens.current.colors.content
-        }
+    @Composable
+    fun Default(
+        modifier: Modifier = Modifier,
+        leading: ImageVector? = null,
+        title: String,
+        subtitle: String? = null,
+        trailing: ImageVector? = null,
+        onClick: (() -> Unit)? = null,
+        enabled: Boolean = true,
+    ) {
+        Custom(
+            modifier = modifier,
+            leadingIcon = leading,
+            titleText = title,
+            subtitleText = subtitle,
+            trailingIcon = trailing,
+            onClick = onClick,
+            enabled = enabled,
+        )
+    }
 
-    val shape =
-        if (variant == SBBListItemVariant.Boxed) LocalSBBListItemTokens.current.layout.shape else RectangleShape
+    @Composable
+    fun Disabled(
+        modifier: Modifier = Modifier,
+        leading: ImageVector? = null,
+        title: String,
+        subtitle: String? = null,
+        trailing: ImageVector? = null,
+        onClick: (() -> Unit)? = null,
+    ) {
+        Default(
+            modifier = modifier,
+            leading = leading,
+            title = title,
+            subtitle = subtitle,
+            trailing = trailing,
+            onClick = onClick,
+            enabled = false,
+        )
+    }
 
-    val paddingH = LocalSBBListItemTokens.current.layout.paddingHorizontal
-    val paddingV = LocalSBBListItemTokens.current.layout.paddingVertical
-    val gapIconText = LocalSBBListItemTokens.current.layout.gapBetweenIconAndText
-    val gapTitleSub = LocalSBBListItemTokens.current.layout.gapBetweenTitleAndSubtext
+    @Composable
+    fun Link(
+        modifier: Modifier = Modifier,
+        title: String,
+        subtitle: String? = null,
+        leading: ImageVector? = null,
+        onClick: (() -> Unit),
+    ) {
+        Custom(
+            modifier = modifier,
+            titleText = title,
+            subtitleText = subtitle,
+            leadingIcon = leading,
+            onClick = onClick,
+            trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+        )
+    }
 
-    val animatedBg by animateColorAsState(bgColor)
+    @Composable
+    fun Custom(
+        modifier: Modifier = Modifier,
+        interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
+        leading: (@Composable (() -> Unit))? = null,
+        leadingIcon: ImageVector? = null,
+        title: (@Composable (() -> Unit))? = null,
+        titleText: String? = null,
+        subtitle: (@Composable (() -> Unit))? = null,
+        subtitleText: String? = null,
+        trailing: (@Composable (() -> Unit))? = null,
+        trailingIcon: ImageVector? = null,
+        onClick: (() -> Unit)? = null,
+        onLongClick: (() -> Unit)? = null,
+        enabled: Boolean = (onClick != null) || (onLongClick != null),
+        padding: PaddingValues = LocalSBBListItemStyle.current.layout.padding,
+        trailingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
+        leadingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
+        subtitleGapHeight: Dp = LocalSBBListItemStyle.current.layout.gapBetweenTitleAndSubtitle,
+        minHeight: Dp = LocalSBBListItemStyle.current.layout.minHeight,
+        titleStyle: TextStyle = LocalSBBListItemStyle.current.typography.title,
+        subtitleStyle: TextStyle = LocalSBBListItemStyle.current.typography.subtitle,
+        contentColor: Color = LocalSBBListItemStyle.current.colors.content,
+        disabledContentColor: Color = LocalSBBListItemStyle.current.colors.disabledContent,
+        titleMaxLines: Int = 1,
+        subtitleMaxLines: Int = 1,
+    ) {
+        val localContentColor by animateColorAsState(
+            if (enabled) contentColor else disabledContentColor,
+        )
 
-    val interactionSource = remember { MutableInteractionSource() }
-    val indication = LocalIndication.current
-
-    val clickableModifier =
-        if (onClick != null && state != SBBListItemState.Disabled) {
-            modifier
-                .clip(shape)
-                .background(animatedBg)
-                .indication(interactionSource, indication)
-                .combinedClickable(
-                    interactionSource = interactionSource,
-                    indication = null, // we've already added indication above
-                    onClick = onClick,
-                    enabled = true,
-                    role = Role.Button,
-                )
-        } else {
-            modifier.clip(shape).background(animatedBg)
-        }
-
-    Column {
-        Row(
-            modifier =
-                clickableModifier
-                    .heightIn(min = LocalSBBListItemTokens.current.layout.minHeight)
-                    .padding(horizontal = paddingH, vertical = paddingV),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start,
-        ) {
-            CompositionLocalProvider(LocalContentColor provides contentColor) {
-                if (leading != null) {
-                    Box(
-                        modifier = Modifier.size(LocalSBBListItemTokens.current.layout.iconSize),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Icon(
-                            imageVector = leading,
-                            contentDescription = null,
-                            tint = LocalContentColor.current,
-                        )
-                    }
-                    Spacer(Modifier.width(gapIconText))
+        // Build leading/trailing composables from icon resource fallback
+        val leadingContent: (@Composable (() -> Unit))? =
+            when {
+                leading != null -> {
+                    leading
                 }
 
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text,
-                        style = LocalSBBListItemTokens.current.typography.title,
-                    )
-                    if (subtext != null) {
-                        Spacer(Modifier.height(gapTitleSub))
+                leadingIcon != null -> {
+                    {
+                        Icon(
+                            imageVector = leadingIcon,
+                            contentDescription = null,
+                            tint = localContentColor,
+                        )
+                    }
+                }
+
+                else -> {
+                    null
+                }
+            }
+
+        val trailingContent: (@Composable (() -> Unit))? =
+            when {
+                trailing != null -> {
+                    trailing
+                }
+
+                trailingIcon != null -> {
+                    {
+                        Icon(
+                            imageVector = trailingIcon,
+                            contentDescription = null,
+                            tint = localContentColor,
+                        )
+                    }
+                }
+
+                else -> {
+                    null
+                }
+            }
+
+        // Title composable
+        val titleContent: @Composable () -> Unit =
+            when {
+                title != null -> {
+                    title
+                }
+
+                titleText != null -> {
+                    {
                         Text(
-                            subtext,
-                            style = LocalSBBListItemTokens.current.typography.subtext,
+                            text = titleText,
+                            maxLines = titleMaxLines,
+                            overflow = TextOverflow.Ellipsis,
+                            style = titleStyle,
+                            color = localContentColor,
                         )
                     }
                 }
 
-                if (trailing != null) {
-                    Spacer(Modifier.width(gapIconText))
-                    Box(
-                        modifier = Modifier.size(LocalSBBListItemTokens.current.layout.iconSize),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Icon(
-                            imageVector = trailing,
-                            contentDescription = null,
-                            tint = LocalContentColor.current,
+                else -> {
+                    { /* nothing - caller should ensure one of them provided */ }
+                }
+            }
+
+        val subtitleContent: (@Composable (() -> Unit))? =
+            when {
+                subtitle != null -> {
+                    subtitle
+                }
+
+                subtitleText != null -> {
+                    {
+                        Text(
+                            text = subtitleText,
+                            maxLines = subtitleMaxLines,
+                            style = subtitleStyle,
                         )
                     }
+                }
+
+                else -> {
+                    null
+                }
+            }
+
+        // Main item surface with click handling and min height
+        Column(
+            modifier =
+                modifier
+                    .fillMaxWidth()
+                    .defaultMinSize(minHeight = minHeight)
+                    .then(
+                        if (onClick != null || onLongClick != null) {
+                            Modifier.combinedClickable(
+                                enabled = enabled,
+                                onClick = { onClick?.invoke() },
+                                onLongClick = onLongClick?.let { { it() } },
+                                role = Role.Button,
+                                interactionSource = interactionSource,
+                            )
+                        } else {
+                            Modifier
+                        },
+                    )
+                    .padding(padding),
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.Center,
+        ) {
+            // Content layout: leading | (title + optional subtitle) | trailing
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                if (leadingContent != null) {
+                    leadingContent()
+                    Spacer(modifier = Modifier.width(leadingGapWidth))
+                }
+
+                // Title/subtitle column — Expanded
+                Column(
+                    modifier =
+                        Modifier
+                            .weight(1f)
+                            .wrapContentHeight(align = Alignment.CenterVertically),
+                ) {
+                    titleContent()
+                    if (subtitleContent != null) {
+                        Spacer(modifier = Modifier.height(subtitleGapHeight))
+                        subtitleContent()
+                    }
+                }
+
+                if (trailingContent != null) {
+                    Spacer(modifier = Modifier.width(trailingGapWidth))
+                    trailingContent()
                 }
             }
         }
     }
-    if (!isLastElement && variant == SBBListItemVariant.Listed) HorizontalDivider()
 }
 
 @Preview(showBackground = true, name = "ListItem - Default")
 @Composable
 fun PreviewSBBListItem_Default() {
     SBBTheme {
-        SBBListItem(
-            text = "Item title",
-            subtext = "Subtext example",
+        SBBListItem.Boxed.Default(
+            title = "Item title",
+            subtitle = "Subtext example",
             leading = SBBIcons.Medium.AirplaneMedium,
         )
     }
@@ -179,11 +409,9 @@ fun PreviewSBBListItem_Default() {
 @Composable
 fun PreviewSBBListItem_Pressed() {
     SBBTheme {
-        SBBListItem(
-            text = "Pressed item",
-            state = SBBListItemState.Pressed,
+        SBBListItem.Boxed.Default(
+            title = "Pressed item",
             leading = SBBIcons.Medium.AlarmClockMedium,
-            isLastElement = true,
         )
     }
 }
@@ -192,11 +420,10 @@ fun PreviewSBBListItem_Pressed() {
 @Composable
 fun PreviewSBBListItem_Disabled() {
     SBBTheme {
-        SBBListItem(
-            text = "Disabled item",
-            state = SBBListItemState.Disabled,
+        SBBListItem.Boxed.Disabled(
+            title = "Disabled item",
+            subtitle = "Disabled subtext",
             leading = SBBIcons.Medium.ArchiveBoxMedium,
-            isLastElement = true,
         )
     }
 }
@@ -205,10 +432,9 @@ fun PreviewSBBListItem_Disabled() {
 @Composable
 fun PreviewSBBListItem_Boxed() {
     SBBTheme {
-        SBBListItem(
-            variant = SBBListItemVariant.Boxed,
-            text = "Boxed item",
-            subtext = "Boxed subtext",
+        SBBListItem.Boxed.Default(
+            title = "Boxed item",
+            subtitle = "Boxed subtext",
             leading = SBBIcons.Medium.AirplaneMedium,
         )
     }
@@ -218,11 +444,33 @@ fun PreviewSBBListItem_Boxed() {
 @Composable
 fun PreviewSBBListItem_IconRight() {
     SBBTheme {
-        SBBListItem(
-            text = "Icon right",
-            subtext = "Icon right",
+        SBBListItem.Boxed.Default(
+            title = "Icon right",
+            subtitle = "Icon right",
             trailing = SBBIcons.Medium.ArrowRightMedium,
-            isLastElement = true,
+        )
+    }
+}
+
+@Preview(showBackground = true, name = "ListItem - Title")
+@Composable
+fun PreviewSBBListItem_Title() {
+    SBBTheme {
+        SBBListItem.Boxed.Default(
+            title = "Title",
+        )
+    }
+}
+
+@Preview(showBackground = true, name = "ListItem - Link")
+@Composable
+fun PreviewSBBListItem_Link() {
+    SBBTheme {
+        SBBListItem.Boxed.Link(
+            title = "Link",
+            subtitle = "With subtitle and icon",
+            leading = SBBIcons.Small.FaceKingSmall,
+            onClick = {},
         )
     }
 }

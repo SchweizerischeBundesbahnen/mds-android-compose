@@ -3,7 +3,6 @@ package ch.sbb.compose_mds.example.pages
 import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -11,16 +10,12 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 
 @OptIn(ExperimentalSBBComponent::class)
@@ -28,92 +23,72 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 fun MainPage(navController: NavController) {
     Column(
         modifier =
-            Modifier
-                .padding(horizontal = SBBSpacing.Small)
-                .fillMaxSize()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
+            Modifier.padding(horizontal = SBBSpacing.Small).fillMaxSize().verticalScroll(
+                state = rememberScrollState(),
+            ),
     ) {
         SBBListHeader(text = "Basics")
-        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            ComponentListItem(title = "Icon", onClick = { navController.navigate("icon") })
-            ComponentListItem(
+        SBBList.Wrap {
+            SBBListItem.Link(title = "Icon", onClick = { navController.navigate("icon") })
+            SBBListItem.Link(
                 title = "Typography",
                 onClick = { navController.navigate("typography") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "Color",
                 onClick = { navController.navigate("color") },
-                isLastElement = true,
             )
         }
         SBBListHeader(text = "Components")
-        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            ComponentListItem(title = "Button", onClick = { navController.navigate("button") })
-            ComponentListItem(title = "Checkbox", onClick = { navController.navigate("checkbox") })
-            ComponentListItem(
+        SBBList.Wrap {
+            SBBListItem.Link(title = "Button", onClick = { navController.navigate("button") })
+            SBBListItem.Link(title = "Checkbox", onClick = { navController.navigate("checkbox") })
+            SBBListItem.Link(
                 title = "Container",
                 onClick = { navController.navigate("container") },
             )
-            ComponentListItem(title = "Header", onClick = { navController.navigate("header") })
-            ComponentListItem(
+            SBBListItem.Link(title = "Header", onClick = { navController.navigate("header") })
+            SBBListItem.Link(
                 title = "HeaderBox",
                 onClick = { navController.navigate("header-box") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "LoadingIndicator",
                 onClick = { navController.navigate("loading-indicator") },
             )
-            ComponentListItem(title = "Message", onClick = { navController.navigate("message") })
-            ComponentListItem(
+            SBBListItem.Link(title = "Message", onClick = { navController.navigate("message") })
+            SBBListItem.Link(
                 title = "Bottom-Sheet",
                 onClick = { navController.navigate("bottom-sheet") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "NotificationBox",
                 onClick = { navController.navigate("notification-box") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "RadioButton",
                 onClick = { navController.navigate("radio-button") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "SegmentedButton",
                 onClick = { navController.navigate("segmented-button") },
             )
-            ComponentListItem(title = "Slider", onClick = { navController.navigate("slider") })
-            ComponentListItem(title = "Status", onClick = { navController.navigate("status") })
-            ComponentListItem(title = "Switch", onClick = { navController.navigate("switch") })
-            ComponentListItem(title = "TabBar", onClick = { navController.navigate("tab-bar") })
-            ComponentListItem(title = "Dropdown", onClick = { navController.navigate("dropdown") })
-            ComponentListItem(title = "Textarea", onClick = { navController.navigate("textarea") })
-            ComponentListItem(
+            SBBListItem.Link(title = "Slider", onClick = { navController.navigate("slider") })
+            SBBListItem.Link(title = "Status", onClick = { navController.navigate("status") })
+            SBBListItem.Link(title = "Switch", onClick = { navController.navigate("switch") })
+            SBBListItem.Link(title = "TabBar", onClick = { navController.navigate("tab-bar") })
+            SBBListItem.Link(title = "Dropdown", onClick = { navController.navigate("dropdown") })
+            SBBListItem.Link(title = "Textarea", onClick = { navController.navigate("textarea") })
+            SBBListItem.Link(
                 title = "TextField",
                 onClick = { navController.navigate("text-field") },
             )
-            ComponentListItem(
+            SBBListItem.Link(
                 title = "ListItem",
                 onClick = { navController.navigate("list-item") },
-                isLastElement = true,
             )
         }
     }
-}
-
-@OptIn(ExperimentalSBBComponent::class)
-@Composable
-private fun ComponentListItem(
-    title: String,
-    onClick: (() -> Unit)? = null,
-    isLastElement: Boolean = false,
-) {
-    SBBListItem(
-        text = title,
-        trailing = SBBIcons.Small.ChevronSmallRightSmall,
-        onClick = onClick,
-        isLastElement = isLastElement,
-    )
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)

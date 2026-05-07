@@ -18,7 +18,7 @@ mavenPublish = "0.34.0"
 
 robolectric = "4.15.1"
 roborazzi = "1.55.0"
-foundation = "1.9.4"
+foundation = "1.11.1"
 ktlint = "14.2.0"
 ktlint-composable = "0.5.7"
 

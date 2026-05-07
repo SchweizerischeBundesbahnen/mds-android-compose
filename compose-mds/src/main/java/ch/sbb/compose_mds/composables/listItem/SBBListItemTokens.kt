@@ -1,13 +1,14 @@
 package ch.sbb.compose_mds.composables.listItem
 
 import SBBTheme
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -17,28 +18,22 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 // Token data classes
 @Immutable
 data class SBBListItemColorTokens(
-    val background: Color,
     val content: Color,
-    val disabledBackground: Color,
     val disabledContent: Color,
-    val pressedBackground: Color,
 )
 
 @Immutable
 data class SBBListItemLayoutTokens(
-    val shape: Shape,
-    val paddingHorizontal: Dp,
-    val paddingVertical: Dp,
+    val padding: PaddingValues,
     val minHeight: Dp,
     val gapBetweenIconAndText: Dp,
-    val gapBetweenTitleAndSubtext: Dp,
-    val iconSize: Dp,
+    val gapBetweenTitleAndSubtitle: Dp,
 )
 
 @Immutable
 data class SBBListItemTypographyTokens(
     val title: TextStyle,
-    val subtext: TextStyle,
+    val subtitle: TextStyle,
 )
 
 @Immutable
@@ -53,35 +48,27 @@ fun defaultSBBListItemTokens(): SBBListItemTokens {
     val dark = SBBTheme.isDarkMode
     val typography = MaterialTheme.typography
 
-    val background = MaterialTheme.colorScheme.surfaceVariant
     val content = MaterialTheme.colorScheme.onSurfaceVariant
-    val disabledContent = if (dark) PrimitiveColors.graphite else PrimitiveColors.granite
-    val pressedBackground = if (dark) PrimitiveColors.iron else PrimitiveColors.platinum
-    val subtextColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
+    val disabledContent by animateColorAsState(if (dark) PrimitiveColors.graphite else PrimitiveColors.granite)
+    val subtitleColor = disabledContent
 
     return SBBListItemTokens(
         colors =
             SBBListItemColorTokens(
-                background = background,
                 content = content,
-                disabledBackground = background,
                 disabledContent = disabledContent,
-                pressedBackground = pressedBackground,
             ),
         layout =
             SBBListItemLayoutTokens(
-                shape = RoundedCornerShape(16.dp),
-                paddingHorizontal = SBBSpacing.Medium,
-                paddingVertical = SBBSpacing.Small,
-                minHeight = 48.dp,
+                padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
+                minHeight = 44.dp,
                 gapBetweenIconAndText = SBBSpacing.Medium,
-                gapBetweenTitleAndSubtext = SBBSpacing.XXSmall,
-                iconSize = 24.dp,
+                gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
             ),
         typography =
             SBBListItemTypographyTokens(
                 title = typography.bodyMedium,
-                subtext = typography.bodySmall.copy(color = subtextColor),
+                subtitle = typography.bodySmall.copy(color = subtitleColor),
             ),
     )
 }
@@ -90,30 +77,24 @@ private val StaticDefaultSBBListItemTokens =
     SBBListItemTokens(
         colors =
             SBBListItemColorTokens(
-                background = PrimitiveColors.white,
                 content = PrimitiveColors.black,
-                disabledBackground = PrimitiveColors.milk,
                 disabledContent = PrimitiveColors.black.copy(alpha = 0.6f),
-                pressedBackground = PrimitiveColors.platinum,
             ),
         layout =
             SBBListItemLayoutTokens(
-                shape = RoundedCornerShape(16.dp),
-                paddingHorizontal = SBBSpacing.Medium,
-                paddingVertical = SBBSpacing.Small,
-                minHeight = 48.dp,
+                padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
+                minHeight = 44.dp,
                 gapBetweenIconAndText = SBBSpacing.Medium,
-                gapBetweenTitleAndSubtext = SBBSpacing.XXSmall,
-                iconSize = 24.dp,
+                gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
             ),
         typography =
             SBBListItemTypographyTokens(
                 title = TextStyle.Default,
-                subtext = TextStyle.Default,
+                subtitle = TextStyle.Default,
             ),
     )
 
-val LocalSBBListItemTokens = staticCompositionLocalOf { StaticDefaultSBBListItemTokens }
+val LocalSBBListItemStyle = staticCompositionLocalOf { StaticDefaultSBBListItemTokens }
 
 // Merge helpers
 fun SBBListItemColorTokens.merge(other: SBBListItemColorTokens?): SBBListItemColorTokens = other ?: this

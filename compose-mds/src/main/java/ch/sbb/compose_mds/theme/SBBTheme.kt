@@ -9,7 +9,7 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
-import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemTokens
+import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemStyle
 import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemTokens
 import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxTheme
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
@@ -98,7 +98,7 @@ fun SBBTheme(
             typography = SBBTheme.materialTypography,
             content = {
                 CompositionLocalProvider(
-                    LocalSBBListItemTokens provides defaultSBBListItemTokens(),
+                    LocalSBBListItemStyle provides defaultSBBListItemTokens(),
                 ) { if (includeSurface) Surface { content() } else content() }
             },
         )

@@ -68,7 +68,7 @@ fun SBBSwitch(
     checked: Boolean,
     onCheckedChange: ((Boolean) -> Unit)?,
     enabled: Boolean = true,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+    interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
 ) {
     val colors = if (SBBTheme.isDarkMode) darkSwitchColors(enabled) else lightSwitchColors(enabled)
     Box(

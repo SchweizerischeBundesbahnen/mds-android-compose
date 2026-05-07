@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -200,13 +201,13 @@ internal fun <T> SelectionSheet(
         },
         sheetState = rememberModalBottomSheetState(),
         showCloseButton = true,
-        title = title
+        title = title,
     ) {
-        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            items.forEachIndexed { index, item ->
+        SBBList.Wrap {
+            items.forEach { item ->
                 val isSelected = value == item.value
-                SBBListItem(
-                    text = item.label,
+                SBBListItem.Default(
+                    title = item.label,
                     trailing = if (isSelected) SBBIcons.Small.TickSmall else null,
                     onClick = {
                         onClose()
