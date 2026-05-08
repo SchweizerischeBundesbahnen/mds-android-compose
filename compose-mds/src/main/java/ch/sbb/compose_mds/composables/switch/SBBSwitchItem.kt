@@ -13,7 +13,32 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.switch.SBBSwitch
 import ch.sbb.compose_mds.theme.SBBSpacing
 
+/**
+ * Implementation of the SBB switch-item.
+ *
+ * Available are the variants [Default].
+ * they can be used as a List, wrapped in a [SBBList.Wrap] or as standalone [Boxed] versions.
+ *
+ * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/switch/).
+ */
 object SBBSwitchItem {
+    /**
+     * Boxed variant of the switch list item.
+     *
+     * Wraps the item in a content box so it can be used as a standalone grouped element.
+     *
+     * @param modifier Modifier to apply to the outer container.
+     * @param interactionSource Optional interaction source used for the switch and click handling.
+     * @param title Main title text for the item.
+     * @param subtitle Subtitle text displayed below the title.
+     * @param checked Current checked state of the switch.
+     * @param onCheckedChange Optional callback invoked when the switch is toggled. If null,
+     *        the item is rendered as disabled.
+     * @param enabled Whether the item and its controls are enabled. Defaults to true when
+     *        [onCheckedChange] is provided.
+     * @param links Optional slot for additional link items shown below this item (e.g. extra
+     *        actions or child items).
+     */
     @Composable
     fun Boxed(
         modifier: Modifier = Modifier,
@@ -39,6 +64,24 @@ object SBBSwitchItem {
         }
     }
 
+    /**
+     * Default (inline) variant of the switch list item.
+     *
+     * Renders the item suitable for placement in a divided list. The trailing slot is used to
+     * render an [SBBSwitch]. The item becomes clickable and toggles when [onCheckedChange] is
+     * provided — the [onClick] behavior is handled by forwarding a toggle action.
+     *
+     * @param modifier Modifier to apply to the item.
+     * @param interactionSource Optional interaction source shared with the switch.
+     * @param title Main title text.
+     * @param subtitle Subtitle text shown below the title.
+     * @param checked Current checked state shown by the switch.
+     * @param onCheckedChange Optional callback invoked when the switch is toggled; also used
+     *        to provide the item click behavior.
+     * @param enabled Whether the control is enabled. Defaults to true when [onCheckedChange]
+     *        is provided.
+     * @param links Optional composable slot to render link items beneath this item.
+     */
     @Composable
     fun Default(
         modifier: Modifier = Modifier,

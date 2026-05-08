@@ -30,6 +30,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBListItem.Custom
+import ch.sbb.compose_mds.composables.listItem.SBBListItem.Default
+import ch.sbb.compose_mds.composables.listItem.SBBListItem.Disabled
+import ch.sbb.compose_mds.composables.listItem.SBBListItem.Link
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -40,8 +44,27 @@ import ch.sbb.compose_mds.sbbicons.medium.ArrowRightMedium
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
 import ch.sbb.compose_mds.sbbicons.small.FaceKingSmall
 
+/**
+ * Implementation of the SBB list-item.
+ *
+ * Available are the variants [Default], [Disabled], [Link] and [Custom].
+ * they can be used as a List, wrapped in a [SBBList.Wrap] or as standalone [Boxed] versions.
+ *
+ * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/list-item/).
+ */
 object SBBListItem {
     object Boxed {
+        /**
+         * Default boxed list item.
+         *
+         * @param modifier Modifier to apply to the item container.
+         * @param leading Optional leading icon vector.
+         * @param title Main title text shown for the item.
+         * @param subtitle Optional subtitle text shown below the title.
+         * @param trailing Optional trailing icon vector.
+         * @param onClick Optional click callback - if provided the item is clickable.
+         * @param enabled Whether the item is enabled (affects visual states).
+         */
         @Composable
         fun Default(
             modifier: Modifier = Modifier,
@@ -63,6 +86,15 @@ object SBBListItem {
             )
         }
 
+        /**
+         * Disabled variant of the boxed list item.
+         *
+         * @param modifier Modifier to apply to the item container.
+         * @param leading Optional leading icon vector.
+         * @param title Main title text shown for the item.
+         * @param subtitle Optional subtitle text shown below the title.
+         * @param trailing Optional trailing icon vector.
+         */
         @Composable
         fun Disabled(
             modifier: Modifier = Modifier,
@@ -70,7 +102,6 @@ object SBBListItem {
             title: String,
             subtitle: String? = null,
             trailing: ImageVector? = null,
-            onClick: (() -> Unit)? = null,
         ) {
             Default(
                 modifier = modifier,
@@ -78,11 +109,19 @@ object SBBListItem {
                 title = title,
                 subtitle = subtitle,
                 trailing = trailing,
-                onClick = onClick,
                 enabled = false,
             )
         }
 
+        /**
+         * Link variant - shows a trailing chevron by default and requires an onClick handler.
+         *
+         * @param modifier Modifier to apply to the item container.
+         * @param title Main title text.
+         * @param subtitle Optional subtitle text.
+         * @param leading Optional leading icon vector.
+         * @param onClick Click callback for the link.
+         */
         @Composable
         fun Link(
             modifier: Modifier = Modifier,
@@ -91,16 +130,47 @@ object SBBListItem {
             leading: ImageVector? = null,
             onClick: (() -> Unit),
         ) {
-            Custom(
+            Default(
                 modifier = modifier,
-                titleText = title,
-                subtitleText = subtitle,
-                leadingIcon = leading,
+                title = title,
+                subtitle = subtitle,
+                leading = leading,
                 onClick = onClick,
-                trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+                trailing = SBBIcons.Small.ChevronSmallRightSmall,
             )
         }
 
+        /**
+         * Fully custom boxed list item.
+         *
+         * Use this when you need to supply composable content for leading/title/subtitle/trailing
+         * or when you want to tune layout/typography/color tokens for this specific item.
+         *
+         * @param modifier Modifier to apply to the item container.
+         * @param interactionSource Optional interaction source for styling and ripple handling.
+         * @param leading Optional composable for the leading slot.
+         * @param leadingIcon Optional ImageVector fallback for the leading slot.
+         * @param title Optional composable for the title slot.
+         * @param titleText Optional title text fallback.
+         * @param subtitle Optional composable for the subtitle slot.
+         * @param subtitleText Optional subtitle text fallback.
+         * @param trailing Optional composable for the trailing slot.
+         * @param trailingIcon Optional ImageVector fallback for the trailing slot.
+         * @param onClick Optional click callback - providing makes the item clickable.
+         * @param onLongClick Optional long-click callback.
+         * @param enabled Whether the item is enabled (affects visual states and clickability).
+         * @param padding Content padding inside the item.
+         * @param trailingGapWidth Horizontal spacing between text and trailing content.
+         * @param leadingGapWidth Horizontal spacing between leading content and text.
+         * @param subtitleGapHeight Vertical spacing between title and subtitle.
+         * @param minHeight Minimum height of the item.
+         * @param titleStyle TextStyle used for the title.
+         * @param subtitleStyle TextStyle used for the subtitle.
+         * @param contentColor Color used for content when enabled.
+         * @param disabledContentColor Color used for content when disabled.
+         * @param titleMaxLines Maximum number of lines for the title.
+         * @param subtitleMaxLines Maximum number of lines for the subtitle.
+         */
         @Composable
         fun Custom(
             modifier: Modifier = Modifier,
@@ -159,6 +229,19 @@ object SBBListItem {
         }
     }
 
+    /**
+     * Default list item.
+     *
+     * A convenience wrapper that calls [Custom] with text parameters. Use inside lists or standalone.
+     *
+     * @param modifier Modifier to apply to the item container.
+     * @param leading Optional leading icon vector.
+     * @param title Main title text shown for the item.
+     * @param subtitle Optional subtitle text shown below the title.
+     * @param trailing Optional trailing icon vector.
+     * @param onClick Optional click callback - if provided the item is clickable.
+     * @param enabled Whether the item is enabled (affects visual states).
+     */
     @Composable
     fun Default(
         modifier: Modifier = Modifier,
@@ -180,6 +263,17 @@ object SBBListItem {
         )
     }
 
+    /**
+     * Disabled list item variant.
+     *
+     * Same as [Default] but rendered in a disabled state.
+     *
+     * @param modifier Modifier to apply to the item container.
+     * @param leading Optional leading icon vector.
+     * @param title Main title text shown for the item.
+     * @param subtitle Optional subtitle text shown below the title.
+     * @param trailing Optional trailing icon vector.
+     */
     @Composable
     fun Disabled(
         modifier: Modifier = Modifier,
@@ -187,7 +281,6 @@ object SBBListItem {
         title: String,
         subtitle: String? = null,
         trailing: ImageVector? = null,
-        onClick: (() -> Unit)? = null,
     ) {
         Default(
             modifier = modifier,
@@ -195,11 +288,21 @@ object SBBListItem {
             title = title,
             subtitle = subtitle,
             trailing = trailing,
-            onClick = onClick,
             enabled = false,
         )
     }
 
+    /**
+     * Link list item convenience wrapper.
+     *
+     * Displays a trailing chevron and requires an [onClick] handler.
+     *
+     * @param modifier Modifier to apply to the item container.
+     * @param title Main title text.
+     * @param subtitle Optional subtitle text.
+     * @param leading Optional leading icon vector.
+     * @param onClick Click callback for the link.
+     */
     @Composable
     fun Link(
         modifier: Modifier = Modifier,
@@ -208,16 +311,47 @@ object SBBListItem {
         leading: ImageVector? = null,
         onClick: (() -> Unit),
     ) {
-        Custom(
+        Default(
             modifier = modifier,
-            titleText = title,
-            subtitleText = subtitle,
-            leadingIcon = leading,
+            title = title,
+            subtitle = subtitle,
+            leading = leading,
             onClick = onClick,
-            trailingIcon = SBBIcons.Small.ChevronSmallRightSmall,
+            trailing = SBBIcons.Small.ChevronSmallRightSmall,
         )
     }
 
+    /**
+     * Fully custom list item.
+     *
+     * Use when you need to supply custom composables for slots or tune layout/typography/colors
+     * via token parameters.
+     *
+     * @param modifier Modifier to apply to the item container.
+     * @param interactionSource Optional interaction source for styling and ripple handling.
+     * @param leading Optional composable for the leading slot.
+     * @param leadingIcon Optional ImageVector fallback for the leading slot.
+     * @param title Optional composable for the title slot.
+     * @param titleText Optional title text fallback.
+     * @param subtitle Optional composable for the subtitle slot.
+     * @param subtitleText Optional subtitle text fallback.
+     * @param trailing Optional composable for the trailing slot.
+     * @param trailingIcon Optional ImageVector fallback for the trailing slot.
+     * @param onClick Optional click callback - providing makes the item clickable.
+     * @param onLongClick Optional long-click callback.
+     * @param enabled Whether the item is enabled (affects visual states and clickability).
+     * @param padding Content padding inside the item.
+     * @param trailingGapWidth Horizontal spacing between text and trailing content.
+     * @param leadingGapWidth Horizontal spacing between leading content and text.
+     * @param subtitleGapHeight Vertical spacing between title and subtitle.
+     * @param minHeight Minimum height of the item.
+     * @param titleStyle TextStyle used for the title.
+     * @param subtitleStyle TextStyle used for the subtitle.
+     * @param contentColor Color used for content when enabled.
+     * @param disabledContentColor Color used for content when disabled.
+     * @param titleMaxLines Maximum number of lines for the title.
+     * @param subtitleMaxLines Maximum number of lines for the subtitle.
+     */
     @Composable
     fun Custom(
         modifier: Modifier = Modifier,
@@ -370,7 +504,7 @@ object SBBListItem {
                     Spacer(modifier = Modifier.width(leadingGapWidth))
                 }
 
-                // Title/subtitle column — Expanded
+                // Title/subtitle column - Expanded
                 Column(
                     modifier =
                         Modifier

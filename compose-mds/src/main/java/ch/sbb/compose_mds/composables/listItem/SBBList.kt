@@ -8,6 +8,19 @@ import androidx.compose.ui.layout.SubcomposeLayout
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 
 object SBBList {
+    /**
+     * Wraps children in a content box and renders them as a divided column.
+     *
+     * This is the recommended container when you want a list-like grouping with dividers
+     * between direct children. The provided [divider] composable is used between each direct
+     * child of [content].
+     *
+     * @param modifier Modifier applied to the outer layout.
+     * @param divider A composable used to draw the divider between items. Defaults to
+     *        [HorizontalDivider].
+     * @param content Slot for the list children — each direct child becomes an item in the
+     *        divided column.
+     */
     @Composable
     fun Wrap(
         modifier: Modifier = Modifier,
@@ -23,6 +36,18 @@ object SBBList {
         }
     }
 
+    /**
+     * Layout that measures all direct children and inserts a divider between them.
+     *
+     * Implementation notes: this uses [SubcomposeLayout] to first subcompose and measure
+     * all children, then measures one divider per gap and lays out children and dividers
+     * in a vertical column. The resulting layout width is the maximum measured width of all
+     * children and dividers; heights are summed including divider heights.
+     *
+     * @param modifier Modifier applied to the SubcomposeLayout.
+     * @param divider Composable used to create the divider between items.
+     * @param content Slot containing the direct children to be laid out with dividers.
+     */
     @Composable
     fun DividedColumn(
         modifier: Modifier = Modifier,
