@@ -89,13 +89,16 @@ fun SBBBottomSheet(
                     style = SBBTheme.sbbTypography.largeLight,
                 )
                 if (showCloseButton && isClosable) {
-                    SBBTertiaryButton(icon = SBBIcons.Small.CrossSmall) {
-                        scope.launch { sheetState.hide() }.invokeOnCompletion {
-                            if (!sheetState.isVisible) {
-                                onDismissRequest()
+                    SBBTertiaryButton(
+                        icon = SBBIcons.Small.CrossSmall,
+                        onClick = {
+                            scope.launch { sheetState.hide() }.invokeOnCompletion {
+                                if (!sheetState.isVisible) {
+                                    onDismissRequest()
+                                }
                             }
-                        }
-                    }
+                        },
+                    )
                 }
             }
             content()

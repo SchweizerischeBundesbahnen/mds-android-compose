@@ -226,8 +226,8 @@ private fun SBBNotificationBoxInternal(
                     TextBody(text, maxLines)
                     if (interactionIcon != null) {
                         InteractionIcon(
-                            Modifier.align(Alignment.CenterVertically),
-                            interactionIcon,
+                            modifier = Modifier.align(Alignment.CenterVertically),
+                            vector = interactionIcon,
                         )
                     }
                 }
@@ -247,8 +247,8 @@ private fun SBBNotificationBoxInternal(
                         Spacer(Modifier)
                         if (interactionIcon != null) {
                             InteractionIcon(
-                                Modifier.weight(1f),
-                                interactionIcon,
+                                modifier = Modifier.weight(1f),
+                                vector = interactionIcon,
                             )
                         }
                         Spacer(Modifier)

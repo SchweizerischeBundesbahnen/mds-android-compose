@@ -22,25 +22,25 @@ object SBBStatus
 fun SBBStatus.Alert(
     modifier: Modifier = Modifier,
     text: String? = null,
-) = SBBStatus(modifier, SBBStatusType.Alert, text)
+) = SBBStatus(modifier = modifier, type = SBBStatusType.Alert, text = text)
 
 @Composable
 fun SBBStatus.Warning(
     modifier: Modifier = Modifier,
     text: String? = null,
-) = SBBStatus(modifier, SBBStatusType.Warning, text)
+) = SBBStatus(modifier = modifier, type = SBBStatusType.Warning, text = text)
 
 @Composable
 fun SBBStatus.Success(
     modifier: Modifier = Modifier,
     text: String? = null,
-) = SBBStatus(modifier, SBBStatusType.Success, text)
+) = SBBStatus(modifier = modifier, type = SBBStatusType.Success, text = text)
 
 @Composable
 fun SBBStatus.Information(
     modifier: Modifier = Modifier,
     text: String? = null,
-) = SBBStatus(modifier, SBBStatusType.Information, text)
+) = SBBStatus(modifier = modifier, type = SBBStatusType.Information, text = text)
 
 /***
  * Implementation of the SBB Status.

@@ -92,13 +92,18 @@ fun ListItemPage() {
                                 HorizontalDivider(modifier = Modifier.padding(start = SBBSpacing.Medium))
                             },
                         ) {
-                            SBBListItem.Link(title = "Link 1") { }
-                            SBBListItem.Link(title = "Link 2", subtitle = "with subtitle") { }
+                            SBBListItem.Link(title = "Link 1", onClick = {})
+                            SBBListItem.Link(
+                                title = "Link 2",
+                                subtitle = "with subtitle",
+                                onClick = {},
+                            )
                             SBBListItem.Link(
                                 title = "Link 3",
                                 subtitle = "with icon",
                                 leading = SBBIcons.Small.FaceGrinningSmall,
-                            ) { }
+                                onClick = {},
+                            )
                         }
                     }
                 },

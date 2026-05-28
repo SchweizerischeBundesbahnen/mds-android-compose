@@ -22,7 +22,7 @@ internal fun _StatusPreviewAlert() {
 
 @Preview(showBackground = true)
 @Composable
-private fun _StatusPreviewAlertWithoutText() {
+internal fun _StatusPreviewAlertWithoutText() {
     SBBTheme {
         SBBStatus.Alert()
     }
@@ -31,7 +31,7 @@ private fun _StatusPreviewAlertWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun _StatusPreviewWarning() {
+internal fun _StatusPreviewWarning() {
     SBBTheme {
         Surface {
             SBBStatus.Warning(text = "This is a warning!")
@@ -41,7 +41,7 @@ private fun _StatusPreviewWarning() {
 
 @Preview(showBackground = true)
 @Composable
-private fun _StatusPreviewWarningWithoutText() {
+internal fun _StatusPreviewWarningWithoutText() {
     SBBTheme {
         SBBStatus.Warning()
     }
@@ -50,7 +50,7 @@ private fun _StatusPreviewWarningWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun _StatusPreviewSuccess() {
+internal fun _StatusPreviewSuccess() {
     SBBTheme {
         Surface {
             SBBStatus.Success(text = "This is a success!")
@@ -60,7 +60,7 @@ private fun _StatusPreviewSuccess() {
 
 @Preview(showBackground = true)
 @Composable
-private fun _StatusPreviewSuccessWithoutText() {
+internal fun _StatusPreviewSuccessWithoutText() {
     SBBTheme {
         SBBStatus.Success()
     }
@@ -69,7 +69,7 @@ private fun _StatusPreviewSuccessWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun _StatusPreviewInformation() {
+internal fun _StatusPreviewInformation() {
     SBBTheme {
         Surface {
             SBBStatus.Information(text = "This is an information!")
@@ -79,7 +79,7 @@ private fun _StatusPreviewInformation() {
 
 @Preview(showBackground = true)
 @Composable
-private fun _StatusPreviewInformationWithoutText() {
+internal fun _StatusPreviewInformationWithoutText() {
     SBBTheme {
         SBBStatus.Information()
     }
