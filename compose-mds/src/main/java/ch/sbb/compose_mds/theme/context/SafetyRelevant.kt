@@ -31,8 +31,6 @@ object SafetyRelevantThemeContext : ThemeContext {
         get() = contextSafetyRelevantFunctionalColors()
     override val contextName: String
         get() = SafetyRelevantThemeContextPreviewName
-
 }
 
 const val SafetyRelevantThemeContextPreviewName = "Safety Relevant"
-

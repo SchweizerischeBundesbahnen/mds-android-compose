@@ -43,11 +43,11 @@ fun ButtonPage() {
             .verticalScroll(
                 state = rememberScrollState(),
             ),
-        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBContentBox(
             modifier = Modifier.fillMaxWidth(),
-            contentPadding = PaddingValues(SBBSpacing.XSmall)
+            contentPadding = PaddingValues(SBBSpacing.XSmall),
         ) {
             Row(horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
                 Icon(
@@ -71,12 +71,12 @@ private fun SBBPrimaryButtonSection() {
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Primary")
         Column(
             Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             SBBPrimaryButton(
                 modifier = Modifier.fillMaxWidth(),
@@ -109,12 +109,12 @@ private fun SBBSecondaryButtonSection() {
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Secondary")
         Column(
             Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             SBBSecondaryButton(
                 modifier = Modifier.fillMaxWidth(),
@@ -147,14 +147,14 @@ private fun SBBTertiaryButtonSection() {
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Tertiary")
         Column(
-            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButton(
                     icon = SBBIcons.Small.DogSmall,
@@ -178,7 +178,7 @@ private fun SBBTertiaryButtonSection() {
                 }
             }
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButton(
                     icon = SBBIcons.Small.DogSmall,
@@ -202,7 +202,6 @@ private fun SBBTertiaryButtonSection() {
     }
 }
 
-
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTertiarySmallButtonSection() {
@@ -210,14 +209,14 @@ private fun SBBTertiarySmallButtonSection() {
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Tertiary Small")
         Column(
-            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButtonSmall(
                     icon = SBBIcons.Small.DogSmall,
@@ -241,7 +240,7 @@ private fun SBBTertiarySmallButtonSection() {
                 }
             }
             Row(
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButtonSmall(
                     icon = SBBIcons.Small.DogSmall,
@@ -265,7 +264,10 @@ private fun SBBTertiarySmallButtonSection() {
     }
 }
 
-private fun showToast(context: Context, text: String) {
+private fun showToast(
+    context: Context,
+    text: String,
+) {
     Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
 }
 

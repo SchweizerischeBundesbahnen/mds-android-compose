@@ -23,11 +23,11 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @Composable
 fun CheckboxPage() {
     Column(
-        modifier = Modifier
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
-            .defaultPadding(),
+        modifier =
+            Modifier
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ).defaultPadding(),
     ) {
         Text("Checkbox")
         var checkedState: Boolean? by remember { mutableStateOf(false) }

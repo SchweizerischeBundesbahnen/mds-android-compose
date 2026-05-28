@@ -30,10 +30,11 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @Composable
 fun IconPage() {
     Column(
-        modifier = Modifier
-            .defaultPadding()
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
+        modifier =
+            Modifier
+                .defaultPadding()
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
     ) {
         SBBListHeader(text = "Small Icons")
         SBBContentBox {

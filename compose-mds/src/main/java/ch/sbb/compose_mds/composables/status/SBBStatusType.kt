@@ -41,15 +41,17 @@ internal enum class SBBStatusType(
         color = PrimitiveColors.smoke,
         icon = SBBIcons.Small.CircleInformationSmall,
         tint = PrimitiveColors.white,
-    );
+    ),
+    ;
 
     @Composable
-    fun Icon() {
+    fun Icon(modifier: Modifier = Modifier) {
         Icon(
-            modifier = Modifier
-                .background(color = color)
-                .padding(1.dp)
-                .padding(end = 1.dp),
+            modifier =
+                modifier
+                    .background(color = color)
+                    .padding(1.dp)
+                    .padding(end = 1.dp),
             imageVector = icon,
             contentDescription = null,
             tint = tint ?: LocalContentColor.current,

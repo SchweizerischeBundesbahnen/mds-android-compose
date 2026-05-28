@@ -39,10 +39,11 @@ class SBBTabBarController internal constructor(
     internal val waveRadius: Float,
 ) {
     /** Use [selectedItem] to get the currently selected item as a [State] **/
-    val selectedItem = derivedStateOf {
-        val selected by selected
-        items[selected]
-    }
+    val selectedItem =
+        derivedStateOf {
+            val selected by selected
+            items[selected]
+        }
 
     /** selecting an element from other [Composable]. **/
     fun onSelect(value: Int) {
@@ -70,40 +71,42 @@ class SBBTabBarController internal constructor(
 
     internal var textSize = mutableStateOf(IntSize.Zero)
 
-    internal var positions = mutableStateListOf<Rect>().apply {
-        addAll(items.map { Rect.Zero })
-    }
-
-    internal val curves = derivedStateOf {
-        positions.map {
-            TabCurves(
-                it.center.x,
-                waveRadius,
-            )
+    internal var positions =
+        mutableStateListOf<Rect>().apply {
+            addAll(items.map { Rect.Zero })
         }
-    }
+
+    internal val curves =
+        derivedStateOf {
+            positions.map {
+                TabCurves(
+                    it.center.x,
+                    waveRadius,
+                )
+            }
+        }
 
     internal var from = mutableIntStateOf(0)
     internal var to = mutableIntStateOf(0)
     internal var hover = mutableStateOf(false)
 
     @Composable
-    internal fun animationSpec() =
-        tween<Float>(AnimationConstants.DefaultDurationMillis, easing = EaseInOut)
+    internal fun animationSpec() = tween<Float>(AnimationConstants.DefaultDurationMillis, easing = EaseInOut)
 
     internal val animation = Animatable(0f)
-    internal val tabStates = derivedStateOf {
-        val from by from
-        val to by to
-        val hover by hover
-        positions.mapIndexed { i, p ->
-            when (i) {
-                from -> 1 - if (hover) 0f else animation.value
-                to -> animation.value
-                else -> 0f
+    internal val tabStates =
+        derivedStateOf {
+            val from by from
+            val to by to
+            val hover by hover
+            positions.mapIndexed { i, p ->
+                when (i) {
+                    from -> 1 - if (hover) 0f else animation.value
+                    to -> animation.value
+                    else -> 0f
+                }
             }
         }
-    }
 
     internal fun path(size: Size): State<Path> {
         val curves by curves
@@ -112,15 +115,16 @@ class SBBTabBarController internal constructor(
         curves.forEachIndexed { i, p ->
             val leftProgress = if (i == 0) 0.0f else tabStates[i - 1]
             val rightProgress = if (i == positions.size - 1) 0.0f else tabStates[i + 1]
-            val leftMidX = if (curves.size < 2) {
-                0.0f
-            } else {
-                if (i == 0) {
-                    curves[0].midX - (curves[1].midX - curves[0].midX)
+            val leftMidX =
+                if (curves.size < 2) {
+                    0.0f
                 } else {
-                    curves[i - 1].midX
+                    if (i == 0) {
+                        curves[0].midX - (curves[1].midX - curves[0].midX)
+                    } else {
+                        curves[i - 1].midX
+                    }
                 }
-            }
             val rightMidX: Float = if (i == curves.size - 1) 0.0f else curves[i + 1].midX
             p.setProgress(tabStates[i], leftProgress, leftMidX, rightProgress, rightMidX)
         }
@@ -141,21 +145,30 @@ class SBBTabBarController internal constructor(
     internal fun animatedTextPosition(width: Float): State<IntOffset> {
         val selected by selected
         val position = positions[selected].topCenter.round()
-        val padding = with (LocalDensity.current) { SBBSpacing.Medium.roundToPx() }
-        val pos = when (LocalInspectionMode.current) {
-            true -> textSize.value.center.x
-            false -> min(
-                max(position.x - textSize.value.center.x, padding),
-                width.roundToInt() - textSize.value.width - padding,
-            )
-        }
+        val padding = with(LocalDensity.current) { SBBSpacing.Medium.roundToPx() }
+        val pos =
+            when (LocalInspectionMode.current) {
+                true -> {
+                    textSize.value.center.x
+                }
+
+                false -> {
+                    min(
+                        max(position.x - textSize.value.center.x, padding),
+                        width.roundToInt() - textSize.value.width - padding,
+                    )
+                }
+            }
         val offset = IntOffset(pos, 0)
         return animateIntOffsetAsState(
             targetValue = offset,
         )
     }
 
-    internal suspend fun onSelecting(value: Int, spec: TweenSpec<Float>) {
+    internal suspend fun onSelecting(
+        value: Int,
+        spec: TweenSpec<Float>,
+    ) {
         hover.value = false
         from.intValue = selected.intValue
         to.intValue = value
@@ -166,7 +179,10 @@ class SBBTabBarController internal constructor(
         onSelected(value)
     }
 
-    internal suspend fun onPeek(value: Int, spec: TweenSpec<Float>) {
+    internal suspend fun onPeek(
+        value: Int,
+        spec: TweenSpec<Float>,
+    ) {
         hover.value = true
         to.intValue = value
         animation.animateTo(targetValue = .25f, animationSpec = spec)
@@ -186,9 +202,7 @@ class SBBTabBarController internal constructor(
         }
     }
 
-    internal fun warningSemanticsAt(index: Int): String? {
-        return warnings.firstOrNull { it.index == index }?.semantics
-    }
+    internal fun warningSemanticsAt(index: Int): String? = warnings.firstOrNull { it.index == index }?.semantics
 }
 
 /** Use this method to create a [SBBTabBarController].

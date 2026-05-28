@@ -1,13 +1,14 @@
 @file:SuppressLint("ComposableNaming")
+
 package ch.sbb.compose_mds.composables.checkbox
 
 import SBBTheme
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.material3.Surface
 
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)

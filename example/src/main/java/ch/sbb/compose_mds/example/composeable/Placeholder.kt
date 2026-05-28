@@ -9,9 +9,7 @@ import androidx.compose.ui.Modifier
 import ch.sbb.compose_mds.theme.PrimitiveColors
 
 @Composable
-fun Placeholder(
-    modifier: Modifier = Modifier
-) {
+fun Placeholder(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier.background(PrimitiveColors.pink),
         contentAlignment = Alignment.Center,

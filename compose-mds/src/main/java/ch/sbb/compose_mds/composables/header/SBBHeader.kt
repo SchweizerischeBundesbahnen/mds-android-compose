@@ -1,5 +1,6 @@
 package ch.sbb.compose_mds.composables.header
 
+import SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
@@ -38,9 +39,9 @@ object SBBHeader
  */
 @Composable
 fun SBBHeader.Default(
-    modifier: Modifier = Modifier,
     title: String,
     navController: NavController,
+    modifier: Modifier = Modifier,
     navigation: @Composable (() -> Unit)? = null,
     navigationType: NavigationType? = null,
     onNavigationClick: (() -> Unit)? = null,
@@ -48,21 +49,22 @@ fun SBBHeader.Default(
         Icon(
             imageVector = R.drawable.logo_sbb.asImageVector,
             contentDescription = "SBB logo",
-            tint = PrimitiveColors.white
+            tint = PrimitiveColors.white,
         )
     },
 ) {
     SBBHeaderInternal(
-        modifier
-            .background(SBBTheme.colors.primary)
-            .padding(horizontal = 14.dp)
-            .padding(bottom = 30.dp),
-        title,
-        navController,
-        navigation,
-        navigationType,
-        onNavigationClick,
-        actions,
+        title = title,
+        navController = navController,
+        navigationType = navigationType,
+        navigation = navigation,
+        onNavigationClick = onNavigationClick,
+        actions = actions,
+        modifier =
+            modifier
+                .background(SBBTheme.colors.primary)
+                .padding(horizontal = 14.dp)
+                .padding(bottom = 30.dp),
     )
 }
 
@@ -72,9 +74,9 @@ fun SBBHeader.Default(
  */
 @Composable
 fun SBBHeader.Small(
-    modifier: Modifier = Modifier,
     title: String,
     navController: NavController,
+    modifier: Modifier = Modifier,
     navigation: @Composable (() -> Unit)? = null,
     navigationType: NavigationType? = null,
     onNavigationClick: (() -> Unit)? = null,
@@ -82,20 +84,21 @@ fun SBBHeader.Small(
         Icon(
             imageVector = R.drawable.logo_sbb.asImageVector,
             contentDescription = "SBB logo",
-            tint = PrimitiveColors.white
+            tint = PrimitiveColors.white,
         )
     },
 ) {
     SBBHeaderInternal(
-        modifier
-            .background(SBBTheme.colors.primary)
-            .padding(horizontal = 14.dp),
-        title,
-        navController,
-        navigation,
-        navigationType,
-        onNavigationClick,
-        actions,
+        title = title,
+        navController = navController,
+        navigationType = navigationType,
+        navigation = navigation,
+        onNavigationClick = onNavigationClick,
+        actions = actions,
+        modifier =
+            modifier
+                .background(SBBTheme.colors.primary)
+                .padding(horizontal = 14.dp),
     )
 }
 
@@ -116,13 +119,13 @@ fun SBBHeader.Small(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SBBHeaderInternal(
-    modifier: Modifier,
     title: String,
     navController: NavController,
-    navigation: @Composable (() -> Unit)?,
     navigationType: NavigationType?,
+    navigation: @Composable (() -> Unit)?,
     onNavigationClick: (() -> Unit)?,
     actions: @Composable (RowScope.() -> Unit)?,
+    modifier: Modifier = Modifier,
 ) {
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
 
@@ -134,17 +137,18 @@ private fun SBBHeaderInternal(
 
     CenterAlignedTopAppBar(
         modifier = modifier,
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = SBBTheme.colors.primary,
-            titleContentColor = PrimitiveColors.white,
-        ),
+        colors =
+            TopAppBarDefaults.topAppBarColors(
+                containerColor = SBBTheme.colors.primary,
+                titleContentColor = PrimitiveColors.white,
+            ),
         title = {
             Text(
                 text = title,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = PrimitiveColors.white,
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.bodyLarge,
             )
         },
         navigationIcon = {
@@ -153,15 +157,17 @@ private fun SBBHeaderInternal(
             } else if (showBackButton) {
                 val back = { onNavigationClick?.invoke() ?: navController.popBackStack() }
                 when (navigationType) {
-                    NavigationType.Cancel -> TextButton(
-                        contentPadding = PaddingValues(all = 0.dp),
-                        onClick = { back() },
-                    ) {
-                        Text(
-                            text = stringResource(android.R.string.cancel),
-                            color = PrimitiveColors.white,
-                            style = MaterialTheme.typography.bodySmall,
-                        )
+                    NavigationType.Cancel -> {
+                        TextButton(
+                            contentPadding = PaddingValues(all = 0.dp),
+                            onClick = { back() },
+                        ) {
+                            Text(
+                                text = stringResource(android.R.string.cancel),
+                                color = PrimitiveColors.white,
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
                     }
 
                     else -> {
@@ -186,13 +192,11 @@ private fun Preview_SBBHeaderDefault() = _Preview_SBBHeaderDefault()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderDefaultWithNavigationBack() =
-    _Preview_SBBHeaderDefaultWithNavigationBack()
+private fun Preview_SBBHeaderDefaultWithNavigationBack() = _Preview_SBBHeaderDefaultWithNavigationBack()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderDefaultWithNavigationCancel() =
-    _Preview_SBBHeaderDefaultWithNavigationCancel()
+private fun Preview_SBBHeaderDefaultWithNavigationCancel() = _Preview_SBBHeaderDefaultWithNavigationCancel()
 
 @Preview(showBackground = true)
 @Composable
@@ -200,10 +204,8 @@ private fun Preview_SBBHeaderSmall() = _Preview_SBBHeaderSmall()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderSmallWithNavigationBack() =
-    _Preview_SBBHeaderSmallWithNavigationBack()
+private fun Preview_SBBHeaderSmallWithNavigationBack() = _Preview_SBBHeaderSmallWithNavigationBack()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderSmallWithNavigationCancel() =
-    _Preview_SBBHeaderSmallWithNavigationCancel()
+private fun Preview_SBBHeaderSmallWithNavigationCancel() = _Preview_SBBHeaderSmallWithNavigationCancel()

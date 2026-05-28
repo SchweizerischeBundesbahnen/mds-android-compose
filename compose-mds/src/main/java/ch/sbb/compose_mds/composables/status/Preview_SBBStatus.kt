@@ -22,7 +22,7 @@ internal fun _StatusPreviewAlert() {
 
 @Preview(showBackground = true)
 @Composable
-fun _StatusPreviewAlertWithoutText() {
+private fun _StatusPreviewAlertWithoutText() {
     SBBTheme {
         SBBStatus.Alert()
     }
@@ -31,7 +31,7 @@ fun _StatusPreviewAlertWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun _StatusPreviewWarning() {
+private fun _StatusPreviewWarning() {
     SBBTheme {
         Surface {
             SBBStatus.Warning(text = "This is a warning!")
@@ -41,7 +41,7 @@ fun _StatusPreviewWarning() {
 
 @Preview(showBackground = true)
 @Composable
-fun _StatusPreviewWarningWithoutText() {
+private fun _StatusPreviewWarningWithoutText() {
     SBBTheme {
         SBBStatus.Warning()
     }
@@ -50,7 +50,7 @@ fun _StatusPreviewWarningWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun _StatusPreviewSuccess() {
+private fun _StatusPreviewSuccess() {
     SBBTheme {
         Surface {
             SBBStatus.Success(text = "This is a success!")
@@ -60,7 +60,7 @@ fun _StatusPreviewSuccess() {
 
 @Preview(showBackground = true)
 @Composable
-fun _StatusPreviewSuccessWithoutText() {
+private fun _StatusPreviewSuccessWithoutText() {
     SBBTheme {
         SBBStatus.Success()
     }
@@ -69,7 +69,7 @@ fun _StatusPreviewSuccessWithoutText() {
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun _StatusPreviewInformation() {
+private fun _StatusPreviewInformation() {
     SBBTheme {
         Surface {
             SBBStatus.Information(text = "This is an information!")
@@ -79,7 +79,7 @@ fun _StatusPreviewInformation() {
 
 @Preview(showBackground = true)
 @Composable
-fun _StatusPreviewInformationWithoutText() {
+private fun _StatusPreviewInformationWithoutText() {
     SBBTheme {
         SBBStatus.Information()
     }

@@ -41,11 +41,11 @@ object SBBSwitchItem {
      */
     @Composable
     fun Boxed(
-        modifier: Modifier = Modifier,
-        interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         title: String,
         subtitle: String,
         checked: Boolean,
+        modifier: Modifier = Modifier,
+        interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         onCheckedChange: ((Boolean) -> Unit)? = null,
         enabled: Boolean = onCheckedChange != null,
         links: (@Composable () -> Unit)? = null,
@@ -84,11 +84,11 @@ object SBBSwitchItem {
      */
     @Composable
     fun Default(
-        modifier: Modifier = Modifier,
-        interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         title: String,
         subtitle: String,
         checked: Boolean,
+        modifier: Modifier = Modifier,
+        interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         onCheckedChange: ((Boolean) -> Unit)? = null,
         enabled: Boolean = onCheckedChange != null,
         links: (@Composable () -> Unit)? = null,
@@ -116,7 +116,7 @@ object SBBSwitchItem {
 
 @Preview(showBackground = true, name = "Switch - Default")
 @Composable
-fun PreviewSBBSwitchItem_Default() {
+private fun PreviewSBBSwitchItem_Default() {
     SBBTheme {
         SBBSwitchItem.Boxed(
             title = "Default",
@@ -129,7 +129,7 @@ fun PreviewSBBSwitchItem_Default() {
 
 @Preview(showBackground = true, name = "Switch - Links")
 @Composable
-fun PreviewSBBSwitchItem_Links() {
+private fun PreviewSBBSwitchItem_Links() {
     SBBTheme {
         SBBSwitchItem.Boxed(
             title = "Links",

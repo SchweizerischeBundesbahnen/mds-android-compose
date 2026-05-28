@@ -30,7 +30,7 @@ interface SBBNotificationBoxTokens {
 internal val LocalSBBNotificationBoxTheme =
     staticCompositionLocalOf<SBBNotificationBoxTokens> { SBBNotificationBoxTheme() }
 
-class SBBNotificationBoxTheme() : SBBNotificationBoxTokens by configSBBNotificationBoxTokens()
+class SBBNotificationBoxTheme : SBBNotificationBoxTokens by configSBBNotificationBoxTokens()
 
 @Stable
 internal fun configSBBNotificationBoxTokens(): SBBNotificationBoxTokens =

@@ -47,7 +47,6 @@ import ch.sbb.compose_mds.sbbicons.small.TickSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 
-
 private val knobSize = 28.dp
 private val trackWidth = 52.dp
 private val trackHeight = 20.dp
@@ -64,26 +63,27 @@ private val trackHeight = 20.dp
  */
 @Composable
 fun SBBSwitch(
-    modifier: Modifier = Modifier,
     checked: Boolean,
     onCheckedChange: ((Boolean) -> Unit)?,
+    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
 ) {
     val colors = if (SBBTheme.isDarkMode) darkSwitchColors(enabled) else lightSwitchColors(enabled)
     Box(
-        modifier = modifier
-            .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
-            .minimumInteractiveComponentSize()
-            .padding(end = 1.dp)
-            .toggleable(
-                enabled = enabled,
-                value = checked,
-                interactionSource = interactionSource,
-                role = Role.Switch,
-                onValueChange = { onCheckedChange?.invoke(it) },
-                indication = null
-            ),
+        modifier =
+            modifier
+                .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
+                .minimumInteractiveComponentSize()
+                .padding(end = 1.dp)
+                .toggleable(
+                    enabled = enabled,
+                    value = checked,
+                    interactionSource = interactionSource,
+                    role = Role.Switch,
+                    onValueChange = { onCheckedChange?.invoke(it) },
+                    indication = null,
+                ),
         contentAlignment = Alignment.CenterStart,
     ) {
         SwitchTrack(checked, colors)
@@ -97,32 +97,36 @@ private fun SwitchKnob(
     colors: SBBSwitchColors,
 ) {
     val borderColor by animateColorAsState(
-        targetValue = if (checked) colors.checkedKnobBorderColor else colors.knobBorderColor
+        targetValue = if (checked) colors.checkedKnobBorderColor else colors.knobBorderColor,
     )
     val knobOffset by animateIntOffsetAsState(
-        targetValue = IntOffset(
-            x = with(LocalDensity.current) {
-                when (checked) {
-                    true -> trackWidth - knobSize
-                    false -> 0.dp
-                }.roundToPx()
-            },
-            y = 0,
-        ),
+        targetValue =
+            IntOffset(
+                x =
+                    with(LocalDensity.current) {
+                        when (checked) {
+                            true -> trackWidth - knobSize
+                            false -> 0.dp
+                        }.roundToPx()
+                    },
+                y = 0,
+            ),
     )
     Box(
-        modifier = Modifier
-            .offset { knobOffset }
-            .size(knobSize)
-            .dropShadow(
-                shape = RoundedCornerShape(knobSize), shadow = Shadow(
-                    radius = 4.dp,
-                    color = Color.Black.copy(alpha = 0.3f),
-                    offset = DpOffset(0.dp, 1.dp)
-                )
-            )
-            .background(colors.knobBackgroundColor, shape = CircleShape)
-            .border(border = BorderStroke(width = 1.dp, color = borderColor), shape = CircleShape),
+        modifier =
+            Modifier
+                .offset { knobOffset }
+                .size(knobSize)
+                .dropShadow(
+                    shape = RoundedCornerShape(knobSize),
+                    shadow =
+                        Shadow(
+                            radius = 4.dp,
+                            color = Color.Black.copy(alpha = 0.3f),
+                            offset = DpOffset(0.dp, 1.dp),
+                        ),
+                ).background(colors.knobBackgroundColor, shape = CircleShape)
+                .border(border = BorderStroke(width = 1.dp, color = borderColor), shape = CircleShape),
         contentAlignment = Alignment.Center,
     ) {
         AnimatedVisibility(
@@ -133,7 +137,7 @@ private fun SwitchKnob(
             Icon(
                 imageVector = SBBIcons.Small.TickSmall,
                 tint = colors.iconColor,
-                contentDescription = null
+                contentDescription = null,
             )
         }
     }
@@ -145,28 +149,30 @@ private fun SwitchTrack(
     colors: SBBSwitchColors,
 ) {
     val backgroundColor by animateColorAsState(
-        targetValue = if (checked) colors.checkedBackgroundColor else colors.backgroundColor
+        targetValue = if (checked) colors.checkedBackgroundColor else colors.backgroundColor,
     )
 
     Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(trackHeight)
-            .background(color = backgroundColor, shape = CircleShape),
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .height(trackHeight)
+                .background(color = backgroundColor, shape = CircleShape),
     )
 }
 
 @PreviewLightDark
 @Composable
-fun SBBSwitchPreview() {
+private fun SBBSwitchPreview() {
     val darkTheme = isSystemInDarkTheme()
     val firstChecked = remember { mutableStateOf(false) }
     val secondChecked = remember { mutableStateOf(true) }
     SBBTheme {
         Column(
-            modifier = Modifier
-                .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
-                .padding(SBBSpacing.Medium),
+            modifier =
+                Modifier
+                    .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
+                    .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             Row(

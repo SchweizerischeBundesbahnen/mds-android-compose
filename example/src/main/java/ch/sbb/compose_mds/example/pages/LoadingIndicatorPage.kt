@@ -17,7 +17,7 @@ fun LoadingIndicatorPage() {
     Column(
         Modifier
             .fillMaxWidth()
-            .defaultPadding()
+            .defaultPadding(),
     ) {
         SBBListHeader(text = "Small")
         SBBLoadingIndicator.Small()

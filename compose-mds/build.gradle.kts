@@ -69,10 +69,11 @@ android {
             register<MavenPublication>("release") {
                 groupId = "ch.sbb.compose_mds"
                 artifactId = "compose-mds"
-                version = when (val version = project.property("version") as String) {
-                    "unspecified" -> "LOCAL-SNAPSHOT"
-                    else -> version
-                }
+                version =
+                    when (val version = project.property("version") as String) {
+                        "unspecified" -> "LOCAL-SNAPSHOT"
+                        else -> version
+                    }
 
                 afterEvaluate {
                     from(components["release"])

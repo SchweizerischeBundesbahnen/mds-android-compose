@@ -28,11 +28,11 @@ import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
  */
 @Composable
 fun SBBPrimaryButton(
+    label: String,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     isLoading: Boolean = false,
-    label: String,
-    onClick: () -> Unit,
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     val pressed by interactionSource.collectIsPressedAsState()
@@ -58,8 +58,7 @@ fun SBBPrimaryButton(
 }
 
 @Composable
-private fun buttonColors(pressed: Boolean) =
-    if (SBBTheme.isDarkMode) darkModeColors(pressed) else lightModeColors(pressed)
+private fun buttonColors(pressed: Boolean) = if (SBBTheme.isDarkMode) darkModeColors(pressed) else lightModeColors(pressed)
 
 @Composable
 private fun lightModeColors(pressed: Boolean): ButtonColors {

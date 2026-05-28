@@ -15,14 +15,14 @@ private fun Preview_SBBMessage_Error() {
         title = TITLE,
         message = MESSAGE,
         errorCode = "Error-Code: 123-XYZ",
-        onInteraction = {}
+        onInteraction = {},
     )
 }
 
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun Preview_SBBMessage_Loading() {
+private fun Preview_SBBMessage_Loading() {
     SBBMessage.Loading(
         title = TITLE,
         message = MESSAGE,
@@ -32,7 +32,7 @@ fun Preview_SBBMessage_Loading() {
 @Preview(showBackground = true)
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun Preview_SBBMessage_Default() {
+private fun Preview_SBBMessage_Default() {
     SBBMessage.Default(
         title = TITLE,
         message = MESSAGE,

@@ -8,8 +8,8 @@ import androidx.compose.runtime.ReadOnlyComposable
 import ch.sbb.compose_mds.theme.context.colors.ThemeContextColors
 
 // Change this to an extension function that takes isDarkTheme as a parameter
-fun ThemeContextColors.toColorScheme(isDarkTheme: Boolean): ColorScheme {
-    return if (isDarkTheme) {
+fun ThemeContextColors.toColorScheme(isDarkTheme: Boolean): ColorScheme =
+    if (isDarkTheme) {
         darkColorScheme(
             primary = colors.primary,
             onPrimary = colors.white,
@@ -30,4 +30,3 @@ fun ThemeContextColors.toColorScheme(isDarkTheme: Boolean): ColorScheme {
             surfaceContainerHighest = colors.white,
         )
     }
-}

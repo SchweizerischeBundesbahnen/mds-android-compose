@@ -19,20 +19,28 @@ import androidx.compose.ui.unit.dp
 object SBBStatus
 
 @Composable
-fun SBBStatus.Alert(modifier: Modifier = Modifier, text: String? = null) =
-    SBBStatus(modifier, SBBStatusType.Alert, text)
+fun SBBStatus.Alert(
+    modifier: Modifier = Modifier,
+    text: String? = null,
+) = SBBStatus(modifier, SBBStatusType.Alert, text)
 
 @Composable
-fun SBBStatus.Warning(modifier: Modifier = Modifier, text: String? = null) =
-    SBBStatus(modifier, SBBStatusType.Warning, text)
+fun SBBStatus.Warning(
+    modifier: Modifier = Modifier,
+    text: String? = null,
+) = SBBStatus(modifier, SBBStatusType.Warning, text)
 
 @Composable
-fun SBBStatus.Success(modifier: Modifier = Modifier, text: String? = null) =
-    SBBStatus(modifier, SBBStatusType.Success, text)
+fun SBBStatus.Success(
+    modifier: Modifier = Modifier,
+    text: String? = null,
+) = SBBStatus(modifier, SBBStatusType.Success, text)
 
 @Composable
-fun SBBStatus.Information(modifier: Modifier = Modifier, text: String? = null) =
-    SBBStatus(modifier, SBBStatusType.Information, text)
+fun SBBStatus.Information(
+    modifier: Modifier = Modifier,
+    text: String? = null,
+) = SBBStatus(modifier, SBBStatusType.Information, text)
 
 /***
  * Implementation of the SBB Status.
@@ -43,13 +51,18 @@ fun SBBStatus.Information(modifier: Modifier = Modifier, text: String? = null) =
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/status/)
  */
 @Composable
-private fun SBBStatus(modifier: Modifier, type: SBBStatusType, text: String? = null) {
+private fun SBBStatus(
+    type: SBBStatusType,
+    modifier: Modifier = Modifier,
+    text: String? = null,
+) {
     Row(
-        modifier = modifier
-            .clip(RoundedCornerShape(2.dp))
-            .border(BorderStroke(1.dp, color = type.color))
-            .background(color = type.color.copy(alpha = 0.15F)),
-        verticalAlignment = Alignment.CenterVertically
+        modifier =
+            modifier
+                .clip(RoundedCornerShape(2.dp))
+                .border(BorderStroke(1.dp, color = type.color))
+                .background(color = type.color.copy(alpha = 0.15F)),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         type.Icon()
         text?.let { text ->
@@ -57,7 +70,7 @@ private fun SBBStatus(modifier: Modifier, type: SBBStatusType, text: String? = n
                 text = text,
                 color = MaterialTheme.colorScheme.onSurface,
                 style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(horizontal = 8.dp)
+                modifier = Modifier.padding(horizontal = 8.dp),
             )
         }
     }
@@ -70,31 +83,31 @@ private fun StatusPreviewAlert() = _StatusPreviewAlert()
 
 @Preview(showBackground = true)
 @Composable
-fun StatusPreviewAlertWithoutText() = _StatusPreviewAlertWithoutText()
+private fun StatusPreviewAlertWithoutText() = _StatusPreviewAlertWithoutText()
 
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun StatusPreviewWarning() = _StatusPreviewWarning()
+private fun StatusPreviewWarning() = _StatusPreviewWarning()
 
 @Preview(showBackground = true)
 @Composable
-fun StatusPreviewWarningWithoutText() = _StatusPreviewWarningWithoutText()
-
-@Preview(showBackground = true)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-fun StatusPreviewSuccess() = _StatusPreviewSuccess()
-
-@Preview(showBackground = true)
-@Composable
-fun StatusPreviewSuccessWithoutText() = _StatusPreviewSuccessWithoutText()
+private fun StatusPreviewWarningWithoutText() = _StatusPreviewWarningWithoutText()
 
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun StatusPreviewInformation() = _StatusPreviewInformation()
+private fun StatusPreviewSuccess() = _StatusPreviewSuccess()
 
 @Preview(showBackground = true)
 @Composable
-fun StatusPreviewInformationWithoutText() = _StatusPreviewInformationWithoutText()
+private fun StatusPreviewSuccessWithoutText() = _StatusPreviewSuccessWithoutText()
+
+@Preview(showBackground = true)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun StatusPreviewInformation() = _StatusPreviewInformation()
+
+@Preview(showBackground = true)
+@Composable
+private fun StatusPreviewInformationWithoutText() = _StatusPreviewInformationWithoutText()

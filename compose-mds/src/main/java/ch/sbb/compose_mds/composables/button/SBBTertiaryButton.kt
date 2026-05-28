@@ -40,12 +40,12 @@ import ch.sbb.compose_mds.theme.PrimitiveColors
  */
 @Composable
 fun SBBTertiaryButton(
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     isLoading: Boolean = false,
     label: String? = null,
     icon: ImageVector? = null,
-    onClick: () -> Unit,
 ) {
     SBBTertiaryButtonImpl(
         modifier = modifier,
@@ -57,7 +57,6 @@ fun SBBTertiaryButton(
         onClick = onClick,
     )
 }
-
 
 /***
  * Implementation of the SBB Tertiary Small Button.
@@ -74,12 +73,12 @@ fun SBBTertiaryButton(
  */
 @Composable
 fun SBBTertiaryButtonSmall(
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     isLoading: Boolean = false,
     label: String? = null,
     icon: ImageVector? = null,
-    onClick: () -> Unit,
 ) {
     SBBTertiaryButtonImpl(
         modifier = modifier,
@@ -103,13 +102,13 @@ private enum class SBBTertiaryButtonSize(
 
 @Composable
 private fun SBBTertiaryButtonImpl(
-    modifier: Modifier,
     enabled: Boolean,
     isLoading: Boolean,
     label: String?,
     icon: ImageVector?,
     size: SBBTertiaryButtonSize,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     val pressed by interactionSource.collectIsPressedAsState()
@@ -164,8 +163,7 @@ private fun contentPadding(
     )
 
 @Composable
-private fun buttonColors(pressed: Boolean): ButtonColors =
-    if (SBBTheme.isDarkMode) darkModeColors(pressed) else lightModeColors(pressed)
+private fun buttonColors(pressed: Boolean): ButtonColors = if (SBBTheme.isDarkMode) darkModeColors(pressed) else lightModeColors(pressed)
 
 @Composable
 private fun lightModeColors(pressed: Boolean): ButtonColors {
@@ -190,8 +188,7 @@ private fun darkModeColors(pressed: Boolean): ButtonColors {
 }
 
 @Composable
-private fun borderColors(enabled: Boolean): BorderStroke =
-    if (SBBTheme.isDarkMode) darkModeBorder(enabled) else lightModeBorder(enabled)
+private fun borderColors(enabled: Boolean): BorderStroke = if (SBBTheme.isDarkMode) darkModeBorder(enabled) else lightModeBorder(enabled)
 
 @Composable
 private fun lightModeBorder(enabled: Boolean): BorderStroke {

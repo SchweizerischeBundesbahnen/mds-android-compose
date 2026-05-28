@@ -43,8 +43,8 @@ import kotlinx.coroutines.launch
  */
 @Composable
 fun SBBTabBar(
-    modifier: Modifier = Modifier,
     controller: SBBTabBarController,
+    modifier: Modifier = Modifier,
 ) {
     var width by remember { mutableFloatStateOf(0f) }
     val configuration = LocalConfiguration.current
@@ -55,38 +55,41 @@ fun SBBTabBar(
     val pathColor = MaterialTheme.colorScheme.surfaceVariant
 
     Column(
-        modifier = Modifier
-            .drawBehind {
-                drawIntoCanvas { canvas ->
-                    val path by controller.path(size)
-                    val shadowPaint = Paint().asFrameworkPaint().apply {
-                        isAntiAlias = true
-                        maskFilter = BlurMaskFilter(6f, BlurMaskFilter.Blur.NORMAL)
-                        style = android.graphics.Paint.Style.STROKE
-                        strokeWidth = 1f
-                    }
-                    canvas.nativeCanvas.save()
-                    canvas.nativeCanvas.translate(0f, 0f)
-                    canvas.nativeCanvas.drawPath(path.asAndroidPath(), shadowPaint)
-                    canvas.nativeCanvas.restore()
+        modifier =
+            Modifier
+                .drawBehind {
+                    drawIntoCanvas { canvas ->
+                        val path by controller.path(size)
+                        val shadowPaint =
+                            Paint().asFrameworkPaint().apply {
+                                isAntiAlias = true
+                                maskFilter = BlurMaskFilter(6f, BlurMaskFilter.Blur.NORMAL)
+                                style = android.graphics.Paint.Style.STROKE
+                                strokeWidth = 1f
+                            }
+                        canvas.nativeCanvas.save()
+                        canvas.nativeCanvas.translate(0f, 0f)
+                        canvas.nativeCanvas.drawPath(path.asAndroidPath(), shadowPaint)
+                        canvas.nativeCanvas.restore()
 
-                    drawPath(path = path, color = pathColor)
-                }
-            }
-            .then(modifier),
+                        drawPath(path = path, color = pathColor)
+                    }
+                }.then(modifier),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = if (portrait) 6.dp else 2.dp)
-                .selectableGroup()
-                .semantics {
-                    collectionInfo = CollectionInfo(
-                        rowCount = 1,
-                        columnCount = controller.items.size,
-                    )
-                },
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .padding(top = if (portrait) 6.dp else 2.dp)
+                    .selectableGroup()
+                    .semantics {
+                        collectionInfo =
+                            CollectionInfo(
+                                rowCount = 1,
+                                columnCount = controller.items.size,
+                            )
+                    },
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.Top,
         ) {
@@ -95,7 +98,7 @@ fun SBBTabBar(
                     data = data,
                     state = controller.getStateAt(i),
                     warningSemantics = controller.warningSemanticsAt(i),
-                    onPositioned = {
+                    onPosition = {
                         controller.positions[i] = it
                     },
                     onPress = {
@@ -114,10 +117,11 @@ fun SBBTabBar(
         if (portrait) {
             val selectedItem by controller.selectedItem
             Text(
-                modifier = Modifier
-                    .onSizeChanged { controller.textSize.value = it }
-                    .offset { textPosition }
-                    .semantics { hideFromAccessibility() },
+                modifier =
+                    Modifier
+                        .onSizeChanged { controller.textSize.value = it }
+                        .offset { textPosition }
+                        .semantics { hideFromAccessibility() },
                 text = selectedItem.label,
                 style = MaterialTheme.typography.bodyMedium,
             )

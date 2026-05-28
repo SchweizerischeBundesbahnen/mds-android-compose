@@ -29,4 +29,3 @@ object SBBThemeContext : ThemeContext {
 }
 
 const val SBBThemeContextPreviewName = "SBB Default"
-

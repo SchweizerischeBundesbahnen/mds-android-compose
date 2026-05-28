@@ -1,6 +1,12 @@
 root = true
 
 [*.{kt,kts}]
+compose = enabled
+compose_modifier-missing-check = enabled
+compose_modifier-reused = enabled
+compose_preview-public = disabled
+compose_allowed_composition_locals = LocalSBBNotificationBoxTheme,LocalSBBListItemStyle,LocalThemeContext,LocalSBBIsDarkMode,LocalSBBTypography
+
 indent_size = 4
 indent_style = space
 # ktlint_standard_max_line_length = 100 # KtLint-specific property for line length
@@ -24,3 +30,23 @@ ktlint_standard_wrapping = enabled # Enforces wrapping rules
 ktlint_standard_package-name = disabled
 
 ktlint_function_naming_ignore_when_annotated_with = Composable
+ktlint_standard_property-naming = disabled
+
+[**/generated/**]
+ij_formatter_enabled = false
+ktlint = disabled
+
+[**/sbbicons/**]
+ij_formatter_enabled = false
+ktlint = disabled
+
+[**/beta/**]
+ij_formatter_enabled = false
+ktlint = disabled
+
+[Preview_*.kt]
+ktlint_standard_class-naming = disabled
+ktlint_standard_filename = disabled
+
+[ContextColors.kt]
+ktlint_standard_class-naming = disabled

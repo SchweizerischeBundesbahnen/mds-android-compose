@@ -27,7 +27,6 @@ object OffBrandThemeContext : ThemeContext {
         get() = contextOffBrandFunctionalColors()
     override val contextName: String
         get() = OffBrandThemeContextPreviewName
-
 }
 
 const val OffBrandThemeContextPreviewName = "Off-Brand"

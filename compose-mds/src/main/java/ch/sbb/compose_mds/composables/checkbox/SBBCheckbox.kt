@@ -43,49 +43,51 @@ import kotlin.math.sqrt
  */
 @Composable
 fun SBBCheckbox(
-    modifier: Modifier = Modifier,
     label: String,
     checked: Boolean?,
+    onCheckedChange: ((Boolean?) -> Unit)?,
+    modifier: Modifier = Modifier,
     icon: ImageVector? = null,
     triStateEnabled: Boolean = false,
-    onCheckedChange: ((Boolean?) -> Unit)?,
-    disabled: Boolean = false
+    disabled: Boolean = false,
 ) {
-    val colors = when {
-        SBBTheme.isDarkMode -> if (disabled) SBBCheckboxColors.DARK_DISABLED else SBBCheckboxColors.DARK_ENABLED
-        else -> if (disabled) SBBCheckboxColors.LIGHT_DISABLED else SBBCheckboxColors.LIGHT_ENABLED
-    }
+    val colors =
+        when {
+            SBBTheme.isDarkMode -> if (disabled) SBBCheckboxColors.DARK_DISABLED else SBBCheckboxColors.DARK_ENABLED
+            else -> if (disabled) SBBCheckboxColors.LIGHT_DISABLED else SBBCheckboxColors.LIGHT_ENABLED
+        }
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = if (triStateEnabled) {
-            val state = checked?.let { ToggleableState(it) } ?: ToggleableState.Indeterminate
-            modifier.triStateToggleable(state, enabled = !disabled) {
-                when (state) {
-                    ToggleableState.On -> onCheckedChange?.invoke(null)
-                    ToggleableState.Off -> onCheckedChange?.invoke(true)
-                    ToggleableState.Indeterminate -> onCheckedChange?.invoke(false)
+        modifier =
+            if (triStateEnabled) {
+                val state = checked?.let { ToggleableState(it) } ?: ToggleableState.Indeterminate
+                modifier.triStateToggleable(state, enabled = !disabled) {
+                    when (state) {
+                        ToggleableState.On -> onCheckedChange?.invoke(null)
+                        ToggleableState.Off -> onCheckedChange?.invoke(true)
+                        ToggleableState.Indeterminate -> onCheckedChange?.invoke(false)
+                    }
                 }
-            }
-        } else {
-            modifier.toggleable(checked ?: false, enabled = !disabled) {
-                onCheckedChange?.invoke(it)
-            }
-        }
-            .fillMaxWidth()
-            .padding(SBBCheckboxConst.CHECKBOX_PADDING),
+            } else {
+                modifier.toggleable(checked ?: false, enabled = !disabled) {
+                    onCheckedChange?.invoke(it)
+                }
+            }.fillMaxWidth()
+                .padding(SBBCheckboxConst.CHECKBOX_PADDING),
     ) {
         DrawCheckBox(
             modifier = Modifier.padding(end = SBBCheckboxConst.CHECKBOX_PADDING),
             checked = checked,
             triStateEnabled = triStateEnabled,
-            colors = colors
+            colors = colors,
         )
         if (icon != null) {
             Icon(
-                modifier = Modifier
-                    .semantics { hideFromAccessibility() }
-                    .padding(end = SBBCheckboxConst.CHECKBOX_PADDING),
+                modifier =
+                    Modifier
+                        .semantics { hideFromAccessibility() }
+                        .padding(end = SBBCheckboxConst.CHECKBOX_PADDING),
                 imageVector = icon,
                 contentDescription = null,
                 tint = colors.textColor,
@@ -97,15 +99,17 @@ fun SBBCheckbox(
 
 @Composable
 private fun DrawCheckBox(
-    modifier: Modifier,
     checked: Boolean?,
     triStateEnabled: Boolean,
     colors: SBBCheckboxColors,
+    modifier: Modifier = Modifier,
 ) {
     Canvas(
-        modifier = modifier.size(
-            SBBCheckboxConst.CHECKBOX_SIZE, SBBCheckboxConst.CHECKBOX_SIZE
-        )
+        modifier =
+            modifier.size(
+                SBBCheckboxConst.CHECKBOX_SIZE,
+                SBBCheckboxConst.CHECKBOX_SIZE,
+            ),
     ) {
         // Box
         drawRoundRect(
@@ -114,15 +118,17 @@ private fun DrawCheckBox(
         )
         drawRoundRect(
             color = colors.backgroundColor,
-            size = Size(
-                size.width - SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx() * 2,
-                size.height - SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx() * 2
-            ),
-            topLeft = Offset(
-                SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx(),
-                SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx()
-            ),
-            cornerRadius = CornerRadius((SBBCheckboxConst.CHECKBOX_BORDER_RADIUS - SBBCheckboxConst.CHECKBOX_BORDER_SIZE).toPx())
+            size =
+                Size(
+                    size.width - SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx() * 2,
+                    size.height - SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx() * 2,
+                ),
+            topLeft =
+                Offset(
+                    SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx(),
+                    SBBCheckboxConst.CHECKBOX_BORDER_SIZE.toPx(),
+                ),
+            cornerRadius = CornerRadius((SBBCheckboxConst.CHECKBOX_BORDER_RADIUS - SBBCheckboxConst.CHECKBOX_BORDER_SIZE).toPx()),
         )
 
         // Check
@@ -139,7 +145,7 @@ private fun DrawCheckBox(
                     topLeft = offset,
                     color = colors.checkColor,
                     size = Size(checkWidth, checkHeight),
-                    cornerRadius = CornerRadius(SBBCheckboxConst.CHECK_BORDER_RADIUS.toPx())
+                    cornerRadius = CornerRadius(SBBCheckboxConst.CHECK_BORDER_RADIUS.toPx()),
                 )
             }
             rotate(180F - SBBCheckboxConst.CHECK_ANGLE, pivot = offset) {
@@ -147,7 +153,7 @@ private fun DrawCheckBox(
                     topLeft = offset,
                     color = colors.checkColor,
                     size = Size(-checkWidth, checkHeight / 2),
-                    cornerRadius = CornerRadius(SBBCheckboxConst.CHECK_BORDER_RADIUS.toPx())
+                    cornerRadius = CornerRadius(SBBCheckboxConst.CHECK_BORDER_RADIUS.toPx()),
                 )
             }
         }
@@ -155,15 +161,17 @@ private fun DrawCheckBox(
         // Indeterminate
         if (triStateEnabled && checked == null) {
             drawRoundRect(
-                topLeft = Offset(
-                    (size.width - SBBCheckboxConst.INDETERMINATE_WIDTH.toPx()) / 2,
-                    (size.height - SBBCheckboxConst.INDETERMINATE_HEIGHT.toPx()) / 2
-                ),
+                topLeft =
+                    Offset(
+                        (size.width - SBBCheckboxConst.INDETERMINATE_WIDTH.toPx()) / 2,
+                        (size.height - SBBCheckboxConst.INDETERMINATE_HEIGHT.toPx()) / 2,
+                    ),
                 color = colors.indeterminateColor,
-                size = Size(
-                    SBBCheckboxConst.INDETERMINATE_WIDTH.toPx(),
-                    SBBCheckboxConst.INDETERMINATE_HEIGHT.toPx(),
-                ),
+                size =
+                    Size(
+                        SBBCheckboxConst.INDETERMINATE_WIDTH.toPx(),
+                        SBBCheckboxConst.INDETERMINATE_HEIGHT.toPx(),
+                    ),
                 cornerRadius = CornerRadius(SBBCheckboxConst.INDETERMINATE_BORDER_RADIUS.toPx()),
             )
         }

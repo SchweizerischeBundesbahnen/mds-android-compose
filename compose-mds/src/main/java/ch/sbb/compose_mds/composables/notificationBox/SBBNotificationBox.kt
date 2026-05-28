@@ -41,16 +41,15 @@ typealias OnClick = () -> Unit
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/notification-box/)
  */
 object SBBNotificationBox {
-
     /**
      * Alert variant of [SBBNotificationBox]
      * @see [SBBNotificationBoxInternal]
      */
     @Composable
     fun Alert(
+        text: String,
         modifier: Modifier = Modifier,
         title: String? = null,
-        text: String,
         hasIcon: Boolean = true,
         isCloseable: Boolean = false,
         onClose: OnClose? = null,
@@ -68,7 +67,7 @@ object SBBNotificationBox {
             onClose = onClose,
             onClick = onClick,
             maxLines = maxLines,
-            interactionIcon = interactionIcon
+            interactionIcon = interactionIcon,
         )
     }
 
@@ -78,9 +77,9 @@ object SBBNotificationBox {
      */
     @Composable
     fun Warning(
+        text: String,
         modifier: Modifier = Modifier,
         title: String? = null,
-        text: String,
         hasIcon: Boolean = true,
         isCloseable: Boolean = false,
         onClose: OnClose? = null,
@@ -98,7 +97,7 @@ object SBBNotificationBox {
             onClose = onClose,
             onClick = onClick,
             maxLines = maxLines,
-            interactionIcon = interactionIcon
+            interactionIcon = interactionIcon,
         )
     }
 
@@ -108,9 +107,9 @@ object SBBNotificationBox {
      */
     @Composable
     fun Success(
+        text: String,
         modifier: Modifier = Modifier,
         title: String? = null,
-        text: String,
         hasIcon: Boolean = true,
         isCloseable: Boolean = false,
         onClose: OnClose? = null,
@@ -128,7 +127,7 @@ object SBBNotificationBox {
             onClose = onClose,
             onClick = onClick,
             maxLines = maxLines,
-            interactionIcon = interactionIcon
+            interactionIcon = interactionIcon,
         )
     }
 
@@ -138,9 +137,9 @@ object SBBNotificationBox {
      */
     @Composable
     fun Information(
+        text: String,
         modifier: Modifier = Modifier,
         title: String? = null,
-        text: String,
         hasIcon: Boolean = true,
         isCloseable: Boolean = false,
         onClose: OnClose? = null,
@@ -158,7 +157,7 @@ object SBBNotificationBox {
             onClose = onClose,
             onClick = onClick,
             maxLines = maxLines,
-            interactionIcon = interactionIcon
+            interactionIcon = interactionIcon,
         )
     }
 }
@@ -179,44 +178,45 @@ object SBBNotificationBox {
  */
 @Composable
 private fun SBBNotificationBoxInternal(
-    modifier: Modifier = Modifier,
     style: SBBNotificationBoxStyle,
     title: String?,
     text: String,
+    onClose: OnClose?,
+    modifier: Modifier = Modifier,
     hasIcon: Boolean = true,
     isCloseable: Boolean = true,
-    onClose: OnClose?,
     onClick: OnClick? = null,
     maxLines: Int = 3,
     interactionIcon: ImageVector? = null,
 ) {
     Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(SBBSpacing.Medium))
-            .clickable(enabled = onClick != null, onClick = onClick ?: {})
-            .background(color = style.borderColor)
-            .padding(start = SBBSpacing.XSmall)
-            .padding(all = 1.dp)
-            .fillMaxWidth()
+        modifier =
+            modifier
+                .clip(RoundedCornerShape(SBBSpacing.Medium))
+                .clickable(enabled = onClick != null, onClick = onClick ?: {})
+                .background(color = style.borderColor)
+                .padding(start = SBBSpacing.XSmall)
+                .padding(all = 1.dp)
+                .fillMaxWidth(),
     ) {
         Column(
-            modifier = Modifier
-                .clip(
-                    RoundedCornerShape(
-                        topStart = SBBSpacing.XSmall,
-                        bottomStart = SBBSpacing.XSmall,
-                        topEnd = 15.dp,
-                        bottomEnd = 15.dp,
-                    )
-                )
-                .background(style.backgroundColor)
-                .padding(SBBSpacing.Medium),
-            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XXSmall)
+            modifier =
+                Modifier
+                    .clip(
+                        RoundedCornerShape(
+                            topStart = SBBSpacing.XSmall,
+                            bottomStart = SBBSpacing.XSmall,
+                            topEnd = 15.dp,
+                            bottomEnd = 15.dp,
+                        ),
+                    ).background(style.backgroundColor)
+                    .padding(SBBSpacing.Medium),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.XXSmall),
         ) {
             if (title != null) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                    horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
                 ) {
                     if (hasIcon) NotificationIcon(style)
                     TitleBody(title)
@@ -224,29 +224,33 @@ private fun SBBNotificationBoxInternal(
                 }
                 Row {
                     TextBody(text, maxLines)
-                    if (interactionIcon != null) InteractionIcon(
-                        Modifier.align(Alignment.CenterVertically),
-                        interactionIcon
-                    )
+                    if (interactionIcon != null) {
+                        InteractionIcon(
+                            Modifier.align(Alignment.CenterVertically),
+                            interactionIcon,
+                        )
+                    }
                 }
             } else {
                 Row(
                     Modifier.height(IntrinsicSize.Max),
-                    horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                    horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
                 ) {
                     if (hasIcon) NotificationIcon(style)
                     TextBody(text, maxLines)
                     Column(
                         Modifier.fillMaxHeight(),
                         verticalArrangement = Arrangement.SpaceBetween,
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         if (isCloseable) CloseButton(onClose)
                         Spacer(Modifier)
-                        if (interactionIcon != null) InteractionIcon(
-                            Modifier.weight(1f),
-                            interactionIcon
-                        )
+                        if (interactionIcon != null) {
+                            InteractionIcon(
+                                Modifier.weight(1f),
+                                interactionIcon,
+                            )
+                        }
                         Spacer(Modifier)
                     }
                 }
@@ -283,7 +287,10 @@ private fun RowScope.TitleBody(title: String) {
 }
 
 @Composable
-private fun RowScope.TextBody(text: String, maxLines: Int) {
+private fun RowScope.TextBody(
+    text: String,
+    maxLines: Int,
+) {
     Text(
         modifier = Modifier.weight(1.0f),
         text = text,
@@ -294,7 +301,10 @@ private fun RowScope.TextBody(text: String, maxLines: Int) {
 }
 
 @Composable
-private fun InteractionIcon(modifier: Modifier, vector: ImageVector) {
+private fun InteractionIcon(
+    vector: ImageVector,
+    modifier: Modifier = Modifier,
+) {
     Icon(
         modifier = modifier,
         imageVector = vector,

@@ -9,8 +9,7 @@ import ch.sbb.compose_mds.theme.context.colors.ThemeContextColors
 
 @Composable
 @ReadOnlyComposable
-fun ThemeContextColors.colorScheme(isDarkTheme: Boolean): ColorScheme =
-    createSBBMaterialTheme(isDarkTheme, this)
+fun ThemeContextColors.colorScheme(isDarkTheme: Boolean): ColorScheme = createSBBMaterialTheme(isDarkTheme, this)
 
 fun createSBBMaterialTheme(
     isDarkTheme: Boolean,

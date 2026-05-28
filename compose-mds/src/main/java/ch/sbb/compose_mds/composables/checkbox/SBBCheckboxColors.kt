@@ -8,7 +8,7 @@ internal enum class SBBCheckboxColors(
     val checkColor: Color,
     val indeterminateColor: Color,
     val textColor: Color,
-    val backgroundColor: Color
+    val backgroundColor: Color,
 ) {
     LIGHT_ENABLED(
         borderColor = PrimitiveColors.granite,
@@ -37,5 +37,5 @@ internal enum class SBBCheckboxColors(
         indeterminateColor = PrimitiveColors.graphite,
         textColor = PrimitiveColors.graphite,
         backgroundColor = PrimitiveColors.black,
-    );
+    ),
 }

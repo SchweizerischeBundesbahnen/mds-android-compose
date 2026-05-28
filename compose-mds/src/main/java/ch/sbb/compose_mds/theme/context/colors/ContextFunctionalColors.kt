@@ -12,7 +12,6 @@ data class ContextFunctionalColors(
     val error: Color = PrimitiveColors.red125,
     val brand: Color = PrimitiveColors.red,
     val products: Color = PrimitiveColors.red,
-
     // dark colors
     val successDark: Color = PrimitiveColors.greenDark,
     val warningDark: Color = PrimitiveColors.peachDark,

@@ -63,21 +63,24 @@ fun SBBBottomSheet(
         shape = RoundedCornerShape(topStart = SBBSpacing.Medium, topEnd = SBBSpacing.Medium),
         dragHandle = null,
         sheetGesturesEnabled = isClosable,
-        properties = ModalBottomSheetProperties(
-            shouldDismissOnClickOutside = isClosable,
-            shouldDismissOnBackPress = isClosable
-        )
+        properties =
+            ModalBottomSheetProperties(
+                shouldDismissOnClickOutside = isClosable,
+                shouldDismissOnBackPress = isClosable,
+            ),
     ) {
         Column(
-            modifier = Modifier
-                .navigationBarsPadding()
-                .padding(vertical = SBBSpacing.Small, horizontal = SBBSpacing.Medium)
+            modifier =
+                Modifier
+                    .navigationBarsPadding()
+                    .padding(vertical = SBBSpacing.Small, horizontal = SBBSpacing.Medium),
         ) {
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .defaultMinSize(minHeight = 56.dp)
-                    .padding(bottom = SBBSpacing.Small),
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .defaultMinSize(minHeight = 56.dp)
+                        .padding(bottom = SBBSpacing.Small),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {

@@ -32,14 +32,14 @@ import ch.sbb.compose_mds.sbbicons.medium.TrainMedium
 private const val MESSAGE =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate massa ut ex fringilla."
 
-
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MessagePage() {
     Column(
-        modifier = Modifier
-            .padding(16.dp)
-            .verticalScroll(rememberScrollState())
+        modifier =
+            Modifier
+                .padding(16.dp)
+                .verticalScroll(rememberScrollState()),
     ) {
         SBBListHeader(text = "Default")
         SBBMessageDefault()
@@ -59,7 +59,7 @@ private fun SBBMessageDefault() {
     MessageContainer {
         SBBMessage.Default(
             title = "Title, single line",
-            message = MESSAGE
+            message = MESSAGE,
         )
     }
 }
@@ -75,7 +75,7 @@ private fun SBBMessageDefaultCustom() {
             interactionIcon = SBBIcons.Medium.TrainMedium,
             onInteraction = {
                 Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            }
+            },
         )
     }
 }
@@ -85,7 +85,7 @@ private fun SBBMessageLoading() {
     MessageContainer {
         SBBMessage.Loading(
             title = "Title, single line",
-            message = MESSAGE
+            message = MESSAGE,
         )
     }
 }
@@ -100,7 +100,7 @@ private fun SBBMessageError() {
             errorCode = "Error Code: XYZ-999",
             onInteraction = {
                 Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            }
+            },
         )
     }
 }
@@ -114,15 +114,13 @@ private fun SBBMessageNoIllustration() {
             message = MESSAGE,
             onInteraction = {
                 Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            }
+            },
         )
     }
 }
 
 @Composable
-private fun MessageContainer(
-    content: @Composable ColumnScope.() -> Unit
-) {
+private fun MessageContainer(content: @Composable ColumnScope.() -> Unit) {
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,

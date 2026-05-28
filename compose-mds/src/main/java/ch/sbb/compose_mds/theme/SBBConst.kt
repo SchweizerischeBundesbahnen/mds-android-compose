@@ -11,15 +11,19 @@ object SBBConst {
     val DEFAULT_HORIZONTAL_PADDING = SBBSpacing.XSmall
 }
 
-fun Modifier.defaultPadding() = this then Modifier.padding(
-    horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING,
-    vertical = SBBConst.DEFAULT_VERTICAL_PADDING,
-)
+fun Modifier.defaultPadding() =
+    this then
+        Modifier.padding(
+            horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING,
+            vertical = SBBConst.DEFAULT_VERTICAL_PADDING,
+        )
 
-fun Modifier.elementPadding() = this then Modifier.padding(
-    horizontal = SBBSpacing.Medium,
-    vertical = SBBSpacing.XSmall,
-)
+fun Modifier.elementPadding() =
+    this then
+        Modifier.padding(
+            horizontal = SBBSpacing.Medium,
+            vertical = SBBSpacing.XSmall,
+        )
 
 val Int.asImageVector
     @Composable get() = ImageVector.vectorResource(id = this)

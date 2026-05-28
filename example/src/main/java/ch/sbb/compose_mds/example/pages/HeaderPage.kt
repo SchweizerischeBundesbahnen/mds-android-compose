@@ -22,13 +22,13 @@ import ch.sbb.compose_mds.composables.header.Small
 @Composable
 fun HeaderPage() {
     Column(
-        modifier = Modifier
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
-            .padding(
-                vertical = 16.dp,
-            )
+        modifier =
+            Modifier
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ).padding(
+                    vertical = 16.dp,
+                ),
     ) {
         SBBListHeader(text = "Default")
         SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController())
@@ -36,13 +36,13 @@ fun HeaderPage() {
         SBBHeader.Default(
             title = "SBB Header Default",
             navController = rememberNavController(),
-            navigationType = NavigationType.Back
+            navigationType = NavigationType.Back,
         )
         SBBListHeader(text = "Default mit Abbrechen-Button")
         SBBHeader.Default(
             title = "SBB Header Default",
             navController = rememberNavController(),
-            navigationType = NavigationType.Cancel
+            navigationType = NavigationType.Cancel,
         )
         Spacer(modifier = Modifier.padding(vertical = 20.dp))
 
@@ -52,17 +52,16 @@ fun HeaderPage() {
         SBBHeader.Small(
             title = "SBB Header Small",
             navController = rememberNavController(),
-            navigationType = NavigationType.Back
+            navigationType = NavigationType.Back,
         )
         SBBListHeader(text = "Default mit Abbrechen-Button")
         SBBHeader.Small(
             title = "SBB Header Small",
             navController = rememberNavController(),
-            navigationType = NavigationType.Cancel
+            navigationType = NavigationType.Cancel,
         )
     }
 }
-
 
 @PreviewLightDark
 @Composable

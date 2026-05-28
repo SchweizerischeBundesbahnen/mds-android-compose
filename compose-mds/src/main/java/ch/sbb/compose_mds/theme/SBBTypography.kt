@@ -195,42 +195,48 @@ class SBBTypography(
 ) : SBBTypographyTokens by configSBBTypographyTokens(fontFamily) {
     val materialTypography: Typography =
         Typography(
-            displayLarge = // TODO needs mapping
+            // TODO needs mapping
+            displayLarge =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W300,
                     fontSize = 30.sp,
                     lineHeight = 38.sp,
                 ),
-            displayMedium = // TODO needs mapping
+            // TODO needs mapping
+            displayMedium =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W300,
                     fontSize = 28.sp,
                     lineHeight = 36.sp,
                 ),
-            displaySmall = // TODO needs mapping
+            // TODO needs mapping
+            displaySmall =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W300,
                     fontSize = 26.sp,
                     lineHeight = 34.sp,
                 ),
-            headlineLarge = // TODO needs mapping
+            // TODO needs mapping
+            headlineLarge =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W700,
                     fontSize = 18.sp,
                     lineHeight = 24.sp,
                 ),
-            headlineMedium = // TODO needs mapping
+            // TODO needs mapping
+            headlineMedium =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W700,
                     fontSize = 16.sp,
                     lineHeight = 22.sp,
                 ),
-            headlineSmall = // TODO needs mapping
+            // TODO needs mapping
+            headlineSmall =
                 TextStyle(
                     fontFamily = fontFamily,
                     fontWeight = FontWeight.W700,

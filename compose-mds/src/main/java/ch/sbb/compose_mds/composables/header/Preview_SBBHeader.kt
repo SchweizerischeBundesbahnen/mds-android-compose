@@ -55,7 +55,7 @@ internal fun _Preview_SBBHeaderDefaultWithNavigationCancel() {
             SBBHeader.Default(
                 title = "SBB DSM Android",
                 navController = nav,
-                navigationType = NavigationType.Cancel
+                navigationType = NavigationType.Cancel,
             )
         }
     }
@@ -104,7 +104,7 @@ internal fun _Preview_SBBHeaderSmallWithNavigationCancel() {
             SBBHeader.Small(
                 title = "SBB DSM Android",
                 navController = nav,
-                navigationType = NavigationType.Cancel
+                navigationType = NavigationType.Cancel,
             )
         }
     }

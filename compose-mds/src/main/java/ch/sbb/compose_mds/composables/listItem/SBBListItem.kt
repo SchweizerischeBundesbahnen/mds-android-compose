@@ -67,9 +67,9 @@ object SBBListItem {
          */
         @Composable
         fun Default(
+            title: String,
             modifier: Modifier = Modifier,
             leading: ImageVector? = null,
-            title: String,
             subtitle: String? = null,
             trailing: ImageVector? = null,
             onClick: (() -> Unit)? = null,
@@ -97,9 +97,9 @@ object SBBListItem {
          */
         @Composable
         fun Disabled(
+            title: String,
             modifier: Modifier = Modifier,
             leading: ImageVector? = null,
-            title: String,
             subtitle: String? = null,
             trailing: ImageVector? = null,
         ) {
@@ -124,11 +124,11 @@ object SBBListItem {
          */
         @Composable
         fun Link(
-            modifier: Modifier = Modifier,
             title: String,
+            onClick: (() -> Unit),
+            modifier: Modifier = Modifier,
             subtitle: String? = null,
             leading: ImageVector? = null,
-            onClick: (() -> Unit),
         ) {
             Default(
                 modifier = modifier,
@@ -244,9 +244,9 @@ object SBBListItem {
      */
     @Composable
     fun Default(
+        title: String,
         modifier: Modifier = Modifier,
         leading: ImageVector? = null,
-        title: String,
         subtitle: String? = null,
         trailing: ImageVector? = null,
         onClick: (() -> Unit)? = null,
@@ -276,9 +276,9 @@ object SBBListItem {
      */
     @Composable
     fun Disabled(
+        title: String,
         modifier: Modifier = Modifier,
         leading: ImageVector? = null,
-        title: String,
         subtitle: String? = null,
         trailing: ImageVector? = null,
     ) {
@@ -305,11 +305,11 @@ object SBBListItem {
      */
     @Composable
     fun Link(
-        modifier: Modifier = Modifier,
         title: String,
+        onClick: (() -> Unit),
+        modifier: Modifier = Modifier,
         subtitle: String? = null,
         leading: ImageVector? = null,
-        onClick: (() -> Unit),
     ) {
         Default(
             modifier = modifier,
@@ -489,8 +489,7 @@ object SBBListItem {
                         } else {
                             Modifier
                         },
-                    )
-                    .padding(padding),
+                    ).padding(padding),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center,
         ) {
@@ -529,7 +528,7 @@ object SBBListItem {
 
 @Preview(showBackground = true, name = "ListItem - Default")
 @Composable
-fun PreviewSBBListItem_Default() {
+private fun PreviewSBBListItem_Default() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Item title",
@@ -541,7 +540,7 @@ fun PreviewSBBListItem_Default() {
 
 @Preview(showBackground = true, name = "ListItem - Pressed")
 @Composable
-fun PreviewSBBListItem_Pressed() {
+private fun PreviewSBBListItem_Pressed() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Pressed item",
@@ -552,7 +551,7 @@ fun PreviewSBBListItem_Pressed() {
 
 @Preview(showBackground = true, name = "ListItem - Disabled")
 @Composable
-fun PreviewSBBListItem_Disabled() {
+private fun PreviewSBBListItem_Disabled() {
     SBBTheme {
         SBBListItem.Boxed.Disabled(
             title = "Disabled item",
@@ -564,7 +563,7 @@ fun PreviewSBBListItem_Disabled() {
 
 @Preview(showBackground = true, name = "ListItem - Boxed Variant")
 @Composable
-fun PreviewSBBListItem_Boxed() {
+private fun PreviewSBBListItem_Boxed() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Boxed item",
@@ -576,7 +575,7 @@ fun PreviewSBBListItem_Boxed() {
 
 @Preview(showBackground = true, name = "ListItem - Trailing Icon")
 @Composable
-fun PreviewSBBListItem_IconRight() {
+private fun PreviewSBBListItem_IconRight() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Icon right",
@@ -588,7 +587,7 @@ fun PreviewSBBListItem_IconRight() {
 
 @Preview(showBackground = true, name = "ListItem - Title")
 @Composable
-fun PreviewSBBListItem_Title() {
+private fun PreviewSBBListItem_Title() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Title",
@@ -598,7 +597,7 @@ fun PreviewSBBListItem_Title() {
 
 @Preview(showBackground = true, name = "ListItem - Link")
 @Composable
-fun PreviewSBBListItem_Link() {
+private fun PreviewSBBListItem_Link() {
     SBBTheme {
         SBBListItem.Boxed.Link(
             title = "Link",

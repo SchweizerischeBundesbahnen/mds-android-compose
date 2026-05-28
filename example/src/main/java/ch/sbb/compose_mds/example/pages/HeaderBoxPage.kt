@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
+import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBoxFlap
-import ch.sbb.compose_mds.beta.list.SBBListHeader
 import ch.sbb.compose_mds.example.composeable.Placeholder
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -28,11 +28,12 @@ fun HeaderBoxPage() {
     val currentContext = LocalContext.current
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ),
     ) {
         SBBListHeader(text = "Default:")
         SBBHeaderBox.Default(
@@ -55,7 +56,7 @@ fun HeaderBoxPage() {
             actionLabel = "Action",
             onClickAction = {
                 Toast.makeText(currentContext, "Action executed.", Toast.LENGTH_LONG).show()
-            }
+            },
         )
 
         SBBListHeader(text = "With flap:")
@@ -63,21 +64,23 @@ fun HeaderBoxPage() {
             icon = SBBIcons.Small.UnicornSmall,
             title = "Title",
             subtext = "Subtext",
-            headerBoxFlap = SBBHeaderBoxFlap.Default(
-                leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
-                text = "Flap Text",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
-                onClickTrailingIcon = {
-                    Toast.makeText(currentContext, "Flap clicked.", Toast.LENGTH_LONG).show()
-                }
-            )
+            headerBoxFlap =
+                SBBHeaderBoxFlap.Default(
+                    leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
+                    text = "Flap Text",
+                    trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                    onClickTrailingIcon = {
+                        Toast.makeText(currentContext, "Flap clicked.", Toast.LENGTH_LONG).show()
+                    },
+                ),
         )
 
         SBBListHeader(text = "Custom:")
         SBBHeaderBox.Custom(
-            headerBoxFlap = SBBHeaderBoxFlap.Custom {
-                Placeholder(modifier = Modifier.fillMaxWidth())
-            }
+            headerBoxFlap =
+                SBBHeaderBoxFlap.Custom {
+                    Placeholder(modifier = Modifier.fillMaxWidth())
+                },
         ) {
             Placeholder(modifier = Modifier.fillMaxWidth())
         }

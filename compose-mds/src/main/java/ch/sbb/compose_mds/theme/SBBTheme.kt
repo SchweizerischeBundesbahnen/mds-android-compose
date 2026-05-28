@@ -6,7 +6,10 @@ import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.movableContentOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
 import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemStyle
@@ -81,6 +84,7 @@ object SBBTheme {
 
 @Composable
 fun SBBTheme(
+    modifier: Modifier = Modifier,
     themeContext: ThemeContext = SBBThemeContext,
     darkTheme: Boolean = isSystemInDarkTheme(),
     fontFamily: FontFamily? = null,
@@ -97,9 +101,12 @@ fun SBBTheme(
             colorScheme = SBBTheme.colorScheme,
             typography = SBBTheme.materialTypography,
             content = {
+                val movableContent = remember { movableContentOf { content() } }
                 CompositionLocalProvider(
                     LocalSBBListItemStyle provides defaultSBBListItemTokens(),
-                ) { if (includeSurface) Surface { content() } else content() }
+                ) {
+                    if (includeSurface) Surface { movableContent() } else movableContent()
+                }
             },
         )
     }

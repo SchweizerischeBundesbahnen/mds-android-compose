@@ -36,7 +36,8 @@ class SBBCheckboxTests {
             }
         }
 
-        composeTestRule.onNodeWithText("MyCheckbox")
+        composeTestRule
+            .onNodeWithText("MyCheckbox")
             .assertIsOff()
             .performClick()
             .assertIsOn()

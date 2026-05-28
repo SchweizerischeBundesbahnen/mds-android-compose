@@ -24,27 +24,28 @@ import ch.sbb.compose_mds.sbbicons.small.TrainSmall
 
 @Composable
 fun TabBarPage() {
-    val items = listOf(
-        SBBTabBarItemData(
-            icon = SBBIcons.Small.StationSmall,
-            label = "Item 1",
-        ),
-        SBBTabBarItemData(
-            icon = SBBIcons.Small.TrainSmall,
-            label = "Item 2",
-        ),
-        SBBTabBarItemData(
-            icon = SBBIcons.Small.ArchiveBoxSmall,
-            label = "Item 3",
-        ),
-        SBBTabBarItemData(
-            icon = SBBIcons.Small.ArrowCompassSmall,
-            label = "Item 4",
-        ),
-    )
+    val items =
+        listOf(
+            SBBTabBarItemData(
+                icon = SBBIcons.Small.StationSmall,
+                label = "Item 1",
+            ),
+            SBBTabBarItemData(
+                icon = SBBIcons.Small.TrainSmall,
+                label = "Item 2",
+            ),
+            SBBTabBarItemData(
+                icon = SBBIcons.Small.ArchiveBoxSmall,
+                label = "Item 3",
+            ),
+            SBBTabBarItemData(
+                icon = SBBIcons.Small.ArrowCompassSmall,
+                label = "Item 4",
+            ),
+        )
     val controller by rememberSBBTabBarController(items)
     controller.setWarnings(
-        listOf(SBBTabBarWarningData(index = 1, semantics = "Warning"))
+        listOf(SBBTabBarWarningData(index = 1, semantics = "Warning")),
     )
     Box(
         modifier = Modifier.fillMaxSize(),

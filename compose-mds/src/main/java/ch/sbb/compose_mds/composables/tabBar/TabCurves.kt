@@ -41,19 +41,31 @@ internal class TabCurves(
         private set
 
     init {
-        val startPos = arrayOf(
-            PointF(-2f, 0f), PointF(-1f, 0f), PointF(0f, 0f), PointF(1f, 0f), PointF(2f, 0f)
-        )
-        startP = Array(5) {
-            PointF(midX + startPos[it].x * waveRadius, startPos[it].y * waveRadius)
-        }
+        val startPos =
+            arrayOf(
+                PointF(-2f, 0f),
+                PointF(-1f, 0f),
+                PointF(0f, 0f),
+                PointF(1f, 0f),
+                PointF(2f, 0f),
+            )
+        startP =
+            Array(5) {
+                PointF(midX + startPos[it].x * waveRadius, startPos[it].y * waveRadius)
+            }
 
-        val endPos = arrayOf(
-            PointF(-2f, 0f), PointF(-1f, 1f), PointF(0f, 2f), PointF(1f, 1f), PointF(2f, 0f)
-        )
-        endP = Array(5) {
-            PointF(midX + endPos[it].x * waveRadius, endPos[it].y * waveRadius)
-        }
+        val endPos =
+            arrayOf(
+                PointF(-2f, 0f),
+                PointF(-1f, 1f),
+                PointF(0f, 2f),
+                PointF(1f, 1f),
+                PointF(2f, 0f),
+            )
+        endP =
+            Array(5) {
+                PointF(midX + endPos[it].x * waveRadius, endPos[it].y * waveRadius)
+            }
     }
 
     fun setProgress(
@@ -75,7 +87,8 @@ internal class TabCurves(
         p4.y = startP[4].y
 
         tight =
-            (leftMidX != 0f && p0.x < leftMidX + twoWaveRadius) || (rightMidX != 0f && p4.x > rightMidX - twoWaveRadius)
+            (leftMidX != 0f && p0.x < leftMidX + twoWaveRadius) ||
+            (rightMidX != 0f && p4.x > rightMidX - twoWaveRadius)
 
         p2.x = startP[2].x
         if (tight) {

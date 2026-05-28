@@ -23,13 +23,14 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @Composable
 fun StatusPage() {
     Column(
-        modifier = Modifier
-            .defaultPadding()
-            .fillMaxWidth()
-            .verticalScroll(
-                state = rememberScrollState(),
-            ),
-        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+        modifier =
+            Modifier
+                .defaultPadding()
+                .fillMaxWidth()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Success")
         SBBStatus.Success()

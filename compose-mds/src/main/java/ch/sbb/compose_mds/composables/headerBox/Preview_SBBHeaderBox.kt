@@ -24,11 +24,12 @@ private fun PreviewSBBHeaderBox() {
             icon = SBBIcons.Small.UnicornSmall,
             title = "Title",
             subtext = "Subtext",
-            headerBoxFlap = SBBHeaderBoxFlap.Default(
-                leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
-                text = "Text",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall
-            )
+            headerBoxFlap =
+                SBBHeaderBoxFlap.Default(
+                    leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
+                    text = "Text",
+                    trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                ),
         )
     }
 }
@@ -52,22 +53,24 @@ private fun PreviewSBBHeaderBoxWithButton() {
 private fun PreviewSBBHeaderBoxCustom() {
     SBBTheme {
         SBBHeaderBox.Custom(
-            headerBoxFlap = SBBHeaderBoxFlap.Custom {
-                Box(
-                    modifier = Modifier
-                        .background(color = PrimitiveColors.violet)
-                        .fillMaxWidth()
-                        .height(24.dp)
-                )
-            }
+            headerBoxFlap =
+                SBBHeaderBoxFlap.Custom {
+                    Box(
+                        modifier =
+                            Modifier
+                                .background(color = PrimitiveColors.violet)
+                                .fillMaxWidth()
+                                .height(24.dp),
+                    )
+                },
         ) {
             Box(
-                modifier = Modifier
-                    .background(color = PrimitiveColors.violet)
-                    .fillMaxWidth()
-                    .height(36.dp)
+                modifier =
+                    Modifier
+                        .background(color = PrimitiveColors.violet)
+                        .fillMaxWidth()
+                        .height(36.dp),
             )
         }
     }
 }
-

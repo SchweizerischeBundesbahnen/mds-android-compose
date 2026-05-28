@@ -13,7 +13,9 @@ interface ThemeContext {
     val contextName: String
 
     fun getColors(isDark: Boolean): ContextColors
+
     fun getAdditionalColors(isDark: Boolean): ContextAdditionalColors
+
     fun getFunctionalColors(isDark: Boolean): ContextFunctionalColors
 
     // New: Function to get the Material ColorScheme for this context

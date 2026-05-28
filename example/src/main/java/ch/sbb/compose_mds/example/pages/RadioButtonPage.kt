@@ -24,11 +24,11 @@ import ch.sbb.compose_mds.theme.defaultPadding
 fun RadioButtonPage() {
     var selectedValue: Int by remember { mutableIntStateOf(0) }
     Column(
-        modifier = Modifier
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
-            .defaultPadding(),
+        modifier =
+            Modifier
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ).defaultPadding(),
     ) {
         SBBListHeader(text = "RadioButton")
         SBBRadioButton(
@@ -51,7 +51,7 @@ fun RadioButtonPage() {
             selected = true,
             icon = SBBIcons.Small.TrainSmall,
             enabled = false,
-            onClick = {  },
+            onClick = { },
         )
     }
 }

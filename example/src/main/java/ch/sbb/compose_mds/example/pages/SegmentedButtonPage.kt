@@ -29,15 +29,15 @@ fun SegmentedButtonPage() {
     val context = LocalContext.current
 
     Column(
-        modifier = Modifier
-            .defaultPadding()
-            .fillMaxWidth()
-            .verticalScroll(
-                state = rememberScrollState(),
-            ),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        modifier =
+            Modifier
+                .defaultPadding()
+                .fillMaxWidth()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-
         // DEFAULT
         SBBListHeader(text = "Default")
 
@@ -49,7 +49,7 @@ fun SegmentedButtonPage() {
                 toastSelection(context, selected)
             },
             selection = defaultSelection1,
-            segments = threeButtonSegments()
+            segments = threeButtonSegments(),
         )
 
         // Default with two segments
@@ -60,7 +60,7 @@ fun SegmentedButtonPage() {
                 toastSelection(context, selected)
             },
             selection = defaultSelection2,
-            segments = twoButtonSegments()
+            segments = twoButtonSegments(),
         )
 
         // Default with two segments, disabled
@@ -75,39 +75,45 @@ fun SegmentedButtonPage() {
 }
 
 @OptIn(ExperimentalSBBComponent::class)
-private fun threeButtonSegments() = listOf(
-    SBBButtonSegment(
-        label = "Label 1",
-        value = "Selection 1"
-    ),
-    SBBButtonSegment(
-        label = "Label 2",
-        value = "Selection 2"
-    ),
-    SBBButtonSegment(
-        label = "Label 3",
-        value = "Selection 3"
-    ),
-)
+private fun threeButtonSegments() =
+    listOf(
+        SBBButtonSegment(
+            label = "Label 1",
+            value = "Selection 1",
+        ),
+        SBBButtonSegment(
+            label = "Label 2",
+            value = "Selection 2",
+        ),
+        SBBButtonSegment(
+            label = "Label 3",
+            value = "Selection 3",
+        ),
+    )
 
 @OptIn(ExperimentalSBBComponent::class)
-private fun twoButtonSegments() = listOf(
-    SBBButtonSegment(
-        label = "Label 1",
-        value = "Selection 1"
-    ),
-    SBBButtonSegment(
-        label = "Label 2",
-        value = "Selection 2"
-    ),
-)
+private fun twoButtonSegments() =
+    listOf(
+        SBBButtonSegment(
+            label = "Label 1",
+            value = "Selection 1",
+        ),
+        SBBButtonSegment(
+            label = "Label 2",
+            value = "Selection 2",
+        ),
+    )
 
-private fun toastSelection(context: Context, selection: String) {
-    Toast.makeText(
-        context,
-        "Selection changed: $selection",
-        Toast.LENGTH_SHORT
-    ).show()
+private fun toastSelection(
+    context: Context,
+    selection: String,
+) {
+    Toast
+        .makeText(
+            context,
+            "Selection changed: $selection",
+            Toast.LENGTH_SHORT,
+        ).show()
 }
 
 @PreviewLightDark

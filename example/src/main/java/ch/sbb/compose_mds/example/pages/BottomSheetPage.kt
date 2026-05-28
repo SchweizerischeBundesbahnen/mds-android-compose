@@ -27,7 +27,6 @@ import ch.sbb.compose_mds.example.composeable.Placeholder
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
 
-
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
 @Composable
 fun BottomSheetPage() {
@@ -40,19 +39,19 @@ fun BottomSheetPage() {
         SBBSecondaryButton(
             label = "Default",
             modifier = Modifier.fillMaxWidth(),
-            onClick = { showBottomSheet = true }
+            onClick = { showBottomSheet = true },
         )
         Spacer(Modifier.height(SBBSpacing.Small))
         SBBSecondaryButton(
             label = "Scrollable content",
             modifier = Modifier.fillMaxWidth(),
-            onClick = { showBottomSheetScroll = true }
+            onClick = { showBottomSheetScroll = true },
         )
         Spacer(Modifier.height(SBBSpacing.Small))
         SBBSecondaryButton(
             label = "FullScreen",
             modifier = Modifier.fillMaxWidth(),
-            onClick = { showFullScreenBottomSheet = true }
+            onClick = { showFullScreenBottomSheet = true },
         )
     }
 
@@ -70,7 +69,7 @@ fun BottomSheetPage() {
 
     if (showFullScreenBottomSheet) {
         FullScreenBottomSheet(
-            onDismiss = { showFullScreenBottomSheet = false }
+            onDismiss = { showFullScreenBottomSheet = false },
         )
     }
 }
@@ -79,17 +78,18 @@ fun BottomSheetPage() {
 @OptIn(ExperimentalMaterial3Api::class)
 fun DefaultBottomSheet(
     onDismiss: () -> Unit,
-    sheetState: SheetState = rememberModalBottomSheetState()
+    sheetState: SheetState = rememberModalBottomSheetState(),
 ) {
     SBBBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        title = "Default"
+        title = "Default",
     ) {
         Placeholder(
-            modifier = Modifier
-                .height(200.dp)
-                .fillMaxWidth()
+            modifier =
+                Modifier
+                    .height(200.dp)
+                    .fillMaxWidth(),
         )
     }
 }
@@ -98,22 +98,23 @@ fun DefaultBottomSheet(
 @OptIn(ExperimentalMaterial3Api::class)
 fun ScrollableBottomSheet(
     onDismiss: () -> Unit,
-    sheetState: SheetState = rememberModalBottomSheetState()
+    sheetState: SheetState = rememberModalBottomSheetState(),
 ) {
     SBBBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        title = "Scrollable content"
+        title = "Scrollable content",
     ) {
         LazyColumn(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             items(100) {
                 Placeholder(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 4.dp)
-                        .height(56.dp)
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(top = 4.dp)
+                            .height(56.dp),
                 )
             }
         }
@@ -124,17 +125,18 @@ fun ScrollableBottomSheet(
 @OptIn(ExperimentalMaterial3Api::class)
 fun FullScreenBottomSheet(
     onDismiss: () -> Unit,
-    sheetState: SheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    sheetState: SheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
 ) {
     SBBBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        title = "FullScreen"
+        title = "FullScreen",
     ) {
         Placeholder(
-            modifier = Modifier
-                .fillMaxHeight()
-                .fillMaxWidth()
+            modifier =
+                Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth(),
         )
     }
 }

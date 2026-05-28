@@ -21,7 +21,6 @@ import ch.sbb.compose_mds.theme.SBBSpacing
  * Implementations render their own UI via [Render].
  */
 sealed interface SBBHeaderBoxFlap {
-
     /**
      * Draw the flap content.
      * Called by the parent.
@@ -56,21 +55,26 @@ sealed interface SBBHeaderBoxFlap {
         override fun Render() {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
-                if (leadingIcon != null) Icon(
-                    modifier = Modifier.size(20.dp),
-                    imageVector = leadingIcon,
-                    contentDescription = null
-                )
+                if (leadingIcon != null) {
+                    Icon(
+                        modifier = Modifier.size(20.dp),
+                        imageVector = leadingIcon,
+                        contentDescription = null,
+                    )
+                }
                 Text(modifier = Modifier.weight(1F), text = text, style = SBBTheme.sbbTypography.smallLight)
-                if (trailingIcon != null) Icon(
-                    modifier = Modifier
-                        .size(20.dp)
-                        .clickable(onClickTrailingIcon = onClickTrailingIcon),
-                    imageVector = trailingIcon,
-                    contentDescription = null
-                )
+                if (trailingIcon != null) {
+                    Icon(
+                        modifier =
+                            Modifier
+                                .size(20.dp)
+                                .clickable(onClickTrailingIcon = onClickTrailingIcon),
+                        imageVector = trailingIcon,
+                        contentDescription = null,
+                    )
+                }
             }
         }
 
@@ -89,7 +93,7 @@ sealed interface SBBHeaderBoxFlap {
      * @param content composable that draws the flap
      */
     data class Custom(
-        private val content: @Composable () -> Unit
+        private val content: @Composable () -> Unit,
     ) : SBBHeaderBoxFlap {
         @Composable
         override fun Render() = content()

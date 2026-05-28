@@ -16,7 +16,7 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 @Composable
 fun ContainerPage() {
     Column(
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(16.dp),
     ) {
         SBBListHeader(text = "Content-Box")
         SBBContentBox {

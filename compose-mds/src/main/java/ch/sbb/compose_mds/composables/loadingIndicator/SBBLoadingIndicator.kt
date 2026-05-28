@@ -34,7 +34,6 @@ import androidx.compose.ui.unit.times
 import ch.sbb.compose_mds.theme.PrimitiveColors
 
 object SBBLoadingIndicator {
-
     /***
      * Implementation of the small SBB Loading Indicator.
      *
@@ -56,7 +55,7 @@ object SBBLoadingIndicator {
             offsetY = 6.25.dp,
             rotationY = 70f,
             cameraDistance = 4f,
-            windowPadding = 4.dp
+            windowPadding = 4.dp,
         )
     }
 
@@ -76,7 +75,6 @@ object SBBLoadingIndicator {
         SBBLoadingIndicator(modifier = modifier, color = color)
     }
 }
-
 
 @Composable
 private fun SBBLoadingIndicator(
@@ -105,54 +103,60 @@ private fun SBBLoadingIndicator(
     )
 
     Row(
-        modifier = modifier
-            .height(height + offsetY * 2)
-            .graphicsLayer(
-                cameraDistance = cameraDistance,
-                rotationY = rotationY,
-            )
-            .offset(offset.x * width * 5, offsetY),
+        modifier =
+            modifier
+                .height(height + offsetY * 2)
+                .graphicsLayer(
+                    cameraDistance = cameraDistance,
+                    rotationY = rotationY,
+                ).offset(offset.x * width * 5, offsetY),
     ) {
         Box(
-            modifier = Modifier
-                .width(width)
-                .height(height)
-                .padding(end = windowPadding)
-                .background(colorF(square1)),
+            modifier =
+                Modifier
+                    .width(width)
+                    .height(height)
+                    .padding(end = windowPadding)
+                    .background(colorF(square1)),
         )
         Box(
-            modifier = Modifier
-                .width(width)
-                .height(height)
-                .padding(end = windowPadding.times(0.9f))
-                .background(colorF(square2)),
+            modifier =
+                Modifier
+                    .width(width)
+                    .height(height)
+                    .padding(end = windowPadding.times(0.9f))
+                    .background(colorF(square2)),
         )
         Box(
-            modifier = Modifier
-                .width(width)
-                .height(height)
-                .padding(end = windowPadding.times(0.8f))
-                .background(colorF(square3)),
+            modifier =
+                Modifier
+                    .width(width)
+                    .height(height)
+                    .padding(end = windowPadding.times(0.8f))
+                    .background(colorF(square3)),
         )
         Box(
-            modifier = Modifier
-                .width(width)
-                .height(height)
-                .padding(end = windowPadding.times(0.7f))
-                .background(colorF(square4)),
+            modifier =
+                Modifier
+                    .width(width)
+                    .height(height)
+                    .padding(end = windowPadding.times(0.7f))
+                    .background(colorF(square4)),
         )
         Box(
-            modifier = Modifier
-                .width(width)
-                .height(height)
-                .background(colorF(square5)),
+            modifier =
+                Modifier
+                    .width(width)
+                    .height(height)
+                    .background(colorF(square5)),
         )
     }
 }
 
-fun <T> spec(): InfiniteRepeatableSpec<T> = infiniteRepeatable(
-    animation = tween(AnimationConstants.DefaultDurationMillis, easing = LinearEasing)
-)
+fun <T> spec(): InfiniteRepeatableSpec<T> =
+    infiniteRepeatable(
+        animation = tween(AnimationConstants.DefaultDurationMillis, easing = LinearEasing),
+    )
 
 @Preview
 @Composable
@@ -185,4 +189,3 @@ private fun Preview_SBBLoadingIndicatorDefault() {
         }
     }
 }
-

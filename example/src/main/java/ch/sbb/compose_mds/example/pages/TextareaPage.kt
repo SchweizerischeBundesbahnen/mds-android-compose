@@ -20,8 +20,8 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.beta.text.SBBTextarea
+import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -39,18 +39,19 @@ fun TextareaPage() {
         SBBBottomSheet(
             onDismissRequest = { showSheet = false },
             sheetState = rememberModalBottomSheetState(),
-            title = "Information"
+            title = "Information",
         ) {
             Text("Lorem ipsum.")
         }
     }
 
     Column(
-        modifier = Modifier
-            .defaultPadding()
-            .fillMaxWidth()
-            .verticalScroll(state = rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        modifier =
+            Modifier
+                .defaultPadding()
+                .fillMaxWidth()
+                .verticalScroll(state = rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
         SBBTextareaErrorSection(onShowSheet = { showSheet = true })
@@ -67,11 +68,11 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Default")
         Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             SBBTextarea(
                 value = text1,
@@ -87,7 +88,7 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 trailingIcon = SBBIcons.Small.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
-                }
+                },
             )
             SBBTextarea(
                 value = text2,
@@ -102,7 +103,7 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 trailingIcon = SBBIcons.Small.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
-                }
+                },
             )
             SBBTextarea(
                 value = text4,
@@ -112,7 +113,7 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 trailingIcon = SBBIcons.Small.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
-                }
+                },
             )
         }
     }
@@ -124,11 +125,11 @@ private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
     var text5 by remember { mutableStateOf("Error") }
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall)
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
         SBBListHeader(text = "Error")
         Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             SBBTextarea(
                 value = text5,
@@ -139,7 +140,7 @@ private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
                 isError = true,
                 onClickTrailingIcon = {
                     onShowSheet()
-                }
+                },
             )
             SBBTextarea(
                 value = text5,

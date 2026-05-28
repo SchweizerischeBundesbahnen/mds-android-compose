@@ -53,29 +53,33 @@ val backgroundBorderWidth = 1.dp
  */
 @Composable
 fun SBBRadioButton(
-    modifier: Modifier = Modifier,
     label: String,
     selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     icon: ImageVector? = null,
     interactionSource: MutableInteractionSource? = null,
-    onClick: () -> Unit,
 ) {
-    val colors = if (SBBTheme.isDarkMode) darkRadioButtonColors(enabled = enabled)
-    else lightRadioButtonColors(enabled = enabled)
+    val colors =
+        if (SBBTheme.isDarkMode) {
+            darkRadioButtonColors(enabled = enabled)
+        } else {
+            lightRadioButtonColors(enabled = enabled)
+        }
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier
-            .minimumInteractiveComponentSize()
-            .clip(RoundedCornerShape(SBBSpacing.XSmall))
-            .clickable(
-                onClick = onClick,
-                enabled = enabled,
-                role = Role.RadioButton,
-                interactionSource = interactionSource,
-                indication = ripple(),
-            )
-            .padding(SBBSpacing.XSmall),
+        modifier =
+            modifier
+                .minimumInteractiveComponentSize()
+                .clip(RoundedCornerShape(SBBSpacing.XSmall))
+                .clickable(
+                    onClick = onClick,
+                    enabled = enabled,
+                    role = Role.RadioButton,
+                    interactionSource = interactionSource,
+                    indication = ripple(),
+                ).padding(SBBSpacing.XSmall),
     ) {
         DrawRadio(
             modifier = Modifier.padding(end = SBBSpacing.XSmall),
@@ -84,9 +88,10 @@ fun SBBRadioButton(
         )
         if (icon != null) {
             Icon(
-                modifier = Modifier
-                    .semantics { hideFromAccessibility() }
-                    .padding(end = SBBSpacing.XSmall),
+                modifier =
+                    Modifier
+                        .semantics { hideFromAccessibility() }
+                        .padding(end = SBBSpacing.XSmall),
                 imageVector = icon,
                 contentDescription = null,
                 tint = colors.iconColor,
@@ -98,25 +103,27 @@ fun SBBRadioButton(
 
 @Composable
 private fun DrawRadio(
-    modifier: Modifier,
     selected: Boolean,
     colors: SBBRadioButtonColors,
+    modifier: Modifier = Modifier,
 ) {
     val radioButtonSize = (backgroundRadius + backgroundBorderWidth) * 2
     val animatedTickRadius = animateDpAsState(targetValue = if (selected) tickRadius else 0.dp)
     Canvas(
-        modifier = modifier.size(radioButtonSize, radioButtonSize)
+        modifier = modifier.size(radioButtonSize, radioButtonSize),
     ) {
         // Draw the radio button
         val strokeWidth = backgroundBorderWidth.toPx()
         drawCircle(
             colors.tickBorderColor,
             radius = backgroundRadius.toPx() - strokeWidth / 2,
-            style = Stroke(strokeWidth)
+            style = Stroke(strokeWidth),
         )
         if (animatedTickRadius.value > 0.dp) {
             drawCircle(
-                colors.tickColor, animatedTickRadius.value.toPx() - strokeWidth / 2, style = Fill
+                colors.tickColor,
+                animatedTickRadius.value.toPx() - strokeWidth / 2,
+                style = Fill,
             )
         }
     }
@@ -128,9 +135,10 @@ private fun SBBSwitchPreview() {
     val darkTheme = isSystemInDarkTheme()
     SBBTheme {
         Column(
-            modifier = Modifier
-                .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
-                .padding(SBBSpacing.Medium),
+            modifier =
+                Modifier
+                    .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
+                    .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             SBBRadioButton(

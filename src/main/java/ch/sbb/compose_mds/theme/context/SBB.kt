@@ -9,33 +9,37 @@ import ch.sbb.compose_mds.theme.context.colors.ContextColors
 import ch.sbb.compose_mds.theme.context.colors.ContextFunctionalColors
 
 // Define light mode colors
-fun contextSBBColorsLight(): ContextColors = ContextColors(
-    primary = PrimitiveColors.red,
-    primary125 = PrimitiveColors.red125,
-    primary150 = PrimitiveColors.red150,
-    primary85 = PrimitiveColors.red85,
-    background = PrimitiveColors.white,
-    onBackground = PrimitiveColors.black,
-    white = PrimitiveColors.white,
-    black = PrimitiveColors.black,
-)
+fun contextSBBColorsLight(): ContextColors =
+    ContextColors(
+        primary = PrimitiveColors.red,
+        primary125 = PrimitiveColors.red125,
+        primary150 = PrimitiveColors.red150,
+        primary85 = PrimitiveColors.red85,
+        background = PrimitiveColors.white,
+        onBackground = PrimitiveColors.black,
+        white = PrimitiveColors.white,
+        black = PrimitiveColors.black,
+    )
 
 // Define dark mode colors
-fun contextSBBColorsDark(): ContextColors = ContextColors(
-    primary = PrimitiveColors.red,
-    primary125 = PrimitiveColors.red125,
-    primary150 = PrimitiveColors.red150,
-    primary85 = PrimitiveColors.red85,
-    background = PrimitiveColors.black,
-    onBackground = PrimitiveColors.white,
-    white = PrimitiveColors.white,
-    black = PrimitiveColors.black,
-)
+fun contextSBBColorsDark(): ContextColors =
+    ContextColors(
+        primary = PrimitiveColors.red,
+        primary125 = PrimitiveColors.red125,
+        primary150 = PrimitiveColors.red150,
+        primary85 = PrimitiveColors.red85,
+        background = PrimitiveColors.black,
+        onBackground = PrimitiveColors.white,
+        white = PrimitiveColors.white,
+        black = PrimitiveColors.black,
+    )
 
 fun contextSBBAdditionalColorsLight() = ContextAdditionalColors()
+
 fun contextSBBAdditionalColorsDark() = ContextAdditionalColors()
 
 fun contextSBBFunctionalColorsLight() = ContextFunctionalColors()
+
 fun contextSBBFunctionalColorsDark() = ContextFunctionalColors()
 
 object SBBThemeContext : ThemeContext {
@@ -51,8 +55,12 @@ object SBBThemeContext : ThemeContext {
 
     // Implement the new methods from ThemeContext interface
     override fun getColors(isDark: Boolean): ContextColors = if (isDark) contextSBBColorsDark() else contextSBBColorsLight()
-    override fun getAdditionalColors(isDark: Boolean): ContextAdditionalColors = if (isDark) contextSBBAdditionalColorsDark() else contextSBBAdditionalColorsLight()
-    override fun getFunctionalColors(isDark: Boolean): ContextFunctionalColors = if (isDark) contextSBBFunctionalColorsDark() else contextSBBFunctionalColorsLight()
+
+    override fun getAdditionalColors(isDark: Boolean): ContextAdditionalColors =
+        if (isDark) contextSBBAdditionalColorsDark() else contextSBBAdditionalColorsLight()
+
+    override fun getFunctionalColors(isDark: Boolean): ContextFunctionalColors =
+        if (isDark) contextSBBFunctionalColorsDark() else contextSBBFunctionalColorsLight()
 
     override fun getMaterialColorScheme(isDark: Boolean): ColorScheme {
         val currentColors = getColors(isDark)

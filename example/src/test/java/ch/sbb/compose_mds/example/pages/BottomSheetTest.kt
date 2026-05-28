@@ -18,7 +18,7 @@ import org.robolectric.annotation.GraphicsMode
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(
     sdk = [35],
-    qualifiers = RobolectricDeviceQualifiers.Pixel7Pro
+    qualifiers = RobolectricDeviceQualifiers.Pixel7Pro,
 )
 class BottomSheetTest {
     @get:Rule

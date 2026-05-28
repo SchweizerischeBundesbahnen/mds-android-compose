@@ -23,20 +23,20 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @Composable
 fun SwitchPage() {
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .verticalScroll(
-                state = rememberScrollState(),
-            )
-            .defaultPadding(),
-        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ).defaultPadding(),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         var checkedState: Boolean by remember { mutableStateOf(true) }
 
         SBBListHeader(text = "Default")
         SBBSwitch(
             checked = checkedState,
-            onCheckedChange = { checked -> checkedState = checked }
+            onCheckedChange = { checked -> checkedState = checked },
         )
 
         SBBListHeader(text = "Disabled")

@@ -43,7 +43,10 @@ data class SBBSwitchColors(
     val checkedBackgroundColor: Color,
 )
 
-private fun SBBSwitchColors.withAlpha(alpha: Float, blendColor: Color): SBBSwitchColors {
+private fun SBBSwitchColors.withAlpha(
+    alpha: Float,
+    blendColor: Color,
+): SBBSwitchColors {
     if (alpha >= 1f) return this
 
     return copy(
@@ -56,7 +59,10 @@ private fun SBBSwitchColors.withAlpha(alpha: Float, blendColor: Color): SBBSwitc
     )
 }
 
-private fun Color.blendOver(blendColor: Color, alpha: Float): Color {
+private fun Color.blendOver(
+    blendColor: Color,
+    alpha: Float,
+): Color {
     val a = alpha.coerceIn(0f, 1f)
     val r = blendColor.red * (1f - a) + this.red * a
     val g = blendColor.green * (1f - a) + this.green * a

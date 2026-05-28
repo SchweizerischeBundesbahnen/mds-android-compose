@@ -37,7 +37,6 @@ import ch.sbb.compose_mds.theme.SBBSpacing
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/header-box/)
  */
 object SBBHeaderBox {
-
     /**
      * Standard HeaderBox with optional [icon], required [title] and optional [subtext].
      *
@@ -48,13 +47,15 @@ object SBBHeaderBox {
      */
     @Composable
     fun Default(
-        icon: ImageVector? = null,
         title: String,
+        modifier: Modifier = Modifier,
+        icon: ImageVector? = null,
         subtext: String? = null,
-        headerBoxFlap: SBBHeaderBoxFlap = SBBHeaderBoxFlap.None
+        headerBoxFlap: SBBHeaderBoxFlap = SBBHeaderBoxFlap.None,
     ) {
         Custom(
-            headerBoxFlap = headerBoxFlap
+            headerBoxFlap = headerBoxFlap,
+            modifier = modifier,
         ) {
             DefaultContent(
                 icon = icon,
@@ -77,16 +78,18 @@ object SBBHeaderBox {
      */
     @Composable
     fun WithButton(
-        icon: ImageVector? = null,
         title: String,
+        onClickAction: () -> Unit,
+        modifier: Modifier = Modifier,
+        icon: ImageVector? = null,
         subtext: String? = null,
         headerBoxFlap: SBBHeaderBoxFlap = SBBHeaderBoxFlap.None,
         actionIcon: ImageVector? = null,
         actionLabel: String? = null,
-        onClickAction: () -> Unit,
     ) {
         Custom(
-            headerBoxFlap = headerBoxFlap
+            headerBoxFlap = headerBoxFlap,
+            modifier = modifier,
         ) {
             DefaultContent(
                 icon = icon,
@@ -107,15 +110,17 @@ object SBBHeaderBox {
      */
     @Composable
     fun Custom(
+        modifier: Modifier = Modifier,
         headerBoxFlap: SBBHeaderBoxFlap = SBBHeaderBoxFlap.None,
         content: @Composable () -> Unit,
     ) {
-        Box {
+        Box(modifier = modifier) {
             Box(
-                modifier = Modifier
-                    .background(SBBTheme.colors.primary)
-                    .fillMaxWidth()
-                    .height(SBBSpacing.Large)
+                modifier =
+                    Modifier
+                        .background(SBBTheme.colors.primary)
+                        .fillMaxWidth()
+                        .height(SBBSpacing.Large),
             )
             FlapWrapper(
                 headerBoxContent = content,
@@ -130,23 +135,25 @@ object SBBHeaderBox {
         headerBoxFlap: SBBHeaderBoxFlap,
     ) {
         Column(
-            modifier = Modifier
-                .padding(start = SBBSpacing.XSmall, end = SBBSpacing.XSmall)
-                .clip(RoundedCornerShape(SBBSpacing.Medium))
-                .background(color = flapBackgroundColor())
+            modifier =
+                Modifier
+                    .padding(start = SBBSpacing.XSmall, end = SBBSpacing.XSmall)
+                    .clip(RoundedCornerShape(SBBSpacing.Medium))
+                    .background(color = flapBackgroundColor()),
         ) {
             SBBContentBox(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             ) {
                 headerBoxContent()
             }
 
             if (headerBoxFlap !is SBBHeaderBoxFlap.None) {
                 Box(
-                    modifier = Modifier.padding(
-                        horizontal = SBBSpacing.Medium,
-                        vertical = SBBSpacing.XSmall
-                    )
+                    modifier =
+                        Modifier.padding(
+                            horizontal = SBBSpacing.Medium,
+                            vertical = SBBSpacing.XSmall,
+                        ),
                 ) {
                     headerBoxFlap.Render()
                 }
@@ -156,52 +163,54 @@ object SBBHeaderBox {
 
     @Composable
     private fun DefaultContent(
-        icon: ImageVector? = null,
         title: String,
         subtext: String?,
+        modifier: Modifier = Modifier,
+        icon: ImageVector? = null,
         actionIcon: ImageVector? = null,
         actionLabel: String? = null,
         onClickAction: (() -> Unit)? = null,
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Column {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    if (icon != null)
+                    if (icon != null) {
                         Icon(
                             modifier = Modifier.width(24.dp),
                             imageVector = icon,
                             contentDescription = null,
                             tint = iconColor(),
                         )
+                    }
                     Text(
                         title,
                         style = SBBTheme.sbbTypography.mediumBold,
-                        modifier = Modifier.padding(top = 2.dp, bottom = 2.dp)
+                        modifier = Modifier.padding(top = 2.dp, bottom = 2.dp),
                     )
                 }
-                if (!subtext.isNullOrEmpty())
+                if (!subtext.isNullOrEmpty()) {
                     Text(
                         subtext,
                         style = SBBTheme.sbbTypography.smallLight,
-                        modifier = Modifier.padding(top = 2.dp, bottom = 2.dp)
+                        modifier = Modifier.padding(top = 2.dp, bottom = 2.dp),
                     )
+                }
             }
-            if (onClickAction != null)
+            if (onClickAction != null) {
                 SBBTertiaryButtonSmall(
                     label = actionLabel,
                     icon = actionIcon,
                     onClick = onClickAction,
                 )
+            }
         }
-
     }
 
     @Composable

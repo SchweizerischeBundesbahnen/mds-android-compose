@@ -18,7 +18,6 @@ data class ContextAdditionalColors(
     val brown: Color = PrimitiveColors.brown,
     val green: Color = PrimitiveColors.green,
     val turquoise: Color = PrimitiveColors.turquoise,
-
     // dark colors
     val skyDark: Color = PrimitiveColors.skyDark,
     val nightDark: Color = PrimitiveColors.nightDark,

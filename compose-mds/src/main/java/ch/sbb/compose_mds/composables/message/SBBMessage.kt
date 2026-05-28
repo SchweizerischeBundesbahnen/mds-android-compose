@@ -25,15 +25,17 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 object SBBMessage
 
 enum class SBBMessageIllustration {
-    STAFF_MALE, STAFF_FEMALE, DISPLAY;
+    STAFF_MALE,
+    STAFF_FEMALE,
+    DISPLAY,
+    ;
 
-    fun getResId(isDarkMode: Boolean): Int {
-        return when (this) {
+    fun getResId(isDarkMode: Boolean): Int =
+        when (this) {
             STAFF_FEMALE -> if (isDarkMode) R.drawable.illustration_female_dark else R.drawable.illustration_female
             STAFF_MALE -> if (isDarkMode) R.drawable.illustration_male_dark else R.drawable.illustration_male
             DISPLAY -> if (isDarkMode) R.drawable.illustration_display_dark else R.drawable.illustration_display
         }
-    }
 }
 
 /***
@@ -42,10 +44,10 @@ enum class SBBMessageIllustration {
  */
 @Composable
 fun SBBMessage.Custom(
-    modifier: Modifier = Modifier,
-    illustration: (@Composable () -> Unit)? = null,
     title: String,
     message: String,
+    modifier: Modifier = Modifier,
+    illustration: (@Composable () -> Unit)? = null,
     secondaryMessage: String? = null,
     interactionIcon: ImageVector? = null,
     onInteraction: (() -> Unit)? = null,
@@ -57,7 +59,7 @@ fun SBBMessage.Custom(
         message = message,
         secondaryMessage = secondaryMessage,
         interactionIcon = interactionIcon,
-        onInteraction = onInteraction
+        onInteraction = onInteraction,
     )
 }
 
@@ -67,9 +69,9 @@ fun SBBMessage.Custom(
  */
 @Composable
 fun SBBMessage.Default(
-    modifier: Modifier = Modifier,
     title: String,
     message: String,
+    modifier: Modifier = Modifier,
     illustration: SBBMessageIllustration = SBBMessageIllustration.STAFF_MALE,
     interactionIcon: ImageVector? = null,
     onInteraction: (() -> Unit)? = null,
@@ -80,13 +82,13 @@ fun SBBMessage.Default(
             val resourceId = illustration.getResId(isDarkMode = SBBTheme.isDarkMode)
             Image(
                 painter = painterResource(id = resourceId),
-                contentDescription = "Message illustration"
+                contentDescription = "Message illustration",
             )
         },
         title = title,
         message = message,
         interactionIcon = interactionIcon,
-        onInteraction = onInteraction
+        onInteraction = onInteraction,
     )
 }
 
@@ -96,9 +98,9 @@ fun SBBMessage.Default(
  */
 @Composable
 fun SBBMessage.Error(
-    modifier: Modifier = Modifier,
     title: String,
     message: String,
+    modifier: Modifier = Modifier,
     errorCode: String? = null,
     interactionIcon: ImageVector? = null,
     onInteraction: (() -> Unit)? = null,
@@ -110,14 +112,14 @@ fun SBBMessage.Error(
                 SBBMessageIllustration.DISPLAY.getResId(isDarkMode = SBBTheme.isDarkMode)
             Image(
                 painter = painterResource(id = resourceId),
-                contentDescription = "Message illustration"
+                contentDescription = "Message illustration",
             )
         },
         title = title,
         message = message,
         secondaryMessage = errorCode,
         interactionIcon = interactionIcon,
-        onInteraction = onInteraction
+        onInteraction = onInteraction,
     )
 }
 
@@ -127,9 +129,9 @@ fun SBBMessage.Error(
  */
 @Composable
 fun SBBMessage.Loading(
-    modifier: Modifier = Modifier,
     title: String,
     message: String,
+    modifier: Modifier = Modifier,
 ) {
     SBBMessageInternal(
         modifier = modifier,
@@ -155,17 +157,17 @@ fun SBBMessage.Loading(
  */
 @Composable
 private fun SBBMessageInternal(
-    modifier: Modifier = Modifier,
-    illustration: (@Composable () -> Unit)? = null,
     title: String,
     message: String,
+    modifier: Modifier = Modifier,
+    illustration: (@Composable () -> Unit)? = null,
     secondaryMessage: String? = null,
     interactionIcon: ImageVector? = null,
     onInteraction: (() -> Unit)? = null,
 ) {
     Column(
         modifier = modifier.padding(SBBSpacing.Medium),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         if (illustration != null) {
             illustration()
@@ -176,7 +178,7 @@ private fun SBBMessageInternal(
             title,
             style = SBBTheme.sbbTypography.mediumLight,
             maxLines = 1,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
 
         Spacer(Modifier.height(SBBSpacing.Medium))
@@ -194,14 +196,14 @@ private fun SBBMessageInternal(
             Text(
                 secondaryMessage,
                 style = SBBTheme.sbbTypography.XSmallLight,
-                color = secondaryTextColor
+                color = secondaryTextColor,
             )
         }
         if (onInteraction != null) {
             Spacer(Modifier.height(SBBSpacing.Large))
             SBBTertiaryButton(
                 icon = interactionIcon ?: SBBIcons.Medium.ArrowsCircleMedium,
-                onClick = onInteraction
+                onClick = onInteraction,
             )
         }
     }
