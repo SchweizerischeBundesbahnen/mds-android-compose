@@ -23,7 +23,7 @@ Changes can be found in the [CHANGELOG][changelog].
 
 ## Getting-Started
 
-To import the Design System Mobile, please add the [JitPack][jitpack] repository to your root `settings.gradle.kts` or `build.gradle.kts` at the end of repositories:
+To import the SBB Design System Mobile, please add the [JitPack][jitpack] repository to your root `settings.gradle.kts` or `build.gradle.kts` at the end of repositories:
 
 ``` kotlin                     
 dependencyResolutionManagement {
@@ -36,12 +36,23 @@ dependencyResolutionManagement {
     }
 }
 ```
+Next, declare the SBB Design System Mobile artifacts in `libs.versions.toml`.Check the available versions in 
+[JitPack Packages](https://jitpack.io/#SchweizerischeBundesbahnen/mds-android-compose).
 
-Add the Design SBB System Mobile dependency to your `app/build.gradle.kts`:
+```toml
+[versions]
+mds = "0.1.10"
+
+[libraries]
+mds-sbb = { group = "com.github.SchweizerischeBundesbahnen", name = "mds-android-compose", version.ref = "mds" }
+
+```
+
+Add the SBB Design System Mobile dependency to your `app/build.gradle.kts`:
 
 ``` kotlin                     
 dependencies {
-    implementation 'com.github.SchweizerischeBundesbahnen:mds-android-compose:{latest-release}'
+        implementation(libs.mds.sbb)
 }
 ```
 
