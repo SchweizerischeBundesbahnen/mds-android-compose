@@ -38,6 +38,7 @@ import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
 import ch.sbb.compose_mds.example.pages.MainPage
 import ch.sbb.compose_mds.example.pages.MessagePage
 import ch.sbb.compose_mds.example.pages.BottomSheetPage
+import ch.sbb.compose_mds.example.pages.ListItemPage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
 import ch.sbb.compose_mds.example.pages.RadioButtonPage
 import ch.sbb.compose_mds.example.pages.SegmentedButtonPage
@@ -100,6 +101,7 @@ class MainActivity : ComponentActivity() {
                             composable("container") { ContainerPage() }
                             composable("message") { MessagePage() }
                             composable("radio-button") { RadioButtonPage() }
+                            composable("list-item") { ListItemPage() }
                         }
                     }
                 }

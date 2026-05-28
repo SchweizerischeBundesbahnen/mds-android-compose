@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -29,13 +28,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListItem
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBList
+import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallDownSmall
@@ -202,22 +201,18 @@ internal fun <T> SelectionSheet(
         },
         sheetState = rememberModalBottomSheetState(),
         showCloseButton = true,
-        title = title
+        title = title,
     ) {
-        SBBContentBox(contentPadding = PaddingValues(0.dp)) {
-            items.forEachIndexed { index, item ->
+        SBBList.Wrap {
+            items.forEach { item ->
                 val isSelected = value == item.value
-                val textStyle =
-                    MaterialTheme.typography.bodyMedium.copy(fontWeight = if (isSelected) FontWeight.Bold else null)
-                SBBListItem(
+                SBBListItem.Default(
                     title = item.label,
-                    textStyle = textStyle,
-                    trailingIcon = if (isSelected) SBBIcons.Small.TickSmall else null,
+                    trailing = if (isSelected) SBBIcons.Small.TickSmall else null,
                     onClick = {
                         onClose()
                         onSelected(item.value)
                     },
-                    isLastElement = index == items.size - 1
                 )
             }
         }
