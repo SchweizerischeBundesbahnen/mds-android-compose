@@ -1,8 +1,8 @@
+import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.tasks.BundleAar
 
 plugins {
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
@@ -36,7 +36,7 @@ ktlint {
     }
 }
 
-android {
+configure<LibraryExtension> {
     namespace = "ch.sbb.compose_mds"
     compileSdk = 36
 
@@ -60,30 +60,27 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-    kotlin {
-        jvmToolchain(21)
-    }
+}
 
-    configure<PublishingExtension> {
-        publications {
-            register<MavenPublication>("release") {
-                groupId = "ch.sbb.compose_mds"
-                artifactId = "compose-mds"
-                version =
-                    when (val version = project.property("version") as String) {
-                        "unspecified" -> "LOCAL-SNAPSHOT"
-                        else -> version
-                    }
+tasks.withType<AbstractPublishToMaven> {
+    dependsOn(tasks.withType<BundleAar>())
+}
 
-                afterEvaluate {
-                    from(components["release"])
+configure<PublishingExtension> {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "ch.sbb.compose_mds"
+            artifactId = "compose-mds"
+            version =
+                when (val version = project.property("version") as String) {
+                    "unspecified" -> "LOCAL-SNAPSHOT"
+                    else -> version
                 }
+
+            afterEvaluate {
+                from(components["release"])
             }
         }
-    }
-
-    tasks.withType<AbstractPublishToMaven> {
-        dependsOn(tasks.withType<BundleAar>())
     }
 }
 

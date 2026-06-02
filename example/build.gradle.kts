@@ -1,24 +1,23 @@
 @file:OptIn(ExperimentalRoborazziApi::class)
 
+import com.android.build.api.dsl.ApplicationExtension
 import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
 
 plugins {
     alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.roborazzi)
 }
 
-android {
+configure<ApplicationExtension> {
     namespace = "ch.sbb.compose_playground"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "ch.sbb.compose_playground"
         minSdk = 29
-        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -40,9 +39,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-    kotlin {
-        jvmToolchain(21)
     }
     packaging {
         resources {

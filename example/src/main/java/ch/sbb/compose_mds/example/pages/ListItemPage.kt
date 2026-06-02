@@ -149,7 +149,7 @@ fun ListItemPage() {
 // Previews are private to hide from golden files as it generates empty images
 @PreviewLightDark
 @Composable
-private fun Preview_ListItemPage() {
+fun Preview_ListItemPage() {
     SBBTheme(includeSurface = true) {
         ListItemPage()
     }

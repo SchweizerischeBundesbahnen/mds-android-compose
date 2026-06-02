@@ -191,7 +191,7 @@ internal class TabCurves(
     fun draw(wavePath: Path) {
         wavePath.apply {
             if (progress == 0f) {
-                lineTo(midX.toFloat(), 0f)
+                lineTo(midX, 0f)
             } else {
                 if (tight.not() || leftProgress == 0f) {
                     lineTo(p0.x, p0.y)
