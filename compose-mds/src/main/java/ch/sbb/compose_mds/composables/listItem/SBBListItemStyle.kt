@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.listItem
 
-import SBBTheme
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.MaterialTheme
@@ -14,16 +13,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 // Token data classes
 @Immutable
-data class SBBListItemColorTokens(
+data class SBBListItemColors(
     val content: Color,
     val disabledContent: Color,
 )
 
 @Immutable
-data class SBBListItemLayoutTokens(
+data class SBBListItemLayout(
     val padding: PaddingValues,
     val minHeight: Dp,
     val gapBetweenIconAndText: Dp,
@@ -31,83 +31,68 @@ data class SBBListItemLayoutTokens(
 )
 
 @Immutable
-data class SBBListItemTypographyTokens(
+data class SBBListItemTypography(
     val title: TextStyle,
     val subtitle: TextStyle,
 )
 
 @Immutable
-data class SBBListItemTokens(
-    val colors: SBBListItemColorTokens,
-    val layout: SBBListItemLayoutTokens,
-    val typography: SBBListItemTypographyTokens,
+data class SBBListItemStyle(
+    val colors: SBBListItemColors,
+    val layout: SBBListItemLayout,
+    val typography: SBBListItemTypography,
 )
 
 @Composable
-fun defaultSBBListItemTokens(): SBBListItemTokens {
+fun defaultSBBListItemStyle(): SBBListItemStyle {
     val dark = SBBTheme.isDarkMode
     val typography = MaterialTheme.typography
+    val colors = SBBTheme.colors
 
     val content = MaterialTheme.colorScheme.onSurfaceVariant
-    val disabledContent by animateColorAsState(if (dark) PrimitiveColors.graphite else PrimitiveColors.granite)
+    val disabledContent by animateColorAsState(if (dark) colors.graphite else colors.granite)
     val subtitleColor = disabledContent
 
-    return SBBListItemTokens(
+    return SBBListItemStyle(
         colors =
-            SBBListItemColorTokens(
+            SBBListItemColors(
                 content = content,
                 disabledContent = disabledContent,
             ),
         layout =
-            SBBListItemLayoutTokens(
+            SBBListItemLayout(
                 padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
                 minHeight = 44.dp,
                 gapBetweenIconAndText = SBBSpacing.Medium,
                 gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
             ),
         typography =
-            SBBListItemTypographyTokens(
+            SBBListItemTypography(
                 title = typography.bodyMedium,
                 subtitle = typography.bodySmall.copy(color = subtitleColor),
             ),
     )
 }
 
-private val StaticDefaultSBBListItemTokens =
-    SBBListItemTokens(
+private val StaticDefaultSBBListItemStyle =
+    SBBListItemStyle(
         colors =
-            SBBListItemColorTokens(
+            SBBListItemColors(
                 content = PrimitiveColors.black,
                 disabledContent = PrimitiveColors.black.copy(alpha = 0.6f),
             ),
         layout =
-            SBBListItemLayoutTokens(
+            SBBListItemLayout(
                 padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
                 minHeight = 44.dp,
                 gapBetweenIconAndText = SBBSpacing.Medium,
                 gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
             ),
         typography =
-            SBBListItemTypographyTokens(
+            SBBListItemTypography(
                 title = TextStyle.Default,
                 subtitle = TextStyle.Default,
             ),
     )
 
-val LocalSBBListItemStyle = staticCompositionLocalOf { StaticDefaultSBBListItemTokens }
-
-// Merge helpers
-fun SBBListItemColorTokens.merge(other: SBBListItemColorTokens?): SBBListItemColorTokens = other ?: this
-
-fun SBBListItemLayoutTokens.merge(other: SBBListItemLayoutTokens?): SBBListItemLayoutTokens = other ?: this
-
-fun SBBListItemTypographyTokens.merge(other: SBBListItemTypographyTokens?): SBBListItemTypographyTokens = other ?: this
-
-fun SBBListItemTokens.merge(other: SBBListItemTokens?): SBBListItemTokens =
-    other?.let {
-        SBBListItemTokens(
-            colors = this.colors.merge(it.colors),
-            layout = this.layout.merge(it.layout),
-            typography = this.typography.merge(it.typography),
-        )
-    } ?: this
+val LocalSBBListItemStyle = staticCompositionLocalOf { StaticDefaultSBBListItemStyle }

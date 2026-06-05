@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -33,138 +33,135 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
 @Composable
 fun TextInputPage() {
-    var showSheet by remember { mutableStateOf(false) }
+  var showSheet by remember { mutableStateOf(false) }
 
-    if (showSheet) {
-        SBBBottomSheet(
-            onDismissRequest = { showSheet = false },
-            sheetState = rememberModalBottomSheetState(),
-            title = "Information",
-        ) {
-            Text("Lorem ipsum.")
-        }
-    }
-
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxWidth()
-                .verticalScroll(state = rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+  if (showSheet) {
+    SBBBottomSheet(
+        onDismissRequest = { showSheet = false },
+        sheetState = rememberModalBottomSheetState(),
+        title = "Information",
     ) {
-        SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
-        SBBTextareaErrorSection(onShowSheet = { showSheet = true })
+      Text("Lorem ipsum.")
     }
+  }
+
+  Column(
+      modifier =
+          Modifier.defaultPadding().fillMaxWidth().verticalScroll(state = rememberScrollState()),
+      verticalArrangement = Arrangement.spacedBy(16.dp),
+  ) {
+    SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
+    SBBTextareaErrorSection(onShowSheet = { showSheet = true })
+  }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
-    var text1 by remember { mutableStateOf("") }
-    var text2 by remember { mutableStateOf("") }
-    var text3 by remember { mutableStateOf("Value") }
-    var text4 by remember { mutableStateOf("") }
+  var text1 by remember { mutableStateOf("") }
+  var text2 by remember { mutableStateOf("") }
+  var text3 by remember { mutableStateOf("Value") }
+  var text4 by remember { mutableStateOf("") }
 
-    SBBContentBox(
-        modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall),
+  SBBContentBox(
+      modifier = Modifier.fillMaxWidth(),
+      contentPadding = PaddingValues(SBBSpacing.XSmall),
+  ) {
+    SBBListHeader(text = "Default")
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        SBBListHeader(text = "Default")
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            SBBTextInput(
-                value = text1,
-                onValueChange = { text1 = it },
-                label = "Label",
-            )
-            SBBTextInput(
-                value = "Value",
-                onValueChange = { },
-                label = "Disabled",
-                enabled = false,
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
-                onClickTrailingIcon = {
-                    onShowSheet()
-                },
-            )
-            SBBTextInput(
-                value = text2,
-                onValueChange = { text2 = it },
-                label = "Leading icon",
-                leadingIcon = SBBIcons.Small.DogSmall,
-            )
-            SBBTextInput(
-                value = text3,
-                onValueChange = { text3 = it },
-                label = "Trailing icon",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
-                onClickTrailingIcon = {
-                    onShowSheet()
-                },
-            )
-            SBBTextInput(
-                value = text4,
-                onValueChange = { text4 = it },
-                label = "Leading and trailing icons",
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
-                onClickTrailingIcon = {
-                    onShowSheet()
-                },
-            )
-        }
+      SBBTextInput(
+          value = text1,
+          onValueChange = { text1 = it },
+          label = "Label",
+      )
+      SBBTextInput(
+          value = "Value",
+          onValueChange = {},
+          label = "Disabled",
+          enabled = false,
+          leadingIcon = SBBIcons.Small.DogSmall,
+          trailingIcon = SBBIcons.Small.CircleInformationSmall,
+          onClickTrailingIcon = {
+            onShowSheet()
+          },
+      )
+      SBBTextInput(
+          value = text2,
+          onValueChange = { text2 = it },
+          label = "Leading icon",
+          leadingIcon = SBBIcons.Small.DogSmall,
+      )
+      SBBTextInput(
+          value = text3,
+          onValueChange = { text3 = it },
+          label = "Trailing icon",
+          trailingIcon = SBBIcons.Small.CircleInformationSmall,
+          onClickTrailingIcon = {
+            onShowSheet()
+          },
+      )
+      SBBTextInput(
+          value = text4,
+          onValueChange = { text4 = it },
+          label = "Leading and trailing icons",
+          leadingIcon = SBBIcons.Small.DogSmall,
+          trailingIcon = SBBIcons.Small.CircleInformationSmall,
+          onClickTrailingIcon = {
+            onShowSheet()
+          },
+      )
     }
+  }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
-    var text5 by remember { mutableStateOf("Error") }
-    SBBContentBox(
-        modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(SBBSpacing.XSmall),
+  var text5 by remember { mutableStateOf("Error") }
+  SBBContentBox(
+      modifier = Modifier.fillMaxWidth(),
+      contentPadding = PaddingValues(SBBSpacing.XSmall),
+  ) {
+    SBBListHeader(text = "Error")
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        SBBListHeader(text = "Error")
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            SBBTextInput(
-                value = text5,
-                onValueChange = { text5 = it },
-                label = "Error with leading and trailing icons",
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
-                isError = true,
-                onClickTrailingIcon = {
-                    onShowSheet()
-                },
-            )
-            SBBTextInput(
-                value = text5,
-                onValueChange = { text5 = it },
-                label = "Error",
-                isError = true,
-                errorText = "This is an error message",
-            )
-        }
+      SBBTextInput(
+          value = text5,
+          onValueChange = { text5 = it },
+          label = "Error with leading and trailing icons",
+          leadingIcon = SBBIcons.Small.DogSmall,
+          trailingIcon = SBBIcons.Small.CircleInformationSmall,
+          isError = true,
+          onClickTrailingIcon = {
+            onShowSheet()
+          },
+      )
+      SBBTextInput(
+          value = text5,
+          onValueChange = { text5 = it },
+          label = "Error",
+          isError = true,
+          errorText = "This is an error message",
+      )
     }
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TextInputDefault() {
-    SBBTheme(includeSurface = true) {
-        SBBTextareaDefaultSection(onShowSheet = {})
-    }
+  SBBTheme(includeSurface = true) {
+    SBBTextareaDefaultSection(onShowSheet = {})
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TextInputError() {
-    SBBTheme(includeSurface = true) {
-        SBBTextareaErrorSection(onShowSheet = {})
-    }
+  SBBTheme(includeSurface = true) {
+    SBBTextareaErrorSection(onShowSheet = {})
+  }
 }

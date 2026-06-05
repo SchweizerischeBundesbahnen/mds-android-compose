@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -21,52 +21,52 @@ import ch.sbb.compose_mds.composables.header.Small
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun HeaderPage() {
-    Column(
-        modifier =
-            Modifier
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ).padding(
-                    vertical = 16.dp,
-                ),
-    ) {
-        SBBListHeader(text = "Default")
-        SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController())
-        SBBListHeader(text = "Default mit Zurück-Button")
-        SBBHeader.Default(
-            title = "SBB Header Default",
-            navController = rememberNavController(),
-            navigationType = NavigationType.Back,
-        )
-        SBBListHeader(text = "Default mit Abbrechen-Button")
-        SBBHeader.Default(
-            title = "SBB Header Default",
-            navController = rememberNavController(),
-            navigationType = NavigationType.Cancel,
-        )
-        Spacer(modifier = Modifier.padding(vertical = 20.dp))
+  Column(
+      modifier =
+          Modifier.verticalScroll(
+                  state = rememberScrollState(),
+              )
+              .padding(
+                  vertical = 16.dp,
+              ),
+  ) {
+    SBBListHeader(text = "Default")
+    SBBHeader.Default(title = "SBB Header Default", navController = rememberNavController())
+    SBBListHeader(text = "Default mit Zurück-Button")
+    SBBHeader.Default(
+        title = "SBB Header Default",
+        navController = rememberNavController(),
+        navigationType = NavigationType.Back,
+    )
+    SBBListHeader(text = "Default mit Abbrechen-Button")
+    SBBHeader.Default(
+        title = "SBB Header Default",
+        navController = rememberNavController(),
+        navigationType = NavigationType.Cancel,
+    )
+    Spacer(modifier = Modifier.padding(vertical = 20.dp))
 
-        SBBListHeader(text = "Small")
-        SBBHeader.Small(title = "SBB Header Small", navController = rememberNavController())
-        SBBListHeader(text = "Default mit Zurück-Button")
-        SBBHeader.Small(
-            title = "SBB Header Small",
-            navController = rememberNavController(),
-            navigationType = NavigationType.Back,
-        )
-        SBBListHeader(text = "Default mit Abbrechen-Button")
-        SBBHeader.Small(
-            title = "SBB Header Small",
-            navController = rememberNavController(),
-            navigationType = NavigationType.Cancel,
-        )
-    }
+    SBBListHeader(text = "Small")
+    SBBHeader.Small(title = "SBB Header Small", navController = rememberNavController())
+    SBBListHeader(text = "Default mit Zurück-Button")
+    SBBHeader.Small(
+        title = "SBB Header Small",
+        navController = rememberNavController(),
+        navigationType = NavigationType.Back,
+    )
+    SBBListHeader(text = "Default mit Abbrechen-Button")
+    SBBHeader.Small(
+        title = "SBB Header Small",
+        navController = rememberNavController(),
+        navigationType = NavigationType.Cancel,
+    )
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_HeaderPage() {
-    SBBTheme(includeSurface = true) {
-        HeaderPage()
-    }
+  SBBTheme(includeSurface = true) {
+    HeaderPage()
+  }
 }

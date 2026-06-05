@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -30,48 +30,48 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
 @Composable
 fun BottomSheetPage() {
-    var showBottomSheet by remember { mutableStateOf(false) }
-    var showBottomSheetScroll by remember { mutableStateOf(false) }
-    var showFullScreenBottomSheet by remember { mutableStateOf(false) }
+  var showBottomSheet by remember { mutableStateOf(false) }
+  var showBottomSheetScroll by remember { mutableStateOf(false) }
+  var showFullScreenBottomSheet by remember { mutableStateOf(false) }
 
-    Column(modifier = Modifier.defaultPadding()) {
-        SBBListHeader(text = "Bottom-Sheet")
-        SBBSecondaryButton(
-            label = "Default",
-            modifier = Modifier.fillMaxWidth(),
-            onClick = { showBottomSheet = true },
-        )
-        Spacer(Modifier.height(SBBSpacing.Small))
-        SBBSecondaryButton(
-            label = "Scrollable content",
-            modifier = Modifier.fillMaxWidth(),
-            onClick = { showBottomSheetScroll = true },
-        )
-        Spacer(Modifier.height(SBBSpacing.Small))
-        SBBSecondaryButton(
-            label = "FullScreen",
-            modifier = Modifier.fillMaxWidth(),
-            onClick = { showFullScreenBottomSheet = true },
-        )
-    }
+  Column(modifier = Modifier.defaultPadding()) {
+    SBBListHeader(text = "Bottom-Sheet")
+    SBBSecondaryButton(
+        label = "Default",
+        modifier = Modifier.fillMaxWidth(),
+        onClick = { showBottomSheet = true },
+    )
+    Spacer(Modifier.height(SBBSpacing.Small))
+    SBBSecondaryButton(
+        label = "Scrollable content",
+        modifier = Modifier.fillMaxWidth(),
+        onClick = { showBottomSheetScroll = true },
+    )
+    Spacer(Modifier.height(SBBSpacing.Small))
+    SBBSecondaryButton(
+        label = "FullScreen",
+        modifier = Modifier.fillMaxWidth(),
+        onClick = { showFullScreenBottomSheet = true },
+    )
+  }
 
-    if (showBottomSheet) {
-        DefaultBottomSheet(
-            onDismiss = { showBottomSheet = false },
-        )
-    }
+  if (showBottomSheet) {
+    DefaultBottomSheet(
+        onDismiss = { showBottomSheet = false },
+    )
+  }
 
-    if (showBottomSheetScroll) {
-        ScrollableBottomSheet(
-            onDismiss = { showBottomSheetScroll = false },
-        )
-    }
+  if (showBottomSheetScroll) {
+    ScrollableBottomSheet(
+        onDismiss = { showBottomSheetScroll = false },
+    )
+  }
 
-    if (showFullScreenBottomSheet) {
-        FullScreenBottomSheet(
-            onDismiss = { showFullScreenBottomSheet = false },
-        )
-    }
+  if (showFullScreenBottomSheet) {
+    FullScreenBottomSheet(
+        onDismiss = { showFullScreenBottomSheet = false },
+    )
+  }
 }
 
 @Composable
@@ -80,18 +80,15 @@ fun DefaultBottomSheet(
     onDismiss: () -> Unit,
     sheetState: SheetState = rememberModalBottomSheetState(),
 ) {
-    SBBBottomSheet(
-        onDismissRequest = onDismiss,
-        sheetState = sheetState,
-        title = "Default",
-    ) {
-        Placeholder(
-            modifier =
-                Modifier
-                    .height(200.dp)
-                    .fillMaxWidth(),
-        )
-    }
+  SBBBottomSheet(
+      onDismissRequest = onDismiss,
+      sheetState = sheetState,
+      title = "Default",
+  ) {
+    Placeholder(
+        modifier = Modifier.height(200.dp).fillMaxWidth(),
+    )
+  }
 }
 
 @Composable
@@ -100,25 +97,21 @@ fun ScrollableBottomSheet(
     onDismiss: () -> Unit,
     sheetState: SheetState = rememberModalBottomSheetState(),
 ) {
-    SBBBottomSheet(
-        onDismissRequest = onDismiss,
-        sheetState = sheetState,
-        title = "Scrollable content",
+  SBBBottomSheet(
+      onDismissRequest = onDismiss,
+      sheetState = sheetState,
+      title = "Scrollable content",
+  ) {
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth(),
     ) {
-        LazyColumn(
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            items(100) {
-                Placeholder(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .padding(top = 4.dp)
-                            .height(56.dp),
-                )
-            }
-        }
+      items(100) {
+        Placeholder(
+            modifier = Modifier.fillMaxWidth().padding(top = 4.dp).height(56.dp),
+        )
+      }
     }
+  }
 }
 
 @Composable
@@ -127,18 +120,15 @@ fun FullScreenBottomSheet(
     onDismiss: () -> Unit,
     sheetState: SheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
 ) {
-    SBBBottomSheet(
-        onDismissRequest = onDismiss,
-        sheetState = sheetState,
-        title = "FullScreen",
-    ) {
-        Placeholder(
-            modifier =
-                Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth(),
-        )
-    }
+  SBBBottomSheet(
+      onDismissRequest = onDismiss,
+      sheetState = sheetState,
+      title = "FullScreen",
+  ) {
+    Placeholder(
+        modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+    )
+  }
 }
 
 // Previews are private to hide from golden files as it generates empty images
@@ -147,25 +137,25 @@ fun FullScreenBottomSheet(
 @PreviewLightDark
 @Composable
 private fun Preview_DefaultBottomBottomSheet() {
-    SBBTheme(includeSurface = true) {
-        DefaultBottomSheet(onDismiss = {})
-    }
+  SBBTheme(includeSurface = true) {
+    DefaultBottomSheet(onDismiss = {})
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @PreviewLightDark
 @Composable
 private fun Preview_ScrollableBottomSheet() {
-    SBBTheme(includeSurface = true) {
-        ScrollableBottomSheet(onDismiss = {})
-    }
+  SBBTheme(includeSurface = true) {
+    ScrollableBottomSheet(onDismiss = {})
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @PreviewLightDark
 @Composable
 private fun Preview_FullScreenBottomSheet() {
-    SBBTheme(includeSurface = true) {
-        FullScreenBottomSheet(onDismiss = {})
-    }
+  SBBTheme(includeSurface = true) {
+    FullScreenBottomSheet(onDismiss = {})
+  }
 }

@@ -2,7 +2,6 @@
 
 package ch.sbb.compose_mds.composables.header
 
-import SBBTheme
 import android.annotation.SuppressLint
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -11,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Preview(showBackground = true)
 @Composable

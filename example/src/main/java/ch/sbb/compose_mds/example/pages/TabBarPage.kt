@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,44 +24,44 @@ import ch.sbb.compose_mds.sbbicons.small.TrainSmall
 
 @Composable
 fun TabBarPage() {
-    val items =
-        listOf(
-            SBBTabBarItemData(
-                icon = SBBIcons.Small.StationSmall,
-                label = "Item 1",
-            ),
-            SBBTabBarItemData(
-                icon = SBBIcons.Small.TrainSmall,
-                label = "Item 2",
-            ),
-            SBBTabBarItemData(
-                icon = SBBIcons.Small.ArchiveBoxSmall,
-                label = "Item 3",
-            ),
-            SBBTabBarItemData(
-                icon = SBBIcons.Small.ArrowCompassSmall,
-                label = "Item 4",
-            ),
-        )
-    val controller by rememberSBBTabBarController(items)
-    controller.setWarnings(
-        listOf(SBBTabBarWarningData(index = 1, semantics = "Warning")),
+  val items =
+      listOf(
+          SBBTabBarItemData(
+              icon = SBBIcons.Small.StationSmall,
+              label = "Item 1",
+          ),
+          SBBTabBarItemData(
+              icon = SBBIcons.Small.TrainSmall,
+              label = "Item 2",
+          ),
+          SBBTabBarItemData(
+              icon = SBBIcons.Small.ArchiveBoxSmall,
+              label = "Item 3",
+          ),
+          SBBTabBarItemData(
+              icon = SBBIcons.Small.ArrowCompassSmall,
+              label = "Item 4",
+          ),
+      )
+  val controller by rememberSBBTabBarController(items)
+  controller.setWarnings(
+      listOf(SBBTabBarWarningData(index = 1, semantics = "Warning")),
+  )
+  Box(
+      modifier = Modifier.fillMaxSize(),
+      contentAlignment = Alignment.BottomCenter,
+  ) {
+    SBBTabBar(
+        modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
+        controller = controller,
     )
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.BottomCenter,
-    ) {
-        SBBTabBar(
-            modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
-            controller = controller,
-        )
-    }
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TabBarPage() {
-    SBBTheme(includeSurface = true) {
-        TabBarPage()
-    }
+  SBBTheme(includeSurface = true) {
+    TabBarPage()
+  }
 }

@@ -1,8 +1,8 @@
 package ch.sbb.compose_mds.composables.switch
 
-import SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import ch.sbb.compose_mds.theme.SBBTheme
 
 private const val disabledAlpha = 0.4f
 

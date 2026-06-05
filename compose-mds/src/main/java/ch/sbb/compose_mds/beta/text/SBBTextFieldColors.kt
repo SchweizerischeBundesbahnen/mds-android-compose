@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.beta.text
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import ch.sbb.compose_mds.theme.PrimitiveColors

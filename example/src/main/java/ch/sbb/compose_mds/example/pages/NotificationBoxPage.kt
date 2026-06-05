@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,35 +21,34 @@ private const val text =
 
 @Composable
 fun NotificationBoxPage() {
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
-        verticalArrangement = Arrangement.spacedBy(SBBConst.DEFAULT_HORIZONTAL_PADDING),
-    ) {
-        SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)
-        SBBNotificationBox.Warning(text = text, interactionIcon = null)
-        SBBNotificationBox.Success(
-            title = "Title",
-            text = text,
-            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
-        )
-        SBBNotificationBox.Information(
-            text = text,
-            onClick = {},
-            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
-        )
-    }
+  Column(
+      modifier =
+          Modifier.defaultPadding()
+              .fillMaxWidth()
+              .verticalScroll(
+                  state = rememberScrollState(),
+              ),
+      verticalArrangement = Arrangement.spacedBy(SBBConst.DEFAULT_HORIZONTAL_PADDING),
+  ) {
+    SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)
+    SBBNotificationBox.Warning(text = text, interactionIcon = null)
+    SBBNotificationBox.Success(
+        title = "Title",
+        text = text,
+        interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+    )
+    SBBNotificationBox.Information(
+        text = text,
+        onClick = {},
+        interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+    )
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_NotificationBoxPage() {
-    SBBTheme(includeSurface = true) {
-        NotificationBoxPage()
-    }
+  SBBTheme(includeSurface = true) {
+    NotificationBoxPage()
+  }
 }

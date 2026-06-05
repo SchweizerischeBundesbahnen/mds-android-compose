@@ -1,8 +1,8 @@
 package ch.sbb.compose_mds.composables.radio
 
-import SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 internal fun lightRadioButtonColors(enabled: Boolean): SBBRadioButtonColors {

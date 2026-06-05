@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.loadingIndicator
 
-import SBBTheme
 import androidx.compose.animation.core.AnimationConstants
 import androidx.compose.animation.core.InfiniteRepeatableSpec
 import androidx.compose.animation.core.LinearEasing
@@ -32,6 +31,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
 import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBTheme
 
 object SBBLoadingIndicator {
     /***

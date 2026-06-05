@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,38 +22,37 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun StatusPage() {
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
-        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-    ) {
-        SBBListHeader(text = "Success")
-        SBBStatus.Success()
-        SBBStatus.Success(text = "Success with Text")
+  Column(
+      modifier =
+          Modifier.defaultPadding()
+              .fillMaxWidth()
+              .verticalScroll(
+                  state = rememberScrollState(),
+              ),
+      verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+  ) {
+    SBBListHeader(text = "Success")
+    SBBStatus.Success()
+    SBBStatus.Success(text = "Success with Text")
 
-        SBBListHeader(text = "Alert")
-        SBBStatus.Alert()
-        SBBStatus.Alert(text = "Alert with Text")
+    SBBListHeader(text = "Alert")
+    SBBStatus.Alert()
+    SBBStatus.Alert(text = "Alert with Text")
 
-        SBBListHeader(text = "Warning")
-        SBBStatus.Warning()
-        SBBStatus.Warning(text = "Warning with Text")
+    SBBListHeader(text = "Warning")
+    SBBStatus.Warning()
+    SBBStatus.Warning(text = "Warning with Text")
 
-        SBBListHeader(text = "Information")
-        SBBStatus.Information()
-        SBBStatus.Information(text = "Information with Text")
-    }
+    SBBListHeader(text = "Information")
+    SBBStatus.Information()
+    SBBStatus.Information(text = "Information with Text")
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_StatusPage() {
-    SBBTheme(includeSurface = true) {
-        StatusPage()
-    }
+  SBBTheme(includeSurface = true) {
+    StatusPage()
+  }
 }

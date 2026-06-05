@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -22,54 +22,54 @@ import ch.sbb.compose_mds.theme.defaultPadding
 
 @Composable
 fun CheckboxPage() {
-    Column(
-        modifier =
-            Modifier
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ).defaultPadding(),
-    ) {
-        Text("Checkbox")
-        var checkedState: Boolean? by remember { mutableStateOf(false) }
-        SBBCheckbox(
-            label = "Check me!",
-            checked = checkedState,
-            onCheckedChange = { checkedState = it },
-        )
+  Column(
+      modifier =
+          Modifier.verticalScroll(
+                  state = rememberScrollState(),
+              )
+              .defaultPadding(),
+  ) {
+    Text("Checkbox")
+    var checkedState: Boolean? by remember { mutableStateOf(false) }
+    SBBCheckbox(
+        label = "Check me!",
+        checked = checkedState,
+        onCheckedChange = { checkedState = it },
+    )
 
-        Text("Checkbox with Icon", modifier = Modifier.padding(top = 8.dp))
-        var checkedState2: Boolean? by remember { mutableStateOf(true) }
-        SBBCheckbox(
-            label = "Check me!",
-            checked = checkedState2,
-            icon = SBBIcons.Small.AppIconSmall,
-            onCheckedChange = { checkedState2 = it },
-        )
+    Text("Checkbox with Icon", modifier = Modifier.padding(top = 8.dp))
+    var checkedState2: Boolean? by remember { mutableStateOf(true) }
+    SBBCheckbox(
+        label = "Check me!",
+        checked = checkedState2,
+        icon = SBBIcons.Small.AppIconSmall,
+        onCheckedChange = { checkedState2 = it },
+    )
 
-        Text("Tristate Checkbox", modifier = Modifier.padding(top = 8.dp))
-        var checkedState3: Boolean? by remember { mutableStateOf(null) }
-        SBBCheckbox(
-            label = "Tri me!",
-            triStateEnabled = true,
-            checked = checkedState3,
-            onCheckedChange = { checkedState3 = it },
-        )
+    Text("Tristate Checkbox", modifier = Modifier.padding(top = 8.dp))
+    var checkedState3: Boolean? by remember { mutableStateOf(null) }
+    SBBCheckbox(
+        label = "Tri me!",
+        triStateEnabled = true,
+        checked = checkedState3,
+        onCheckedChange = { checkedState3 = it },
+    )
 
-        Text("Disabled Checkbox", modifier = Modifier.padding(top = 8.dp))
-        SBBCheckbox(
-            label = "Im Disabled",
-            triStateEnabled = true,
-            checked = checkedState3,
-            disabled = true,
-            onCheckedChange = { checkedState3 = it },
-        )
-    }
+    Text("Disabled Checkbox", modifier = Modifier.padding(top = 8.dp))
+    SBBCheckbox(
+        label = "Im Disabled",
+        triStateEnabled = true,
+        checked = checkedState3,
+        disabled = true,
+        onCheckedChange = { checkedState3 = it },
+    )
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_CheckboxPage() {
-    SBBTheme(includeSurface = true) {
-        CheckboxPage()
-    }
+  SBBTheme(includeSurface = true) {
+    CheckboxPage()
+  }
 }

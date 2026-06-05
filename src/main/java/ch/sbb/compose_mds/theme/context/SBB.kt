@@ -43,52 +43,57 @@ fun contextSBBFunctionalColorsLight() = ContextFunctionalColors()
 fun contextSBBFunctionalColorsDark() = ContextFunctionalColors()
 
 object SBBThemeContext : ThemeContext {
-    override val colors: ContextColors
-        get() = getColors(false) // Default to light if accessed directly without context
-    override val additionalColors: ContextAdditionalColors
-        get() = getAdditionalColors(false) // Default to light
-    override val functionalColors: ContextFunctionalColors
-        get() = getFunctionalColors(false) // Default to light
+  override val colors: ContextColors
+    get() = getColors(false) // Default to light if accessed directly without context
 
-    override val contextName: String
-        get() = SBBThemeContextPreviewName
+  override val additionalColors: ContextAdditionalColors
+    get() = getAdditionalColors(false) // Default to light
 
-    // Implement the new methods from ThemeContext interface
-    override fun getColors(isDark: Boolean): ContextColors = if (isDark) contextSBBColorsDark() else contextSBBColorsLight()
+  override val functionalColors: ContextFunctionalColors
+    get() = getFunctionalColors(false) // Default to light
 
-    override fun getAdditionalColors(isDark: Boolean): ContextAdditionalColors =
-        if (isDark) contextSBBAdditionalColorsDark() else contextSBBAdditionalColorsLight()
+  override val contextName: String
+    get() = SBBThemeContextPreviewName
 
-    override fun getFunctionalColors(isDark: Boolean): ContextFunctionalColors =
-        if (isDark) contextSBBFunctionalColorsDark() else contextSBBFunctionalColorsLight()
+  // Implement the new methods from ThemeContext interface
+  override fun getColors(isDark: Boolean): ContextColors =
+      if (isDark) contextSBBColorsDark() else contextSBBColorsLight()
 
-    override fun getMaterialColorScheme(isDark: Boolean): ColorScheme {
-        val currentColors = getColors(isDark)
-        val currentAdditionalColors = getAdditionalColors(isDark)
-        val currentFunctionalColors = getFunctionalColors(isDark)
+  override fun getAdditionalColors(isDark: Boolean): ContextAdditionalColors =
+      if (isDark) contextSBBAdditionalColorsDark() else contextSBBAdditionalColorsLight()
 
-        return if (isDark) {
-            darkColorScheme(
-                primary = currentColors.primary,
-                onPrimary = currentColors.white,
-                surface = currentColors.black,
-                onSurface = currentColors.white,
-                surfaceVariant = currentColors.charcoal, // Assuming charcoal is defined in ContextColors
-                onSurfaceVariant = currentColors.white,
-                surfaceContainerHighest = currentColors.charcoal, // Assuming charcoal is defined in ContextColors
-            )
-        } else {
-            lightColorScheme(
-                primary = currentColors.primary,
-                onPrimary = currentColors.white,
-                surface = currentAdditionalColors.peach, // Assuming peach is defined in ContextAdditionalColors
-                onSurface = currentColors.black,
-                surfaceVariant = currentColors.white,
-                onSurfaceVariant = currentColors.black,
-                surfaceContainerHighest = currentColors.white,
-            )
-        }
+  override fun getFunctionalColors(isDark: Boolean): ContextFunctionalColors =
+      if (isDark) contextSBBFunctionalColorsDark() else contextSBBFunctionalColorsLight()
+
+  override fun getMaterialColorScheme(isDark: Boolean): ColorScheme {
+    val currentColors = getColors(isDark)
+    val currentAdditionalColors = getAdditionalColors(isDark)
+    val currentFunctionalColors = getFunctionalColors(isDark)
+
+    return if (isDark) {
+      darkColorScheme(
+          primary = currentColors.primary,
+          onPrimary = currentColors.white,
+          surface = currentColors.black,
+          onSurface = currentColors.white,
+          surfaceVariant = currentColors.charcoal, // Assuming charcoal is defined in ContextColors
+          onSurfaceVariant = currentColors.white,
+          surfaceContainerHighest =
+              currentColors.charcoal, // Assuming charcoal is defined in ContextColors
+      )
+    } else {
+      lightColorScheme(
+          primary = currentColors.primary,
+          onPrimary = currentColors.white,
+          surface =
+              currentAdditionalColors.peach, // Assuming peach is defined in ContextAdditionalColors
+          onSurface = currentColors.black,
+          surfaceVariant = currentColors.white,
+          onSurfaceVariant = currentColors.black,
+          surfaceContainerHighest = currentColors.white,
+      )
     }
+  }
 }
 
 const val SBBThemeContextPreviewName = "SBB Default"

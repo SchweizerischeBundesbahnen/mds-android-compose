@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.header
 
-import SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
@@ -29,6 +28,7 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronLeftSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBTheme
 import ch.sbb.compose_mds.theme.asImageVector
 
 object SBBHeader

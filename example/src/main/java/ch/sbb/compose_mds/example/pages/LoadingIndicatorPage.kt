@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -14,23 +14,21 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun LoadingIndicatorPage() {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .defaultPadding(),
-    ) {
-        SBBListHeader(text = "Small")
-        SBBLoadingIndicator.Small()
-        SBBListHeader(text = "Default")
-        SBBLoadingIndicator.Default()
-    }
+  Column(
+      Modifier.fillMaxWidth().defaultPadding(),
+  ) {
+    SBBListHeader(text = "Small")
+    SBBLoadingIndicator.Small()
+    SBBListHeader(text = "Default")
+    SBBLoadingIndicator.Default()
+  }
 }
 
 // private as loading indicator can't reliably be golden tested
 @PreviewLightDark
 @Composable
 private fun LoadingIndicatorPagePreview() {
-    SBBTheme(includeSurface = true) {
-        LoadingIndicatorPage()
-    }
+  SBBTheme(includeSurface = true) {
+    LoadingIndicatorPage()
+  }
 }

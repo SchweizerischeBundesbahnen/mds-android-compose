@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -19,59 +19,79 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.beta.segmentedButton.SBBButtonSegment
-import ch.sbb.compose_mds.beta.segmentedButton.SBBSegmentedButton
+import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
+import ch.sbb.compose_mds.sbbicons.SBBIcons
+import ch.sbb.compose_mds.sbbicons.Small
+import ch.sbb.compose_mds.sbbicons.small.ArrowLongRightSmall
+import ch.sbb.compose_mds.sbbicons.small.ArrowsLongRightLeftSmall
+import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.defaultPadding
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SegmentedButtonPage() {
-    val context = LocalContext.current
+  val context = LocalContext.current
 
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        // DEFAULT
-        SBBListHeader(text = "Default")
+  Column(
+      modifier =
+          Modifier.defaultPadding()
+              .fillMaxWidth()
+              .verticalScroll(
+                  state = rememberScrollState(),
+              ),
+      verticalArrangement = Arrangement.spacedBy(8.dp),
+  ) {
+    // DEFAULT
+    SBBListHeader(text = "Default")
 
-        // Default with three segments
-        var defaultSelection1: String by remember { mutableStateOf("Selection 1") }
-        SBBSegmentedButton(
-            onSelectionChanged = { selected ->
-                defaultSelection1 = selected
-                toastSelection(context, selected)
-            },
-            selection = defaultSelection1,
-            segments = threeButtonSegments(),
-        )
+    // Default with three segments
+    var defaultSelection1: String by remember { mutableStateOf("Selection 1") }
+    SBBSegmentedButton.Default(
+        onSelectionChange = { selected ->
+          defaultSelection1 = selected
+          toastSelection(context, selected)
+        },
+        selection = defaultSelection1,
+        segments = threeButtonSegments(),
+    )
 
-        // Default with two segments
-        var defaultSelection2: String by remember { mutableStateOf("Selection 1") }
-        SBBSegmentedButton(
-            onSelectionChanged = { selected ->
-                defaultSelection2 = selected
-                toastSelection(context, selected)
-            },
-            selection = defaultSelection2,
-            segments = twoButtonSegments(),
-        )
+    // Default with two segments
+    var defaultSelection2: String by remember { mutableStateOf("Selection 1") }
+    SBBSegmentedButton.Default(
+        onSelectionChange = { selected ->
+          defaultSelection2 = selected
+          toastSelection(context, selected)
+        },
+        selection = defaultSelection2,
+        segments = twoButtonSegments(),
+    )
+      
+    // PRIMARY
+    SBBListHeader(text = "Primary")
 
-        // Default with two segments, disabled
-        SBBListHeader(text = "Disabled")
-        SBBSegmentedButton(
-            onSelectionChanged = {},
-            selection = "Selection 1",
-            segments = twoButtonSegments(),
-            enabled = false,
-        )
-    }
+    // Primary with three segments
+    var primarySelection1: String by remember { mutableStateOf("Selection 1") }
+    SBBSegmentedButton.Primary(
+        onSelectionChange = { selected ->
+          primarySelection1 = selected
+          toastSelection(context, selected)
+        },
+        selection = primarySelection1,
+        segments = threeButtonSegments(),
+    )
+
+    // Primary with two segments
+    var primarySelection2: String by remember { mutableStateOf("Selection 1") }
+    SBBSegmentedButton.Primary(
+        onSelectionChange = { selected ->
+            primarySelection2 = selected
+          toastSelection(context, selected)
+        },
+        selection = primarySelection2,
+        segments = twoButtonSegments(),
+    )
+  }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
@@ -80,14 +100,17 @@ private fun threeButtonSegments() =
         SBBButtonSegment(
             label = "Label 1",
             value = "Selection 1",
+            icon = SBBIcons.Small.ArrowLongRightSmall,
         ),
         SBBButtonSegment(
             label = "Label 2",
             value = "Selection 2",
+            icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
         ),
         SBBButtonSegment(
             label = "Label 3",
             value = "Selection 3",
+            icon = SBBIcons.Small.UnicornSmall,
         ),
     )
 
@@ -97,10 +120,12 @@ private fun twoButtonSegments() =
         SBBButtonSegment(
             label = "Label 1",
             value = "Selection 1",
+            icon = SBBIcons.Small.ArrowLongRightSmall,
         ),
         SBBButtonSegment(
             label = "Label 2",
             value = "Selection 2",
+            icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
         ),
     )
 
@@ -108,18 +133,18 @@ private fun toastSelection(
     context: Context,
     selection: String,
 ) {
-    Toast
-        .makeText(
-            context,
-            "Selection changed: $selection",
-            Toast.LENGTH_SHORT,
-        ).show()
+  Toast.makeText(
+          context,
+          "Selection changed: $selection",
+          Toast.LENGTH_SHORT,
+      )
+      .show()
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_SegmentedButtonPage() {
-    SBBTheme(includeSurface = true) {
-        SegmentedButtonPage()
-    }
+  SBBTheme(includeSurface = true) {
+    SegmentedButtonPage()
+  }
 }
