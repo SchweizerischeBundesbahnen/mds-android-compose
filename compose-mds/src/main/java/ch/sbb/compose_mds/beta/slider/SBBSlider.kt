@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.beta.slider
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.border
 import androidx.compose.foundation.indication

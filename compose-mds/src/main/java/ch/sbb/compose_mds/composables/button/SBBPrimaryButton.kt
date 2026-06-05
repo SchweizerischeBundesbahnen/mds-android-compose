@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.button
 
-import SBBTheme
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.height
@@ -15,6 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
  * Implementation of the SBB Primary Button.

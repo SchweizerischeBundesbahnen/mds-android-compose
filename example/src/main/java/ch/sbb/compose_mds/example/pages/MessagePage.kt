@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -35,128 +35,125 @@ private const val MESSAGE =
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MessagePage() {
-    Column(
-        modifier =
-            Modifier
-                .padding(16.dp)
-                .verticalScroll(rememberScrollState()),
-    ) {
-        SBBListHeader(text = "Default")
-        SBBMessageDefault()
-        SBBListHeader(text = "Default with custom interaction")
-        SBBMessageDefaultCustom()
-        SBBListHeader(text = "Loading")
-        SBBMessageLoading()
-        SBBListHeader(text = "Error")
-        SBBMessageError()
-        SBBListHeader(text = "No Illustration")
-        SBBMessageNoIllustration()
-    }
+  Column(
+      modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState()),
+  ) {
+    SBBListHeader(text = "Default")
+    SBBMessageDefault()
+    SBBListHeader(text = "Default with custom interaction")
+    SBBMessageDefaultCustom()
+    SBBListHeader(text = "Loading")
+    SBBMessageLoading()
+    SBBListHeader(text = "Error")
+    SBBMessageError()
+    SBBListHeader(text = "No Illustration")
+    SBBMessageNoIllustration()
+  }
 }
 
 @Composable
 private fun SBBMessageDefault() {
-    MessageContainer {
-        SBBMessage.Default(
-            title = "Title, single line",
-            message = MESSAGE,
-        )
-    }
+  MessageContainer {
+    SBBMessage.Default(
+        title = "Title, single line",
+        message = MESSAGE,
+    )
+  }
 }
 
 @Composable
 private fun SBBMessageDefaultCustom() {
-    MessageContainer {
-        val context = LocalContext.current
-        SBBMessage.Default(
-            title = "Title, single line",
-            message = MESSAGE,
-            illustration = SBBMessageIllustration.STAFF_FEMALE,
-            interactionIcon = SBBIcons.Medium.TrainMedium,
-            onInteraction = {
-                Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            },
-        )
-    }
+  MessageContainer {
+    val context = LocalContext.current
+    SBBMessage.Default(
+        title = "Title, single line",
+        message = MESSAGE,
+        illustration = SBBMessageIllustration.STAFF_FEMALE,
+        interactionIcon = SBBIcons.Medium.TrainMedium,
+        onInteraction = {
+          Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
+        },
+    )
+  }
 }
 
 @Composable
 private fun SBBMessageLoading() {
-    MessageContainer {
-        SBBMessage.Loading(
-            title = "Title, single line",
-            message = MESSAGE,
-        )
-    }
+  MessageContainer {
+    SBBMessage.Loading(
+        title = "Title, single line",
+        message = MESSAGE,
+    )
+  }
 }
 
 @Composable
 private fun SBBMessageError() {
-    MessageContainer {
-        val context = LocalContext.current
-        SBBMessage.Error(
-            title = "Title, single line",
-            message = MESSAGE,
-            errorCode = "Error Code: XYZ-999",
-            onInteraction = {
-                Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            },
-        )
-    }
+  MessageContainer {
+    val context = LocalContext.current
+    SBBMessage.Error(
+        title = "Title, single line",
+        message = MESSAGE,
+        errorCode = "Error Code: XYZ-999",
+        onInteraction = {
+          Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
+        },
+    )
+  }
 }
 
 @Composable
 private fun SBBMessageNoIllustration() {
-    MessageContainer {
-        val context = LocalContext.current
-        SBBMessage.Custom(
-            title = "Title, single line",
-            message = MESSAGE,
-            onInteraction = {
-                Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
-            },
-        )
-    }
+  MessageContainer {
+    val context = LocalContext.current
+    SBBMessage.Custom(
+        title = "Title, single line",
+        message = MESSAGE,
+        onInteraction = {
+          Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
+        },
+    )
+  }
 }
 
 @Composable
 private fun MessageContainer(content: @Composable ColumnScope.() -> Unit) {
-    SBBContentBox(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        content = content,
-    )
+  SBBContentBox(
+      modifier = Modifier.fillMaxWidth(),
+      horizontalAlignment = Alignment.CenterHorizontally,
+      content = content,
+  )
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_MessageDefault() {
-    SBBTheme(includeSurface = true) {
-        SBBMessageDefault()
-    }
+  SBBTheme(includeSurface = true) {
+    SBBMessageDefault()
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_MessageDefaultCustom() {
-    SBBTheme(includeSurface = true) {
-        SBBMessageDefaultCustom()
-    }
+  SBBTheme(includeSurface = true) {
+    SBBMessageDefaultCustom()
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_MessageError() {
-    SBBTheme(includeSurface = true) {
-        SBBMessageError()
-    }
+  SBBTheme(includeSurface = true) {
+    SBBMessageError()
+  }
 }
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun Preview_MessageNoIllustration() {
-    SBBTheme(includeSurface = true) {
-        SBBMessageNoIllustration()
-    }
+  SBBTheme(includeSurface = true) {
+    SBBMessageNoIllustration()
+  }
 }

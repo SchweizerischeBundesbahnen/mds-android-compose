@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.notificationBox
 
-import SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -12,6 +11,7 @@ import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
+import ch.sbb.compose_mds.theme.SBBTheme
 
 class SBBNotificationBoxStyle(
     val icon: ImageVector,

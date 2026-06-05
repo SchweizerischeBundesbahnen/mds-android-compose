@@ -1,3 +1,5 @@
+package ch.sbb.compose_mds.theme
+
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -13,12 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
 import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemStyle
-import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemTokens
+import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemStyle
 import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxTheme
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
 import ch.sbb.compose_mds.composables.notificationBox.configSBBNotificationBoxTokens
-import ch.sbb.compose_mds.theme.LocalSBBTypography
-import ch.sbb.compose_mds.theme.SBBTypography
+import ch.sbb.compose_mds.composables.segmentedButton.LocalSBBSegmentedButtonStyle
+import ch.sbb.compose_mds.composables.segmentedButton.defaultSBBSegmentedButtonStyles
 import ch.sbb.compose_mds.theme.context.LocalThemeContext
 import ch.sbb.compose_mds.theme.context.SBBThemeContext
 import ch.sbb.compose_mds.theme.context.ThemeContext
@@ -103,7 +105,8 @@ fun SBBTheme(
             content = {
                 val movableContent = remember { movableContentOf { content() } }
                 CompositionLocalProvider(
-                    LocalSBBListItemStyle provides defaultSBBListItemTokens(),
+                    LocalSBBListItemStyle provides defaultSBBListItemStyle(),
+                    LocalSBBSegmentedButtonStyle provides defaultSBBSegmentedButtonStyles(),
                 ) {
                     if (includeSurface) Surface { movableContent() } else movableContent()
                 }

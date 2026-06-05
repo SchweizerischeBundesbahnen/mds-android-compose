@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,124 +33,121 @@ import ch.sbb.compose_mds.theme.defaultPadding
 /**
  * Example page demonstrating the different usages of the SBB list item component.
  *
- * This page is intentionally small and only used in the `example` module for
- * documentation and previewing of the component in light/dark themes.
+ * This page is intentionally small and only used in the `example` module for documentation and
+ * previewing of the component in light/dark themes.
  *
- * The goal here is to show common variants: simple title, title + subtitle,
- * with a leading icon and a disabled state. Previews are wrapped in `SBBTheme`
- * so screenshots/golden files match the library visuals.
+ * The goal here is to show common variants: simple title, title + subtitle, with a leading icon and
+ * a disabled state. Previews are wrapped in `SBBTheme` so screenshots/golden files match the
+ * library visuals.
  */
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ListItemPage() {
-    val scrollState = rememberScrollState()
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .verticalScroll(scrollState),
-    ) {
-        SBBListHeader(text = "List items")
+  val scrollState = rememberScrollState()
+  Column(
+      modifier = Modifier.defaultPadding().verticalScroll(scrollState),
+  ) {
+    SBBListHeader(text = "List items")
 
-        SBBList.Wrap {
-            // Title only
-            SBBListItem.Default(
-                title = "Title only",
-            )
+    SBBList.Wrap {
+      // Title only
+      SBBListItem.Default(
+          title = "Title only",
+      )
 
-            // Title + subtitle
-            SBBListItem.Default(
-                title = "Title with subtitle",
-                subtitle = "This is a short description",
-            )
+      // Title + subtitle
+      SBBListItem.Default(
+          title = "Title with subtitle",
+          subtitle = "This is a short description",
+      )
 
-            // With leading icon and trailing chevron
-            SBBListItem.Default(
-                leading = SBBIcons.Medium.UnicornMedium,
-                title = "With leading icon",
-                subtitle = "Has trailing affordance",
-                trailing = SBBIcons.Medium.ChevronSmallRightMedium,
-                onClick = {},
-            )
+      // With leading icon and trailing chevron
+      SBBListItem.Default(
+          leading = SBBIcons.Medium.UnicornMedium,
+          title = "With leading icon",
+          subtitle = "Has trailing affordance",
+          trailing = SBBIcons.Medium.ChevronSmallRightMedium,
+          onClick = {},
+      )
 
-            // Disabled list item
-            SBBListItem.Disabled(
-                title = "Disabled item",
-                subtitle = "Not interactive",
-            )
+      // Disabled list item
+      SBBListItem.Disabled(
+          title = "Disabled item",
+          subtitle = "Not interactive",
+      )
 
-            var checked by remember { mutableStateOf(false) }
-            SBBSwitchItem.Default(
-                title = "Switch",
-                subtitle = "Press to show link",
-                checked = checked,
-                onCheckedChange = { checked = it },
-                links = {
-                    AnimatedVisibility(checked) {
-                        SBBList.DividedColumn(
-                            divider = {
-                                HorizontalDivider(modifier = Modifier.padding(start = SBBSpacing.Medium))
-                            },
-                        ) {
-                            SBBListItem.Link(title = "Link 1", onClick = {})
-                            SBBListItem.Link(
-                                title = "Link 2",
-                                subtitle = "with subtitle",
-                                onClick = {},
-                            )
-                            SBBListItem.Link(
-                                title = "Link 3",
-                                subtitle = "with icon",
-                                leading = SBBIcons.Small.FaceGrinningSmall,
-                                onClick = {},
-                            )
-                        }
-                    }
-                },
-            )
-        }
-
-        SBBListHeader(text = "Boxed list items")
-
-        // Title only
-        SBBListItem.Boxed.Default(
-            title = "Title only",
-        )
-
-        Spacer(modifier = Modifier.height(SBBSpacing.Small))
-
-        // Title + subtitle
-        SBBListItem.Boxed.Default(
-            title = "Title with subtitle",
-            subtitle = "This is a short description",
-        )
-
-        Spacer(modifier = Modifier.height(SBBSpacing.Small))
-
-        // With leading icon and trailing chevron
-        SBBListItem.Boxed.Default(
-            leading = SBBIcons.Medium.UnicornMedium,
-            title = "With leading icon",
-            subtitle = "Has trailing affordance",
-            trailing = SBBIcons.Medium.ChevronSmallRightMedium,
-            onClick = {},
-        )
-
-        Spacer(modifier = Modifier.height(SBBSpacing.Small))
-
-        // Disabled list item
-        SBBListItem.Boxed.Disabled(
-            title = "Disabled item",
-            subtitle = "Not interactive",
-        )
+      var checked by remember { mutableStateOf(false) }
+      SBBSwitchItem.Default(
+          title = "Switch",
+          subtitle = "Press to show link",
+          checked = checked,
+          onCheckedChange = { checked = it },
+          links = {
+            AnimatedVisibility(checked) {
+              SBBList.DividedColumn(
+                  divider = {
+                    HorizontalDivider(modifier = Modifier.padding(start = SBBSpacing.Medium))
+                  },
+              ) {
+                SBBListItem.Link(title = "Link 1", onClick = {})
+                SBBListItem.Link(
+                    title = "Link 2",
+                    subtitle = "with subtitle",
+                    onClick = {},
+                )
+                SBBListItem.Link(
+                    title = "Link 3",
+                    subtitle = "with icon",
+                    leading = SBBIcons.Small.FaceGrinningSmall,
+                    onClick = {},
+                )
+              }
+            }
+          },
+      )
     }
+
+    SBBListHeader(text = "Boxed list items")
+
+    // Title only
+    SBBListItem.Boxed.Default(
+        title = "Title only",
+    )
+
+    Spacer(modifier = Modifier.height(SBBSpacing.Small))
+
+    // Title + subtitle
+    SBBListItem.Boxed.Default(
+        title = "Title with subtitle",
+        subtitle = "This is a short description",
+    )
+
+    Spacer(modifier = Modifier.height(SBBSpacing.Small))
+
+    // With leading icon and trailing chevron
+    SBBListItem.Boxed.Default(
+        leading = SBBIcons.Medium.UnicornMedium,
+        title = "With leading icon",
+        subtitle = "Has trailing affordance",
+        trailing = SBBIcons.Medium.ChevronSmallRightMedium,
+        onClick = {},
+    )
+
+    Spacer(modifier = Modifier.height(SBBSpacing.Small))
+
+    // Disabled list item
+    SBBListItem.Boxed.Disabled(
+        title = "Disabled item",
+        subtitle = "Not interactive",
+    )
+  }
 }
 
 // Previews are private to hide from golden files as it generates empty images
 @PreviewLightDark
 @Composable
-private fun Preview_ListItemPage() {
-    SBBTheme(includeSurface = true) {
-        ListItemPage()
-    }
+fun Preview_ListItemPage() {
+  SBBTheme(includeSurface = true) {
+    ListItemPage()
+  }
 }

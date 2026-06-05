@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.button
 
-import SBBTheme
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -24,6 +23,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
 import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
  * Implementation of the SBB Tertiary Button.

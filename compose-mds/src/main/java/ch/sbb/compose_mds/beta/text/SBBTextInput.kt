@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.beta.text
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource

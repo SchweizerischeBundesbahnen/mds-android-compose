@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.listItem
 
-import SBBTheme
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -22,13 +21,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListItem.Custom
 import ch.sbb.compose_mds.composables.listItem.SBBListItem.Default
@@ -43,6 +39,7 @@ import ch.sbb.compose_mds.sbbicons.medium.ArchiveBoxMedium
 import ch.sbb.compose_mds.sbbicons.medium.ArrowRightMedium
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
 import ch.sbb.compose_mds.sbbicons.small.FaceKingSmall
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
  * Implementation of the SBB list-item.
@@ -159,17 +156,9 @@ object SBBListItem {
          * @param onClick Optional click callback - providing makes the item clickable.
          * @param onLongClick Optional long-click callback.
          * @param enabled Whether the item is enabled (affects visual states and clickability).
-         * @param padding Content padding inside the item.
-         * @param trailingGapWidth Horizontal spacing between text and trailing content.
-         * @param leadingGapWidth Horizontal spacing between leading content and text.
-         * @param subtitleGapHeight Vertical spacing between title and subtitle.
-         * @param minHeight Minimum height of the item.
-         * @param titleStyle TextStyle used for the title.
-         * @param subtitleStyle TextStyle used for the subtitle.
-         * @param contentColor Color used for content when enabled.
-         * @param disabledContentColor Color used for content when disabled.
          * @param titleMaxLines Maximum number of lines for the title.
          * @param subtitleMaxLines Maximum number of lines for the subtitle.
+         * @param style Style tokens for the list item.
          */
         @Composable
         fun Custom(
@@ -186,17 +175,9 @@ object SBBListItem {
             onClick: (() -> Unit)? = null,
             onLongClick: (() -> Unit)? = null,
             enabled: Boolean = (onClick != null) || (onLongClick != null),
-            padding: PaddingValues = LocalSBBListItemStyle.current.layout.padding,
-            trailingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
-            leadingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
-            subtitleGapHeight: Dp = LocalSBBListItemStyle.current.layout.gapBetweenTitleAndSubtitle,
-            minHeight: Dp = LocalSBBListItemStyle.current.layout.minHeight,
-            titleStyle: TextStyle = LocalSBBListItemStyle.current.typography.title,
-            subtitleStyle: TextStyle = LocalSBBListItemStyle.current.typography.subtitle,
-            contentColor: Color = LocalSBBListItemStyle.current.colors.content,
-            disabledContentColor: Color = LocalSBBListItemStyle.current.colors.disabledContent,
             titleMaxLines: Int = 1,
             subtitleMaxLines: Int = 1,
+            style: SBBListItemStyle = LocalSBBListItemStyle.current,
         ) {
             SBBContentBox(contentPadding = PaddingValues.Zero) {
                 SBBListItem.Custom(
@@ -213,17 +194,9 @@ object SBBListItem {
                     onClick = onClick,
                     onLongClick = onLongClick,
                     enabled = enabled,
-                    padding = padding,
-                    trailingGapWidth = trailingGapWidth,
-                    leadingGapWidth = leadingGapWidth,
-                    subtitleGapHeight = subtitleGapHeight,
-                    titleStyle = titleStyle,
-                    subtitleStyle = subtitleStyle,
                     titleMaxLines = titleMaxLines,
-                    contentColor = contentColor,
-                    disabledContentColor = disabledContentColor,
                     subtitleMaxLines = subtitleMaxLines,
-                    minHeight = minHeight,
+                    style = style,
                 )
             }
         }
@@ -340,17 +313,9 @@ object SBBListItem {
      * @param onClick Optional click callback - providing makes the item clickable.
      * @param onLongClick Optional long-click callback.
      * @param enabled Whether the item is enabled (affects visual states and clickability).
-     * @param padding Content padding inside the item.
-     * @param trailingGapWidth Horizontal spacing between text and trailing content.
-     * @param leadingGapWidth Horizontal spacing between leading content and text.
-     * @param subtitleGapHeight Vertical spacing between title and subtitle.
-     * @param minHeight Minimum height of the item.
-     * @param titleStyle TextStyle used for the title.
-     * @param subtitleStyle TextStyle used for the subtitle.
-     * @param contentColor Color used for content when enabled.
-     * @param disabledContentColor Color used for content when disabled.
      * @param titleMaxLines Maximum number of lines for the title.
      * @param subtitleMaxLines Maximum number of lines for the subtitle.
+     * @param style Style tokens for the list item.
      */
     @Composable
     fun Custom(
@@ -367,20 +332,12 @@ object SBBListItem {
         onClick: (() -> Unit)? = null,
         onLongClick: (() -> Unit)? = null,
         enabled: Boolean = (onClick != null) || (onLongClick != null),
-        padding: PaddingValues = LocalSBBListItemStyle.current.layout.padding,
-        trailingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
-        leadingGapWidth: Dp = LocalSBBListItemStyle.current.layout.gapBetweenIconAndText,
-        subtitleGapHeight: Dp = LocalSBBListItemStyle.current.layout.gapBetweenTitleAndSubtitle,
-        minHeight: Dp = LocalSBBListItemStyle.current.layout.minHeight,
-        titleStyle: TextStyle = LocalSBBListItemStyle.current.typography.title,
-        subtitleStyle: TextStyle = LocalSBBListItemStyle.current.typography.subtitle,
-        contentColor: Color = LocalSBBListItemStyle.current.colors.content,
-        disabledContentColor: Color = LocalSBBListItemStyle.current.colors.disabledContent,
         titleMaxLines: Int = 1,
         subtitleMaxLines: Int = 1,
+        style: SBBListItemStyle = LocalSBBListItemStyle.current,
     ) {
         val localContentColor by animateColorAsState(
-            if (enabled) contentColor else disabledContentColor,
+            if (enabled) style.colors.content else style.colors.disabledContent,
         )
 
         // Build leading/trailing composables from icon resource fallback
@@ -439,7 +396,7 @@ object SBBListItem {
                             text = titleText,
                             maxLines = titleMaxLines,
                             overflow = TextOverflow.Ellipsis,
-                            style = titleStyle,
+                            style = style.typography.title,
                             color = localContentColor,
                         )
                     }
@@ -461,7 +418,7 @@ object SBBListItem {
                         Text(
                             text = subtitleText,
                             maxLines = subtitleMaxLines,
-                            style = subtitleStyle,
+                            style = style.typography.subtitle,
                         )
                     }
                 }
@@ -476,7 +433,7 @@ object SBBListItem {
             modifier =
                 modifier
                     .fillMaxWidth()
-                    .defaultMinSize(minHeight = minHeight)
+                    .defaultMinSize(minHeight = style.layout.minHeight)
                     .then(
                         if (onClick != null || onLongClick != null) {
                             Modifier.combinedClickable(
@@ -489,7 +446,7 @@ object SBBListItem {
                         } else {
                             Modifier
                         },
-                    ).padding(padding),
+                    ).padding(style.layout.padding),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center,
         ) {
@@ -500,7 +457,7 @@ object SBBListItem {
             ) {
                 if (leadingContent != null) {
                     leadingContent()
-                    Spacer(modifier = Modifier.width(leadingGapWidth))
+                    Spacer(modifier = Modifier.width(style.layout.gapBetweenIconAndText))
                 }
 
                 // Title/subtitle column - Expanded
@@ -512,13 +469,13 @@ object SBBListItem {
                 ) {
                     titleContent()
                     if (subtitleContent != null) {
-                        Spacer(modifier = Modifier.height(subtitleGapHeight))
+                        Spacer(modifier = Modifier.height(style.layout.gapBetweenTitleAndSubtitle))
                         subtitleContent()
                     }
                 }
 
                 if (trailingContent != null) {
-                    Spacer(modifier = Modifier.width(trailingGapWidth))
+                    Spacer(modifier = Modifier.width(style.layout.gapBetweenIconAndText))
                     trailingContent()
                 }
             }

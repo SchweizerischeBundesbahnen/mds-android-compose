@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.headerBox
 
-import SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,6 +25,7 @@ import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Custom
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Default
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.WithButton
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
  * SBB HeaderBox component.

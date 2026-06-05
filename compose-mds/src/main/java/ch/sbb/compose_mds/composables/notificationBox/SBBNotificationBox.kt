@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.notificationBox
 
-import SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,6 +30,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
 import ch.sbb.compose_mds.sbbicons.small.CrossSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 typealias OnClose = () -> Unit
 typealias OnClick = () -> Unit

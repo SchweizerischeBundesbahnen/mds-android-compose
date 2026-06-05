@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -15,20 +15,20 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ContainerPage() {
-    Column(
-        modifier = Modifier.padding(16.dp),
-    ) {
-        SBBListHeader(text = "Content-Box")
-        SBBContentBox {
-            Text("Preview")
-        }
+  Column(
+      modifier = Modifier.padding(16.dp),
+  ) {
+    SBBListHeader(text = "Content-Box")
+    SBBContentBox {
+      Text("Preview")
     }
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_ContainerPage() {
-    SBBTheme(includeSurface = true) {
-        ContainerPage()
-    }
+  SBBTheme(includeSurface = true) {
+    ContainerPage()
+  }
 }

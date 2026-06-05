@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.radio
 
-import SBBTheme
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -34,6 +33,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 val tickRadius = 4.dp
 val backgroundRadius = 9.dp

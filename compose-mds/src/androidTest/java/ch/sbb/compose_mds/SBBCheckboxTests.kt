@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds
 
-import SBBTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -16,6 +15,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import ch.sbb.compose_mds.composables.checkbox.SBBCheckbox
+import ch.sbb.compose_mds.theme.SBBTheme
 import org.junit.Rule
 import org.junit.Test
 

@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 # 0.x.x
 
-TBD
+* **SBBListItem:** stable release, using style tokens
+* **SBBSegmentedButton:** stable release, using style tokens, added primary color style
 
 # 0.1.10
 

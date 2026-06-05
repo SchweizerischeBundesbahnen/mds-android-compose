@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.container
 
-import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,6 +20,7 @@ import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
  * Implementation of the SBB Container variant "Content-Box".

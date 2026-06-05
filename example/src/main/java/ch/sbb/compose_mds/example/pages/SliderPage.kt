@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.rememberScrollState
@@ -19,27 +19,26 @@ import ch.sbb.compose_mds.theme.elementPadding
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
 @Composable
 fun SliderPage() {
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
-    ) {
-        val sliderState = SliderState(value = .25f)
-        SBBListHeader(text = "Default")
-        SBBSlider(modifier = Modifier.elementPadding(), state = sliderState)
-        SBBListHeader(text = "Disabled")
-        SBBSlider(modifier = Modifier.elementPadding(), state = sliderState, enabled = false)
-    }
+  Column(
+      modifier =
+          Modifier.defaultPadding()
+              .fillMaxWidth()
+              .verticalScroll(
+                  state = rememberScrollState(),
+              ),
+  ) {
+    val sliderState = SliderState(value = .25f)
+    SBBListHeader(text = "Default")
+    SBBSlider(modifier = Modifier.elementPadding(), state = sliderState)
+    SBBListHeader(text = "Disabled")
+    SBBSlider(modifier = Modifier.elementPadding(), state = sliderState, enabled = false)
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_SliderPage() {
-    SBBTheme(includeSurface = true) {
-        SliderPage()
-    }
+  SBBTheme(includeSurface = true) {
+    SliderPage()
+  }
 }

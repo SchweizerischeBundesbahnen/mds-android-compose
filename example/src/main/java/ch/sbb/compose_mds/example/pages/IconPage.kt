@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -29,54 +29,50 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun IconPage() {
-    Column(
-        modifier =
-            Modifier
-                .defaultPadding()
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState()),
-    ) {
-        SBBListHeader(text = "Small Icons")
-        SBBContentBox {
-            LazyVerticalGrid(
-                modifier = Modifier.heightIn(max = 500.dp),
-                columns = GridCells.Adaptive(24.dp),
-                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-                contentPadding = PaddingValues(SBBSpacing.XSmall),
-            ) {
-                items(SBBIcons.Small.all) {
-                    Icon(
-                        imageVector = it,
-                        contentDescription = null,
-                    )
-                }
-            }
+  Column(
+      modifier = Modifier.defaultPadding().fillMaxSize().verticalScroll(rememberScrollState()),
+  ) {
+    SBBListHeader(text = "Small Icons")
+    SBBContentBox {
+      LazyVerticalGrid(
+          modifier = Modifier.heightIn(max = 500.dp),
+          columns = GridCells.Adaptive(24.dp),
+          verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+          horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+          contentPadding = PaddingValues(SBBSpacing.XSmall),
+      ) {
+        items(SBBIcons.Small.all) {
+          Icon(
+              imageVector = it,
+              contentDescription = null,
+          )
         }
-        SBBListHeader(text = "Medium Icons")
-        SBBContentBox {
-            LazyVerticalGrid(
-                modifier = Modifier.heightIn(max = 500.dp),
-                columns = GridCells.Adaptive(36.dp),
-                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-                contentPadding = PaddingValues(SBBSpacing.XSmall),
-            ) {
-                items(SBBIcons.Medium.all) {
-                    Icon(
-                        imageVector = it,
-                        contentDescription = null,
-                    )
-                }
-            }
-        }
+      }
     }
+    SBBListHeader(text = "Medium Icons")
+    SBBContentBox {
+      LazyVerticalGrid(
+          modifier = Modifier.heightIn(max = 500.dp),
+          columns = GridCells.Adaptive(36.dp),
+          verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+          horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+          contentPadding = PaddingValues(SBBSpacing.XSmall),
+      ) {
+        items(SBBIcons.Medium.all) {
+          Icon(
+              imageVector = it,
+              contentDescription = null,
+          )
+        }
+      }
+    }
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_IconPage() {
-    SBBTheme(includeSurface = true) {
-        IconPage()
-    }
+  SBBTheme(includeSurface = true) {
+    IconPage()
+  }
 }

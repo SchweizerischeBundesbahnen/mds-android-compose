@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.checkbox
 
-import SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Row
@@ -23,6 +22,7 @@ import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.tooling.preview.Preview
+import ch.sbb.compose_mds.theme.SBBTheme
 import kotlin.math.pow
 import kotlin.math.sqrt
 

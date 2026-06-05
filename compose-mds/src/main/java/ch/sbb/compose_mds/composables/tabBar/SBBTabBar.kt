@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.asAndroidPath
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.graphics.nativePaint
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.semantics.CollectionInfo
@@ -61,7 +62,7 @@ fun SBBTabBar(
                     drawIntoCanvas { canvas ->
                         val path by controller.path(size)
                         val shadowPaint =
-                            Paint().asFrameworkPaint().apply {
+                            Paint().nativePaint.apply {
                                 isAntiAlias = true
                                 maskFilter = BlurMaskFilter(6f, BlurMaskFilter.Blur.NORMAL)
                                 style = android.graphics.Paint.Style.STROKE

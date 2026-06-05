@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.headerBox
 
-import SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +14,7 @@ import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @PreviewLightDark
 @Composable

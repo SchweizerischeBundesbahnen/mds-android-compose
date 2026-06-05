@@ -1,6 +1,6 @@
 package ch.sbb.compose_mds.example.pages
 
-import SBBTheme
+import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -22,44 +22,44 @@ import ch.sbb.compose_mds.theme.defaultPadding
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun RadioButtonPage() {
-    var selectedValue: Int by remember { mutableIntStateOf(0) }
-    Column(
-        modifier =
-            Modifier
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ).defaultPadding(),
-    ) {
-        SBBListHeader(text = "RadioButton")
-        SBBRadioButton(
-            label = "Label",
-            selected = selectedValue == 0,
-            onClick = { selectedValue = 0 },
-        )
+  var selectedValue: Int by remember { mutableIntStateOf(0) }
+  Column(
+      modifier =
+          Modifier.verticalScroll(
+                  state = rememberScrollState(),
+              )
+              .defaultPadding(),
+  ) {
+    SBBListHeader(text = "RadioButton")
+    SBBRadioButton(
+        label = "Label",
+        selected = selectedValue == 0,
+        onClick = { selectedValue = 0 },
+    )
 
-        SBBListHeader(text = "RadioButton with Icon")
-        SBBRadioButton(
-            label = "Label",
-            selected = selectedValue == 1,
-            icon = SBBIcons.Small.TrainSmall,
-            onClick = { selectedValue = 1 },
-        )
+    SBBListHeader(text = "RadioButton with Icon")
+    SBBRadioButton(
+        label = "Label",
+        selected = selectedValue == 1,
+        icon = SBBIcons.Small.TrainSmall,
+        onClick = { selectedValue = 1 },
+    )
 
-        SBBListHeader(text = "Disabled RadioButton")
-        SBBRadioButton(
-            label = "Label",
-            selected = true,
-            icon = SBBIcons.Small.TrainSmall,
-            enabled = false,
-            onClick = { },
-        )
-    }
+    SBBListHeader(text = "Disabled RadioButton")
+    SBBRadioButton(
+        label = "Label",
+        selected = true,
+        icon = SBBIcons.Small.TrainSmall,
+        enabled = false,
+        onClick = {},
+    )
+  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_RadioButtonPage() {
-    SBBTheme(includeSurface = true) {
-        RadioButtonPage()
-    }
+  SBBTheme(includeSurface = true) {
+    RadioButtonPage()
+  }
 }

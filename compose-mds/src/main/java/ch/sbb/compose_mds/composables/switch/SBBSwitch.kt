@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.composables.switch
 
-import SBBTheme
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntOffsetAsState
@@ -46,6 +45,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TickSmall
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 private val knobSize = 28.dp
 private val trackWidth = 52.dp
