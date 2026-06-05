@@ -1,4 +1,4 @@
-package ch.sbb.compose_mds.composables.listItem
+package ch.sbb.compose_mds.composables.switch
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,15 +9,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.composables.container.SBBContentBox
-import ch.sbb.compose_mds.composables.switch.SBBSwitch
+import ch.sbb.compose_mds.composables.listItem.SBBList
+import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
- * Implementation of the SBB switch-item.
+ * Implementation of the SBB switch-item enclosed in a list-item.
  *
- * Available are the variants [Default].
- * they can be used as a List, wrapped in a [SBBList.Wrap] or as standalone [Boxed] versions.
+ * Available are the variants [Boxed] and [Default].
+ * They can be used as a List, wrapped in an [SBBList.Wrap] or as standalone [Boxed] versions.
  *
  * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/switch/).
  */
@@ -25,17 +26,17 @@ object SBBSwitchItem {
     /**
      * Boxed variant of the switch list item.
      *
-     * Wraps the item in a content box so it can be used as a standalone grouped element.
+     * Wraps the item in a content box so it can be used as a standalone element.
      *
-     * @param modifier Modifier to apply to the outer container.
-     * @param interactionSource Optional interaction source used for the switch and click handling.
      * @param title Main title text for the item.
-     * @param subtitle Subtitle text displayed below the title.
+     * @param subtitle The subtitle text displayed below the title.
      * @param checked Current checked state of the switch.
+     * @param interactionSource Optional interaction source used for the switch and click handling.
      * @param onCheckedChange Optional callback invoked when the switch is toggled. If null,
      *        the item is rendered as disabled.
      * @param enabled Whether the item and its controls are enabled. Defaults to true when
      *        [onCheckedChange] is provided.
+     * @param modifier The modifier to apply to the outer container.
      * @param links Optional slot for additional link items shown below this item (e.g. extra
      *        actions or child items).
      */
@@ -69,13 +70,13 @@ object SBBSwitchItem {
      *
      * Renders the item suitable for placement in a divided list. The trailing slot is used to
      * render an [SBBSwitch]. The item becomes clickable and toggles when [onCheckedChange] is
-     * provided — the [onClick] behavior is handled by forwarding a toggle action.
+     * provided — the [onCheckedChange] behavior is handled by forwarding a toggle action.
      *
-     * @param modifier Modifier to apply to the item.
-     * @param interactionSource Optional interaction source shared with the switch.
      * @param title Main title text.
-     * @param subtitle Subtitle text shown below the title.
+     * @param subtitle The subtitle text shown below the title.
      * @param checked Current checked state shown by the switch.
+     * @param modifier The modifier to apply to the item.
+     * @param interactionSource Optional interaction source shared with the switch.
      * @param onCheckedChange Optional callback invoked when the switch is toggled; also used
      *        to provide the item click behavior.
      * @param enabled Whether the control is enabled. Defaults to true when [onCheckedChange]
@@ -93,7 +94,13 @@ object SBBSwitchItem {
         enabled: Boolean = onCheckedChange != null,
         links: (@Composable () -> Unit)? = null,
     ) {
-        SBBList.DividedColumn(divider = { HorizontalDivider(modifier = Modifier.padding(start = SBBSpacing.Medium)) }) {
+        SBBList.DividedColumn(
+            divider = {
+                HorizontalDivider(
+                    modifier = Modifier.padding(start = SBBSpacing.Medium),
+                )
+            },
+        ) {
             SBBListItem.Custom(
                 modifier = modifier,
                 titleText = title,

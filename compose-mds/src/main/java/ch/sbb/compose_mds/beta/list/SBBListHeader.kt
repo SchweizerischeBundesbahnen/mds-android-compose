@@ -14,7 +14,7 @@ fun SBBListHeader(
     text: String,
 ) {
     Text(
-        modifier = modifier.defaultPadding(),
+        modifier = Modifier.defaultPadding() then modifier,
         text = text,
         style = MaterialTheme.typography.bodySmall,
     )

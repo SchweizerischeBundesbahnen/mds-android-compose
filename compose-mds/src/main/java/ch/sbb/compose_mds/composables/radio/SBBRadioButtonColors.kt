@@ -5,6 +5,10 @@ import androidx.compose.ui.graphics.Color
 import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
+internal fun radioButtonColors(enabled: Boolean): SBBRadioButtonColors =
+    if (SBBTheme.isDarkMode) darkRadioButtonColors(enabled) else lightRadioButtonColors(enabled)
+
+@Composable
 internal fun lightRadioButtonColors(enabled: Boolean): SBBRadioButtonColors {
     val colors = SBBTheme.colors
     return SBBRadioButtonColors(

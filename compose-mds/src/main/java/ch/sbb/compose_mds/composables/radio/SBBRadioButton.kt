@@ -61,12 +61,7 @@ fun SBBRadioButton(
     icon: ImageVector? = null,
     interactionSource: MutableInteractionSource? = null,
 ) {
-    val colors =
-        if (SBBTheme.isDarkMode) {
-            darkRadioButtonColors(enabled = enabled)
-        } else {
-            lightRadioButtonColors(enabled = enabled)
-        }
+    val colors = radioButtonColors(enabled)
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier =
@@ -102,7 +97,7 @@ fun SBBRadioButton(
 }
 
 @Composable
-private fun DrawRadio(
+internal fun DrawRadio(
     selected: Boolean,
     colors: SBBRadioButtonColors,
     modifier: Modifier = Modifier,

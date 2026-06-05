@@ -38,7 +38,7 @@ ktlint {
 
 configure<LibraryExtension> {
     namespace = "ch.sbb.compose_mds"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 29

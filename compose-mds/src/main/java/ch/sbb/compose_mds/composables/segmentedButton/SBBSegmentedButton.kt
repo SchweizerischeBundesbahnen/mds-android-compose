@@ -25,7 +25,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInParent
@@ -44,13 +43,22 @@ import ch.sbb.compose_mds.sbbicons.small.ArrowsLongRightLeftSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBTheme
 
-data class SBBButtonSegment<T>(
-    val value: T,
-    val label: String? = null,
-    val icon: ImageVector? = null,
-)
-
+/**
+ * Implementation of the SBB segmented-button.
+ *
+ * Available are the variants [Default], [Custom] and [Primary].
+ *
+ * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/segmented-button/).
+ */
 object SBBSegmentedButton {
+    /**
+     * Default variant of the segmented button.
+     *
+     * @param selection Currently selected value.
+     * @param segments All options as a [List] of [SBBButtonSegment].
+     * @param onSelectionChange Action on selected element changed.
+     * @param modifier The modifier to customize the surrounding [Box].
+     */
     @Composable
     fun <T> Default(
         selection: T,
@@ -67,6 +75,14 @@ object SBBSegmentedButton {
         )
     }
 
+    /**
+     * Primary variant of the segmented button.
+     *
+     * @param selection Currently selected value.
+     * @param segments All options as a [List] of [SBBButtonSegment].
+     * @param onSelectionChange Action on selected element changed.
+     * @param modifier The modifier to customize the surrounding [Box].
+     */
     @Composable
     fun <T> Primary(
         selection: T,
@@ -83,8 +99,18 @@ object SBBSegmentedButton {
         )
     }
 
+    /**
+     * Custom variant of the segmented button.
+     * Override the style with a custom [SBBSegmentedButtonStyle]
+     *
+     * @param selection Currently selected value.
+     * @param segments All options as a [List] of [SBBButtonSegment].
+     * @param onSelectionChange Action on selected element changed.
+     * @param style Styling of the [SBBSegmentedButton] with a [SBBSegmentedButtonStyle].
+     * @param modifier The modifier to customize the surrounding [Box].
+     */
     @Composable
-    private fun <T> Custom(
+    fun <T> Custom(
         selection: T,
         segments: List<SBBButtonSegment<T>>,
         onSelectionChange: (T) -> Unit,
