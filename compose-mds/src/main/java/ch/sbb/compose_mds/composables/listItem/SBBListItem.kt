@@ -177,7 +177,7 @@ object SBBListItem {
             enabled: Boolean = (onClick != null) || (onLongClick != null),
             titleMaxLines: Int = 1,
             subtitleMaxLines: Int = 1,
-            style: SBBListItemStyle = LocalSBBListItemStyle.current
+            style: SBBListItemStyle = LocalSBBListItemStyle.current,
         ) {
             SBBContentBox(contentPadding = PaddingValues.Zero) {
                 SBBListItem.Custom(

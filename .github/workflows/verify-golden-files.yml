@@ -39,7 +39,7 @@ jobs:
         with:
           # Install specific SDK components to avoid errors and speed up the process.
           # We specify the exact versions required by the project.
-          packages: 'platform-tools platforms;android-36 build-tools;34.0.0'
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
 
       - name: Accept Android SDK licenses
         run: yes | ${{ env.ANDROID_HOME }}/cmdline-tools/latest/bin/sdkmanager --licenses

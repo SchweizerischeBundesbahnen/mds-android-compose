@@ -149,8 +149,7 @@ object SBBSegmentedButton {
                                     interactionSource = interactionSource,
                                     indication = null,
                                     onClick = { onSelectionChange(segment.value) },
-                                )
-                                .onGloballyPositioned { positions[segment.value] = it },
+                                ).onGloballyPositioned { positions[segment.value] = it },
                         contentAlignment = Alignment.Center,
                     ) {
                         Box(

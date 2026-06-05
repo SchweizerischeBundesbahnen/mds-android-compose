@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
-import ch.sbb.compose_mds.theme.context.LocalThemeContext
 
 @Immutable
 data class SBBSegmentedButtonColors(
@@ -50,10 +49,11 @@ data class SBBSegmentedButtonStyle(
     val layout: SBBSegmentedButtonLayout,
     val typography: SBBSegmentedButtonTypography,
 ) {
-    val buttonBorderStroke = BorderStroke(
-        width = layout.buttonBorderWidth,
-        color = colors.buttonBorder
-    )
+    val buttonBorderStroke =
+        BorderStroke(
+            width = layout.buttonBorderWidth,
+            color = colors.buttonBorder,
+        )
 }
 
 @Immutable
