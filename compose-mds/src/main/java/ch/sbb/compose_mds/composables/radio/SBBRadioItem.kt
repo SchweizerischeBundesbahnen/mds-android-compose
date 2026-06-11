@@ -8,8 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
-import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemStyle
-import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.composables.listItem.SBBListItemStyle
+import ch.sbb.compose_mds.composables.listItem.withXSmallHorizontalGap
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
@@ -20,7 +20,7 @@ import ch.sbb.compose_mds.theme.SBBTheme
  *
  * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/radio-button/).
  */
-object SBBRadioButtonItem {
+object SBBRadioItem {
     /**
      * Boxed variant of the switch radio button.
      *
@@ -35,6 +35,8 @@ object SBBRadioButtonItem {
      *        the item is rendered as disabled.
      * @param enabled Whether the item and its controls are enabled. Defaults to true when
      *        [onCheckedChange] is provided.
+     * @param listStyle an optional customized style for the enclosing list item.
+     * @param style an optional customized style.
      */
     @Composable
     fun Boxed(
@@ -45,6 +47,8 @@ object SBBRadioButtonItem {
         interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         onCheckedChange: ((Boolean) -> Unit)? = null,
         enabled: Boolean = onCheckedChange != null,
+        listStyle: SBBListItemStyle = SBBTheme.listItem.withXSmallHorizontalGap,
+        style: SBBRadioStyle = SBBTheme.radio,
     ) {
         SBBContentBox(contentPadding = PaddingValues.Zero) {
             Default(
@@ -55,6 +59,8 @@ object SBBRadioButtonItem {
                 checked = checked,
                 onCheckedChange = onCheckedChange,
                 enabled = enabled,
+                listStyle = listStyle,
+                style = style,
             )
         }
     }
@@ -73,6 +79,8 @@ object SBBRadioButtonItem {
      *        the item is rendered as disabled.
      * @param enabled Whether the item and its controls are enabled. Defaults to true when
      *        [onCheckedChange] is provided.
+     * @param listStyle an optional customized style for the enclosing list item.
+     * @param style an optional customized style.
      */
     @Composable
     fun Default(
@@ -83,19 +91,12 @@ object SBBRadioButtonItem {
         interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
         onCheckedChange: ((Boolean) -> Unit)? = null,
         enabled: Boolean = onCheckedChange != null,
+        listStyle: SBBListItemStyle = SBBTheme.listItem.withXSmallHorizontalGap,
+        style: SBBRadioStyle = SBBTheme.radio,
     ) {
-        val style =
-            with(defaultSBBListItemStyle()) {
-                copy(
-                    layout =
-                        layout.copy(
-                            gapBetweenIconAndText = SBBSpacing.XSmall,
-                        ),
-                )
-            }
         SBBListItem.Custom(
             modifier = modifier,
-            style = style,
+            style = listStyle,
             titleText = title,
             subtitleText = subtitle,
             interactionSource = interactionSource,
@@ -103,7 +104,8 @@ object SBBRadioButtonItem {
             leading = {
                 DrawRadio(
                     selected = checked,
-                    colors = radioButtonColors(enabled),
+                    enabled = enabled,
+                    style = style,
                 )
             },
         )
@@ -114,7 +116,7 @@ object SBBRadioButtonItem {
 @Composable
 private fun PreviewSBBRadioButtonItem_Default() {
     SBBTheme {
-        SBBRadioButtonItem.Default(
+        SBBRadioItem.Default(
             title = "Default",
             checked = true,
             onCheckedChange = {},
@@ -126,7 +128,7 @@ private fun PreviewSBBRadioButtonItem_Default() {
 @Composable
 private fun PreviewSBBRadioButtonItem_Disabled() {
     SBBTheme {
-        SBBRadioButtonItem.Default(
+        SBBRadioItem.Default(
             title = "Disabled",
             checked = true,
             onCheckedChange = {},
@@ -139,7 +141,7 @@ private fun PreviewSBBRadioButtonItem_Disabled() {
 @Composable
 private fun PreviewSBBRadioButtonItem_Boxed() {
     SBBTheme {
-        SBBRadioButtonItem.Boxed(
+        SBBRadioItem.Boxed(
             title = "Boxed",
             checked = true,
             onCheckedChange = {},
@@ -151,7 +153,7 @@ private fun PreviewSBBRadioButtonItem_Boxed() {
 @Composable
 private fun PreviewSBBRadioButtonItem_Boxed_Disabled() {
     SBBTheme {
-        SBBRadioButtonItem.Boxed(
+        SBBRadioItem.Boxed(
             title = "Boxed Disabled",
             checked = true,
             onCheckedChange = {},

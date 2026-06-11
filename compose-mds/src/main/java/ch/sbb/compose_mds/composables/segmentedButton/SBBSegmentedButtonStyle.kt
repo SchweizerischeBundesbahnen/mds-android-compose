@@ -14,7 +14,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -57,127 +56,77 @@ data class SBBSegmentedButtonStyle(
 }
 
 @Immutable
-data class SBBSegmentedButtonVariants(
-    val default: SBBSegmentedButtonStyle,
-    val primary: SBBSegmentedButtonStyle,
-)
-
-@Composable
-fun defaultSBBSegmentedButtonStyles(): SBBSegmentedButtonVariants {
-    val dark = SBBTheme.isDarkMode
-    val typography = MaterialTheme.typography
-    val colors = SBBTheme.colors
-
-    val background by animateColorAsState(if (dark) colors.charcoal else colors.cloud)
-    val border by animateColorAsState(if (dark) colors.graphite else colors.granite)
-    val buttonColor by animateColorAsState(if (dark) colors.iron else colors.white)
-
-    return SBBSegmentedButtonVariants(
-        default =
-            SBBSegmentedButtonStyle(
-                colors =
-                    SBBSegmentedButtonColors(
-                        background = background,
-                        buttonBackground = buttonColor,
-                        buttonBorder = border,
-                        onButton = MaterialTheme.colorScheme.onSurfaceVariant,
-                    ),
-                layout =
-                    SBBSegmentedButtonLayout(
-                        height = 46.dp,
-                        buttonShape = RoundedCornerShape(22.dp),
-                        buttonBorderWidth = 1.dp,
-                        buttonOverlap = 2.dp,
-                        buttonGap = SBBSpacing.XXSmall,
-                        horizontalElementSpacing = SBBSpacing.XXSmall,
-                    ),
-                typography =
-                    SBBSegmentedButtonTypography(
-                        title = typography.bodyMedium,
-                        fontWeight = FontWeight.Light,
-                        selectedFontWeight = FontWeight.Light,
-                    ),
-            ),
-        primary =
-            SBBSegmentedButtonStyle(
-                colors =
-                    SBBSegmentedButtonColors(
-                        background = colors.primary125,
-                        buttonBackground = colors.primary,
-                        buttonBorder = colors.primary150,
-                        onButton = colors.white,
-                    ),
-                layout =
-                    SBBSegmentedButtonLayout(
-                        height = 46.dp,
-                        buttonShape = RoundedCornerShape(22.dp),
-                        buttonBorderWidth = 1.dp,
-                        buttonOverlap = 2.dp,
-                        buttonGap = SBBSpacing.XXSmall,
-                        horizontalElementSpacing = SBBSpacing.XXSmall,
-                    ),
-                typography =
-                    SBBSegmentedButtonTypography(
-                        title = typography.bodyMedium,
-                        fontWeight = FontWeight.Light,
-                        selectedFontWeight = FontWeight.Bold,
-                    ),
-            ),
-    )
+interface SBBSegmentedButtonVariants {
+    val default: SBBSegmentedButtonStyle @Composable get
+    val primary: SBBSegmentedButtonStyle @Composable get
 }
 
-private val StaticDefaultSBBSegmentedButtonStyle =
-    SBBSegmentedButtonVariants(
-        default =
-            SBBSegmentedButtonStyle(
-                colors =
-                    SBBSegmentedButtonColors(
-                        background = PrimitiveColors.cloud,
-                        buttonBackground = PrimitiveColors.white,
-                        buttonBorder = PrimitiveColors.granite,
-                        onButton = PrimitiveColors.black,
-                    ),
-                layout =
-                    SBBSegmentedButtonLayout(
-                        height = 46.dp,
-                        buttonShape = RoundedCornerShape(22.dp),
-                        buttonBorderWidth = 1.dp,
-                        buttonOverlap = 2.dp,
-                        buttonGap = SBBSpacing.XXSmall,
-                        horizontalElementSpacing = SBBSpacing.XXSmall,
-                    ),
-                typography =
-                    SBBSegmentedButtonTypography(
-                        title = TextStyle.Default,
-                        fontWeight = FontWeight.Light,
-                        selectedFontWeight = FontWeight.Light,
-                    ),
-            ),
-        primary =
-            SBBSegmentedButtonStyle(
-                colors =
-                    SBBSegmentedButtonColors(
-                        background = PrimitiveColors.red125,
-                        buttonBackground = PrimitiveColors.red,
-                        buttonBorder = PrimitiveColors.red150,
-                        onButton = PrimitiveColors.white,
-                    ),
-                layout =
-                    SBBSegmentedButtonLayout(
-                        height = 46.dp,
-                        buttonShape = RoundedCornerShape(22.dp),
-                        buttonBorderWidth = 1.dp,
-                        buttonOverlap = 2.dp,
-                        buttonGap = SBBSpacing.XXSmall,
-                        horizontalElementSpacing = SBBSpacing.XXSmall,
-                    ),
-                typography =
-                    SBBSegmentedButtonTypography(
-                        title = TextStyle.Default,
-                        fontWeight = FontWeight.Light,
-                        selectedFontWeight = FontWeight.Bold,
-                    ),
-            ),
-    )
+class DefaultSegmentedButtonStyle : SBBSegmentedButtonVariants by defaultSBBSegmentedButtonStyles()
 
-val LocalSBBSegmentedButtonStyle = staticCompositionLocalOf { StaticDefaultSBBSegmentedButtonStyle }
+fun defaultSBBSegmentedButtonStyles(): SBBSegmentedButtonVariants {
+    return object : SBBSegmentedButtonVariants {
+        override val default: SBBSegmentedButtonStyle
+            @Composable get() {
+                val dark = SBBTheme.isDarkMode
+                val typography = SBBTheme.materialTypography
+                val colors = SBBTheme.colors
+
+                val background by animateColorAsState(if (dark) colors.charcoal else colors.cloud)
+                val border by animateColorAsState(if (dark) colors.graphite else colors.granite)
+                val buttonColor by animateColorAsState(if (dark) colors.iron else colors.white)
+
+                return SBBSegmentedButtonStyle(
+                    colors =
+                        SBBSegmentedButtonColors(
+                            background = background,
+                            buttonBackground = buttonColor,
+                            buttonBorder = border,
+                            onButton = MaterialTheme.colorScheme.onSurfaceVariant,
+                        ),
+                    layout =
+                        SBBSegmentedButtonLayout(
+                            height = 46.dp,
+                            buttonShape = RoundedCornerShape(22.dp),
+                            buttonBorderWidth = 1.dp,
+                            buttonOverlap = 2.dp,
+                            buttonGap = SBBSpacing.XXSmall,
+                            horizontalElementSpacing = SBBSpacing.XXSmall,
+                        ),
+                    typography =
+                        SBBSegmentedButtonTypography(
+                            title = typography.bodyMedium,
+                            fontWeight = FontWeight.Light,
+                            selectedFontWeight = FontWeight.Light,
+                        ),
+                )
+            }
+        override val primary
+            @Composable get() =
+                SBBSegmentedButtonStyle(
+                    colors =
+                        SBBSegmentedButtonColors(
+                            background = SBBTheme.colors.primary125,
+                            buttonBackground = SBBTheme.colors.primary,
+                            buttonBorder = SBBTheme.colors.primary150,
+                            onButton = SBBTheme.colors.white,
+                        ),
+                    layout =
+                        SBBSegmentedButtonLayout(
+                            height = 46.dp,
+                            buttonShape = RoundedCornerShape(22.dp),
+                            buttonBorderWidth = 1.dp,
+                            buttonOverlap = 2.dp,
+                            buttonGap = SBBSpacing.XXSmall,
+                            horizontalElementSpacing = SBBSpacing.XXSmall,
+                        ),
+                    typography =
+                        SBBSegmentedButtonTypography(
+                            title = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.Light,
+                            selectedFontWeight = FontWeight.Bold,
+                        ),
+                )
+    }
+}
+
+val LocalSBBSegmentedButtonStyle = staticCompositionLocalOf<SBBSegmentedButtonVariants> { DefaultSegmentedButtonStyle() }

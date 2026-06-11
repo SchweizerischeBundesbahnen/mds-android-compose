@@ -4,8 +4,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 # 0.x.x
 
-* **SBBListItem:** stable release, using style tokens
-* **SBBSegmentedButton:** stable release, using style tokens, added primary color style
+* **#17 SBBListItem:** stable release, using style tokens
+* **#32 SBBSegmentedButton:** stable release, using style tokens, added primary color style
+* **#31 SBBRadio:** stable release, using style tokens
+* **#31 SBBRadioItem:** stable release, using style tokens
+* **#9 SBBCheckbox:** stable release, using style tokens
+* **#9 SBBCheckboxItem:** stable release, using style tokens
 
 # 0.1.10
 

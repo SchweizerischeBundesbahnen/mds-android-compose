@@ -11,11 +11,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-// Token data classes
 @Immutable
 data class SBBListItemColors(
     val content: Color,
@@ -37,62 +35,56 @@ data class SBBListItemTypography(
 )
 
 @Immutable
-data class SBBListItemStyle(
-    val colors: SBBListItemColors,
-    val layout: SBBListItemLayout,
-    val typography: SBBListItemTypography,
-)
-
-@Composable
-fun defaultSBBListItemStyle(): SBBListItemStyle {
-    val dark = SBBTheme.isDarkMode
-    val typography = MaterialTheme.typography
-    val colors = SBBTheme.colors
-
-    val content = MaterialTheme.colorScheme.onSurfaceVariant
-    val disabledContent by animateColorAsState(if (dark) colors.graphite else colors.granite)
-    val subtitleColor = disabledContent
-
-    return SBBListItemStyle(
-        colors =
-            SBBListItemColors(
-                content = content,
-                disabledContent = disabledContent,
-            ),
-        layout =
-            SBBListItemLayout(
-                padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
-                minHeight = 44.dp,
-                gapBetweenIconAndText = SBBSpacing.Medium,
-                gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
-            ),
-        typography =
-            SBBListItemTypography(
-                title = typography.bodyMedium,
-                subtitle = typography.bodySmall.copy(color = subtitleColor),
-            ),
-    )
+interface SBBListItemStyle {
+    val colors: SBBListItemColors @Composable get
+    val layout: SBBListItemLayout @Composable get
+    val typography: SBBListItemTypography @Composable get
 }
 
-private val StaticDefaultSBBListItemStyle =
-    SBBListItemStyle(
-        colors =
+class DefaultListItemStyle : SBBListItemStyle by defaultSBBListItemStyle()
+
+fun defaultSBBListItemStyle(): SBBListItemStyle {
+    return object : SBBListItemStyle {
+        private val disabledContentColor: Color @Composable get() {
+            val dark = SBBTheme.isDarkMode
+            val colors = SBBTheme.colors
+
+            val disabledContent by animateColorAsState(if (dark) colors.graphite else colors.granite)
+            return disabledContent
+        }
+
+        override val colors: SBBListItemColors @Composable get() =
             SBBListItemColors(
-                content = PrimitiveColors.black,
-                disabledContent = PrimitiveColors.black.copy(alpha = 0.6f),
-            ),
-        layout =
+                content = MaterialTheme.colorScheme.onSurfaceVariant,
+                disabledContent = disabledContentColor,
+            )
+
+        override val layout @Composable get() =
             SBBListItemLayout(
                 padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
                 minHeight = 44.dp,
                 gapBetweenIconAndText = SBBSpacing.Medium,
                 gapBetweenTitleAndSubtitle = SBBSpacing.XXSmall,
-            ),
-        typography =
+            )
+        override val typography @Composable get() =
             SBBListItemTypography(
-                title = TextStyle.Default,
-                subtitle = TextStyle.Default,
-            ),
-    )
+                title = MaterialTheme.typography.bodyMedium,
+                subtitle = MaterialTheme.typography.bodySmall.copy(color = disabledContentColor),
+            )
+    }
+}
 
-val LocalSBBListItemStyle = staticCompositionLocalOf { StaticDefaultSBBListItemStyle }
+val LocalSBBListItemStyle = staticCompositionLocalOf<SBBListItemStyle> { DefaultListItemStyle() }
+
+val SBBListItemStyle.withXSmallHorizontalGap: SBBListItemStyle
+    @Composable get() {
+        val parent = this
+        return object : SBBListItemStyle {
+            override val colors @Composable get() = parent.colors
+            override val layout @Composable get() =
+                parent.layout.copy(
+                    gapBetweenIconAndText = SBBSpacing.XSmall,
+                )
+            override val typography @Composable get() = parent.typography
+        }
+    }

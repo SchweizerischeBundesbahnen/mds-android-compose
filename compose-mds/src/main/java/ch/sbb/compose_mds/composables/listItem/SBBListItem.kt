@@ -177,7 +177,7 @@ object SBBListItem {
             enabled: Boolean = (onClick != null) || (onLongClick != null),
             titleMaxLines: Int = 1,
             subtitleMaxLines: Int = 1,
-            style: SBBListItemStyle = LocalSBBListItemStyle.current,
+            style: SBBListItemStyle = SBBTheme.listItem,
         ) {
             SBBContentBox(contentPadding = PaddingValues.Zero) {
                 SBBListItem.Custom(
@@ -334,7 +334,7 @@ object SBBListItem {
         enabled: Boolean = (onClick != null) || (onLongClick != null),
         titleMaxLines: Int = 1,
         subtitleMaxLines: Int = 1,
-        style: SBBListItemStyle = LocalSBBListItemStyle.current,
+        style: SBBListItemStyle = SBBTheme.listItem,
     ) {
         val localContentColor by animateColorAsState(
             if (enabled) style.colors.content else style.colors.disabledContent,

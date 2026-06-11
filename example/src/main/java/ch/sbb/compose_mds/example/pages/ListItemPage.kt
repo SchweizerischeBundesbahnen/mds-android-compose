@@ -13,12 +13,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.checkbox.SBBCheckboxItem
 import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
-import ch.sbb.compose_mds.composables.radio.SBBRadioButtonItem
+import ch.sbb.compose_mds.composables.radio.SBBRadioItem
 import ch.sbb.compose_mds.composables.switch.SBBSwitchItem
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -92,11 +94,25 @@ fun ListItemPage() {
                 },
             )
 
-            SBBRadioButtonItem.Default(
+            SBBRadioItem.Default(
                 title = "RadioButton",
                 checked = true,
                 enabled = true,
                 onCheckedChange = {},
+            )
+
+            var tristateCheckboxState by remember { mutableStateOf(ToggleableState.On) }
+            SBBCheckboxItem.Boxed(
+                title = "Checkbox",
+                state = tristateCheckboxState,
+                onCheckedChange = { tristateCheckboxState = it },
+            )
+
+            var tristateCheckboxState2 by remember { mutableStateOf(ToggleableState.Indeterminate) }
+            SBBCheckboxItem.Tristate.Boxed(
+                title = "Tristate Checkbox",
+                state = tristateCheckboxState2,
+                onCheckedChange = { tristateCheckboxState2 = it },
             )
         }
 
@@ -142,7 +158,21 @@ fun ListItemPage() {
                 },
             )
 
-            SBBRadioButtonItem.Boxed(title = "RadioButton", checked = true, onCheckedChange = {})
+            SBBRadioItem.Boxed(title = "RadioButton", checked = true, onCheckedChange = {})
+
+            var tristateCheckboxState by remember { mutableStateOf(ToggleableState.On) }
+            SBBCheckboxItem.Boxed(
+                title = "Checkbox",
+                state = tristateCheckboxState,
+                onCheckedChange = { tristateCheckboxState = it },
+            )
+
+            var tristateCheckboxState2 by remember { mutableStateOf(ToggleableState.Indeterminate) }
+            SBBCheckboxItem.Tristate.Boxed(
+                title = "Tristate Checkbox",
+                state = tristateCheckboxState2,
+                onCheckedChange = { tristateCheckboxState2 = it },
+            )
         }
     }
 }

@@ -1,13 +1,15 @@
 package ch.sbb.compose_mds.example
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -49,99 +51,140 @@ import ch.sbb.compose_mds.example.pages.TabBarPage
 import ch.sbb.compose_mds.example.pages.TextInputPage
 import ch.sbb.compose_mds.example.pages.TextareaPage
 import ch.sbb.compose_mds.example.pages.TypographyPage
+import ch.sbb.compose_mds.sbbicons.SBBIcons
+import ch.sbb.compose_mds.sbbicons.Small
+import ch.sbb.compose_mds.sbbicons.small.MoonSmall
+import ch.sbb.compose_mds.sbbicons.small.SunshineSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
+import ch.sbb.compose_mds.theme.context.OffBrandThemeContext
+import ch.sbb.compose_mds.theme.context.SBBThemeContext
+import ch.sbb.compose_mds.theme.context.SafetyRelevantThemeContext
+import ch.sbb.compose_mds.theme.context.ThemeContext
 
 class MainActivity : ComponentActivity() {
-  @OptIn(ExperimentalSBBComponent::class)
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContent {
-      val isSystemInDarkTheme = isSystemInDarkTheme()
-      var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
-      SBBTheme(darkTheme = isDarkTheme) {
-        val navController = rememberNavController()
-        Scaffold(
-            topBar = {
-              Column {
-                SBBHeader.Small(
-                    title = "SBB DSM Android",
-                    navController = navController,
-                )
-                DarkLightThemeSelection(
-                    onSelectionChanged = { selected -> isDarkTheme = selected },
-                    selection = isDarkTheme,
-                )
-              }
-            },
-        ) {
-          Box(modifier = Modifier.padding(it)) {
-            NavHost(
-                navController = navController,
-                startDestination = "main",
-            ) {
-              composable("main") { MainPage(navController) }
-              composable("icon") { IconPage() }
-              composable("typography") { TypographyPage() }
-              composable("color") { ColorPage() }
-              composable("checkbox") { CheckboxPage() }
-              composable("button") { ButtonPage() }
-              composable("loading-indicator") { LoadingIndicatorPage() }
-              composable("switch") { SwitchPage() }
-              composable("header") { HeaderPage() }
-              composable("header-box") { HeaderBoxPage() }
-              composable("bottom-sheet") { BottomSheetPage() }
-              composable("text-input") { TextInputPage() }
-              composable("textarea") { TextareaPage() }
-              composable("dropdown") { DropdownPage() }
-              composable("segmented-button") { SegmentedButtonPage() }
-              composable("status") { StatusPage() }
-              composable("slider") { SliderPage() }
-              composable("notification-box") { NotificationBoxPage() }
-              composable("tab-bar") { TabBarPage() }
-              composable("container") { ContainerPage() }
-              composable("message") { MessagePage() }
-              composable("radio-button") { RadioButtonPage() }
-              composable("list-item") { ListItemPage() }
+    @OptIn(ExperimentalSBBComponent::class)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            val isSystemInDarkTheme = isSystemInDarkTheme()
+            var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
+            var themeContext by remember { mutableStateOf<ThemeContext>(SBBThemeContext) }
+            SBBTheme(darkTheme = isDarkTheme, themeContext = themeContext) {
+                val navController = rememberNavController()
+                Scaffold(
+                    topBar = {
+                        Column {
+                            SBBHeader.Small(
+                                title = "SBB DSM Android",
+                                navController = navController,
+                            )
+                            ThemeSelection(
+                                onDarkSelectionChanged = { isDarkTheme = it },
+                                darkSelection = isDarkTheme,
+                                onContextSelectionChanged = { themeContext = it },
+                                contextSelection = themeContext,
+                            )
+                        }
+                    },
+                ) {
+                    Box(modifier = Modifier.padding(it)) {
+                        NavHost(
+                            navController = navController,
+                            startDestination = "main",
+                        ) {
+                            composable("main") { MainPage(navController) }
+                            composable("icon") { IconPage() }
+                            composable("typography") { TypographyPage() }
+                            composable("color") { ColorPage() }
+                            composable("checkbox") { CheckboxPage() }
+                            composable("button") { ButtonPage() }
+                            composable("loading-indicator") { LoadingIndicatorPage() }
+                            composable("switch") { SwitchPage() }
+                            composable("header") { HeaderPage() }
+                            composable("header-box") { HeaderBoxPage() }
+                            composable("bottom-sheet") { BottomSheetPage() }
+                            composable("text-input") { TextInputPage() }
+                            composable("textarea") { TextareaPage() }
+                            composable("dropdown") { DropdownPage() }
+                            composable("segmented-button") { SegmentedButtonPage() }
+                            composable("status") { StatusPage() }
+                            composable("slider") { SliderPage() }
+                            composable("notification-box") { NotificationBoxPage() }
+                            composable("tab-bar") { TabBarPage() }
+                            composable("container") { ContainerPage() }
+                            composable("message") { MessagePage() }
+                            composable("radio-button") { RadioButtonPage() }
+                            composable("list-item") { ListItemPage() }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
-private fun DarkLightThemeSelection(
-    selection: Boolean,
-    onSelectionChanged: (Boolean) -> Unit,
+private fun ThemeSelection(
+    darkSelection: Boolean,
+    onDarkSelectionChanged: (Boolean) -> Unit,
+    contextSelection: ThemeContext,
+    onContextSelectionChanged: (ThemeContext) -> Unit,
 ) {
-  SBBSegmentedButton.Primary(
-      modifier = Modifier
-          .background(color = SBBTheme.colors.primary)
-          .padding(SBBSpacing.XSmall),
-      onSelectionChange = onSelectionChanged,
-      selection = selection,
-      segments =
-          listOf(
-              SBBButtonSegment(
-                  label = "Light Theme",
-                  value = false,
-              ),
-              SBBButtonSegment(
-                  label = "Dark Theme",
-                  value = true,
-              ),
-          ),
-  )
+    Row(
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .background(color = SBBTheme.colors.primary)
+                .padding(SBBSpacing.XSmall),
+        horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+    ) {
+        SBBSegmentedButton.Primary(
+            modifier = Modifier.fillMaxWidth(.25f),
+            onSelectionChange = onDarkSelectionChanged,
+            selection = darkSelection,
+            segments =
+                listOf(
+                    SBBButtonSegment(
+                        icon = SBBIcons.Small.SunshineSmall,
+                        value = false,
+                    ),
+                    SBBButtonSegment(
+                        icon = SBBIcons.Small.MoonSmall,
+                        value = true,
+                    ),
+                ),
+        )
+
+        SBBSegmentedButton.Primary(
+            onSelectionChange = onContextSelectionChanged,
+            selection = contextSelection,
+            segments =
+                listOf(
+                    SBBButtonSegment(
+                        label = "SBB",
+                        value = SBBThemeContext,
+                    ),
+                    SBBButtonSegment(
+                        label = "Offbrand",
+                        value = OffBrandThemeContext,
+                    ),
+                    SBBButtonSegment(
+                        label = "Safety",
+                        value = SafetyRelevantThemeContext,
+                    ),
+                ),
+        )
+    }
 }
 
 @PreviewLightDark
 @Composable
 private fun Preview_MainPage() {
-  SBBTheme {
-    Surface {
-      MainPage(navController = rememberNavController())
+    SBBTheme {
+        Surface {
+            MainPage(navController = rememberNavController())
+        }
     }
-  }
 }

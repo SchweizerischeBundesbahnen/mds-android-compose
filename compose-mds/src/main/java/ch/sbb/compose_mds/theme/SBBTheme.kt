@@ -14,12 +14,20 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
+import ch.sbb.compose_mds.composables.checkbox.LocalSBBCheckboxStyle
+import ch.sbb.compose_mds.composables.checkbox.SBBCheckboxStyle
+import ch.sbb.compose_mds.composables.checkbox.defaultSBBCheckboxStyle
 import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemStyle
+import ch.sbb.compose_mds.composables.listItem.SBBListItemStyle
 import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemStyle
-import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxTheme
+import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxStyle
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
-import ch.sbb.compose_mds.composables.notificationBox.configSBBNotificationBoxTokens
+import ch.sbb.compose_mds.composables.notificationBox.defaultSBBNotificationBoxStyle
+import ch.sbb.compose_mds.composables.radio.LocalSBBRadioStyle
+import ch.sbb.compose_mds.composables.radio.SBBRadioStyle
+import ch.sbb.compose_mds.composables.radio.defaultSBBRadioStyle
 import ch.sbb.compose_mds.composables.segmentedButton.LocalSBBSegmentedButtonStyle
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButtonVariants
 import ch.sbb.compose_mds.composables.segmentedButton.defaultSBBSegmentedButtonStyles
 import ch.sbb.compose_mds.theme.context.LocalThemeContext
 import ch.sbb.compose_mds.theme.context.SBBThemeContext
@@ -81,7 +89,27 @@ object SBBTheme {
     val notificationBox: SBBNotificationBoxTokens
         @ReadOnlyComposable
         @Composable
-        get() = LocalSBBNotificationBoxTheme.current
+        get() = LocalSBBNotificationBoxStyle.current
+
+    val listItem: SBBListItemStyle
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBListItemStyle.current
+
+    val segmentedButton: SBBSegmentedButtonVariants
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBSegmentedButtonStyle.current
+
+    val checkbox: SBBCheckboxStyle
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBCheckboxStyle.current
+
+    val radio: SBBRadioStyle
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBRadioStyle.current
 }
 
 @Composable
@@ -97,19 +125,18 @@ fun SBBTheme(
         LocalThemeContext provides themeContext,
         LocalSBBIsDarkMode provides darkTheme,
         LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
-        LocalSBBNotificationBoxTheme provides configSBBNotificationBoxTokens(),
+        LocalSBBNotificationBoxStyle provides defaultSBBNotificationBoxStyle(),
+        LocalSBBListItemStyle provides defaultSBBListItemStyle(),
+        LocalSBBSegmentedButtonStyle provides defaultSBBSegmentedButtonStyles(),
+        LocalSBBCheckboxStyle provides defaultSBBCheckboxStyle(),
+        LocalSBBRadioStyle provides defaultSBBRadioStyle(),
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,
             typography = SBBTheme.materialTypography,
             content = {
                 val movableContent = remember { movableContentOf { content() } }
-                CompositionLocalProvider(
-                    LocalSBBListItemStyle provides defaultSBBListItemStyle(),
-                    LocalSBBSegmentedButtonStyle provides defaultSBBSegmentedButtonStyles(),
-                ) {
-                    if (includeSurface) Surface { movableContent() } else movableContent()
-                }
+                if (includeSurface) Surface(modifier = modifier) { movableContent() } else movableContent()
             },
         )
     }

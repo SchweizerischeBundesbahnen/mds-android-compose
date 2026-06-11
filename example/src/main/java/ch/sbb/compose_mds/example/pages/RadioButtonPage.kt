@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.list.SBBListHeader
-import ch.sbb.compose_mds.composables.radio.SBBRadioButton
+import ch.sbb.compose_mds.composables.radio.SBBRadio
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TrainSmall
@@ -31,14 +31,14 @@ fun RadioButtonPage() {
               .defaultPadding(),
   ) {
     SBBListHeader(text = "RadioButton")
-    SBBRadioButton(
+    SBBRadio(
         label = "Label",
         selected = selectedValue == 0,
         onClick = { selectedValue = 0 },
     )
 
     SBBListHeader(text = "RadioButton with Icon")
-    SBBRadioButton(
+    SBBRadio(
         label = "Label",
         selected = selectedValue == 1,
         icon = SBBIcons.Small.TrainSmall,
@@ -46,7 +46,7 @@ fun RadioButtonPage() {
     )
 
     SBBListHeader(text = "Disabled RadioButton")
-    SBBRadioButton(
+    SBBRadio(
         label = "Label",
         selected = true,
         icon = SBBIcons.Small.TrainSmall,

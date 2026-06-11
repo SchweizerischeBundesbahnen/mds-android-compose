@@ -70,7 +70,7 @@ object SBBSegmentedButton {
             selection = selection,
             segments = segments,
             onSelectionChange = onSelectionChange,
-            style = LocalSBBSegmentedButtonStyle.current.default,
+            style = SBBTheme.segmentedButton.default,
             modifier = modifier,
         )
     }
@@ -94,7 +94,7 @@ object SBBSegmentedButton {
             selection = selection,
             segments = segments,
             onSelectionChange = onSelectionChange,
-            style = LocalSBBSegmentedButtonStyle.current.primary,
+            style = SBBTheme.segmentedButton.primary,
             modifier = modifier,
         )
     }

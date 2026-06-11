@@ -1,27 +1,28 @@
 package ch.sbb.compose_mds.composables.radio
 
 import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.drawscope.Fill
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.hideFromAccessibility
@@ -35,24 +36,22 @@ import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-val tickRadius = 4.dp
-val backgroundRadius = 9.dp
-val backgroundBorderWidth = 1.dp
-
 /***
  * Implementation of the SBB Radio Button.
  *
- * @param label label of the radio button
- * @param enabled controls the enabled state of this radio button
- * @param selected controls the selected state of this radio button
+ * @param label label of the radio button.
+ * @param selected controls the selected state of this radio button.
+ * @param onClick callback when radio button is clicked.
+ * @param modifier modifier of the surrounding Row.
+ * @param enabled controls the enabled state of this radio button.
  * @param icon optional icon that is displayed between radio button and label
- * @param onClick callback when radio button is clicked
  * @param interactionSource an optional hoisted MutableInteractionSource for observing and emitting Interactions for this switch.
+ * @param style an optional customized style.
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/radio-button/)
  */
 @Composable
-fun SBBRadioButton(
+fun SBBRadio(
     label: String,
     selected: Boolean,
     onClick: () -> Unit,
@@ -60,8 +59,9 @@ fun SBBRadioButton(
     enabled: Boolean = true,
     icon: ImageVector? = null,
     interactionSource: MutableInteractionSource? = null,
+    style: SBBRadioStyle = SBBTheme.radio,
 ) {
-    val colors = radioButtonColors(enabled)
+    val colors = style.colors(enabled)
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier =
@@ -79,7 +79,8 @@ fun SBBRadioButton(
         DrawRadio(
             modifier = Modifier.padding(end = SBBSpacing.XSmall),
             selected = selected,
-            colors = colors,
+            enabled = enabled,
+            style = style,
         )
         if (icon != null) {
             Icon(
@@ -89,44 +90,49 @@ fun SBBRadioButton(
                         .padding(end = SBBSpacing.XSmall),
                 imageVector = icon,
                 contentDescription = null,
-                tint = colors.iconColor,
+                tint = colors.logo,
             )
         }
-        Text(text = label, color = colors.textColor)
+        Text(text = label, color = colors.text)
     }
 }
 
 @Composable
 internal fun DrawRadio(
     selected: Boolean,
-    colors: SBBRadioButtonColors,
+    enabled: Boolean,
     modifier: Modifier = Modifier,
+    style: SBBRadioStyle = SBBTheme.radio,
 ) {
-    val radioButtonSize = (backgroundRadius + backgroundBorderWidth) * 2
-    val animatedTickRadius = animateDpAsState(targetValue = if (selected) tickRadius else 0.dp)
-    Canvas(
-        modifier = modifier.size(radioButtonSize, radioButtonSize),
+    val colors = style.colors(enabled)
+    val animatedTickRadius by animateDpAsState(targetValue = if (selected) style.layout.tick else 0.dp)
+    Box(
+        modifier =
+            modifier then
+                Modifier
+                    .size(style.layout.controlSize)
+                    .border(
+                        width = style.layout.borderWidth,
+                        color = colors.border,
+                        shape = CircleShape,
+                    ),
+        contentAlignment = Alignment.Center,
     ) {
-        // Draw the radio button
-        val strokeWidth = backgroundBorderWidth.toPx()
-        drawCircle(
-            colors.tickBorderColor,
-            radius = backgroundRadius.toPx() - strokeWidth / 2,
-            style = Stroke(strokeWidth),
+        Box(
+            modifier =
+                Modifier
+                    .size(animatedTickRadius)
+                    .background(
+                        color = colors.tick,
+                        shape = CircleShape,
+                    ),
         )
-        if (animatedTickRadius.value > 0.dp) {
-            drawCircle(
-                colors.tickColor,
-                animatedTickRadius.value.toPx() - strokeWidth / 2,
-                style = Fill,
-            )
-        }
     }
 }
 
 @PreviewLightDark
 @Composable
-private fun SBBSwitchPreview() {
+private fun SBBRadioPreview() {
     val darkTheme = isSystemInDarkTheme()
     SBBTheme {
         Column(
@@ -136,23 +142,23 @@ private fun SBBSwitchPreview() {
                     .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
-            SBBRadioButton(
+            SBBRadio(
                 selected = true,
                 label = "Label",
                 onClick = {},
             )
-            SBBRadioButton(
+            SBBRadio(
                 selected = false,
                 label = "Label",
                 onClick = {},
             )
-            SBBRadioButton(
+            SBBRadio(
                 selected = true,
                 label = "Label",
                 icon = SBBIcons.Small.UnicornSmall,
                 onClick = {},
             )
-            SBBRadioButton(
+            SBBRadio(
                 selected = true,
                 label = "Disabled",
                 icon = SBBIcons.Small.UnicornSmall,
