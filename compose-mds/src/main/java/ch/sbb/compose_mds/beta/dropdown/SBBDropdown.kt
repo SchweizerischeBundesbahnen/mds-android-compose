@@ -71,7 +71,6 @@ data class SBBDropdownItem<T>(val label: String, val value: T)
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/dropdown/)
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @ExperimentalSBBComponent
 @Composable
 fun <T> SBBDropdown(

@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.dropdown.SBBDropdown
 import ch.sbb.compose_mds.beta.dropdown.SBBDropdownItem
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -59,7 +59,7 @@ private fun SBBDropdownDefaultSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
     Column(
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
     ) {
@@ -114,7 +114,7 @@ private fun SBBDropdownErrorSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Error")
+    SBBListHeader(title = "Error")
     Column(
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
     ) {

@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.header.SBBHeader
 import ch.sbb.compose_mds.composables.header.Small
 import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
@@ -63,7 +62,6 @@ import ch.sbb.compose_mds.theme.context.SafetyRelevantThemeContext
 import ch.sbb.compose_mds.theme.context.ThemeContext
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalSBBComponent::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -124,7 +122,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun ThemeSelection(
     darkSelection: Boolean,

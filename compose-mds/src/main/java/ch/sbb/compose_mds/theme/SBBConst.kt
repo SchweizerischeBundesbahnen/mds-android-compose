@@ -1,5 +1,6 @@
 package ch.sbb.compose_mds.theme
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -11,19 +12,21 @@ object SBBConst {
     val DEFAULT_HORIZONTAL_PADDING = SBBSpacing.XSmall
 }
 
-fun Modifier.defaultPadding() =
-    this then
-        Modifier.padding(
-            horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING,
-            vertical = SBBConst.DEFAULT_VERTICAL_PADDING,
-        )
+val defaultPadding =
+    PaddingValues(
+        horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING,
+        vertical = SBBConst.DEFAULT_VERTICAL_PADDING,
+    )
 
-fun Modifier.elementPadding() =
-    this then
-        Modifier.padding(
-            horizontal = SBBSpacing.Medium,
-            vertical = SBBSpacing.XSmall,
-        )
+val elementPadding =
+    PaddingValues(
+        horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING,
+        vertical = SBBConst.DEFAULT_VERTICAL_PADDING,
+    )
+
+fun Modifier.defaultPadding() = this then Modifier.padding(defaultPadding)
+
+fun Modifier.elementPadding() = this then Modifier.padding(elementPadding)
 
 val Int.asImageVector
     @Composable get() = ImageVector.vectorResource(id = this)

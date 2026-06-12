@@ -17,8 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
 import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -28,7 +27,6 @@ import ch.sbb.compose_mds.sbbicons.small.ArrowsLongRightLeftSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.defaultPadding
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SegmentedButtonPage() {
   val context = LocalContext.current
@@ -43,7 +41,7 @@ fun SegmentedButtonPage() {
       verticalArrangement = Arrangement.spacedBy(8.dp),
   ) {
     // DEFAULT
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
 
     // Default with three segments
     var defaultSelection1: String by remember { mutableStateOf("Selection 1") }
@@ -68,7 +66,7 @@ fun SegmentedButtonPage() {
     )
       
     // PRIMARY
-    SBBListHeader(text = "Primary")
+    SBBListHeader(title = "Primary")
 
     // Primary with three segments
     var primarySelection1: String by remember { mutableStateOf("Selection 1") }
@@ -94,7 +92,6 @@ fun SegmentedButtonPage() {
   }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 private fun threeButtonSegments() =
     listOf(
         SBBButtonSegment(
@@ -114,7 +111,6 @@ private fun threeButtonSegments() =
         ),
     )
 
-@OptIn(ExperimentalSBBComponent::class)
 private fun twoButtonSegments() =
     listOf(
         SBBButtonSegment(

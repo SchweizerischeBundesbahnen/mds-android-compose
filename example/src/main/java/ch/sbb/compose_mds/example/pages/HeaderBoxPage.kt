@@ -11,8 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBoxFlap
 import ch.sbb.compose_mds.example.composeable.Placeholder
@@ -22,7 +21,6 @@ import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun HeaderBoxPage() {
   val currentContext = LocalContext.current
@@ -34,19 +32,19 @@ fun HeaderBoxPage() {
                   state = rememberScrollState(),
               ),
   ) {
-    SBBListHeader(text = "Default:")
+    SBBListHeader(title = "Default:")
     SBBHeaderBox.Default(
         icon = SBBIcons.Small.UnicornSmall,
         title = "Title",
         subtext = "Subtext",
     )
 
-    SBBListHeader(text = "Simple:")
+    SBBListHeader(title = "Simple:")
     SBBHeaderBox.Default(
         title = "Title",
     )
 
-    SBBListHeader(text = "With button:")
+    SBBListHeader(title = "With button:")
     SBBHeaderBox.WithButton(
         icon = SBBIcons.Small.UnicornSmall,
         title = "Title",
@@ -58,7 +56,7 @@ fun HeaderBoxPage() {
         },
     )
 
-    SBBListHeader(text = "With flap:")
+    SBBListHeader(title = "With flap:")
     SBBHeaderBox.Default(
         icon = SBBIcons.Small.UnicornSmall,
         title = "Title",
@@ -74,7 +72,7 @@ fun HeaderBoxPage() {
             ),
     )
 
-    SBBListHeader(text = "Custom:")
+    SBBListHeader(title = "Custom:")
     SBBHeaderBox.Custom(
         headerBoxFlap =
             SBBHeaderBoxFlap.Custom {

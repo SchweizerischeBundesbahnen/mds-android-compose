@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -32,7 +32,7 @@ fun IconPage() {
   Column(
       modifier = Modifier.defaultPadding().fillMaxSize().verticalScroll(rememberScrollState()),
   ) {
-    SBBListHeader(text = "Small Icons")
+    SBBListHeader(title = "Small Icons")
     SBBContentBox {
       LazyVerticalGrid(
           modifier = Modifier.heightIn(max = 500.dp),
@@ -49,7 +49,7 @@ fun IconPage() {
         }
       }
     }
-    SBBListHeader(text = "Medium Icons")
+    SBBListHeader(title = "Medium Icons")
     SBBContentBox {
       LazyVerticalGrid(
           modifier = Modifier.heightIn(max = 500.dp),

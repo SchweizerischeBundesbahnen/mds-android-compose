@@ -12,13 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.theme.SBBSpacing
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MainPage(navController: NavController) {
   Column(
@@ -29,7 +27,7 @@ fun MainPage(navController: NavController) {
                   state = rememberScrollState(),
               ),
   ) {
-    SBBListHeader(text = "Basics")
+    SBBListHeader(title = "Basics")
     SBBList.Wrap {
       SBBListItem.Link(title = "Icon", onClick = { navController.navigate("icon") })
       SBBListItem.Link(
@@ -41,7 +39,7 @@ fun MainPage(navController: NavController) {
           onClick = { navController.navigate("color") },
       )
     }
-    SBBListHeader(text = "Components")
+    SBBListHeader(title = "Components")
     SBBList.Wrap {
       SBBListItem.Link(title = "Button", onClick = { navController.navigate("button") })
       SBBListItem.Link(title = "Checkbox", onClick = { navController.navigate("checkbox") })

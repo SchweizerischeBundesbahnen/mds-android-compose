@@ -11,15 +11,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.radio.SBBRadio
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TrainSmall
 import ch.sbb.compose_mds.theme.defaultPadding
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun RadioButtonPage() {
   var selectedValue: Int by remember { mutableIntStateOf(0) }
@@ -30,14 +28,14 @@ fun RadioButtonPage() {
               )
               .defaultPadding(),
   ) {
-    SBBListHeader(text = "RadioButton")
+    SBBListHeader(title = "RadioButton")
     SBBRadio(
         label = "Label",
         selected = selectedValue == 0,
         onClick = { selectedValue = 0 },
     )
 
-    SBBListHeader(text = "RadioButton with Icon")
+    SBBListHeader(title = "RadioButton with Icon")
     SBBRadio(
         label = "Label",
         selected = selectedValue == 1,
@@ -45,7 +43,7 @@ fun RadioButtonPage() {
         onClick = { selectedValue = 1 },
     )
 
-    SBBListHeader(text = "Disabled RadioButton")
+    SBBListHeader(title = "Disabled RadioButton")
     SBBRadio(
         label = "Label",
         selected = true,

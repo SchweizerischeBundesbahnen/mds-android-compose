@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
@@ -81,7 +81,7 @@ private fun TextStylePreview(
     name: String,
     style: TextStyle,
 ) {
-  SBBListHeader(text = name)
+  SBBListHeader(title = name)
   SBBContentBox(contentPadding = PaddingValues(horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING)) {
     Text(
         text = DEFAULT_TEXT,

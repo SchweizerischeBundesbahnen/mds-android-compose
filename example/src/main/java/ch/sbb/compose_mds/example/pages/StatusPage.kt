@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.status.Alert
 import ch.sbb.compose_mds.composables.status.Information
 import ch.sbb.compose_mds.composables.status.SBBStatus
@@ -31,19 +31,19 @@ fun StatusPage() {
               ),
       verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Success")
+    SBBListHeader(title = "Success")
     SBBStatus.Success()
     SBBStatus.Success(text = "Success with Text")
 
-    SBBListHeader(text = "Alert")
+    SBBListHeader(title = "Alert")
     SBBStatus.Alert()
     SBBStatus.Alert(text = "Alert with Text")
 
-    SBBListHeader(text = "Warning")
+    SBBListHeader(title = "Warning")
     SBBStatus.Warning()
     SBBStatus.Warning(text = "Warning with Text")
 
-    SBBListHeader(text = "Information")
+    SBBListHeader(title = "Information")
     SBBStatus.Information()
     SBBStatus.Information(text = "Information with Text")
   }

@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.message.Custom
 import ch.sbb.compose_mds.composables.message.Default
@@ -38,15 +38,15 @@ fun MessagePage() {
   Column(
       modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState()),
   ) {
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
     SBBMessageDefault()
-    SBBListHeader(text = "Default with custom interaction")
+    SBBListHeader(title = "Default with custom interaction")
     SBBMessageDefaultCustom()
-    SBBListHeader(text = "Loading")
+    SBBListHeader(title = "Loading")
     SBBMessageLoading()
-    SBBListHeader(text = "Error")
+    SBBListHeader(title = "Error")
     SBBMessageError()
-    SBBListHeader(text = "No Illustration")
+    SBBListHeader(title = "No Illustration")
     SBBMessageNoIllustration()
   }
 }

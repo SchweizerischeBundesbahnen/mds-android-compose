@@ -19,14 +19,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ColorPage() {
   LazyVerticalGrid(
@@ -35,7 +33,7 @@ fun ColorPage() {
       horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(text = "Colors") }
+    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(title = "Colors") }
     item { ColorEntry(name = "red", color = PrimitiveColors.red) }
     item { ColorEntry(name = "red125", color = PrimitiveColors.red125) }
     item { ColorEntry(name = "red150", color = PrimitiveColors.red150) }
@@ -60,7 +58,7 @@ fun ColorPage() {
     item { ColorEntry(name = "blue", color = PrimitiveColors.blue) }
     item { ColorEntry(name = "transparent", color = PrimitiveColors.transparent) }
 
-    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(text = "Functional colors") }
+    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(title = "Functional colors") }
     item { ColorEntry(name = "sky", color = PrimitiveColors.sky) }
     item { ColorEntry(name = "night", color = PrimitiveColors.night) }
     item { ColorEntry(name = "violet", color = PrimitiveColors.violet) }
@@ -73,14 +71,13 @@ fun ColorPage() {
     item { ColorEntry(name = "green", color = PrimitiveColors.green) }
     item { ColorEntry(name = "turquoise", color = PrimitiveColors.turquoise) }
 
-    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(text = "Off brand colors") }
+    item(span = { GridItemSpan(maxLineSpan) }) { SBBListHeader(title = "Off brand colors") }
     item { ColorEntry(name = "royal", color = PrimitiveColors.royal) }
     item { ColorEntry(name = "royal125", color = PrimitiveColors.royal125) }
     item { ColorEntry(name = "royal150", color = PrimitiveColors.royal150) }
   }
 }
 
-@OptIn(ExperimentalStdlibApi::class, ExperimentalSBBComponent::class)
 @Composable
 private fun ColorEntry(
     name: String,

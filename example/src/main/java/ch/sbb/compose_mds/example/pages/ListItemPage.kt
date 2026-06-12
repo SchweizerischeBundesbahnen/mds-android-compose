@@ -15,8 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.checkbox.SBBCheckboxItem
 import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
@@ -42,7 +41,6 @@ import ch.sbb.compose_mds.theme.SBBTheme
  * a disabled state. Previews are wrapped in `SBBTheme` so screenshots/golden files match the
  * library visuals.
  */
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ListItemPage() {
     val scrollState = rememberScrollState()
@@ -52,7 +50,7 @@ fun ListItemPage() {
                 .verticalScroll(scrollState)
                 .padding(horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING),
     ) {
-        SBBListHeader(text = "List items")
+        SBBListHeader(title = "List items")
 
         SBBList.Wrap {
             // Title only
@@ -116,7 +114,7 @@ fun ListItemPage() {
             )
         }
 
-        SBBListHeader(text = "Boxed list items")
+        SBBListHeader(title = "Boxed list items")
 
         Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.Small)) {
             // Title only

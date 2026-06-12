@@ -14,7 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.switch.SBBSwitch
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
@@ -33,13 +33,13 @@ fun SwitchPage() {
   ) {
     var checkedState: Boolean by remember { mutableStateOf(true) }
 
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
     SBBSwitch(
         checked = checkedState,
         onCheckedChange = { checked -> checkedState = checked },
     )
 
-    SBBListHeader(text = "Disabled")
+    SBBListHeader(title = "Disabled")
     SBBSwitch(checked = true, enabled = false, onCheckedChange = {})
     SBBSwitch(checked = false, enabled = false, onCheckedChange = {})
   }

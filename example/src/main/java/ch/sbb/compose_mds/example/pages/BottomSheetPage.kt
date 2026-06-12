@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
 import ch.sbb.compose_mds.example.composeable.Placeholder
@@ -35,7 +35,7 @@ fun BottomSheetPage() {
   var showFullScreenBottomSheet by remember { mutableStateOf(false) }
 
   Column(modifier = Modifier.defaultPadding()) {
-    SBBListHeader(text = "Bottom-Sheet")
+    SBBListHeader(title = "Bottom-Sheet")
     SBBSecondaryButton(
         label = "Default",
         modifier = Modifier.fillMaxWidth(),

@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.beta.text.SBBTextInput
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
@@ -67,7 +67,7 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
     Column(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
@@ -124,7 +124,7 @@ private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Error")
+    SBBListHeader(title = "Error")
     Column(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {

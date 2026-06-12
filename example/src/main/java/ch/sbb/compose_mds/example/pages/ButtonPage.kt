@@ -17,8 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.button.SBBPrimaryButton
 import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
@@ -33,7 +32,6 @@ import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.defaultPadding
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun ButtonPage() {
   Column(
@@ -63,7 +61,6 @@ fun ButtonPage() {
   }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBPrimaryButtonSection() {
   val context = LocalContext.current
@@ -72,7 +69,7 @@ private fun SBBPrimaryButtonSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Primary")
+    SBBListHeader(title = "Primary")
     Column(
         Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
@@ -104,7 +101,6 @@ private fun SBBPrimaryButtonSection() {
   }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBSecondaryButtonSection() {
   val context = LocalContext.current
@@ -113,7 +109,7 @@ private fun SBBSecondaryButtonSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Secondary")
+    SBBListHeader(title = "Secondary")
     Column(
         Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
@@ -145,7 +141,6 @@ private fun SBBSecondaryButtonSection() {
   }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTertiaryButtonSection() {
   val context = LocalContext.current
@@ -154,7 +149,7 @@ private fun SBBTertiaryButtonSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Tertiary")
+    SBBListHeader(title = "Tertiary")
     Column(
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
@@ -213,7 +208,6 @@ private fun SBBTertiaryButtonSection() {
   }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTertiarySmallButtonSection() {
   val context = LocalContext.current
@@ -222,7 +216,7 @@ private fun SBBTertiarySmallButtonSection() {
       modifier = Modifier.fillMaxWidth(),
       contentPadding = PaddingValues(SBBSpacing.XSmall),
   ) {
-    SBBListHeader(text = "Tertiary Small")
+    SBBListHeader(title = "Tertiary Small")
     Column(
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {

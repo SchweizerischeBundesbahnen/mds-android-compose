@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.beta.list.SBBListHeader
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
 import ch.sbb.compose_mds.theme.defaultPadding
 
@@ -17,9 +17,9 @@ fun LoadingIndicatorPage() {
   Column(
       Modifier.fillMaxWidth().defaultPadding(),
   ) {
-    SBBListHeader(text = "Small")
+    SBBListHeader(title = "Small")
     SBBLoadingIndicator.Small()
-    SBBListHeader(text = "Default")
+    SBBListHeader(title = "Default")
     SBBLoadingIndicator.Default()
   }
 }
