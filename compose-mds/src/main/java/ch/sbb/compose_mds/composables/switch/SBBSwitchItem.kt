@@ -103,8 +103,8 @@ object SBBSwitchItem {
         ) {
             SBBListItem.Custom(
                 modifier = modifier,
-                titleText = title,
-                subtitleText = subtitle,
+                title = { Text(title) },
+                subtitle = { Subtext(subtitle) },
                 interactionSource = interactionSource,
                 onClick = onCheckedChange?.let { { it(!checked) } },
                 trailing = {

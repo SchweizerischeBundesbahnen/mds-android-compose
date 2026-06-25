@@ -197,8 +197,8 @@ object SBBCheckboxItem {
         SBBListItem.Custom(
             modifier = modifier then toggleableModifier,
             style = listStyle,
-            titleText = title,
-            subtitleText = subtitle,
+            title = { Text(title) },
+            subtitle = subtitle?.let { { Subtext(it) } },
             interactionSource = interactionSource,
             enabled = enabled,
             leading = {

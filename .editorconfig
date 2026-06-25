@@ -5,7 +5,7 @@ compose = enabled
 compose_modifier-missing-check = enabled
 compose_modifier-reused = enabled
 compose_preview-public = disabled
-compose_allowed_composition_locals = LocalSBBNotificationBoxStyle,LocalSBBCheckboxStyle,LocalSBBRadioStyle,LocalSBBListItemStyle,LocalSBBSegmentedButtonStyle,LocalThemeContext,LocalSBBIsDarkMode,LocalSBBTypography
+compose_allowed_composition_locals = LocalSBBChipStyle,LocalSBBNotificationBoxStyle,LocalSBBCheckboxStyle,LocalSBBRadioStyle,LocalSBBListItemStyle,LocalSBBSegmentedButtonStyle,LocalSBBChipButtonStyle,LocalThemeContext,LocalSBBIsDarkMode,LocalSBBTypography
 
 indent_size = 4
 indent_style = space

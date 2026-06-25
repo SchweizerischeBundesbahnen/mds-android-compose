@@ -17,6 +17,9 @@ import androidx.compose.ui.text.font.FontFamily
 import ch.sbb.compose_mds.composables.checkbox.LocalSBBCheckboxStyle
 import ch.sbb.compose_mds.composables.checkbox.SBBCheckboxStyle
 import ch.sbb.compose_mds.composables.checkbox.defaultSBBCheckboxStyle
+import ch.sbb.compose_mds.composables.chip.LocalSBBChipStyle
+import ch.sbb.compose_mds.composables.chip.SBBChipStyle
+import ch.sbb.compose_mds.composables.chip.defaultSBBChipStyle
 import ch.sbb.compose_mds.composables.listItem.LocalSBBListItemStyle
 import ch.sbb.compose_mds.composables.listItem.SBBListItemStyle
 import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemStyle
@@ -110,6 +113,11 @@ object SBBTheme {
         @ReadOnlyComposable
         @Composable
         get() = LocalSBBRadioStyle.current
+
+    val chip: SBBChipStyle
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBChipStyle.current
 }
 
 @Composable
@@ -130,6 +138,7 @@ fun SBBTheme(
         LocalSBBSegmentedButtonStyle provides defaultSBBSegmentedButtonStyles(),
         LocalSBBCheckboxStyle provides defaultSBBCheckboxStyle(),
         LocalSBBRadioStyle provides defaultSBBRadioStyle(),
+        LocalSBBChipStyle provides defaultSBBChipStyle(),
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,

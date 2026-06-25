@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.state.ToggleableState
-import ch.sbb.compose_mds.theme.PrimitiveColors
 import ch.sbb.compose_mds.theme.SBBTheme
 import kotlin.math.min
 
@@ -48,7 +47,7 @@ internal fun DrawCheckbox(
     }
 
     val layout = style.layout
-    val colors = style.colors(!disabled)
+    val colors by style.resolvedColors(!disabled)
     Canvas(modifier = modifier.size(layout.controlSize)) {
         drawAnyCheckbox(
             layout = layout,
@@ -87,7 +86,7 @@ private fun DrawScope.drawAnyCheckbox(
         borderWidthPx = borderWidthPx,
         borderRadiusPx = borderRadiusPx,
         borderColor = colors.border,
-        fillColor = PrimitiveColors.transparent,
+        fillColor = colors.background,
     )
 
     // Same transition logic as the Flutter painter
@@ -99,7 +98,7 @@ private fun DrawScope.drawAnyCheckbox(
                 innerWidth = innerWidth,
                 edgeHalf = edgeHalf,
                 t = t,
-                color = colors.check,
+                color = colors.tick,
                 markRadius = markRadius,
             )
         } else {
@@ -108,7 +107,7 @@ private fun DrawScope.drawAnyCheckbox(
                 innerWidth = innerWidth,
                 edgeHalf = edgeHalf,
                 t = t,
-                color = colors.check,
+                color = colors.tick,
                 markRadius = markRadius,
             )
         }
@@ -122,7 +121,7 @@ private fun DrawScope.drawAnyCheckbox(
                     innerWidth = innerWidth,
                     edgeHalf = edgeHalf,
                     t = tShrink,
-                    color = colors.check,
+                    color = colors.tick,
                     markRadius = markRadius,
                 )
             } else {
@@ -131,7 +130,7 @@ private fun DrawScope.drawAnyCheckbox(
                     innerWidth = innerWidth,
                     edgeHalf = edgeHalf,
                     t = tShrink,
-                    color = colors.check,
+                    color = colors.tick,
                     markRadius = markRadius,
                 )
             }
@@ -143,7 +142,7 @@ private fun DrawScope.drawAnyCheckbox(
                     innerWidth = innerWidth,
                     edgeHalf = edgeHalf,
                     t = tExpand,
-                    color = colors.check,
+                    color = colors.tick,
                     markRadius = markRadius,
                 )
             } else {
@@ -152,7 +151,7 @@ private fun DrawScope.drawAnyCheckbox(
                     innerWidth = innerWidth,
                     edgeHalf = edgeHalf,
                     t = tExpand,
-                    color = colors.check,
+                    color = colors.tick,
                     markRadius = markRadius,
                 )
             }

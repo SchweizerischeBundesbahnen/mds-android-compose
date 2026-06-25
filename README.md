@@ -41,7 +41,7 @@ Next, declare the SBB Design System Mobile artifacts in `libs.versions.toml`.Che
 
 ```toml
 [versions]
-mds = "0.1.10"
+mds = "0.2.0"
 
 [libraries]
 mds-sbb = { group = "com.github.SchweizerischeBundesbahnen", name = "mds-android-compose", version.ref = "mds" }

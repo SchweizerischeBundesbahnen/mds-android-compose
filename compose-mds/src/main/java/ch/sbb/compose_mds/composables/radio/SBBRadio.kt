@@ -61,7 +61,7 @@ fun SBBRadio(
     interactionSource: MutableInteractionSource? = null,
     style: SBBRadioStyle = SBBTheme.radio,
 ) {
-    val colors = style.colors(enabled)
+    val colors by style.resolvedColors(enabled)
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier =
@@ -90,7 +90,7 @@ fun SBBRadio(
                         .padding(end = SBBSpacing.XSmall),
                 imageVector = icon,
                 contentDescription = null,
-                tint = colors.logo,
+                tint = colors.icon,
             )
         }
         Text(text = label, color = colors.text)
@@ -104,7 +104,7 @@ internal fun DrawRadio(
     modifier: Modifier = Modifier,
     style: SBBRadioStyle = SBBTheme.radio,
 ) {
-    val colors = style.colors(enabled)
+    val colors by style.resolvedColors(enabled)
     val animatedTickRadius by animateDpAsState(targetValue = if (selected) style.layout.tick else 0.dp)
     Box(
         modifier =
@@ -115,7 +115,7 @@ internal fun DrawRadio(
                         width = style.layout.borderWidth,
                         color = colors.border,
                         shape = CircleShape,
-                    ),
+                    ).background(colors.background, shape = CircleShape),
         contentAlignment = Alignment.Center,
     ) {
         Box(

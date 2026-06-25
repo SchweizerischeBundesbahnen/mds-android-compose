@@ -97,8 +97,8 @@ object SBBRadioItem {
         SBBListItem.Custom(
             modifier = modifier,
             style = listStyle,
-            titleText = title,
-            subtitleText = subtitle,
+            title = { Text(title) },
+            subtitle = subtitle?.let { { Subtext(it) } },
             interactionSource = interactionSource,
             onClick = onCheckedChange?.let { { it(!checked) } },
             leading = {

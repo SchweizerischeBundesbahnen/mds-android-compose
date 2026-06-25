@@ -1,29 +1,23 @@
 package ch.sbb.compose_mds.composables.listItem
 
-import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListItem.Custom
@@ -74,10 +68,10 @@ object SBBListItem {
         ) {
             Custom(
                 modifier = modifier,
-                leadingIcon = leading,
-                titleText = title,
-                subtitleText = subtitle,
-                trailingIcon = trailing,
+                leading = leading?.let { { Icon(it) } },
+                title = { Text(title) },
+                subtitle = subtitle?.let { { Subtext(it) } },
+                trailing = trailing?.let { { Icon(it) } },
                 onClick = onClick,
                 enabled = enabled,
             )
@@ -146,37 +140,25 @@ object SBBListItem {
          * @param modifier Modifier to apply to the item container.
          * @param interactionSource Optional interaction source for styling and ripple handling.
          * @param leading Optional composable for the leading slot.
-         * @param leadingIcon Optional ImageVector fallback for the leading slot.
          * @param title Optional composable for the title slot.
-         * @param titleText Optional title text fallback.
          * @param subtitle Optional composable for the subtitle slot.
-         * @param subtitleText Optional subtitle text fallback.
          * @param trailing Optional composable for the trailing slot.
-         * @param trailingIcon Optional ImageVector fallback for the trailing slot.
          * @param onClick Optional click callback - providing makes the item clickable.
          * @param onLongClick Optional long-click callback.
          * @param enabled Whether the item is enabled (affects visual states and clickability).
-         * @param titleMaxLines Maximum number of lines for the title.
-         * @param subtitleMaxLines Maximum number of lines for the subtitle.
          * @param style Style tokens for the list item.
          */
         @Composable
         fun Custom(
             modifier: Modifier = Modifier,
             interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
-            leading: (@Composable (() -> Unit))? = null,
-            leadingIcon: ImageVector? = null,
-            title: (@Composable (() -> Unit))? = null,
-            titleText: String? = null,
-            subtitle: (@Composable (() -> Unit))? = null,
-            subtitleText: String? = null,
-            trailing: (@Composable (() -> Unit))? = null,
-            trailingIcon: ImageVector? = null,
+            leading: (@Composable (SBBListItemScope.() -> Unit))? = null,
+            title: (@Composable (SBBListItemScope.() -> Unit))? = null,
+            subtitle: (@Composable (SBBListItemScope.() -> Unit))? = null,
+            trailing: (@Composable (SBBListItemScope.() -> Unit))? = null,
             onClick: (() -> Unit)? = null,
             onLongClick: (() -> Unit)? = null,
             enabled: Boolean = (onClick != null) || (onLongClick != null),
-            titleMaxLines: Int = 1,
-            subtitleMaxLines: Int = 1,
             style: SBBListItemStyle = SBBTheme.listItem,
         ) {
             SBBContentBox(contentPadding = PaddingValues.Zero) {
@@ -184,18 +166,12 @@ object SBBListItem {
                     modifier = modifier,
                     interactionSource = interactionSource,
                     leading = leading,
-                    leadingIcon = leadingIcon,
                     title = title,
-                    titleText = titleText,
                     subtitle = subtitle,
-                    subtitleText = subtitleText,
                     trailing = trailing,
-                    trailingIcon = trailingIcon,
                     onClick = onClick,
                     onLongClick = onLongClick,
                     enabled = enabled,
-                    titleMaxLines = titleMaxLines,
-                    subtitleMaxLines = subtitleMaxLines,
                     style = style,
                 )
             }
@@ -227,10 +203,10 @@ object SBBListItem {
     ) {
         Custom(
             modifier = modifier,
-            leadingIcon = leading,
-            titleText = title,
-            subtitleText = subtitle,
-            trailingIcon = trailing,
+            leading = leading?.let { { Icon(it) } },
+            title = { Text(title) },
+            subtitle = subtitle?.let { { Subtext(it) } },
+            trailing = trailing?.let { { Icon(it) } },
             onClick = onClick,
             enabled = enabled,
         )
@@ -303,132 +279,28 @@ object SBBListItem {
      * @param modifier Modifier to apply to the item container.
      * @param interactionSource Optional interaction source for styling and ripple handling.
      * @param leading Optional composable for the leading slot.
-     * @param leadingIcon Optional ImageVector fallback for the leading slot.
      * @param title Optional composable for the title slot.
-     * @param titleText Optional title text fallback.
      * @param subtitle Optional composable for the subtitle slot.
-     * @param subtitleText Optional subtitle text fallback.
      * @param trailing Optional composable for the trailing slot.
-     * @param trailingIcon Optional ImageVector fallback for the trailing slot.
      * @param onClick Optional click callback - providing makes the item clickable.
      * @param onLongClick Optional long-click callback.
      * @param enabled Whether the item is enabled (affects visual states and clickability).
-     * @param titleMaxLines Maximum number of lines for the title.
-     * @param subtitleMaxLines Maximum number of lines for the subtitle.
      * @param style Style tokens for the list item.
      */
     @Composable
     fun Custom(
         modifier: Modifier = Modifier,
         interactionSource: MutableInteractionSource? = remember { MutableInteractionSource() },
-        leading: (@Composable (() -> Unit))? = null,
-        leadingIcon: ImageVector? = null,
-        title: (@Composable (() -> Unit))? = null,
-        titleText: String? = null,
-        subtitle: (@Composable (() -> Unit))? = null,
-        subtitleText: String? = null,
-        trailing: (@Composable (() -> Unit))? = null,
-        trailingIcon: ImageVector? = null,
+        leading: (@Composable (SBBListItemScope.() -> Unit))? = null,
+        title: (@Composable (SBBListItemScope.() -> Unit))? = null,
+        subtitle: (@Composable (SBBListItemScope.() -> Unit))? = null,
+        trailing: (@Composable (SBBListItemScope.() -> Unit))? = null,
         onClick: (() -> Unit)? = null,
         onLongClick: (() -> Unit)? = null,
         enabled: Boolean = (onClick != null) || (onLongClick != null),
-        titleMaxLines: Int = 1,
-        subtitleMaxLines: Int = 1,
         style: SBBListItemStyle = SBBTheme.listItem,
     ) {
-        val localContentColor by animateColorAsState(
-            if (enabled) style.colors.content else style.colors.disabledContent,
-        )
-
-        // Build leading/trailing composables from icon resource fallback
-        val leadingContent: (@Composable (() -> Unit))? =
-            when {
-                leading != null -> {
-                    leading
-                }
-
-                leadingIcon != null -> {
-                    {
-                        Icon(
-                            imageVector = leadingIcon,
-                            contentDescription = null,
-                            tint = localContentColor,
-                        )
-                    }
-                }
-
-                else -> {
-                    null
-                }
-            }
-
-        val trailingContent: (@Composable (() -> Unit))? =
-            when {
-                trailing != null -> {
-                    trailing
-                }
-
-                trailingIcon != null -> {
-                    {
-                        Icon(
-                            imageVector = trailingIcon,
-                            contentDescription = null,
-                            tint = localContentColor,
-                        )
-                    }
-                }
-
-                else -> {
-                    null
-                }
-            }
-
-        // Title composable
-        val titleContent: @Composable () -> Unit =
-            when {
-                title != null -> {
-                    title
-                }
-
-                titleText != null -> {
-                    {
-                        Text(
-                            text = titleText,
-                            maxLines = titleMaxLines,
-                            overflow = TextOverflow.Ellipsis,
-                            style = style.typography.title,
-                            color = localContentColor,
-                        )
-                    }
-                }
-
-                else -> {
-                    { /* nothing - caller should ensure one of them provided */ }
-                }
-            }
-
-        val subtitleContent: (@Composable (() -> Unit))? =
-            when {
-                subtitle != null -> {
-                    subtitle
-                }
-
-                subtitleText != null -> {
-                    {
-                        Text(
-                            text = subtitleText,
-                            maxLines = subtitleMaxLines,
-                            style = style.typography.subtitle,
-                        )
-                    }
-                }
-
-                else -> {
-                    null
-                }
-            }
-
-        // Main item surface with click handling and min height
+        val colors by style.resolvedColors(enabled)
         Column(
             modifier =
                 modifier
@@ -450,34 +322,26 @@ object SBBListItem {
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center,
         ) {
-            // Content layout: leading | (title + optional subtitle) | trailing
             Row(
-                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(style.layout.horizontalPadding),
             ) {
-                if (leadingContent != null) {
-                    leadingContent()
-                    Spacer(modifier = Modifier.width(style.layout.gapBetweenIconAndText))
-                }
+                val scope by remember(colors, style) { mutableStateOf(SBBListItemScopeInstance(colors, style)) }
+                leading?.let { scope.it() }
 
-                // Title/subtitle column - Expanded
                 Column(
                     modifier =
                         Modifier
                             .weight(1f)
                             .wrapContentHeight(align = Alignment.CenterVertically),
+                    verticalArrangement = Arrangement.spacedBy(style.layout.verticalPadding),
                 ) {
-                    titleContent()
-                    if (subtitleContent != null) {
-                        Spacer(modifier = Modifier.height(style.layout.gapBetweenTitleAndSubtitle))
-                        subtitleContent()
-                    }
+                    title?.let { scope.it() }
+                    subtitle?.let { scope.it() }
                 }
 
-                if (trailingContent != null) {
-                    Spacer(modifier = Modifier.width(style.layout.gapBetweenIconAndText))
-                    trailingContent()
-                }
+                trailing?.let { scope.it() }
             }
         }
     }

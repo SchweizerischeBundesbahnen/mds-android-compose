@@ -1,5 +1,5 @@
 [versions]
-agp = "9.2.1"
+agp = "8.13.2"
 kotlin = "2.3.21"
 coreKtx = "1.18.0"
 activityCompose = "1.13.0"
@@ -22,6 +22,7 @@ previewScanner = "0.9.0"
 foundation = "1.11.2"
 ktlint = "14.2.0"
 ktlint-composable = "0.5.9"
+coreKtxVersion = "1.19.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -59,3 +60,4 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.4.0" }

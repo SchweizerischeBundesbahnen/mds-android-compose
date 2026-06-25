@@ -73,6 +73,7 @@ fun MainPage(navController: NavController) {
           title = "SegmentedButton",
           onClick = { navController.navigate("segmented-button") },
       )
+      SBBListItem.Link(title = "Chip", onClick = { navController.navigate("chip") })
       SBBListItem.Link(title = "Slider", onClick = { navController.navigate("slider") })
       SBBListItem.Link(title = "Status", onClick = { navController.navigate("status") })
       SBBListItem.Link(title = "Switch", onClick = { navController.navigate("switch") })

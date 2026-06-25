@@ -3,9 +3,11 @@ package ch.sbb.compose_mds.composables.listItem
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.SubcomposeLayout
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.theme.SBBTheme
 
 object SBBList {
     /**
@@ -24,10 +26,14 @@ object SBBList {
     @Composable
     fun Wrap(
         modifier: Modifier = Modifier,
-        divider: @Composable () -> Unit = { HorizontalDivider() },
+        divider: @Composable () -> Unit = {
+            val colors by SBBTheme.listItem.resolvedColors()
+            HorizontalDivider(color = colors.line)
+        },
         content: @Composable () -> Unit,
     ) {
-        SBBContentBox(contentPadding = PaddingValues.Zero) {
+        val colors by SBBTheme.listItem.resolvedColors()
+        SBBContentBox(contentPadding = PaddingValues.Zero, backgroundColor = colors.background) {
             DividedColumn(
                 modifier = modifier,
                 divider = divider,

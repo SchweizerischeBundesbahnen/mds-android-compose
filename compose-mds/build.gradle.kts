@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.kotlin.android)
 }
 
 // ktlint configuration (modern plugin DSL). Re-add this block to enable
@@ -38,10 +39,10 @@ ktlint {
 
 configure<LibraryExtension> {
     namespace = "ch.sbb.compose_mds"
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
-        minSdk = 29
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

@@ -2,14 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# 0.x.x
+# 0.2.0
 
-* **#17 SBBListItem:** stable release, using style tokens
-* **#32 SBBSegmentedButton:** stable release, using style tokens, added primary color style
-* **#31 SBBRadio:** stable release, using style tokens
-* **#31 SBBRadioItem:** stable release, using style tokens
-* **#9 SBBCheckbox:** stable release, using style tokens
-* **#9 SBBCheckboxItem:** stable release, using style tokens
+### Features
+* **#17 SBBListItem:** stable release of list item, 
+* **#32 SBBSegmentedButton:** stable release of segmented button
+* **#31 SBBRadio:** stable release of radio
+* **#31 SBBRadioItem:** stable release of radio item
+* **#9 SBBCheckbox:** stable release of checkbox
+* **#9 SBBCheckboxItem:** stable release of checkbox item
+* **#10 SBBChip:** stable release of chip
+
+### Improvements
+* **Compatibility:** minSdk reduced from 29 to 24 for better compatibility.
 
 # 0.1.10
 

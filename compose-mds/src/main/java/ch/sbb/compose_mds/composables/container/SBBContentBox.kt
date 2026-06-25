@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.theme.SBBSpacing
@@ -35,13 +36,14 @@ fun SBBContentBox(
     contentPadding: PaddingValues = PaddingValues(all = SBBSpacing.Medium),
     verticalArrangement: Arrangement.Vertical = Arrangement.Top,
     horizontalAlignment: Alignment.Horizontal = Alignment.Start,
+    backgroundColor: Color = MaterialTheme.colorScheme.surfaceVariant,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Column(
         modifier =
             modifier
                 .clip(shape = RoundedCornerShape(size = SBBSpacing.Medium))
-                .background(color = MaterialTheme.colorScheme.surfaceVariant)
+                .background(color = backgroundColor)
                 .padding(contentPadding)
                 .clipToBounds(),
         verticalArrangement = verticalArrangement,

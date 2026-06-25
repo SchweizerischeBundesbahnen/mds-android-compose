@@ -8,6 +8,7 @@ import androidx.compose.foundation.selection.triStateToggleable
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -102,7 +103,7 @@ fun SBBCheckbox(
             disabled = disabled,
             style = style,
         )
-        val textColor = style.colors(!disabled).text
+        val colors by style.resolvedColors(!disabled)
         if (icon != null) {
             Icon(
                 modifier =
@@ -111,10 +112,10 @@ fun SBBCheckbox(
                         .padding(end = style.layout.padding),
                 imageVector = icon,
                 contentDescription = null,
-                tint = textColor,
+                tint = colors.icon,
             )
         }
-        Text(text = label, color = textColor)
+        Text(text = label, color = colors.text)
     }
 }
 

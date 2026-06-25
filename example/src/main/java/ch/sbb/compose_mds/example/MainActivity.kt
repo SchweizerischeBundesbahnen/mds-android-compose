@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.example
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +31,7 @@ import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
 import ch.sbb.compose_mds.example.pages.BottomSheetPage
 import ch.sbb.compose_mds.example.pages.ButtonPage
 import ch.sbb.compose_mds.example.pages.CheckboxPage
+import ch.sbb.compose_mds.example.pages.ChipPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.ContainerPage
 import ch.sbb.compose_mds.example.pages.DropdownPage
@@ -64,6 +66,7 @@ import ch.sbb.compose_mds.theme.context.ThemeContext
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             val isSystemInDarkTheme = isSystemInDarkTheme()
             var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
@@ -114,6 +117,7 @@ class MainActivity : ComponentActivity() {
                             composable("message") { MessagePage() }
                             composable("radio-button") { RadioButtonPage() }
                             composable("list-item") { ListItemPage() }
+                            composable("chip") { ChipPage() }
                         }
                     }
                 }
