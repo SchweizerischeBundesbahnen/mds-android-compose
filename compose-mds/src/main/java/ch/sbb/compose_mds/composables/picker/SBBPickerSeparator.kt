@@ -12,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
-import kotlinx.datetime.LocalTime
 
 /**
  * A separator placed between two [SBBPickerWheel] when picking a range.

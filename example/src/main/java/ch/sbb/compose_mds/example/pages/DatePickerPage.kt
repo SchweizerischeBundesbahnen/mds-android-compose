@@ -14,16 +14,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.composables.picker.DateTimePicker
 import ch.sbb.compose_mds.composables.picker.SBBDatePicker
-import ch.sbb.compose_mds.composables.picker.now
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.Month
 
 @Composable
 fun DatePickerPage() {
-    val today = DateTimePicker.now
-    var date by remember { mutableStateOf(today.date) }
+    var date by remember { mutableStateOf(LocalDate(year = 2026, month = Month.AUGUST, day = 4)) }
     Column(
         modifier =
             Modifier
