@@ -26,6 +26,9 @@ import ch.sbb.compose_mds.composables.listItem.defaultSBBListItemStyle
 import ch.sbb.compose_mds.composables.notificationBox.LocalSBBNotificationBoxStyle
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBoxTokens
 import ch.sbb.compose_mds.composables.notificationBox.defaultSBBNotificationBoxStyle
+import ch.sbb.compose_mds.composables.picker.LocalSBBPickerStyle
+import ch.sbb.compose_mds.composables.picker.SBBPickerStyle
+import ch.sbb.compose_mds.composables.picker.defaultSBBPickerStyle
 import ch.sbb.compose_mds.composables.radio.LocalSBBRadioStyle
 import ch.sbb.compose_mds.composables.radio.SBBRadioStyle
 import ch.sbb.compose_mds.composables.radio.defaultSBBRadioStyle
@@ -118,6 +121,11 @@ object SBBTheme {
         @ReadOnlyComposable
         @Composable
         get() = LocalSBBChipStyle.current
+
+    val picker: SBBPickerStyle
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBPickerStyle.current
 }
 
 @Composable
@@ -139,6 +147,7 @@ fun SBBTheme(
         LocalSBBCheckboxStyle provides defaultSBBCheckboxStyle(),
         LocalSBBRadioStyle provides defaultSBBRadioStyle(),
         LocalSBBChipStyle provides defaultSBBChipStyle(),
+        LocalSBBPickerStyle provides defaultSBBPickerStyle(),
     ) {
         MaterialTheme(
             colorScheme = SBBTheme.colorScheme,
