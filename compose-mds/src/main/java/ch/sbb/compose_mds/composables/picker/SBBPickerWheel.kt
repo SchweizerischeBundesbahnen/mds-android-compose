@@ -32,6 +32,18 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.mapNotNull
 
+/**
+ * The [SBBPickerWheel] is the implementation of the Picker described in [SBB Design System Mobile](https://digital.sbb.ch/en/design-system/mobile/components/picker/).
+ *
+ * @param items All items.
+ * @param textSelector Label of an item.
+ * @param infinite Whether the wheel will spin infinitely.
+ * @param onSelectionChange Callback when the selected element has changed.
+ * @param modifier The modifier to be applied to the layout.
+ * @param currentItem The selected item.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ * @param textAlign The alignemnt of the text.
+ */
 @Composable
 fun <T> SBBPickerWheel(
     items: List<T>,
@@ -155,6 +167,13 @@ fun <T> SBBPickerWheel(
     }
 }
 
+/**
+ * Measurement of the label shown in the [SBBPickerWheel].
+ *
+ * @param label The label to be measured.
+ * @param textStyle The style. Default is [textStyle] defined in [SBBPickerStyle.layout].
+ * @param horizontalPadding The additional padding surrounding the label.
+ */
 @Composable
 fun rememberLabelWheelWidth(
     label: String,
@@ -167,6 +186,14 @@ fun rememberLabelWheelWidth(
     horizontalPadding = horizontalPadding,
 )
 
+/**
+ * Measurement of the label shown in the [SBBPickerWheel].
+ *
+ * @param items Items to be measured. The longest will be used.
+ * @param textSelector Label of an item.
+ * @param textStyle The style. Default is [textStyle] defined in [SBBPickerStyle.layout].
+ * @param horizontalPadding The additional padding surrounding the label.
+ */
 @Composable
 fun <T> rememberWheelWidth(
     items: List<T>,

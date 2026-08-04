@@ -86,6 +86,40 @@ object SBBDatePicker {
         }
     }
 
+    /**
+     * A variant of the [SBBPickerWheel] to pick a [LocalDate]. It combines [DayPicker], [MonthPicker] and [YearPicker].
+     *
+     * @param selectedDate The currently selected [LocalDate].
+     * @param onDateChange Callback when the [LocalDate] was changed.
+     * @param modifier The modifier to be applied to the layout.
+     * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+     * @param range The start and end of selectable [LocalDate].
+     */
+    @Composable
+    fun Default(
+        selectedDate: LocalDate,
+        onDateChange: (LocalDate) -> Unit,
+        modifier: Modifier = Modifier,
+        style: SBBPickerStyle = SBBTheme.picker,
+        range: LocalDateRange =
+            LocalDateRange(
+                YearMonth(1900, Month.JANUARY).firstDay,
+                YearMonth(2100, Month.DECEMBER).lastDay,
+            ),
+    ) {
+        invoke(
+            selectedDate = selectedDate,
+            onDateChange = onDateChange,
+            modifier = modifier,
+            style = style,
+            range = range,
+            boxed = false,
+        )
+    }
+
+    /**
+     * Boxed version of [SBBDatePicker.Default].
+     */
     @Composable
     fun Boxed(
         selectedDate: LocalDate,
@@ -111,6 +145,14 @@ object SBBDatePicker {
     }
 }
 
+/**
+ * A day picker implemented with a [SBBPickerWheel].
+ *
+ * @param date The currently selected [LocalDate]. Month and year are used to calculate the number of days in the selected [YearMonth].
+ * @param onSelectionChange Callback when the selected element has changed.
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ */
 @Composable
 fun DayPicker(
     date: LocalDate,
@@ -130,6 +172,15 @@ fun DayPicker(
     )
 }
 
+/**
+ * A month picker implemented with a [SBBPickerWheel].
+ *
+ * @param month The currently selected [Month].
+ * @param onSelectionChange Callback when the selected element has changed.
+ * @param textAlign The [TextAlign].
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ */
 @Composable
 fun MonthPicker(
     month: Month,
@@ -155,6 +206,16 @@ fun MonthPicker(
     )
 }
 
+/**
+ * A year picker implemented with a [SBBPickerWheel].
+ *
+ * @param range Year range as [LocalDateRange].
+ * @param year The currently selected year as [Int].
+ * @param onSelectionChange Callback when the selected element has changed.
+ * @param textAlign The [TextAlign].
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ */
 @Composable
 fun YearPicker(
     range: LocalDateRange,
@@ -183,7 +244,7 @@ fun YearPicker(
 @Composable
 private fun Preview_SBB_DatePicker() {
     SBBTheme {
-        SBBDatePicker(
+        SBBDatePicker.Default(
             selectedDate = LocalDate(2026, 7, 15),
             onDateChange = {},
         )

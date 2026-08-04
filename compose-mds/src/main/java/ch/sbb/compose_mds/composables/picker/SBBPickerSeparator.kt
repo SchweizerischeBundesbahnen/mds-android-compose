@@ -12,7 +12,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
+import kotlinx.datetime.LocalTime
 
+/**
+ * A separator placed between two [SBBPickerWheel] when picking a range.
+ *
+ * @param separatorText The text shown in the middle of the separator.
+ * @param modifier The modifier to be applied to the layout.
+ * @param separatorText The text shown between the two [SBBTimePicker].
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ */
 @Composable
 fun SBBPickerSeparator(
     separatorText: String,

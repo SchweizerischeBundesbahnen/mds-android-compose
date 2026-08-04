@@ -24,6 +24,9 @@ import kotlinx.datetime.toLocalDateTime
 
 object DateTimePicker
 
+/**
+ * current time as [LocalDateTime]
+ */
 val DateTimePicker.now
     get() = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
 
@@ -79,6 +82,40 @@ object SBBDateTimePicker {
         }
     }
 
+    /**
+     * A variant of the [SBBPickerWheel] to pick a [LocalDateTime]. It combines [CombinedDatePicker], [HourPicker] and [MinutePicker].
+     *
+     * @param onDateTimeChange Callback when the [LocalDateTime] was changed.
+     * @param modifier The modifier to be applied to the layout.
+     * @param selectedDateTime The currently selected [LocalDateTime].
+     * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+     * @param range The start and end [LocalDate].
+     */
+    @Composable
+    fun Default(
+        onDateTimeChange: (LocalDateTime) -> Unit,
+        modifier: Modifier = Modifier,
+        selectedDateTime: LocalDateTime = DateTimePicker.now,
+        style: SBBPickerStyle = SBBTheme.picker,
+        range: LocalDateRange =
+            LocalDateRange(
+                YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
+                YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
+            ),
+    ) {
+        invoke(
+            onDateTimeChange = onDateTimeChange,
+            modifier = modifier,
+            style = style,
+            selectedDateTime = selectedDateTime,
+            dateRange = range,
+            boxed = false,
+        )
+    }
+
+    /**
+     * Boxed version of [SBBDateTimePicker.Default].
+     */
     @Composable
     fun Boxed(
         onDateTimeChange: (LocalDateTime) -> Unit,
@@ -104,6 +141,16 @@ object SBBDateTimePicker {
     }
 }
 
+/**
+ * A combined date picker implemented with a [SBBPickerWheel].
+ *
+ * @param date The currently selected [LocalDate].
+ * @param range The start and end of selectable [LocalDate].
+ * @param onDateChange Callback when the selected [LocalDate] has changed.
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ * @param textAlign The [TextAlign].
+ */
 @Composable
 fun CombinedDatePicker(
     date: LocalDate,
@@ -140,7 +187,7 @@ fun CombinedDatePicker(
 @Composable
 private fun Preview_SBB_DateTimePicker() {
     SBBTheme {
-        SBBDateTimePicker(
+        SBBDateTimePicker.Default(
             onDateTimeChange = {},
         )
     }

@@ -49,6 +49,33 @@ object SBBTimePicker {
         }
     }
 
+    /**
+     * A variant of the [SBBPickerWheel] to pick a [LocalTime]. It combines [HourPicker] and [MinutePicker].
+     *
+     * @param selectedTime The currently selected [LocalTime].
+     * @param onTimeChange Callback when the [LocalTime] was changed.
+     * @param modifier The modifier to be applied to the layout.
+     * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+     */
+    @Composable
+    fun Default(
+        selectedTime: LocalTime,
+        onTimeChange: (LocalTime) -> Unit,
+        modifier: Modifier = Modifier,
+        style: SBBPickerStyle = SBBTheme.picker,
+    ) {
+        invoke(
+            selectedTime = selectedTime,
+            onTimeChange = onTimeChange,
+            modifier = modifier,
+            style = style,
+            boxed = false,
+        )
+    }
+
+    /**
+     * Boxed version of [SBBTimePicker.Default].
+     */
     @Composable
     fun Boxed(
         selectedTime: LocalTime,
@@ -68,6 +95,15 @@ object SBBTimePicker {
     }
 }
 
+/**
+ * A hour picker in 24h format implemented with a [SBBPickerWheel].
+ *
+ * @param hour The currently selected hour.
+ * @param onSelectionChange Callback when the selected hour has changed.
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ * @param textAlign The [TextAlign].
+ */
 @Composable
 fun HourPicker(
     hour: Int,
@@ -88,6 +124,15 @@ fun HourPicker(
     )
 }
 
+/**
+ * A minute picker in 5 Minute steps implemented with a [SBBPickerWheel].
+ *
+ * @param minute The currently selected minute.
+ * @param onSelectionChange Callback when the selected minute has changed.
+ * @param modifier The modifier to be applied to the layout.
+ * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+ * @param textAlign The [TextAlign].
+ */
 @Composable
 fun MinutePicker(
     minute: Int,
@@ -112,7 +157,7 @@ fun MinutePicker(
 @Composable
 private fun Preview_SBB_TimePicker() {
     SBBTheme {
-        SBBTimePicker(
+        SBBTimePicker.Default(
             selectedTime = LocalTime(22, 15),
             onTimeChange = { },
         )

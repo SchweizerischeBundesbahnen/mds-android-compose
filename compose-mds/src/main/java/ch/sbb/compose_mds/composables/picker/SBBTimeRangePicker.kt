@@ -56,6 +56,39 @@ object SBBTimeRangePicker {
         }
     }
 
+    /**
+     * A variant of the [SBBPickerWheel] to pick a range of [LocalTime]. It combines two [SBBTimePicker].
+     *
+     * @param startTime The first [LocalTime].
+     * @param endTime The second [LocalTime].
+     * @param onRangeChange Callback when the range of [LocalTime] was changed.
+     * @param modifier The modifier to be applied to the layout.
+     * @param separatorText The text shown between the two [SBBTimePicker].
+     * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
+     */
+    @Composable
+    fun Default(
+        startTime: LocalTime,
+        endTime: LocalTime,
+        onRangeChange: (LocalTime, LocalTime) -> Unit,
+        modifier: Modifier = Modifier,
+        separatorText: String = stringResource(R.string.picker_range_and),
+        style: SBBPickerStyle = SBBTheme.picker,
+    ) {
+        invoke(
+            startTime = startTime,
+            endTime = endTime,
+            onRangeChange = onRangeChange,
+            modifier = modifier,
+            separatorText = separatorText,
+            style = style,
+            boxed = false,
+        )
+    }
+
+    /**
+     * Boxed version of [SBBTimeRangePicker.Default].
+     */
     @Composable
     fun Boxed(
         startTime: LocalTime,

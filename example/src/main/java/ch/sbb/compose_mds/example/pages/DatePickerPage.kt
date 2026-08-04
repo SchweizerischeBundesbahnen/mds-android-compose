@@ -36,7 +36,7 @@ fun DatePickerPage() {
                 alignment = Alignment.CenterVertically,
             ),
     ) {
-        SBBDatePicker(selectedDate = date, onDateChange = { date = it })
+        SBBDatePicker.Default(selectedDate = date, onDateChange = { date = it })
         SBBDatePicker.Boxed(selectedDate = date, onDateChange = { date = it })
     }
 }
