@@ -19,11 +19,20 @@ import ch.sbb.compose_mds.composables.picker.SBBDateTimePicker
 import ch.sbb.compose_mds.composables.picker.now
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
 
 @Composable
 fun DateTimePickerPage() {
     val today = DateTimePicker.now
-    var dateTime by remember { mutableStateOf(today) }
+    var dateTime by remember {
+        mutableStateOf(
+            LocalDateTime(
+                date = today.date,
+                time = LocalTime(hour = 10, minute = 40),
+            ),
+        )
+    }
     Column(
         modifier =
             Modifier
