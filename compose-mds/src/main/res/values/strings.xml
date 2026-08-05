@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="picker_range_and">and</string>
-    <string name="picker_today">Today</string>
+    <string name="picker_range_and">und</string>
+    <string name="picker_today">Heute</string>
 </resources>

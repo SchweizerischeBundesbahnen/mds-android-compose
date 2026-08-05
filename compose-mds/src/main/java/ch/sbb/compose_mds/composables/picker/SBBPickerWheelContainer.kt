@@ -2,10 +2,12 @@ package ch.sbb.compose_mds.composables.picker
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.visible
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
@@ -17,6 +19,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
@@ -34,12 +37,13 @@ fun SBBPickerWheelContainer(
     modifier: Modifier = Modifier,
     highlightSelected: Boolean = true,
     style: SBBPickerStyle = SBBTheme.picker,
+    contentPadding: PaddingValues = PaddingValues(horizontal = SBBSpacing.XSmall),
     content: @Composable RowScope.() -> Unit,
 ) {
     val colors by style.resolvedColors()
 
     Box(
-        modifier = modifier.height(style.itemSizes.pickerHeight),
+        modifier = modifier.height(style.itemSizes.pickerHeight).padding(contentPadding),
         contentAlignment = Alignment.Center,
     ) {
         Box(

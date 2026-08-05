@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,7 +55,7 @@ data class SBBPickerColors(
 
 data class SBBPickerLayout(
     val textStyle: TextStyle,
-    val separatorStyle: TextStyle,
+    val separatorTextStyle: TextStyle,
     val horizontalPadding: Dp,
     val selectedShape: Shape,
     val dateFormat: (Locale) -> DateTimeFormat<LocalDate>,
@@ -161,10 +162,11 @@ fun defaultSBBPickerStyle(): SBBPickerStyle =
                     textStyle =
                         SBBTheme.sbbTypography.XLargeLight.copy(
                             lineHeight = 26.sp,
+                            fontWeight = FontWeight.Normal,
                         ),
-                    separatorStyle = SBBTheme.sbbTypography.XSmallLight,
+                    separatorTextStyle = SBBTheme.sbbTypography.smallLight,
                     horizontalPadding = SBBSpacing.Medium,
-                    selectedShape = RoundedCornerShape(12.dp),
+                    selectedShape = RoundedCornerShape(8.dp),
                     dateFormat = { locale ->
                         val symbols = DateFormatSymbols(locale)
                         val shortWeekdays = symbols.shortWeekdays.drop(1).take(7)
@@ -174,13 +176,10 @@ fun defaultSBBPickerStyle(): SBBPickerStyle =
 
                         LocalDate.Format {
                             dayOfWeek(dayOfWeekNames)
-                            char('.')
                             char(' ')
                             day()
-                            char('.')
                             char(' ')
                             monthName(monthNames)
-                            char('.')
                             char(' ')
                             year()
                         }

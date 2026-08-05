@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.composables.picker
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -31,13 +32,14 @@ fun SBBPickerSeparator(
     val separatorWidth =
         rememberLabelWheelWidth(
             label = separatorText,
-            textStyle = style.layout.separatorStyle,
-            horizontalPadding = SBBSpacing.XSmall,
+            textStyle = style.layout.separatorTextStyle,
+            horizontalPadding = SBBSpacing.Zero,
         )
     SBBPickerWheelContainer(
         modifier = Modifier.width(separatorWidth) then modifier,
         highlightSelected = false,
         boxed = boxed,
+        contentPadding = PaddingValues.Zero,
     ) {
         Column(
             modifier = Modifier.height(style.itemSizes.pickerHeight),
@@ -47,7 +49,7 @@ fun SBBPickerSeparator(
             Box(modifier = Modifier.weight(1f)) {
                 VerticalDivider()
             }
-            Text(text = separatorText, style = style.layout.separatorStyle)
+            Text(text = separatorText, style = style.layout.separatorTextStyle)
             Box(modifier = Modifier.weight(1f)) {
                 VerticalDivider()
             }
