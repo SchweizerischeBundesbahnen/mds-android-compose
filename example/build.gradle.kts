@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.material3)
     implementation(project(":compose-mds"))
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.datetime)
 
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
@@ -89,6 +90,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ui.test.junit4)
+
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 }

@@ -34,6 +34,8 @@ import ch.sbb.compose_mds.example.pages.CheckboxPage
 import ch.sbb.compose_mds.example.pages.ChipPage
 import ch.sbb.compose_mds.example.pages.ColorPage
 import ch.sbb.compose_mds.example.pages.ContainerPage
+import ch.sbb.compose_mds.example.pages.DatePickerPage
+import ch.sbb.compose_mds.example.pages.DateTimePickerPage
 import ch.sbb.compose_mds.example.pages.DropdownPage
 import ch.sbb.compose_mds.example.pages.HeaderBoxPage
 import ch.sbb.compose_mds.example.pages.HeaderPage
@@ -43,6 +45,7 @@ import ch.sbb.compose_mds.example.pages.LoadingIndicatorPage
 import ch.sbb.compose_mds.example.pages.MainPage
 import ch.sbb.compose_mds.example.pages.MessagePage
 import ch.sbb.compose_mds.example.pages.NotificationBoxPage
+import ch.sbb.compose_mds.example.pages.PickerPage
 import ch.sbb.compose_mds.example.pages.RadioButtonPage
 import ch.sbb.compose_mds.example.pages.SegmentedButtonPage
 import ch.sbb.compose_mds.example.pages.SliderPage
@@ -51,6 +54,8 @@ import ch.sbb.compose_mds.example.pages.SwitchPage
 import ch.sbb.compose_mds.example.pages.TabBarPage
 import ch.sbb.compose_mds.example.pages.TextInputPage
 import ch.sbb.compose_mds.example.pages.TextareaPage
+import ch.sbb.compose_mds.example.pages.TimePickerPage
+import ch.sbb.compose_mds.example.pages.TimeRangePickerPage
 import ch.sbb.compose_mds.example.pages.TypographyPage
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
@@ -118,6 +123,11 @@ class MainActivity : ComponentActivity() {
                             composable("radio-button") { RadioButtonPage() }
                             composable("list-item") { ListItemPage() }
                             composable("chip") { ChipPage() }
+                            composable("picker") { PickerPage() }
+                            composable("date-picker") { DatePickerPage() }
+                            composable("date-time-picker") { DateTimePickerPage() }
+                            composable("time-picker") { TimePickerPage() }
+                            composable("time-range-picker") { TimeRangePickerPage() }
                         }
                     }
                 }

@@ -94,11 +94,16 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.foundation)
+    implementation(libs.kotlinx.datetime)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.androidx.ui.test.android)
     androidTestImplementation(libs.androidx.ui.test.junit4.android)
+
     debugImplementation(libs.ui.tooling)
+
     ktlintRuleset(libs.ktlint.composable)
 }
