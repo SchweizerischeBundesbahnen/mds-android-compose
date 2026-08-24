@@ -1,5 +1,6 @@
 package ch.sbb.compose_mds.composables.header
 
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
@@ -53,6 +54,7 @@ fun SBBHeader.Default(
         )
     },
 ) {
+    val primaryColor by animateColorAsState(SBBTheme.colors.primary)
     SBBHeaderInternal(
         title = title,
         navController = navController,
@@ -62,7 +64,7 @@ fun SBBHeader.Default(
         actions = actions,
         modifier =
             modifier
-                .background(SBBTheme.colors.primary)
+                .background(primaryColor)
                 .padding(horizontal = 14.dp)
                 .padding(bottom = 30.dp),
     )
@@ -88,6 +90,7 @@ fun SBBHeader.Small(
         )
     },
 ) {
+    val primaryColor by animateColorAsState(SBBTheme.colors.primary)
     SBBHeaderInternal(
         title = title,
         navController = navController,
@@ -97,7 +100,7 @@ fun SBBHeader.Small(
         actions = actions,
         modifier =
             modifier
-                .background(SBBTheme.colors.primary)
+                .background(primaryColor)
                 .padding(horizontal = 14.dp),
     )
 }

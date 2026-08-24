@@ -1,8 +1,7 @@
 package ch.sbb.compose_mds.composables.segmentedButton
 
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateIntOffsetAsState
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -15,6 +14,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.style.ExperimentalFoundationStyleApi
+import androidx.compose.foundation.style.MutableStyleState
+import androidx.compose.foundation.style.Style
+import androidx.compose.foundation.style.StyleStateKey
+import androidx.compose.foundation.style.styleable
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,18 +28,25 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInParent
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.round
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton.Custom
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton.Default
+import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton.Primary
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ArrowLongRightSmall
@@ -50,21 +61,16 @@ import ch.sbb.compose_mds.theme.SBBTheme
  *
  * For full specification, please visit [digital.sbb.ch](https://digital.sbb.ch/en/design-system/mobile/components/segmented-button/).
  */
+@ExperimentalFoundationStyleApi
 object SBBSegmentedButton {
-    /**
-     * Default variant of the segmented button.
-     *
-     * @param selection Currently selected value.
-     * @param segments All options as a [List] of [SBBButtonSegment].
-     * @param onSelectionChange Action on selected element changed.
-     * @param modifier The modifier to customize the surrounding [Box].
-     */
+    /** Default variant of the segmented button. */
     @Composable
     fun <T> Default(
         selection: T,
         segments: List<SBBButtonSegment<T>>,
         onSelectionChange: (T) -> Unit,
         modifier: Modifier = Modifier,
+        styleOverride: Style = Style,
     ) {
         Custom(
             selection = selection,
@@ -72,23 +78,18 @@ object SBBSegmentedButton {
             onSelectionChange = onSelectionChange,
             style = SBBTheme.segmentedButton.default,
             modifier = modifier,
+            styleOverride = styleOverride,
         )
     }
 
-    /**
-     * Primary variant of the segmented button.
-     *
-     * @param selection Currently selected value.
-     * @param segments All options as a [List] of [SBBButtonSegment].
-     * @param onSelectionChange Action on selected element changed.
-     * @param modifier The modifier to customize the surrounding [Box].
-     */
+    /** Primary variant of the segmented button. */
     @Composable
     fun <T> Primary(
         selection: T,
         segments: List<SBBButtonSegment<T>>,
         onSelectionChange: (T) -> Unit,
         modifier: Modifier = Modifier,
+        styleOverride: Style = Style,
     ) {
         Custom(
             selection = selection,
@@ -96,18 +97,15 @@ object SBBSegmentedButton {
             onSelectionChange = onSelectionChange,
             style = SBBTheme.segmentedButton.primary,
             modifier = modifier,
+            styleOverride = styleOverride,
         )
     }
 
     /**
      * Custom variant of the segmented button.
-     * Override the style with a custom [SBBSegmentedButtonStyle]
      *
-     * @param selection Currently selected value.
-     * @param segments All options as a [List] of [SBBButtonSegment].
-     * @param onSelectionChange Action on selected element changed.
-     * @param style Styling of the [SBBSegmentedButton] with a [SBBSegmentedButtonStyle].
-     * @param modifier The modifier to customize the surrounding [Box].
+     * Legacy layout, and typography tokens remain supported. [styleOverride] is applied
+     * after the variant's region styles.
      */
     @Composable
     fun <T> Custom(
@@ -116,12 +114,10 @@ object SBBSegmentedButton {
         onSelectionChange: (T) -> Unit,
         style: SBBSegmentedButtonStyle,
         modifier: Modifier = Modifier,
+        styleOverride: Style = Style,
     ) {
         Box(
-            modifier =
-                modifier
-                    .height(style.layout.height)
-                    .fillMaxSize(),
+            modifier = modifier.height(style.layout.height).fillMaxSize(),
         ) {
             val totalWeight = segments.size.toFloat()
             val positions = remember { mutableStateMapOf<T, LayoutCoordinates>() }
@@ -142,8 +138,12 @@ object SBBSegmentedButton {
                     Modifier
                         .fillMaxSize()
                         .padding(style.layout.buttonOverlap)
-                        .clip(shape = style.layout.buttonShape)
-                        .background(color = style.colors.background),
+                        .clip(style.layout.buttonShape)
+                        .styleable(
+                            null,
+                            style.trackStyle,
+                            styleOverride,
+                        ),
             )
             Box(
                 modifier =
@@ -151,11 +151,11 @@ object SBBSegmentedButton {
                         .width(width)
                         .fillMaxHeight()
                         .offset { offset }
-                        .clip(shape = style.layout.buttonShape)
-                        .background(style.colors.buttonBackground)
-                        .border(
-                            border = style.buttonBorderStroke,
-                            shape = style.layout.buttonShape,
+                        .clip(style.layout.buttonShape)
+                        .styleable(
+                            null,
+                            style.indicatorStyle,
+                            styleOverride,
                         ),
             )
             Row(horizontalArrangement = Arrangement.spacedBy(style.layout.buttonGap)) {
@@ -163,13 +163,15 @@ object SBBSegmentedButton {
                     val interactionSource = remember { MutableInteractionSource() }
                     val isPressed by interactionSource.collectIsPressedAsState()
                     val selected = segment.value == selection
+                    val styleState = remember { MutableStyleState(null) }
+                    styleState[StyleStateKey.Selected] = selected
 
                     Box(
                         modifier =
                             Modifier
                                 .weight(1f / totalWeight)
                                 .fillMaxHeight()
-                                .clip(shape = style.layout.buttonShape)
+                                .clip(style.layout.buttonShape)
                                 .clickable(
                                     role = Role.Button,
                                     interactionSource = interactionSource,
@@ -182,29 +184,32 @@ object SBBSegmentedButton {
                             modifier =
                                 Modifier
                                     .graphicsLayer { alpha = if (isPressed) 1f else 0f }
+                                    .styleable(null, style.pressedStyle, styleOverride)
                                     .fillMaxSize()
                                     .clickable(interactionSource = interactionSource) {
                                         onSelectionChange(segment.value)
                                     },
                         )
                         Row(
+                            modifier = Modifier.styleable(styleState, style.contentStyle, styleOverride),
                             horizontalArrangement = Arrangement.spacedBy(style.layout.horizontalElementSpacing),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
+                            val fontWeight = if (selected) style.typography.selectedFontWeight else style.typography.fontWeight
                             segment.icon?.let {
-                                Icon(
-                                    imageVector = it,
-                                    contentDescription = null,
-                                    tint = style.colors.onButton,
+                                SBBSegmentedButtonIcon(
+                                    modifier = Modifier.styleable(styleState, style.contentStyle, styleOverride),
+                                    icon = it,
+                                    contentColor = style.typography.contentColor,
                                 )
                             }
                             segment.label?.let {
-                                Text(
+                                SBBSegmentedButtonLabel(
+                                    modifier = Modifier.styleable(styleState, style.contentStyle, styleOverride),
                                     text = it,
-                                    style = style.typography.title.copy(color = style.colors.onButton),
-                                    maxLines = 1,
-                                    overflow = TextOverflow.Ellipsis,
-                                    fontWeight = if (selected) style.typography.selectedFontWeight else style.typography.fontWeight,
+                                    textStyle = style.typography.title,
+                                    fontWeight = fontWeight,
+                                    contentColor = style.typography.contentColor,
                                 )
                             }
                         }
@@ -213,6 +218,39 @@ object SBBSegmentedButton {
             }
         }
     }
+}
+
+@Composable
+private fun SBBSegmentedButtonIcon(
+    modifier: Modifier = Modifier,
+    icon: ImageVector,
+    contentColor: Color,
+) {
+    Icon(
+        modifier = modifier,
+        imageVector = icon,
+        contentDescription = null,
+        tint = contentColor,
+    )
+}
+
+@Composable
+private fun SBBSegmentedButtonLabel(
+    modifier: Modifier = Modifier,
+    text: String,
+    textStyle: TextStyle,
+    fontWeight: FontWeight,
+    contentColor: Color,
+) {
+    Text(
+        modifier = modifier,
+        text = text,
+        color = contentColor,
+        style = textStyle,
+        fontWeight = fontWeight,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+    )
 }
 
 private val twoSegments =

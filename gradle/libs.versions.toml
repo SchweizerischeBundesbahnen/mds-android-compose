@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.2"
+agp = "9.3.2"
 kotlin = "2.3.21"
 coreKtx = "1.18.0"
 activityCompose = "1.13.0"
@@ -7,7 +7,7 @@ androidxNavigationCompose = "2.9.8"
 kotlinxDatetime = "0.8.0"
 lifecycleRuntimeKtx = "2.10.0"
 material3 = "1.4.0"
-composeUi = "1.11.2"
+composeUi = "1.12.0"
 appcompat = "1.7.1"
 
 junit = "4.13.2"
@@ -20,7 +20,7 @@ mavenPublish = "0.36.0"
 robolectric = "4.16.1"
 roborazzi = "1.63.0"
 previewScanner = "0.9.0"
-foundation = "1.11.2"
+foundation = "1.12.0"
 ktlint = "14.2.0"
 ktlint-composable = "0.5.9"
 coreKtxVersion = "1.19.0"
@@ -62,4 +62,3 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

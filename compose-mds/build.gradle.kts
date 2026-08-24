@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.ktlint)
-    alias(libs.plugins.kotlin.android)
 }
 
 // ktlint configuration (modern plugin DSL). Re-add this block to enable
@@ -39,7 +38,7 @@ ktlint {
 
 configure<LibraryExtension> {
     namespace = "ch.sbb.compose_mds"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -60,6 +59,14 @@ configure<LibraryExtension> {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
+    }
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add(
+            "-opt-in=androidx.compose.foundation.style.ExperimentalFoundationStyleApi",
+        )
     }
 }
 

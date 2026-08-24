@@ -9,12 +9,11 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.roborazzi)
-    alias(libs.plugins.kotlin.android)
 }
 
 configure<ApplicationExtension> {
     namespace = "ch.sbb.compose_playground"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "ch.sbb.compose_playground"
@@ -54,6 +53,14 @@ configure<ApplicationExtension> {
                 it.systemProperties["robolectric.pixelCopyRenderMode"] = "hardware"
             }
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add(
+            "-opt-in=androidx.compose.foundation.style.ExperimentalFoundationStyleApi",
+        )
     }
 }
 

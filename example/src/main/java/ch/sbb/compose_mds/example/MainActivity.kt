@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -143,11 +144,12 @@ private fun ThemeSelection(
     contextSelection: ThemeContext,
     onContextSelectionChanged: (ThemeContext) -> Unit,
 ) {
+    val primaryColor by animateColorAsState(SBBTheme.colors.primary)
     Row(
         modifier =
             Modifier
                 .fillMaxWidth()
-                .background(color = SBBTheme.colors.primary)
+                .background(color = primaryColor)
                 .padding(SBBSpacing.XSmall),
         horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
