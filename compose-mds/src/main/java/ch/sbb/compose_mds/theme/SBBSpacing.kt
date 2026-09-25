@@ -6,7 +6,6 @@ import androidx.compose.ui.unit.dp
  * Defines the standard SBB spacing values for Jetpack Compose.
  *
  * These values are based on the SBB Design System.
- *
  */
 object SBBSpacing {
     /** Corresponds to 0dp. */

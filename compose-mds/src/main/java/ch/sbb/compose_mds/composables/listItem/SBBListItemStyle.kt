@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -104,54 +105,56 @@ fun defaultSBBListItemStyle(): SBBListItemStyle =
                 SBBListItemColorVariants(
                     enabledLight =
                         SBBListItemColors(
-                            background = SBBTheme.colors.white,
-                            backgroundPressed = SBBTheme.colors.platinum,
-                            text = SBBTheme.colors.black,
-                            subtext = SBBTheme.colors.granite,
-                            icon = SBBTheme.colors.black,
-                            line = SBBTheme.colors.cloud,
+                            background = SBBColors.white,
+                            backgroundPressed = SBBColors.platinum,
+                            text = SBBColors.black,
+                            subtext = SBBColors.granite,
+                            icon = SBBColors.black,
+                            line = SBBColors.cloud,
                         ),
                     enabledDark =
                         SBBListItemColors(
-                            background = SBBTheme.colors.charcoal,
-                            backgroundPressed = SBBTheme.colors.midnight,
-                            text = SBBTheme.colors.white,
-                            subtext = SBBTheme.colors.graphite,
-                            icon = SBBTheme.colors.white,
-                            line = SBBTheme.colors.iron,
+                            background = SBBColors.charcoal,
+                            backgroundPressed = SBBColors.midnight,
+                            text = SBBColors.white,
+                            subtext = SBBColors.graphite,
+                            icon = SBBColors.white,
+                            line = SBBColors.iron,
                         ),
                     disabledLight =
                         SBBListItemColors(
-                            background = SBBTheme.colors.white,
-                            backgroundPressed = SBBTheme.colors.platinum,
-                            text = SBBTheme.colors.granite,
-                            subtext = SBBTheme.colors.granite,
-                            icon = SBBTheme.colors.granite,
-                            line = SBBTheme.colors.cloud,
+                            background = SBBColors.white,
+                            backgroundPressed = SBBColors.platinum,
+                            text = SBBColors.granite,
+                            subtext = SBBColors.granite,
+                            icon = SBBColors.granite,
+                            line = SBBColors.cloud,
                         ),
                     disabledDark =
                         SBBListItemColors(
-                            background = SBBTheme.colors.charcoal,
-                            backgroundPressed = SBBTheme.colors.platinum,
-                            text = SBBTheme.colors.graphite,
-                            subtext = SBBTheme.colors.graphite,
-                            icon = SBBTheme.colors.graphite,
-                            line = SBBTheme.colors.iron,
+                            background = SBBColors.charcoal,
+                            backgroundPressed = SBBColors.platinum,
+                            text = SBBColors.graphite,
+                            subtext = SBBColors.graphite,
+                            icon = SBBColors.graphite,
+                            line = SBBColors.iron,
                         ),
                 )
 
-        override val layout @Composable get() =
-            SBBListItemLayout(
-                padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
-                minHeight = 44.dp,
-                horizontalPadding = SBBSpacing.Medium,
-                verticalPadding = SBBSpacing.XXSmall,
-            )
-        override val typography @Composable get() =
-            SBBListItemTypography(
-                text = MaterialTheme.typography.bodyMedium,
-                subtext = MaterialTheme.typography.bodySmall,
-            )
+        override val layout
+            @Composable get() =
+                SBBListItemLayout(
+                    padding = PaddingValues(horizontal = SBBSpacing.Medium, vertical = 10.dp),
+                    minHeight = 44.dp,
+                    horizontalPadding = SBBSpacing.Medium,
+                    verticalPadding = SBBSpacing.XXSmall,
+                )
+        override val typography
+            @Composable get() =
+                SBBListItemTypography(
+                    text = MaterialTheme.typography.bodyMedium,
+                    subtext = MaterialTheme.typography.bodySmall,
+                )
     }
 
 val LocalSBBListItemStyle = staticCompositionLocalOf<SBBListItemStyle> { DefaultListItemStyle() }
@@ -161,10 +164,11 @@ val SBBListItemStyle.withXSmallHorizontalGap: SBBListItemStyle
         val parent = this
         return object : SBBListItemStyle {
             override val colors @Composable get() = parent.colors
-            override val layout @Composable get() =
-                parent.layout.copy(
-                    horizontalPadding = SBBSpacing.XSmall,
-                )
+            override val layout
+                @Composable get() =
+                    parent.layout.copy(
+                        horizontalPadding = SBBSpacing.XSmall,
+                    )
             override val typography @Composable get() = parent.typography
         }
     }

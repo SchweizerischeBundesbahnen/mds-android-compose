@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -74,7 +74,8 @@ fun SBBRadio(
                     role = Role.RadioButton,
                     interactionSource = interactionSource,
                     indication = ripple(),
-                ).padding(SBBSpacing.XSmall),
+                )
+                .padding(SBBSpacing.XSmall),
     ) {
         DrawRadio(
             modifier = Modifier.padding(end = SBBSpacing.XSmall),
@@ -115,7 +116,8 @@ internal fun DrawRadio(
                         width = style.layout.borderWidth,
                         color = colors.border,
                         shape = CircleShape,
-                    ).background(colors.background, shape = CircleShape),
+                    )
+                    .background(colors.background, shape = CircleShape),
         contentAlignment = Alignment.Center,
     ) {
         Box(
@@ -138,7 +140,7 @@ private fun SBBRadioPreview() {
         Column(
             modifier =
                 Modifier
-                    .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
+                    .background(if (darkTheme) SBBColors.black else SBBColors.white)
                     .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {

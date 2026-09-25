@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 import java.text.DateFormatSymbols
@@ -132,25 +133,25 @@ fun defaultSBBPickerStyle(): SBBPickerStyle =
                 SBBPickerColorVariants(
                     light =
                         SBBPickerColors(
-                            backgroundSelected = SBBTheme.colors.cloud,
-                            line = SBBTheme.colors.cloud,
-                            text = SBBTheme.colors.black,
-                            textClose = SBBTheme.colors.storm,
-                            textFar = SBBTheme.colors.cement,
-                            textFaded = SBBTheme.colors.cement,
-                            subtext = SBBTheme.colors.granite,
+                            backgroundSelected = SBBColors.cloud,
+                            line = SBBColors.cloud,
+                            text = SBBColors.black,
+                            textClose = SBBColors.storm,
+                            textFar = SBBColors.cement,
+                            textFaded = SBBColors.cement,
+                            subtext = SBBColors.granite,
                             background = MaterialTheme.colorScheme.surface,
                             boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
                         ),
                     dark =
                         SBBPickerColors(
-                            backgroundSelected = SBBTheme.colors.iron,
-                            line = SBBTheme.colors.iron,
-                            text = SBBTheme.colors.white,
-                            textClose = SBBTheme.colors.cement,
-                            textFar = SBBTheme.colors.storm,
-                            textFaded = SBBTheme.colors.storm,
-                            subtext = SBBTheme.colors.graphite,
+                            backgroundSelected = SBBColors.iron,
+                            line = SBBColors.iron,
+                            text = SBBColors.white,
+                            textClose = SBBColors.cement,
+                            textFar = SBBColors.storm,
+                            textFaded = SBBColors.storm,
+                            subtext = SBBColors.graphite,
                             background = MaterialTheme.colorScheme.surface,
                             boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
                         ),

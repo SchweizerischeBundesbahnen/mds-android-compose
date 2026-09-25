@@ -61,12 +61,9 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.MoonSmall
 import ch.sbb.compose_mds.sbbicons.small.SunshineSmall
+import ch.sbb.compose_mds.theme.SBBColorScheme
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
-import ch.sbb.compose_mds.theme.context.OffBrandThemeContext
-import ch.sbb.compose_mds.theme.context.SBBThemeContext
-import ch.sbb.compose_mds.theme.context.SafetyRelevantThemeContext
-import ch.sbb.compose_mds.theme.context.ThemeContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +72,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             val isSystemInDarkTheme = isSystemInDarkTheme()
             var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
-            var themeContext by remember { mutableStateOf<ThemeContext>(SBBThemeContext) }
-            SBBTheme(darkTheme = isDarkTheme, themeContext = themeContext) {
+            var colorScheme by remember {
+                mutableStateOf<SBBColorScheme>(
+                    SBBColorScheme.sbb(
+                        isDarkTheme,
+                    ),
+                )
+            }
+            SBBTheme(darkTheme = isDarkTheme, colorScheme = colorScheme) {
                 val navController = rememberNavController()
                 Scaffold(
                     topBar = {
@@ -88,8 +91,8 @@ class MainActivity : ComponentActivity() {
                             ThemeSelection(
                                 onDarkSelectionChanged = { isDarkTheme = it },
                                 darkSelection = isDarkTheme,
-                                onContextSelectionChanged = { themeContext = it },
-                                contextSelection = themeContext,
+                                onColorSchemeChanged = { colorScheme = it },
+                                colorSchemeSelection = colorScheme,
                             )
                         }
                     },
@@ -136,18 +139,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// TODO: Fix theme selection with new color scheme
 @Composable
 private fun ThemeSelection(
     darkSelection: Boolean,
     onDarkSelectionChanged: (Boolean) -> Unit,
-    contextSelection: ThemeContext,
-    onContextSelectionChanged: (ThemeContext) -> Unit,
+    colorSchemeSelection: SBBColorScheme,
+    onColorSchemeChanged: (SBBColorScheme) -> Unit,
 ) {
     Row(
         modifier =
             Modifier
                 .fillMaxWidth()
-                .background(color = SBBTheme.colors.primary)
+                .background(color = SBBTheme.colorScheme.primary)
                 .padding(SBBSpacing.XSmall),
         horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
@@ -169,21 +173,21 @@ private fun ThemeSelection(
         )
 
         SBBSegmentedButton.Primary(
-            onSelectionChange = onContextSelectionChanged,
-            selection = contextSelection,
+            onSelectionChange = onColorSchemeChanged,
+            selection = colorSchemeSelection,
             segments =
                 listOf(
                     SBBButtonSegment(
                         label = "SBB",
-                        value = SBBThemeContext,
+                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
                     ),
                     SBBButtonSegment(
                         label = "Offbrand",
-                        value = OffBrandThemeContext,
+                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
                     ),
                     SBBButtonSegment(
                         label = "Safety",
-                        value = SafetyRelevantThemeContext,
+                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
                     ),
                 ),
         )

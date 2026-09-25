@@ -30,7 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 object SBBLoadingIndicator {
@@ -45,7 +45,7 @@ object SBBLoadingIndicator {
     @Composable
     fun Small(
         modifier: Modifier = Modifier,
-        color: Color = PrimitiveColors.red,
+        color: Color = SBBColors.red,
     ) {
         SBBLoadingIndicator(
             modifier = modifier,
@@ -70,7 +70,7 @@ object SBBLoadingIndicator {
     @Composable
     fun Default(
         modifier: Modifier = Modifier,
-        color: Color = PrimitiveColors.red,
+        color: Color = SBBColors.red,
     ) {
         SBBLoadingIndicator(modifier = modifier, color = color)
     }
@@ -82,7 +82,7 @@ private fun SBBLoadingIndicator(
     width: Dp = 32.dp,
     height: Dp = 20.dp,
     windowPadding: Dp = 5.dp,
-    color: Color = PrimitiveColors.red,
+    color: Color = SBBColors.red,
     offsetY: Dp = 10.dp,
     cameraDistance: Float = 4f,
     rotationY: Float = 70f,
@@ -109,7 +109,8 @@ private fun SBBLoadingIndicator(
                 .graphicsLayer(
                     cameraDistance = cameraDistance,
                     rotationY = rotationY,
-                ).offset(offset.x * width * 5, offsetY),
+                )
+                .offset(offset.x * width * 5, offsetY),
     ) {
         Box(
             modifier =
@@ -167,8 +168,8 @@ private fun Preview_SBBLoadingIndicatorSmall() {
             Canvas(modifier = Modifier.fillMaxSize()) {
                 val offsetX = Offset(100f, 0f)
                 val offsetY = Offset(0f, 100f)
-                drawLine(PrimitiveColors.green, size.center - offsetX, size.center + offsetX, 4f)
-                drawLine(PrimitiveColors.green, size.center - offsetY, size.center + offsetY, 4f)
+                drawLine(SBBColors.green, size.center - offsetX, size.center + offsetX, 4f)
+                drawLine(SBBColors.green, size.center - offsetY, size.center + offsetY, 4f)
             }
         }
     }
@@ -183,8 +184,8 @@ private fun Preview_SBBLoadingIndicatorDefault() {
             Canvas(modifier = Modifier.fillMaxSize()) {
                 val offsetX = Offset(100f, 0f)
                 val offsetY = Offset(0f, 100f)
-                drawLine(PrimitiveColors.green, size.center - offsetX, size.center + offsetX, 4f)
-                drawLine(PrimitiveColors.green, size.center - offsetY, size.center + offsetY, 4f)
+                drawLine(SBBColors.green, size.center - offsetX, size.center + offsetX, 4f)
+                drawLine(SBBColors.green, size.center - offsetY, size.center + offsetY, 4f)
             }
         }
     }

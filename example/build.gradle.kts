@@ -57,6 +57,12 @@ configure<ApplicationExtension> {
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    }
+}
+
 roborazzi {
     generateComposePreviewRobolectricTests {
         enable = true

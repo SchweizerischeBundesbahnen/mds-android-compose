@@ -182,8 +182,7 @@ private fun SBBMessageInternal(
         )
 
         Spacer(Modifier.height(SBBSpacing.Medium))
-        val secondaryTextColor =
-            if (SBBTheme.isDarkMode) SBBTheme.colors.graphite else SBBTheme.colors.granite
+        val secondaryTextColor = SBBTheme.colorScheme.textSecondary
         Text(
             message,
             style = SBBTheme.sbbTypography.smallLight,

@@ -14,6 +14,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -69,11 +70,10 @@ fun defaultSBBSegmentedButtonStyles(): SBBSegmentedButtonVariants {
             @Composable get() {
                 val dark = SBBTheme.isDarkMode
                 val typography = SBBTheme.materialTypography
-                val colors = SBBTheme.colors
 
-                val background by animateColorAsState(if (dark) colors.charcoal else colors.cloud)
-                val border by animateColorAsState(if (dark) colors.graphite else colors.granite)
-                val buttonColor by animateColorAsState(if (dark) colors.iron else colors.white)
+                val background by animateColorAsState(if (dark) SBBColors.charcoal else SBBColors.cloud)
+                val border by animateColorAsState(if (dark) SBBColors.graphite else SBBColors.granite)
+                val buttonColor by animateColorAsState(if (dark) SBBColors.iron else SBBColors.white)
 
                 return SBBSegmentedButtonStyle(
                     colors =
@@ -105,10 +105,10 @@ fun defaultSBBSegmentedButtonStyles(): SBBSegmentedButtonVariants {
                 SBBSegmentedButtonStyle(
                     colors =
                         SBBSegmentedButtonColors(
-                            background = SBBTheme.colors.primary125,
-                            buttonBackground = SBBTheme.colors.primary,
-                            buttonBorder = SBBTheme.colors.primary150,
-                            onButton = SBBTheme.colors.white,
+                            background = SBBTheme.colorScheme.primary125,
+                            buttonBackground = SBBTheme.colorScheme.primary,
+                            buttonBorder = SBBTheme.colorScheme.primary150,
+                            onButton = SBBColors.white,
                         ),
                     layout =
                         SBBSegmentedButtonLayout(
@@ -129,4 +129,5 @@ fun defaultSBBSegmentedButtonStyles(): SBBSegmentedButtonVariants {
     }
 }
 
-val LocalSBBSegmentedButtonStyle = staticCompositionLocalOf<SBBSegmentedButtonVariants> { DefaultSegmentedButtonStyle() }
+val LocalSBBSegmentedButtonStyle =
+    staticCompositionLocalOf<SBBSegmentedButtonVariants> { DefaultSegmentedButtonStyle() }

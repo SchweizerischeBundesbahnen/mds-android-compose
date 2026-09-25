@@ -14,6 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
@@ -62,22 +63,22 @@ private fun buttonColors(pressed: Boolean) = if (SBBTheme.isDarkMode) darkModeCo
 
 @Composable
 private fun lightModeColors(pressed: Boolean): ButtonColors {
-    val colors = SBBTheme.colors
+    val colorScheme = SBBTheme.colorScheme
     return ButtonDefaults.buttonColors(
-        containerColor = if (pressed) colors.primary125 else colors.primary,
-        contentColor = colors.white,
-        disabledContainerColor = colors.graphite,
-        disabledContentColor = colors.white,
+        containerColor = if (pressed) colorScheme.primary125 else colorScheme.primary,
+        contentColor = SBBColors.white,
+        disabledContainerColor = SBBColors.graphite,
+        disabledContentColor = SBBColors.white,
     )
 }
 
 @Composable
 private fun darkModeColors(pressed: Boolean): ButtonColors {
-    val colors = SBBTheme.colors
+    val colors = SBBTheme.colorScheme
     return ButtonDefaults.buttonColors(
         containerColor = if (pressed) colors.primary125 else colors.primary,
-        contentColor = colors.white,
-        disabledContainerColor = colors.iron,
-        disabledContentColor = colors.smoke,
+        contentColor = SBBColors.white,
+        disabledContainerColor = SBBColors.iron,
+        disabledContentColor = SBBColors.smoke,
     )
 }

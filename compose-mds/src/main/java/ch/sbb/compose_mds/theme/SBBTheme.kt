@@ -1,7 +1,6 @@
 package ch.sbb.compose_mds.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Typography
@@ -35,36 +34,17 @@ import ch.sbb.compose_mds.composables.radio.defaultSBBRadioStyle
 import ch.sbb.compose_mds.composables.segmentedButton.LocalSBBSegmentedButtonStyle
 import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButtonVariants
 import ch.sbb.compose_mds.composables.segmentedButton.defaultSBBSegmentedButtonStyles
-import ch.sbb.compose_mds.theme.context.LocalThemeContext
-import ch.sbb.compose_mds.theme.context.SBBThemeContext
-import ch.sbb.compose_mds.theme.context.ThemeContext
-import ch.sbb.compose_mds.theme.context.colors.ContextAdditionalColors
-import ch.sbb.compose_mds.theme.context.colors.ContextColors
-import ch.sbb.compose_mds.theme.context.colors.ContextFunctionalColors
-import ch.sbb.compose_mds.theme.context.material.colorScheme
 
 internal val LocalSBBIsDarkMode = staticCompositionLocalOf<Boolean> { false }
 
+internal val LocalSBBColorScheme =
+    staticCompositionLocalOf { SBBColorScheme.sbb(isDarkMode = false) }
+
 object SBBTheme {
-    val colors: ContextColors
+    val colorScheme: SBBColorScheme
         @ReadOnlyComposable
         @Composable
-        get() = LocalThemeContext.current.colors
-
-    val additionalColors: ContextAdditionalColors
-        @ReadOnlyComposable
-        @Composable
-        get() = LocalThemeContext.current.additionalColors
-
-    val functionalColors: ContextFunctionalColors
-        @ReadOnlyComposable
-        @Composable
-        get() = LocalThemeContext.current.functionalColors
-
-    val colorScheme: ColorScheme
-        @ReadOnlyComposable
-        @Composable
-        get() = LocalThemeContext.current.colorScheme(isDarkMode)
+        get() = LocalSBBColorScheme.current
 
     @Deprecated("Use materialTypography instead", ReplaceWith("SBBTheme.materialTypography"))
     val typography: Typography
@@ -86,11 +66,6 @@ object SBBTheme {
         @ReadOnlyComposable
         @Composable
         get() = LocalSBBIsDarkMode.current
-
-    val contextName: String
-        @ReadOnlyComposable
-        @Composable
-        get() = LocalThemeContext.current.contextName
 
     val notificationBox: SBBNotificationBoxTokens
         @ReadOnlyComposable
@@ -131,15 +106,15 @@ object SBBTheme {
 @Composable
 fun SBBTheme(
     modifier: Modifier = Modifier,
-    themeContext: ThemeContext = SBBThemeContext,
     darkTheme: Boolean = isSystemInDarkTheme(),
+    colorScheme: SBBColorScheme = SBBColorScheme.sbb(darkTheme),
     fontFamily: FontFamily? = null,
     includeSurface: Boolean = LocalInspectionMode.current,
     content: @Composable () -> Unit,
 ) {
     CompositionLocalProvider(
-        LocalThemeContext provides themeContext,
         LocalSBBIsDarkMode provides darkTheme,
+        LocalSBBColorScheme provides colorScheme,
         LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
         LocalSBBNotificationBoxStyle provides defaultSBBNotificationBoxStyle(),
         LocalSBBListItemStyle provides defaultSBBListItemStyle(),
@@ -150,7 +125,7 @@ fun SBBTheme(
         LocalSBBPickerStyle provides defaultSBBPickerStyle(),
     ) {
         MaterialTheme(
-            colorScheme = SBBTheme.colorScheme,
+            colorScheme = colorScheme.toMaterialColorScheme(isDarkTheme = darkTheme),
             typography = SBBTheme.materialTypography,
             content = {
                 val movableContent = remember { movableContentOf { content() } }

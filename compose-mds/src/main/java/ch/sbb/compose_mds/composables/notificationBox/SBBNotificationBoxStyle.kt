@@ -13,6 +13,7 @@ import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 class SBBNotificationBoxStyle(
@@ -39,12 +40,11 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
     object : SBBNotificationBoxTokens {
         override val alert: SBBNotificationBoxStyle
             @Composable get() {
-                val dark = SBBTheme.isDarkMode
-                val alertColor by animateColorAsState(if (dark) SBBTheme.functionalColors.errorDark else SBBTheme.functionalColors.error)
-                val backgroundColor by animateColorAsState(if (dark) SBBTheme.colors.black else SBBTheme.colors.white)
+                val alertColor by animateColorAsState(SBBTheme.colorScheme.error)
+                val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
                     icon = SBBIcons.Small.CircleCrossSmall,
-                    iconColor = alertColor,
+                    iconColor = SBBTheme.colorScheme.error,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = alertColor,
                 )
@@ -53,12 +53,12 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
             @Composable get() {
                 val dark = SBBTheme.isDarkMode
                 val warningColor by animateColorAsState(
-                    if (dark) SBBTheme.functionalColors.warningDark else SBBTheme.functionalColors.warning,
+                    if (dark) SBBColors.warningDark else SBBColors.warning,
                 )
-                val backgroundColor by animateColorAsState(if (dark) SBBTheme.colors.black else SBBTheme.colors.white)
+                val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
                     icon = SBBIcons.Small.CircleExclamationPointSmall,
-                    iconColor = if (SBBTheme.isDarkMode) warningColor else SBBTheme.colors.black,
+                    iconColor = if (SBBTheme.isDarkMode) warningColor else SBBColors.black,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = warningColor,
                 )
@@ -67,9 +67,9 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
             @Composable get() {
                 val dark = SBBTheme.isDarkMode
                 val successColor by animateColorAsState(
-                    if (dark) SBBTheme.functionalColors.successDark else SBBTheme.functionalColors.success,
+                    if (dark) SBBColors.successDark else SBBColors.success,
                 )
-                val backgroundColor by animateColorAsState(if (dark) SBBTheme.colors.black else SBBTheme.colors.white)
+                val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
                     icon = SBBIcons.Small.CircleTickSmall,
                     iconColor = successColor,
@@ -79,12 +79,11 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
             }
         override val information: SBBNotificationBoxStyle
             @Composable get() {
-                val dark = SBBTheme.isDarkMode
-                val informationColor = SBBTheme.colors.smoke
-                val backgroundColor by animateColorAsState(if (dark) SBBTheme.colors.black else SBBTheme.colors.white)
+                val informationColor = SBBColors.smoke
+                val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
                     icon = SBBIcons.Small.CircleInformationSmall,
-                    iconColor = if (SBBTheme.isDarkMode) SBBTheme.colors.white else SBBTheme.colors.black,
+                    iconColor = if (SBBTheme.isDarkMode) SBBColors.white else SBBColors.black,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = informationColor,
                 )

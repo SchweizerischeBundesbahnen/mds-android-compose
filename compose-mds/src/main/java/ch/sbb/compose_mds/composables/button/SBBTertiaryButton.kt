@@ -18,11 +18,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
@@ -167,23 +168,21 @@ private fun buttonColors(pressed: Boolean): ButtonColors = if (SBBTheme.isDarkMo
 
 @Composable
 private fun lightModeColors(pressed: Boolean): ButtonColors {
-    val colors = SBBTheme.colors
     return ButtonDefaults.buttonColors(
-        containerColor = if (pressed) colors.graphite else colors.white,
-        contentColor = colors.black,
-        disabledContainerColor = colors.white,
-        disabledContentColor = colors.graphite,
+        containerColor = if (pressed) SBBColors.graphite else SBBColors.white,
+        contentColor = SBBColors.black,
+        disabledContainerColor = SBBColors.white,
+        disabledContentColor = SBBColors.graphite,
     )
 }
 
 @Composable
 private fun darkModeColors(pressed: Boolean): ButtonColors {
-    val colors = SBBTheme.colors
     return ButtonDefaults.buttonColors(
-        containerColor = if (pressed) colors.black else colors.charcoal,
-        contentColor = colors.white,
-        disabledContainerColor = PrimitiveColors.transparent,
-        disabledContentColor = colors.smoke,
+        containerColor = if (pressed) SBBColors.black else SBBColors.charcoal,
+        contentColor = SBBColors.white,
+        disabledContainerColor = Color(0x00000000),
+        disabledContentColor = SBBColors.smoke,
     )
 }
 
@@ -192,12 +191,10 @@ private fun borderColors(enabled: Boolean): BorderStroke = if (SBBTheme.isDarkMo
 
 @Composable
 private fun lightModeBorder(enabled: Boolean): BorderStroke {
-    val colors = SBBTheme.colors
-    return BorderStroke(1.dp, if (enabled) colors.smoke else colors.cloud)
+    return BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.cloud)
 }
 
 @Composable
 private fun darkModeBorder(enabled: Boolean): BorderStroke {
-    val colors = SBBTheme.colors
-    return BorderStroke(1.dp, if (enabled) colors.smoke else colors.iron)
+    return BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.iron)
 }

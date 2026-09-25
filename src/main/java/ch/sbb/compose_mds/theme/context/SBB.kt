@@ -3,7 +3,7 @@ package ch.sbb.compose_mds.theme.context
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.context.colors.ContextAdditionalColors
 import ch.sbb.compose_mds.theme.context.colors.ContextColors
 import ch.sbb.compose_mds.theme.context.colors.ContextFunctionalColors
@@ -11,27 +11,27 @@ import ch.sbb.compose_mds.theme.context.colors.ContextFunctionalColors
 // Define light mode colors
 fun contextSBBColorsLight(): ContextColors =
     ContextColors(
-        primary = PrimitiveColors.red,
-        primary125 = PrimitiveColors.red125,
-        primary150 = PrimitiveColors.red150,
-        primary85 = PrimitiveColors.red85,
-        background = PrimitiveColors.white,
-        onBackground = PrimitiveColors.black,
-        white = PrimitiveColors.white,
-        black = PrimitiveColors.black,
+        primary = SBBColors.red,
+        primary125 = SBBColors.red125,
+        primary150 = SBBColors.red150,
+        primary85 = SBBColors.red85,
+        background = SBBColors.white,
+        onBackground = SBBColors.black,
+        white = SBBColors.white,
+        black = SBBColors.black,
     )
 
 // Define dark mode colors
 fun contextSBBColorsDark(): ContextColors =
     ContextColors(
-        primary = PrimitiveColors.red,
-        primary125 = PrimitiveColors.red125,
-        primary150 = PrimitiveColors.red150,
-        primary85 = PrimitiveColors.red85,
-        background = PrimitiveColors.black,
-        onBackground = PrimitiveColors.white,
-        white = PrimitiveColors.white,
-        black = PrimitiveColors.black,
+        primary = SBBColors.red,
+        primary125 = SBBColors.red125,
+        primary150 = SBBColors.red150,
+        primary85 = SBBColors.red85,
+        background = SBBColors.black,
+        onBackground = SBBColors.white,
+        white = SBBColors.white,
+        black = SBBColors.black,
     )
 
 fun contextSBBAdditionalColorsLight() = ContextAdditionalColors()

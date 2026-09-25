@@ -1,17 +1,13 @@
 package ch.sbb.compose_mds.theme
 
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 
-@Deprecated("Please use the ch.sbb.compose_mds.theme.PrimitiveColors instead")
 object SBBColors {
-    // colors
+    // standard SBB colors
     val red = Color(0xFFEB0000)
+    val red85 = Color(0xFFFF3838)
     val red125 = Color(0xFFC60018)
     val red150 = Color(0xFFA20013)
-    val redDarkMode = Color(0xFFFF3838)
     val white = Color(0xFFFFFFFF)
     val milk = Color(0xFFF6F6F6)
     val cloud = Color(0xFFE5E5E5)
@@ -32,23 +28,53 @@ object SBBColors {
     val blue = Color(0xFF2D327D)
     val transparent = Color(0x00000000)
 
-    // functional colors
-    val sky = Color(0xFF0079C7)
+    // additional colors
+    val sky = Color(0xFF0074BF)
     val night = Color(0xFF143A85)
     val violet = Color(0xFF6F2282)
-    val pink = Color(0xFFCF4082)
-    val autumn = Color(0xFFE84E10)
+    val pink = Color(0xFFC7387A)
+    val autumn = Color(0xFFCF3B00)
     val orange = Color(0xFFF27E00)
     val peach = Color(0xFFFCBB00)
     val lemon = Color(0xFFFFDE15)
-    val brown = Color(0xFFB76000)
-    val green = Color(0xFF008A36)
-    val turquoise = Color(0xFF00a59b)
+    val brown = Color(0xFFA05400)
+    val green = Color(0xFF008233)
+    val turquoise = Color(0xFF007E84)
 
-    // off brand colors
-    val royal: Color = Color(0xFF06348B)
+    // additional colors dark
+    val skyDark = Color(0xFF128EDE)
+    val nightDark = Color(0xFF6587CA)
+    val violetDark = Color(0xFFB36CC5)
+    val pinkDark = Color(0xFFE45295)
+    val autumnDark = Color(0xFFF05313)
+    val orangeDark = Color(0xFFFB8E19)
+    val peachDark = Color(0xFFFFC727)
+    val lemonDark = Color(0xFFFFE547)
+    val brownDark = Color(0xFFCF6F04)
+    val greenDark = Color(0xFF109D47)
+    val turquoiseDark = Color(0xFF00A59B)
+
+    // functional colors
+    val success = Color(0xFF008233)
+    val warning = Color(0xFFFCBB00)
+    val error = red125
+    val brand = red
+    val product = red
+
+    // functional colors dark
+    val successDark = Color(0xFF109D47)
+    val warningDark = Color(0xFFFFC727)
+    val errorDark = red85
+    val brandDark = brand
+    val productDark = product
+
+    // off brand / safety relevant colors
+    val royal = Color(0xFF06348B)
+    val royalDark = Color(0xFF0053EF)
+    val royal85 = Color(0xFF4077DF)
+    val royal85Dark = royal85
     val royal125 = Color(0xFF032668)
+    val royal125Dark = Color(0xFF245ECB)
     val royal150 = Color(0xFF021C4E)
+    val royal150Dark = Color(0xFF3C65B3)
 }
-
-val Color.disabledOnSurface @Composable get() = copy(alpha = .5f).compositeOver(MaterialTheme.colorScheme.surface)
