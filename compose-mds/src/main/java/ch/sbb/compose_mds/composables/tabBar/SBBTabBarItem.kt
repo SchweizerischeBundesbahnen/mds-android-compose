@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.toSize
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 
 @Composable
 internal fun RowScope.SBBTabBarItem(
@@ -59,7 +59,7 @@ internal fun RowScope.SBBTabBarItem(
     val backgroundColor by animateColorAsState(
         targetValue =
             when (state) {
-                SBBTabBarItemState.None -> PrimitiveColors.transparent
+                SBBTabBarItemState.None -> SBBColors.transparent
                 SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.onSurfaceVariant
                 SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.primary
             },
@@ -81,7 +81,8 @@ internal fun RowScope.SBBTabBarItem(
                     role = Role.Tab
                     selected = state == SBBTabBarItemState.Selected
                     onClick { false }
-                }.pointerInput(Unit) {
+                }
+                .pointerInput(Unit) {
                     detectTapGestures(
                         onPress = onPress,
                     )
@@ -109,7 +110,8 @@ internal fun RowScope.SBBTabBarItem(
                                     it.size.toSize(),
                                 ),
                             )
-                        }.size(if (portrait) 44.dp else 36.dp)
+                        }
+                        .size(if (portrait) 44.dp else 36.dp)
                         .clip(CircleShape)
                         .background(color = backgroundColor)
                         .padding(10.dp),

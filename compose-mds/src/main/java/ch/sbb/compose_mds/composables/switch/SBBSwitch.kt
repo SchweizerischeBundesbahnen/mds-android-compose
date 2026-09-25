@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TickSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -125,8 +125,12 @@ private fun SwitchKnob(
                             color = Color.Black.copy(alpha = 0.3f),
                             offset = DpOffset(0.dp, 1.dp),
                         ),
-                ).background(colors.knobBackgroundColor, shape = CircleShape)
-                .border(border = BorderStroke(width = 1.dp, color = borderColor), shape = CircleShape),
+                )
+                .background(colors.knobBackgroundColor, shape = CircleShape)
+                .border(
+                    border = BorderStroke(width = 1.dp, color = borderColor),
+                    shape = CircleShape
+                ),
         contentAlignment = Alignment.Center,
     ) {
         AnimatedVisibility(
@@ -171,7 +175,7 @@ private fun SBBSwitchPreview() {
         Column(
             modifier =
                 Modifier
-                    .background(if (darkTheme) PrimitiveColors.black else PrimitiveColors.white)
+                    .background(if (darkTheme) SBBColors.black else SBBColors.white)
                     .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {

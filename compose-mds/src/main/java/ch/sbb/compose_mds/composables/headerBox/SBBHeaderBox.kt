@@ -24,6 +24,7 @@ import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Custom
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Default
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.WithButton
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -118,7 +119,7 @@ object SBBHeaderBox {
             Box(
                 modifier =
                     Modifier
-                        .background(SBBTheme.colors.primary)
+                        .background(SBBTheme.colorScheme.primary)
                         .fillMaxWidth()
                         .height(SBBSpacing.Large),
             )
@@ -215,13 +216,11 @@ object SBBHeaderBox {
 
     @Composable
     private fun iconColor(): Color {
-        val colors = SBBTheme.colors
-        return if (SBBTheme.isDarkMode) colors.white else colors.black
+        return if (SBBTheme.isDarkMode) SBBColors.white else SBBColors.black
     }
 
     @Composable
     private fun flapBackgroundColor(): Color {
-        val colors = SBBTheme.colors
-        return if (SBBTheme.isDarkMode) colors.midnight else colors.cloud
+        return if (SBBTheme.isDarkMode) SBBColors.midnight else SBBColors.cloud
     }
 }

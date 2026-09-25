@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -121,43 +122,43 @@ fun defaultSBBChipStyle(): SBBChipStyle =
                 SBBChipColorVariants(
                     enabledLight =
                         SBBChipColors(
-                            background = SBBTheme.colors.white,
-                            backgroundNumber = SBBTheme.colors.primary,
-                            backgroundClose = SBBTheme.colors.cloud,
-                            border = SBBTheme.colors.granite,
-                            text = SBBTheme.colors.black,
-                            textNumber = SBBTheme.colors.white,
-                            iconClose = SBBTheme.colors.black,
+                            background = SBBColors.white,
+                            backgroundNumber = SBBTheme.colorScheme.primary,
+                            backgroundClose = SBBColors.cloud,
+                            border = SBBColors.granite,
+                            text = SBBColors.black,
+                            textNumber = SBBColors.white,
+                            iconClose = SBBColors.black,
                         ),
                     enabledDark =
                         SBBChipColors(
-                            background = SBBTheme.colors.charcoal,
-                            backgroundNumber = SBBTheme.colors.primary,
-                            backgroundClose = SBBTheme.colors.granite,
-                            border = SBBTheme.colors.graphite,
-                            text = SBBTheme.colors.white,
-                            textNumber = SBBTheme.colors.white,
-                            iconClose = SBBTheme.colors.white,
+                            background = SBBColors.charcoal,
+                            backgroundNumber = SBBTheme.colorScheme.primary,
+                            backgroundClose = SBBColors.granite,
+                            border = SBBColors.graphite,
+                            text = SBBColors.white,
+                            textNumber = SBBColors.white,
+                            iconClose = SBBColors.white,
                         ),
                     disabledLight =
                         SBBChipColors(
-                            background = SBBTheme.colors.white,
-                            backgroundNumber = SBBTheme.colors.graphite,
-                            backgroundClose = SBBTheme.colors.milk,
-                            border = SBBTheme.colors.cloud,
-                            text = SBBTheme.colors.granite,
-                            textNumber = SBBTheme.colors.white,
-                            iconClose = SBBTheme.colors.granite,
+                            background = SBBColors.white,
+                            backgroundNumber = SBBColors.graphite,
+                            backgroundClose = SBBColors.milk,
+                            border = SBBColors.cloud,
+                            text = SBBColors.granite,
+                            textNumber = SBBColors.white,
+                            iconClose = SBBColors.granite,
                         ),
                     disabledDark =
                         SBBChipColors(
-                            background = SBBTheme.colors.charcoal,
-                            backgroundNumber = SBBTheme.colors.iron,
-                            backgroundClose = SBBTheme.colors.iron,
-                            border = SBBTheme.colors.iron,
-                            text = SBBTheme.colors.graphite,
-                            textNumber = SBBTheme.colors.white,
-                            iconClose = SBBTheme.colors.graphite,
+                            background = SBBColors.charcoal,
+                            backgroundNumber = SBBColors.iron,
+                            backgroundClose = SBBColors.iron,
+                            border = SBBColors.iron,
+                            text = SBBColors.graphite,
+                            textNumber = SBBColors.white,
+                            iconClose = SBBColors.graphite,
                         ),
                 )
         override val layout

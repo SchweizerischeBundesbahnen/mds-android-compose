@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# 1.0.0
+
+This major release aims to bring a standard API to all SBB Compose components with Styles.
+
+### Changed
+
+*
+
+### Removed
+
+* Removed `SBBColors.: Use `SBBColors` instead
+* Removed `ThemeContext` colors like `OffBrandThemeContext`: Use `SBBColorScheme` instead
+
 # 0.2.0
 
 ### Features
@@ -70,7 +83,9 @@ All notable changes to this project will be documented in this file. See [standa
 * **Golden Files:** Enabled Git LFS to manage golden image files and added an initial set of golden files for existing components.
 
 ### Refactoring
-* **Color Primitives:** Replaced existing color definitions with `PrimitiveColors.kt` for clearer and more consistent naming, aligning with design system terminology.
+
+* **Color Primitives:** Replaced existing color definitions with `SBBColors.kt` for clearer and more
+  consistent naming, aligning with design system terminology.
 
 ### Chore
 * **Golden Files:** Updated golden files to reflect changes introduced by the new context theming.

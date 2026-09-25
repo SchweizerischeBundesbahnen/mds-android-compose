@@ -27,7 +27,7 @@ import ch.sbb.compose_mds.R
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronLeftSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 import ch.sbb.compose_mds.theme.asImageVector
 
@@ -49,7 +49,7 @@ fun SBBHeader.Default(
         Icon(
             imageVector = R.drawable.logo_sbb.asImageVector,
             contentDescription = "SBB logo",
-            tint = PrimitiveColors.white,
+            tint = SBBColors.white,
         )
     },
 ) {
@@ -62,7 +62,7 @@ fun SBBHeader.Default(
         actions = actions,
         modifier =
             modifier
-                .background(SBBTheme.colors.primary)
+                .background(SBBTheme.colorScheme.primary)
                 .padding(horizontal = 14.dp)
                 .padding(bottom = 30.dp),
     )
@@ -84,7 +84,7 @@ fun SBBHeader.Small(
         Icon(
             imageVector = R.drawable.logo_sbb.asImageVector,
             contentDescription = "SBB logo",
-            tint = PrimitiveColors.white,
+            tint = SBBColors.white,
         )
     },
 ) {
@@ -97,7 +97,7 @@ fun SBBHeader.Small(
         actions = actions,
         modifier =
             modifier
-                .background(SBBTheme.colors.primary)
+                .background(SBBTheme.colorScheme.primary)
                 .padding(horizontal = 14.dp),
     )
 }
@@ -139,15 +139,15 @@ private fun SBBHeaderInternal(
         modifier = modifier,
         colors =
             TopAppBarDefaults.topAppBarColors(
-                containerColor = SBBTheme.colors.primary,
-                titleContentColor = PrimitiveColors.white,
+                containerColor = SBBTheme.colorScheme.primary,
+                titleContentColor = SBBColors.white,
             ),
         title = {
             Text(
                 text = title,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = PrimitiveColors.white,
+                color = SBBColors.white,
                 style = MaterialTheme.typography.bodyLarge,
             )
         },
@@ -164,7 +164,7 @@ private fun SBBHeaderInternal(
                         ) {
                             Text(
                                 text = stringResource(android.R.string.cancel),
-                                color = PrimitiveColors.white,
+                                color = SBBColors.white,
                                 style = MaterialTheme.typography.bodySmall,
                             )
                         }
@@ -176,7 +176,7 @@ private fun SBBHeaderInternal(
                             modifier = Modifier.clickable { back() },
                             imageVector = SBBIcons.Small.ChevronLeftSmall,
                             contentDescription = "back",
-                            tint = PrimitiveColors.white,
+                            tint = SBBColors.white,
                         )
                     }
                 }

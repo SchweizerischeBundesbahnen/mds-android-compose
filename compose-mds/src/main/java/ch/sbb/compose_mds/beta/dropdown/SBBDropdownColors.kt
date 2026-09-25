@@ -1,9 +1,8 @@
 package ch.sbb.compose_mds.beta.dropdown
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 
 /**
  * Colors used by [SBBDropdown].
@@ -24,28 +23,26 @@ data class SBBDropdownColors(
 
 @Composable
 internal fun lightDropdownColors(enabled: Boolean): SBBDropdownColors {
-    val colors = SBBTheme.colors
     return SBBDropdownColors(
-        valueTextColor = if (enabled) PrimitiveColors.black else colors.granite,
-        labelColor = PrimitiveColors.granite,
-        underlineColor = PrimitiveColors.cloud,
-        placeholderColor = PrimitiveColors.granite,
-        errorColor = PrimitiveColors.red,
-        iconColor = if (enabled) PrimitiveColors.black else colors.granite,
-        dropdownIconColor = if (enabled) PrimitiveColors.black else colors.granite,
+        valueTextColor = if (enabled) SBBColors.black else SBBColors.granite,
+        labelColor = SBBColors.granite,
+        underlineColor = SBBColors.cloud,
+        placeholderColor = SBBColors.granite,
+        errorColor = SBBColors.error,
+        iconColor = if (enabled) SBBColors.black else SBBColors.granite,
+        dropdownIconColor = if (enabled) SBBColors.black else SBBColors.granite,
     )
 }
 
 @Composable
 internal fun darkDropdownColors(enabled: Boolean): SBBDropdownColors {
-    val colors = SBBTheme.colors
     return SBBDropdownColors(
-        valueTextColor = if (enabled) PrimitiveColors.white else colors.graphite,
-        labelColor = PrimitiveColors.graphite,
-        underlineColor = PrimitiveColors.iron,
-        placeholderColor = PrimitiveColors.graphite,
-        errorColor = PrimitiveColors.redDarkMode,
-        iconColor = if (enabled) PrimitiveColors.white else colors.graphite,
-        dropdownIconColor = if (enabled) PrimitiveColors.white else colors.graphite,
+        valueTextColor = if (enabled) SBBColors.white else SBBColors.graphite,
+        labelColor = SBBColors.graphite,
+        underlineColor = SBBColors.iron,
+        placeholderColor = SBBColors.graphite,
+        errorColor = SBBColors.errorDark,
+        iconColor = if (enabled) SBBColors.white else SBBColors.graphite,
+        dropdownIconColor = if (enabled) SBBColors.white else SBBColors.graphite,
     )
 }

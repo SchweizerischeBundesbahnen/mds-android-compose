@@ -2,36 +2,37 @@ package ch.sbb.compose_mds.composables.switch
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 private const val disabledAlpha = 0.4f
 
 @Composable
 internal fun lightSwitchColors(enabled: Boolean): SBBSwitchColors {
-    val colors = SBBTheme.colors
+    val colorScheme = SBBTheme.colorScheme
     val alpha = if (enabled) 1f else disabledAlpha
     return SBBSwitchColors(
-        knobBackgroundColor = colors.white,
-        knobBorderColor = colors.granite,
-        checkedKnobBorderColor = colors.primary,
-        iconColor = colors.primary,
-        backgroundColor = colors.graphite,
-        checkedBackgroundColor = colors.primary,
-    ).withAlpha(alpha, colors.milk)
+        knobBackgroundColor = SBBColors.white,
+        knobBorderColor = SBBColors.granite,
+        checkedKnobBorderColor = colorScheme.primary,
+        iconColor = colorScheme.primary,
+        backgroundColor = SBBColors.graphite,
+        checkedBackgroundColor = colorScheme.primary,
+    ).withAlpha(alpha, SBBColors.milk)
 }
 
 @Composable
 internal fun darkSwitchColors(enabled: Boolean): SBBSwitchColors {
-    val colors = SBBTheme.colors
+    val colorScheme = SBBTheme.colorScheme
     val alpha = if (enabled) 1f else disabledAlpha
     return SBBSwitchColors(
-        knobBackgroundColor = colors.white,
-        knobBorderColor = colors.granite,
-        checkedKnobBorderColor = colors.primary,
-        iconColor = colors.primary,
-        backgroundColor = colors.graphite,
-        checkedBackgroundColor = colors.primary,
-    ).withAlpha(alpha, colors.midnight)
+        knobBackgroundColor = SBBColors.white,
+        knobBorderColor = SBBColors.granite,
+        checkedKnobBorderColor = colorScheme.primary,
+        iconColor = colorScheme.primary,
+        backgroundColor = SBBColors.graphite,
+        checkedBackgroundColor = colorScheme.primary,
+    ).withAlpha(alpha, SBBColors.midnight)
 }
 
 data class SBBSwitchColors(

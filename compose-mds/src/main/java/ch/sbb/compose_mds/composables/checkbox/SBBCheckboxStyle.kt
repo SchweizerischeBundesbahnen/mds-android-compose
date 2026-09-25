@@ -12,6 +12,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -93,35 +94,35 @@ fun defaultSBBCheckboxStyle(): SBBCheckboxStyle =
                 SBBCheckboxColorVariants(
                     enabledLight =
                         SBBCheckboxColors(
-                            background = SBBTheme.colors.white,
-                            border = SBBTheme.colors.granite,
-                            tick = SBBTheme.colors.primary,
-                            icon = SBBTheme.colors.black,
-                            text = SBBTheme.colors.black,
+                            background = SBBColors.white,
+                            border = SBBColors.granite,
+                            tick = SBBTheme.colorScheme.primary,
+                            icon = SBBColors.black,
+                            text = SBBColors.black,
                         ),
                     enabledDark =
                         SBBCheckboxColors(
-                            background = SBBTheme.colors.charcoal,
-                            border = SBBTheme.colors.graphite,
-                            tick = SBBTheme.colors.primary,
-                            icon = SBBTheme.colors.white,
-                            text = SBBTheme.colors.white,
+                            background = SBBColors.charcoal,
+                            border = SBBColors.graphite,
+                            tick = SBBTheme.colorScheme.primary,
+                            icon = SBBColors.white,
+                            text = SBBColors.white,
                         ),
                     disabledLight =
                         SBBCheckboxColors(
-                            background = SBBTheme.colors.white,
-                            border = SBBTheme.colors.cloud,
-                            tick = SBBTheme.colors.granite,
-                            icon = SBBTheme.colors.granite,
-                            text = SBBTheme.colors.granite,
+                            background = SBBColors.white,
+                            border = SBBColors.cloud,
+                            tick = SBBColors.granite,
+                            icon = SBBColors.granite,
+                            text = SBBColors.granite,
                         ),
                     disabledDark =
                         SBBCheckboxColors(
-                            background = SBBTheme.colors.charcoal,
-                            border = SBBTheme.colors.iron,
-                            tick = SBBTheme.colors.graphite,
-                            icon = SBBTheme.colors.graphite,
-                            text = SBBTheme.colors.granite,
+                            background = SBBColors.charcoal,
+                            border = SBBColors.iron,
+                            tick = SBBColors.graphite,
+                            icon = SBBColors.graphite,
+                            text = SBBColors.granite,
                         ),
                 )
 

@@ -13,7 +13,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
 @PreviewLightDark
@@ -58,7 +58,7 @@ private fun PreviewSBBHeaderBoxCustom() {
                     Box(
                         modifier =
                             Modifier
-                                .background(color = PrimitiveColors.violet)
+                                .background(color = SBBColors.violet)
                                 .fillMaxWidth()
                                 .height(24.dp),
                     )
@@ -67,7 +67,7 @@ private fun PreviewSBBHeaderBoxCustom() {
             Box(
                 modifier =
                     Modifier
-                        .background(color = PrimitiveColors.violet)
+                        .background(color = SBBColors.violet)
                         .fillMaxWidth()
                         .height(36.dp),
             )

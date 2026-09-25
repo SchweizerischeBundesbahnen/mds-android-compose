@@ -18,7 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -43,7 +43,9 @@ fun SBBPickerWheelContainer(
     val colors by style.resolvedColors()
 
     Box(
-        modifier = modifier.height(style.itemSizes.pickerHeight).padding(contentPadding),
+        modifier = modifier
+            .height(style.itemSizes.pickerHeight)
+            .padding(contentPadding),
         contentAlignment = Alignment.Center,
     ) {
         Box(
@@ -71,7 +73,7 @@ fun SBBPickerWheelContainer(
                         Brush.verticalGradient(
                             listOf(
                                 if (boxed) colors.boxedBackground else colors.background,
-                                PrimitiveColors.transparent,
+                                SBBColors.transparent,
                             ),
                         ),
                     ),
@@ -86,7 +88,7 @@ fun SBBPickerWheelContainer(
                     .background(
                         Brush.verticalGradient(
                             listOf(
-                                PrimitiveColors.transparent,
+                                SBBColors.transparent,
                                 if (boxed) colors.boxedBackground else colors.background,
                             ),
                         ),

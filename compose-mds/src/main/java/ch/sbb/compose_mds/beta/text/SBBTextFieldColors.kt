@@ -3,7 +3,7 @@ package ch.sbb.compose_mds.beta.text
 import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 
 /**
  * Colors used by [SBBTextInput] and [SBBTextarea].
@@ -28,36 +28,34 @@ data class SBBTextFieldColors(
 
 @Composable
 internal fun lightTextFieldColors(enabled: Boolean): SBBTextFieldColors {
-    val colors = SBBTheme.colors
     return SBBTextFieldColors(
-        inputTextColor = if (enabled) PrimitiveColors.black else colors.granite,
-        labelColor = PrimitiveColors.granite,
-        underlineColor = PrimitiveColors.cloud,
-        focusedUnderlineColor = PrimitiveColors.black,
-        cursorColor = PrimitiveColors.sky,
-        placeholderColor = PrimitiveColors.granite,
-        errorColor = PrimitiveColors.red,
-        selectionHandleColor = PrimitiveColors.red,
-        selectionBackgroundColor = PrimitiveColors.red.copy(alpha = 0.38f),
-        iconColor = if (enabled) PrimitiveColors.black else colors.granite,
-        trailingIconColor = if (enabled) PrimitiveColors.black else colors.granite,
+        inputTextColor = if (enabled) SBBColors.black else SBBColors.granite,
+        labelColor = SBBColors.granite,
+        underlineColor = SBBColors.cloud,
+        focusedUnderlineColor = SBBColors.black,
+        cursorColor = SBBColors.sky,
+        placeholderColor = SBBColors.granite,
+        errorColor = SBBColors.red,
+        selectionHandleColor = SBBColors.red,
+        selectionBackgroundColor = SBBColors.red.copy(alpha = 0.38f),
+        iconColor = if (enabled) SBBColors.black else SBBColors.granite,
+        trailingIconColor = if (enabled) SBBColors.black else SBBColors.granite,
     )
 }
 
 @Composable
 internal fun darkTextFieldColors(enabled: Boolean): SBBTextFieldColors {
-    val colors = SBBTheme.colors
     return SBBTextFieldColors(
-        inputTextColor = if (enabled) PrimitiveColors.white else colors.graphite,
-        labelColor = PrimitiveColors.graphite,
-        underlineColor = PrimitiveColors.iron,
-        focusedUnderlineColor = PrimitiveColors.white,
-        cursorColor = PrimitiveColors.sky,
-        placeholderColor = PrimitiveColors.graphite,
-        errorColor = PrimitiveColors.redDarkMode,
-        selectionHandleColor = PrimitiveColors.redDarkMode,
-        selectionBackgroundColor = PrimitiveColors.redDarkMode.copy(alpha = 0.38f),
-        iconColor = if (enabled) PrimitiveColors.white else colors.graphite,
-        trailingIconColor = if (enabled) PrimitiveColors.white else colors.graphite,
+        inputTextColor = if (enabled) SBBColors.white else SBBColors.graphite,
+        labelColor = SBBColors.graphite,
+        underlineColor = SBBColors.iron,
+        focusedUnderlineColor = SBBColors.white,
+        cursorColor = SBBColors.sky,
+        placeholderColor = SBBColors.graphite,
+        errorColor = SBBColors.errorDark,
+        selectionHandleColor = SBBTheme.colorScheme.selection,
+        selectionBackgroundColor = SBBTheme.colorScheme.selection.copy(alpha = 0.38f),
+        iconColor = if (enabled) SBBColors.white else SBBColors.graphite,
+        trailingIconColor = if (enabled) SBBColors.white else SBBColors.graphite,
     )
 }

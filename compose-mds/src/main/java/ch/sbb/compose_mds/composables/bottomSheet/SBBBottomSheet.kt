@@ -24,7 +24,7 @@ import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CrossSmall
-import ch.sbb.compose_mds.theme.PrimitiveColors
+import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 import kotlinx.coroutines.launch
@@ -59,7 +59,7 @@ fun SBBBottomSheet(
         modifier = Modifier.statusBarsPadding(),
         onDismissRequest = onDismissRequest,
         sheetState = sheetState,
-        containerColor = if (SBBTheme.isDarkMode) PrimitiveColors.midnight else PrimitiveColors.milk,
+        containerColor = if (SBBTheme.isDarkMode) SBBColors.midnight else SBBColors.milk,
         shape = RoundedCornerShape(topStart = SBBSpacing.Medium, topEnd = SBBSpacing.Medium),
         dragHandle = null,
         sheetGesturesEnabled = isClosable,

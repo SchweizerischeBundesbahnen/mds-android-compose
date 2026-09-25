@@ -10,7 +10,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-internal val LocalSBBTypography = staticCompositionLocalOf<SBBTypography> { SBBTypography() }
+internal val LocalSBBTypography = staticCompositionLocalOf { SBBTypography() }
 
 // Font sizes
 val xxLargeFontSize = 30.sp
