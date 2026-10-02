@@ -21,6 +21,7 @@ import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
+import ch.sbb.compose_mds.preview.SBBComponentPreviewWrapper
 import ch.sbb.compose_mds.preview.SBBThemeConfigProvider
 import ch.sbb.compose_mds.preview.ThemePreviewConfig
 import ch.sbb.compose_mds.sbbicons.SBBIcons
@@ -276,7 +277,7 @@ private fun showToast(
 fun Preview_SBBPrimaryButton(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
-    SBBTheme(colorScheme = config.colorScheme, includeSurface = true) {
+    SBBComponentPreviewWrapper(config) {
         SBBPrimaryButtonSection()
     }
 }
@@ -286,7 +287,7 @@ fun Preview_SBBPrimaryButton(
 fun Preview_SBBSecondaryButton(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
-    SBBTheme(colorScheme = config.colorScheme, includeSurface = true) {
+    SBBComponentPreviewWrapper(config) {
         SBBSecondaryButtonSection()
     }
 }
