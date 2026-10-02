@@ -5,25 +5,36 @@ import ch.sbb.compose_mds.theme.SBBColorScheme
 
 internal const val PREVIEW_GROUP = "SBB Themes"
 
-/**
- * Data class to hold a single theme configuration for iteration.
- */
+enum class ThemePreviewVariant {
+    SBB,
+    OFF_BRAND,
+    SAFETY,
+}
+
 class ThemePreviewConfig(
-    val colorScheme: SBBColorScheme,
+    val variant: ThemePreviewVariant,
     val group: String = PREVIEW_GROUP,
-)
+) {
+    fun colorScheme(isDarkMode: Boolean): SBBColorScheme =
+        when (variant) {
+            ThemePreviewVariant.SBB -> SBBColorScheme.sbb(isDarkMode)
+            ThemePreviewVariant.OFF_BRAND -> SBBColorScheme.offBrand(isDarkMode)
+            ThemePreviewVariant.SAFETY -> SBBColorScheme.safety(isDarkMode)
+        }
+}
 
 /**
- * Provides a sequence of ThemePreviewConfig objects for @PreviewParameter.
- * Each item in this sequence will generate a separate preview.
- *
- * TODO: How to handle dark / light mode in config
+ * Provides a sequence of ThemePreviewConfig with all given SBBColorScheme for @PreviewParameter.
  */
 class SBBThemeConfigProvider : PreviewParameterProvider<ThemePreviewConfig> {
+    private val configs = listOf(
+        ThemePreviewConfig(variant = ThemePreviewVariant.SBB),
+        ThemePreviewConfig(variant = ThemePreviewVariant.OFF_BRAND),
+        ThemePreviewConfig(variant = ThemePreviewVariant.SAFETY),
+    )
+
     override val values: Sequence<ThemePreviewConfig> =
-        sequenceOf(
-            ThemePreviewConfig(colorScheme = SBBColorScheme.sbb(isDarkMode = false)),
-            ThemePreviewConfig(colorScheme = SBBColorScheme.offBrand(isDarkMode = false)),
-            ThemePreviewConfig(colorScheme = SBBColorScheme.safety(isDarkMode = false)),
-        )
+        configs.asSequence()
+
+    override fun getDisplayName(index: Int): String? = configs.getOrNull(index)?.variant?.name
 }
