@@ -15,9 +15,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.checkbox.SBBCheckboxItem
 import ch.sbb.compose_mds.composables.listItem.SBBList
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.composables.radio.SBBRadioItem
 import ch.sbb.compose_mds.composables.switch.SBBSwitchItem
@@ -27,7 +27,6 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.medium.ChevronSmallRightMedium
 import ch.sbb.compose_mds.sbbicons.medium.UnicornMedium
 import ch.sbb.compose_mds.sbbicons.small.FaceGrinningSmall
-import ch.sbb.compose_mds.theme.SBBConst
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -48,7 +47,7 @@ fun ListItemPage() {
         modifier =
             Modifier
                 .verticalScroll(scrollState)
-                .padding(horizontal = SBBConst.DEFAULT_HORIZONTAL_PADDING),
+                .padding(horizontal = SBBSpacing.XSmall),
     ) {
         SBBListHeader(title = "List items")
 

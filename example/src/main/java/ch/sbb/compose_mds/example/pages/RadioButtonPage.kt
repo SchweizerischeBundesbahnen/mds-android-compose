@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -16,17 +16,19 @@ import ch.sbb.compose_mds.composables.radio.SBBRadio
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.TrainSmall
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun RadioButtonPage() {
   var selectedValue: Int by remember { mutableIntStateOf(0) }
   Column(
       modifier =
-          Modifier.verticalScroll(
+          Modifier
+              .verticalScroll(
                   state = rememberScrollState(),
               )
-              .defaultPadding(),
+              .padding(SBBSpacing.XSmall),
   ) {
     SBBListHeader(title = "RadioButton")
     SBBRadio(

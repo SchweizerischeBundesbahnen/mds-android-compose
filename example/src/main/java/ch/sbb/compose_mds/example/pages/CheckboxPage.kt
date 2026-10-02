@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -18,16 +17,18 @@ import ch.sbb.compose_mds.composables.checkbox.SBBCheckbox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.AppIconSmall
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun CheckboxPage() {
   Column(
       modifier =
-          Modifier.verticalScroll(
+          Modifier
+              .verticalScroll(
                   state = rememberScrollState(),
               )
-              .defaultPadding(),
+              .padding(SBBSpacing.XSmall),
   ) {
     Text("Checkbox")
     var checkedState: Boolean? by remember { mutableStateOf(false) }

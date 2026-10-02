@@ -8,13 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 @Composable
 fun SBBListHeader(
     title: String,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = defaultPadding,
+    contentPadding: PaddingValues = PaddingValues(
+        horizontal = SBBSpacing.XSmall,
+        vertical = SBBSpacing.Medium,
+    ),
     maxLines: Int = Int.MAX_VALUE,
     textStyle: TextStyle = MaterialTheme.typography.bodySmall,
 ) {

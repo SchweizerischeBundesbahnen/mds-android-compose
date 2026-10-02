@@ -1,11 +1,11 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -17,62 +17,65 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.all
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun IconPage() {
-  Column(
-      modifier = Modifier.defaultPadding().fillMaxSize().verticalScroll(rememberScrollState()),
-  ) {
-    SBBListHeader(title = "Small Icons")
-    SBBContentBox {
-      LazyVerticalGrid(
-          modifier = Modifier.heightIn(max = 500.dp),
-          columns = GridCells.Adaptive(24.dp),
-          verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-          horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-          contentPadding = PaddingValues(SBBSpacing.XSmall),
-      ) {
-        items(SBBIcons.Small.all) {
-          Icon(
-              imageVector = it,
-              contentDescription = null,
-          )
+    Column(
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
+    ) {
+        SBBListHeader(title = "Small Icons")
+        SBBContentBox {
+            LazyVerticalGrid(
+                modifier = Modifier.heightIn(max = 500.dp),
+                columns = GridCells.Adaptive(24.dp),
+                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                contentPadding = PaddingValues(SBBSpacing.XSmall),
+            ) {
+                items(SBBIcons.Small.all) {
+                    Icon(
+                        imageVector = it,
+                        contentDescription = null,
+                    )
+                }
+            }
         }
-      }
-    }
-    SBBListHeader(title = "Medium Icons")
-    SBBContentBox {
-      LazyVerticalGrid(
-          modifier = Modifier.heightIn(max = 500.dp),
-          columns = GridCells.Adaptive(36.dp),
-          verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-          horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-          contentPadding = PaddingValues(SBBSpacing.XSmall),
-      ) {
-        items(SBBIcons.Medium.all) {
-          Icon(
-              imageVector = it,
-              contentDescription = null,
-          )
+        SBBListHeader(title = "Medium Icons")
+        SBBContentBox {
+            LazyVerticalGrid(
+                modifier = Modifier.heightIn(max = 500.dp),
+                columns = GridCells.Adaptive(36.dp),
+                verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+                contentPadding = PaddingValues(SBBSpacing.XSmall),
+            ) {
+                items(SBBIcons.Medium.all) {
+                    Icon(
+                        imageVector = it,
+                        contentDescription = null,
+                    )
+                }
+            }
         }
-      }
     }
-  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_IconPage() {
-  SBBTheme(includeSurface = true) {
-    IconPage()
-  }
+    SBBTheme(includeSurface = true) {
+        IconPage()
+    }
 }
