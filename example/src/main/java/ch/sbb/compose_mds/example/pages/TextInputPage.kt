@@ -1,10 +1,10 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,149 +19,152 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.beta.text.SBBTextInput
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
 @Composable
 fun TextInputPage() {
-  var showSheet by remember { mutableStateOf(false) }
+    var showSheet by remember { mutableStateOf(false) }
 
-  if (showSheet) {
-    SBBBottomSheet(
-        onDismissRequest = { showSheet = false },
-        sheetState = rememberModalBottomSheetState(),
-        title = "Information",
-    ) {
-      Text("Lorem ipsum.")
+    if (showSheet) {
+        SBBBottomSheet(
+            onDismissRequest = { showSheet = false },
+            sheetState = rememberModalBottomSheetState(),
+            title = "Information",
+        ) {
+            Text("Lorem ipsum.")
+        }
     }
-  }
 
-  Column(
-      modifier =
-          Modifier.defaultPadding().fillMaxWidth().verticalScroll(state = rememberScrollState()),
-      verticalArrangement = Arrangement.spacedBy(16.dp),
-  ) {
-    SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
-    SBBTextareaErrorSection(onShowSheet = { showSheet = true })
-  }
+    Column(
+        modifier =
+            Modifier
+                .padding(SBBSpacing.XSmall)
+                .fillMaxWidth()
+                .verticalScroll(state = rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
+        SBBTextareaErrorSection(onShowSheet = { showSheet = true })
+    }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
-  var text1 by remember { mutableStateOf("") }
-  var text2 by remember { mutableStateOf("") }
-  var text3 by remember { mutableStateOf("Value") }
-  var text4 by remember { mutableStateOf("") }
+    var text1 by remember { mutableStateOf("") }
+    var text2 by remember { mutableStateOf("") }
+    var text3 by remember { mutableStateOf("Value") }
+    var text4 by remember { mutableStateOf("") }
 
-  SBBContentBox(
-      modifier = Modifier.fillMaxWidth(),
-      contentPadding = PaddingValues(SBBSpacing.XSmall),
-  ) {
-    SBBListHeader(title = "Default")
-    Column(
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
-      SBBTextInput(
-          value = text1,
-          onValueChange = { text1 = it },
-          label = "Label",
-      )
-      SBBTextInput(
-          value = "Value",
-          onValueChange = {},
-          label = "Disabled",
-          enabled = false,
-          leadingIcon = SBBIcons.Small.DogSmall,
-          trailingIcon = SBBIcons.Small.CircleInformationSmall,
-          onClickTrailingIcon = {
-            onShowSheet()
-          },
-      )
-      SBBTextInput(
-          value = text2,
-          onValueChange = { text2 = it },
-          label = "Leading icon",
-          leadingIcon = SBBIcons.Small.DogSmall,
-      )
-      SBBTextInput(
-          value = text3,
-          onValueChange = { text3 = it },
-          label = "Trailing icon",
-          trailingIcon = SBBIcons.Small.CircleInformationSmall,
-          onClickTrailingIcon = {
-            onShowSheet()
-          },
-      )
-      SBBTextInput(
-          value = text4,
-          onValueChange = { text4 = it },
-          label = "Leading and trailing icons",
-          leadingIcon = SBBIcons.Small.DogSmall,
-          trailingIcon = SBBIcons.Small.CircleInformationSmall,
-          onClickTrailingIcon = {
-            onShowSheet()
-          },
-      )
+        SBBListHeader(title = "Default")
+        Column(
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            SBBTextInput(
+                value = text1,
+                onValueChange = { text1 = it },
+                label = "Label",
+            )
+            SBBTextInput(
+                value = "Value",
+                onValueChange = {},
+                label = "Disabled",
+                enabled = false,
+                leadingIcon = SBBIcons.Small.DogSmall,
+                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                onClickTrailingIcon = {
+                    onShowSheet()
+                },
+            )
+            SBBTextInput(
+                value = text2,
+                onValueChange = { text2 = it },
+                label = "Leading icon",
+                leadingIcon = SBBIcons.Small.DogSmall,
+            )
+            SBBTextInput(
+                value = text3,
+                onValueChange = { text3 = it },
+                label = "Trailing icon",
+                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                onClickTrailingIcon = {
+                    onShowSheet()
+                },
+            )
+            SBBTextInput(
+                value = text4,
+                onValueChange = { text4 = it },
+                label = "Leading and trailing icons",
+                leadingIcon = SBBIcons.Small.DogSmall,
+                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                onClickTrailingIcon = {
+                    onShowSheet()
+                },
+            )
+        }
     }
-  }
 }
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
-  var text5 by remember { mutableStateOf("Error") }
-  SBBContentBox(
-      modifier = Modifier.fillMaxWidth(),
-      contentPadding = PaddingValues(SBBSpacing.XSmall),
-  ) {
-    SBBListHeader(title = "Error")
-    Column(
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+    var text5 by remember { mutableStateOf("Error") }
+    SBBContentBox(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(SBBSpacing.XSmall),
     ) {
-      SBBTextInput(
-          value = text5,
-          onValueChange = { text5 = it },
-          label = "Error with leading and trailing icons",
-          leadingIcon = SBBIcons.Small.DogSmall,
-          trailingIcon = SBBIcons.Small.CircleInformationSmall,
-          isError = true,
-          onClickTrailingIcon = {
-            onShowSheet()
-          },
-      )
-      SBBTextInput(
-          value = text5,
-          onValueChange = { text5 = it },
-          label = "Error",
-          isError = true,
-          errorText = "This is an error message",
-      )
+        SBBListHeader(title = "Error")
+        Column(
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            SBBTextInput(
+                value = text5,
+                onValueChange = { text5 = it },
+                label = "Error with leading and trailing icons",
+                leadingIcon = SBBIcons.Small.DogSmall,
+                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                isError = true,
+                onClickTrailingIcon = {
+                    onShowSheet()
+                },
+            )
+            SBBTextInput(
+                value = text5,
+                onValueChange = { text5 = it },
+                label = "Error",
+                isError = true,
+                errorText = "This is an error message",
+            )
+        }
     }
-  }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TextInputDefault() {
-  SBBTheme(includeSurface = true) {
-    SBBTextareaDefaultSection(onShowSheet = {})
-  }
+    SBBTheme(includeSurface = true) {
+        SBBTextareaDefaultSection(onShowSheet = {})
+    }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TextInputError() {
-  SBBTheme(includeSurface = true) {
-    SBBTextareaErrorSection(onShowSheet = {})
-  }
+    SBBTheme(includeSurface = true) {
+        SBBTextareaErrorSection(onShowSheet = {})
+    }
 }

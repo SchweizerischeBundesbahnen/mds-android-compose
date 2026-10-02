@@ -1,9 +1,9 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -13,42 +13,43 @@ import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBox
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ArrowsCircleSmall
-import ch.sbb.compose_mds.theme.SBBConst
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 private const val text =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris justo sapien, laoreet vel bibendum in, aliquet id libero. Mauris pellentesque nisl at urna semper porta. Nulla in justo sit amet ante tristique porttitor ac sit amet urna. In convallis neque sed nunc hendrerit convallis."
 
 @Composable
 fun NotificationBoxPage() {
-  Column(
-      modifier =
-          Modifier.defaultPadding()
-              .fillMaxWidth()
-              .verticalScroll(
-                  state = rememberScrollState(),
-              ),
-      verticalArrangement = Arrangement.spacedBy(SBBConst.DEFAULT_HORIZONTAL_PADDING),
-  ) {
-    SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)
-    SBBNotificationBox.Warning(text = text, interactionIcon = null)
-    SBBNotificationBox.Success(
-        title = "Title",
-        text = text,
-        interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
-    )
-    SBBNotificationBox.Information(
-        text = text,
-        onClick = {},
-        interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
-    )
-  }
+    Column(
+        modifier =
+            Modifier
+                .padding(SBBSpacing.XSmall)
+                .fillMaxWidth()
+                .verticalScroll(
+                    state = rememberScrollState(),
+                ),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+    ) {
+        SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)
+        SBBNotificationBox.Warning(text = text, interactionIcon = null)
+        SBBNotificationBox.Success(
+            title = "Title",
+            text = text,
+            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+        )
+        SBBNotificationBox.Information(
+            text = text,
+            onClick = {},
+            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+        )
+    }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_NotificationBoxPage() {
-  SBBTheme(includeSurface = true) {
-    NotificationBoxPage()
-  }
+    SBBTheme(includeSurface = true) {
+        NotificationBoxPage()
+    }
 }

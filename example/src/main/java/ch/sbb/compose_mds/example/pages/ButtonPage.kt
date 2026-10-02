@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -27,13 +28,12 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
-import ch.sbb.compose_mds.theme.defaultPadding
 
 @Composable
 fun ButtonPage() {
     Column(
         Modifier
-            .defaultPadding()
+            .padding(SBBSpacing.XSmall)
             .fillMaxWidth()
             .verticalScroll(
                 state = rememberScrollState(),

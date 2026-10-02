@@ -17,7 +17,9 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,9 +31,11 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.ChevronLeftSmall
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
-import ch.sbb.compose_mds.theme.asImageVector
 
 object SBBHeader
+
+private val Int.asImageVector
+    @Composable get() = ImageVector.vectorResource(id = this)
 
 /***
  * The default version of the SBB Header.
@@ -192,11 +196,13 @@ private fun Preview_SBBHeaderDefault() = _Preview_SBBHeaderDefault()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderDefaultWithNavigationBack() = _Preview_SBBHeaderDefaultWithNavigationBack()
+private fun Preview_SBBHeaderDefaultWithNavigationBack() =
+    _Preview_SBBHeaderDefaultWithNavigationBack()
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderDefaultWithNavigationCancel() = _Preview_SBBHeaderDefaultWithNavigationCancel()
+private fun Preview_SBBHeaderDefaultWithNavigationCancel() =
+    _Preview_SBBHeaderDefaultWithNavigationCancel()
 
 @Preview(showBackground = true)
 @Composable
@@ -208,4 +214,5 @@ private fun Preview_SBBHeaderSmallWithNavigationBack() = _Preview_SBBHeaderSmall
 
 @Preview(showBackground = true)
 @Composable
-private fun Preview_SBBHeaderSmallWithNavigationCancel() = _Preview_SBBHeaderSmallWithNavigationCancel()
+private fun Preview_SBBHeaderSmallWithNavigationCancel() =
+    _Preview_SBBHeaderSmallWithNavigationCancel()

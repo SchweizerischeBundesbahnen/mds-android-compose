@@ -3,6 +3,7 @@ package ch.sbb.compose_mds.example.pages
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,7 +16,6 @@ import androidx.compose.ui.Modifier
 import ch.sbb.compose_mds.composables.chip.SBBChip
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.defaultPadding
 
 @Composable
 fun ChipPage() {
@@ -23,7 +23,9 @@ fun ChipPage() {
     var selected2 by remember { mutableStateOf(true) }
 
     Column(
-        modifier = Modifier.defaultPadding().fillMaxWidth(),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
     ) {
         Text("Default", style = MaterialTheme.typography.titleSmall)

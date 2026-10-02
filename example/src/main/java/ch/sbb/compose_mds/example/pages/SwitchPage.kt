@@ -1,9 +1,9 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -17,18 +17,19 @@ import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.switch.SBBSwitch
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun SwitchPage() {
   Column(
       modifier =
-          Modifier.fillMaxWidth()
+          Modifier
+              .fillMaxWidth()
               .verticalScroll(
                   state = rememberScrollState(),
               )
-              .defaultPadding(),
+              .padding(SBBSpacing.XSmall),
       verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
   ) {
     var checkedState: Boolean by remember { mutableStateOf(true) }

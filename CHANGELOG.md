@@ -12,7 +12,8 @@ This major release aims to bring a standard API to all SBB Compose components wi
 
 ### Removed
 
-* Removed `SBBColors.: Use `SBBColors` instead
+* Removed `SBBConsts` and `defaultPadding`. Use `SBBSpacing` instead.
+* Removed `PrimitiveColors`: Use `SBBColors` instead
 * Removed `ThemeContext` colors like `OffBrandThemeContext`: Use `SBBColorScheme` instead
 
 # 0.2.0

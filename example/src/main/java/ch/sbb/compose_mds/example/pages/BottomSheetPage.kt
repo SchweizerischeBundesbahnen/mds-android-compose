@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -20,12 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.example.composeable.Placeholder
 import ch.sbb.compose_mds.theme.SBBSpacing
-import ch.sbb.compose_mds.theme.defaultPadding
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
 @Composable
@@ -34,7 +33,7 @@ fun BottomSheetPage() {
   var showBottomSheetScroll by remember { mutableStateOf(false) }
   var showFullScreenBottomSheet by remember { mutableStateOf(false) }
 
-  Column(modifier = Modifier.defaultPadding()) {
+    Column(modifier = Modifier.padding(SBBSpacing.XSmall)) {
     SBBListHeader(title = "Bottom-Sheet")
     SBBSecondaryButton(
         label = "Default",
@@ -86,7 +85,9 @@ fun DefaultBottomSheet(
       title = "Default",
   ) {
     Placeholder(
-        modifier = Modifier.height(200.dp).fillMaxWidth(),
+        modifier = Modifier
+            .height(200.dp)
+            .fillMaxWidth(),
     )
   }
 }
@@ -107,7 +108,10 @@ fun ScrollableBottomSheet(
     ) {
       items(100) {
         Placeholder(
-            modifier = Modifier.fillMaxWidth().padding(top = 4.dp).height(56.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 4.dp)
+                .height(56.dp),
         )
       }
     }
@@ -126,7 +130,9 @@ fun FullScreenBottomSheet(
       title = "FullScreen",
   ) {
     Placeholder(
-        modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(),
     )
   }
 }
