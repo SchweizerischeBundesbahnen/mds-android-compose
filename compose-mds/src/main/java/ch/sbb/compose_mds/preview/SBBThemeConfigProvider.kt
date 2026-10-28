@@ -26,15 +26,25 @@ class ThemePreviewConfig(
 /**
  * Provides a sequence of ThemePreviewConfig with all given SBBColorScheme for @PreviewParameter.
  */
-class SBBThemeConfigProvider : PreviewParameterProvider<ThemePreviewConfig> {
+class SBBThemeAllConfigProvider : PreviewParameterProvider<ThemePreviewConfig> {
     private val configs = listOf(
         ThemePreviewConfig(variant = ThemePreviewVariant.SBB),
         ThemePreviewConfig(variant = ThemePreviewVariant.OFF_BRAND),
         ThemePreviewConfig(variant = ThemePreviewVariant.SAFETY),
     )
 
-    override val values: Sequence<ThemePreviewConfig> =
-        configs.asSequence()
+    override val values: Sequence<ThemePreviewConfig> = configs.asSequence()
 
     override fun getDisplayName(index: Int): String? = configs.getOrNull(index)?.variant?.name
+}
+
+/**
+ * Provides a ThemePreviewConfig of the base SBBColorScheme for @PreviewParameter.
+ */
+class SBBThemeConfigProvider : PreviewParameterProvider<ThemePreviewConfig> {
+    private val baseConfig = ThemePreviewConfig(variant = ThemePreviewVariant.SBB)
+
+    override val values: Sequence<ThemePreviewConfig> = sequenceOf(baseConfig)
+
+    override fun getDisplayName(index: Int): String = baseConfig.variant.name
 }
