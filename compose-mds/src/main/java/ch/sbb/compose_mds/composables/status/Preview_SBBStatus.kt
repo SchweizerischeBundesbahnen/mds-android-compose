@@ -3,84 +3,101 @@
 package ch.sbb.compose_mds.composables.status
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import ch.sbb.compose_mds.theme.SBBTheme
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import ch.sbb.compose_mds.composables.status.theme.SBBStatusStyle
+import ch.sbb.compose_mds.preview.SBBComponentPreviewWrapper
+import ch.sbb.compose_mds.preview.SBBThemeConfigProvider
+import ch.sbb.compose_mds.preview.ThemePreviewConfig
+import ch.sbb.compose_mds.sbbicons.SBBIcons
+import ch.sbb.compose_mds.sbbicons.Small
+import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 
-@Preview(showBackground = true)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@PreviewLightDark
 @Composable
-internal fun _StatusPreviewAlert() {
-    SBBTheme {
-        Surface {
-            SBBStatus.Alert(text = "This is an alert!")
+fun Preview_SBBStatus_Alert(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBComponentPreviewWrapper(config) {
+        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+            SBBStatus.Alert(
+                labelText = "This is an alert!",
+            )
+            SBBStatus.Alert()
         }
     }
 }
 
-@Preview(showBackground = true)
+@PreviewLightDark
 @Composable
-internal fun _StatusPreviewAlertWithoutText() {
-    SBBTheme {
-        SBBStatus.Alert()
-    }
-}
-
-@Preview(showBackground = true)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-internal fun _StatusPreviewWarning() {
-    SBBTheme {
-        Surface {
-            SBBStatus.Warning(text = "This is a warning!")
+fun Preview_SBBStatus_Warning(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBComponentPreviewWrapper(config) {
+        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+            SBBStatus.Warning(labelText = "This is a warning!")
+            SBBStatus.Warning()
         }
     }
 }
 
-@Preview(showBackground = true)
+@PreviewLightDark
 @Composable
-internal fun _StatusPreviewWarningWithoutText() {
-    SBBTheme {
-        SBBStatus.Warning()
-    }
-}
-
-@Preview(showBackground = true)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-internal fun _StatusPreviewSuccess() {
-    SBBTheme {
-        Surface {
-            SBBStatus.Success(text = "This is a success!")
+fun Preview_SBBStatus_Success(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBComponentPreviewWrapper(config) {
+        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+            SBBStatus.Success(labelText = "This is a success!")
+            SBBStatus.Success()
         }
     }
 }
 
-@Preview(showBackground = true)
+@PreviewLightDark
 @Composable
-internal fun _StatusPreviewSuccessWithoutText() {
-    SBBTheme {
-        SBBStatus.Success()
-    }
-}
-
-@Preview(showBackground = true)
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-internal fun _StatusPreviewInformation() {
-    SBBTheme {
-        Surface {
-            SBBStatus.Information(text = "This is an information!")
+fun Preview_SBBStatus_Information(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBComponentPreviewWrapper(config) {
+        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+            SBBStatus.Information(labelText = "This is an information!")
+            SBBStatus.Information()
         }
     }
 }
 
-@Preview(showBackground = true)
+@PreviewLightDark
 @Composable
-internal fun _StatusPreviewInformationWithoutText() {
-    SBBTheme {
-        SBBStatus.Information()
+fun Preview_SBBStatus_Custom(
+    @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
+) {
+    SBBComponentPreviewWrapper(config) {
+        Column(verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall)) {
+            SBBStatus.Alert(
+                style = SBBStatusStyle(
+                    backgroundColor = SBBColors.turquoise,
+                    borderColor = SBBColors.turquoise,
+                ),
+                iconData = SBBIcons.Small.UnicornSmall,
+                label = {
+                    Text(
+                        "Custom Text",
+                        modifier = Modifier
+                            .padding(horizontal = SBBSpacing.XSmall)
+                            .background(color = SBBColors.turquoise),
+                    )
+                },
+            )
+        }
     }
 }

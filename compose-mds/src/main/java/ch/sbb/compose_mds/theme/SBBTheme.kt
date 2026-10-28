@@ -34,6 +34,9 @@ import ch.sbb.compose_mds.composables.radio.defaultSBBRadioStyle
 import ch.sbb.compose_mds.composables.segmentedButton.LocalSBBSegmentedButtonStyle
 import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButtonVariants
 import ch.sbb.compose_mds.composables.segmentedButton.defaultSBBSegmentedButtonStyles
+import ch.sbb.compose_mds.composables.status.theme.LocalSBBStatusThemeData
+import ch.sbb.compose_mds.composables.status.theme.SBBStatusThemeData
+import ch.sbb.compose_mds.composables.status.theme.defaultSBBStatusThemeData
 
 internal val LocalSBBIsDarkMode = staticCompositionLocalOf<Boolean> { false }
 
@@ -66,6 +69,11 @@ object SBBTheme {
         @ReadOnlyComposable
         @Composable
         get() = LocalSBBIsDarkMode.current
+
+    val status: SBBStatusThemeData
+        @ReadOnlyComposable
+        @Composable
+        get() = LocalSBBStatusThemeData.current
 
     val notificationBox: SBBNotificationBoxTokens
         @ReadOnlyComposable
@@ -110,12 +118,14 @@ fun SBBTheme(
     colorScheme: SBBColorScheme = SBBColorScheme.sbb(darkTheme),
     fontFamily: FontFamily? = null,
     includeSurface: Boolean = LocalInspectionMode.current,
+    statusThemeData: SBBStatusThemeData? = null,
     content: @Composable () -> Unit,
 ) {
+    val sbbTypography = SBBTypography(fontFamily = fontFamily)
     CompositionLocalProvider(
         LocalSBBIsDarkMode provides darkTheme,
         LocalSBBColorScheme provides colorScheme,
-        LocalSBBTypography provides SBBTypography(fontFamily = fontFamily),
+        LocalSBBTypography provides sbbTypography,
         LocalSBBNotificationBoxStyle provides defaultSBBNotificationBoxStyle(),
         LocalSBBListItemStyle provides defaultSBBListItemStyle(),
         LocalSBBSegmentedButtonStyle provides defaultSBBSegmentedButtonStyles(),
@@ -123,6 +133,11 @@ fun SBBTheme(
         LocalSBBRadioStyle provides defaultSBBRadioStyle(),
         LocalSBBChipStyle provides defaultSBBChipStyle(),
         LocalSBBPickerStyle provides defaultSBBPickerStyle(),
+        LocalSBBStatusThemeData provides defaultSBBStatusThemeData(
+            sbbTypography,
+            colorScheme,
+            darkTheme,
+        ).merge(statusThemeData),
     ) {
         MaterialTheme(
             colorScheme = colorScheme.toMaterialColorScheme(isDarkTheme = darkTheme),
