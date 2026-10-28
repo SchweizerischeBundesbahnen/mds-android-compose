@@ -6,5 +6,4 @@ plugins {
     alias(libs.plugins.mavenPublish) apply false
     alias(libs.plugins.roborazzi) apply false
     alias(libs.plugins.ktlint) apply false
-    alias(libs.plugins.kotlin.android) apply false
 }

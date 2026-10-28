@@ -7,12 +7,8 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.mavenPublish)
     alias(libs.plugins.ktlint)
-    alias(libs.plugins.kotlin.android)
 }
 
-// ktlint configuration (modern plugin DSL). Re-add this block to enable
-// Gradle tasks `ktlintCheck` and `ktlintFormat` for this module. The plugin
-// is applied via the version catalog alias above (`libs.plugins.ktlint`).
 ktlint {
     // enable Android-specific rule set
     android.set(true)
@@ -39,7 +35,7 @@ ktlint {
 
 configure<LibraryExtension> {
     namespace = "ch.sbb.compose_mds"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24

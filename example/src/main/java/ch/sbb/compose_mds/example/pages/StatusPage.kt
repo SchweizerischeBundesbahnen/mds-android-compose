@@ -9,7 +9,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.status.Alert
 import ch.sbb.compose_mds.composables.status.Information
@@ -19,7 +18,6 @@ import ch.sbb.compose_mds.composables.status.Warning
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun StatusPage() {
     Column(
@@ -34,19 +32,19 @@ fun StatusPage() {
     ) {
         SBBListHeader(title = "Success")
         SBBStatus.Success()
-        SBBStatus.Success(text = "Success with Text")
+        SBBStatus.Success(labelText = "Success with Text")
 
         SBBListHeader(title = "Alert")
         SBBStatus.Alert()
-        SBBStatus.Alert(text = "Alert with Text")
+        SBBStatus.Alert(labelText = "Alert with Text")
 
         SBBListHeader(title = "Warning")
         SBBStatus.Warning()
-        SBBStatus.Warning(text = "Warning with Text")
+        SBBStatus.Warning(labelText = "Warning with Text")
 
         SBBListHeader(title = "Information")
         SBBStatus.Information()
-        SBBStatus.Information(text = "Information with Text")
+        SBBStatus.Information(labelText = "Information with Text")
     }
 }
 
