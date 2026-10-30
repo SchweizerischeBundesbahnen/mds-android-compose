@@ -99,7 +99,7 @@ class SBBTabBarController internal constructor(
             val from by from
             val to by to
             val hover by hover
-            positions.mapIndexed { i, p ->
+            List(positions.size) { i ->
                 when (i) {
                     from -> 1 - if (hover) 0f else animation.value
                     to -> animation.value

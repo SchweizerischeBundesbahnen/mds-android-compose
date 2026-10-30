@@ -1,3 +1,5 @@
+@file:Suppress("PropertyName")
+
 package ch.sbb.compose_mds.theme
 
 import androidx.compose.material3.Typography

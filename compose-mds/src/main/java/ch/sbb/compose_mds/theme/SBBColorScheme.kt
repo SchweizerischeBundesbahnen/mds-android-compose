@@ -118,7 +118,7 @@ data class SBBColorScheme(
 
         return defaults.copy(
             primary = primary,
-            onPrimary = SBBColors.white,
+            onPrimary = textPrimary,
             surface = backgroundBase,
             onSurface = textPrimary,
             surfaceVariant = backgroundContent,
@@ -126,7 +126,7 @@ data class SBBColorScheme(
             surfaceContainerHighest = backgroundContent,
             onBackground = textPrimary,
             background = backgroundBase,
+            error = error,
         )
     }
 }
-

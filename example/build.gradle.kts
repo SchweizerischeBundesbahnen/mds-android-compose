@@ -14,6 +14,9 @@ plugins {
 configure<ApplicationExtension> {
     namespace = "ch.sbb.compose_playground"
     compileSdk = 37
+    buildFeatures {
+        compose = true
+    }
 
     defaultConfig {
         applicationId = "ch.sbb.compose_playground"
@@ -97,5 +100,4 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
 
     debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
 }

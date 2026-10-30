@@ -30,7 +30,7 @@ import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-@OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TextareaPage() {
     var showSheet by remember { mutableStateOf(false) }

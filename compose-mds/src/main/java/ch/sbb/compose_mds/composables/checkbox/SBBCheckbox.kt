@@ -27,13 +27,13 @@ import ch.sbb.compose_mds.theme.SBBTheme
  *
  * @param label The Checkbox Label.
  * @param checked State of the Checkbox. Parameters:
- *  - The parameter [true] will be mapped to [ToggleableState.On].
- *  - The parameter [false] will be mapped to [ToggleableState.Off]
- *  - The parameter [null] will be mapped to [ToggleableState.Off] or [ToggleableState.Indeterminate] when [triStateEnabled] is [true].
+ *  - The parameter `true` will be mapped to [ToggleableState.On].
+ *  - The parameter `false` will be mapped to [ToggleableState.Off]
+ *  - The parameter `null` will be mapped to [ToggleableState.Off] or [ToggleableState.Indeterminate] when [triStateEnabled] is `true`.
  * @param icon An Icon between the Checkbox itself and the [label].
  * @param triStateEnabled Enable or disable the [ToggleableState.Indeterminate] state.
  * @param onCheckedChange Action to change the state of the Checkbox.
- * @param disabled If [true], the Checkbox will be disabled and will have the Disabled style.
+ * @param disabled If `true`, the Checkbox will be disabled and will have the Disabled style.
  * @param style an optional customized style.
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/checkbox/)
@@ -69,7 +69,7 @@ fun SBBCheckbox(
  * @param icon An Icon between the Checkbox itself and the [label].
  * @param triStateEnabled Enable or disable the [ToggleableState.Indeterminate] state.
  * @param onCheckedChange Action to change the state of the Checkbox.
- * @param disabled If [true], the Checkbox will be disabled and will have the Disabled style.
+ * @param disabled If `true`, the Checkbox will be disabled and will have the Disabled style.
  * @param style an optional customized style.
  *
  * For a complete definition of the component, please visit [digital.sbb.ch](https://digital.sbb.ch/de/design-system/mobile/components/checkbox/)
@@ -94,7 +94,8 @@ fun SBBCheckbox(
                     enabled = !disabled,
                     role = Role.Checkbox,
                     onClick = { onCheckedChange?.invoke(state.nextState(triStateEnabled)) },
-                ).fillMaxWidth()
+                )
+                .fillMaxWidth()
                 .padding(style.layout.padding),
     ) {
         DrawCheckbox(

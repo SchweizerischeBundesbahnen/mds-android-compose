@@ -38,7 +38,7 @@ import ch.sbb.compose_mds.composables.status.theme.LocalSBBStatusThemeData
 import ch.sbb.compose_mds.composables.status.theme.SBBStatusThemeData
 import ch.sbb.compose_mds.composables.status.theme.defaultSBBStatusThemeData
 
-internal val LocalSBBIsDarkMode = staticCompositionLocalOf<Boolean> { false }
+internal val LocalSBBIsDarkMode = staticCompositionLocalOf { false }
 
 internal val LocalSBBColorScheme =
     staticCompositionLocalOf { SBBColorScheme.sbb(isDarkMode = false) }

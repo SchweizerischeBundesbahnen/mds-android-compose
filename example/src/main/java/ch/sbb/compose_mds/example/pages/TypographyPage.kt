@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.theme.SBBSpacing
@@ -75,7 +74,6 @@ private fun SBBTypographySection() {
     TextStylePreview(name = "XXSmallBold", SBBTheme.sbbTypography.XXSmallBold)
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun TextStylePreview(
     name: String,

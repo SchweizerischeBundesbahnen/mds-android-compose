@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -27,7 +27,6 @@ import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-@OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
 @Composable
 fun DropdownPage() {
     Column(
@@ -106,8 +105,8 @@ private fun SBBDropdownDefaultSection() {
 @OptIn(ExperimentalSBBComponent::class)
 @Composable
 private fun SBBDropdownErrorSection() {
-    var value1 by remember { mutableStateOf(1) }
-    var value2 by remember { mutableStateOf(2) }
+    var value1 by remember { mutableIntStateOf(1) }
+    var value2 by remember { mutableIntStateOf(2) }
     val items =
         listOf(
             SBBDropdownItem(value = 1, label = "Value 1"),

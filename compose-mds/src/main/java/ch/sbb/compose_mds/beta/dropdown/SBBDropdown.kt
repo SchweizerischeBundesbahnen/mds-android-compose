@@ -74,12 +74,12 @@ data class SBBDropdownItem<T>(val label: String, val value: T)
 @ExperimentalSBBComponent
 @Composable
 fun <T> SBBDropdown(
+    modifier: Modifier = Modifier,
     label: String,
     value: T? = null,
     items: List<SBBDropdownItem<T>>,
     onValueChange: (T) -> Unit,
     selectionTitle: String,
-    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     textStyle: TextStyle = LocalTextStyle.current,
     placeholder: String? = null,
@@ -183,7 +183,7 @@ fun <T> SBBDropdown(
     }
 }
 
-@OptIn(ExperimentalSBBComponent::class, ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun <T> SelectionSheet(
     title: String,
@@ -273,7 +273,6 @@ internal fun _Preview_SBBDropdown_Error() {
     }
 }
 
-@OptIn(ExperimentalSBBComponent::class)
 @Preview(showBackground = true)
 @Composable
 internal fun _Preview_SBBDropdown_Selection() {

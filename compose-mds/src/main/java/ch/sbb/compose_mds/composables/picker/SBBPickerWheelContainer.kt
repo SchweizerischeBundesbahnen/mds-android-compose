@@ -25,7 +25,7 @@ import ch.sbb.compose_mds.theme.SBBTheme
 /**
  * Decoration for a [SBBPickerWheel].
  *
- * @param boxed using surface background color when [false] or surfaceVariant when [true].
+ * @param boxed using surface background color when `false` or surfaceVariant when `true`.
  * @param modifier The modifier to be applied to the layout.
  * @param highlightSelected Flag to highlight the selected/centered element.
  * @param style Overrideable [SBBPickerStyle]. Default is the defined style in [SBBTheme].
