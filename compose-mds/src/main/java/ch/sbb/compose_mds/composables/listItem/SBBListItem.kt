@@ -20,10 +20,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.composables.container.SBBContentBox
-import ch.sbb.compose_mds.composables.listItem.SBBListItem.Custom
-import ch.sbb.compose_mds.composables.listItem.SBBListItem.Default
-import ch.sbb.compose_mds.composables.listItem.SBBListItem.Disabled
-import ch.sbb.compose_mds.composables.listItem.SBBListItem.Link
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small

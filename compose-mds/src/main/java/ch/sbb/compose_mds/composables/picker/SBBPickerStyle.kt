@@ -89,7 +89,7 @@ data class SBBPickerItemSizes(
 interface SBBPickerStyle {
     val colors: SBBPickerColorVariants @Composable get
     val layout: SBBPickerLayout @Composable get
-    val itemSizes: SBBPickerItemSizes get
+    val itemSizes: SBBPickerItemSizes
 
     @Composable
     fun resolvedColors(): State<SBBPickerColors> {

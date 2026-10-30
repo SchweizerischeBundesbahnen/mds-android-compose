@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -16,9 +15,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.container.SBBContentBox
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.message.Custom
 import ch.sbb.compose_mds.composables.message.Default
 import ch.sbb.compose_mds.composables.message.Error
@@ -28,15 +26,17 @@ import ch.sbb.compose_mds.composables.message.SBBMessageIllustration
 import ch.sbb.compose_mds.sbbicons.Medium
 import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.medium.TrainMedium
+import ch.sbb.compose_mds.theme.SBBTheme
 
 private const val MESSAGE =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate massa ut ex fringilla."
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun MessagePage() {
   Column(
-      modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState()),
+      modifier = Modifier
+          .padding(16.dp)
+          .verticalScroll(rememberScrollState()),
   ) {
     SBBListHeader(title = "Default")
     SBBMessageDefault()

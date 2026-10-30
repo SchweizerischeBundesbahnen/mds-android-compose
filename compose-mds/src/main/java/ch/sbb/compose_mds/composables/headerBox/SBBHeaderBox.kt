@@ -21,9 +21,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.composables.container.SBBContentBox
-import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Custom
-import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.Default
-import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox.WithButton
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme

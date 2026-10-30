@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.sbbicons.Medium
@@ -26,7 +25,6 @@ import ch.sbb.compose_mds.sbbicons.all
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-@OptIn(ExperimentalSBBComponent::class)
 @Composable
 fun IconPage() {
     Column(

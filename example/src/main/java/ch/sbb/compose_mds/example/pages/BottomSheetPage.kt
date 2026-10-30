@@ -18,7 +18,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.button.SBBSecondaryButton
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
@@ -26,7 +25,7 @@ import ch.sbb.compose_mds.example.composeable.Placeholder
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalSBBComponent::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomSheetPage() {
   var showBottomSheet by remember { mutableStateOf(false) }

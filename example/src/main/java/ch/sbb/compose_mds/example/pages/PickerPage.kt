@@ -16,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.picker.SBBPickerWheel
 import ch.sbb.compose_mds.composables.picker.SBBPickerWheelContainer

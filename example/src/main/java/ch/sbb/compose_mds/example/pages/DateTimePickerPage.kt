@@ -14,9 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.composables.picker.DateTimePicker
 import ch.sbb.compose_mds.composables.picker.SBBDateTimePicker
-import ch.sbb.compose_mds.composables.picker.now
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 import kotlinx.datetime.LocalDate

@@ -72,13 +72,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             val isSystemInDarkTheme = isSystemInDarkTheme()
             var isDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
-            var colorScheme by remember {
-                mutableStateOf<SBBColorScheme>(
-                    SBBColorScheme.sbb(
-                        isDarkTheme,
-                    ),
-                )
+            var selectedTheme by remember { mutableStateOf(ThemeSelection.SBB) }
+            val colorScheme = when (selectedTheme) {
+                ThemeSelection.SBB -> SBBColorScheme.sbb(isDarkTheme)
+                ThemeSelection.OffBrand -> SBBColorScheme.offBrand(isDarkTheme)
+                ThemeSelection.Safety -> SBBColorScheme.safety(isDarkTheme)
             }
+
             SBBTheme(darkTheme = isDarkTheme, colorScheme = colorScheme) {
                 val navController = rememberNavController()
                 Scaffold(
@@ -91,8 +91,8 @@ class MainActivity : ComponentActivity() {
                             ThemeSelection(
                                 onDarkSelectionChanged = { isDarkTheme = it },
                                 darkSelection = isDarkTheme,
-                                onColorSchemeChanged = { colorScheme = it },
-                                colorSchemeSelection = colorScheme,
+                                onBrandSelectionChanged = { selectedTheme = it },
+                                brandSelection = selectedTheme,
                             )
                         }
                     },
@@ -139,57 +139,59 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// TODO: Fix theme selection with new color scheme
+private enum class ThemeSelection {
+    SBB,
+    OffBrand,
+    Safety,
+}
+
 @Composable
 private fun ThemeSelection(
     darkSelection: Boolean,
     onDarkSelectionChanged: (Boolean) -> Unit,
-    colorSchemeSelection: SBBColorScheme,
-    onColorSchemeChanged: (SBBColorScheme) -> Unit,
+    brandSelection: ThemeSelection,
+    onBrandSelectionChanged: (ThemeSelection) -> Unit,
 ) {
     Row(
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .background(color = SBBTheme.colorScheme.primary)
-                .padding(SBBSpacing.XSmall),
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color = SBBTheme.colorScheme.primary)
+            .padding(SBBSpacing.XSmall),
         horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBSegmentedButton.Primary(
             modifier = Modifier.fillMaxWidth(.25f),
             onSelectionChange = onDarkSelectionChanged,
             selection = darkSelection,
-            segments =
-                listOf(
-                    SBBButtonSegment(
-                        icon = SBBIcons.Small.SunshineSmall,
-                        value = false,
-                    ),
-                    SBBButtonSegment(
-                        icon = SBBIcons.Small.MoonSmall,
-                        value = true,
-                    ),
+            segments = listOf(
+                SBBButtonSegment(
+                    icon = SBBIcons.Small.SunshineSmall,
+                    value = false,
                 ),
+                SBBButtonSegment(
+                    icon = SBBIcons.Small.MoonSmall,
+                    value = true,
+                ),
+            ),
         )
 
         SBBSegmentedButton.Primary(
-            onSelectionChange = onColorSchemeChanged,
-            selection = colorSchemeSelection,
-            segments =
-                listOf(
-                    SBBButtonSegment(
-                        label = "SBB",
-                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
-                    ),
-                    SBBButtonSegment(
-                        label = "Offbrand",
-                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
-                    ),
-                    SBBButtonSegment(
-                        label = "Safety",
-                        value = SBBColorScheme.sbb(isDarkMode = darkSelection),
-                    ),
+            onSelectionChange = onBrandSelectionChanged,
+            selection = brandSelection,
+            segments = listOf(
+                SBBButtonSegment(
+                    label = "SBB",
+                    value = ThemeSelection.SBB,
                 ),
+                SBBButtonSegment(
+                    label = "Offbrand",
+                    value = ThemeSelection.OffBrand,
+                ),
+                SBBButtonSegment(
+                    label = "Safety",
+                    value = ThemeSelection.Safety,
+                ),
+            ),
         )
     }
 }
