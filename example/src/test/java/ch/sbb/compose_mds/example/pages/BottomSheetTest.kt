@@ -1,9 +1,11 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
+import androidx.activity.compose.setContent
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.ui.test.junit4.v2.createComposeRule
+import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import ch.sbb.compose_mds.example.MainActivity
+import ch.sbb.compose_mds.theme.SBBTheme
 import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureScreenRoboImage
@@ -21,11 +23,12 @@ import org.robolectric.annotation.GraphicsMode
     qualifiers = RobolectricDeviceQualifiers.Pixel7Pro,
 )
 class BottomSheetTest {
-  @get:Rule val composeTestRule = createComposeRule()
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
 
   @Test
   fun testDefaultBottomSheet() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true) {
         DefaultBottomSheet(onDismiss = {})
       }
@@ -36,7 +39,7 @@ class BottomSheetTest {
 
   @Test
   fun testDefaultBottomSheetDark() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true, darkTheme = true) {
         DefaultBottomSheet(onDismiss = {})
       }
@@ -47,7 +50,7 @@ class BottomSheetTest {
 
   @Test
   fun testScrollableBottomSheet() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true) {
         ScrollableBottomSheet(onDismiss = {})
       }
@@ -58,7 +61,7 @@ class BottomSheetTest {
 
   @Test
   fun testScrollableBottomSheetDark() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true, darkTheme = true) {
         ScrollableBottomSheet(onDismiss = {})
       }
@@ -69,7 +72,7 @@ class BottomSheetTest {
 
   @Test
   fun testFullScreenBottomSheet() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true) {
         FullScreenBottomSheet(onDismiss = {})
       }
@@ -80,7 +83,7 @@ class BottomSheetTest {
 
   @Test
   fun testFullScreenBottomSheetDark() {
-    composeTestRule.setContent {
+      composeTestRule.activity.setContent {
       SBBTheme(includeSurface = true, darkTheme = true) {
         FullScreenBottomSheet(onDismiss = {})
       }
