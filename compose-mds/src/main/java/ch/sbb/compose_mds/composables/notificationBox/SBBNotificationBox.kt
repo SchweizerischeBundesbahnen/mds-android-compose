@@ -190,27 +190,26 @@ private fun SBBNotificationBoxInternal(
     interactionIcon: ImageVector? = null,
 ) {
     Box(
-        modifier =
-            modifier
-                .clip(RoundedCornerShape(SBBSpacing.Medium))
-                .clickable(enabled = onClick != null, onClick = onClick ?: {})
-                .background(color = style.borderColor)
-                .padding(start = SBBSpacing.XSmall)
-                .padding(all = 1.dp)
-                .fillMaxWidth(),
+        modifier = modifier
+            .clip(RoundedCornerShape(SBBSpacing.Medium))
+            .clickable(enabled = onClick != null, onClick = onClick ?: {})
+            .background(color = style.borderColor)
+            .padding(start = SBBSpacing.XSmall)
+            .padding(all = 1.dp)
+            .fillMaxWidth(),
     ) {
         Column(
-            modifier =
-                Modifier
-                    .clip(
-                        RoundedCornerShape(
-                            topStart = SBBSpacing.XSmall,
-                            bottomStart = SBBSpacing.XSmall,
-                            topEnd = 15.dp,
-                            bottomEnd = 15.dp,
-                        ),
-                    ).background(style.backgroundColor)
-                    .padding(SBBSpacing.Medium),
+            modifier = Modifier
+                .clip(
+                    RoundedCornerShape(
+                        topStart = SBBSpacing.XSmall,
+                        bottomStart = SBBSpacing.XSmall,
+                        topEnd = 15.dp,
+                        bottomEnd = 15.dp,
+                    ),
+                )
+                .background(style.backgroundColor)
+                .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XXSmall),
         ) {
             if (title != null) {

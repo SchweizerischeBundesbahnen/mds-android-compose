@@ -71,19 +71,18 @@ fun SBBSwitch(
 ) {
     val colors = if (SBBTheme.isDarkMode) darkSwitchColors(enabled) else lightSwitchColors(enabled)
     Box(
-        modifier =
-            modifier
-                .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
-                .minimumInteractiveComponentSize()
-                .padding(end = 1.dp)
-                .toggleable(
-                    enabled = enabled,
-                    value = checked,
-                    interactionSource = interactionSource,
-                    role = Role.Switch,
-                    onValueChange = { onCheckedChange?.invoke(it) },
-                    indication = null,
-                ),
+        modifier = modifier
+            .size(DpSize(trackWidth + 1.dp, knobSize + 2.dp))
+            .minimumInteractiveComponentSize()
+            .padding(end = 1.dp)
+            .toggleable(
+                enabled = enabled,
+                value = checked,
+                interactionSource = interactionSource,
+                role = Role.Switch,
+                onValueChange = { onCheckedChange?.invoke(it) },
+                indication = null,
+            ),
         contentAlignment = Alignment.CenterStart,
     ) {
         SwitchTrack(checked, colors)
@@ -100,37 +99,33 @@ private fun SwitchKnob(
         targetValue = if (checked) colors.checkedKnobBorderColor else colors.knobBorderColor,
     )
     val knobOffset by animateIntOffsetAsState(
-        targetValue =
-            IntOffset(
-                x =
-                    with(LocalDensity.current) {
-                        when (checked) {
-                            true -> trackWidth - knobSize
-                            false -> 0.dp
-                        }.roundToPx()
-                    },
-                y = 0,
-            ),
+        targetValue = IntOffset(
+            x = with(LocalDensity.current) {
+                when (checked) {
+                    true -> trackWidth - knobSize
+                    false -> 0.dp
+                }.roundToPx()
+            },
+            y = 0,
+        ),
     )
     Box(
-        modifier =
-            Modifier
-                .offset { knobOffset }
-                .size(knobSize)
-                .dropShadow(
-                    shape = RoundedCornerShape(knobSize),
-                    shadow =
-                        Shadow(
-                            radius = 4.dp,
-                            color = Color.Black.copy(alpha = 0.3f),
-                            offset = DpOffset(0.dp, 1.dp),
-                        ),
-                )
-                .background(colors.knobBackgroundColor, shape = CircleShape)
-                .border(
-                    border = BorderStroke(width = 1.dp, color = borderColor),
-                    shape = CircleShape
+        modifier = Modifier
+            .offset { knobOffset }
+            .size(knobSize)
+            .dropShadow(
+                shape = RoundedCornerShape(knobSize),
+                shadow = Shadow(
+                    radius = 4.dp,
+                    color = Color.Black.copy(alpha = 0.3f),
+                    offset = DpOffset(0.dp, 1.dp),
                 ),
+            )
+            .background(colors.knobBackgroundColor, shape = CircleShape)
+            .border(
+                border = BorderStroke(width = 1.dp, color = borderColor),
+                shape = CircleShape,
+            ),
         contentAlignment = Alignment.Center,
     ) {
         AnimatedVisibility(
@@ -157,11 +152,10 @@ private fun SwitchTrack(
     )
 
     Box(
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .height(trackHeight)
-                .background(color = backgroundColor, shape = CircleShape),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(trackHeight)
+            .background(color = backgroundColor, shape = CircleShape),
     )
 }
 
@@ -173,10 +167,9 @@ private fun SBBSwitchPreview() {
     val secondChecked = remember { mutableStateOf(true) }
     SBBTheme {
         Column(
-            modifier =
-                Modifier
-                    .background(if (darkTheme) SBBColors.black else SBBColors.white)
-                    .padding(SBBSpacing.Medium),
+            modifier = Modifier
+                .background(if (darkTheme) SBBColors.black else SBBColors.white)
+                .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             Row(

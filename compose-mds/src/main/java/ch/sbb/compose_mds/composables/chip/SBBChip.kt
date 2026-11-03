@@ -37,20 +37,20 @@ fun SBBChip(
 ) {
     val colors by style.resolvedColors(enabled)
     Row(
-        modifier =
-            modifier
-                .clip(style.layout.shape)
-                .border(
-                    border = style.borderStroke(enabled),
-                    shape = style.layout.shape,
-                ).background(
-                    color = colors.background,
-                ).selectable(
-                    selected = selected,
-                    enabled = enabled,
-                    interactionSource = interactionSource,
-                    onClick = { onSelectedChange?.invoke(!selected) },
-                ).padding(style.layout.padding),
+        modifier = modifier
+            .clip(style.layout.shape)
+            .border(
+                border = style.borderStroke(enabled),
+                shape = style.layout.shape,
+            )
+            .background(color = colors.background)
+            .selectable(
+                selected = selected,
+                enabled = enabled,
+                interactionSource = interactionSource,
+                onClick = { onSelectedChange?.invoke(!selected) },
+            )
+            .padding(style.layout.padding),
         horizontalArrangement = Arrangement.spacedBy(style.layout.labelGap),
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -61,13 +61,13 @@ fun SBBChip(
         )
         if (selected) {
             Box(
-                modifier =
-                    Modifier
-                        .size(size = style.layout.indicatorSize)
-                        .background(
-                            color = colors.backgroundClose,
-                            shape = style.layout.indicatorShape,
-                        ).align(Alignment.CenterVertically),
+                modifier = Modifier
+                    .size(size = style.layout.indicatorSize)
+                    .background(
+                        color = colors.backgroundClose,
+                        shape = style.layout.indicatorShape,
+                    )
+                    .align(Alignment.CenterVertically),
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(
@@ -78,13 +78,13 @@ fun SBBChip(
             }
         } else {
             Box(
-                modifier =
-                    Modifier
-                        .size(size = style.layout.indicatorSize)
-                        .background(
-                            color = colors.backgroundNumber,
-                            shape = style.layout.indicatorShape,
-                        ).align(Alignment.CenterVertically),
+                modifier = Modifier
+                    .size(size = style.layout.indicatorSize)
+                    .background(
+                        color = colors.backgroundNumber,
+                        shape = style.layout.indicatorShape,
+                    )
+                    .align(Alignment.CenterVertically),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(

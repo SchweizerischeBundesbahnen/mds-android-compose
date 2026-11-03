@@ -76,6 +76,12 @@ roborazzi {
 }
 
 dependencies {
+    constraints {
+        implementation(libs.androidx.concurrent.futures) {
+            because("Align the app runtime with the minimum version required by AndroidX Test")
+        }
+    }
+
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)

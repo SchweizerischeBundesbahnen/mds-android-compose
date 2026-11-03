@@ -49,14 +49,13 @@ fun SBBPickerWheelContainer(
         contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier =
-                Modifier
-                    .visible(highlightSelected)
-                    .align(Alignment.Center)
-                    .fillMaxWidth()
-                    .height(style.itemSizes.selected)
-                    .clip(style.layout.selectedShape)
-                    .background(colors.backgroundSelected),
+            modifier = Modifier
+                .visible(highlightSelected)
+                .align(Alignment.Center)
+                .fillMaxWidth()
+                .height(style.itemSizes.selected)
+                .clip(style.layout.selectedShape)
+                .background(colors.backgroundSelected),
         )
 
         Row {
@@ -64,35 +63,33 @@ fun SBBPickerWheelContainer(
         }
 
         Box(
-            modifier =
-                Modifier
-                    .align(Alignment.TopCenter)
-                    .fillMaxWidth()
-                    .height(style.itemSizes.selected)
-                    .background(
-                        Brush.verticalGradient(
-                            listOf(
-                                if (boxed) colors.boxedBackground else colors.background,
-                                SBBColors.transparent,
-                            ),
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .fillMaxWidth()
+                .height(style.itemSizes.selected)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(
+                            if (boxed) colors.boxedBackground else colors.background,
+                            SBBColors.transparent,
                         ),
                     ),
+                ),
         )
 
         Box(
-            modifier =
-                Modifier
-                    .align(Alignment.BottomCenter)
-                    .fillMaxWidth()
-                    .height(style.itemSizes.selected)
-                    .background(
-                        Brush.verticalGradient(
-                            listOf(
-                                SBBColors.transparent,
-                                if (boxed) colors.boxedBackground else colors.background,
-                            ),
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .height(style.itemSizes.selected)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(
+                            SBBColors.transparent,
+                            if (boxed) colors.boxedBackground else colors.background,
                         ),
                     ),
+                ),
         )
     }
 }

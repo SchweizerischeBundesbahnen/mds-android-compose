@@ -54,205 +54,183 @@ internal interface SBBTypographyTokens {
 internal fun configSBBTypographyTokens(fontFamily: FontFamily? = null): SBBTypographyTokens =
     object : SBBTypographyTokens {
         override val XXLargeLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xxLargeFontSize,
-                    lineHeight = xxLargeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xxLargeFontSize,
+                lineHeight = xxLargeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
         override val XXLargeBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xxLargeFontSize,
-                    lineHeight = xxLargeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xxLargeFontSize,
+                lineHeight = xxLargeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val XLargeLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xLargeFontSize,
-                    lineHeight = xLargeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xLargeFontSize,
+                lineHeight = xLargeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
         override val XLargeBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xLargeFontSize,
-                    lineHeight = xLargeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xLargeFontSize,
+                lineHeight = xLargeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val largeLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = largeFontSize,
-                    lineHeight = largeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = largeFontSize,
+                lineHeight = largeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
 
         override val largeBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = largeFontSize,
-                    lineHeight = largeFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = largeFontSize,
+                lineHeight = largeFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val mediumLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = mediumFontSize,
-                    lineHeight = mediumFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = mediumFontSize,
+                lineHeight = mediumFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
         override val mediumBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = mediumFontSize,
-                    lineHeight = mediumFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = mediumFontSize,
+                lineHeight = mediumFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val smallLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = smallFontSize,
-                    lineHeight = smallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = smallFontSize,
+                lineHeight = smallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
         override val smallBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = smallFontSize,
-                    lineHeight = smallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = smallFontSize,
+                lineHeight = smallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val XSmallLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xSmallFontSize,
-                    lineHeight = xSmallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Light,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xSmallFontSize,
+                lineHeight = xSmallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Light,
+            )
         override val XSmallBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xSmallFontSize,
-                    lineHeight = xSmallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xSmallFontSize,
+                lineHeight = xSmallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val XXSmallLight: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xxSmallFontSize,
-                    lineHeight = xxSmallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Normal,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xxSmallFontSize,
+                lineHeight = xxSmallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Normal,
+            )
         override val XXSmallBold: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = xxSmallFontSize,
-                    lineHeight = xxSmallFontHeight,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Bold,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = xxSmallFontSize,
+                lineHeight = xxSmallFontHeight,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Bold,
+            )
         override val helpersLabel: TextStyle
-            get() =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontSize = 10.sp,
-                    lineHeight = 12.sp,
-                    fontStyle = FontStyle.Normal,
-                    fontWeight = FontWeight.Normal,
-                )
+            get() = TextStyle(
+                fontFamily = fontFamily,
+                fontSize = 10.sp,
+                lineHeight = 12.sp,
+                fontStyle = FontStyle.Normal,
+                fontWeight = FontWeight.Normal,
+            )
     }
 
 @Immutable
 class SBBTypography(
     val fontFamily: FontFamily? = null,
 ) : SBBTypographyTokens by configSBBTypographyTokens(fontFamily) {
-    val materialTypography: Typography =
-        Typography(
-            // TODO needs mapping
-            displayLarge =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W300,
-                    fontSize = 30.sp,
-                    lineHeight = 38.sp,
-                ),
-            // TODO needs mapping
-            displayMedium =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W300,
-                    fontSize = 28.sp,
-                    lineHeight = 36.sp,
-                ),
-            // TODO needs mapping
-            displaySmall =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W300,
-                    fontSize = 26.sp,
-                    lineHeight = 34.sp,
-                ),
-            // TODO needs mapping
-            headlineLarge =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W700,
-                    fontSize = 18.sp,
-                    lineHeight = 24.sp,
-                ),
-            // TODO needs mapping
-            headlineMedium =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W700,
-                    fontSize = 16.sp,
-                    lineHeight = 22.sp,
-                ),
-            // TODO needs mapping
-            headlineSmall =
-                TextStyle(
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.W700,
-                    fontSize = 14.sp,
-                    lineHeight = 20.sp,
-                ),
-            titleLarge = largeBold,
-            titleMedium = mediumBold,
-            titleSmall = smallBold,
-            bodyLarge = largeLight,
-            bodyMedium = mediumLight,
-            bodySmall = smallLight,
-            labelLarge = largeLight,
-            labelMedium = mediumLight,
-            labelSmall = smallLight,
-        )
+    val materialTypography: Typography = Typography(
+        // TODO needs mapping
+        displayLarge = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W300,
+            fontSize = 30.sp,
+            lineHeight = 38.sp,
+        ),
+        // TODO needs mapping
+        displayMedium = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W300,
+            fontSize = 28.sp,
+            lineHeight = 36.sp,
+        ),
+        // TODO needs mapping
+        displaySmall = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W300,
+            fontSize = 26.sp,
+            lineHeight = 34.sp,
+        ),
+        // TODO needs mapping
+        headlineLarge = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W700,
+            fontSize = 18.sp,
+            lineHeight = 24.sp,
+        ),
+        // TODO needs mapping
+        headlineMedium = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W700,
+            fontSize = 16.sp,
+            lineHeight = 22.sp,
+        ),
+        // TODO needs mapping
+        headlineSmall = TextStyle(
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.W700,
+            fontSize = 14.sp,
+            lineHeight = 20.sp,
+        ),
+        titleLarge = largeBold,
+        titleMedium = mediumBold,
+        titleSmall = smallBold,
+        bodyLarge = largeLight,
+        bodyMedium = mediumLight,
+        bodySmall = smallLight,
+        labelLarge = largeLight,
+        labelMedium = mediumLight,
+        labelSmall = smallLight,
+    )
 }

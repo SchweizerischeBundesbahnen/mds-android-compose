@@ -118,45 +118,41 @@ object SBBSegmentedButton {
         modifier: Modifier = Modifier,
     ) {
         Box(
-            modifier =
-                modifier
-                    .height(style.layout.height)
-                    .fillMaxSize(),
+            modifier = modifier
+                .height(style.layout.height)
+                .fillMaxSize(),
         ) {
             val totalWeight = segments.size.toFloat()
             val positions = remember { mutableStateMapOf<T, LayoutCoordinates>() }
             val offset by animateIntOffsetAsState(
                 positions[selection]?.positionInParent()?.round() ?: IntOffset.Zero,
             )
-            val width =
-                with(LocalDensity.current) {
-                    positions.values
-                        .firstOrNull()
-                        ?.size
-                        ?.width
-                        ?.toDp() ?: 0.dp
-                }
+            val width = with(LocalDensity.current) {
+                positions.values
+                    .firstOrNull()
+                    ?.size
+                    ?.width
+                    ?.toDp() ?: 0.dp
+            }
 
             Box(
-                modifier =
-                    Modifier
-                        .fillMaxSize()
-                        .padding(style.layout.buttonOverlap)
-                        .clip(shape = style.layout.buttonShape)
-                        .background(color = style.colors.background),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(style.layout.buttonOverlap)
+                    .clip(shape = style.layout.buttonShape)
+                    .background(color = style.colors.background),
             )
             Box(
-                modifier =
-                    Modifier
-                        .width(width)
-                        .fillMaxHeight()
-                        .offset { offset }
-                        .clip(shape = style.layout.buttonShape)
-                        .background(style.colors.buttonBackground)
-                        .border(
-                            border = style.buttonBorderStroke,
-                            shape = style.layout.buttonShape,
-                        ),
+                modifier = Modifier
+                    .width(width)
+                    .fillMaxHeight()
+                    .offset { offset }
+                    .clip(shape = style.layout.buttonShape)
+                    .background(style.colors.buttonBackground)
+                    .border(
+                        border = style.buttonBorderStroke,
+                        shape = style.layout.buttonShape,
+                    ),
             )
             Row(horizontalArrangement = Arrangement.spacedBy(style.layout.buttonGap)) {
                 segments.forEach { segment ->
@@ -165,27 +161,26 @@ object SBBSegmentedButton {
                     val selected = segment.value == selection
 
                     Box(
-                        modifier =
-                            Modifier
-                                .weight(1f / totalWeight)
-                                .fillMaxHeight()
-                                .clip(shape = style.layout.buttonShape)
-                                .clickable(
-                                    role = Role.Button,
-                                    interactionSource = interactionSource,
-                                    indication = null,
-                                    onClick = { onSelectionChange(segment.value) },
-                                ).onGloballyPositioned { positions[segment.value] = it },
+                        modifier = Modifier
+                            .weight(1f / totalWeight)
+                            .fillMaxHeight()
+                            .clip(shape = style.layout.buttonShape)
+                            .clickable(
+                                role = Role.Button,
+                                interactionSource = interactionSource,
+                                indication = null,
+                                onClick = { onSelectionChange(segment.value) },
+                            )
+                            .onGloballyPositioned { positions[segment.value] = it },
                         contentAlignment = Alignment.Center,
                     ) {
                         Box(
-                            modifier =
-                                Modifier
-                                    .graphicsLayer { alpha = if (isPressed) 1f else 0f }
-                                    .fillMaxSize()
-                                    .clickable(interactionSource = interactionSource) {
-                                        onSelectionChange(segment.value)
-                                    },
+                            modifier = Modifier
+                                .graphicsLayer { alpha = if (isPressed) 1f else 0f }
+                                .fillMaxSize()
+                                .clickable(interactionSource = interactionSource) {
+                                    onSelectionChange(segment.value)
+                                },
                         )
                         Row(
                             horizontalArrangement = Arrangement.spacedBy(style.layout.horizontalElementSpacing),
@@ -215,28 +210,26 @@ object SBBSegmentedButton {
     }
 }
 
-private val twoSegments =
-    listOf(
-        SBBButtonSegment(
-            value = 1,
-            label = "Label 1",
-            icon = SBBIcons.Small.ArrowLongRightSmall,
-        ),
-        SBBButtonSegment(
-            value = 2,
-            label = "Label 2",
-            icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
-        ),
-    )
+private val twoSegments = listOf(
+    SBBButtonSegment(
+        value = 1,
+        label = "Label 1",
+        icon = SBBIcons.Small.ArrowLongRightSmall,
+    ),
+    SBBButtonSegment(
+        value = 2,
+        label = "Label 2",
+        icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
+    ),
+)
 
-private val threeSegments =
-    twoSegments.plus(
-        SBBButtonSegment(
-            value = 3,
-            label = "Label 3",
-            icon = SBBIcons.Small.UnicornSmall,
-        ),
-    )
+private val threeSegments = twoSegments.plus(
+    SBBButtonSegment(
+        value = 3,
+        label = "Label 3",
+        icon = SBBIcons.Small.UnicornSmall,
+    ),
+)
 
 @PreviewLightDark
 @Preview

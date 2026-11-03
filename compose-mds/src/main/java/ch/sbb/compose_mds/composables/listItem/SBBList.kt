@@ -68,20 +68,18 @@ object SBBList {
             val childPlaceables = childMeasurables.map { it.measure(constraints) }
 
             // Prepare measurables for dividers (one less than children)
-            val dividerMeasurables =
-                if (childPlaceables.size > 1) {
-                    List(childPlaceables.size - 1) { index ->
-                        // each divider is its own subcompose call (slot key keeps them distinct)
-                        subcompose("divider#$index") { divider() }.first().measure(constraints)
-                    }
-                } else {
-                    emptyList()
+            val dividerMeasurables = if (childPlaceables.size > 1) {
+                List(childPlaceables.size - 1) { index ->
+                    // each divider is its own subcompose call (slot key keeps them distinct)
+                    subcompose("divider#$index") { divider() }.first().measure(constraints)
                 }
+            } else {
+                emptyList()
+            }
 
             // Compute column size
-            val width =
-                (childPlaceables + dividerMeasurables).maxOfOrNull { it.width }
-                    ?: constraints.minWidth
+            val width = (childPlaceables + dividerMeasurables).maxOfOrNull { it.width }
+                ?: constraints.minWidth
             var height = 0
             childPlaceables.forEachIndexed { i, p ->
                 height += p.height

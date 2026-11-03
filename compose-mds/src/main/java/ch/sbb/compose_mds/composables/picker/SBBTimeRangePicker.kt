@@ -29,9 +29,7 @@ object SBBTimeRangePicker {
             onRangeChange(newStart, newEnd)
         }
 
-        Row(
-            modifier = modifier,
-        ) {
+        Row(modifier = modifier) {
             SBBTimePicker(
                 modifier = Modifier.weight(1f),
                 selectedTime = startTime,

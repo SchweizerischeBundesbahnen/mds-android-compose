@@ -298,23 +298,23 @@ object SBBListItem {
     ) {
         val colors by style.resolvedColors(enabled)
         Column(
-            modifier =
-                modifier
-                    .fillMaxWidth()
-                    .defaultMinSize(minHeight = style.layout.minHeight)
-                    .then(
-                        if (onClick != null || onLongClick != null) {
-                            Modifier.combinedClickable(
-                                enabled = enabled,
-                                onClick = { onClick?.invoke() },
-                                onLongClick = onLongClick?.let { { it() } },
-                                role = Role.Button,
-                                interactionSource = interactionSource,
-                            )
-                        } else {
-                            Modifier
-                        },
-                    ).padding(style.layout.padding),
+            modifier = modifier
+                .fillMaxWidth()
+                .defaultMinSize(minHeight = style.layout.minHeight)
+                .then(
+                    if (onClick != null || onLongClick != null) {
+                        Modifier.combinedClickable(
+                            enabled = enabled,
+                            onClick = { onClick?.invoke() },
+                            onLongClick = onLongClick?.let { { it() } },
+                            role = Role.Button,
+                            interactionSource = interactionSource,
+                        )
+                    } else {
+                        Modifier
+                    },
+                )
+                .padding(style.layout.padding),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center,
         ) {
@@ -323,14 +323,20 @@ object SBBListItem {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(style.layout.horizontalPadding),
             ) {
-                val scope by remember(colors, style) { mutableStateOf(SBBListItemScopeInstance(colors, style)) }
+                val scope by remember(colors, style) {
+                    mutableStateOf(
+                        SBBListItemScopeInstance(
+                            colors,
+                            style,
+                        ),
+                    )
+                }
                 leading?.let { scope.it() }
 
                 Column(
-                    modifier =
-                        Modifier
-                            .weight(1f)
-                            .wrapContentHeight(align = Alignment.CenterVertically),
+                    modifier = Modifier
+                        .weight(1f)
+                        .wrapContentHeight(align = Alignment.CenterVertically),
                     verticalArrangement = Arrangement.spacedBy(style.layout.verticalPadding),
                 ) {
                     title?.let { scope.it() }

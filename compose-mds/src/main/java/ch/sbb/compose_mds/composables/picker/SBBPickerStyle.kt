@@ -129,72 +129,66 @@ class DefaultPickerStyle : SBBPickerStyle by defaultSBBPickerStyle()
 fun defaultSBBPickerStyle(): SBBPickerStyle =
     object : SBBPickerStyle {
         override val colors: SBBPickerColorVariants
-            @Composable get() =
-                SBBPickerColorVariants(
-                    light =
-                        SBBPickerColors(
-                            backgroundSelected = SBBColors.cloud,
-                            line = SBBColors.cloud,
-                            text = SBBColors.black,
-                            textClose = SBBColors.storm,
-                            textFar = SBBColors.cement,
-                            textFaded = SBBColors.cement,
-                            subtext = SBBColors.granite,
-                            background = MaterialTheme.colorScheme.surface,
-                            boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
-                        ),
-                    dark =
-                        SBBPickerColors(
-                            backgroundSelected = SBBColors.iron,
-                            line = SBBColors.iron,
-                            text = SBBColors.white,
-                            textClose = SBBColors.cement,
-                            textFar = SBBColors.storm,
-                            textFaded = SBBColors.storm,
-                            subtext = SBBColors.graphite,
-                            background = MaterialTheme.colorScheme.surface,
-                            boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
-                        ),
-                )
+            @Composable get() = SBBPickerColorVariants(
+                light = SBBPickerColors(
+                    backgroundSelected = SBBColors.cloud,
+                    line = SBBColors.cloud,
+                    text = SBBColors.black,
+                    textClose = SBBColors.storm,
+                    textFar = SBBColors.cement,
+                    textFaded = SBBColors.cement,
+                    subtext = SBBColors.granite,
+                    background = MaterialTheme.colorScheme.surface,
+                    boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
+                ),
+                dark = SBBPickerColors(
+                    backgroundSelected = SBBColors.iron,
+                    line = SBBColors.iron,
+                    text = SBBColors.white,
+                    textClose = SBBColors.cement,
+                    textFar = SBBColors.storm,
+                    textFaded = SBBColors.storm,
+                    subtext = SBBColors.graphite,
+                    background = MaterialTheme.colorScheme.surface,
+                    boxedBackground = MaterialTheme.colorScheme.surfaceVariant,
+                ),
+            )
 
         override val layout: SBBPickerLayout
-            @Composable get() =
-                SBBPickerLayout(
-                    textStyle =
-                        SBBTheme.sbbTypography.XLargeLight.copy(
-                            lineHeight = 26.sp,
-                            fontWeight = FontWeight.Normal,
-                        ),
-                    separatorTextStyle = SBBTheme.sbbTypography.smallLight,
-                    horizontalPadding = SBBSpacing.Medium,
-                    selectedShape = RoundedCornerShape(8.dp),
-                    dateFormat = { locale ->
-                        val symbols = DateFormatSymbols(locale)
-                        val shortWeekdays = symbols.shortWeekdays.drop(1).take(7)
-                        val dayOfWeekNames =
-                            DayOfWeekNames(shortWeekdays - shortWeekdays.first() + shortWeekdays.first())
-                        val monthNames = MonthNames(symbols.shortMonths.take(12))
+            @Composable get() = SBBPickerLayout(
+                textStyle = SBBTheme.sbbTypography.XLargeLight.copy(
+                    lineHeight = 26.sp,
+                    fontWeight = FontWeight.Normal,
+                ),
+                separatorTextStyle = SBBTheme.sbbTypography.smallLight,
+                horizontalPadding = SBBSpacing.Medium,
+                selectedShape = RoundedCornerShape(8.dp),
+                dateFormat = { locale ->
+                    val symbols = DateFormatSymbols(locale)
+                    val shortWeekdays = symbols.shortWeekdays.drop(1).take(7)
+                    val dayOfWeekNames =
+                        DayOfWeekNames(shortWeekdays - shortWeekdays.first() + shortWeekdays.first())
+                    val monthNames = MonthNames(symbols.shortMonths.take(12))
 
-                        LocalDate.Format {
-                            dayOfWeek(dayOfWeekNames)
-                            char(' ')
-                            day()
-                            char(' ')
-                            monthName(monthNames)
-                            char(' ')
-                            year()
-                        }
-                    },
-                )
+                    LocalDate.Format {
+                        dayOfWeek(dayOfWeekNames)
+                        char(' ')
+                        day()
+                        char(' ')
+                        monthName(monthNames)
+                        char(' ')
+                        year()
+                    }
+                },
+            )
 
         override val itemSizes: SBBPickerItemSizes
-            get() =
-                SBBPickerItemSizes(
-                    selected = 34.dp,
-                    near = 28.dp,
-                    far = 27.dp,
-                    distant = 26.dp,
-                )
+            get() = SBBPickerItemSizes(
+                selected = 34.dp,
+                near = 28.dp,
+                far = 27.dp,
+                distant = 26.dp,
+            )
     }
 
 val LocalSBBPickerStyle = staticCompositionLocalOf<SBBPickerStyle> { DefaultPickerStyle() }

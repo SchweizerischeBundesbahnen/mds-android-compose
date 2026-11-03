@@ -1,9 +1,9 @@
 package ch.sbb.compose_mds.beta.text
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
  * Colors used by [SBBTextInput] and [SBBTextarea].

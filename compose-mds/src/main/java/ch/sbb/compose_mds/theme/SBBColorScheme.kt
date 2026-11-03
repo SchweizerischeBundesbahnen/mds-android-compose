@@ -48,69 +48,67 @@ data class SBBColorScheme(
         /**
          * Create a ColorScheme based on the off-brand theme context colors.
          */
-        fun offBrand(isDarkMode: Boolean): SBBColorScheme =
-            if (isDarkMode) offBrandDark() else offBrand()
+        fun offBrand(isDarkMode: Boolean): SBBColorScheme = if (isDarkMode) offBrandDark() else offBrand()
 
         /**
          * Create a ColorScheme based on the safety theme context colors.
          */
-        fun safety(isDarkMode: Boolean): SBBColorScheme =
-            if (isDarkMode) safetyDark() else safety()
+        fun safety(isDarkMode: Boolean): SBBColorScheme = if (isDarkMode) safetyDark() else safety()
 
-        private fun sbb() = SBBColorScheme(
-            primary = SBBColors.red,
-            primary85 = SBBColors.red85,
-            primary125 = SBBColors.red125,
-            primary150 = SBBColors.red150,
-            brand = SBBColors.red,
-            backgroundBase = SBBColors.milk,
-            backgroundContent = SBBColors.white,
-            error = SBBColors.error,
-            iconPrimary = SBBColors.black,
-            iconSecondary = SBBColors.granite,
-            textPrimary = SBBColors.black,
-            textSecondary = SBBColors.granite,
-            strokePrimary = SBBColors.black,
-            strokeSecondary = SBBColors.granite,
-            strokeSeparator = SBBColors.cloud,
-            selection = SBBColors.sky,
-        )
+        private fun sbb() =
+            SBBColorScheme(
+                primary = SBBColors.red,
+                primary85 = SBBColors.red85,
+                primary125 = SBBColors.red125,
+                primary150 = SBBColors.red150,
+                brand = SBBColors.red,
+                backgroundBase = SBBColors.milk,
+                backgroundContent = SBBColors.white,
+                error = SBBColors.error,
+                iconPrimary = SBBColors.black,
+                iconSecondary = SBBColors.granite,
+                textPrimary = SBBColors.black,
+                textSecondary = SBBColors.granite,
+                strokePrimary = SBBColors.black,
+                strokeSecondary = SBBColors.granite,
+                strokeSeparator = SBBColors.cloud,
+                selection = SBBColors.sky,
+            )
 
-        private fun sbbDark() = sbb().copy(
-            backgroundBase = SBBColors.black,
-            backgroundContent = SBBColors.charcoal,
-            error = SBBColors.errorDark,
-            iconPrimary = SBBColors.white,
-            iconSecondary = SBBColors.graphite,
-            textPrimary = SBBColors.white,
-            textSecondary = SBBColors.graphite,
-            strokePrimary = SBBColors.white,
-            strokeSecondary = SBBColors.graphite,
-            strokeSeparator = SBBColors.iron,
-            selection = SBBColors.skyDark,
-        )
+        private fun sbbDark() =
+            sbb().copy(
+                backgroundBase = SBBColors.black,
+                backgroundContent = SBBColors.charcoal,
+                error = SBBColors.errorDark,
+                iconPrimary = SBBColors.white,
+                iconSecondary = SBBColors.graphite,
+                textPrimary = SBBColors.white,
+                textSecondary = SBBColors.graphite,
+                strokePrimary = SBBColors.white,
+                strokeSecondary = SBBColors.graphite,
+                strokeSeparator = SBBColors.iron,
+                selection = SBBColors.skyDark,
+            )
 
-        private fun offBrand() = sbb().copy(
-            primary = SBBColors.royal,
-            primary85 = SBBColors.royal85,
-            primary125 = SBBColors.royal125,
-            primary150 = SBBColors.royal150,
-        )
+        private fun offBrand() =
+            sbb().copy(
+                primary = SBBColors.royal,
+                primary85 = SBBColors.royal85,
+                primary125 = SBBColors.royal125,
+                primary150 = SBBColors.royal150,
+            )
 
-        private fun offBrandDark() = sbbDark().copy(
-            primary = SBBColors.royalDark,
-            primary85 = SBBColors.royal85Dark,
-            primary125 = SBBColors.royal125Dark,
-            primary150 = SBBColors.royal150Dark,
-        )
+        private fun offBrandDark() =
+            sbbDark().copy(
+                primary = SBBColors.royalDark,
+                primary85 = SBBColors.royal85Dark,
+                primary125 = SBBColors.royal125Dark,
+                primary150 = SBBColors.royal150Dark,
+            )
 
-        private fun safety() = offBrand().copy(
-            brand = SBBColors.metal,
-        )
+        private fun safety() = offBrand().copy(brand = SBBColors.metal)
 
-        private fun safetyDark() = offBrandDark().copy(
-            brand = SBBColors.metal,
-        )
+        private fun safetyDark() = offBrandDark().copy(brand = SBBColors.metal)
     }
 
     fun toMaterialColorScheme(isDarkTheme: Boolean): ColorScheme {

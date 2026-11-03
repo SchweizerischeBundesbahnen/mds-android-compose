@@ -12,6 +12,7 @@ appcompat = "1.8.0"
 
 junit = "4.13.2"
 androidxTestExtJunit = "1.3.0"
+concurrentFutures = "1.2.0"
 espressoCore = "3.7.0"
 
 composePlugin = "1.12.2"
@@ -40,6 +41,7 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+androidx-concurrent-futures = { group = "androidx.concurrent", name = "concurrent-futures", version.ref = "concurrentFutures" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "composeUi" }
 androidx-ui-test-junit4-android = { group = "androidx.compose.ui", name = "ui-test-junit4-android", version.ref = "composeUi" }

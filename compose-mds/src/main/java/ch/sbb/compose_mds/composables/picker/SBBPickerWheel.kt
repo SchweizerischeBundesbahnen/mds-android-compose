@@ -61,26 +61,23 @@ fun <T> SBBPickerWheel(
     val selectedIndex = items.indexOf(currentItem).takeIf { it >= 0 } ?: 0
     val virtualCount = if (infinite) Int.MAX_VALUE else itemCount
 
-    val selectedVirtualIndex =
-        remember(items, currentItem, infinite) {
-            if (infinite) {
-                val middle = Int.MAX_VALUE / 2
-                middle - middle % itemCount + selectedIndex
-            } else {
-                selectedIndex
-            }
+    val selectedVirtualIndex = remember(items, currentItem, infinite) {
+        if (infinite) {
+            val middle = Int.MAX_VALUE / 2
+            middle - middle % itemCount + selectedIndex
+        } else {
+            selectedIndex
         }
+    }
 
-    val listState =
-        rememberLazyListState(
-            initialFirstVisibleItemIndex = selectedVirtualIndex,
-        )
+    val listState = rememberLazyListState(
+        initialFirstVisibleItemIndex = selectedVirtualIndex,
+    )
 
-    val flingBehavior =
-        rememberSnapFlingBehavior(
-            lazyListState = listState,
-            snapPosition = SnapPosition.Center,
-        )
+    val flingBehavior = rememberSnapFlingBehavior(
+        lazyListState = listState,
+        snapPosition = SnapPosition.Center,
+    )
 
     val onSelectionChangeState by rememberUpdatedState(onSelectionChange)
 
@@ -110,19 +107,18 @@ fun <T> SBBPickerWheel(
 
         val targetRealIndex = items.indexOf(currentItem).takeIf { it >= 0 } ?: 0
 
-        val targetIndex =
-            if (infinite) {
-                val currentVirtualIndex =
-                    listState.centeredItemIndex() ?: listState.firstVisibleItemIndex
+        val targetIndex = if (infinite) {
+            val currentVirtualIndex =
+                listState.centeredItemIndex() ?: listState.firstVisibleItemIndex
 
-                nearestVirtualIndex(
-                    currentVirtualIndex = currentVirtualIndex,
-                    targetRealIndex = targetRealIndex,
-                    itemCount = items.size,
-                )
-            } else {
-                targetRealIndex
-            }
+            nearestVirtualIndex(
+                currentVirtualIndex = currentVirtualIndex,
+                targetRealIndex = targetRealIndex,
+                itemCount = items.size,
+            )
+        } else {
+            targetRealIndex
+        }
 
         listState.scrollToItem(targetIndex)
     }
@@ -131,10 +127,9 @@ fun <T> SBBPickerWheel(
         modifier = modifier,
         state = listState,
         flingBehavior = flingBehavior,
-        contentPadding =
-            PaddingValues(
-                vertical = style.itemSizes.padding,
-            ),
+        contentPadding = PaddingValues(
+            vertical = style.itemSizes.padding,
+        ),
     ) {
         items(
             count = virtualCount,
@@ -148,11 +143,10 @@ fun <T> SBBPickerWheel(
             val textColor = colors.pickerItem(distanceFromCenter)
 
             Box(
-                modifier =
-                    Modifier
-                        .padding(horizontal = style.layout.horizontalPadding)
-                        .fillMaxWidth()
-                        .height(itemHeight),
+                modifier = Modifier
+                    .padding(horizontal = style.layout.horizontalPadding)
+                    .fillMaxWidth()
+                    .height(itemHeight),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
@@ -204,20 +198,18 @@ fun <T> rememberWheelWidth(
     val textMeasurer = rememberTextMeasurer()
     val density = LocalDensity.current
 
-    val labels =
-        remember(items, textSelector) {
-            items.map(textSelector)
-        }
+    val labels = remember(items, textSelector) {
+        items.map(textSelector)
+    }
 
     return remember(labels, textStyle, horizontalPadding, density) {
-        val maxTextWidthPx =
-            labels.maxOfOrNull { label ->
-                textMeasurer
-                    .measure(
-                        text = AnnotatedString(label),
-                        style = textStyle,
-                    ).size.width
-            } ?: 0
+        val maxTextWidthPx = labels.maxOfOrNull { label ->
+            textMeasurer
+                .measure(
+                    text = AnnotatedString(label),
+                    style = textStyle,
+                ).size.width
+        } ?: 0
 
         with(density) {
             maxTextWidthPx.toDp() + horizontalPadding * 2

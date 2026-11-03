@@ -50,43 +50,39 @@ internal fun RowScope.SBBTabBarItem(
     val configuration = LocalConfiguration.current
     val portrait = configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
-    val icon =
-        when (state) {
-            SBBTabBarItemState.Warning -> SBBIcons.Small.SignExclamationPointSmall
-            else -> data.icon
-        }
+    val icon = when (state) {
+        SBBTabBarItemState.Warning -> SBBIcons.Small.SignExclamationPointSmall
+        else -> data.icon
+    }
 
     val backgroundColor by animateColorAsState(
-        targetValue =
-            when (state) {
-                SBBTabBarItemState.None -> SBBColors.transparent
-                SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.onSurfaceVariant
-                SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.primary
-            },
+        targetValue = when (state) {
+            SBBTabBarItemState.None -> SBBColors.transparent
+            SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.onSurfaceVariant
+            SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.primary
+        },
     )
     val iconTint by animateColorAsState(
-        targetValue =
-            when (state) {
-                SBBTabBarItemState.None -> MaterialTheme.colorScheme.onSurface
-                SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.surfaceVariant
-                SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.onPrimary
-            },
+        targetValue = when (state) {
+            SBBTabBarItemState.None -> MaterialTheme.colorScheme.onSurface
+            SBBTabBarItemState.Selected -> MaterialTheme.colorScheme.surfaceVariant
+            SBBTabBarItemState.Warning -> MaterialTheme.colorScheme.onPrimary
+        },
     )
     Column(
-        modifier =
-            Modifier
-                .weight(1f)
-                .semantics(mergeDescendants = true) {
-                    contentDescription = data.label
-                    role = Role.Tab
-                    selected = state == SBBTabBarItemState.Selected
-                    onClick { false }
-                }
-                .pointerInput(Unit) {
-                    detectTapGestures(
-                        onPress = onPress,
-                    )
-                },
+        modifier = Modifier
+            .weight(1f)
+            .semantics(mergeDescendants = true) {
+                contentDescription = data.label
+                role = Role.Tab
+                selected = state == SBBTabBarItemState.Selected
+                onClick { false }
+            }
+            .pointerInput(Unit) {
+                detectTapGestures(
+                    onPress = onPress,
+                )
+            },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top,
     ) {
@@ -101,20 +97,19 @@ internal fun RowScope.SBBTabBarItem(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             Icon(
-                modifier =
-                    Modifier
-                        .onGloballyPositioned {
-                            onPosition(
-                                Rect(
-                                    it.positionInRoot(),
-                                    it.size.toSize(),
-                                ),
-                            )
-                        }
-                        .size(if (portrait) 44.dp else 36.dp)
-                        .clip(CircleShape)
-                        .background(color = backgroundColor)
-                        .padding(10.dp),
+                modifier = Modifier
+                    .onGloballyPositioned {
+                        onPosition(
+                            Rect(
+                                it.positionInRoot(),
+                                it.size.toSize(),
+                            ),
+                        )
+                    }
+                    .size(if (portrait) 44.dp else 36.dp)
+                    .clip(CircleShape)
+                    .background(color = backgroundColor)
+                    .padding(10.dp),
                 tint = iconTint,
                 imageVector = icon,
                 contentDescription = null,

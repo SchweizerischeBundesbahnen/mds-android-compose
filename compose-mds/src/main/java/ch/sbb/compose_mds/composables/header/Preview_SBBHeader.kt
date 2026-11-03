@@ -14,7 +14,7 @@ import ch.sbb.compose_mds.theme.SBBTheme
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderDefault() {
+internal fun Preview_SBBHeaderDefault() {
     SBBTheme {
         Surface {
             SBBHeader.Default(
@@ -27,9 +27,9 @@ internal fun _Preview_SBBHeaderDefault() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderDefaultWithNavigationBack() {
+internal fun Preview_SBBHeaderDefaultWithNavigationBack() {
     val nav = rememberNavController()
-    _Nav(nav)
+    Nav(nav)
     nav.navigate("test")
 
     SBBTheme {
@@ -45,9 +45,9 @@ internal fun _Preview_SBBHeaderDefaultWithNavigationBack() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderDefaultWithNavigationCancel() {
+internal fun Preview_SBBHeaderDefaultWithNavigationCancel() {
     val nav = rememberNavController()
-    _Nav(nav)
+    Nav(nav)
     nav.navigate("test")
 
     SBBTheme {
@@ -63,7 +63,7 @@ internal fun _Preview_SBBHeaderDefaultWithNavigationCancel() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderSmall() {
+internal fun Preview_SBBHeaderSmall() {
     SBBTheme {
         Surface {
             SBBHeader.Small(
@@ -76,9 +76,9 @@ internal fun _Preview_SBBHeaderSmall() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderSmallWithNavigationBack() {
+internal fun Preview_SBBHeaderSmallWithNavigationBack() {
     val nav = rememberNavController()
-    _Nav(nav)
+    Nav(nav)
     nav.navigate("test")
 
     SBBTheme {
@@ -94,9 +94,9 @@ internal fun _Preview_SBBHeaderSmallWithNavigationBack() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBHeaderSmallWithNavigationCancel() {
+internal fun Preview_SBBHeaderSmallWithNavigationCancel() {
     val nav = rememberNavController()
-    _Nav(nav)
+    Nav(nav)
     nav.navigate("test")
 
     SBBTheme {
@@ -111,7 +111,7 @@ internal fun _Preview_SBBHeaderSmallWithNavigationCancel() {
 }
 
 @Composable
-private fun _Nav(nav: NavHostController) {
+private fun Nav(nav: NavHostController) {
     NavHost(
         navController = nav,
         startDestination = "start",

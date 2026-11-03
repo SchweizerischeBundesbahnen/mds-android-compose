@@ -64,18 +64,17 @@ fun SBBRadio(
     val colors by style.resolvedColors(enabled)
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier =
-            modifier
-                .minimumInteractiveComponentSize()
-                .clip(RoundedCornerShape(SBBSpacing.XSmall))
-                .clickable(
-                    onClick = onClick,
-                    enabled = enabled,
-                    role = Role.RadioButton,
-                    interactionSource = interactionSource,
-                    indication = ripple(),
-                )
-                .padding(SBBSpacing.XSmall),
+        modifier = modifier
+            .minimumInteractiveComponentSize()
+            .clip(RoundedCornerShape(SBBSpacing.XSmall))
+            .clickable(
+                onClick = onClick,
+                enabled = enabled,
+                role = Role.RadioButton,
+                interactionSource = interactionSource,
+                indication = ripple(),
+            )
+            .padding(SBBSpacing.XSmall),
     ) {
         DrawRadio(
             modifier = Modifier.padding(end = SBBSpacing.XSmall),
@@ -85,10 +84,9 @@ fun SBBRadio(
         )
         if (icon != null) {
             Icon(
-                modifier =
-                    Modifier
-                        .semantics { hideFromAccessibility() }
-                        .padding(end = SBBSpacing.XSmall),
+                modifier = Modifier
+                    .semantics { hideFromAccessibility() }
+                    .padding(end = SBBSpacing.XSmall),
                 imageVector = icon,
                 contentDescription = null,
                 tint = colors.icon,
@@ -108,26 +106,23 @@ internal fun DrawRadio(
     val colors by style.resolvedColors(enabled)
     val animatedTickRadius by animateDpAsState(targetValue = if (selected) style.layout.tick else 0.dp)
     Box(
-        modifier =
-            modifier then
-                Modifier
-                    .size(style.layout.controlSize)
-                    .border(
-                        width = style.layout.borderWidth,
-                        color = colors.border,
-                        shape = CircleShape,
-                    )
-                    .background(colors.background, shape = CircleShape),
+        modifier = modifier then Modifier
+            .size(style.layout.controlSize)
+            .border(
+                width = style.layout.borderWidth,
+                color = colors.border,
+                shape = CircleShape,
+            )
+            .background(colors.background, shape = CircleShape),
         contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier =
-                Modifier
-                    .size(animatedTickRadius)
-                    .background(
-                        color = colors.tick,
-                        shape = CircleShape,
-                    ),
+            modifier = Modifier
+                .size(animatedTickRadius)
+                .background(
+                    color = colors.tick,
+                    shape = CircleShape,
+                ),
         )
     }
 }
@@ -138,10 +133,9 @@ private fun SBBRadioPreview() {
     val darkTheme = isSystemInDarkTheme()
     SBBTheme {
         Column(
-            modifier =
-                Modifier
-                    .background(if (darkTheme) SBBColors.black else SBBColors.white)
-                    .padding(SBBSpacing.Medium),
+            modifier = Modifier
+                .background(if (darkTheme) SBBColors.black else SBBColors.white)
+                .padding(SBBSpacing.Medium),
             verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
         ) {
             SBBRadio(
