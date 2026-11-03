@@ -24,7 +24,7 @@ import ch.sbb.compose_mds.theme.SBBSpacing
 
 @PreviewLightDark
 @Composable
-fun Preview_SBBStatus_Alert(
+private fun Preview_SBBStatus_Alert(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBComponentPreviewWrapper(config) {
@@ -39,7 +39,7 @@ fun Preview_SBBStatus_Alert(
 
 @PreviewLightDark
 @Composable
-fun Preview_SBBStatus_Warning(
+private fun Preview_SBBStatus_Warning(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBComponentPreviewWrapper(config) {
@@ -52,7 +52,7 @@ fun Preview_SBBStatus_Warning(
 
 @PreviewLightDark
 @Composable
-fun Preview_SBBStatus_Success(
+private fun Preview_SBBStatus_Success(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBComponentPreviewWrapper(config) {
@@ -65,7 +65,7 @@ fun Preview_SBBStatus_Success(
 
 @PreviewLightDark
 @Composable
-fun Preview_SBBStatus_Information(
+private fun Preview_SBBStatus_Information(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBComponentPreviewWrapper(config) {
@@ -78,7 +78,7 @@ fun Preview_SBBStatus_Information(
 
 @PreviewLightDark
 @Composable
-fun Preview_SBBStatus_Custom(
+private fun Preview_SBBStatus_Custom(
     @PreviewParameter(SBBThemeConfigProvider::class) config: ThemePreviewConfig,
 ) {
     SBBComponentPreviewWrapper(config) {

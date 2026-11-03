@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.beta.text
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -18,6 +17,7 @@ import ch.sbb.compose_mds.sbbicons.SBBIcons
 import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
  * Implementation of the SBB Textarea

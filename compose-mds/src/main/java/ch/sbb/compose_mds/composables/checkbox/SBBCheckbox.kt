@@ -87,16 +87,15 @@ fun SBBCheckbox(
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier =
-            modifier
-                .triStateToggleable(
-                    state,
-                    enabled = !disabled,
-                    role = Role.Checkbox,
-                    onClick = { onCheckedChange?.invoke(state.nextState(triStateEnabled)) },
-                )
-                .fillMaxWidth()
-                .padding(style.layout.padding),
+        modifier = modifier
+            .triStateToggleable(
+                state,
+                enabled = !disabled,
+                role = Role.Checkbox,
+                onClick = { onCheckedChange?.invoke(state.nextState(triStateEnabled)) },
+            )
+            .fillMaxWidth()
+            .padding(style.layout.padding),
     ) {
         DrawCheckbox(
             modifier = Modifier.padding(end = style.layout.padding),
@@ -107,10 +106,9 @@ fun SBBCheckbox(
         val colors by style.resolvedColors(!disabled)
         if (icon != null) {
             Icon(
-                modifier =
-                    Modifier
-                        .semantics { hideFromAccessibility() }
-                        .padding(end = style.layout.padding),
+                modifier = Modifier
+                    .semantics { hideFromAccessibility() }
+                    .padding(end = style.layout.padding),
                 imageVector = icon,
                 contentDescription = null,
                 tint = colors.icon,

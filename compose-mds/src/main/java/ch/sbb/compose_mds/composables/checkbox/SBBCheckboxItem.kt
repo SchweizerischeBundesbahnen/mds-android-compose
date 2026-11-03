@@ -187,13 +187,12 @@ object SBBCheckboxItem {
         listStyle: SBBListItemStyle = SBBTheme.listItem.withXSmallHorizontalGap,
         style: SBBCheckboxStyle = SBBTheme.checkbox,
     ) {
-        val toggleableModifier =
-            Modifier.triStateToggleable(
-                state = state,
-                enabled = enabled,
-                role = Role.Checkbox,
-                onClick = { onCheckedChange?.invoke(state.nextState(triStateEnabled = tristate)) },
-            )
+        val toggleableModifier = Modifier.triStateToggleable(
+            state = state,
+            enabled = enabled,
+            role = Role.Checkbox,
+            onClick = { onCheckedChange?.invoke(state.nextState(triStateEnabled = tristate)) },
+        )
         SBBListItem.Custom(
             modifier = modifier then toggleableModifier,
             style = listStyle,

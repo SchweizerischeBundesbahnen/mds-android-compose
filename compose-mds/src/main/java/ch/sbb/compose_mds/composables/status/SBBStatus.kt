@@ -158,7 +158,6 @@ fun SBBStatus(
                 )
             }
         }
-
         else -> null
     }
 
@@ -166,10 +165,12 @@ fun SBBStatus(
         label != null -> label
         !labelText.isNullOrBlank() -> {
             {
-                Text(text = labelText, modifier = Modifier.padding(horizontal = SBBSpacing.XSmall))
+                Text(
+                    text = labelText,
+                    modifier = Modifier.padding(horizontal = SBBSpacing.XSmall),
+                )
             }
         }
-
         else -> null
     }
 
@@ -187,4 +188,3 @@ fun SBBStatus(
         )
     }
 }
-

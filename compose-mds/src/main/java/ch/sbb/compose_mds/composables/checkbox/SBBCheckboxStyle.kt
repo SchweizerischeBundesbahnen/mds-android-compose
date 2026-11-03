@@ -52,18 +52,13 @@ interface SBBCheckboxStyle {
     fun resolvedColors(enabled: Boolean): State<SBBCheckboxColors> {
         val enabledState by remember { mutableStateOf(enabled) }
         val isDark = SBBTheme.isDarkMode
-        val colors =
-            if (isDark) {
-                if (enabledState) {
-                    colors.enabledDark
-                } else {
-                    colors.disabledDark
-                }
-            } else if (enabledState) {
-                colors.enabledLight
-            } else {
-                colors.disabledLight
-            }
+        val colors = if (isDark) {
+            if (enabledState) colors.enabledDark else colors.disabledDark
+        } else if (enabledState) {
+            colors.enabledLight
+        } else {
+            colors.disabledLight
+        }
 
         val background by animateColorAsState(colors.background)
         val border by animateColorAsState(colors.border)
@@ -90,49 +85,43 @@ class DefaultCheckboxStyle : SBBCheckboxStyle by defaultSBBCheckboxStyle()
 fun defaultSBBCheckboxStyle(): SBBCheckboxStyle =
     object : SBBCheckboxStyle {
         override val colors: SBBCheckboxColorVariants
-            @Composable get() =
-                SBBCheckboxColorVariants(
-                    enabledLight =
-                        SBBCheckboxColors(
-                            background = SBBColors.white,
-                            border = SBBColors.granite,
-                            tick = SBBTheme.colorScheme.primary,
-                            icon = SBBColors.black,
-                            text = SBBColors.black,
-                        ),
-                    enabledDark =
-                        SBBCheckboxColors(
-                            background = SBBColors.charcoal,
-                            border = SBBColors.graphite,
-                            tick = SBBTheme.colorScheme.primary,
-                            icon = SBBColors.white,
-                            text = SBBColors.white,
-                        ),
-                    disabledLight =
-                        SBBCheckboxColors(
-                            background = SBBColors.white,
-                            border = SBBColors.cloud,
-                            tick = SBBColors.granite,
-                            icon = SBBColors.granite,
-                            text = SBBColors.granite,
-                        ),
-                    disabledDark =
-                        SBBCheckboxColors(
-                            background = SBBColors.charcoal,
-                            border = SBBColors.iron,
-                            tick = SBBColors.graphite,
-                            icon = SBBColors.graphite,
-                            text = SBBColors.granite,
-                        ),
-                )
+            @Composable get() = SBBCheckboxColorVariants(
+                enabledLight = SBBCheckboxColors(
+                    background = SBBColors.white,
+                    border = SBBColors.granite,
+                    tick = SBBTheme.colorScheme.primary,
+                    icon = SBBColors.black,
+                    text = SBBColors.black,
+                ),
+                enabledDark = SBBCheckboxColors(
+                    background = SBBColors.charcoal,
+                    border = SBBColors.graphite,
+                    tick = SBBTheme.colorScheme.primary,
+                    icon = SBBColors.white,
+                    text = SBBColors.white,
+                ),
+                disabledLight = SBBCheckboxColors(
+                    background = SBBColors.white,
+                    border = SBBColors.cloud,
+                    tick = SBBColors.granite,
+                    icon = SBBColors.granite,
+                    text = SBBColors.granite,
+                ),
+                disabledDark = SBBCheckboxColors(
+                    background = SBBColors.charcoal,
+                    border = SBBColors.iron,
+                    tick = SBBColors.graphite,
+                    icon = SBBColors.graphite,
+                    text = SBBColors.granite,
+                ),
+            )
 
         override val layout
-            @Composable get() =
-                SBBCheckboxLayout(
-                    padding = SBBSpacing.XSmall,
-                    borderWidth = 1.dp,
-                    controlSize = 20.dp,
-                )
+            @Composable get() = SBBCheckboxLayout(
+                padding = SBBSpacing.XSmall,
+                borderWidth = 1.dp,
+                controlSize = 20.dp,
+            )
     }
 
 val LocalSBBCheckboxStyle = staticCompositionLocalOf<SBBCheckboxStyle> { DefaultCheckboxStyle() }

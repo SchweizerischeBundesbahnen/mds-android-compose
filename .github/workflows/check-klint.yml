@@ -50,5 +50,5 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Run Roborazzi Verification
+      - name: Run linter
         run: ./gradlew :compose-mds:ktlintCheck

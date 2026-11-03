@@ -64,13 +64,16 @@ sealed interface SBBHeaderBoxFlap {
                         contentDescription = null,
                     )
                 }
-                Text(modifier = Modifier.weight(1F), text = text, style = SBBTheme.sbbTypography.smallLight)
+                Text(
+                    modifier = Modifier.weight(1F),
+                    text = text,
+                    style = SBBTheme.sbbTypography.smallLight,
+                )
                 if (trailingIcon != null) {
                     Icon(
-                        modifier =
-                            Modifier
-                                .size(20.dp)
-                                .clickable(onClickTrailingIcon = onClickTrailingIcon),
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable(onClickTrailingIcon = onClickTrailingIcon),
                         imageVector = trailingIcon,
                         contentDescription = null,
                     )

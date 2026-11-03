@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.beta.text
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -43,6 +42,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
 import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
  * Implementation of the SBB Text-Input.
@@ -102,12 +102,12 @@ fun SBBTextInput(
 ) {
     val resolvedColors = colors
         ?: if (SBBTheme.isDarkMode) darkTextFieldColors(enabled = enabled) else lightTextFieldColors(
-            enabled = enabled
+            enabled = enabled,
         )
 
     val selectionColors = TextSelectionColors(
         handleColor = resolvedColors.selectionHandleColor,
-        backgroundColor = resolvedColors.selectionBackgroundColor
+        backgroundColor = resolvedColors.selectionBackgroundColor,
     )
     CompositionLocalProvider(LocalTextSelectionColors provides selectionColors) {
         BasicTextField(
@@ -136,43 +136,42 @@ fun SBBTextInput(
                                     .semantics { hideFromAccessibility() },
                                 imageVector = leadingIcon,
                                 contentDescription = null,
-                                tint = resolvedColors.iconColor
+                                tint = resolvedColors.iconColor,
                             )
                             Spacer(Modifier.width(SBBSpacing.XSmall))
                         }
 
                         Column {
-                            val inputState =
-                                when {
-                                    isFocused && value.isEmpty() -> InputPhase.FOCUSED_EMPTY
-                                    isFocused -> InputPhase.FOCUSED_NOT_EMPTY
-                                    value.isEmpty() -> InputPhase.UNFOCUSED_EMPTY
-                                    else -> InputPhase.UNFOCUSED_NOT_EMPTY
-                                }
+                            val inputState = when {
+                                isFocused && value.isEmpty() -> InputPhase.FOCUSED_EMPTY
+                                isFocused -> InputPhase.FOCUSED_NOT_EMPTY
+                                value.isEmpty() -> InputPhase.UNFOCUSED_EMPTY
+                                else -> InputPhase.UNFOCUSED_NOT_EMPTY
+                            }
 
                             Text(
                                 if (inputState != InputPhase.UNFOCUSED_EMPTY && label != null) label else "",
                                 style = SBBTheme.sbbTypography.XXSmallLight,
-                                color = resolvedColors.labelColor
+                                color = resolvedColors.labelColor,
                             )
 
                             Row(
                                 modifier = Modifier.padding(top = 2.dp, bottom = 4.dp),
-                                verticalAlignment = Alignment.Top
+                                verticalAlignment = Alignment.Top,
                             ) {
                                 Box(modifier = Modifier.weight(1f)) {
                                     if (value.isEmpty() && placeholder != null && inputState == InputPhase.FOCUSED_EMPTY) {
                                         Text(
                                             placeholder,
                                             style = textStyle,
-                                            color = resolvedColors.placeholderColor
+                                            color = resolvedColors.placeholderColor,
                                         )
                                     }
                                     if (value.isEmpty() && label != null && inputState == InputPhase.UNFOCUSED_EMPTY) {
                                         Text(
                                             label,
                                             style = textStyle,
-                                            color = resolvedColors.placeholderColor
+                                            color = resolvedColors.placeholderColor,
                                         )
                                     }
                                     innerTextField()
@@ -184,10 +183,11 @@ fun SBBTextInput(
                                             .semantics { hideFromAccessibility() }
                                             .clickable(
                                                 enabled = onClickTrailingIcon != null,
-                                                onClick = onClickTrailingIcon ?: {}),
+                                                onClick = onClickTrailingIcon ?: {},
+                                            ),
                                         imageVector = trailingIcon,
                                         contentDescription = null,
-                                        tint = resolvedColors.trailingIconColor
+                                        tint = resolvedColors.trailingIconColor,
                                     )
                                 }
                             }
@@ -199,7 +199,7 @@ fun SBBTextInput(
                             text = errorText,
                             color = resolvedColors.errorColor,
                             style = SBBTheme.sbbTypography.XXSmallBold,
-                            modifier = Modifier.padding(bottom = SBBSpacing.XXSmall)
+                            modifier = Modifier.padding(bottom = SBBSpacing.XXSmall),
                         )
                     }
 
@@ -212,7 +212,7 @@ fun SBBTextInput(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(1.dp)
-                            .background(underlineColor)
+                            .background(underlineColor),
                     )
 
                     if (supportingText != null && (!isError || errorText.isNullOrEmpty())) {
@@ -225,7 +225,7 @@ fun SBBTextInput(
                         }
                     }
                 }
-            }
+            },
         )
     }
 }

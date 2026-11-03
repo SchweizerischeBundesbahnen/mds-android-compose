@@ -40,12 +40,11 @@ fun SBBContentBox(
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Column(
-        modifier =
-            modifier
-                .clip(shape = RoundedCornerShape(size = SBBSpacing.Medium))
-                .background(color = backgroundColor)
-                .padding(contentPadding)
-                .clipToBounds(),
+        modifier = modifier
+            .clip(shape = RoundedCornerShape(size = SBBSpacing.Medium))
+            .background(color = backgroundColor)
+            .padding(contentPadding)
+            .clipToBounds(),
         verticalArrangement = verticalArrangement,
         horizontalAlignment = horizontalAlignment,
         content = content,

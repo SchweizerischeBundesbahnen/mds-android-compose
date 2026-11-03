@@ -29,12 +29,11 @@ fun SBBPickerSeparator(
     style: SBBPickerStyle = SBBTheme.picker,
     boxed: Boolean = false,
 ) {
-    val separatorWidth =
-        rememberLabelWheelWidth(
-            label = separatorText,
-            textStyle = style.layout.separatorTextStyle,
-            horizontalPadding = SBBSpacing.Zero,
-        )
+    val separatorWidth = rememberLabelWheelWidth(
+        label = separatorText,
+        textStyle = style.layout.separatorTextStyle,
+        horizontalPadding = SBBSpacing.Zero,
+    )
     SBBPickerWheelContainer(
         modifier = Modifier.width(separatorWidth) then modifier,
         highlightSelected = false,

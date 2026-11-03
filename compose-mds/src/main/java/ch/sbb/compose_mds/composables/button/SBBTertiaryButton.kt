@@ -167,34 +167,28 @@ private fun contentPadding(
 private fun buttonColors(pressed: Boolean): ButtonColors = if (SBBTheme.isDarkMode) darkModeColors(pressed) else lightModeColors(pressed)
 
 @Composable
-private fun lightModeColors(pressed: Boolean): ButtonColors {
-    return ButtonDefaults.buttonColors(
+private fun lightModeColors(pressed: Boolean): ButtonColors =
+    ButtonDefaults.buttonColors(
         containerColor = if (pressed) SBBColors.graphite else SBBColors.white,
         contentColor = SBBColors.black,
         disabledContainerColor = SBBColors.white,
         disabledContentColor = SBBColors.graphite,
     )
-}
 
 @Composable
-private fun darkModeColors(pressed: Boolean): ButtonColors {
-    return ButtonDefaults.buttonColors(
+private fun darkModeColors(pressed: Boolean): ButtonColors =
+    ButtonDefaults.buttonColors(
         containerColor = if (pressed) SBBColors.black else SBBColors.charcoal,
         contentColor = SBBColors.white,
         disabledContainerColor = Color(0x00000000),
         disabledContentColor = SBBColors.smoke,
     )
-}
 
 @Composable
 private fun borderColors(enabled: Boolean): BorderStroke = if (SBBTheme.isDarkMode) darkModeBorder(enabled) else lightModeBorder(enabled)
 
 @Composable
-private fun lightModeBorder(enabled: Boolean): BorderStroke {
-    return BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.cloud)
-}
+private fun lightModeBorder(enabled: Boolean): BorderStroke = BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.cloud)
 
 @Composable
-private fun darkModeBorder(enabled: Boolean): BorderStroke {
-    return BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.iron)
-}
+private fun darkModeBorder(enabled: Boolean): BorderStroke = BorderStroke(1.dp, if (enabled) SBBColors.smoke else SBBColors.iron)

@@ -26,11 +26,10 @@ object SBBDatePicker {
         onDateChange: (LocalDate) -> Unit,
         modifier: Modifier = Modifier,
         style: SBBPickerStyle = SBBTheme.picker,
-        range: LocalDateRange =
-            LocalDateRange(
-                YearMonth(1900, Month.JANUARY).firstDay,
-                YearMonth(2100, Month.DECEMBER).lastDay,
-            ),
+        range: LocalDateRange = LocalDateRange(
+            YearMonth(1900, Month.JANUARY).firstDay,
+            YearMonth(2100, Month.DECEMBER).lastDay,
+        ),
         boxed: Boolean = false,
     ) {
         val safeDate = selectedDate.coerceIn(range)
@@ -101,11 +100,10 @@ object SBBDatePicker {
         onDateChange: (LocalDate) -> Unit,
         modifier: Modifier = Modifier,
         style: SBBPickerStyle = SBBTheme.picker,
-        range: LocalDateRange =
-            LocalDateRange(
-                YearMonth(1900, Month.JANUARY).firstDay,
-                YearMonth(2100, Month.DECEMBER).lastDay,
-            ),
+        range: LocalDateRange = LocalDateRange(
+            YearMonth(1900, Month.JANUARY).firstDay,
+            YearMonth(2100, Month.DECEMBER).lastDay,
+        ),
     ) {
         invoke(
             selectedDate = selectedDate,
@@ -126,11 +124,10 @@ object SBBDatePicker {
         onDateChange: (LocalDate) -> Unit,
         modifier: Modifier = Modifier,
         style: SBBPickerStyle = SBBTheme.picker,
-        range: LocalDateRange =
-            LocalDateRange(
-                YearMonth(1900, Month.JANUARY).firstDay,
-                YearMonth(2100, Month.DECEMBER).lastDay,
-            ),
+        range: LocalDateRange = LocalDateRange(
+            YearMonth(1900, Month.JANUARY).firstDay,
+            YearMonth(2100, Month.DECEMBER).lastDay,
+        ),
     ) {
         SBBContentBox(contentPadding = PaddingValues.Zero) {
             invoke(
@@ -190,10 +187,9 @@ fun MonthPicker(
     style: SBBPickerStyle = SBBTheme.picker,
 ) {
     val locale = LocalConfiguration.current.locales[0]
-    val monthLabels =
-        remember(locale) {
-            DateFormatSymbols.getInstance(locale).months
-        }
+    val monthLabels = remember(locale) {
+        DateFormatSymbols.getInstance(locale).months
+    }
     SBBPickerWheel(
         modifier = modifier,
         items = Month.entries,

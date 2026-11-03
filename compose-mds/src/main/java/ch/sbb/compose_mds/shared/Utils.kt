@@ -23,6 +23,7 @@ fun ProvideForegroundStyle(
 }
 
 @SuppressLint("ComposableNaming")
+@Suppress("ktlint:standard:function-type-reference-spacing")
 @Composable
 fun (@Composable () -> Unit)?.applyForegroundStyle(
     color: Color,

@@ -76,18 +76,13 @@ interface SBBChipStyle {
     fun resolvedColors(enabled: Boolean): State<SBBChipColors> {
         val enabledState by remember { mutableStateOf(enabled) }
         val isDark = SBBTheme.isDarkMode
-        val colors =
-            if (isDark) {
-                if (enabledState) {
-                    colors.enabledDark
-                } else {
-                    colors.disabledDark
-                }
-            } else if (enabledState) {
-                colors.enabledLight
-            } else {
-                colors.disabledLight
-            }
+        val colors = if (isDark) {
+            if (enabledState) colors.enabledDark else colors.disabledDark
+        } else if (enabledState) {
+            colors.enabledLight
+        } else {
+            colors.disabledLight
+        }
 
         val background by animateColorAsState(colors.background)
         val backgroundNumber by animateColorAsState(colors.backgroundNumber)
@@ -118,72 +113,64 @@ class DefaultCheckboxStyle : SBBChipStyle by defaultSBBChipStyle()
 fun defaultSBBChipStyle(): SBBChipStyle =
     object : SBBChipStyle {
         override val colors: SBBChipColorVariants
-            @Composable get() =
-                SBBChipColorVariants(
-                    enabledLight =
-                        SBBChipColors(
-                            background = SBBColors.white,
-                            backgroundNumber = SBBTheme.colorScheme.primary,
-                            backgroundClose = SBBColors.cloud,
-                            border = SBBColors.granite,
-                            text = SBBColors.black,
-                            textNumber = SBBColors.white,
-                            iconClose = SBBColors.black,
-                        ),
-                    enabledDark =
-                        SBBChipColors(
-                            background = SBBColors.charcoal,
-                            backgroundNumber = SBBTheme.colorScheme.primary,
-                            backgroundClose = SBBColors.granite,
-                            border = SBBColors.graphite,
-                            text = SBBColors.white,
-                            textNumber = SBBColors.white,
-                            iconClose = SBBColors.white,
-                        ),
-                    disabledLight =
-                        SBBChipColors(
-                            background = SBBColors.white,
-                            backgroundNumber = SBBColors.graphite,
-                            backgroundClose = SBBColors.milk,
-                            border = SBBColors.cloud,
-                            text = SBBColors.granite,
-                            textNumber = SBBColors.white,
-                            iconClose = SBBColors.granite,
-                        ),
-                    disabledDark =
-                        SBBChipColors(
-                            background = SBBColors.charcoal,
-                            backgroundNumber = SBBColors.iron,
-                            backgroundClose = SBBColors.iron,
-                            border = SBBColors.iron,
-                            text = SBBColors.graphite,
-                            textNumber = SBBColors.white,
-                            iconClose = SBBColors.graphite,
-                        ),
-                )
+            @Composable get() = SBBChipColorVariants(
+                enabledLight = SBBChipColors(
+                    background = SBBColors.white,
+                    backgroundNumber = SBBTheme.colorScheme.primary,
+                    backgroundClose = SBBColors.cloud,
+                    border = SBBColors.granite,
+                    text = SBBColors.black,
+                    textNumber = SBBColors.white,
+                    iconClose = SBBColors.black,
+                ),
+                enabledDark = SBBChipColors(
+                    background = SBBColors.charcoal,
+                    backgroundNumber = SBBTheme.colorScheme.primary,
+                    backgroundClose = SBBColors.granite,
+                    border = SBBColors.graphite,
+                    text = SBBColors.white,
+                    textNumber = SBBColors.white,
+                    iconClose = SBBColors.white,
+                ),
+                disabledLight = SBBChipColors(
+                    background = SBBColors.white,
+                    backgroundNumber = SBBColors.graphite,
+                    backgroundClose = SBBColors.milk,
+                    border = SBBColors.cloud,
+                    text = SBBColors.granite,
+                    textNumber = SBBColors.white,
+                    iconClose = SBBColors.granite,
+                ),
+                disabledDark = SBBChipColors(
+                    background = SBBColors.charcoal,
+                    backgroundNumber = SBBColors.iron,
+                    backgroundClose = SBBColors.iron,
+                    border = SBBColors.iron,
+                    text = SBBColors.graphite,
+                    textNumber = SBBColors.white,
+                    iconClose = SBBColors.graphite,
+                ),
+            )
         override val layout
-            @Composable get() =
-                SBBChipLayout(
-                    padding =
-                        PaddingValues(
-                            start = SBBSpacing.Small,
-                            top = SBBSpacing.XXSmall,
-                            end = SBBSpacing.XXSmall,
-                            bottom = SBBSpacing.XXSmall,
-                        ),
-                    borderStrokeWidth = 1.dp,
-                    shape = RoundedCornerShape(percent = 100),
-                    labelGap = SBBSpacing.Small,
-                    indicatorSize = 24.dp,
-                    indicatorShape = CircleShape,
-                )
+            @Composable get() = SBBChipLayout(
+                padding = PaddingValues(
+                    start = SBBSpacing.Small,
+                    top = SBBSpacing.XXSmall,
+                    end = SBBSpacing.XXSmall,
+                    bottom = SBBSpacing.XXSmall,
+                ),
+                borderStrokeWidth = 1.dp,
+                shape = RoundedCornerShape(percent = 100),
+                labelGap = SBBSpacing.Small,
+                indicatorSize = 24.dp,
+                indicatorShape = CircleShape,
+            )
 
         override val typography: SBBChipTypography
-            @Composable get() =
-                SBBChipTypography(
-                    label = SBBTheme.materialTypography.bodyMedium,
-                    number = SBBTheme.materialTypography.headlineSmall,
-                )
+            @Composable get() = SBBChipTypography(
+                label = SBBTheme.materialTypography.bodyMedium,
+                number = SBBTheme.materialTypography.headlineSmall,
+            )
     }
 
 val LocalSBBChipStyle = staticCompositionLocalOf<SBBChipStyle> { DefaultCheckboxStyle() }

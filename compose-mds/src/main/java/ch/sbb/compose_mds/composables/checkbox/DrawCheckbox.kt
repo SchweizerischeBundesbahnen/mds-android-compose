@@ -74,11 +74,10 @@ private fun DrawScope.drawAnyCheckbox(
     val edgeHalf = innerWidth * 0.5f
     val markRadius = CornerRadius(0.02f * innerWidth, 0.02f * innerWidth)
 
-    val origin =
-        Offset(
-            x = (size.width - innerWidth) / 2f,
-            y = (size.height - innerWidth) / 2f,
-        )
+    val origin = Offset(
+        x = (size.width - innerWidth) / 2f,
+        y = (size.height - innerWidth) / 2f,
+    )
 
     drawRoundedBox(
         origin = origin,
@@ -167,21 +166,19 @@ private fun DrawScope.drawRoundedBox(
     borderColor: Color,
     fillColor: Color,
 ) {
-    val innerRect =
-        Rect(
-            left = origin.x,
-            top = origin.y,
-            right = origin.x + innerWidth,
-            bottom = origin.y + innerWidth,
-        )
+    val innerRect = Rect(
+        left = origin.x,
+        top = origin.y,
+        right = origin.x + innerWidth,
+        bottom = origin.y + innerWidth,
+    )
 
-    val outerRect =
-        Rect(
-            left = innerRect.left - borderWidthPx,
-            top = innerRect.top - borderWidthPx,
-            right = innerRect.right + borderWidthPx,
-            bottom = innerRect.bottom + borderWidthPx,
-        )
+    val outerRect = Rect(
+        left = innerRect.left - borderWidthPx,
+        top = innerRect.top - borderWidthPx,
+        right = innerRect.right + borderWidthPx,
+        bottom = innerRect.bottom + borderWidthPx,
+    )
 
     drawRoundRect(
         color = borderColor,
@@ -210,12 +207,11 @@ private fun DrawScope.drawCheck(
     val clamped = t.coerceIn(0f, 1f)
     val pivot = Offset(origin.x + edgeHalf, origin.y + edgeHalf)
 
-    withTransform({
-        rotate(
-            degrees = 45f,
-            pivot = pivot,
-        )
-    }) {
+    withTransform(
+        {
+            rotate(degrees = 45f, pivot = pivot)
+        },
+    ) {
         if (clamped < 0.5f) {
             drawCheckShortSide(
                 origin = origin,
@@ -302,13 +298,12 @@ private fun DrawScope.drawDash(
     val center = Offset(edgeHalf, edgeHalf) + origin
     val drawWidth = lerpFloat(0f, 0.6f * innerWidth, clamped)
 
-    val rect =
-        Rect(
-            left = center.x - drawWidth / 2f,
-            top = center.y - height / 2f,
-            right = center.x + drawWidth / 2f,
-            bottom = center.y + height / 2f,
-        )
+    val rect = Rect(
+        left = center.x - drawWidth / 2f,
+        top = center.y - height / 2f,
+        right = center.x + drawWidth / 2f,
+        bottom = center.y + height / 2f,
+    )
 
     drawRoundRect(
         color = color,

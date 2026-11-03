@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.beta.slider
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import android.content.res.Configuration
 import androidx.compose.foundation.border
 import androidx.compose.foundation.indication
@@ -34,6 +33,7 @@ import ch.sbb.compose_mds.sbbicons.Small
 import ch.sbb.compose_mds.sbbicons.small.MinusSmall
 import ch.sbb.compose_mds.sbbicons.small.PlusSmall
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @ExperimentalSBBComponent
@@ -49,10 +49,11 @@ fun SBBSlider(
 ) {
     Row(
         modifier = modifier.alpha(if (enabled) 1f else .5f),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(imageVector = leadingIcon, contentDescription = null)
-        Slider(state = state,
+        Slider(
+            state = state,
             colors = colors,
             interactionSource = interactionSource,
             enabled = enabled,
@@ -81,9 +82,10 @@ fun SBBSlider(
                     sliderState = sliderState,
                     drawStopIndicator = null,
                     thumbTrackGapSize = 0.dp,
-                    colors = colors
+                    colors = colors,
                 )
-            })
+            },
+        )
         Icon(imageVector = trailingIcon, contentDescription = null)
     }
 }

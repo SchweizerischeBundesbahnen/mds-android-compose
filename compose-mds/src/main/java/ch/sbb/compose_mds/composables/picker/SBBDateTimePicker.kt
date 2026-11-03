@@ -37,11 +37,10 @@ object SBBDateTimePicker {
         modifier: Modifier = Modifier,
         style: SBBPickerStyle = SBBTheme.picker,
         selectedDateTime: LocalDateTime = DateTimePicker.now,
-        dateRange: LocalDateRange =
-            LocalDateRange(
-                YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
-                YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
-            ),
+        dateRange: LocalDateRange = LocalDateRange(
+            YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
+            YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
+        ),
         boxed: Boolean = false,
     ) {
         fun emitDateTime(
@@ -97,11 +96,10 @@ object SBBDateTimePicker {
         modifier: Modifier = Modifier,
         selectedDateTime: LocalDateTime = DateTimePicker.now,
         style: SBBPickerStyle = SBBTheme.picker,
-        range: LocalDateRange =
-            LocalDateRange(
-                YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
-                YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
-            ),
+        range: LocalDateRange = LocalDateRange(
+            YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
+            YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
+        ),
     ) {
         invoke(
             onDateTimeChange = onDateTimeChange,
@@ -122,11 +120,10 @@ object SBBDateTimePicker {
         modifier: Modifier = Modifier,
         style: SBBPickerStyle = SBBTheme.picker,
         selectedDateTime: LocalDateTime = DateTimePicker.now,
-        dateRange: LocalDateRange =
-            LocalDateRange(
-                YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
-                YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
-            ),
+        dateRange: LocalDateRange = LocalDateRange(
+            YearMonth(DateTimePicker.now.year - 1, Month.JANUARY).firstDay,
+            YearMonth(DateTimePicker.now.year + 1, Month.DECEMBER).lastDay,
+        ),
     ) {
         SBBContentBox(contentPadding = PaddingValues.Zero) {
             invoke(

@@ -21,7 +21,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -64,11 +63,10 @@ fun SBBHeader.Default(
         navigation = navigation,
         onNavigationClick = onNavigationClick,
         actions = actions,
-        modifier =
-            modifier
-                .background(SBBTheme.colorScheme.primary)
-                .padding(horizontal = 14.dp)
-                .padding(bottom = 30.dp),
+        modifier = modifier
+            .background(SBBTheme.colorScheme.primary)
+            .padding(horizontal = 14.dp)
+            .padding(bottom = 30.dp),
     )
 }
 
@@ -99,10 +97,9 @@ fun SBBHeader.Small(
         navigation = navigation,
         onNavigationClick = onNavigationClick,
         actions = actions,
-        modifier =
-            modifier
-                .background(SBBTheme.colorScheme.primary)
-                .padding(horizontal = 14.dp),
+        modifier = modifier
+            .background(SBBTheme.colorScheme.primary)
+            .padding(horizontal = 14.dp),
     )
 }
 
@@ -141,11 +138,10 @@ private fun SBBHeaderInternal(
 
     CenterAlignedTopAppBar(
         modifier = modifier,
-        colors =
-            TopAppBarDefaults.topAppBarColors(
-                containerColor = SBBTheme.colorScheme.primary,
-                titleContentColor = SBBColors.white,
-            ),
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = SBBTheme.colorScheme.primary,
+            titleContentColor = SBBColors.white,
+        ),
         title = {
             Text(
                 text = title,
@@ -189,30 +185,3 @@ private fun SBBHeaderInternal(
         actions = actions ?: {},
     )
 }
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderDefault() = _Preview_SBBHeaderDefault()
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderDefaultWithNavigationBack() =
-    _Preview_SBBHeaderDefaultWithNavigationBack()
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderDefaultWithNavigationCancel() =
-    _Preview_SBBHeaderDefaultWithNavigationCancel()
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderSmall() = _Preview_SBBHeaderSmall()
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderSmallWithNavigationBack() = _Preview_SBBHeaderSmallWithNavigationBack()
-
-@Preview(showBackground = true)
-@Composable
-private fun Preview_SBBHeaderSmallWithNavigationCancel() =
-    _Preview_SBBHeaderSmallWithNavigationCancel()

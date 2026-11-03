@@ -212,12 +212,8 @@ object SBBHeaderBox {
     }
 
     @Composable
-    private fun iconColor(): Color {
-        return if (SBBTheme.isDarkMode) SBBColors.white else SBBColors.black
-    }
+    private fun iconColor(): Color = if (SBBTheme.isDarkMode) SBBColors.white else SBBColors.black
 
     @Composable
-    private fun flapBackgroundColor(): Color {
-        return if (SBBTheme.isDarkMode) SBBColors.midnight else SBBColors.cloud
-    }
+    private fun flapBackgroundColor(): Color = if (SBBTheme.isDarkMode) SBBColors.midnight else SBBColors.cloud
 }

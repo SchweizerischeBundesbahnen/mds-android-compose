@@ -5,29 +5,27 @@ compose = enabled
 compose_modifier-missing-check = enabled
 compose_modifier-reused = enabled
 compose_preview-public = disabled
-compose_allowed_composition_locals = LocalSBBChipStyle,LocalSBBNotificationBoxStyle,LocalSBBCheckboxStyle,LocalSBBRadioStyle,LocalSBBListItemStyle,LocalSBBSegmentedButtonStyle,LocalSBBChipButtonStyle,LocalSBBPickerStyle,LocalThemeContext,LocalSBBIsDarkMode,LocalSBBTypography
+compose_allowed_composition_locals = LocalSBBChipStyle, LocalSBBNotificationBoxStyle, LocalSBBCheckboxStyle, LocalSBBRadioStyle, LocalSBBListItemStyle, LocalSBBSegmentedButtonStyle, LocalSBBChipButtonStyle, LocalSBBPickerStyle, LocalSBBIsDarkMode, LocalSBBTypography, LocalSBBColorScheme, LocalSBBStatusThemeData
 
 indent_size = 4
 indent_style = space
-# ktlint_standard_max_line_length = 100 # KtLint-specific property for line length
+ktlint_standard_max-line-length = 120
 
 # Trailing Commas (Highly recommended to allow them for cleaner diffs and reordering)
 ij_kotlin_allow_trailing_comma = true
 ij_kotlin_allow_trailing_comma_on_call_site = true
 
 # Import Order (KtLint standard import order)
-# See https://pinterest.github.io/ktlint/latest/rules/standard/#import-ordering
-# ij_kotlin_imports_layout=*,java.,kotlin.,^
-# Example for Android:
 ij_kotlin_imports_layout=*,android.,androidx.,com.,org.,java.,kotlin.,^
 
 # Other common KtLint/IntelliJ Kotlin properties
-# Check KtLint documentation for all available options: https://pinterest.github.io/ktlint/latest/rules/configuration-ktlint/
 ktlint_standard_no-wildcard-imports = disabled # Usually you want to disable this for Android/Kotlin projects, allows `import android.view.*`
 ktlint_standard_final-newline = enabled
 ktlint_standard_filename = enabled # Filename matches class name
 ktlint_standard_wrapping = enabled # Enforces wrapping rules
 ktlint_standard_package-name = disabled
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_chain-method-continuation = disabled
 
 ktlint_function_naming_ignore_when_annotated_with = Composable
 ktlint_standard_property-naming = disabled
@@ -41,12 +39,8 @@ ij_formatter_enabled = false
 ktlint = disabled
 
 [**/beta/**]
-ij_formatter_enabled = false
 ktlint = disabled
 
 [Preview_*.kt]
 ktlint_standard_class-naming = disabled
 ktlint_standard_filename = disabled
-
-[ContextColors.kt]
-ktlint_standard_class-naming = disabled

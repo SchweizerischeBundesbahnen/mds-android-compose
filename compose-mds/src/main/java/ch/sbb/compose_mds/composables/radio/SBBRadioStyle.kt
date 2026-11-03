@@ -49,18 +49,13 @@ interface SBBRadioStyle {
     fun resolvedColors(enabled: Boolean): State<SBBRadioColors> {
         val enabledState by remember { mutableStateOf(enabled) }
         val isDark = SBBTheme.isDarkMode
-        val colors =
-            if (isDark) {
-                if (enabledState) {
-                    colors.enabledDark
-                } else {
-                    colors.disabledDark
-                }
-            } else if (enabledState) {
-                colors.enabledLight
-            } else {
-                colors.disabledLight
-            }
+        val colors = if (isDark) {
+            if (enabledState) colors.enabledDark else colors.disabledDark
+        } else if (enabledState) {
+            colors.enabledLight
+        } else {
+            colors.disabledLight
+        }
 
         val background by animateColorAsState(colors.background)
         val border by animateColorAsState(colors.border)
@@ -87,48 +82,42 @@ class DefaultRadioStyle : SBBRadioStyle by defaultSBBRadioStyle()
 fun defaultSBBRadioStyle(): SBBRadioStyle =
     object : SBBRadioStyle {
         override val colors
-            @Composable get() =
-                SBBRadioColorVariants(
-                    enabledLight =
-                        SBBRadioColors(
-                            background = SBBColors.white,
-                            border = SBBColors.granite,
-                            tick = SBBTheme.colorScheme.primary,
-                            icon = SBBColors.black,
-                            text = SBBColors.black,
-                        ),
-                    enabledDark =
-                        SBBRadioColors(
-                            background = SBBColors.charcoal,
-                            border = SBBColors.graphite,
-                            tick = SBBTheme.colorScheme.primary,
-                            icon = SBBColors.white,
-                            text = SBBColors.white,
-                        ),
-                    disabledLight =
-                        SBBRadioColors(
-                            background = SBBColors.white,
-                            border = SBBColors.cloud,
-                            tick = SBBColors.granite,
-                            icon = SBBColors.granite,
-                            text = SBBColors.granite,
-                        ),
-                    disabledDark =
-                        SBBRadioColors(
-                            background = SBBColors.charcoal,
-                            border = SBBColors.iron,
-                            tick = SBBColors.graphite,
-                            icon = SBBColors.graphite,
-                            text = SBBColors.graphite,
-                        ),
-                )
+            @Composable get() = SBBRadioColorVariants(
+                enabledLight = SBBRadioColors(
+                    background = SBBColors.white,
+                    border = SBBColors.granite,
+                    tick = SBBTheme.colorScheme.primary,
+                    icon = SBBColors.black,
+                    text = SBBColors.black,
+                ),
+                enabledDark = SBBRadioColors(
+                    background = SBBColors.charcoal,
+                    border = SBBColors.graphite,
+                    tick = SBBTheme.colorScheme.primary,
+                    icon = SBBColors.white,
+                    text = SBBColors.white,
+                ),
+                disabledLight = SBBRadioColors(
+                    background = SBBColors.white,
+                    border = SBBColors.cloud,
+                    tick = SBBColors.granite,
+                    icon = SBBColors.granite,
+                    text = SBBColors.granite,
+                ),
+                disabledDark = SBBRadioColors(
+                    background = SBBColors.charcoal,
+                    border = SBBColors.iron,
+                    tick = SBBColors.graphite,
+                    icon = SBBColors.graphite,
+                    text = SBBColors.graphite,
+                ),
+            )
         override val layout
-            @Composable get() =
-                SBBRadioLayout(
-                    tick = SBBSpacing.XSmall,
-                    borderWidth = 1.dp,
-                    controlSize = 20.dp,
-                )
+            @Composable get() = SBBRadioLayout(
+                tick = SBBSpacing.XSmall,
+                borderWidth = 1.dp,
+                controlSize = 20.dp,
+            )
     }
 
 val LocalSBBRadioStyle = staticCompositionLocalOf<SBBRadioStyle> { DefaultRadioStyle() }

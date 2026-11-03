@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.beta.dropdown
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -39,6 +38,7 @@ import ch.sbb.compose_mds.sbbicons.small.ChevronSmallDownSmall
 import ch.sbb.compose_mds.sbbicons.small.TickSmall
 import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
+import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
  * A single selectable item for [SBBDropdown].
@@ -91,7 +91,7 @@ fun <T> SBBDropdown(
 ) {
     val resolvedColors = colors
         ?: if (SBBTheme.isDarkMode) darkDropdownColors(enabled = enabled) else lightDropdownColors(
-            enabled = enabled
+            enabled = enabled,
         )
 
     var showItemSelection by remember { mutableStateOf(false) }
@@ -102,7 +102,7 @@ fun <T> SBBDropdown(
             value = value,
             items = items,
             onSelected = onValueChange,
-            onClose = { showItemSelection = false }
+            onClose = { showItemSelection = false },
         )
     }
 
@@ -117,7 +117,7 @@ fun <T> SBBDropdown(
                     modifier = Modifier.semantics { hideFromAccessibility() },
                     imageVector = leadingIcon,
                     contentDescription = null,
-                    tint = resolvedColors.iconColor
+                    tint = resolvedColors.iconColor,
                 )
             }
 
@@ -127,19 +127,19 @@ fun <T> SBBDropdown(
                     Text(
                         label,
                         style = SBBTheme.sbbTypography.XXSmallLight,
-                        color = resolvedColors.labelColor
+                        color = resolvedColors.labelColor,
                     )
                     Text(
                         selected?.label ?: placeholder!!,
                         style = textStyle,
-                        color = if (selected != null) resolvedColors.valueTextColor else resolvedColors.placeholderColor
+                        color = if (selected != null) resolvedColors.valueTextColor else resolvedColors.placeholderColor,
                     )
                 }
             } else {
                 Text(
                     placeholder ?: label,
                     modifier = Modifier.weight(1f),
-                    color = resolvedColors.placeholderColor
+                    color = resolvedColors.placeholderColor,
                 )
             }
 
@@ -147,7 +147,7 @@ fun <T> SBBDropdown(
                 modifier = Modifier.semantics { hideFromAccessibility() },
                 imageVector = SBBIcons.Small.ChevronSmallDownSmall,
                 contentDescription = null,
-                tint = resolvedColors.dropdownIconColor
+                tint = resolvedColors.dropdownIconColor,
             )
         }
 
@@ -156,7 +156,7 @@ fun <T> SBBDropdown(
                 text = errorText,
                 color = resolvedColors.errorColor,
                 style = SBBTheme.sbbTypography.XXSmallBold,
-                modifier = Modifier.padding(bottom = SBBSpacing.XXSmall)
+                modifier = Modifier.padding(bottom = SBBSpacing.XXSmall),
             )
         }
 
@@ -168,7 +168,7 @@ fun <T> SBBDropdown(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(1.dp)
-                .background(underlineColor)
+                .background(underlineColor),
         )
 
         if (supportingText != null && (!isError || errorText.isNullOrEmpty())) {
@@ -176,7 +176,7 @@ fun <T> SBBDropdown(
                 Text(
                     supportingText,
                     style = SBBTheme.sbbTypography.helpersLabel,
-                    color = resolvedColors.labelColor
+                    color = resolvedColors.labelColor,
                 )
             }
         }
@@ -219,7 +219,7 @@ internal fun <T> SelectionSheet(
 @OptIn(ExperimentalSBBComponent::class)
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBDropdown() {
+internal fun Preview_SBBDropdown() {
     SBBTheme {
         Surface {
             SBBDropdown(
@@ -238,7 +238,7 @@ internal fun _Preview_SBBDropdown() {
 @OptIn(ExperimentalSBBComponent::class)
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBDropdownLabel() {
+internal fun Preview_SBBDropdownLabel() {
     SBBTheme {
         Surface {
             SBBDropdown(
@@ -255,7 +255,7 @@ internal fun _Preview_SBBDropdownLabel() {
 @OptIn(ExperimentalSBBComponent::class)
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBDropdown_Error() {
+internal fun Preview_SBBDropdown_Error() {
     SBBTheme {
         Surface {
             SBBDropdown(
@@ -275,7 +275,7 @@ internal fun _Preview_SBBDropdown_Error() {
 
 @Preview(showBackground = true)
 @Composable
-internal fun _Preview_SBBDropdown_Selection() {
+internal fun Preview_SBBDropdown_Selection() {
     SBBTheme {
         Surface {
             SelectionSheet(
@@ -285,10 +285,10 @@ internal fun _Preview_SBBDropdown_Selection() {
                     SBBDropdownItem(label = "Item 1", value = 1),
                     SBBDropdownItem(label = "Item 2", value = 2),
                     SBBDropdownItem(label = "Item 3", value = 3),
-                    SBBDropdownItem(label = "Item 4", value = 4)
+                    SBBDropdownItem(label = "Item 4", value = 4),
                 ),
                 onClose = {},
-                onSelected = {}
+                onSelected = {},
             )
         }
     }
