@@ -1,0 +1,156 @@
+package ch.sbb.compose_mds.icons
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+public val SBBIcons.TicketPercentLarge: ImageVector
+    get() {
+        if (_ticketPercentLarge != null) {
+            return _ticketPercentLarge!!
+        }
+        _ticketPercentLarge = Builder(
+            name = "TicketPercentLarge",
+            defaultWidth = 48.0.dp,
+            defaultHeight = 48.0.dp,
+            viewportWidth = 48.0f,
+            viewportHeight = 48.0f,
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFF000000)),
+                stroke = null,
+                strokeLineWidth = 0.0f,
+                strokeLineCap = Butt,
+                strokeLineJoin = Miter,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
+                moveTo(43.0f, 18.0f)
+                horizontalLineToRelative(-0.5f)
+                curveToRelative(-3.124f, 0.0f, -5.5f, 2.376f, -5.5f, 5.5f)
+                reflectiveCurveToRelative(2.376f, 5.5f, 5.5f, 5.5f)
+                horizontalLineToRelative(0.5f)
+                verticalLineToRelative(9.0f)
+                lineTo(4.0f, 38.0f)
+                lineTo(4.0f, 9.0f)
+                horizontalLineToRelative(39.0f)
+                close()
+                moveTo(5.0f, 37.0f)
+                horizontalLineToRelative(37.0f)
+                verticalLineToRelative(-7.02f)
+                curveToRelative(-3.429f, -0.243f, -6.0f, -2.972f, -6.0f, -6.48f)
+                reflectiveCurveToRelative(2.57f, -6.238f, 6.0f, -6.481f)
+                lineTo(42.0f, 10.0f)
+                lineTo(5.0f, 10.0f)
+                close()
+                moveTo(33.0f, 36.5f)
+                horizontalLineToRelative(-1.0f)
+                lineTo(32.0f, 36.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 35.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(21.5f, 27.0f)
+                arcToRelative(3.501f, 3.501f, 0.0f, true, true, -0.002f, 7.002f)
+                arcTo(3.501f, 3.501f, 0.0f, false, true, 21.5f, 27.0f)
+                moveTo(41.0f, 34.0f)
+                horizontalLineToRelative(-6.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(6.0f)
+                close()
+                moveTo(21.5f, 28.0f)
+                arcToRelative(2.5f, 2.5f, 0.0f, true, false, 0.0f, 5.0f)
+                arcToRelative(2.5f, 2.5f, 0.0f, false, false, 0.0f, -5.0f)
+                moveTo(33.0f, 33.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(26.854f, 14.854f)
+                lineTo(8.854f, 32.854f)
+                lineTo(8.146f, 32.147f)
+                lineTo(26.146f, 14.147f)
+                close()
+                moveTo(33.0f, 31.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 29.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 27.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 25.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 23.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 21.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(13.494f, 12.995f)
+                curveToRelative(1.934f, 0.0f, 3.5f, 1.566f, 3.5f, 3.5f)
+                reflectiveCurveToRelative(-1.566f, 3.5f, -3.5f, 3.5f)
+                arcToRelative(3.5f, 3.5f, 0.0f, true, true, 0.0f, -7.0f)
+                moveTo(33.0f, 19.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(13.494f, 13.995f)
+                arcToRelative(2.5f, 2.5f, 0.0f, true, false, 0.0f, 5.0f)
+                arcToRelative(2.5f, 2.5f, 0.0f, false, false, 0.0f, -5.0f)
+                moveTo(33.0f, 17.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 15.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(41.0f, 14.0f)
+                horizontalLineToRelative(-6.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(6.0f)
+                close()
+                moveTo(33.0f, 13.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(1.0f)
+                close()
+                moveTo(33.0f, 11.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(-0.5f)
+                horizontalLineToRelative(1.0f)
+                close()
+            }
+        }
+            .build()
+        return _ticketPercentLarge!!
+    }
+
+private var _ticketPercentLarge: ImageVector? = null

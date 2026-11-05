@@ -57,10 +57,9 @@ import ch.sbb.compose_mds.example.pages.TextareaPage
 import ch.sbb.compose_mds.example.pages.TimePickerPage
 import ch.sbb.compose_mds.example.pages.TimeRangePickerPage
 import ch.sbb.compose_mds.example.pages.TypographyPage
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.MoonSmall
-import ch.sbb.compose_mds.sbbicons.small.SunshineSmall
+import ch.sbb.compose_mds.icons.MoonSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.SunshineSmall
 import ch.sbb.compose_mds.theme.SBBColorScheme
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
@@ -165,11 +164,11 @@ private fun ThemeSelection(
             selection = darkSelection,
             segments = listOf(
                 SBBButtonSegment(
-                    icon = SBBIcons.Small.SunshineSmall,
+                    icon = SBBIcons.SunshineSmall,
                     value = false,
                 ),
                 SBBButtonSegment(
-                    icon = SBBIcons.Small.MoonSmall,
+                    icon = SBBIcons.MoonSmall,
                     value = true,
                 ),
             ),

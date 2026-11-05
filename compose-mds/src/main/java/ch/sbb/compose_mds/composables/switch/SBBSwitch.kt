@@ -40,9 +40,8 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.TickSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.TickSmall
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
@@ -134,7 +133,7 @@ private fun SwitchKnob(
             exit = fadeOut(),
         ) {
             Icon(
-                imageVector = SBBIcons.Small.TickSmall,
+                imageVector = SBBIcons.TickSmall,
                 tint = colors.iconColor,
                 contentDescription = null,
             )

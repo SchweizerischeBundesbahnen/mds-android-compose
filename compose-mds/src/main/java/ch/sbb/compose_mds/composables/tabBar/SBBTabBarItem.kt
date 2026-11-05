@@ -34,9 +34,8 @@ import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.SignExclamationPointSmall
 import ch.sbb.compose_mds.theme.SBBColors
 
 @Composable
@@ -51,7 +50,7 @@ internal fun RowScope.SBBTabBarItem(
     val portrait = configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
     val icon = when (state) {
-        SBBTabBarItemState.Warning -> SBBIcons.Small.SignExclamationPointSmall
+        SBBTabBarItemState.Warning -> SBBIcons.SignExclamationPointSmall
         else -> data.icon
     }
 

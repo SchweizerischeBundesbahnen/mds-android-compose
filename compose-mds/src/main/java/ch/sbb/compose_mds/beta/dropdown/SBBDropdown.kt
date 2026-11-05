@@ -32,11 +32,10 @@ import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.listItem.SBBList
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ChevronSmallDownSmall
-import ch.sbb.compose_mds.sbbicons.small.TickSmall
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.ChevronSmallDownSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.TickSmall
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -145,7 +144,7 @@ fun <T> SBBDropdown(
 
             Icon(
                 modifier = Modifier.semantics { hideFromAccessibility() },
-                imageVector = SBBIcons.Small.ChevronSmallDownSmall,
+                imageVector = SBBIcons.ChevronSmallDownSmall,
                 contentDescription = null,
                 tint = resolvedColors.dropdownIconColor,
             )
@@ -205,7 +204,7 @@ internal fun <T> SelectionSheet(
                 val isSelected = value == item.value
                 SBBListItem.Default(
                     title = item.label,
-                    trailing = if (isSelected) SBBIcons.Small.TickSmall else null,
+                    trailing = if (isSelected) SBBIcons.TickSmall else null,
                     onClick = {
                         onClose()
                         onSelected(item.value)
@@ -228,7 +227,7 @@ internal fun Preview_SBBDropdown() {
                 onValueChange = { },
                 label = "Label",
                 placeholder = "Placeholder",
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 selectionTitle = "Selection",
             )
         }
@@ -245,7 +244,7 @@ internal fun Preview_SBBDropdownLabel() {
                 items = listOf(SBBDropdownItem(label = "Label 1", value = "Value")),
                 onValueChange = { },
                 label = "Label",
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 selectionTitle = "Selection",
             )
         }
@@ -266,7 +265,7 @@ internal fun Preview_SBBDropdown_Error() {
                 placeholder = "Placeholder",
                 isError = true,
                 errorText = "This is an error text",
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 selectionTitle = "Selection",
             )
         }

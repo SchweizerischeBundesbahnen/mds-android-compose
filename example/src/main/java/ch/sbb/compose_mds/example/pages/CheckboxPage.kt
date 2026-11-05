@@ -14,9 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.checkbox.SBBCheckbox
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.AppIconSmall
+import ch.sbb.compose_mds.icons.AppIconSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -43,8 +42,8 @@ fun CheckboxPage() {
     SBBCheckbox(
         label = "Check me!",
         checked = checkedState2,
-        icon = SBBIcons.Small.AppIconSmall,
-        onCheckedChange = { checkedState2 = it },
+            icon = SBBIcons.AppIconSmall,
+            onCheckedChange = { checkedState2 = it },
     )
 
     Text("Tristate Checkbox", modifier = Modifier.padding(top = 8.dp))

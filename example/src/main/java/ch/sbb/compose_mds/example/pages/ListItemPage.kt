@@ -21,12 +21,10 @@ import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.listItem.SBBListItem
 import ch.sbb.compose_mds.composables.radio.SBBRadioItem
 import ch.sbb.compose_mds.composables.switch.SBBSwitchItem
-import ch.sbb.compose_mds.sbbicons.Medium
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.medium.ChevronSmallRightMedium
-import ch.sbb.compose_mds.sbbicons.medium.UnicornMedium
-import ch.sbb.compose_mds.sbbicons.small.FaceGrinningSmall
+import ch.sbb.compose_mds.icons.ChevronSmallRightMedium
+import ch.sbb.compose_mds.icons.FaceGrinningSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornMedium
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -65,10 +63,10 @@ fun ListItemPage() {
 
             // With leading icon and trailing chevron
             SBBListItem.Default(
-                leading = SBBIcons.Medium.UnicornMedium,
+                leading = SBBIcons.UnicornMedium,
                 title = "With leading icon",
                 subtitle = "Has trailing affordance",
-                trailing = SBBIcons.Medium.ChevronSmallRightMedium,
+                trailing = SBBIcons.ChevronSmallRightMedium,
                 onClick = {},
             )
 
@@ -129,10 +127,10 @@ fun ListItemPage() {
 
             // With leading icon and trailing chevron
             SBBListItem.Boxed.Default(
-                leading = SBBIcons.Medium.UnicornMedium,
+                leading = SBBIcons.UnicornMedium,
                 title = "With leading icon",
                 subtitle = "Has trailing affordance",
-                trailing = SBBIcons.Medium.ChevronSmallRightMedium,
+                trailing = SBBIcons.ChevronSmallRightMedium,
                 onClick = {},
             )
 
@@ -190,7 +188,7 @@ private fun Links() {
         SBBListItem.Link(
             title = "Link 3",
             subtitle = "with icon",
-            leading = SBBIcons.Small.FaceGrinningSmall,
+            leading = SBBIcons.FaceGrinningSmall,
             onClick = {},
         )
     }

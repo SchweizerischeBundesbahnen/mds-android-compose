@@ -10,9 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.composables.notificationBox.SBBNotificationBox
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ArrowsCircleSmall
+import ch.sbb.compose_mds.icons.ArrowsCircleSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -36,12 +35,12 @@ fun NotificationBoxPage() {
         SBBNotificationBox.Success(
             title = "Title",
             text = text,
-            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+            interactionIcon = SBBIcons.ArrowsCircleSmall,
         )
         SBBNotificationBox.Information(
             text = text,
             onClick = {},
-            interactionIcon = SBBIcons.Small.ArrowsCircleSmall,
+            interactionIcon = SBBIcons.ArrowsCircleSmall,
         )
     }
 }

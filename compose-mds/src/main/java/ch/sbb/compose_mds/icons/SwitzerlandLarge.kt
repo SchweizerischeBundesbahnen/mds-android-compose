@@ -1,0 +1,159 @@
+package ch.sbb.compose_mds.icons
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+public val SBBIcons.SwitzerlandLarge: ImageVector
+    get() {
+        if (_switzerlandLarge != null) {
+            return _switzerlandLarge!!
+        }
+        _switzerlandLarge = Builder(
+            name = "SwitzerlandLarge",
+            defaultWidth = 48.0.dp,
+            defaultHeight =
+                48.0.dp,
+            viewportWidth = 48.0f,
+            viewportHeight = 48.0f,
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFF000000)),
+                stroke = null,
+                strokeLineWidth = 0.0f,
+                strokeLineCap = Butt,
+                strokeLineJoin = Miter,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
+                moveToRelative(27.32f, 11.116f)
+                lineToRelative(2.832f, 2.36f)
+                lineToRelative(3.785f, -0.472f)
+                lineToRelative(0.244f, -0.03f)
+                lineToRelative(3.9f, 3.9f)
+                lineToRelative(-0.113f, 0.302f)
+                lineToRelative(-1.31f, 3.492f)
+                lineToRelative(2.98f, 0.852f)
+                lineToRelative(0.16f, 0.045f)
+                lineToRelative(0.102f, 0.135f)
+                lineToRelative(1.216f, 1.621f)
+                lineToRelative(2.607f, -1.737f)
+                lineToRelative(0.705f, -0.47f)
+                lineToRelative(0.57f, 6.844f)
+                lineToRelative(0.045f, 0.542f)
+                horizontalLineToRelative(-3.484f)
+                lineToRelative(0.438f, 3.944f)
+                lineToRelative(0.111f, 1.004f)
+                lineToRelative(-0.865f, -0.52f)
+                lineToRelative(-2.335f, -1.4f)
+                lineToRelative(-2.31f, 0.462f)
+                lineToRelative(-0.262f, 0.053f)
+                lineToRelative(-1.64f, -1.64f)
+                lineToRelative(-2.728f, 7.273f)
+                lineToRelative(-0.324f, 0.865f)
+                lineToRelative(-0.547f, -0.745f)
+                lineToRelative(-4.96f, -6.762f)
+                lineToRelative(-2.17f, 5.646f)
+                lineToRelative(-0.14f, 0.365f)
+                lineToRelative(-0.39f, -0.049f)
+                lineToRelative(-3.877f, -0.485f)
+                lineToRelative(-3.884f, 1.457f)
+                lineToRelative(-0.35f, 0.132f)
+                lineToRelative(-0.226f, -0.3f)
+                lineToRelative(-3.1f, -4.133f)
+                verticalLineToRelative(-1.516f)
+                lineToRelative(-0.737f, -1.105f)
+                lineToRelative(-2.358f, 0.393f)
+                lineToRelative(-0.42f, 1.682f)
+                lineToRelative(-0.075f, 0.3f)
+                lineToRelative(-0.302f, 0.067f)
+                lineToRelative(-4.5f, 1.0f)
+                lineToRelative(-0.735f, 0.163f)
+                lineToRelative(1.135f, -6.24f)
+                lineToRelative(0.032f, -0.179f)
+                lineToRelative(0.14f, -0.116f)
+                lineToRelative(2.976f, -2.48f)
+                lineToRelative(5.405f, -5.856f)
+                lineToRelative(-1.182f, -0.295f)
+                lineToRelative(-0.997f, -0.249f)
+                lineToRelative(0.811f, -0.63f)
+                lineToRelative(4.5f, -3.5f)
+                lineToRelative(0.284f, -0.222f)
+                lineToRelative(0.3f, 0.2f)
+                lineToRelative(1.296f, 0.863f)
+                lineToRelative(7.128f, -2.376f)
+                lineToRelative(1.908f, -2.383f)
+                lineToRelative(0.32f, -0.399f)
+                close()
+                moveTo(25.39f, 14.313f)
+                lineTo(25.298f, 14.428f)
+                lineTo(25.158f, 14.475f)
+                lineTo(17.658f, 16.975f)
+                lineTo(17.426f, 17.052f)
+                lineTo(17.223f, 16.916f)
+                lineTo(16.022f, 16.116f)
+                lineTo(12.617f, 18.764f)
+                lineTo(13.621f, 19.014f)
+                lineTo(14.44f, 19.22f)
+                lineTo(13.867f, 19.839f)
+                lineTo(7.867f, 26.339f)
+                lineTo(7.846f, 26.363f)
+                lineTo(7.82f, 26.383f)
+                lineTo(4.959f, 28.767f)
+                lineTo(4.127f, 33.347f)
+                lineTo(7.589f, 32.578f)
+                lineTo(8.015f, 30.878f)
+                lineTo(8.095f, 30.561f)
+                lineTo(8.418f, 30.507f)
+                lineTo(11.418f, 30.007f)
+                lineTo(11.736f, 29.954f)
+                lineTo(11.916f, 30.223f)
+                lineTo(13.0f, 31.849f)
+                verticalLineToRelative(1.484f)
+                lineToRelative(2.675f, 3.567f)
+                lineToRelative(3.65f, -1.368f)
+                lineToRelative(0.114f, -0.044f)
+                lineToRelative(0.123f, 0.016f)
+                lineToRelative(3.61f, 0.451f)
+                lineToRelative(2.361f, -6.135f)
+                lineToRelative(0.33f, -0.854f)
+                lineToRelative(0.54f, 0.738f)
+                lineToRelative(4.953f, 6.754f)
+                lineToRelative(2.676f, -7.134f)
+                lineToRelative(0.273f, -0.726f)
+                lineToRelative(2.36f, 2.359f)
+                lineToRelative(2.237f, -0.447f)
+                lineToRelative(0.19f, -0.038f)
+                lineToRelative(0.165f, 0.1f)
+                lineToRelative(1.634f, 0.98f)
+                lineToRelative(-0.388f, -3.496f)
+                lineToRelative(-0.062f, -0.556f)
+                horizontalLineToRelative(3.516f)
+                lineToRelative(-0.385f, -4.614f)
+                lineToRelative(-2.295f, 1.53f)
+                lineToRelative(-0.393f, 0.263f)
+                lineToRelative(-0.284f, -0.38f)
+                lineToRelative(-1.4f, -1.865f)
+                lineToRelative(-3.338f, -0.954f)
+                lineToRelative(-0.52f, -0.148f)
+                lineToRelative(0.19f, -0.508f)
+                lineToRelative(1.387f, -3.698f)
+                lineToRelative(-3.1f, -3.1f)
+                lineToRelative(-3.757f, 0.47f)
+                lineToRelative(-0.215f, 0.027f)
+                lineToRelative(-0.167f, -0.14f)
+                lineToRelative(-2.609f, -2.173f)
+                close()
+            }
+        }
+            .build()
+        return _switzerlandLarge!!
+    }
+
+private var _switzerlandLarge: ImageVector? = null

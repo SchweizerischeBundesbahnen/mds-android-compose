@@ -8,11 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.CircleInformationSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.SignExclamationPointSmall
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -21,13 +20,13 @@ import ch.sbb.compose_mds.theme.SBBTheme
 private fun PreviewSBBHeaderBox() {
     SBBTheme {
         SBBHeaderBox.Default(
-            icon = SBBIcons.Small.UnicornSmall,
+            icon = SBBIcons.UnicornSmall,
             title = "Title",
             subtext = "Subtext",
             headerBoxFlap = SBBHeaderBoxFlap.Default(
-                leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
+                leadingIcon = SBBIcons.SignExclamationPointSmall,
                 text = "Text",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
             ),
         )
     }
@@ -40,7 +39,7 @@ private fun PreviewSBBHeaderBoxWithButton() {
         SBBHeaderBox.WithButton(
             title = "Title",
             subtext = "Subtext",
-            actionIcon = SBBIcons.Small.UnicornSmall,
+            actionIcon = SBBIcons.UnicornSmall,
             actionLabel = "Login",
             onClickAction = {},
         )

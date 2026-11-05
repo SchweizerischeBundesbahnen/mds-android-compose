@@ -1,0 +1,175 @@
+package ch.sbb.compose_mds.icons
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+public val SBBIcons.TaxiProfileLarge: ImageVector
+    get() {
+        if (_taxiProfileLarge != null) {
+            return _taxiProfileLarge!!
+        }
+        _taxiProfileLarge = Builder(
+            name = "TaxiProfileLarge",
+            defaultWidth = 48.0.dp,
+            defaultHeight =
+                48.0.dp,
+            viewportWidth = 48.0f,
+            viewportHeight = 48.0f,
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFF000000)),
+                stroke = null,
+                strokeLineWidth = 0.0f,
+                strokeLineCap = Butt,
+                strokeLineJoin = Miter,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
+                moveTo(23.0f, 12.0f)
+                horizontalLineToRelative(1.686f)
+                arcToRelative(1.5f, 1.5f, 0.0f, false, true, 0.857f, 0.269f)
+                lineToRelative(11.148f, 7.755f)
+                lineToRelative(7.22f, 1.204f)
+                arcTo(2.5f, 2.5f, 0.0f, false, true, 46.0f, 23.695f)
+                lineTo(46.0f, 32.0f)
+                horizontalLineToRelative(-7.028f)
+                arcToRelative(4.5f, 4.5f, 0.0f, false, true, -8.944f, 0.0f)
+                lineTo(14.972f, 32.0f)
+                arcToRelative(4.5f, 4.5f, 0.0f, false, true, -8.944f, 0.0f)
+                lineTo(2.0f, 32.0f)
+                lineTo(2.0f, 21.121f)
+                curveToRelative(0.0f, -0.505f, 0.153f, -1.0f, 0.44f, -1.416f)
+                lineToRelative(4.85f, -7.055f)
+                arcTo(1.5f, 1.5f, 0.0f, false, true, 8.526f, 12.0f)
+                lineTo(14.0f, 12.0f)
+                lineTo(14.0f, 9.0f)
+                horizontalLineToRelative(9.0f)
+                close()
+                moveTo(10.5f, 28.0f)
+                arcToRelative(3.5f, 3.5f, 0.0f, true, false, 0.0f, 7.0f)
+                arcToRelative(3.5f, 3.5f, 0.0f, false, false, 0.0f, -7.0f)
+                moveToRelative(24.0f, 0.0f)
+                arcToRelative(3.5f, 3.5f, 0.0f, true, false, 0.0f, 7.0f)
+                arcToRelative(3.5f, 3.5f, 0.0f, false, false, 0.0f, -7.0f)
+                moveToRelative(-24.0f, 1.0f)
+                arcToRelative(2.5f, 2.5f, 0.0f, true, true, -0.002f, 5.002f)
+                arcTo(2.5f, 2.5f, 0.0f, false, true, 10.5f, 29.0f)
+                moveToRelative(24.0f, 0.0f)
+                arcToRelative(2.5f, 2.5f, 0.0f, true, true, -0.002f, 5.002f)
+                arcTo(2.5f, 2.5f, 0.0f, false, true, 34.5f, 29.0f)
+                moveToRelative(-24.0f, 1.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, false, 0.001f, 3.001f)
+                arcTo(1.5f, 1.5f, 0.0f, false, false, 10.5f, 30.0f)
+                moveToRelative(24.0f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, false, 0.001f, 3.001f)
+                arcTo(1.5f, 1.5f, 0.0f, false, false, 34.5f, 30.0f)
+                moveTo(3.005f, 21.0f)
+                quadTo(3.0f, 21.06f, 3.0f, 21.121f)
+                lineTo(3.0f, 22.0f)
+                horizontalLineToRelative(0.5f)
+                arcTo(1.5f, 1.5f, 0.0f, false, true, 5.0f, 23.5f)
+                verticalLineToRelative(1.0f)
+                arcTo(1.5f, 1.5f, 0.0f, false, true, 3.5f, 26.0f)
+                lineTo(3.0f, 26.0f)
+                verticalLineToRelative(5.0f)
+                horizontalLineToRelative(3.028f)
+                arcToRelative(4.5f, 4.5f, 0.0f, false, true, 8.944f, 0.0f)
+                horizontalLineToRelative(15.056f)
+                arcToRelative(4.5f, 4.5f, 0.0f, false, true, 8.944f, 0.0f)
+                lineTo(45.0f, 31.0f)
+                verticalLineToRelative(-6.0f)
+                horizontalLineToRelative(-1.513f)
+                lineToRelative(-0.012f, -0.001f)
+                lineToRelative(-0.145f, -0.015f)
+                curveToRelative(-0.603f, -0.097f, -0.965f, -0.594f, -1.195f, -1.075f)
+                lineToRelative(-0.097f, -0.22f)
+                lineToRelative(-0.002f, -0.003f)
+                lineToRelative(-0.754f, -1.882f)
+                lineTo(36.46f, 21.0f)
+                close()
+                moveTo(19.685f, 23.729f)
+                horizontalLineToRelative(-1.189f)
+                verticalLineToRelative(3.26f)
+                horizontalLineToRelative(-0.855f)
+                verticalLineToRelative(-3.26f)
+                horizontalLineToRelative(-1.185f)
+                verticalLineToRelative(-0.739f)
+                horizontalLineToRelative(3.229f)
+                close()
+                moveTo(23.567f, 26.989f)
+                horizontalLineToRelative(-0.896f)
+                lineToRelative(-0.313f, -0.896f)
+                horizontalLineToRelative(-1.454f)
+                lineToRelative(-0.318f, 0.895f)
+                horizontalLineToRelative(-0.882f)
+                lineToRelative(1.492f, -4.006f)
+                horizontalLineToRelative(0.885f)
+                close()
+                moveTo(26.011f, 24.273f)
+                lineTo(26.799f, 22.99f)
+                horizontalLineToRelative(0.947f)
+                lineToRelative(-1.259f, 1.907f)
+                lineToRelative(1.374f, 2.091f)
+                horizontalLineToRelative(-1.027f)
+                lineToRelative(-0.858f, -1.388f)
+                lineToRelative(-0.874f, 1.388f)
+                horizontalLineToRelative(-0.977f)
+                lineToRelative(1.382f, -2.091f)
+                lineToRelative(-1.277f, -1.907f)
+                horizontalLineToRelative(1.003f)
+                close()
+                moveTo(29.467f, 26.988f)
+                horizontalLineToRelative(-0.856f)
+                lineTo(28.611f, 22.99f)
+                horizontalLineToRelative(0.856f)
+                close()
+                moveTo(21.107f, 25.451f)
+                horizontalLineToRelative(1.042f)
+                lineToRelative(-0.52f, -1.506f)
+                close()
+                moveTo(3.0f, 25.0f)
+                horizontalLineToRelative(0.5f)
+                arcToRelative(0.5f, 0.5f, 0.0f, false, false, 0.5f, -0.5f)
+                verticalLineToRelative(-1.0f)
+                arcToRelative(0.5f, 0.5f, 0.0f, false, false, -0.5f, -0.5f)
+                lineTo(3.0f, 23.0f)
+                close()
+                moveTo(42.962f, 23.31f)
+                curveToRelative(0.107f, 0.26f, 0.215f, 0.441f, 0.32f, 0.554f)
+                curveToRelative(0.095f, 0.104f, 0.172f, 0.132f, 0.244f, 0.136f)
+                lineTo(45.0f, 24.0f)
+                verticalLineToRelative(-0.306f)
+                arcToRelative(1.5f, 1.5f, 0.0f, false, false, -1.253f, -1.48f)
+                lineToRelative(-1.312f, -0.218f)
+                close()
+                moveTo(17.0f, 20.0f)
+                horizontalLineToRelative(17.906f)
+                lineToRelative(-9.934f, -6.91f)
+                arcToRelative(0.5f, 0.5f, 0.0f, false, false, -0.286f, -0.09f)
+                lineTo(17.0f, 13.0f)
+                close()
+                moveTo(8.526f, 13.0f)
+                arcToRelative(0.5f, 0.5f, 0.0f, false, false, -0.412f, 0.217f)
+                lineTo(3.45f, 20.0f)
+                lineTo(16.0f, 20.0f)
+                verticalLineToRelative(-7.0f)
+                close()
+                moveTo(15.0f, 12.0f)
+                horizontalLineToRelative(7.0f)
+                verticalLineToRelative(-2.0f)
+                horizontalLineToRelative(-7.0f)
+                close()
+            }
+        }
+            .build()
+        return _taxiProfileLarge!!
+    }
+
+private var _taxiProfileLarge: ImageVector? = null

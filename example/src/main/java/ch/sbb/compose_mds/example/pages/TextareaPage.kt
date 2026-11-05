@@ -23,10 +23,9 @@ import ch.sbb.compose_mds.beta.text.SBBTextarea
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.icons.CircleInformationSmall
+import ch.sbb.compose_mds.icons.DogSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -84,8 +83,8 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 onValueChange = {},
                 label = "Disabled",
                 enabled = false,
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                leadingIcon = SBBIcons.DogSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
                 },
@@ -94,13 +93,13 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 value = text2,
                 onValueChange = { text2 = it },
                 label = "Leading icon",
-                leadingIcon = SBBIcons.Small.DogSmall,
+                leadingIcon = SBBIcons.DogSmall,
             )
             SBBTextarea(
                 value = text3,
                 onValueChange = { text3 = it },
                 label = "Trailing icon",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
                 },
@@ -109,8 +108,8 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
                 value = text4,
                 onValueChange = { text4 = it },
                 label = "Leading and trailing icons",
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                leadingIcon = SBBIcons.DogSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
                 onClickTrailingIcon = {
                     onShowSheet()
                 },
@@ -135,8 +134,8 @@ private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
                 value = text5,
                 onValueChange = { text5 = it },
                 label = "Error with leading and trailing icons",
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                leadingIcon = SBBIcons.DogSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
                 isError = true,
                 onClickTrailingIcon = {
                     onShowSheet()
