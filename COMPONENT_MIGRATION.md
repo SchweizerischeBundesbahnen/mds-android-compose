@@ -1,8 +1,7 @@
 # Component migration
 
 As the new compose Style API is currently reworked and not ready, it will not be used in the DSM at
-the
-moment and migrated later. The design tokens are provided by Style and ThemeData data classes.
+the moment and migrated later. The design tokens are provided by Style and ThemeData data classes.
 
 > **Flutter Design System**
 >
@@ -12,6 +11,13 @@ moment and migrated later. The design tokens are provided by Style and ThemeData
 > even API doc comments.
 > Validate with the Figma
 > and [SBB Mobile Component Specifications](https://digital.sbb.ch/de/design-system/mobile/overview/).
+
+## TODOs
+
+* Migrate the component to the [new API](#structure)
+* Add concise component documentation for the end user
+* Add component tests as described in [Component testing](#component-testing)
+* Update the [CHANGELOG.md](CHANGELOG.md)
 
 ## Structure
 
@@ -82,3 +88,12 @@ SBBTheme(
 ```
 
 Precedence: **defaults < theme overrides < component style**.
+
+## Component testing
+
+Use [Compose Preview Screenshot](https://developer.android.com/studio/preview/compose-screenshot-testing-with-testsuites)
+Testing instead of Roborazzi, and remove the component's Roborazzi tests when migrating. Cover all
+component variants, custom
+styling (component overrides), and custom composable content in slot APIs. Use
+`SBBThemeAllConfigProvider` with `@PreviewParameter`
+to test all theme variants, in both light and dark mode.
