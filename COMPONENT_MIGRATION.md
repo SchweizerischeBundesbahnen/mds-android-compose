@@ -6,10 +6,10 @@ the moment and migrated later. The design tokens are provided by Style and Theme
 > **Flutter Design System**
 >
 > This structure is based on
-> the [Flutter DSM](https://github.com/SchweizerischeBundesbahnen/design_system_flutter).
-> Check the Flutter implementation for namings of components, attributes, default styling values or
-> even API doc comments.
-> Validate with the Figma
+> the [Flutter DSM](https://github.com/SchweizerischeBundesbahnen/design_system_flutter). Check the
+> Flutter implementation for namings of components, attributes, default styling values or even API
+> doc
+> comments. Validate with the Figma
 > and [SBB Mobile Component Specifications](https://digital.sbb.ch/de/design-system/mobile/overview/).
 
 ## TODOs
@@ -93,7 +93,6 @@ Precedence: **defaults < theme overrides < component style**.
 
 Use [Compose Preview Screenshot](https://developer.android.com/studio/preview/compose-screenshot-testing-with-testsuites)
 Testing instead of Roborazzi, and remove the component's Roborazzi tests when migrating. Cover all
-component variants, custom
-styling (component overrides), and custom composable content in slot APIs. Use
-`SBBThemeAllConfigProvider` with `@PreviewParameter`
-to test all theme variants, in both light and dark mode.
+component variants, custom styling (component overrides), and custom composable content in slot
+APIs. Use`SBBThemeAllConfigProvider` with `@PreviewParameter` to test all theme variants, in both
+light and dark mode.
