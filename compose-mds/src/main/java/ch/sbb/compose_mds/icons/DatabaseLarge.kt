@@ -15,23 +15,11 @@ public val SBBIcons.DatabaseLarge: ImageVector
         if (_databaseLarge != null) {
             return _databaseLarge!!
         }
-        _databaseLarge = Builder(
-            name = "DatabaseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _databaseLarge = Builder(name = "DatabaseLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.5f, 6.0f)
                 curveToRelative(4.763f, 0.0f, 9.063f, 0.563f, 12.188f, 1.484f)
                 curveToRelative(1.56f, 0.46f, 2.856f, 1.018f, 3.773f, 1.66f)
@@ -109,7 +97,7 @@ public val SBBIcons.DatabaseLarge: ImageVector
                 curveTo(32.396f, 7.556f, 28.196f, 7.0f, 23.5f, 7.0f)
             }
         }
-            .build()
+        .build()
         return _databaseLarge!!
     }
 

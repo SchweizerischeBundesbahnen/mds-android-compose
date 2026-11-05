@@ -15,23 +15,11 @@ public val SBBIcons.ShirtShoeSmall: ImageVector
         if (_shirtShoeSmall != null) {
             return _shirtShoeSmall!!
         }
-        _shirtShoeSmall = Builder(
-            name = "ShirtShoeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shirtShoeSmall = Builder(name = "ShirtShoeSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(15.67f, 2.0f)
                 lineToRelative(0.252f, 0.168f)
                 lineToRelative(6.0f, 4.0f)
@@ -136,7 +124,7 @@ public val SBBIcons.ShirtShoeSmall: ImageVector
                 arcToRelative(17.0f, 17.0f, 0.0f, false, false, -0.389f, 3.011f)
             }
         }
-            .build()
+        .build()
         return _shirtShoeSmall!!
     }
 

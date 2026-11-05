@@ -15,23 +15,11 @@ public val SBBIcons.CroissantLarge: ImageVector
         if (_croissantLarge != null) {
             return _croissantLarge!!
         }
-        _croissantLarge = Builder(
-            name = "CroissantLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _croissantLarge = Builder(name = "CroissantLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.43f, 5.602f)
                 curveToRelative(-0.3f, -1.14f, -1.495f, -1.88f, -2.658f, -1.504f)
                 curveTo(12.88f, 6.646f, 6.647f, 12.899f, 4.098f, 20.827f)
@@ -143,7 +131,7 @@ public val SBBIcons.CroissantLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _croissantLarge!!
     }
 

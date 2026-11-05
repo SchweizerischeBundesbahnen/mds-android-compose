@@ -15,22 +15,12 @@ public val SBBIcons.ScooterProfileSignParkingSmall: ImageVector
         if (_scooterProfileSignParkingSmall != null) {
             return _scooterProfileSignParkingSmall!!
         }
-        _scooterProfileSignParkingSmall = Builder(
-            name = "ScooterProfileSignParkingSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _scooterProfileSignParkingSmall = Builder(name = "ScooterProfileSignParkingSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(12.505f, 17.0f)
                 arcToRelative(2.5f, 2.5f, 0.0f, true, true, -0.002f, 5.002f)
                 arcTo(2.5f, 2.5f, 0.0f, false, true, 12.505f, 17.0f)
@@ -119,7 +109,7 @@ public val SBBIcons.ScooterProfileSignParkingSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _scooterProfileSignParkingSmall!!
     }
 

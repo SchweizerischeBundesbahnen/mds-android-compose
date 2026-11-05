@@ -15,22 +15,12 @@ public val SBBIcons.LongDistanceCoachProfileSmall: ImageVector
         if (_longDistanceCoachProfileSmall != null) {
             return _longDistanceCoachProfileSmall!!
         }
-        _longDistanceCoachProfileSmall = Builder(
-            name = "LongDistanceCoachProfileSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _longDistanceCoachProfileSmall = Builder(name = "LongDistanceCoachProfileSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 4.02f)
                 horizontalLineToRelative(14.851f)
                 arcToRelative(1.5f, 1.5f, 0.0f, false, true, 1.365f, 0.885f)
@@ -110,7 +100,7 @@ public val SBBIcons.LongDistanceCoachProfileSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _longDistanceCoachProfileSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.BalconyDoorSmall: ImageVector
         if (_balconyDoorSmall != null) {
             return _balconyDoorSmall!!
         }
-        _balconyDoorSmall = Builder(
-            name = "BalconyDoorSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _balconyDoorSmall = Builder(name = "BalconyDoorSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(20.004f, 13.0f)
                 lineTo(22.0f, 13.0f)
                 verticalLineToRelative(9.0f)
@@ -97,7 +85,7 @@ public val SBBIcons.BalconyDoorSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _balconyDoorSmall!!
     }
 

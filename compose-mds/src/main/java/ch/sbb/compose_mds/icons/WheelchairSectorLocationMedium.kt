@@ -15,22 +15,12 @@ public val SBBIcons.WheelchairSectorLocationMedium: ImageVector
         if (_wheelchairSectorLocationMedium != null) {
             return _wheelchairSectorLocationMedium!!
         }
-        _wheelchairSectorLocationMedium = Builder(
-            name = "WheelchairSectorLocationMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelchairSectorLocationMedium = Builder(name = "WheelchairSectorLocationMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(25.486f, 4.72f)
                 arcToRelative(5.76f, 5.76f, 0.0f, false, false, -5.765f, 5.765f)
                 verticalLineToRelative(0.017f)
@@ -92,7 +82,7 @@ public val SBBIcons.WheelchairSectorLocationMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wheelchairSectorLocationMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.TrainTracksPenLarge: ImageVector
         if (_trainTracksPenLarge != null) {
             return _trainTracksPenLarge!!
         }
-        _trainTracksPenLarge = Builder(
-            name = "TrainTracksPenLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _trainTracksPenLarge = Builder(name = "TrainTracksPenLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(10.0f, 8.0f)
                 horizontalLineToRelative(13.0f)
                 lineTo(23.0f, 3.0f)
@@ -134,7 +123,7 @@ public val SBBIcons.TrainTracksPenLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainTracksPenLarge!!
     }
 

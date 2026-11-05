@@ -15,22 +15,11 @@ public val SBBIcons.HandPlusCircleLarge: ImageVector
         if (_handPlusCircleLarge != null) {
             return _handPlusCircleLarge!!
         }
-        _handPlusCircleLarge = Builder(
-            name = "HandPlusCircleLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handPlusCircleLarge = Builder(name = "HandPlusCircleLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.0f, 15.5f)
                 curveTo(11.0f, 9.702f, 15.702f, 5.0f, 21.5f, 5.0f)
                 reflectiveCurveTo(32.0f, 9.702f, 32.0f, 15.5f)
@@ -120,7 +109,7 @@ public val SBBIcons.HandPlusCircleLarge: ImageVector
                 curveToRelative(1.232f, 0.985f, 3.63f, 2.65f, 5.738f, 4.08f)
             }
         }
-            .build()
+        .build()
         return _handPlusCircleLarge!!
     }
 

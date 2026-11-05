@@ -15,22 +15,11 @@ public val SBBIcons.MoneyExchangeLarge: ImageVector
         if (_moneyExchangeLarge != null) {
             return _moneyExchangeLarge!!
         }
-        _moneyExchangeLarge = Builder(
-            name = "MoneyExchangeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _moneyExchangeLarge = Builder(name = "MoneyExchangeLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(44.0f, 24.006f)
                 arcToRelative(20.26f, 20.26f, 0.0f, false, true, -6.148f, 14.281f)
                 arcTo(20.25f, 20.25f, 0.0f, false, true, 23.39f, 44.0f)
@@ -107,7 +96,7 @@ public val SBBIcons.MoneyExchangeLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _moneyExchangeLarge!!
     }
 

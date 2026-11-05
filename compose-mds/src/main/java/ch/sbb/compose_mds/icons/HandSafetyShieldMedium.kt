@@ -15,22 +15,11 @@ public val SBBIcons.HandSafetyShieldMedium: ImageVector
         if (_handSafetyShieldMedium != null) {
             return _handSafetyShieldMedium!!
         }
-        _handSafetyShieldMedium = Builder(
-            name = "HandSafetyShieldMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handSafetyShieldMedium = Builder(name = "HandSafetyShieldMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.0f, 3.238f)
                 lineToRelative(0.109f, 0.024f)
                 lineToRelative(6.75f, 1.5f)
@@ -126,7 +115,7 @@ public val SBBIcons.HandSafetyShieldMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handSafetyShieldMedium!!
     }
 

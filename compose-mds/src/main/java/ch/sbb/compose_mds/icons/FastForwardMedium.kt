@@ -15,22 +15,11 @@ public val SBBIcons.FastForwardMedium: ImageVector
         if (_fastForwardMedium != null) {
             return _fastForwardMedium!!
         }
-        _fastForwardMedium = Builder(
-            name = "FastForwardMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _fastForwardMedium = Builder(name = "FastForwardMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(16.043f, 7.844f)
                 lineToRelative(13.5f, 9.75f)
                 lineToRelative(0.56f, 0.406f)
@@ -63,7 +52,7 @@ public val SBBIcons.FastForwardMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fastForwardMedium!!
     }
 

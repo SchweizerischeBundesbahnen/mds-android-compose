@@ -15,22 +15,12 @@ public val SBBIcons.UmbrellaGloveQuestionMarkMedium: ImageVector
         if (_umbrellaGloveQuestionMarkMedium != null) {
             return _umbrellaGloveQuestionMarkMedium!!
         }
-        _umbrellaGloveQuestionMarkMedium = Builder(
-            name = "UmbrellaGloveQuestionMarkMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _umbrellaGloveQuestionMarkMedium = Builder(name = "UmbrellaGloveQuestionMarkMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(20.563f, 19.86f)
                 lineToRelative(0.187f, 0.15f)
                 verticalLineToRelative(11.008f)
@@ -127,7 +117,7 @@ public val SBBIcons.UmbrellaGloveQuestionMarkMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _umbrellaGloveQuestionMarkMedium!!
     }
 

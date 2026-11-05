@@ -15,22 +15,11 @@ public val SBBIcons.MoonMedium: ImageVector
         if (_moonMedium != null) {
             return _moonMedium!!
         }
-        _moonMedium = Builder(
-            name = "MoonMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _moonMedium = Builder(name = "MoonMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(14.588f, 8.084f)
                 lineToRelative(-0.586f, 1.613f)
                 curveToRelative(-1.123f, 3.087f, -0.08f, 6.91f, 2.358f, 9.62f)
@@ -51,7 +40,7 @@ public val SBBIcons.MoonMedium: ImageVector
                 curveToRelative(1.946f, 0.073f, 4.077f, -0.545f, 6.19f, -2.177f)
             }
         }
-            .build()
+        .build()
         return _moonMedium!!
     }
 

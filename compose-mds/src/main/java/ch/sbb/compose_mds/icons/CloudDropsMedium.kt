@@ -15,23 +15,11 @@ public val SBBIcons.CloudDropsMedium: ImageVector
         if (_cloudDropsMedium != null) {
             return _cloudDropsMedium!!
         }
-        _cloudDropsMedium = Builder(
-            name = "CloudDropsMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudDropsMedium = Builder(name = "CloudDropsMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(26.039f, 16.065f)
                 arcToRelative(2.84f, 2.84f, 0.0f, false, false, -1.86f, -1.08f)
                 curveToRelative(0.247f, -1.254f, 0.066f, -2.374f, -0.416f, -3.294f)
@@ -211,7 +199,7 @@ public val SBBIcons.CloudDropsMedium: ImageVector
                 curveToRelative(0.0f, -0.117f, 0.032f, -0.299f, 0.098f, -0.53f)
             }
         }
-            .build()
+        .build()
         return _cloudDropsMedium!!
     }
 

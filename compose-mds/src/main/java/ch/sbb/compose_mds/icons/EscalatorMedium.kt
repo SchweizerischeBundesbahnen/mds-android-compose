@@ -15,23 +15,11 @@ public val SBBIcons.EscalatorMedium: ImageVector
         if (_escalatorMedium != null) {
             return _escalatorMedium!!
         }
-        _escalatorMedium = Builder(
-            name = "EscalatorMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _escalatorMedium = Builder(name = "EscalatorMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.996f, 8.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, false, 0.0f, 2.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
@@ -79,7 +67,7 @@ public val SBBIcons.EscalatorMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _escalatorMedium!!
     }
 

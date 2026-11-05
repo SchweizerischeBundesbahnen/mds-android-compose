@@ -15,22 +15,11 @@ public val SBBIcons.LaptopSmartphoneLarge: ImageVector
         if (_laptopSmartphoneLarge != null) {
             return _laptopSmartphoneLarge!!
         }
-        _laptopSmartphoneLarge = Builder(
-            name = "LaptopSmartphoneLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _laptopSmartphoneLarge = Builder(name = "LaptopSmartphoneLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.938f, 10.502f)
                 close()
                 lineTo(7.998f, 31.0f)
@@ -99,7 +88,7 @@ public val SBBIcons.LaptopSmartphoneLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _laptopSmartphoneLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CloudMoonMedium: ImageVector
         if (_cloudMoonMedium != null) {
             return _cloudMoonMedium!!
         }
-        _cloudMoonMedium = Builder(
-            name = "CloudMoonMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudMoonMedium = Builder(name = "CloudMoonMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(25.92f, 5.926f)
                 lineToRelative(0.65f, -1.288f)
                 lineToRelative(-1.308f, 0.61f)
@@ -87,7 +75,7 @@ public val SBBIcons.CloudMoonMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudMoonMedium!!
     }
 

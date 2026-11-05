@@ -15,22 +15,11 @@ public val SBBIcons.ShareLarge: ImageVector
         if (_shareLarge != null) {
             return _shareLarge!!
         }
-        _shareLarge = Builder(
-            name = "ShareLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shareLarge = Builder(name = "ShareLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(30.0f, 9.5f)
                 arcToRelative(4.5f, 4.5f, 0.0f, true, true, 9.0f, 0.0f)
                 arcToRelative(4.5f, 4.5f, 0.0f, false, true, -9.0f, 0.0f)
@@ -53,7 +42,7 @@ public val SBBIcons.ShareLarge: ImageVector
                 arcToRelative(4.5f, 4.5f, 0.0f, false, false, 0.0f, -9.0f)
             }
         }
-            .build()
+        .build()
         return _shareLarge!!
     }
 

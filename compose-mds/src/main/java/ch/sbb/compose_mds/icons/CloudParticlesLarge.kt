@@ -15,22 +15,11 @@ public val SBBIcons.CloudParticlesLarge: ImageVector
         if (_cloudParticlesLarge != null) {
             return _cloudParticlesLarge!!
         }
-        _cloudParticlesLarge = Builder(
-            name = "CloudParticlesLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudParticlesLarge = Builder(name = "CloudParticlesLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.688f, 17.77f)
                 curveToRelative(2.274f, -4.45f, 6.74f, -5.558f, 10.325f, -4.263f)
                 curveToRelative(1.86f, 0.672f, 3.49f, 1.992f, 4.455f, 3.826f)
@@ -118,7 +107,7 @@ public val SBBIcons.CloudParticlesLarge: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _cloudParticlesLarge!!
     }
 

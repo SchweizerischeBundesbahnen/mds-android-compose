@@ -15,22 +15,11 @@ public val SBBIcons.HouseCellarStairsSmall: ImageVector
         if (_houseCellarStairsSmall != null) {
             return _houseCellarStairsSmall!!
         }
-        _houseCellarStairsSmall = Builder(
-            name = "HouseCellarStairsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _houseCellarStairsSmall = Builder(name = "HouseCellarStairsSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(20.353f, 10.644f)
                 lineToRelative(-0.707f, 0.707f)
                 lineToRelative(-0.646f, -0.647f)
@@ -81,7 +70,7 @@ public val SBBIcons.HouseCellarStairsSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _houseCellarStairsSmall!!
     }
 

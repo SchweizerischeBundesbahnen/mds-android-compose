@@ -15,22 +15,11 @@ public val SBBIcons.HomePowerPlugLarge: ImageVector
         if (_homePowerPlugLarge != null) {
             return _homePowerPlugLarge!!
         }
-        _homePowerPlugLarge = Builder(
-            name = "HomePowerPlugLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _homePowerPlugLarge = Builder(name = "HomePowerPlugLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.0f, 14.292f)
                 verticalLineTo(10.0f)
                 horizontalLineToRelative(4.0f)
@@ -117,7 +106,7 @@ public val SBBIcons.HomePowerPlugLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _homePowerPlugLarge!!
     }
 

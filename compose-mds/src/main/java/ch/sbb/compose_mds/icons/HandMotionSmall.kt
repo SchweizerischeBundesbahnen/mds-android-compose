@@ -15,23 +15,11 @@ public val SBBIcons.HandMotionSmall: ImageVector
         if (_handMotionSmall != null) {
             return _handMotionSmall!!
         }
-        _handMotionSmall = Builder(
-            name = "HandMotionSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _handMotionSmall = Builder(name = "HandMotionSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(22.0f, 15.0f)
                 arcToRelative(7.0f, 7.0f, 0.0f, false, true, -7.0f, 7.0f)
                 verticalLineToRelative(-1.0f)
@@ -111,7 +99,7 @@ public val SBBIcons.HandMotionSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handMotionSmall!!
     }
 

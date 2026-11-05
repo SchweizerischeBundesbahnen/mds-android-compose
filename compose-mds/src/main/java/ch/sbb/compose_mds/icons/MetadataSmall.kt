@@ -15,23 +15,11 @@ public val SBBIcons.MetadataSmall: ImageVector
         if (_metadataSmall != null) {
             return _metadataSmall!!
         }
-        _metadataSmall = Builder(
-            name = "MetadataSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _metadataSmall = Builder(name = "MetadataSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.5f, 3.0f)
                 lineTo(2.0f, 3.0f)
                 verticalLineToRelative(18.0f)
@@ -93,7 +81,7 @@ public val SBBIcons.MetadataSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _metadataSmall!!
     }
 

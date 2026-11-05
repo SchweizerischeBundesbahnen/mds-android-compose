@@ -15,23 +15,11 @@ public val SBBIcons.CheckpointsSmall: ImageVector
         if (_checkpointsSmall != null) {
             return _checkpointsSmall!!
         }
-        _checkpointsSmall = Builder(
-            name = "CheckpointsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _checkpointsSmall = Builder(name = "CheckpointsSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(5.5f, 2.0f)
                 arcToRelative(3.5f, 3.5f, 0.0f, false, true, 3.464f, 3.0f)
                 horizontalLineTo(19.5f)
@@ -90,7 +78,7 @@ public val SBBIcons.CheckpointsSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _checkpointsSmall!!
     }
 

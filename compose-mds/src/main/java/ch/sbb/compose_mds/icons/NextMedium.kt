@@ -15,22 +15,11 @@ public val SBBIcons.NextMedium: ImageVector
         if (_nextMedium != null) {
             return _nextMedium!!
         }
-        _nextMedium = Builder(
-            name = "NextMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _nextMedium = Builder(name = "NextMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(7.022f, 7.83f)
                 lineTo(22.667f, 18.0f)
                 lineTo(7.022f, 28.169f)
@@ -55,7 +44,7 @@ public val SBBIcons.NextMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _nextMedium!!
     }
 

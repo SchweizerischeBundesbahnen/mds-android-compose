@@ -15,23 +15,11 @@ public val SBBIcons.AdultKidsSmall: ImageVector
         if (_adultKidsSmall != null) {
             return _adultKidsSmall!!
         }
-        _adultKidsSmall = Builder(
-            name = "AdultKidsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _adultKidsSmall = Builder(name = "AdultKidsSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 4.5f)
                 curveToRelative(0.0f, -0.257f, 0.243f, -0.5f, 0.5f, -0.5f)
                 reflectiveCurveToRelative(0.5f, 0.243f, 0.5f, 0.5f)
@@ -127,7 +115,7 @@ public val SBBIcons.AdultKidsSmall: ImageVector
                 reflectiveCurveTo(12.31f, 8.0f, 11.5f, 8.0f)
             }
         }
-            .build()
+        .build()
         return _adultKidsSmall!!
     }
 

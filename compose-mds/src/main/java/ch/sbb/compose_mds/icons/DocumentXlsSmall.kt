@@ -15,23 +15,11 @@ public val SBBIcons.DocumentXlsSmall: ImageVector
         if (_documentXlsSmall != null) {
             return _documentXlsSmall!!
         }
-        _documentXlsSmall = Builder(
-            name = "DocumentXlsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _documentXlsSmall = Builder(name = "DocumentXlsSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 9.293f)
                 lineTo(18.0f, 20.0f)
                 lineTo(6.0f, 20.0f)
@@ -101,7 +89,7 @@ public val SBBIcons.DocumentXlsSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentXlsSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.TrainStationLarge: ImageVector
         if (_trainStationLarge != null) {
             return _trainStationLarge!!
         }
-        _trainStationLarge = Builder(
-            name = "TrainStationLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _trainStationLarge = Builder(name = "TrainStationLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.191f, 5.0f)
                 lineTo(9.0f, 5.0f)
                 lineTo(9.0f, 4.0f)
@@ -196,7 +185,7 @@ public val SBBIcons.TrainStationLarge: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, 0.0f, -4.0f)
             }
         }
-            .build()
+        .build()
         return _trainStationLarge!!
     }
 

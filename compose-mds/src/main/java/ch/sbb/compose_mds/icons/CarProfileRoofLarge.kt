@@ -15,22 +15,11 @@ public val SBBIcons.CarProfileRoofLarge: ImageVector
         if (_carProfileRoofLarge != null) {
             return _carProfileRoofLarge!!
         }
-        _carProfileRoofLarge = Builder(
-            name = "CarProfileRoofLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _carProfileRoofLarge = Builder(name = "CarProfileRoofLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.669f, 26.0f)
                 curveToRelative(0.505f, 0.0f, 0.983f, 0.21f, 1.331f, 0.575f)
                 lineToRelative(4.924f, 5.153f)
@@ -105,7 +94,7 @@ public val SBBIcons.CarProfileRoofLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _carProfileRoofLarge!!
     }
 

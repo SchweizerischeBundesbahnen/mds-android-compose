@@ -15,23 +15,11 @@ public val SBBIcons.ShirtShoeMedium: ImageVector
         if (_shirtShoeMedium != null) {
             return _shirtShoeMedium!!
         }
-        _shirtShoeMedium = Builder(
-            name = "ShirtShoeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shirtShoeMedium = Builder(name = "ShirtShoeMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(23.493f, 3.292f)
                 lineToRelative(0.251f, 0.167f)
                 lineToRelative(9.0f, 6.0f)
@@ -142,7 +130,7 @@ public val SBBIcons.ShirtShoeMedium: ImageVector
                 curveToRelative(-0.406f, 1.709f, -0.591f, 3.413f, -0.644f, 4.998f)
             }
         }
-            .build()
+        .build()
         return _shirtShoeMedium!!
     }
 

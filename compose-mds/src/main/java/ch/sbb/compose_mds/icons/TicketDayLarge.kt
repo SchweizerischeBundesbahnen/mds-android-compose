@@ -15,23 +15,11 @@ public val SBBIcons.TicketDayLarge: ImageVector
         if (_ticketDayLarge != null) {
             return _ticketDayLarge!!
         }
-        _ticketDayLarge = Builder(
-            name = "TicketDayLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _ticketDayLarge = Builder(name = "TicketDayLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(45.08f, 16.12f)
                 horizontalLineToRelative(-0.5f)
                 arcToRelative(6.501f, 6.501f, 0.0f, true, false, 0.0f, 13.0f)
@@ -140,7 +128,7 @@ public val SBBIcons.TicketDayLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ticketDayLarge!!
     }
 

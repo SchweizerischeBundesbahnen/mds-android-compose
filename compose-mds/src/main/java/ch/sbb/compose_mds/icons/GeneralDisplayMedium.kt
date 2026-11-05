@@ -15,22 +15,11 @@ public val SBBIcons.GeneralDisplayMedium: ImageVector
         if (_generalDisplayMedium != null) {
             return _generalDisplayMedium!!
         }
-        _generalDisplayMedium = Builder(
-            name = "GeneralDisplayMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _generalDisplayMedium = Builder(name = "GeneralDisplayMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.25f, 7.75f)
                 lineTo(7.25f, 6.0f)
                 horizontalLineToRelative(-1.0f)
@@ -94,7 +83,7 @@ public val SBBIcons.GeneralDisplayMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _generalDisplayMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.StrollerMedium: ImageVector
         if (_strollerMedium != null) {
             return _strollerMedium!!
         }
-        _strollerMedium = Builder(
-            name = "StrollerMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _strollerMedium = Builder(name = "StrollerMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.256f, 6.25f)
                 horizontalLineToRelative(0.499f)
                 curveToRelative(6.072f, 0.0f, 10.995f, 4.923f, 10.995f, 10.995f)
@@ -74,7 +62,7 @@ public val SBBIcons.StrollerMedium: ImageVector
                 arcTo(1.75f, 1.75f, 0.0f, false, false, 24.0f, 25.25f)
             }
         }
-            .build()
+        .build()
         return _strollerMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.KeyMedium: ImageVector
         if (_keyMedium != null) {
             return _keyMedium!!
         }
-        _keyMedium = Builder(
-            name = "KeyMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _keyMedium = Builder(name = "KeyMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 5.75f)
                 arcTo(6.21f, 6.21f, 0.0f, false, false, 11.75f, 12.0f)
                 arcTo(6.21f, 6.21f, 0.0f, false, false, 18.0f, 18.25f)
@@ -76,7 +65,7 @@ public val SBBIcons.KeyMedium: ImageVector
                 curveToRelative(-1.572f, 0.0f, -2.758f, -1.258f, -2.758f, -2.784f)
             }
         }
-            .build()
+        .build()
         return _keyMedium!!
     }
 

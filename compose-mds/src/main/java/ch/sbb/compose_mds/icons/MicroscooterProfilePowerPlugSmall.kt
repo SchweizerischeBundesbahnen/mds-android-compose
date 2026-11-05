@@ -15,22 +15,12 @@ public val SBBIcons.MicroscooterProfilePowerPlugSmall: ImageVector
         if (_microscooterProfilePowerPlugSmall != null) {
             return _microscooterProfilePowerPlugSmall!!
         }
-        _microscooterProfilePowerPlugSmall = Builder(
-            name = "MicroscooterProfilePowerPlugSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _microscooterProfilePowerPlugSmall = Builder(name = "MicroscooterProfilePowerPlugSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 14.0f)
                 horizontalLineToRelative(-0.5f)
                 arcToRelative(2.504f, 2.504f, 0.0f, false, false, -2.5f, 2.5f)
@@ -87,7 +77,7 @@ public val SBBIcons.MicroscooterProfilePowerPlugSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _microscooterProfilePowerPlugSmall!!
     }
 

@@ -15,24 +15,12 @@ public val SBBIcons.ArrowCircleSwitzerlandSmall: ImageVector
         if (_arrowCircleSwitzerlandSmall != null) {
             return _arrowCircleSwitzerlandSmall!!
         }
-        _arrowCircleSwitzerlandSmall = Builder(
-            name = "ArrowCircleSwitzerlandSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowCircleSwitzerlandSmall = Builder(name = "ArrowCircleSwitzerlandSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 12.0f)
                 curveTo(2.0f, 6.477f, 6.477f, 2.0f, 12.0f, 2.0f)
                 reflectiveCurveToRelative(10.0f, 4.477f, 10.0f, 10.0f)
@@ -145,7 +133,7 @@ public val SBBIcons.ArrowCircleSwitzerlandSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowCircleSwitzerlandSmall!!
     }
 

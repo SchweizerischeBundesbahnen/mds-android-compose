@@ -15,22 +15,11 @@ public val SBBIcons.WifiMedium: ImageVector
         if (_wifiMedium != null) {
             return _wifiMedium!!
         }
-        _wifiMedium = Builder(
-            name = "WifiMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wifiMedium = Builder(name = "WifiMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.966f, 12.724f)
                 curveTo(6.746f, 8.746f, 12.075f, 6.25f, 18.0f, 6.25f)
                 curveToRelative(5.923f, 0.0f, 11.253f, 2.496f, 15.032f, 6.474f)
@@ -67,7 +56,7 @@ public val SBBIcons.WifiMedium: ImageVector
                 arcTo(7.22f, 7.22f, 0.0f, false, false, 18.0f, 19.75f)
             }
         }
-            .build()
+        .build()
         return _wifiMedium!!
     }
 

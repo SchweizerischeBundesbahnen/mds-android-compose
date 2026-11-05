@@ -15,22 +15,11 @@ public val SBBIcons.ShoppingBagFastMedium: ImageVector
         if (_shoppingBagFastMedium != null) {
             return _shoppingBagFastMedium!!
         }
-        _shoppingBagFastMedium = Builder(
-            name = "ShoppingBagFastMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shoppingBagFastMedium = Builder(name = "ShoppingBagFastMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(22.406f, 9.317f)
                 lineToRelative(-0.303f, 1.722f)
                 lineToRelative(4.924f, 0.868f)
@@ -83,7 +72,7 @@ public val SBBIcons.ShoppingBagFastMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _shoppingBagFastMedium!!
     }
 

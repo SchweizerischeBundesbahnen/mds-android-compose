@@ -15,22 +15,11 @@ public val SBBIcons.GunMedium: ImageVector
         if (_gunMedium != null) {
             return _gunMedium!!
         }
-        _gunMedium = Builder(
-            name = "GunMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _gunMedium = Builder(name = "GunMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(29.75f, 7.813f)
                 curveToRelative(0.704f, 0.18f, 1.258f, 0.734f, 1.439f, 1.437f)
                 horizontalLineToRelative(1.561f)
@@ -105,7 +94,7 @@ public val SBBIcons.GunMedium: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -1.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _gunMedium!!
     }
 

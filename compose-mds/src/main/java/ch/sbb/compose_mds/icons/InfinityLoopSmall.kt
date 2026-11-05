@@ -15,22 +15,11 @@ public val SBBIcons.InfinityLoopSmall: ImageVector
         if (_infinityLoopSmall != null) {
             return _infinityLoopSmall!!
         }
-        _infinityLoopSmall = Builder(
-            name = "InfinityLoopSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _infinityLoopSmall = Builder(name = "InfinityLoopSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.316f, 8.316f)
                 arcToRelative(4.51f, 4.51f, 0.0f, false, true, 6.367f, 0.0f)
                 curveToRelative(1.768f, 1.757f, 1.753f, 4.604f, 0.001f, 6.367f)
@@ -60,7 +49,7 @@ public val SBBIcons.InfinityLoopSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _infinityLoopSmall!!
     }
 

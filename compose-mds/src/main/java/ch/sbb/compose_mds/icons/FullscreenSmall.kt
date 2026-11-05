@@ -15,23 +15,11 @@ public val SBBIcons.FullscreenSmall: ImageVector
         if (_fullscreenSmall != null) {
             return _fullscreenSmall!!
         }
-        _fullscreenSmall = Builder(
-            name = "FullscreenSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fullscreenSmall = Builder(name = "FullscreenSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.5f, 2.0f)
                 lineTo(2.0f, 2.0f)
                 verticalLineToRelative(6.0f)
@@ -63,7 +51,7 @@ public val SBBIcons.FullscreenSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fullscreenSmall!!
     }
 

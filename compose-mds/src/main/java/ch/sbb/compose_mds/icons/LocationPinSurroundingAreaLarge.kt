@@ -15,22 +15,12 @@ public val SBBIcons.LocationPinSurroundingAreaLarge: ImageVector
         if (_locationPinSurroundingAreaLarge != null) {
             return _locationPinSurroundingAreaLarge!!
         }
-        _locationPinSurroundingAreaLarge = Builder(
-            name = "LocationPinSurroundingAreaLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locationPinSurroundingAreaLarge = Builder(name = "LocationPinSurroundingAreaLarge",
+                defaultWidth = 48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f,
+                viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 16.003f)
                 curveTo(12.0f, 9.373f, 17.372f, 4.0f, 24.0f, 4.0f)
                 reflectiveCurveToRelative(12.0f, 5.374f, 12.0f, 12.003f)
@@ -87,7 +77,7 @@ public val SBBIcons.LocationPinSurroundingAreaLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _locationPinSurroundingAreaLarge!!
     }
 

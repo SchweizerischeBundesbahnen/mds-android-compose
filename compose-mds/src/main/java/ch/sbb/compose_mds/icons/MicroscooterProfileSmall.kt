@@ -15,24 +15,12 @@ public val SBBIcons.MicroscooterProfileSmall: ImageVector
         if (_microscooterProfileSmall != null) {
             return _microscooterProfileSmall!!
         }
-        _microscooterProfileSmall = Builder(
-            name = "MicroscooterProfileSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _microscooterProfileSmall = Builder(name = "MicroscooterProfileSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.5f, 5.0f)
                 horizontalLineTo(16.0f)
                 verticalLineToRelative(1.0f)
@@ -66,7 +54,7 @@ public val SBBIcons.MicroscooterProfileSmall: ImageVector
                 reflectiveCurveToRelative(-2.0f, -0.897f, -2.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _microscooterProfileSmall!!
     }
 

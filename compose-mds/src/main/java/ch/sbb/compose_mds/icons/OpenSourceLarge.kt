@@ -15,23 +15,11 @@ public val SBBIcons.OpenSourceLarge: ImageVector
         if (_openSourceLarge != null) {
             return _openSourceLarge!!
         }
-        _openSourceLarge = Builder(
-            name = "OpenSourceLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _openSourceLarge = Builder(name = "OpenSourceLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.5f, 4.0f)
                 arcToRelative(20.5f, 20.5f, 0.0f, false, true, 20.106f, 16.5f)
                 verticalLineToRelative(0.001f)
@@ -61,7 +49,7 @@ public val SBBIcons.OpenSourceLarge: ImageVector
                 arcTo(19.5f, 19.5f, 0.0f, false, false, 23.5f, 5.0f)
             }
         }
-            .build()
+        .build()
         return _openSourceLarge!!
     }
 

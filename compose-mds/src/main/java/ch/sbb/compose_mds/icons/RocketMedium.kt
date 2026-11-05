@@ -15,23 +15,11 @@ public val SBBIcons.RocketMedium: ImageVector
         if (_rocketMedium != null) {
             return _rocketMedium!!
         }
-        _rocketMedium = Builder(
-            name = "RocketMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _rocketMedium = Builder(name = "RocketMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.0f, 3.733f)
                 lineToRelative(0.38f, 0.441f)
                 curveToRelative(5.636f, 6.557f, 6.957f, 13.434f, 6.866f, 18.669f)
@@ -105,7 +93,7 @@ public val SBBIcons.RocketMedium: ImageVector
                 arcToRelative(2.75f, 2.75f, 0.0f, false, true, -5.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _rocketMedium!!
     }
 

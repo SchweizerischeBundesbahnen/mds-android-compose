@@ -15,23 +15,11 @@ public val SBBIcons.SplitMedium: ImageVector
         if (_splitMedium != null) {
             return _splitMedium!!
         }
-        _splitMedium = Builder(
-            name = "SplitMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _splitMedium = Builder(name = "SplitMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(32.25f, 4.75f)
                 horizontalLineTo(24.0f)
                 verticalLineToRelative(1.0f)
@@ -61,7 +49,7 @@ public val SBBIcons.SplitMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _splitMedium!!
     }
 

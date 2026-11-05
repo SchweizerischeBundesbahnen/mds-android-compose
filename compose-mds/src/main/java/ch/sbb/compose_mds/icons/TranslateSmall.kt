@@ -15,23 +15,11 @@ public val SBBIcons.TranslateSmall: ImageVector
         if (_translateSmall != null) {
             return _translateSmall!!
         }
-        _translateSmall = Builder(
-            name = "TranslateSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _translateSmall = Builder(name = "TranslateSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.5f, 3.0f)
                 lineTo(2.0f, 3.0f)
                 verticalLineToRelative(10.0f)
@@ -118,7 +106,7 @@ public val SBBIcons.TranslateSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _translateSmall!!
     }
 

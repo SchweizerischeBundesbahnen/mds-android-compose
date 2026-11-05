@@ -15,22 +15,11 @@ public val SBBIcons.MountainPlusMedium: ImageVector
         if (_mountainPlusMedium != null) {
             return _mountainPlusMedium!!
         }
-        _mountainPlusMedium = Builder(
-            name = "MountainPlusMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mountainPlusMedium = Builder(name = "MountainPlusMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(27.25f, 10.253f)
                 lineTo(27.25f, 13.5f)
                 horizontalLineToRelative(1.0f)
@@ -69,7 +58,7 @@ public val SBBIcons.MountainPlusMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _mountainPlusMedium!!
     }
 

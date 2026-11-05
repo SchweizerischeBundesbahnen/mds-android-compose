@@ -15,23 +15,11 @@ public val SBBIcons.ArchiveBoxSmall: ImageVector
         if (_archiveBoxSmall != null) {
             return _archiveBoxSmall!!
         }
-        _archiveBoxSmall = Builder(
-            name = "ArchiveBoxSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _archiveBoxSmall = Builder(name = "ArchiveBoxSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(14.5f, 2.0f)
                 lineToRelative(0.39f, 0.488f)
                 lineTo(16.34f, 4.3f)
@@ -88,7 +76,7 @@ public val SBBIcons.ArchiveBoxSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _archiveBoxSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.CutleryDisabledLarge: ImageVector
         if (_cutleryDisabledLarge != null) {
             return _cutleryDisabledLarge!!
         }
-        _cutleryDisabledLarge = Builder(
-            name = "CutleryDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cutleryDisabledLarge = Builder(name = "CutleryDisabledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(38.354f, 39.06f)
                 lineTo(45.0f, 45.708f)
                 lineToRelative(0.707f, -0.707f)
@@ -225,7 +214,7 @@ public val SBBIcons.CutleryDisabledLarge: ImageVector
                 curveToRelative(-0.662f, -0.993f, -1.087f, -2.394f, -1.087f, -3.965f)
             }
         }
-            .build()
+        .build()
         return _cutleryDisabledLarge!!
     }
 

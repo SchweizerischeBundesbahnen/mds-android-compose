@@ -15,23 +15,11 @@ public val SBBIcons.FaceSmilingSmall: ImageVector
         if (_faceSmilingSmall != null) {
             return _faceSmilingSmall!!
         }
-        _faceSmilingSmall = Builder(
-            name = "FaceSmilingSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceSmilingSmall = Builder(name = "FaceSmilingSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 12.0f)
                 curveToRelative(0.0f, -4.47f, 3.53f, -8.0f, 8.0f, -8.0f)
                 reflectiveCurveToRelative(8.0f, 3.53f, 8.0f, 8.0f)
@@ -57,7 +45,7 @@ public val SBBIcons.FaceSmilingSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _faceSmilingSmall!!
     }
 

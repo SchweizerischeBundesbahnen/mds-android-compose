@@ -15,23 +15,11 @@ public val SBBIcons.AlarmClockSmall: ImageVector
         if (_alarmClockSmall != null) {
             return _alarmClockSmall!!
         }
-        _alarmClockSmall = Builder(
-            name = "AlarmClockSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _alarmClockSmall = Builder(name = "AlarmClockSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(3.854f, 6.853f)
                 lineToRelative(3.0f, -3.0f)
                 lineToRelative(-0.708f, -0.707f)
@@ -57,7 +45,7 @@ public val SBBIcons.AlarmClockSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _alarmClockSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.ContactLarge: ImageVector
         if (_contactLarge != null) {
             return _contactLarge!!
         }
-        _contactLarge = Builder(
-            name = "ContactLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _contactLarge = Builder(name = "ContactLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(38.0f, 39.0f)
                 lineTo(11.0f, 39.0f)
                 verticalLineToRelative(-6.0f)
@@ -97,7 +85,7 @@ public val SBBIcons.ContactLarge: ImageVector
                 curveToRelative(-0.463f, -0.625f, -1.074f, -0.968f, -1.736f, -0.968f)
             }
         }
-            .build()
+        .build()
         return _contactLarge!!
     }
 

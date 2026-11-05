@@ -15,22 +15,11 @@ public val SBBIcons.PinLarge: ImageVector
         if (_pinLarge != null) {
             return _pinLarge!!
         }
-        _pinLarge = Builder(
-            name = "PinLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _pinLarge = Builder(name = "PinLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(32.978f, 10.648f)
                 lineToRelative(-3.973f, 12.908f)
                 lineToRelative(0.494f, 6.909f)
@@ -69,7 +58,7 @@ public val SBBIcons.PinLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _pinLarge!!
     }
 

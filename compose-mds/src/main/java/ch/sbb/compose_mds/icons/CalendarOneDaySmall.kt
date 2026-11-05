@@ -15,22 +15,11 @@ public val SBBIcons.CalendarOneDaySmall: ImageVector
         if (_calendarOneDaySmall != null) {
             return _calendarOneDaySmall!!
         }
-        _calendarOneDaySmall = Builder(
-            name = "CalendarOneDaySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _calendarOneDaySmall = Builder(name = "CalendarOneDaySmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.0f, 6.01f)
                 lineTo(8.0f, 5.0f)
                 lineTo(7.0f, 5.0f)
@@ -76,7 +65,7 @@ public val SBBIcons.CalendarOneDaySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _calendarOneDaySmall!!
     }
 

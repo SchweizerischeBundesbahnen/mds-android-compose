@@ -15,22 +15,12 @@ public val SBBIcons.ScooterProfilePowerPlugMedium: ImageVector
         if (_scooterProfilePowerPlugMedium != null) {
             return _scooterProfilePowerPlugMedium!!
         }
-        _scooterProfilePowerPlugMedium = Builder(
-            name = "ScooterProfilePowerPlugMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _scooterProfilePowerPlugMedium = Builder(name = "ScooterProfilePowerPlugMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(28.106f, 13.76f)
                 arcToRelative(6.47f, 6.47f, 0.0f, false, true, 3.696f, 1.406f)
                 lineToRelative(-0.624f, 0.782f)
@@ -109,7 +99,7 @@ public val SBBIcons.ScooterProfilePowerPlugMedium: ImageVector
                 arcToRelative(2.498f, 2.498f, 0.0f, true, true, -0.003f, -4.998f)
             }
         }
-            .build()
+        .build()
         return _scooterProfilePowerPlugMedium!!
     }
 

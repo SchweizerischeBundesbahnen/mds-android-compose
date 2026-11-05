@@ -15,23 +15,11 @@ public val SBBIcons.SunMoonMedium: ImageVector
         if (_sunMoonMedium != null) {
             return _sunMoonMedium!!
         }
-        _sunMoonMedium = Builder(
-            name = "SunMoonMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _sunMoonMedium = Builder(name = "SunMoonMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(13.97f, 9.77f)
                 lineToRelative(0.586f, -1.612f)
                 lineToRelative(-1.36f, 1.046f)
@@ -61,7 +49,7 @@ public val SBBIcons.SunMoonMedium: ImageVector
                 curveToRelative(-0.474f, 3.124f, 0.734f, 6.532f, 2.965f, 9.012f)
             }
         }
-            .build()
+        .build()
         return _sunMoonMedium!!
     }
 

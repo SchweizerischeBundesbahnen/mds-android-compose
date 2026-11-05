@@ -15,23 +15,11 @@ public val SBBIcons.ContactMedium: ImageVector
         if (_contactMedium != null) {
             return _contactMedium!!
         }
-        _contactMedium = Builder(
-            name = "ContactMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _contactMedium = Builder(name = "ContactMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.25f, 6.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(6.0f)
@@ -93,7 +81,7 @@ public val SBBIcons.ContactMedium: ImageVector
                 curveToRelative(-0.749f, 0.0f, -1.395f, -0.354f, -1.865f, -0.898f)
             }
         }
-            .build()
+        .build()
         return _contactMedium!!
     }
 

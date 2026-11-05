@@ -15,23 +15,11 @@ public val SBBIcons.WineCheeseMedium: ImageVector
         if (_wineCheeseMedium != null) {
             return _wineCheeseMedium!!
         }
-        _wineCheeseMedium = Builder(
-            name = "WineCheeseMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wineCheeseMedium = Builder(name = "WineCheeseMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.75f, 3.25f)
                 horizontalLineToRelative(4.0f)
                 verticalLineToRelative(7.5f)
@@ -105,7 +93,7 @@ public val SBBIcons.WineCheeseMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wineCheeseMedium!!
     }
 

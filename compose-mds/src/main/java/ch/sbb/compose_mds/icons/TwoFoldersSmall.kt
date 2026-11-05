@@ -15,23 +15,11 @@ public val SBBIcons.TwoFoldersSmall: ImageVector
         if (_twoFoldersSmall != null) {
             return _twoFoldersSmall!!
         }
-        _twoFoldersSmall = Builder(
-            name = "TwoFoldersSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _twoFoldersSmall = Builder(name = "TwoFoldersSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.5f, 3.0f)
                 horizontalLineToRelative(-0.309f)
                 lineToRelative(-0.138f, 0.277f)
@@ -70,7 +58,7 @@ public val SBBIcons.TwoFoldersSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _twoFoldersSmall!!
     }
 

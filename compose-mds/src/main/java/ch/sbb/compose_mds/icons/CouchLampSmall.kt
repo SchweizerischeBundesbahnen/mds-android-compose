@@ -15,23 +15,11 @@ public val SBBIcons.CouchLampSmall: ImageVector
         if (_couchLampSmall != null) {
             return _couchLampSmall!!
         }
-        _couchLampSmall = Builder(
-            name = "CouchLampSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _couchLampSmall = Builder(name = "CouchLampSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(16.0f, 13.087f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 16.913f, 15.0f)
                 lineTo(17.0f, 15.0f)
@@ -89,7 +77,7 @@ public val SBBIcons.CouchLampSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _couchLampSmall!!
     }
 

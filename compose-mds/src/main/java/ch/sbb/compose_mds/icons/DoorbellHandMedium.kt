@@ -15,22 +15,11 @@ public val SBBIcons.DoorbellHandMedium: ImageVector
         if (_doorbellHandMedium != null) {
             return _doorbellHandMedium!!
         }
-        _doorbellHandMedium = Builder(
-            name = "DoorbellHandMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _doorbellHandMedium = Builder(name = "DoorbellHandMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.75f, 3.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(13.0f)
@@ -143,7 +132,7 @@ public val SBBIcons.DoorbellHandMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _doorbellHandMedium!!
     }
 

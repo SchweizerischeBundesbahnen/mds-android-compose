@@ -15,24 +15,12 @@ public val SBBIcons.LocationPinPulseSurroundingAreaLarge: ImageVector
         if (_locationPinPulseSurroundingAreaLarge != null) {
             return _locationPinPulseSurroundingAreaLarge!!
         }
-        _locationPinPulseSurroundingAreaLarge = Builder(
-            name =
-                "LocationPinPulseSurroundingAreaLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _locationPinPulseSurroundingAreaLarge = Builder(name =
+                "LocationPinPulseSurroundingAreaLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(17.104f, 30.85f)
                 lineToRelative(0.056f, 0.496f)
                 curveToRelative(-3.653f, 0.414f, -6.75f, 1.171f, -8.918f, 2.128f)
@@ -108,7 +96,7 @@ public val SBBIcons.LocationPinPulseSurroundingAreaLarge: ImageVector
                 curveToRelative(0.0f, -5.8f, -4.702f, -10.5f, -10.5f, -10.5f)
             }
         }
-            .build()
+        .build()
         return _locationPinPulseSurroundingAreaLarge!!
     }
 

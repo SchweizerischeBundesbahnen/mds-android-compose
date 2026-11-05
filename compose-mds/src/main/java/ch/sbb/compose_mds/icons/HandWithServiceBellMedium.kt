@@ -15,24 +15,12 @@ public val SBBIcons.HandWithServiceBellMedium: ImageVector
         if (_handWithServiceBellMedium != null) {
             return _handWithServiceBellMedium!!
         }
-        _handWithServiceBellMedium = Builder(
-            name = "HandWithServiceBellMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handWithServiceBellMedium = Builder(name = "HandWithServiceBellMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.25f, 6.75f)
                 curveToRelative(0.0f, -0.553f, 0.447f, -1.0f, 1.0f, -1.0f)
                 reflectiveCurveToRelative(1.0f, 0.447f, 1.0f, 1.0f)
@@ -100,7 +88,7 @@ public val SBBIcons.HandWithServiceBellMedium: ImageVector
                 curveToRelative(-0.865f, 0.0f, -1.555f, -0.314f, -2.03f, -0.819f)
             }
         }
-            .build()
+        .build()
         return _handWithServiceBellMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.ContextMenuMedium: ImageVector
         if (_contextMenuMedium != null) {
             return _contextMenuMedium!!
         }
-        _contextMenuMedium = Builder(
-            name = "ContextMenuMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _contextMenuMedium = Builder(name = "ContextMenuMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.25f, 7.5f)
                 arcToRelative(2.25f, 2.25f, 0.0f, true, true, -4.5f, 0.0f)
                 arcToRelative(2.25f, 2.25f, 0.0f, false, true, 4.5f, 0.0f)
@@ -42,7 +31,7 @@ public val SBBIcons.ContextMenuMedium: ImageVector
                 arcToRelative(2.25f, 2.25f, 0.0f, true, false, 0.0f, 4.5f)
             }
         }
-            .build()
+        .build()
         return _contextMenuMedium!!
     }
 

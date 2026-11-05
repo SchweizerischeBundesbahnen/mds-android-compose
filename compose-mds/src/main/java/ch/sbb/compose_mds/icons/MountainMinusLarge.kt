@@ -15,22 +15,11 @@ public val SBBIcons.MountainMinusLarge: ImageVector
         if (_mountainMinusLarge != null) {
             return _mountainMinusLarge!!
         }
-        _mountainMinusLarge = Builder(
-            name = "MountainMinusLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _mountainMinusLarge = Builder(name = "MountainMinusLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(23.936f, 9.255f)
                 lineToRelative(15.802f, 28.089f)
                 lineToRelative(1.694f, 2.904f)
@@ -61,7 +50,7 @@ public val SBBIcons.MountainMinusLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _mountainMinusLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.RailwayShipMedium: ImageVector
         if (_railwayShipMedium != null) {
             return _railwayShipMedium!!
         }
-        _railwayShipMedium = Builder(
-            name = "RailwayShipMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _railwayShipMedium = Builder(name = "RailwayShipMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.25f, 3.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(4.0f)
@@ -115,7 +104,7 @@ public val SBBIcons.RailwayShipMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _railwayShipMedium!!
     }
 

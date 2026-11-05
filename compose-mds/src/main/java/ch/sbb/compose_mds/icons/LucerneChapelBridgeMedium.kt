@@ -15,24 +15,12 @@ public val SBBIcons.LucerneChapelBridgeMedium: ImageVector
         if (_lucerneChapelBridgeMedium != null) {
             return _lucerneChapelBridgeMedium!!
         }
-        _lucerneChapelBridgeMedium = Builder(
-            name = "LucerneChapelBridgeMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lucerneChapelBridgeMedium = Builder(name = "LucerneChapelBridgeMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(16.154f, 2.706f)
                 lineToRelative(-0.404f, -0.556f)
                 lineToRelative(-0.404f, 0.556f)
@@ -95,7 +83,7 @@ public val SBBIcons.LucerneChapelBridgeMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _lucerneChapelBridgeMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.FolderSmall: ImageVector
         if (_folderSmall != null) {
             return _folderSmall!!
         }
-        _folderSmall = Builder(
-            name = "FolderSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _folderSmall = Builder(name = "FolderSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.191f, 6.0f)
                 horizontalLineToRelative(4.804f)
                 verticalLineToRelative(0.5f)
@@ -52,7 +40,7 @@ public val SBBIcons.FolderSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _folderSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.CloudSunshineLarge: ImageVector
         if (_cloudSunshineLarge != null) {
             return _cloudSunshineLarge!!
         }
-        _cloudSunshineLarge = Builder(
-            name = "CloudSunshineLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _cloudSunshineLarge = Builder(name = "CloudSunshineLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(32.5f, 11.0f)
                 curveToRelative(3.658f, 0.0f, 6.5f, 2.842f, 6.5f, 6.5f)
                 curveToRelative(0.0f, 2.818f, -1.69f, 5.157f, -4.148f, 6.078f)
@@ -100,7 +89,7 @@ public val SBBIcons.CloudSunshineLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudSunshineLarge!!
     }
 

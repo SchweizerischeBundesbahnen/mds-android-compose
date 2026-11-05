@@ -15,23 +15,11 @@ public val SBBIcons.LaptopLarge: ImageVector
         if (_laptopLarge != null) {
             return _laptopLarge!!
         }
-        _laptopLarge = Builder(
-            name = "LaptopLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _laptopLarge = Builder(name = "LaptopLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.44f, 12.0f)
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, -1.5f, 1.5f)
                 lineTo(7.999f, 34.0f)
@@ -71,7 +59,7 @@ public val SBBIcons.LaptopLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _laptopLarge!!
     }
 

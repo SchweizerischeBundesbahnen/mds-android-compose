@@ -15,22 +15,11 @@ public val SBBIcons.IdCardEmployeeMedium: ImageVector
         if (_idCardEmployeeMedium != null) {
             return _idCardEmployeeMedium!!
         }
-        _idCardEmployeeMedium = Builder(
-            name = "IdCardEmployeeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _idCardEmployeeMedium = Builder(name = "IdCardEmployeeMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 5.75f)
                 curveToRelative(-0.967f, 0.0f, -1.75f, 0.783f, -1.75f, 1.75f)
                 verticalLineToRelative(3.25f)
@@ -93,7 +82,7 @@ public val SBBIcons.IdCardEmployeeMedium: ImageVector
                 reflectiveCurveToRelative(-2.5f, -1.345f, -2.5f, -3.25f)
             }
         }
-            .build()
+        .build()
         return _idCardEmployeeMedium!!
     }
 

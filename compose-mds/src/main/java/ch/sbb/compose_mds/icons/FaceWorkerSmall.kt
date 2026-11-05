@@ -15,23 +15,11 @@ public val SBBIcons.FaceWorkerSmall: ImageVector
         if (_faceWorkerSmall != null) {
             return _faceWorkerSmall!!
         }
-        _faceWorkerSmall = Builder(
-            name = "FaceWorkerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceWorkerSmall = Builder(name = "FaceWorkerSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.1f, 8.0f)
                 arcToRelative(5.001f, 5.001f, 0.0f, false, true, 9.8f, 0.0f)
                 lineTo(13.0f, 8.0f)
@@ -70,7 +58,7 @@ public val SBBIcons.FaceWorkerSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _faceWorkerSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.CertificateRibbonLarge: ImageVector
         if (_certificateRibbonLarge != null) {
             return _certificateRibbonLarge!!
         }
-        _certificateRibbonLarge = Builder(
-            name = "CertificateRibbonLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _certificateRibbonLarge = Builder(name = "CertificateRibbonLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.5f, 4.0f)
                 arcToRelative(9.5f, 9.5f, 0.0f, false, false, -9.5f, 9.5f)
                 arcToRelative(9.5f, 9.5f, 0.0f, false, false, 9.5f, 9.5f)
@@ -76,7 +65,7 @@ public val SBBIcons.CertificateRibbonLarge: ImageVector
                 arcToRelative(8.5f, 8.5f, 0.0f, false, false, 0.0f, -17.0f)
             }
         }
-            .build()
+        .build()
         return _certificateRibbonLarge!!
     }
 

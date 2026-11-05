@@ -15,24 +15,12 @@ public val SBBIcons.CarProfileSignParkingLarge: ImageVector
         if (_carProfileSignParkingLarge != null) {
             return _carProfileSignParkingLarge!!
         }
-        _carProfileSignParkingLarge = Builder(
-            name = "CarProfileSignParkingLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carProfileSignParkingLarge = Builder(name = "CarProfileSignParkingLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(35.5f, 7.0f)
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 34.0f, 8.5f)
                 verticalLineToRelative(11.0f)
@@ -135,7 +123,7 @@ public val SBBIcons.CarProfileSignParkingLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _carProfileSignParkingLarge!!
     }
 

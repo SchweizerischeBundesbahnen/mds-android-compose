@@ -15,24 +15,12 @@ public val SBBIcons.ArrowsLeftRightDottedMedium: ImageVector
         if (_arrowsLeftRightDottedMedium != null) {
             return _arrowsLeftRightDottedMedium!!
         }
-        _arrowsLeftRightDottedMedium = Builder(
-            name = "ArrowsLeftRightDottedMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowsLeftRightDottedMedium = Builder(name = "ArrowsLeftRightDottedMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(11.604f, 20.604f)
                 lineTo(7.957f, 24.25f)
                 lineTo(13.5f, 24.25f)
@@ -97,7 +85,7 @@ public val SBBIcons.ArrowsLeftRightDottedMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowsLeftRightDottedMedium!!
     }
 

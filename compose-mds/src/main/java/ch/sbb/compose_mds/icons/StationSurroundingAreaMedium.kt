@@ -15,24 +15,12 @@ public val SBBIcons.StationSurroundingAreaMedium: ImageVector
         if (_stationSurroundingAreaMedium != null) {
             return _stationSurroundingAreaMedium!!
         }
-        _stationSurroundingAreaMedium = Builder(
-            name = "StationSurroundingAreaMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _stationSurroundingAreaMedium = Builder(name = "StationSurroundingAreaMedium", defaultWidth
+                = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(27.939f, 7.487f)
                 curveToRelative(-4.467f, -1.823f, -7.17f, -2.763f, -9.908f, -2.755f)
                 curveToRelative(-2.736f, 0.008f, -5.46f, 0.963f, -9.966f, 2.754f)
@@ -99,7 +87,7 @@ public val SBBIcons.StationSurroundingAreaMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _stationSurroundingAreaMedium!!
     }
 

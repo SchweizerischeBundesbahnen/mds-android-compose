@@ -15,22 +15,11 @@ public val SBBIcons.NewspaperSbbMedium: ImageVector
         if (_newspaperSbbMedium != null) {
             return _newspaperSbbMedium!!
         }
-        _newspaperSbbMedium = Builder(
-            name = "NewspaperSbbMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _newspaperSbbMedium = Builder(name = "NewspaperSbbMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.6f, 27.375f)
                 horizontalLineToRelative(4.275f)
                 lineTo(22.875f, 24.0f)
@@ -114,7 +103,7 @@ public val SBBIcons.NewspaperSbbMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _newspaperSbbMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.WheelThermometerSmall: ImageVector
         if (_wheelThermometerSmall != null) {
             return _wheelThermometerSmall!!
         }
-        _wheelThermometerSmall = Builder(
-            name = "WheelThermometerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelThermometerSmall = Builder(name = "WheelThermometerSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 3.0f)
                 arcToRelative(9.0f, 9.0f, 0.0f, false, false, 0.0f, 18.0f)
                 curveToRelative(0.326f, 0.0f, 0.635f, -0.014f, 0.947f, -0.047f)
@@ -83,7 +72,7 @@ public val SBBIcons.WheelThermometerSmall: ImageVector
                 curveToRelative(-3.865f, 0.0f, -7.0f, -3.135f, -7.0f, -7.0f)
             }
         }
-            .build()
+        .build()
         return _wheelThermometerSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.GithubMedium: ImageVector
         if (_githubMedium != null) {
             return _githubMedium!!
         }
-        _githubMedium = Builder(
-            name = "GithubMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _githubMedium = Builder(name = "GithubMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(9.563f, 3.25f)
                 arcToRelative(7.82f, 7.82f, 0.0f, false, true, 6.426f, 3.375f)
                 horizontalLineToRelative(4.022f)
@@ -150,7 +138,7 @@ public val SBBIcons.GithubMedium: ImageVector
                 arcToRelative(6.81f, 6.81f, 0.0f, false, false, -0.318f, -5.598f)
             }
         }
-            .build()
+        .build()
         return _githubMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.MountainLakeSunLarge: ImageVector
         if (_mountainLakeSunLarge != null) {
             return _mountainLakeSunLarge!!
         }
-        _mountainLakeSunLarge = Builder(
-            name = "MountainLakeSunLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mountainLakeSunLarge = Builder(name = "MountainLakeSunLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 7.0f)
                 lineTo(12.0f, 4.0f)
                 horizontalLineToRelative(1.0f)
@@ -230,7 +219,7 @@ public val SBBIcons.MountainLakeSunLarge: ImageVector
                 curveToRelative(-0.861f, -0.517f, -1.79f, -1.072f, -3.593f, -1.072f)
             }
         }
-            .build()
+        .build()
         return _mountainLakeSunLarge!!
     }
 

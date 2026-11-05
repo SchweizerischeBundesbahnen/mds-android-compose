@@ -15,22 +15,12 @@ public val SBBIcons.ChristmasTreeShoppingBagSmall: ImageVector
         if (_christmasTreeShoppingBagSmall != null) {
             return _christmasTreeShoppingBagSmall!!
         }
-        _christmasTreeShoppingBagSmall = Builder(
-            name = "ChristmasTreeShoppingBagSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _christmasTreeShoppingBagSmall = Builder(name = "ChristmasTreeShoppingBagSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.937f, 2.757f)
                 lineTo(7.5f, 1.97f)
                 lineToRelative(-0.437f, 0.787f)
@@ -98,7 +88,7 @@ public val SBBIcons.ChristmasTreeShoppingBagSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _christmasTreeShoppingBagSmall!!
     }
 

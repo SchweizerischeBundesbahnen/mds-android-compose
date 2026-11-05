@@ -15,22 +15,11 @@ public val SBBIcons.TagSmall: ImageVector
         if (_tagSmall != null) {
             return _tagSmall!!
         }
-        _tagSmall = Builder(
-            name = "TagSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _tagSmall = Builder(name = "TagSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.5f, 6.0f)
                 horizontalLineToRelative(-0.501f)
                 verticalLineToRelative(0.5f)
@@ -57,7 +46,7 @@ public val SBBIcons.TagSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _tagSmall!!
     }
 

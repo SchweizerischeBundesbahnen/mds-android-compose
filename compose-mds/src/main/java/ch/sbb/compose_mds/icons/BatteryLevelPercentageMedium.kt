@@ -15,24 +15,12 @@ public val SBBIcons.BatteryLevelPercentageMedium: ImageVector
         if (_batteryLevelPercentageMedium != null) {
             return _batteryLevelPercentageMedium!!
         }
-        _batteryLevelPercentageMedium = Builder(
-            name = "BatteryLevelPercentageMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _batteryLevelPercentageMedium = Builder(name = "BatteryLevelPercentageMedium", defaultWidth
+                = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(28.908f, 18.383f)
                 lineToRelative(-10.5f, 14.812f)
                 lineToRelative(-0.816f, -0.578f)
@@ -91,7 +79,7 @@ public val SBBIcons.BatteryLevelPercentageMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _batteryLevelPercentageMedium!!
     }
 

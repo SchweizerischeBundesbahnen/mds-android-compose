@@ -15,23 +15,11 @@ public val SBBIcons.CirclePlayMedium: ImageVector
         if (_circlePlayMedium != null) {
             return _circlePlayMedium!!
         }
-        _circlePlayMedium = Builder(
-            name = "CirclePlayMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _circlePlayMedium = Builder(name = "CirclePlayMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 3.25f)
                 curveTo(9.853f, 3.25f, 3.25f, 9.853f, 3.25f, 18.0f)
                 reflectiveCurveTo(9.853f, 32.75f, 18.0f, 32.75f)
@@ -56,7 +44,7 @@ public val SBBIcons.CirclePlayMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _circlePlayMedium!!
     }
 

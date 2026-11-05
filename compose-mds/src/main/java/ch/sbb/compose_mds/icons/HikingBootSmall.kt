@@ -15,23 +15,11 @@ public val SBBIcons.HikingBootSmall: ImageVector
         if (_hikingBootSmall != null) {
             return _hikingBootSmall!!
         }
-        _hikingBootSmall = Builder(
-            name = "HikingBootSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _hikingBootSmall = Builder(name = "HikingBootSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.974f, 6.342f)
                 lineTo(9.86f, 6.0f)
                 horizontalLineTo(2.0f)
@@ -86,7 +74,7 @@ public val SBBIcons.HikingBootSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _hikingBootSmall!!
     }
 

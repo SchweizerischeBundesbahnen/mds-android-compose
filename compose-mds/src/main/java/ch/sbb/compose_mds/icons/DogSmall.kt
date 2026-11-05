@@ -15,22 +15,11 @@ public val SBBIcons.DogSmall: ImageVector
         if (_dogSmall != null) {
             return _dogSmall!!
         }
-        _dogSmall = Builder(
-            name = "DogSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _dogSmall = Builder(name = "DogSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 5.5f)
                 verticalLineTo(4.293f)
                 lineToRelative(-0.854f, 0.853f)
@@ -100,7 +89,7 @@ public val SBBIcons.DogSmall: ImageVector
                 arcToRelative(0.5f, 0.5f, 0.0f, false, true, 0.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _dogSmall!!
     }
 

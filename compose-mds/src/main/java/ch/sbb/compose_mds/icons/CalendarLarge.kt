@@ -15,23 +15,11 @@ public val SBBIcons.CalendarLarge: ImageVector
         if (_calendarLarge != null) {
             return _calendarLarge!!
         }
-        _calendarLarge = Builder(
-            name = "CalendarLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _calendarLarge = Builder(name = "CalendarLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.0f, 13.0f)
                 verticalLineToRelative(-3.0f)
                 horizontalLineToRelative(-1.0f)
@@ -107,7 +95,7 @@ public val SBBIcons.CalendarLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _calendarLarge!!
     }
 

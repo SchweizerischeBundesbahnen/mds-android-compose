@@ -15,23 +15,11 @@ public val SBBIcons.PiggyBankLarge: ImageVector
         if (_piggyBankLarge != null) {
             return _piggyBankLarge!!
         }
-        _piggyBankLarge = Builder(
-            name = "PiggyBankLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _piggyBankLarge = Builder(name = "PiggyBankLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.0f, 7.5f)
                 arcToRelative(4.5f, 4.5f, 0.0f, true, true, 9.001f, 0.001f)
                 arcTo(4.5f, 4.5f, 0.0f, false, true, 9.0f, 7.5f)
@@ -160,7 +148,7 @@ public val SBBIcons.PiggyBankLarge: ImageVector
                 arcToRelative(12.0f, 12.0f, 0.0f, false, true, -0.309f, -0.078f)
             }
         }
-            .build()
+        .build()
         return _piggyBankLarge!!
     }
 

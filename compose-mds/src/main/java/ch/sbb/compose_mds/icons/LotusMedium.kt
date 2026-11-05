@@ -15,23 +15,11 @@ public val SBBIcons.LotusMedium: ImageVector
         if (_lotusMedium != null) {
             return _lotusMedium!!
         }
-        _lotusMedium = Builder(
-            name = "LotusMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lotusMedium = Builder(name = "LotusMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.342f, 4.135f)
                 lineTo(18.0f, 3.815f)
                 lineToRelative(-0.342f, 0.32f)
@@ -109,7 +97,7 @@ public val SBBIcons.LotusMedium: ImageVector
                 curveToRelative(6.387f, -1.43f, 10.479f, -7.639f, 9.334f, -14.035f)
             }
         }
-            .build()
+        .build()
         return _lotusMedium!!
     }
 

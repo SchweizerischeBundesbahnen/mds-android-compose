@@ -15,24 +15,12 @@ public val SBBIcons.FaceThinkingSmilingMedium: ImageVector
         if (_faceThinkingSmilingMedium != null) {
             return _faceThinkingSmilingMedium!!
         }
-        _faceThinkingSmilingMedium = Builder(
-            name = "FaceThinkingSmilingMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceThinkingSmilingMedium = Builder(name = "FaceThinkingSmilingMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.075f, 5.795f)
                 curveToRelative(-6.773f, 0.0f, -12.25f, 5.476f, -12.265f, 12.25f)
                 curveToRelative(0.0f, 4.034f, 1.959f, 7.609f, 4.959f, 9.844f)
@@ -110,7 +98,7 @@ public val SBBIcons.FaceThinkingSmilingMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _faceThinkingSmilingMedium!!
     }
 

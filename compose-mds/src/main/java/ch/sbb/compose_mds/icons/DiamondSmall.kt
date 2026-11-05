@@ -15,23 +15,11 @@ public val SBBIcons.DiamondSmall: ImageVector
         if (_diamondSmall != null) {
             return _diamondSmall!!
         }
-        _diamondSmall = Builder(
-            name = "DiamondSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _diamondSmall = Builder(name = "DiamondSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.232f, 2.0f)
                 horizontalLineToRelative(11.536f)
                 lineToRelative(0.148f, 0.223f)
@@ -80,7 +68,7 @@ public val SBBIcons.DiamondSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _diamondSmall!!
     }
 

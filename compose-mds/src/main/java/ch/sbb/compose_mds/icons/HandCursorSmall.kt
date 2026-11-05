@@ -15,23 +15,11 @@ public val SBBIcons.HandCursorSmall: ImageVector
         if (_handCursorSmall != null) {
             return _handCursorSmall!!
         }
-        _handCursorSmall = Builder(
-            name = "HandCursorSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handCursorSmall = Builder(name = "HandCursorSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.0f, 5.5f)
                 curveToRelative(0.0f, -0.826f, 0.674f, -1.5f, 1.5f, -1.5f)
                 reflectiveCurveToRelative(1.5f, 0.674f, 1.5f, 1.5f)
@@ -104,7 +92,7 @@ public val SBBIcons.HandCursorSmall: ImageVector
                 verticalLineToRelative(1.0f)
             }
         }
-            .build()
+        .build()
         return _handCursorSmall!!
     }
 

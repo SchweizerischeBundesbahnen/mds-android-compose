@@ -15,23 +15,11 @@ public val SBBIcons.TunnelMedium: ImageVector
         if (_tunnelMedium != null) {
             return _tunnelMedium!!
         }
-        _tunnelMedium = Builder(
-            name = "TunnelMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _tunnelMedium = Builder(name = "TunnelMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.7f, 7.67f)
                 curveToRelative(-2.417f, 2.09f, -3.95f, 4.9f, -3.95f, 7.842f)
                 lineTo(5.75f, 28.5f)
@@ -109,7 +97,7 @@ public val SBBIcons.TunnelMedium: ImageVector
                 horizontalLineToRelative(7.686f)
             }
         }
-            .build()
+        .build()
         return _tunnelMedium!!
     }
 

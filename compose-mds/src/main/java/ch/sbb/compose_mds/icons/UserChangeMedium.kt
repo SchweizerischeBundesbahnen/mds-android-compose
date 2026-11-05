@@ -15,23 +15,11 @@ public val SBBIcons.UserChangeMedium: ImageVector
         if (_userChangeMedium != null) {
             return _userChangeMedium!!
         }
-        _userChangeMedium = Builder(
-            name = "UserChangeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userChangeMedium = Builder(name = "UserChangeMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.75f, 4.25f)
                 curveToRelative(-1.335f, 0.0f, -2.5f, 1.396f, -2.5f, 3.25f)
                 curveToRelative(0.0f, 0.646f, 0.144f, 1.253f, 0.398f, 1.762f)
@@ -108,7 +96,7 @@ public val SBBIcons.UserChangeMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _userChangeMedium!!
     }
 

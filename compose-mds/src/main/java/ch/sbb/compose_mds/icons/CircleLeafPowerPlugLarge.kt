@@ -15,24 +15,12 @@ public val SBBIcons.CircleLeafPowerPlugLarge: ImageVector
         if (_circleLeafPowerPlugLarge != null) {
             return _circleLeafPowerPlugLarge!!
         }
-        _circleLeafPowerPlugLarge = Builder(
-            name = "CircleLeafPowerPlugLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _circleLeafPowerPlugLarge = Builder(name = "CircleLeafPowerPlugLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(15.367f, 6.364f)
                 curveToRelative(0.168f, 0.594f, 0.39f, 1.651f, 0.52f, 2.824f)
                 curveToRelative(0.132f, 1.167f, 0.178f, 2.492f, -0.027f, 3.602f)
@@ -92,7 +80,7 @@ public val SBBIcons.CircleLeafPowerPlugLarge: ImageVector
                 arcToRelative(20.0f, 20.0f, 0.0f, false, false, -0.34f, -2.049f)
             }
         }
-            .build()
+        .build()
         return _circleLeafPowerPlugLarge!!
     }
 

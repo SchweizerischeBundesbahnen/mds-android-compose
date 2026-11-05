@@ -15,24 +15,12 @@ public val SBBIcons.DoorArrowRightLeftMedium: ImageVector
         if (_doorArrowRightLeftMedium != null) {
             return _doorArrowRightLeftMedium!!
         }
-        _doorArrowRightLeftMedium = Builder(
-            name = "DoorArrowRightLeftMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _doorArrowRightLeftMedium = Builder(name = "DoorArrowRightLeftMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(26.75f, 28.75f)
                 horizontalLineToRelative(4.75f)
                 verticalLineToRelative(1.0f)
@@ -72,7 +60,7 @@ public val SBBIcons.DoorArrowRightLeftMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _doorArrowRightLeftMedium!!
     }
 

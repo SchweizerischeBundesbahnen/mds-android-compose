@@ -15,22 +15,11 @@ public val SBBIcons.HammerWrenchMedium: ImageVector
         if (_hammerWrenchMedium != null) {
             return _hammerWrenchMedium!!
         }
-        _hammerWrenchMedium = Builder(
-            name = "HammerWrenchMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _hammerWrenchMedium = Builder(name = "HammerWrenchMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.692f, 5.8f)
                 curveToRelative(-0.515f, 0.103f, -1.091f, 0.381f, -1.692f, 0.982f)
                 lineToRelative(-4.42f, 4.42f)
@@ -143,7 +132,7 @@ public val SBBIcons.HammerWrenchMedium: ImageVector
                 curveToRelative(-0.97f, -1.8f, -0.589f, -4.277f, 0.793f, -5.592f)
             }
         }
-            .build()
+        .build()
         return _hammerWrenchMedium!!
     }
 

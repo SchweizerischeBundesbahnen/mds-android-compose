@@ -15,24 +15,12 @@ public val SBBIcons.SeatWindowReservationSmall: ImageVector
         if (_seatWindowReservationSmall != null) {
             return _seatWindowReservationSmall!!
         }
-        _seatWindowReservationSmall = Builder(
-            name = "SeatWindowReservationSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _seatWindowReservationSmall = Builder(name = "SeatWindowReservationSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.5f, 2.0f)
                 curveTo(6.674f, 2.0f, 6.0f, 2.674f, 6.0f, 3.5f)
                 verticalLineTo(4.0f)
@@ -94,7 +82,7 @@ public val SBBIcons.SeatWindowReservationSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _seatWindowReservationSmall!!
     }
 

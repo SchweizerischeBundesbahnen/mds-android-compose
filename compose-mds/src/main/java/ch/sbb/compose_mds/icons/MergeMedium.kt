@@ -15,23 +15,11 @@ public val SBBIcons.MergeMedium: ImageVector
         if (_mergeMedium != null) {
             return _mergeMedium!!
         }
-        _mergeMedium = Builder(
-            name = "MergeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mergeMedium = Builder(name = "MergeMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.746f, 13.01f)
                 curveToRelative(3.87f, 2.12f, 9.311f, 3.61f, 18.289f, 3.732f)
                 lineToRelative(-4.974f, -4.974f)
@@ -57,7 +45,7 @@ public val SBBIcons.MergeMedium: ImageVector
                 curveToRelative(2.284f, 2.369f, 4.457f, 4.623f, 7.74f, 6.42f)
             }
         }
-            .build()
+        .build()
         return _mergeMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.HandFingersSnapMedium: ImageVector
         if (_handFingersSnapMedium != null) {
             return _handFingersSnapMedium!!
         }
-        _handFingersSnapMedium = Builder(
-            name = "HandFingersSnapMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handFingersSnapMedium = Builder(name = "HandFingersSnapMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.75f, 10.5f)
                 lineTo(17.75f, 3.0f)
                 horizontalLineToRelative(-1.0f)
@@ -125,7 +114,7 @@ public val SBBIcons.HandFingersSnapMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handFingersSnapMedium!!
     }
 

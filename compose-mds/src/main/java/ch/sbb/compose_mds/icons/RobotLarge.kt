@@ -15,22 +15,11 @@ public val SBBIcons.RobotLarge: ImageVector
         if (_robotLarge != null) {
             return _robotLarge!!
         }
-        _robotLarge = Builder(
-            name = "RobotLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _robotLarge = Builder(name = "RobotLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(38.939f, 34.0f)
                 curveToRelative(2.213f, 0.0f, 4.06f, 1.695f, 4.061f, 3.85f)
                 lineTo(43.0f, 44.0f)
@@ -105,7 +94,7 @@ public val SBBIcons.RobotLarge: ImageVector
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 24.5f, 5.0f)
             }
         }
-            .build()
+        .build()
         return _robotLarge!!
     }
 

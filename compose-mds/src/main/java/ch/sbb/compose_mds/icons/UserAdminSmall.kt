@@ -15,23 +15,11 @@ public val SBBIcons.UserAdminSmall: ImageVector
         if (_userAdminSmall != null) {
             return _userAdminSmall!!
         }
-        _userAdminSmall = Builder(
-            name = "UserAdminSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userAdminSmall = Builder(name = "UserAdminSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.0f, 5.9f)
                 curveToRelative(0.0f, -1.768f, 1.118f, -2.8f, 2.4f, -2.8f)
                 curveToRelative(1.303f, 0.0f, 2.5f, 1.055f, 2.5f, 2.8f)
@@ -140,7 +128,7 @@ public val SBBIcons.UserAdminSmall: ImageVector
                 arcTo(2.3f, 2.3f, 0.0f, false, true, 16.5f, 11.3f)
             }
         }
-            .build()
+        .build()
         return _userAdminSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.BoatProfileMedium: ImageVector
         if (_boatProfileMedium != null) {
             return _boatProfileMedium!!
         }
-        _boatProfileMedium = Builder(
-            name = "BoatProfileMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _boatProfileMedium = Builder(name = "BoatProfileMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.75f, 7.25f)
                 horizontalLineToRelative(1.75f)
                 verticalLineToRelative(-1.0f)
@@ -128,7 +117,7 @@ public val SBBIcons.BoatProfileMedium: ImageVector
                 arcToRelative(3.27f, 3.27f, 0.0f, false, false, -2.043f, -0.005f)
             }
         }
-            .build()
+        .build()
         return _boatProfileMedium!!
     }
 

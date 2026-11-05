@@ -15,22 +15,11 @@ public val SBBIcons.CoinsSmall: ImageVector
         if (_coinsSmall != null) {
             return _coinsSmall!!
         }
-        _coinsSmall = Builder(
-            name = "CoinsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _coinsSmall = Builder(name = "CoinsSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.512f, 5.572f)
                 curveTo(6.15f, 5.88f, 6.0f, 6.188f, 6.0f, 6.5f)
                 reflectiveCurveToRelative(0.15f, 0.62f, 0.512f, 0.928f)
@@ -170,7 +159,7 @@ public val SBBIcons.CoinsSmall: ImageVector
                 verticalLineToRelative(1.959f)
             }
         }
-            .build()
+        .build()
         return _coinsSmall!!
     }
 

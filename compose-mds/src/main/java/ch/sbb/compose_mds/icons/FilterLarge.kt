@@ -15,23 +15,11 @@ public val SBBIcons.FilterLarge: ImageVector
         if (_filterLarge != null) {
             return _filterLarge!!
         }
-        _filterLarge = Builder(
-            name = "FilterLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _filterLarge = Builder(name = "FilterLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(38.88f, 10.824f)
                 lineTo(27.0f, 24.684f)
                 verticalLineToRelative(14.315f)
@@ -52,7 +40,7 @@ public val SBBIcons.FilterLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _filterLarge!!
     }
 

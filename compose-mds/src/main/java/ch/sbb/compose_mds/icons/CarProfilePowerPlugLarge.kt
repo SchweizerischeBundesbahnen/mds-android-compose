@@ -15,24 +15,12 @@ public val SBBIcons.CarProfilePowerPlugLarge: ImageVector
         if (_carProfilePowerPlugLarge != null) {
             return _carProfilePowerPlugLarge!!
         }
-        _carProfilePowerPlugLarge = Builder(
-            name = "CarProfilePowerPlugLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carProfilePowerPlugLarge = Builder(name = "CarProfilePowerPlugLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.052f, 7.0f)
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, -1.236f, 0.65f)
                 lineTo(3.451f, 14.0f)
@@ -163,7 +151,7 @@ public val SBBIcons.CarProfilePowerPlugLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _carProfilePowerPlugLarge!!
     }
 

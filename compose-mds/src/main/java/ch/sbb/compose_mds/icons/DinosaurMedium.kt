@@ -15,23 +15,11 @@ public val SBBIcons.DinosaurMedium: ImageVector
         if (_dinosaurMedium != null) {
             return _dinosaurMedium!!
         }
-        _dinosaurMedium = Builder(
-            name = "DinosaurMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _dinosaurMedium = Builder(name = "DinosaurMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(30.75f, 6.25f)
                 curveToRelative(1.086f, 0.0f, 1.927f, 0.44f, 2.501f, 1.112f)
                 curveToRelative(0.564f, 0.66f, 0.852f, 1.52f, 0.904f, 2.357f)
@@ -97,7 +85,7 @@ public val SBBIcons.DinosaurMedium: ImageVector
                 reflectiveCurveToRelative(0.33f, -0.75f, 0.75f, -0.75f)
             }
         }
-            .build()
+        .build()
         return _dinosaurMedium!!
     }
 

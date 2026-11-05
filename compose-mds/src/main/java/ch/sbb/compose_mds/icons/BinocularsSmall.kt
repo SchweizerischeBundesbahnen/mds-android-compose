@@ -15,23 +15,11 @@ public val SBBIcons.BinocularsSmall: ImageVector
         if (_binocularsSmall != null) {
             return _binocularsSmall!!
         }
-        _binocularsSmall = Builder(
-            name = "BinocularsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _binocularsSmall = Builder(name = "BinocularsSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.5f, 4.0f)
                 horizontalLineToRelative(-0.39f)
                 lineToRelative(-0.095f, 0.379f)
@@ -117,7 +105,7 @@ public val SBBIcons.BinocularsSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _binocularsSmall!!
     }
 

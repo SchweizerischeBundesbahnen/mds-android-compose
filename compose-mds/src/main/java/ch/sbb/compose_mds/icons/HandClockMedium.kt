@@ -15,23 +15,11 @@ public val SBBIcons.HandClockMedium: ImageVector
         if (_handClockMedium != null) {
             return _handClockMedium!!
         }
-        _handClockMedium = Builder(
-            name = "HandClockMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _handClockMedium = Builder(name = "HandClockMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(24.758f, 4.75f)
                 arcToRelative(1.99f, 1.99f, 0.0f, false, true, 1.979f, 1.776f)
                 arcTo(2.0f, 2.0f, 0.0f, false, true, 29.75f, 8.25f)
@@ -102,7 +90,7 @@ public val SBBIcons.HandClockMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handClockMedium!!
     }
 

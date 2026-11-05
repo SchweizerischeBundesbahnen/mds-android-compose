@@ -15,22 +15,11 @@ public val SBBIcons.ChargingStationLarge: ImageVector
         if (_chargingStationLarge != null) {
             return _chargingStationLarge!!
         }
-        _chargingStationLarge = Builder(
-            name = "ChargingStationLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _chargingStationLarge = Builder(name = "ChargingStationLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(28.5f, 4.0f)
                 curveTo(30.984f, 4.0f, 33.0f, 6.016f, 33.0f, 8.5f)
                 lineTo(33.0f, 28.0f)
@@ -117,7 +106,7 @@ public val SBBIcons.ChargingStationLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _chargingStationLarge!!
     }
 

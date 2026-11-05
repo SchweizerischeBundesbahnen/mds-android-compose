@@ -15,23 +15,11 @@ public val SBBIcons.ChartColumnSmall: ImageVector
         if (_chartColumnSmall != null) {
             return _chartColumnSmall!!
         }
-        _chartColumnSmall = Builder(
-            name = "ChartColumnSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chartColumnSmall = Builder(name = "ChartColumnSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.5f, 4.0f)
                 lineTo(18.0f, 4.0f)
                 verticalLineToRelative(15.0f)
@@ -81,7 +69,7 @@ public val SBBIcons.ChartColumnSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _chartColumnSmall!!
     }
 

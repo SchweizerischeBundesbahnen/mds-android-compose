@@ -15,22 +15,11 @@ public val SBBIcons.ExitSmall: ImageVector
         if (_exitSmall != null) {
             return _exitSmall!!
         }
-        _exitSmall = Builder(
-            name = "ExitSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _exitSmall = Builder(name = "ExitSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.5f, 4.0f)
                 horizontalLineTo(3.0f)
                 verticalLineToRelative(16.0f)
@@ -59,7 +48,7 @@ public val SBBIcons.ExitSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _exitSmall!!
     }
 

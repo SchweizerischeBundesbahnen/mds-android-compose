@@ -15,23 +15,11 @@ public val SBBIcons.ThermometerSmall: ImageVector
         if (_thermometerSmall != null) {
             return _thermometerSmall!!
         }
-        _thermometerSmall = Builder(
-            name = "ThermometerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _thermometerSmall = Builder(name = "ThermometerSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.0f, 14.884f)
                 arcTo(3.99f, 3.99f, 0.0f, false, true, 15.5f, 18.0f)
                 arcToRelative(4.0f, 4.0f, 0.0f, false, true, -8.0f, 0.0f)
@@ -80,7 +68,7 @@ public val SBBIcons.ThermometerSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _thermometerSmall!!
     }
 

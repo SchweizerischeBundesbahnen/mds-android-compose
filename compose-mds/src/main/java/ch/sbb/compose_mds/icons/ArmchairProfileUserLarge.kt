@@ -15,24 +15,12 @@ public val SBBIcons.ArmchairProfileUserLarge: ImageVector
         if (_armchairProfileUserLarge != null) {
             return _armchairProfileUserLarge!!
         }
-        _armchairProfileUserLarge = Builder(
-            name = "ArmchairProfileUserLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _armchairProfileUserLarge = Builder(name = "ArmchairProfileUserLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.5f, 6.5f)
                 arcToRelative(3.5f, 3.5f, 0.0f, false, false, -3.262f, 4.772f)
                 lineToRelative(0.442f, 0.758f)
@@ -129,7 +117,7 @@ public val SBBIcons.ArmchairProfileUserLarge: ImageVector
                 arcToRelative(0.93f, 0.93f, 0.0f, false, true, -1.268f, -0.34f)
             }
         }
-            .build()
+        .build()
         return _armchairProfileUserLarge!!
     }
 

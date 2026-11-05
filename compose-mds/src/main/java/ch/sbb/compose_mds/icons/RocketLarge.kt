@@ -15,23 +15,11 @@ public val SBBIcons.RocketLarge: ImageVector
         if (_rocketLarge != null) {
             return _rocketLarge!!
         }
-        _rocketLarge = Builder(
-            name = "RocketLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _rocketLarge = Builder(name = "RocketLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(24.885f, 8.512f)
                 lineToRelative(-0.375f, -0.423f)
                 lineToRelative(-0.374f, 0.423f)
@@ -131,7 +119,7 @@ public val SBBIcons.RocketLarge: ImageVector
                 arcToRelative(3.5f, 3.5f, 0.0f, false, false, 0.0f, -7.0f)
             }
         }
-            .build()
+        .build()
         return _rocketLarge!!
     }
 

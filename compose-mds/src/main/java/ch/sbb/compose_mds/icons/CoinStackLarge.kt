@@ -15,23 +15,11 @@ public val SBBIcons.CoinStackLarge: ImageVector
         if (_coinStackLarge != null) {
             return _coinStackLarge!!
         }
-        _coinStackLarge = Builder(
-            name = "CoinStackLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _coinStackLarge = Builder(name = "CoinStackLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.5f, 8.0f)
                 curveToRelative(2.554f, 0.0f, 4.891f, 0.574f, 6.607f, 1.527f)
                 curveToRelative(1.7f, 0.944f, 2.893f, 2.329f, 2.893f, 3.973f)
@@ -182,7 +170,7 @@ public val SBBIcons.CoinStackLarge: ImageVector
                 curveToRelative(-0.833f, -0.333f, -2.017f, -0.55f, -3.35f, -0.55f)
             }
         }
-            .build()
+        .build()
         return _coinStackLarge!!
     }
 

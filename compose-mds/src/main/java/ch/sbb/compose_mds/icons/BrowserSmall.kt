@@ -15,23 +15,11 @@ public val SBBIcons.BrowserSmall: ImageVector
         if (_browserSmall != null) {
             return _browserSmall!!
         }
-        _browserSmall = Builder(
-            name = "BrowserSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _browserSmall = Builder(name = "BrowserSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 5.0f)
                 horizontalLineToRelative(20.0f)
                 verticalLineToRelative(16.0f)
@@ -58,7 +46,7 @@ public val SBBIcons.BrowserSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _browserSmall!!
     }
 

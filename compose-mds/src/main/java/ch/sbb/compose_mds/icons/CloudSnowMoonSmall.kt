@@ -15,22 +15,11 @@ public val SBBIcons.CloudSnowMoonSmall: ImageVector
         if (_cloudSnowMoonSmall != null) {
             return _cloudSnowMoonSmall!!
         }
-        _cloudSnowMoonSmall = Builder(
-            name = "CloudSnowMoonSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudSnowMoonSmall = Builder(name = "CloudSnowMoonSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(17.953f, 2.988f)
                 lineToRelative(-0.525f, 1.038f)
                 curveToRelative(-0.614f, 1.217f, -0.335f, 2.739f, 0.584f, 3.77f)
@@ -100,7 +89,7 @@ public val SBBIcons.CloudSnowMoonSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _cloudSnowMoonSmall!!
     }
 

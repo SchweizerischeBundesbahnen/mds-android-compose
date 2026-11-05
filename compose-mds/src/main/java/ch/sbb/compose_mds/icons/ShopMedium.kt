@@ -15,22 +15,11 @@ public val SBBIcons.ShopMedium: ImageVector
         if (_shopMedium != null) {
             return _shopMedium!!
         }
-        _shopMedium = Builder(
-            name = "ShopMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shopMedium = Builder(name = "ShopMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(29.73f, 6.592f)
                 lineToRelative(1.5f, 4.5f)
                 lineToRelative(0.218f, 0.658f)
@@ -97,7 +86,7 @@ public val SBBIcons.ShopMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _shopMedium!!
     }
 

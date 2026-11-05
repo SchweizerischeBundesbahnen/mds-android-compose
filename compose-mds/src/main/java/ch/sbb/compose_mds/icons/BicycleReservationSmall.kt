@@ -15,22 +15,11 @@ public val SBBIcons.BicycleReservationSmall: ImageVector
         if (_bicycleReservationSmall != null) {
             return _bicycleReservationSmall!!
         }
-        _bicycleReservationSmall = Builder(
-            name = "BicycleReservationSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bicycleReservationSmall = Builder(name = "BicycleReservationSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.42f, 2.0f)
                 lineTo(18.0f, 2.0f)
                 verticalLineToRelative(4.997f)
@@ -102,7 +91,7 @@ public val SBBIcons.BicycleReservationSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bicycleReservationSmall!!
     }
 

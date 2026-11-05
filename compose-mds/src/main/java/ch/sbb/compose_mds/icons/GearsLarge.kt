@@ -15,22 +15,11 @@ public val SBBIcons.GearsLarge: ImageVector
         if (_gearsLarge != null) {
             return _gearsLarge!!
         }
-        _gearsLarge = Builder(
-            name = "GearsLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _gearsLarge = Builder(name = "GearsLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.0f, 10.009f)
                 curveToRelative(2.285f, 0.076f, 4.43f, 0.672f, 6.322f, 1.675f)
                 lineToRelative(2.245f, -3.888f)
@@ -108,7 +97,7 @@ public val SBBIcons.GearsLarge: ImageVector
                 curveToRelative(-0.26f, -7.263f, -6.16f, -13.0f, -13.49f, -13.0f)
             }
         }
-            .build()
+        .build()
         return _gearsLarge!!
     }
 

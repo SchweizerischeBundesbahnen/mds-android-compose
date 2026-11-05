@@ -15,24 +15,12 @@ public val SBBIcons.WheelchairPartiallyLarge: ImageVector
         if (_wheelchairPartiallyLarge != null) {
             return _wheelchairPartiallyLarge!!
         }
-        _wheelchairPartiallyLarge = Builder(
-            name = "WheelchairPartiallyLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _wheelchairPartiallyLarge = Builder(name = "WheelchairPartiallyLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(39.112f, 9.218f)
                 curveTo(41.76f, 13.086f, 43.8f, 17.783f, 43.8f, 24.5f)
                 curveToRelative(0.0f, 6.711f, -2.037f, 11.613f, -4.696f, 15.293f)
@@ -75,7 +63,7 @@ public val SBBIcons.WheelchairPartiallyLarge: ImageVector
                 arcToRelative(0.5f, 0.5f, 0.0f, false, false, 0.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _wheelchairPartiallyLarge!!
     }
 

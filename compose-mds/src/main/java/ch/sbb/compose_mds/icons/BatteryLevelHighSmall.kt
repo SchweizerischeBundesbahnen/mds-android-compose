@@ -15,22 +15,11 @@ public val SBBIcons.BatteryLevelHighSmall: ImageVector
         if (_batteryLevelHighSmall != null) {
             return _batteryLevelHighSmall!!
         }
-        _batteryLevelHighSmall = Builder(
-            name = "BatteryLevelHighSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _batteryLevelHighSmall = Builder(name = "BatteryLevelHighSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.0f, 4.0f)
                 horizontalLineToRelative(4.0f)
                 verticalLineToRelative(1.0f)
@@ -81,7 +70,7 @@ public val SBBIcons.BatteryLevelHighSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _batteryLevelHighSmall!!
     }
 

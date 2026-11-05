@@ -15,23 +15,11 @@ public val SBBIcons.RewindSmall: ImageVector
         if (_rewindSmall != null) {
             return _rewindSmall!!
         }
-        _rewindSmall = Builder(
-            name = "RewindSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _rewindSmall = Builder(name = "RewindSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.0f, 4.5f)
                 verticalLineToRelative(15.0f)
                 lineToRelative(-0.8f, -0.6f)
@@ -58,7 +46,7 @@ public val SBBIcons.RewindSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _rewindSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.SbbSignetMedium: ImageVector
         if (_sbbSignetMedium != null) {
             return _sbbSignetMedium!!
         }
-        _sbbSignetMedium = Builder(
-            name = "SbbSignetMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _sbbSignetMedium = Builder(name = "SbbSignetMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.896f, 13.5f)
                 lineToRelative(3.528f, 3.477f)
                 horizontalLineToRelative(-4.386f)
@@ -57,7 +45,7 @@ public val SBBIcons.SbbSignetMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _sbbSignetMedium!!
     }
 

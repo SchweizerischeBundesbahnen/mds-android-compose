@@ -15,22 +15,12 @@ public val SBBIcons.TrainProfileSignalMicrophoneMedium: ImageVector
         if (_trainProfileSignalMicrophoneMedium != null) {
             return _trainProfileSignalMicrophoneMedium!!
         }
-        _trainProfileSignalMicrophoneMedium = Builder(
-            name = "TrainProfileSignalMicrophoneMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _trainProfileSignalMicrophoneMedium = Builder(name = "TrainProfileSignalMicrophoneMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(31.75f, 24.75f)
                 curveToRelative(0.0f, 2.398f, -2.03f, 4.0f, -4.75f, 4.0f)
                 reflectiveCurveToRelative(-4.75f, -1.602f, -4.75f, -4.0f)
@@ -118,7 +108,7 @@ public val SBBIcons.TrainProfileSignalMicrophoneMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainProfileSignalMicrophoneMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.BulbOffLarge: ImageVector
         if (_bulbOffLarge != null) {
             return _bulbOffLarge!!
         }
-        _bulbOffLarge = Builder(
-            name = "BulbOffLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bulbOffLarge = Builder(name = "BulbOffLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.49f, 18.49f)
                 arcTo(8.5f, 8.5f, 0.0f, false, true, 32.0f, 24.5f)
                 arcToRelative(8.6f, 8.6f, 0.0f, false, true, -4.427f, 7.5f)
@@ -96,7 +84,7 @@ public val SBBIcons.BulbOffLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bulbOffLarge!!
     }
 

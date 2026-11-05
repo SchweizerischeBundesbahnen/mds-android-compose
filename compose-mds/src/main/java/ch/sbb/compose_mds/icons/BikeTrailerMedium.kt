@@ -15,22 +15,11 @@ public val SBBIcons.BikeTrailerMedium: ImageVector
         if (_bikeTrailerMedium != null) {
             return _bikeTrailerMedium!!
         }
-        _bikeTrailerMedium = Builder(
-            name = "BikeTrailerMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bikeTrailerMedium = Builder(name = "BikeTrailerMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(28.5f, 12.25f)
                 horizontalLineToRelative(-3.0f)
                 verticalLineToRelative(1.0f)
@@ -103,7 +92,7 @@ public val SBBIcons.BikeTrailerMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bikeTrailerMedium!!
     }
 

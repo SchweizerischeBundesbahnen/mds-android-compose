@@ -15,22 +15,12 @@ public val SBBIcons.SurveillanceCamerasTrainSmall: ImageVector
         if (_surveillanceCamerasTrainSmall != null) {
             return _surveillanceCamerasTrainSmall!!
         }
-        _surveillanceCamerasTrainSmall = Builder(
-            name = "SurveillanceCamerasTrainSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _surveillanceCamerasTrainSmall = Builder(name = "SurveillanceCamerasTrainSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(22.0f, 2.0f)
                 horizontalLineToRelative(-5.0f)
                 verticalLineToRelative(1.0f)
@@ -151,7 +141,7 @@ public val SBBIcons.SurveillanceCamerasTrainSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -2.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _surveillanceCamerasTrainSmall!!
     }
 

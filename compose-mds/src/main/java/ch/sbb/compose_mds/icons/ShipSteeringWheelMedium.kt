@@ -15,22 +15,11 @@ public val SBBIcons.ShipSteeringWheelMedium: ImageVector
         if (_shipSteeringWheelMedium != null) {
             return _shipSteeringWheelMedium!!
         }
-        _shipSteeringWheelMedium = Builder(
-            name = "ShipSteeringWheelMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shipSteeringWheelMedium = Builder(name = "ShipSteeringWheelMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.75f, 6.261f)
                 verticalLineTo(3.0f)
                 horizontalLineToRelative(1.0f)
@@ -118,7 +107,7 @@ public val SBBIcons.ShipSteeringWheelMedium: ImageVector
                 arcToRelative(2.501f, 2.501f, 0.0f, false, false, 0.0f, -5.0f)
             }
         }
-            .build()
+        .build()
         return _shipSteeringWheelMedium!!
     }
 

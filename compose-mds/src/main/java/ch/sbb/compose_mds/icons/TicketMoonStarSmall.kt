@@ -15,22 +15,11 @@ public val SBBIcons.TicketMoonStarSmall: ImageVector
         if (_ticketMoonStarSmall != null) {
             return _ticketMoonStarSmall!!
         }
-        _ticketMoonStarSmall = Builder(
-            name = "TicketMoonStarSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ticketMoonStarSmall = Builder(name = "TicketMoonStarSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 4.0f)
                 horizontalLineToRelative(20.0f)
                 verticalLineToRelative(5.0f)
@@ -125,7 +114,7 @@ public val SBBIcons.TicketMoonStarSmall: ImageVector
                 arcTo(3.5f, 3.5f, 0.0f, false, true, 5.0f, 12.5f)
             }
         }
-            .build()
+        .build()
         return _ticketMoonStarSmall!!
     }
 

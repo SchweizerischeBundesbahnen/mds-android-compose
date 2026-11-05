@@ -15,22 +15,11 @@ public val SBBIcons.FaceDisagreeMedium: ImageVector
         if (_faceDisagreeMedium != null) {
             return _faceDisagreeMedium!!
         }
-        _faceDisagreeMedium = Builder(
-            name = "FaceDisagreeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceDisagreeMedium = Builder(name = "FaceDisagreeMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.75f, 18.0f)
                 curveToRelative(0.0f, -6.765f, 5.485f, -12.25f, 12.25f, -12.25f)
                 reflectiveCurveTo(30.25f, 11.235f, 30.25f, 18.0f)
@@ -76,7 +65,7 @@ public val SBBIcons.FaceDisagreeMedium: ImageVector
                 curveToRelative(-1.216f, -2.83f, -3.971f, -4.803f, -7.285f, -4.803f)
             }
         }
-            .build()
+        .build()
         return _faceDisagreeMedium!!
     }
 

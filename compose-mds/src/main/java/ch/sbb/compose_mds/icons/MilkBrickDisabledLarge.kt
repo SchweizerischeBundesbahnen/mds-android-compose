@@ -15,22 +15,11 @@ public val SBBIcons.MilkBrickDisabledLarge: ImageVector
         if (_milkBrickDisabledLarge != null) {
             return _milkBrickDisabledLarge!!
         }
-        _milkBrickDisabledLarge = Builder(
-            name = "MilkBrickDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _milkBrickDisabledLarge = Builder(name = "MilkBrickDisabledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(41.854f, 41.147f)
                 lineToRelative(-0.707f, 0.706f)
                 lineTo(33.0f, 33.707f)
@@ -78,7 +67,7 @@ public val SBBIcons.MilkBrickDisabledLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _milkBrickDisabledLarge!!
     }
 

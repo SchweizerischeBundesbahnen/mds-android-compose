@@ -15,22 +15,11 @@ public val SBBIcons.TwoAdultsKidLarge: ImageVector
         if (_twoAdultsKidLarge != null) {
             return _twoAdultsKidLarge!!
         }
-        _twoAdultsKidLarge = Builder(
-            name = "TwoAdultsKidLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _twoAdultsKidLarge = Builder(name = "TwoAdultsKidLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.497f, 11.0f)
                 arcToRelative(1.5f, 1.5f, 0.0f, true, false, 0.001f, 3.001f)
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, 0.0f, -3.001f)
@@ -130,7 +119,7 @@ public val SBBIcons.TwoAdultsKidLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _twoAdultsKidLarge!!
     }
 

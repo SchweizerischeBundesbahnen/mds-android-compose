@@ -15,23 +15,11 @@ public val SBBIcons.HeartPulseLarge: ImageVector
         if (_heartPulseLarge != null) {
             return _heartPulseLarge!!
         }
-        _heartPulseLarge = Builder(
-            name = "HeartPulseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _heartPulseLarge = Builder(name = "HeartPulseLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(31.5f, 8.0f)
                 curveToRelative(4.554f, 0.0f, 8.406f, 2.85f, 9.868f, 6.88f)
                 lineToRelative(0.145f, 0.428f)
@@ -99,7 +87,7 @@ public val SBBIcons.HeartPulseLarge: ImageVector
                 arcTo(9.46f, 9.46f, 0.0f, false, false, 31.5f, 9.0f)
             }
         }
-            .build()
+        .build()
         return _heartPulseLarge!!
     }
 

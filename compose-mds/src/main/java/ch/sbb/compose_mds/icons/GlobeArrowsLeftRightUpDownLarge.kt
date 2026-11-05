@@ -15,22 +15,12 @@ public val SBBIcons.GlobeArrowsLeftRightUpDownLarge: ImageVector
         if (_globeArrowsLeftRightUpDownLarge != null) {
             return _globeArrowsLeftRightUpDownLarge!!
         }
-        _globeArrowsLeftRightUpDownLarge = Builder(
-            name = "GlobeArrowsLeftRightUpDownLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _globeArrowsLeftRightUpDownLarge = Builder(name = "GlobeArrowsLeftRightUpDownLarge",
+                defaultWidth = 48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f,
+                viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(28.854f, 41.147f)
                 lineToRelative(-0.707f, 0.706f)
                 lineToRelative(-4.647f, -4.646f)
@@ -102,7 +92,7 @@ public val SBBIcons.GlobeArrowsLeftRightUpDownLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _globeArrowsLeftRightUpDownLarge!!
     }
 

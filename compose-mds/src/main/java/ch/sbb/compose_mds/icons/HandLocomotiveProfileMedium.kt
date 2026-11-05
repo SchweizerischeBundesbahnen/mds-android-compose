@@ -15,24 +15,12 @@ public val SBBIcons.HandLocomotiveProfileMedium: ImageVector
         if (_handLocomotiveProfileMedium != null) {
             return _handLocomotiveProfileMedium!!
         }
-        _handLocomotiveProfileMedium = Builder(
-            name = "HandLocomotiveProfileMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _handLocomotiveProfileMedium = Builder(name = "HandLocomotiveProfileMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(3.69f, 20.498f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, 2.785f, -0.327f)
                 lineToRelative(5.784f, 4.039f)
@@ -140,7 +128,7 @@ public val SBBIcons.HandLocomotiveProfileMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handLocomotiveProfileMedium!!
     }
 

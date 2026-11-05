@@ -15,22 +15,11 @@ public val SBBIcons.DoubleDeckWagonSmall: ImageVector
         if (_doubleDeckWagonSmall != null) {
             return _doubleDeckWagonSmall!!
         }
-        _doubleDeckWagonSmall = Builder(
-            name = "DoubleDeckWagonSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _doubleDeckWagonSmall = Builder(name = "DoubleDeckWagonSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.496f, 6.998f)
                 horizontalLineToRelative(15.003f)
                 curveToRelative(0.83f, 0.0f, 1.5f, 0.671f, 1.5f, 1.5f)
@@ -98,7 +87,7 @@ public val SBBIcons.DoubleDeckWagonSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _doubleDeckWagonSmall!!
     }
 

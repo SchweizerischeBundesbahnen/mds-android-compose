@@ -15,22 +15,11 @@ public val SBBIcons.BookSectionMarkLarge: ImageVector
         if (_bookSectionMarkLarge != null) {
             return _bookSectionMarkLarge!!
         }
-        _bookSectionMarkLarge = Builder(
-            name = "BookSectionMarkLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bookSectionMarkLarge = Builder(name = "BookSectionMarkLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(39.0f, 33.003f)
                 lineTo(12.5f, 33.003f)
                 arcTo(3.5f, 3.5f, 0.0f, false, false, 9.0f, 36.5f)
@@ -70,7 +59,7 @@ public val SBBIcons.BookSectionMarkLarge: ImageVector
                 arcToRelative(2.5f, 2.5f, 0.0f, false, false, 0.0f, -5.0f)
             }
         }
-            .build()
+        .build()
         return _bookSectionMarkLarge!!
     }
 

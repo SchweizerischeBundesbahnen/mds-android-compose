@@ -15,22 +15,11 @@ public val SBBIcons.CloudDropsMoonMedium: ImageVector
         if (_cloudDropsMoonMedium != null) {
             return _cloudDropsMoonMedium!!
         }
-        _cloudDropsMoonMedium = Builder(
-            name = "CloudDropsMoonMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudDropsMoonMedium = Builder(name = "CloudDropsMoonMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(26.444f, 4.888f)
                 lineToRelative(-0.525f, 1.038f)
                 curveToRelative(-0.974f, 1.928f, -0.526f, 4.32f, 0.912f, 5.934f)
@@ -230,7 +219,7 @@ public val SBBIcons.CloudDropsMoonMedium: ImageVector
                 curveToRelative(0.0f, -0.117f, 0.032f, -0.298f, 0.098f, -0.53f)
             }
         }
-            .build()
+        .build()
         return _cloudDropsMoonMedium!!
     }
 

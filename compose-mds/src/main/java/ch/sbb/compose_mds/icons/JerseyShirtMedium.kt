@@ -15,22 +15,11 @@ public val SBBIcons.JerseyShirtMedium: ImageVector
         if (_jerseyShirtMedium != null) {
             return _jerseyShirtMedium!!
         }
-        _jerseyShirtMedium = Builder(
-            name = "JerseyShirtMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _jerseyShirtMedium = Builder(name = "JerseyShirtMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.75f, 4.0f)
                 horizontalLineToRelative(4.0f)
                 verticalLineToRelative(1.997f)
@@ -75,7 +64,7 @@ public val SBBIcons.JerseyShirtMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _jerseyShirtMedium!!
     }
 

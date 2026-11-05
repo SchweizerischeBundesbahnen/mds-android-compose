@@ -15,22 +15,11 @@ public val SBBIcons.PetrolStationSmall: ImageVector
         if (_petrolStationSmall != null) {
             return _petrolStationSmall!!
         }
-        _petrolStationSmall = Builder(
-            name = "PetrolStationSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _petrolStationSmall = Builder(name = "PetrolStationSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.0f, 4.5f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 7.5f, 3.0f)
                 horizontalLineToRelative(7.0f)
@@ -86,7 +75,7 @@ public val SBBIcons.PetrolStationSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _petrolStationSmall!!
     }
 

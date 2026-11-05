@@ -15,22 +15,11 @@ public val SBBIcons.LocomotiveViaductSmall: ImageVector
         if (_locomotiveViaductSmall != null) {
             return _locomotiveViaductSmall!!
         }
-        _locomotiveViaductSmall = Builder(
-            name = "LocomotiveViaductSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locomotiveViaductSmall = Builder(name = "LocomotiveViaductSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.5f, 2.0f)
                 lineTo(5.0f, 2.0f)
                 verticalLineToRelative(7.0f)
@@ -117,7 +106,7 @@ public val SBBIcons.LocomotiveViaductSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _locomotiveViaductSmall!!
     }
 

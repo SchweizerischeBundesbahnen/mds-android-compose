@@ -15,23 +15,11 @@ public val SBBIcons.TicketIpvSmall: ImageVector
         if (_ticketIpvSmall != null) {
             return _ticketIpvSmall!!
         }
-        _ticketIpvSmall = Builder(
-            name = "TicketIpvSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ticketIpvSmall = Builder(name = "TicketIpvSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.5f, 2.0f)
                 lineTo(5.0f, 2.0f)
                 verticalLineToRelative(20.0f)
@@ -88,7 +76,7 @@ public val SBBIcons.TicketIpvSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ticketIpvSmall!!
     }
 

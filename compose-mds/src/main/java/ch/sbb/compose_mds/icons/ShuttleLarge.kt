@@ -15,23 +15,11 @@ public val SBBIcons.ShuttleLarge: ImageVector
         if (_shuttleLarge != null) {
             return _shuttleLarge!!
         }
-        _shuttleLarge = Builder(
-            name = "ShuttleLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _shuttleLarge = Builder(name = "ShuttleLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(13.138f, 37.154f)
                 lineTo(10.228f, 40.0f)
                 lineTo(20.0f, 40.0f)
@@ -131,7 +119,7 @@ public val SBBIcons.ShuttleLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _shuttleLarge!!
     }
 

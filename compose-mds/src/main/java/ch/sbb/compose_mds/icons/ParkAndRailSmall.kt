@@ -15,23 +15,11 @@ public val SBBIcons.ParkAndRailSmall: ImageVector
         if (_parkAndRailSmall != null) {
             return _parkAndRailSmall!!
         }
-        _parkAndRailSmall = Builder(
-            name = "ParkAndRailSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _parkAndRailSmall = Builder(name = "ParkAndRailSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(21.002f, 19.001f)
                 horizontalLineToRelative(-18.0f)
                 verticalLineToRelative(-1.0f)
@@ -106,7 +94,7 @@ public val SBBIcons.ParkAndRailSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _parkAndRailSmall!!
     }
 

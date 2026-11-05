@@ -15,22 +15,11 @@ public val SBBIcons.FaceThinkingSmall: ImageVector
         if (_faceThinkingSmall != null) {
             return _faceThinkingSmall!!
         }
-        _faceThinkingSmall = Builder(
-            name = "FaceThinkingSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceThinkingSmall = Builder(name = "FaceThinkingSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 4.0f)
                 curveToRelative(-4.414f, 0.0f, -8.0f, 3.586f, -8.0f, 8.0f)
                 arcToRelative(7.99f, 7.99f, 0.0f, false, false, 4.912f, 7.389f)
@@ -88,7 +77,7 @@ public val SBBIcons.FaceThinkingSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _faceThinkingSmall!!
     }
 

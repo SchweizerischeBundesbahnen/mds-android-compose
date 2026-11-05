@@ -15,22 +15,11 @@ public val SBBIcons.CloudSnowLightningSmall: ImageVector
         if (_cloudSnowLightningSmall != null) {
             return _cloudSnowLightningSmall!!
         }
-        _cloudSnowLightningSmall = Builder(
-            name = "CloudSnowLightningSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudSnowLightningSmall = Builder(name = "CloudSnowLightningSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.312f, 9.856f)
                 curveToRelative(0.491f, 0.112f, 0.89f, 0.382f, 1.176f, 0.753f)
                 curveToRelative(0.389f, 0.504f, 0.544f, 1.161f, 0.49f, 1.796f)
@@ -95,7 +84,7 @@ public val SBBIcons.CloudSnowLightningSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _cloudSnowLightningSmall!!
     }
 

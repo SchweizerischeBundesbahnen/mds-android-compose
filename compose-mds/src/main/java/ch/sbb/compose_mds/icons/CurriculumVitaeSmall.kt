@@ -15,22 +15,11 @@ public val SBBIcons.CurriculumVitaeSmall: ImageVector
         if (_curriculumVitaeSmall != null) {
             return _curriculumVitaeSmall!!
         }
-        _curriculumVitaeSmall = Builder(
-            name = "CurriculumVitaeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _curriculumVitaeSmall = Builder(name = "CurriculumVitaeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 2.0f)
                 horizontalLineToRelative(16.0f)
                 verticalLineToRelative(20.0f)
@@ -100,7 +89,7 @@ public val SBBIcons.CurriculumVitaeSmall: ImageVector
                 curveToRelative(0.0f, -1.015f, -0.702f, -2.0f, -1.75f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _curriculumVitaeSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CirclePenMedium: ImageVector
         if (_circlePenMedium != null) {
             return _circlePenMedium!!
         }
-        _circlePenMedium = Builder(
-            name = "CirclePenMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _circlePenMedium = Builder(name = "CirclePenMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 4.25f)
                 curveTo(10.406f, 4.25f, 4.25f, 10.405f, 4.25f, 18.0f)
                 reflectiveCurveTo(10.406f, 31.75f, 18.0f, 31.75f)
@@ -71,7 +59,7 @@ public val SBBIcons.CirclePenMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _circlePenMedium!!
     }
 

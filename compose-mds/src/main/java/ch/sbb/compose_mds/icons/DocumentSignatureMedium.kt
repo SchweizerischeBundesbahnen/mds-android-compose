@@ -15,22 +15,11 @@ public val SBBIcons.DocumentSignatureMedium: ImageVector
         if (_documentSignatureMedium != null) {
             return _documentSignatureMedium!!
         }
-        _documentSignatureMedium = Builder(
-            name = "DocumentSignatureMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _documentSignatureMedium = Builder(name = "DocumentSignatureMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(26.75f, 14.042f)
                 verticalLineToRelative(15.707f)
                 lineTo(9.25f, 29.749f)
@@ -125,7 +114,7 @@ public val SBBIcons.DocumentSignatureMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentSignatureMedium!!
     }
 

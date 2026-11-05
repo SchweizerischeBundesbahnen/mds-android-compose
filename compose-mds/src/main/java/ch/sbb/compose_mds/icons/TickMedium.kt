@@ -15,22 +15,11 @@ public val SBBIcons.TickMedium: ImageVector
         if (_tickMedium != null) {
             return _tickMedium!!
         }
-        _tickMedium = Builder(
-            name = "TickMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _tickMedium = Builder(name = "TickMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(28.853f, 10.868f)
                 lineToRelative(-13.5f, 13.485f)
                 lineToRelative(-0.353f, 0.353f)
@@ -42,7 +31,7 @@ public val SBBIcons.TickMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _tickMedium!!
     }
 

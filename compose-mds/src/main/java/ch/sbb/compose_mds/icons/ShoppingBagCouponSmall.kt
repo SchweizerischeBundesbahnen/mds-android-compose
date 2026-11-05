@@ -15,22 +15,11 @@ public val SBBIcons.ShoppingBagCouponSmall: ImageVector
         if (_shoppingBagCouponSmall != null) {
             return _shoppingBagCouponSmall!!
         }
-        _shoppingBagCouponSmall = Builder(
-            name = "ShoppingBagCouponSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shoppingBagCouponSmall = Builder(name = "ShoppingBagCouponSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.0f, 5.5f)
                 arcToRelative(2.5f, 2.5f, 0.0f, true, true, 5.0f, 0.0f)
                 lineTo(14.0f, 7.0f)
@@ -131,7 +120,7 @@ public val SBBIcons.ShoppingBagCouponSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _shoppingBagCouponSmall!!
     }
 

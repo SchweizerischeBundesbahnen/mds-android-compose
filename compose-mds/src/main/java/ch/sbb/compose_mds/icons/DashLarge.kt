@@ -15,22 +15,11 @@ public val SBBIcons.DashLarge: ImageVector
         if (_dashLarge != null) {
             return _dashLarge!!
         }
-        _dashLarge = Builder(
-            name = "DashLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _dashLarge = Builder(name = "DashLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(34.0f, 25.0f)
                 horizontalLineTo(13.0f)
                 verticalLineToRelative(-1.0f)
@@ -38,7 +27,7 @@ public val SBBIcons.DashLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _dashLarge!!
     }
 

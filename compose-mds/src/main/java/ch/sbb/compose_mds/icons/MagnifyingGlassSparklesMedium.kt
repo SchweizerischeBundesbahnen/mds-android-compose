@@ -15,22 +15,12 @@ public val SBBIcons.MagnifyingGlassSparklesMedium: ImageVector
         if (_magnifyingGlassSparklesMedium != null) {
             return _magnifyingGlassSparklesMedium!!
         }
-        _magnifyingGlassSparklesMedium = Builder(
-            name = "MagnifyingGlassSparklesMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _magnifyingGlassSparklesMedium = Builder(name = "MagnifyingGlassSparklesMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(8.994f, 6.658f)
                 lineToRelative(0.25f, 0.433f)
                 arcTo(10.0f, 10.0f, 0.0f, false, false, 4.25f, 15.75f)
@@ -77,7 +67,7 @@ public val SBBIcons.MagnifyingGlassSparklesMedium: ImageVector
                 arcTo(4.27f, 4.27f, 0.0f, false, true, 15.75f, 5.0f)
             }
         }
-            .build()
+        .build()
         return _magnifyingGlassSparklesMedium!!
     }
 

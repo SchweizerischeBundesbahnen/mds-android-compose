@@ -15,22 +15,12 @@ public val SBBIcons.FreightWagonSwitzerlandMedium: ImageVector
         if (_freightWagonSwitzerlandMedium != null) {
             return _freightWagonSwitzerlandMedium!!
         }
-        _freightWagonSwitzerlandMedium = Builder(
-            name = "FreightWagonSwitzerlandMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _freightWagonSwitzerlandMedium = Builder(name = "FreightWagonSwitzerlandMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(20.115f, 6.366f)
                 lineToRelative(-0.388f, -0.323f)
                 lineToRelative(-0.32f, 0.39f)
@@ -176,7 +166,7 @@ public val SBBIcons.FreightWagonSwitzerlandMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _freightWagonSwitzerlandMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.WalkSlowMedium: ImageVector
         if (_walkSlowMedium != null) {
             return _walkSlowMedium!!
         }
-        _walkSlowMedium = Builder(
-            name = "WalkSlowMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _walkSlowMedium = Builder(name = "WalkSlowMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(12.143f, 28.587f)
                 quadToRelative(0.14f, 0.0f, 0.28f, 0.054f)
                 arcToRelative(0.75f, 0.75f, 0.0f, true, true, -0.28f, -0.054f)
@@ -110,7 +98,7 @@ public val SBBIcons.WalkSlowMedium: ImageVector
                 reflectiveCurveToRelative(-0.477f, -1.0f, -1.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _walkSlowMedium!!
     }
 

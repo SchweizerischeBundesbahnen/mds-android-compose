@@ -15,22 +15,11 @@ public val SBBIcons.CloudLightningMoonSmall: ImageVector
         if (_cloudLightningMoonSmall != null) {
             return _cloudLightningMoonSmall!!
         }
-        _cloudLightningMoonSmall = Builder(
-            name = "CloudLightningMoonSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudLightningMoonSmall = Builder(name = "CloudLightningMoonSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(17.953f, 2.988f)
                 lineToRelative(-0.525f, 1.038f)
                 curveToRelative(-0.614f, 1.217f, -0.335f, 2.739f, 0.584f, 3.77f)
@@ -105,7 +94,7 @@ public val SBBIcons.CloudLightningMoonSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudLightningMoonSmall!!
     }
 

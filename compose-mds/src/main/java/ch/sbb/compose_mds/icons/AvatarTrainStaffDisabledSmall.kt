@@ -15,22 +15,12 @@ public val SBBIcons.AvatarTrainStaffDisabledSmall: ImageVector
         if (_avatarTrainStaffDisabledSmall != null) {
             return _avatarTrainStaffDisabledSmall!!
         }
-        _avatarTrainStaffDisabledSmall = Builder(
-            name = "AvatarTrainStaffDisabledSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _avatarTrainStaffDisabledSmall = Builder(name = "AvatarTrainStaffDisabledSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(19.354f, 18.647f)
                 lineToRelative(-0.707f, 0.707f)
                 lineToRelative(-1.583f, -1.583f)
@@ -165,7 +155,7 @@ public val SBBIcons.AvatarTrainStaffDisabledSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _avatarTrainStaffDisabledSmall!!
     }
 

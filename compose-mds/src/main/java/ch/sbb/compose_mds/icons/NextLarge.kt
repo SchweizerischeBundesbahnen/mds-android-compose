@@ -15,22 +15,11 @@ public val SBBIcons.NextLarge: ImageVector
         if (_nextLarge != null) {
             return _nextLarge!!
         }
-        _nextLarge = Builder(
-            name = "NextLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _nextLarge = Builder(name = "NextLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(8.772f, 10.081f)
                 lineTo(29.417f, 23.5f)
                 lineTo(8.772f, 36.919f)
@@ -55,7 +44,7 @@ public val SBBIcons.NextLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _nextLarge!!
     }
 

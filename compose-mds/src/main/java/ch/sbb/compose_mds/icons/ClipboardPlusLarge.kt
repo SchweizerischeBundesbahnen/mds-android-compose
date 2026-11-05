@@ -15,22 +15,11 @@ public val SBBIcons.ClipboardPlusLarge: ImageVector
         if (_clipboardPlusLarge != null) {
             return _clipboardPlusLarge!!
         }
-        _clipboardPlusLarge = Builder(
-            name = "ClipboardPlusLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _clipboardPlusLarge = Builder(name = "ClipboardPlusLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(29.0f, 6.0f)
                 horizontalLineToRelative(12.0f)
                 verticalLineToRelative(37.0f)
@@ -69,7 +58,7 @@ public val SBBIcons.ClipboardPlusLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _clipboardPlusLarge!!
     }
 

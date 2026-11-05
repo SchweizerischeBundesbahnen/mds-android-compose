@@ -15,22 +15,11 @@ public val SBBIcons.ArrowsLongUpDownMedium: ImageVector
         if (_arrowsLongUpDownMedium != null) {
             return _arrowsLongUpDownMedium!!
         }
-        _arrowsLongUpDownMedium = Builder(
-            name = "ArrowsLongUpDownMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowsLongUpDownMedium = Builder(name = "ArrowsLongUpDownMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(25.11f, 29.582f)
                 lineToRelative(4.711f, -4.713f)
                 lineToRelative(-0.707f, -0.707f)
@@ -57,7 +46,7 @@ public val SBBIcons.ArrowsLongUpDownMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowsLongUpDownMedium!!
     }
 

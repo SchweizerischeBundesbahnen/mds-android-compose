@@ -15,23 +15,11 @@ public val SBBIcons.SwitzerlandLarge: ImageVector
         if (_switzerlandLarge != null) {
             return _switzerlandLarge!!
         }
-        _switzerlandLarge = Builder(
-            name = "SwitzerlandLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _switzerlandLarge = Builder(name = "SwitzerlandLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(27.32f, 11.116f)
                 lineToRelative(2.832f, 2.36f)
                 lineToRelative(3.785f, -0.472f)
@@ -152,7 +140,7 @@ public val SBBIcons.SwitzerlandLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _switzerlandLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.FunicularProfileLarge: ImageVector
         if (_funicularProfileLarge != null) {
             return _funicularProfileLarge!!
         }
-        _funicularProfileLarge = Builder(
-            name = "FunicularProfileLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _funicularProfileLarge = Builder(name = "FunicularProfileLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(36.275f, 5.947f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, 1.088f, 0.054f)
                 curveToRelative(0.265f, 0.073f, 0.517f, 0.189f, 0.743f, 0.343f)
@@ -168,7 +157,7 @@ public val SBBIcons.FunicularProfileLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _funicularProfileLarge!!
     }
 

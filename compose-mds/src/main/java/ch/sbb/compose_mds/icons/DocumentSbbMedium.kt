@@ -15,22 +15,11 @@ public val SBBIcons.DocumentSbbMedium: ImageVector
         if (_documentSbbMedium != null) {
             return _documentSbbMedium!!
         }
-        _documentSbbMedium = Builder(
-            name = "DocumentSbbMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _documentSbbMedium = Builder(name = "DocumentSbbMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.263f, 6.25f)
                 horizontalLineToRelative(9.694f)
                 lineToRelative(0.146f, 0.147f)
@@ -77,7 +66,7 @@ public val SBBIcons.DocumentSbbMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentSbbMedium!!
     }
 

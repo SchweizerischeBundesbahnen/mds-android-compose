@@ -15,22 +15,11 @@ public val SBBIcons.EarthSmall: ImageVector
         if (_earthSmall != null) {
             return _earthSmall!!
         }
-        _earthSmall = Builder(
-            name = "EarthSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _earthSmall = Builder(name = "EarthSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.598f, 3.109f)
                 arcTo(9.0f, 9.0f, 0.0f, false, true, 12.0f, 3.0f)
                 arcToRelative(8.96f, 8.96f, 0.0f, false, true, 4.218f, 1.048f)
@@ -146,7 +135,7 @@ public val SBBIcons.EarthSmall: ImageVector
                 reflectiveCurveTo(17.523f, 2.0f, 12.0f, 2.0f)
             }
         }
-            .build()
+        .build()
         return _earthSmall!!
     }
 

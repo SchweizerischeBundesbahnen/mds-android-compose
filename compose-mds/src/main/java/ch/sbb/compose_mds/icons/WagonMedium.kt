@@ -15,23 +15,11 @@ public val SBBIcons.WagonMedium: ImageVector
         if (_wagonMedium != null) {
             return _wagonMedium!!
         }
-        _wagonMedium = Builder(
-            name = "WagonMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wagonMedium = Builder(name = "WagonMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(6.745f, 15.252f)
                 lineToRelative(22.505f, -0.002f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, 2.0f, 2.0f)
@@ -93,7 +81,7 @@ public val SBBIcons.WagonMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wagonMedium!!
     }
 

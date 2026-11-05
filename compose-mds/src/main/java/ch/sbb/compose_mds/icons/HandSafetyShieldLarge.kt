@@ -15,22 +15,11 @@ public val SBBIcons.HandSafetyShieldLarge: ImageVector
         if (_handSafetyShieldLarge != null) {
             return _handSafetyShieldLarge!!
         }
-        _handSafetyShieldLarge = Builder(
-            name = "HandSafetyShieldLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handSafetyShieldLarge = Builder(name = "HandSafetyShieldLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(20.0f, 5.989f)
                 lineToRelative(0.104f, 0.022f)
                 lineToRelative(9.5f, 2.0f)
@@ -124,7 +113,7 @@ public val SBBIcons.HandSafetyShieldLarge: ImageVector
                 curveToRelative(-0.668f, 5.543f, -3.226f, 10.618f, -6.953f, 14.396f)
             }
         }
-            .build()
+        .build()
         return _handSafetyShieldLarge!!
     }
 

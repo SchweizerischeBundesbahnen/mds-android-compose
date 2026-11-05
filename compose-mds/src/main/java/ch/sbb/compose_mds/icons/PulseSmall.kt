@@ -15,22 +15,11 @@ public val SBBIcons.PulseSmall: ImageVector
         if (_pulseSmall != null) {
             return _pulseSmall!!
         }
-        _pulseSmall = Builder(
-            name = "PulseSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _pulseSmall = Builder(name = "PulseSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(9.485f, 5.879f)
                 lineToRelative(2.61f, 10.441f)
                 lineToRelative(2.437f, -6.496f)
@@ -55,7 +44,7 @@ public val SBBIcons.PulseSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _pulseSmall!!
     }
 

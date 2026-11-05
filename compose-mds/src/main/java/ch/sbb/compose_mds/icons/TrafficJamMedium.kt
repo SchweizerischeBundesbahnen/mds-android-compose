@@ -15,23 +15,11 @@ public val SBBIcons.TrafficJamMedium: ImageVector
         if (_trafficJamMedium != null) {
             return _trafficJamMedium!!
         }
-        _trafficJamMedium = Builder(
-            name = "TrafficJamMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _trafficJamMedium = Builder(name = "TrafficJamMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.56f, 3.25f)
                 curveToRelative(-0.66f, 0.0f, -1.298f, 0.336f, -1.663f, 0.9f)
                 lineTo(3.591f, 7.594f)
@@ -157,7 +145,7 @@ public val SBBIcons.TrafficJamMedium: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -2.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _trafficJamMedium!!
     }
 

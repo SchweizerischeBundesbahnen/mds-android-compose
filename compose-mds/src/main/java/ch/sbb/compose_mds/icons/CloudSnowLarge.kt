@@ -15,23 +15,11 @@ public val SBBIcons.CloudSnowLarge: ImageVector
         if (_cloudSnowLarge != null) {
             return _cloudSnowLarge!!
         }
-        _cloudSnowLarge = Builder(
-            name = "CloudSnowLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _cloudSnowLarge = Builder(name = "CloudSnowLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(19.5f, 36.0f)
                 arcToRelative(1.5f, 1.5f, 0.0f, true, true, 0.0f, 3.0f)
                 arcToRelative(1.5f, 1.5f, 0.0f, false, true, 0.0f, -3.0f)
@@ -98,7 +86,7 @@ public val SBBIcons.CloudSnowLarge: ImageVector
                 curveToRelative(-0.593f, -1.133f, -1.604f, -1.96f, -2.771f, -2.384f)
             }
         }
-            .build()
+        .build()
         return _cloudSnowLarge!!
     }
 

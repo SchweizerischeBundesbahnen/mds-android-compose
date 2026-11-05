@@ -15,22 +15,11 @@ public val SBBIcons.HandLarge: ImageVector
         if (_handLarge != null) {
             return _handLarge!!
         }
-        _handLarge = Builder(
-            name = "HandLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _handLarge = Builder(name = "HandLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.5f, 6.0f)
                 curveTo(26.877f, 6.0f, 28.0f, 7.124f, 28.0f, 8.5f)
                 verticalLineToRelative(0.005f)
@@ -109,7 +98,7 @@ public val SBBIcons.HandLarge: ImageVector
                 curveToRelative(0.0f, -0.824f, -0.676f, -1.5f, -1.5f, -1.5f)
             }
         }
-            .build()
+        .build()
         return _handLarge!!
     }
 

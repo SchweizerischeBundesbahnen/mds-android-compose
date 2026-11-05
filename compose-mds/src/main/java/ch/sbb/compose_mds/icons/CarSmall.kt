@@ -15,22 +15,11 @@ public val SBBIcons.CarSmall: ImageVector
         if (_carSmall != null) {
             return _carSmall!!
         }
-        _carSmall = Builder(
-            name = "CarSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carSmall = Builder(name = "CarSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.464f, 7.464f)
                 curveTo(6.184f, 7.744f, 6.0f, 8.215f, 6.0f, 9.0f)
                 verticalLineToRelative(2.0f)
@@ -90,7 +79,7 @@ public val SBBIcons.CarSmall: ImageVector
                 arcTo(1.0f, 1.0f, 0.0f, false, true, 15.0f, 14.0f)
             }
         }
-            .build()
+        .build()
         return _carSmall!!
     }
 

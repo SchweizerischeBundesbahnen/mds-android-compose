@@ -15,22 +15,11 @@ public val SBBIcons.CombinedMobilityMedium: ImageVector
         if (_combinedMobilityMedium != null) {
             return _combinedMobilityMedium!!
         }
-        _combinedMobilityMedium = Builder(
-            name = "CombinedMobilityMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _combinedMobilityMedium = Builder(name = "CombinedMobilityMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 3.249f)
                 horizontalLineToRelative(6.184f)
                 lineToRelative(-0.518f, 0.777f)
@@ -126,7 +115,7 @@ public val SBBIcons.CombinedMobilityMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _combinedMobilityMedium!!
     }
 

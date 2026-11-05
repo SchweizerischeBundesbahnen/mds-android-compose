@@ -15,22 +15,11 @@ public val SBBIcons.SmartphoneDisabledSmall: ImageVector
         if (_smartphoneDisabledSmall != null) {
             return _smartphoneDisabledSmall!!
         }
-        _smartphoneDisabledSmall = Builder(
-            name = "SmartphoneDisabledSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _smartphoneDisabledSmall = Builder(name = "SmartphoneDisabledSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(17.0f, 17.707f)
                 lineToRelative(3.646f, 3.647f)
                 lineToRelative(0.708f, -0.707f)
@@ -66,7 +55,7 @@ public val SBBIcons.SmartphoneDisabledSmall: ImageVector
                 curveTo(7.506f, 4.393f, 7.914f, 4.0f, 8.5f, 4.0f)
             }
         }
-            .build()
+        .build()
         return _smartphoneDisabledSmall!!
     }
 

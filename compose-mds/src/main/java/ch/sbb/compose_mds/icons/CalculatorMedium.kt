@@ -15,23 +15,11 @@ public val SBBIcons.CalculatorMedium: ImageVector
         if (_calculatorMedium != null) {
             return _calculatorMedium!!
         }
-        _calculatorMedium = Builder(
-            name = "CalculatorMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _calculatorMedium = Builder(name = "CalculatorMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.75f, 5.25f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, 1.0f, -1.0f)
                 horizontalLineToRelative(18.0f)
@@ -116,7 +104,7 @@ public val SBBIcons.CalculatorMedium: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, -2.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _calculatorMedium!!
     }
 

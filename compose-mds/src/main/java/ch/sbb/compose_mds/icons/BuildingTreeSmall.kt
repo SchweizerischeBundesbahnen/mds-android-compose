@@ -15,22 +15,11 @@ public val SBBIcons.BuildingTreeSmall: ImageVector
         if (_buildingTreeSmall != null) {
             return _buildingTreeSmall!!
         }
-        _buildingTreeSmall = Builder(
-            name = "BuildingTreeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _buildingTreeSmall = Builder(name = "BuildingTreeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(22.0f, 4.0f)
                 lineTo(6.0f, 4.0f)
                 verticalLineToRelative(1.0f)
@@ -106,7 +95,7 @@ public val SBBIcons.BuildingTreeSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, true, true, 1.862f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _buildingTreeSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.ListPlusLarge: ImageVector
         if (_listPlusLarge != null) {
             return _listPlusLarge!!
         }
-        _listPlusLarge = Builder(
-            name = "ListPlusLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _listPlusLarge = Builder(name = "ListPlusLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(34.0f, 31.0f)
                 horizontalLineToRelative(5.0f)
                 verticalLineToRelative(1.0f)
@@ -67,7 +55,7 @@ public val SBBIcons.ListPlusLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _listPlusLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.FaceDisagreeSmall: ImageVector
         if (_faceDisagreeSmall != null) {
             return _faceDisagreeSmall!!
         }
-        _faceDisagreeSmall = Builder(
-            name = "FaceDisagreeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceDisagreeSmall = Builder(name = "FaceDisagreeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 12.0f)
                 arcToRelative(8.0f, 8.0f, 0.0f, true, true, 16.0f, 0.0f)
                 arcToRelative(8.0f, 8.0f, 0.0f, false, true, -16.0f, 0.0f)
@@ -72,7 +61,7 @@ public val SBBIcons.FaceDisagreeSmall: ImageVector
                 curveTo(16.233f, 13.357f, 14.337f, 12.0f, 12.06f, 12.0f)
             }
         }
-            .build()
+        .build()
         return _faceDisagreeSmall!!
     }
 

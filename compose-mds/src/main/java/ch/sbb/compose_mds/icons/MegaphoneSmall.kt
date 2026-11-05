@@ -15,23 +15,11 @@ public val SBBIcons.MegaphoneSmall: ImageVector
         if (_megaphoneSmall != null) {
             return _megaphoneSmall!!
         }
-        _megaphoneSmall = Builder(
-            name = "MegaphoneSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _megaphoneSmall = Builder(name = "MegaphoneSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.207f, 5.0f)
                 lineTo(14.207f, 2.0f)
                 horizontalLineToRelative(1.0f)
@@ -1011,7 +999,7 @@ public val SBBIcons.MegaphoneSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _megaphoneSmall!!
     }
 

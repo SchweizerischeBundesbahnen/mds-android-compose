@@ -15,22 +15,11 @@ public val SBBIcons.BucketFoamBroomLarge: ImageVector
         if (_bucketFoamBroomLarge != null) {
             return _bucketFoamBroomLarge!!
         }
-        _bucketFoamBroomLarge = Builder(
-            name = "BucketFoamBroomLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bucketFoamBroomLarge = Builder(name = "BucketFoamBroomLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(36.0f, 3.5f)
                 arcToRelative(0.5f, 0.5f, 0.0f, false, true, 1.0f, 0.0f)
                 verticalLineToRelative(26.518f)
@@ -130,7 +119,7 @@ public val SBBIcons.BucketFoamBroomLarge: ImageVector
                 curveToRelative(0.0f, -2.705f, -2.434f, -5.0f, -5.5f, -5.0f)
             }
         }
-            .build()
+        .build()
         return _bucketFoamBroomLarge!!
     }
 

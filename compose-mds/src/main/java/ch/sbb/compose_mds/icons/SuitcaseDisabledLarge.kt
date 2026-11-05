@@ -15,22 +15,11 @@ public val SBBIcons.SuitcaseDisabledLarge: ImageVector
         if (_suitcaseDisabledLarge != null) {
             return _suitcaseDisabledLarge!!
         }
-        _suitcaseDisabledLarge = Builder(
-            name = "SuitcaseDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _suitcaseDisabledLarge = Builder(name = "SuitcaseDisabledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(45.647f, 45.354f)
                 lineTo(40.293f, 40.0f)
                 lineTo(5.5f, 40.0f)
@@ -114,7 +103,7 @@ public val SBBIcons.SuitcaseDisabledLarge: ImageVector
                 arcToRelative(0.5f, 0.5f, 0.0f, false, true, 0.5f, 0.5f)
             }
         }
-            .build()
+        .build()
         return _suitcaseDisabledLarge!!
     }
 

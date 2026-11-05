@@ -15,22 +15,11 @@ public val SBBIcons.FreightWagonLarge: ImageVector
         if (_freightWagonLarge != null) {
             return _freightWagonLarge!!
         }
-        _freightWagonLarge = Builder(
-            name = "FreightWagonLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _freightWagonLarge = Builder(name = "FreightWagonLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.5f, 14.99f)
                 lineTo(6.0f, 14.99f)
                 lineTo(6.0f, 27.0f)
@@ -126,7 +115,7 @@ public val SBBIcons.FreightWagonLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _freightWagonLarge!!
     }
 

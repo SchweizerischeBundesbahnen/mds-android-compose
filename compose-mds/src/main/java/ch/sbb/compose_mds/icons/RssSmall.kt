@@ -15,22 +15,11 @@ public val SBBIcons.RssSmall: ImageVector
         if (_rssSmall != null) {
             return _rssSmall!!
         }
-        _rssSmall = Builder(
-            name = "RssSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _rssSmall = Builder(name = "RssSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.0f, 20.0f)
                 curveToRelative(0.0f, -8.285f, -6.715f, -15.0f, -15.0f, -15.0f)
                 verticalLineTo(4.0f)
@@ -49,7 +38,7 @@ public val SBBIcons.RssSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _rssSmall!!
     }
 

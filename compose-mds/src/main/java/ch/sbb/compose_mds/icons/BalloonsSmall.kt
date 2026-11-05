@@ -15,23 +15,11 @@ public val SBBIcons.BalloonsSmall: ImageVector
         if (_balloonsSmall != null) {
             return _balloonsSmall!!
         }
-        _balloonsSmall = Builder(
-            name = "BalloonsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _balloonsSmall = Builder(name = "BalloonsSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.0f, 9.0f)
                 curveToRelative(0.0f, -1.694f, 0.529f, -3.21f, 1.36f, -4.291f)
                 reflectiveCurveTo(14.308f, 3.0f, 15.5f, 3.0f)
@@ -84,7 +72,7 @@ public val SBBIcons.BalloonsSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _balloonsSmall!!
     }
 

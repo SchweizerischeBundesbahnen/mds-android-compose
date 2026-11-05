@@ -15,24 +15,12 @@ public val SBBIcons.BarrierConstructionLarge: ImageVector
         if (_barrierConstructionLarge != null) {
             return _barrierConstructionLarge!!
         }
-        _barrierConstructionLarge = Builder(
-            name = "BarrierConstructionLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _barrierConstructionLarge = Builder(name = "BarrierConstructionLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.5f, 4.0f)
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 11.0f, 5.5f)
                 lineTo(11.0f, 9.0f)
@@ -159,7 +147,7 @@ public val SBBIcons.BarrierConstructionLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _barrierConstructionLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CloudVocMedium: ImageVector
         if (_cloudVocMedium != null) {
             return _cloudVocMedium!!
         }
-        _cloudVocMedium = Builder(
-            name = "CloudVocMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _cloudVocMedium = Builder(name = "CloudVocMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(16.004f, 11.613f)
                 curveToRelative(1.898f, -3.611f, 5.567f, -4.507f, 8.517f, -3.442f)
                 curveToRelative(1.542f, 0.556f, 2.896f, 1.65f, 3.698f, 3.173f)
@@ -127,7 +115,7 @@ public val SBBIcons.CloudVocMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudVocMedium!!
     }
 

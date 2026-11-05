@@ -15,22 +15,11 @@ public val SBBIcons.ArrowTurnUpMedium: ImageVector
         if (_arrowTurnUpMedium != null) {
             return _arrowTurnUpMedium!!
         }
-        _arrowTurnUpMedium = Builder(
-            name = "ArrowTurnUpMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowTurnUpMedium = Builder(name = "ArrowTurnUpMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(21.25f, 15.75f)
                 curveToRelative(0.0f, 4.377f, -1.308f, 7.222f, -3.342f, 8.982f)
                 curveToRelative(-2.047f, 1.772f, -4.91f, 2.518f, -8.158f, 2.518f)
@@ -49,7 +38,7 @@ public val SBBIcons.ArrowTurnUpMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowTurnUpMedium!!
     }
 

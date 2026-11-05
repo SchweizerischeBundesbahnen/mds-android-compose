@@ -15,23 +15,11 @@ public val SBBIcons.ParagraphSmall: ImageVector
         if (_paragraphSmall != null) {
             return _paragraphSmall!!
         }
-        _paragraphSmall = Builder(
-            name = "ParagraphSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _paragraphSmall = Builder(name = "ParagraphSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.756f, 3.108f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, 2.891f, 1.142f)
                 lineToRelative(0.866f, -0.5f)
@@ -56,7 +44,7 @@ public val SBBIcons.ParagraphSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _paragraphSmall!!
     }
 

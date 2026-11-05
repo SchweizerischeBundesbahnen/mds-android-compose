@@ -15,23 +15,11 @@ public val SBBIcons.UserGroupMedium: ImageVector
         if (_userGroupMedium != null) {
             return _userGroupMedium!!
         }
-        _userGroupMedium = Builder(
-            name = "UserGroupMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userGroupMedium = Builder(name = "UserGroupMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 10.249f)
                 curveToRelative(0.728f, 0.0f, 1.384f, 0.285f, 1.925f, 0.773f)
                 lineToRelative(0.031f, 0.029f)
@@ -107,7 +95,7 @@ public val SBBIcons.UserGroupMedium: ImageVector
                 curveToRelative(-0.284f, -1.928f, -1.604f, -3.25f, -3.179f, -3.25f)
             }
         }
-            .build()
+        .build()
         return _userGroupMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.ArrowCircleResetMedium: ImageVector
         if (_arrowCircleResetMedium != null) {
             return _arrowCircleResetMedium!!
         }
-        _arrowCircleResetMedium = Builder(
-            name = "ArrowCircleResetMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowCircleResetMedium = Builder(name = "ArrowCircleResetMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.488f, 13.75f)
                 horizontalLineTo(13.5f)
                 verticalLineToRelative(1.0f)
@@ -49,7 +38,7 @@ public val SBBIcons.ArrowCircleResetMedium: ImageVector
                 curveToRelative(-4.596f, 0.0f, -8.834f, 2.737f, -10.512f, 6.5f)
             }
         }
-            .build()
+        .build()
         return _arrowCircleResetMedium!!
     }
 

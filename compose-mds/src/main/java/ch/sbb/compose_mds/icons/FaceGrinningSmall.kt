@@ -15,22 +15,11 @@ public val SBBIcons.FaceGrinningSmall: ImageVector
         if (_faceGrinningSmall != null) {
             return _faceGrinningSmall!!
         }
-        _faceGrinningSmall = Builder(
-            name = "FaceGrinningSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceGrinningSmall = Builder(name = "FaceGrinningSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 12.0f)
                 curveToRelative(0.0f, -4.47f, 3.53f, -8.0f, 8.0f, -8.0f)
                 reflectiveCurveToRelative(8.0f, 3.53f, 8.0f, 8.0f)
@@ -60,7 +49,7 @@ public val SBBIcons.FaceGrinningSmall: ImageVector
                 curveToRelative(-0.243f, 2.274f, -2.127f, 4.0f, -4.474f, 4.0f)
             }
         }
-            .build()
+        .build()
         return _faceGrinningSmall!!
     }
 

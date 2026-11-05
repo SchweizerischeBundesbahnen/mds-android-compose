@@ -15,23 +15,11 @@ public val SBBIcons.BusProfileSmall: ImageVector
         if (_busProfileSmall != null) {
             return _busProfileSmall!!
         }
-        _busProfileSmall = Builder(
-            name = "BusProfileSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _busProfileSmall = Builder(name = "BusProfileSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.146f, 4.0f)
                 lineTo(2.0f, 4.0f)
                 verticalLineToRelative(1.0f)
@@ -91,7 +79,7 @@ public val SBBIcons.BusProfileSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _busProfileSmall!!
     }
 

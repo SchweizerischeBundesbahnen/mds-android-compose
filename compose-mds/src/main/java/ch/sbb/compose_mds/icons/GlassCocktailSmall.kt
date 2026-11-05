@@ -15,22 +15,11 @@ public val SBBIcons.GlassCocktailSmall: ImageVector
         if (_glassCocktailSmall != null) {
             return _glassCocktailSmall!!
         }
-        _glassCocktailSmall = Builder(
-            name = "GlassCocktailSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _glassCocktailSmall = Builder(name = "GlassCocktailSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(12.647f, 6.76f)
                 lineToRelative(0.6f, -1.0f)
                 lineTo(6.864f, 5.76f)
@@ -65,7 +54,7 @@ public val SBBIcons.GlassCocktailSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _glassCocktailSmall!!
     }
 

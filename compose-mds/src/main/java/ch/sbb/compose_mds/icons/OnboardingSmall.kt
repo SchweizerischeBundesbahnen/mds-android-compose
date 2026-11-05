@@ -15,23 +15,11 @@ public val SBBIcons.OnboardingSmall: ImageVector
         if (_onboardingSmall != null) {
             return _onboardingSmall!!
         }
-        _onboardingSmall = Builder(
-            name = "OnboardingSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _onboardingSmall = Builder(name = "OnboardingSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.5f, 1.999f)
                 lineTo(6.0f, 1.999f)
                 verticalLineToRelative(20.0f)
@@ -73,7 +61,7 @@ public val SBBIcons.OnboardingSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _onboardingSmall!!
     }
 

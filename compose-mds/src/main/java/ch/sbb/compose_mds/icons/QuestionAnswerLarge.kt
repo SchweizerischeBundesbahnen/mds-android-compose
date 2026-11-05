@@ -15,22 +15,11 @@ public val SBBIcons.QuestionAnswerLarge: ImageVector
         if (_questionAnswerLarge != null) {
             return _questionAnswerLarge!!
         }
-        _questionAnswerLarge = Builder(
-            name = "QuestionAnswerLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _questionAnswerLarge = Builder(name = "QuestionAnswerLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(31.0f, 16.0f)
                 horizontalLineToRelative(10.0f)
                 verticalLineToRelative(19.0f)
@@ -106,7 +95,7 @@ public val SBBIcons.QuestionAnswerLarge: ImageVector
                 arcToRelative(3.6f, 3.6f, 0.0f, false, true, 1.67f, -0.38f)
             }
         }
-            .build()
+        .build()
         return _questionAnswerLarge!!
     }
 

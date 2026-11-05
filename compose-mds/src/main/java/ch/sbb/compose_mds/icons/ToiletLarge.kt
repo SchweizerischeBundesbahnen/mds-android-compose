@@ -15,23 +15,11 @@ public val SBBIcons.ToiletLarge: ImageVector
         if (_toiletLarge != null) {
             return _toiletLarge!!
         }
-        _toiletLarge = Builder(
-            name = "ToiletLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _toiletLarge = Builder(name = "ToiletLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(24.0f, 40.0f)
                 horizontalLineToRelative(-1.0f)
                 lineTo(23.0f, 7.0f)
@@ -90,7 +78,7 @@ public val SBBIcons.ToiletLarge: ImageVector
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 35.5f, 9.0f)
             }
         }
-            .build()
+        .build()
         return _toiletLarge!!
     }
 

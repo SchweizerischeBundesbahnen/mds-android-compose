@@ -15,23 +15,11 @@ public val SBBIcons.PretzelMedium: ImageVector
         if (_pretzelMedium != null) {
             return _pretzelMedium!!
         }
-        _pretzelMedium = Builder(
-            name = "PretzelMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _pretzelMedium = Builder(name = "PretzelMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.418f, 6.257f)
                 curveTo(13.874f, 5.68f, 16.693f, 7.634f, 18.0f, 8.995f)
                 curveToRelative(1.307f, -1.36f, 4.126f, -3.314f, 7.582f, -2.738f)
@@ -156,7 +144,7 @@ public val SBBIcons.PretzelMedium: ImageVector
                 curveToRelative(-0.641f, 0.92f, -2.344f, 2.399f, -5.356f, 2.399f)
             }
         }
-            .build()
+        .build()
         return _pretzelMedium!!
     }
 

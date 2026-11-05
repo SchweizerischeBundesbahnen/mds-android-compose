@@ -15,23 +15,11 @@ public val SBBIcons.CupHotSmall: ImageVector
         if (_cupHotSmall != null) {
             return _cupHotSmall!!
         }
-        _cupHotSmall = Builder(
-            name = "CupHotSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cupHotSmall = Builder(name = "CupHotSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.0f, 3.0f)
                 verticalLineToRelative(4.0f)
                 horizontalLineToRelative(1.0f)
@@ -75,7 +63,7 @@ public val SBBIcons.CupHotSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cupHotSmall!!
     }
 

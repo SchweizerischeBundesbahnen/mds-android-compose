@@ -15,22 +15,11 @@ public val SBBIcons.ArrowLongDownSmall: ImageVector
         if (_arrowLongDownSmall != null) {
             return _arrowLongDownSmall!!
         }
-        _arrowLongDownSmall = Builder(
-            name = "ArrowLongDownSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowLongDownSmall = Builder(name = "ArrowLongDownSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.859f, 19.844f)
                 lineTo(15.0f, 16.702f)
                 lineToRelative(-0.707f, -0.707f)
@@ -45,7 +34,7 @@ public val SBBIcons.ArrowLongDownSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowLongDownSmall!!
     }
 

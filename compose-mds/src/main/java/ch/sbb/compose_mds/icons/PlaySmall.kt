@@ -15,22 +15,11 @@ public val SBBIcons.PlaySmall: ImageVector
         if (_playSmall != null) {
             return _playSmall!!
         }
-        _playSmall = Builder(
-            name = "PlaySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _playSmall = Builder(name = "PlaySmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(7.0f, 4.13f)
                 lineToRelative(0.752f, 0.438f)
                 lineToRelative(6.0f, 3.5f)
@@ -49,7 +38,7 @@ public val SBBIcons.PlaySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _playSmall!!
     }
 

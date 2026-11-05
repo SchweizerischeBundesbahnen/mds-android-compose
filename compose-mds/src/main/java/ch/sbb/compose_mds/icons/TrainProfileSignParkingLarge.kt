@@ -15,24 +15,12 @@ public val SBBIcons.TrainProfileSignParkingLarge: ImageVector
         if (_trainProfileSignParkingLarge != null) {
             return _trainProfileSignParkingLarge!!
         }
-        _trainProfileSignParkingLarge = Builder(
-            name = "TrainProfileSignParkingLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _trainProfileSignParkingLarge = Builder(name = "TrainProfileSignParkingLarge", defaultWidth
+                = 48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(40.5f, 5.0f)
                 curveTo(41.882f, 5.0f, 43.0f, 6.118f, 43.0f, 7.5f)
                 verticalLineToRelative(14.0f)
@@ -135,7 +123,7 @@ public val SBBIcons.TrainProfileSignParkingLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainProfileSignParkingLarge!!
     }
 

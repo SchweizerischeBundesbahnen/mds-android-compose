@@ -15,23 +15,11 @@ public val SBBIcons.RecordSmall: ImageVector
         if (_recordSmall != null) {
             return _recordSmall!!
         }
-        _recordSmall = Builder(
-            name = "RecordSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _recordSmall = Builder(name = "RecordSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.0f, 12.0f)
                 arcToRelative(7.0f, 7.0f, 0.0f, true, true, 14.0f, 0.0f)
                 arcToRelative(7.0f, 7.0f, 0.0f, false, true, -14.0f, 0.0f)
@@ -40,7 +28,7 @@ public val SBBIcons.RecordSmall: ImageVector
                 arcToRelative(6.0f, 6.0f, 0.0f, false, false, 0.0f, -12.0f)
             }
         }
-            .build()
+        .build()
         return _recordSmall!!
     }
 

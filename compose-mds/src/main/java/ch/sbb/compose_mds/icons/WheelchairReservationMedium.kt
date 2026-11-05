@@ -15,24 +15,12 @@ public val SBBIcons.WheelchairReservationMedium: ImageVector
         if (_wheelchairReservationMedium != null) {
             return _wheelchairReservationMedium!!
         }
-        _wheelchairReservationMedium = Builder(
-            name = "WheelchairReservationMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelchairReservationMedium = Builder(name = "WheelchairReservationMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.75f, 3.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(29.5f)
@@ -71,7 +59,7 @@ public val SBBIcons.WheelchairReservationMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, false, 0.0f, -2.5f)
             }
         }
-            .build()
+        .build()
         return _wheelchairReservationMedium!!
     }
 

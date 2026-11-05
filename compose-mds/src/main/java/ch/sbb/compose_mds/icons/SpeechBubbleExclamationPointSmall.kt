@@ -15,22 +15,12 @@ public val SBBIcons.SpeechBubbleExclamationPointSmall: ImageVector
         if (_speechBubbleExclamationPointSmall != null) {
             return _speechBubbleExclamationPointSmall!!
         }
-        _speechBubbleExclamationPointSmall = Builder(
-            name = "SpeechBubbleExclamationPointSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _speechBubbleExclamationPointSmall = Builder(name = "SpeechBubbleExclamationPointSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(21.0f, 18.0f)
                 lineTo(9.957f, 18.0f)
                 lineTo(7.0f, 20.957f)
@@ -59,7 +49,7 @@ public val SBBIcons.SpeechBubbleExclamationPointSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _speechBubbleExclamationPointSmall!!
     }
 

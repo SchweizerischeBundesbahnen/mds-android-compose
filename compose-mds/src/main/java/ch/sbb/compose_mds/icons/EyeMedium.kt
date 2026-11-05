@@ -15,22 +15,11 @@ public val SBBIcons.EyeMedium: ImageVector
         if (_eyeMedium != null) {
             return _eyeMedium!!
         }
-        _eyeMedium = Builder(
-            name = "EyeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _eyeMedium = Builder(name = "EyeMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 9.25f)
                 curveToRelative(-3.354f, 0.0f, -6.334f, 1.69f, -8.605f, 3.559f)
                 arcToRelative(26.3f, 26.3f, 0.0f, false, false, -4.554f, 4.904f)
@@ -61,7 +50,7 @@ public val SBBIcons.EyeMedium: ImageVector
                 arcToRelative(4.75f, 4.75f, 0.0f, false, true, -9.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _eyeMedium!!
     }
 

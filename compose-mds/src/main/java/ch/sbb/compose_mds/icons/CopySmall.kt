@@ -15,22 +15,11 @@ public val SBBIcons.CopySmall: ImageVector
         if (_copySmall != null) {
             return _copySmall!!
         }
-        _copySmall = Builder(
-            name = "CopySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _copySmall = Builder(name = "CopySmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.485f, 3.96f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineTo(7.0f)
@@ -55,7 +44,7 @@ public val SBBIcons.CopySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _copySmall!!
     }
 

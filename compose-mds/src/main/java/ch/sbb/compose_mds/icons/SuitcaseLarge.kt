@@ -15,23 +15,11 @@ public val SBBIcons.SuitcaseLarge: ImageVector
         if (_suitcaseLarge != null) {
             return _suitcaseLarge!!
         }
-        _suitcaseLarge = Builder(
-            name = "SuitcaseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _suitcaseLarge = Builder(name = "SuitcaseLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.44f, 8.44f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 19.5f, 8.0f)
                 horizontalLineToRelative(9.0f)
@@ -99,7 +87,7 @@ public val SBBIcons.SuitcaseLarge: ImageVector
                 arcToRelative(1.5f, 1.5f, 0.0f, false, true, -1.5f, 1.5f)
             }
         }
-            .build()
+        .build()
         return _suitcaseLarge!!
     }
 

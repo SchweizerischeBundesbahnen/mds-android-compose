@@ -15,22 +15,11 @@ public val SBBIcons.HouseLarge: ImageVector
         if (_houseLarge != null) {
             return _houseLarge!!
         }
-        _houseLarge = Builder(
-            name = "HouseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _houseLarge = Builder(name = "HouseLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(38.0f, 2.0f)
                 curveToRelative(-1.495f, 0.0f, -2.87f, 0.628f, -3.55f, 1.638f)
                 arcToRelative(3.4f, 3.4f, 0.0f, false, false, -0.95f, -0.138f)
@@ -149,7 +138,7 @@ public val SBBIcons.HouseLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _houseLarge!!
     }
 

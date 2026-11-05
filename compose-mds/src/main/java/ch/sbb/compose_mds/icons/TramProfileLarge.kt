@@ -15,23 +15,11 @@ public val SBBIcons.TramProfileLarge: ImageVector
         if (_tramProfileLarge != null) {
             return _tramProfileLarge!!
         }
-        _tramProfileLarge = Builder(
-            name = "TramProfileLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _tramProfileLarge = Builder(name = "TramProfileLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(44.0f, 7.0f)
                 lineTo(17.707f, 7.0f)
                 lineToRelative(7.0f, 7.0f)
@@ -122,7 +110,7 @@ public val SBBIcons.TramProfileLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _tramProfileLarge!!
     }
 

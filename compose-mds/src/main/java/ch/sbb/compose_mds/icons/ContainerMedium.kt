@@ -15,23 +15,11 @@ public val SBBIcons.ContainerMedium: ImageVector
         if (_containerMedium != null) {
             return _containerMedium!!
         }
-        _containerMedium = Builder(
-            name = "ContainerMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _containerMedium = Builder(name = "ContainerMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.759f, 4.499f)
                 lineToRelative(-0.009f, 3.094f)
                 lineToRelative(-0.001f, 0.389f)
@@ -97,7 +85,7 @@ public val SBBIcons.ContainerMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _containerMedium!!
     }
 

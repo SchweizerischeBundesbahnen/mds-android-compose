@@ -15,24 +15,12 @@ public val SBBIcons.RackRailawayProfileLarge: ImageVector
         if (_rackRailawayProfileLarge != null) {
             return _rackRailawayProfileLarge!!
         }
-        _rackRailawayProfileLarge = Builder(
-            name = "RackRailawayProfileLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _rackRailawayProfileLarge = Builder(name = "RackRailawayProfileLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(22.038f, 5.152f)
                 lineToRelative(8.36f, 3.181f)
                 lineToRelative(0.971f, 0.37f)
@@ -172,7 +160,7 @@ public val SBBIcons.RackRailawayProfileLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _rackRailawayProfileLarge!!
     }
 

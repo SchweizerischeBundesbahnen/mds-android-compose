@@ -15,24 +15,12 @@ public val SBBIcons.BicycleReservationMedium: ImageVector
         if (_bicycleReservationMedium != null) {
             return _bicycleReservationMedium!!
         }
-        _bicycleReservationMedium = Builder(
-            name = "BicycleReservationMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bicycleReservationMedium = Builder(name = "BicycleReservationMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(25.166f, 10.027f)
                 lineToRelative(-2.847f, 4.268f)
                 lineToRelative(1.267f, 2.784f)
@@ -111,7 +99,7 @@ public val SBBIcons.BicycleReservationMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bicycleReservationMedium!!
     }
 

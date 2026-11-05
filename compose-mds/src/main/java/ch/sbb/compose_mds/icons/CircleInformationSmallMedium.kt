@@ -15,24 +15,12 @@ public val SBBIcons.CircleInformationSmallMedium: ImageVector
         if (_circleInformationSmallMedium != null) {
             return _circleInformationSmallMedium!!
         }
-        _circleInformationSmallMedium = Builder(
-            name = "CircleInformationSmallMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _circleInformationSmallMedium = Builder(name = "CircleInformationSmallMedium", defaultWidth
+                = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.25f, 18.0f)
                 curveToRelative(0.0f, -6.006f, 4.744f, -10.75f, 10.75f, -10.75f)
                 curveToRelative(6.004f, 0.0f, 10.75f, 4.745f, 10.75f, 10.75f)
@@ -61,7 +49,7 @@ public val SBBIcons.CircleInformationSmallMedium: ImageVector
                 verticalLineToRelative(7.5f)
             }
         }
-            .build()
+        .build()
         return _circleInformationSmallMedium!!
     }
 

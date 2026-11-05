@@ -15,22 +15,12 @@ public val SBBIcons.BulbOffPercentageSignalMedium: ImageVector
         if (_bulbOffPercentageSignalMedium != null) {
             return _bulbOffPercentageSignalMedium!!
         }
-        _bulbOffPercentageSignalMedium = Builder(
-            name = "BulbOffPercentageSignalMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bulbOffPercentageSignalMedium = Builder(name = "BulbOffPercentageSignalMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(28.874f, 19.973f)
                 lineToRelative(-10.5f, 11.812f)
                 lineToRelative(-0.747f, -0.664f)
@@ -99,7 +89,7 @@ public val SBBIcons.BulbOffPercentageSignalMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bulbOffPercentageSignalMedium!!
     }
 

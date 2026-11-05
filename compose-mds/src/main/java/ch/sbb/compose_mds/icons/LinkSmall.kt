@@ -15,22 +15,11 @@ public val SBBIcons.LinkSmall: ImageVector
         if (_linkSmall != null) {
             return _linkSmall!!
         }
-        _linkSmall = Builder(
-            name = "LinkSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _linkSmall = Builder(name = "LinkSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.538f, 5.222f)
                 lineToRelative(-0.733f, -0.704f)
                 arcToRelative(3.473f, 3.473f, 0.0f, false, false, -4.917f, 0.004f)
@@ -84,7 +73,7 @@ public val SBBIcons.LinkSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _linkSmall!!
     }
 

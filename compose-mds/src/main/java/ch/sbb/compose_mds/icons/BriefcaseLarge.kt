@@ -15,23 +15,11 @@ public val SBBIcons.BriefcaseLarge: ImageVector
         if (_briefcaseLarge != null) {
             return _briefcaseLarge!!
         }
-        _briefcaseLarge = Builder(
-            name = "BriefcaseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _briefcaseLarge = Builder(name = "BriefcaseLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(26.5f, 4.0f)
                 arcToRelative(6.504f, 6.504f, 0.0f, false, true, 6.484f, 6.081f)
                 curveToRelative(0.59f, 0.202f, 1.016f, 0.762f, 1.016f, 1.419f)
@@ -140,7 +128,7 @@ public val SBBIcons.BriefcaseLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _briefcaseLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.BridgeMedium: ImageVector
         if (_bridgeMedium != null) {
             return _bridgeMedium!!
         }
-        _bridgeMedium = Builder(
-            name = "BridgeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bridgeMedium = Builder(name = "BridgeMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.0f, 10.25f)
                 horizontalLineToRelative(30.0f)
                 verticalLineToRelative(-1.0f)
@@ -80,7 +68,7 @@ public val SBBIcons.BridgeMedium: ImageVector
                 arcToRelative(19.0f, 19.0f, 0.0f, false, true, 3.5f, -1.544f)
             }
         }
-            .build()
+        .build()
         return _bridgeMedium!!
     }
 

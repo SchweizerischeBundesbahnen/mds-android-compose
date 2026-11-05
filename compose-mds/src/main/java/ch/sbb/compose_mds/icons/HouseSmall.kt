@@ -15,22 +15,11 @@ public val SBBIcons.HouseSmall: ImageVector
         if (_houseSmall != null) {
             return _houseSmall!!
         }
-        _houseSmall = Builder(
-            name = "HouseSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _houseSmall = Builder(name = "HouseSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.354f, 3.646f)
                 lineTo(12.0f, 3.293f)
                 lineToRelative(-0.354f, 0.353f)
@@ -59,7 +48,7 @@ public val SBBIcons.HouseSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _houseSmall!!
     }
 

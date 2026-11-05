@@ -15,24 +15,12 @@ public val SBBIcons.CircleLeafPowerPlugMedium: ImageVector
         if (_circleLeafPowerPlugMedium != null) {
             return _circleLeafPowerPlugMedium!!
         }
-        _circleLeafPowerPlugMedium = Builder(
-            name = "CircleLeafPowerPlugMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _circleLeafPowerPlugMedium = Builder(name = "CircleLeafPowerPlugMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(12.02f, 4.364f)
                 lineToRelative(-0.175f, -0.622f)
                 lineToRelative(-0.558f, 0.327f)
@@ -96,7 +84,7 @@ public val SBBIcons.CircleLeafPowerPlugMedium: ImageVector
                 arcToRelative(3.25f, 3.25f, 0.0f, false, true, -6.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _circleLeafPowerPlugMedium!!
     }
 

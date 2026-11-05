@@ -15,22 +15,11 @@ public val SBBIcons.SuitcaseDisabledMedium: ImageVector
         if (_suitcaseDisabledMedium != null) {
             return _suitcaseDisabledMedium!!
         }
-        _suitcaseDisabledMedium = Builder(
-            name = "SuitcaseDisabledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _suitcaseDisabledMedium = Builder(name = "SuitcaseDisabledMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.75f, 4.764f)
                 horizontalLineToRelative(8.5f)
                 verticalLineToRelative(4.5f)
@@ -64,7 +53,7 @@ public val SBBIcons.SuitcaseDisabledMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _suitcaseDisabledMedium!!
     }
 

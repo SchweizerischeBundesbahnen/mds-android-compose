@@ -15,23 +15,11 @@ public val SBBIcons.BusStopSmall: ImageVector
         if (_busStopSmall != null) {
             return _busStopSmall!!
         }
-        _busStopSmall = Builder(
-            name = "BusStopSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _busStopSmall = Builder(name = "BusStopSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.999f, 2.0f)
                 horizontalLineToRelative(15.0f)
                 verticalLineToRelative(3.0f)
@@ -92,7 +80,7 @@ public val SBBIcons.BusStopSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _busStopSmall!!
     }
 

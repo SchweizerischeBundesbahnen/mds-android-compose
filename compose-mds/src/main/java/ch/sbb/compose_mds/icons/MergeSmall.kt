@@ -15,22 +15,11 @@ public val SBBIcons.MergeSmall: ImageVector
         if (_mergeSmall != null) {
             return _mergeSmall!!
         }
-        _mergeSmall = Builder(
-            name = "MergeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mergeSmall = Builder(name = "MergeSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.578f, 8.528f)
                 curveToRelative(2.49f, 1.363f, 5.98f, 2.339f, 11.702f, 2.46f)
                 lineToRelative(-3.024f, -3.024f)
@@ -56,7 +45,7 @@ public val SBBIcons.MergeSmall: ImageVector
                 curveToRelative(1.52f, 1.577f, 2.95f, 3.059f, 5.114f, 4.244f)
             }
         }
-            .build()
+        .build()
         return _mergeSmall!!
     }
 

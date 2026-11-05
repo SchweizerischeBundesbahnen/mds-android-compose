@@ -15,23 +15,11 @@ public val SBBIcons.PlatformMedium: ImageVector
         if (_platformMedium != null) {
             return _platformMedium!!
         }
-        _platformMedium = Builder(
-            name = "PlatformMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _platformMedium = Builder(name = "PlatformMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(33.0f, 4.25f)
                 horizontalLineToRelative(-1.75f)
                 verticalLineToRelative(23.0f)
@@ -112,7 +100,7 @@ public val SBBIcons.PlatformMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _platformMedium!!
     }
 

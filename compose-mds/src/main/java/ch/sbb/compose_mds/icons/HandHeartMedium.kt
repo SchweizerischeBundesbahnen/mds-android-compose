@@ -15,23 +15,11 @@ public val SBBIcons.HandHeartMedium: ImageVector
         if (_handHeartMedium != null) {
             return _handHeartMedium!!
         }
-        _handHeartMedium = Builder(
-            name = "HandHeartMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handHeartMedium = Builder(name = "HandHeartMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.494f, 4.751f)
                 curveToRelative(-2.353f, 0.0f, -4.253f, 1.874f, -4.253f, 4.223f)
                 curveToRelative(0.0f, 0.735f, 0.186f, 1.425f, 0.515f, 2.026f)
@@ -106,7 +94,7 @@ public val SBBIcons.HandHeartMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handHeartMedium!!
     }
 

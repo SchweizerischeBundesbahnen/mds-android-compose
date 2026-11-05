@@ -15,23 +15,11 @@ public val SBBIcons.StairsUserMedium: ImageVector
         if (_stairsUserMedium != null) {
             return _stairsUserMedium!!
         }
-        _stairsUserMedium = Builder(
-            name = "StairsUserMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _stairsUserMedium = Builder(name = "StairsUserMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.25f, 5.25f)
                 curveToRelative(0.0f, -0.523f, 0.477f, -1.0f, 1.0f, -1.0f)
                 reflectiveCurveToRelative(1.0f, 0.477f, 1.0f, 1.0f)
@@ -101,7 +89,7 @@ public val SBBIcons.StairsUserMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _stairsUserMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.RunLarge: ImageVector
         if (_runLarge != null) {
             return _runLarge!!
         }
-        _runLarge = Builder(
-            name = "RunLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _runLarge = Builder(name = "RunLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(41.968f, 12.676f)
                 lineToRelative(-3.273f, 8.726f)
                 lineToRelative(-3.888f, -3.888f)
@@ -92,7 +81,7 @@ public val SBBIcons.RunLarge: ImageVector
                 reflectiveCurveTo(33.29f, 9.0f, 32.5f, 9.0f)
             }
         }
-            .build()
+        .build()
         return _runLarge!!
     }
 

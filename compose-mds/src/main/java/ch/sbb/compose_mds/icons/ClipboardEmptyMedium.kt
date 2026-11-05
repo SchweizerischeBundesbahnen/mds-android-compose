@@ -15,22 +15,11 @@ public val SBBIcons.ClipboardEmptyMedium: ImageVector
         if (_clipboardEmptyMedium != null) {
             return _clipboardEmptyMedium!!
         }
-        _clipboardEmptyMedium = Builder(
-            name = "ClipboardEmptyMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _clipboardEmptyMedium = Builder(name = "ClipboardEmptyMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.25f, 3.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(1.5f)
@@ -58,7 +47,7 @@ public val SBBIcons.ClipboardEmptyMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _clipboardEmptyMedium!!
     }
 

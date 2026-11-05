@@ -15,22 +15,11 @@ public val SBBIcons.GlobeLocomotiveMedium: ImageVector
         if (_globeLocomotiveMedium != null) {
             return _globeLocomotiveMedium!!
         }
-        _globeLocomotiveMedium = Builder(
-            name = "GlobeLocomotiveMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _globeLocomotiveMedium = Builder(name = "GlobeLocomotiveMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.248f, 15.75f)
                 curveToRelative(0.0f, -3.873f, 1.914f, -7.298f, 4.848f, -9.382f)
                 lineToRelative(1.271f, 0.794f)
@@ -166,7 +155,7 @@ public val SBBIcons.GlobeLocomotiveMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, true, -2.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _globeLocomotiveMedium!!
     }
 

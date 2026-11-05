@@ -15,22 +15,11 @@ public val SBBIcons.CarSignParkingMedium: ImageVector
         if (_carSignParkingMedium != null) {
             return _carSignParkingMedium!!
         }
-        _carSignParkingMedium = Builder(
-            name = "CarSignParkingMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carSignParkingMedium = Builder(name = "CarSignParkingMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.25f, 6.25f)
                 horizontalLineToRelative(7.0f)
                 verticalLineToRelative(8.5f)
@@ -108,7 +97,7 @@ public val SBBIcons.CarSignParkingMedium: ImageVector
                 arcToRelative(0.25f, 0.25f, 0.0f, false, true, -0.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _carSignParkingMedium!!
     }
 

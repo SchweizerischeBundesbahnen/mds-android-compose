@@ -15,23 +15,11 @@ public val SBBIcons.UnicornSmall: ImageVector
         if (_unicornSmall != null) {
             return _unicornSmall!!
         }
-        _unicornSmall = Builder(
-            name = "UnicornSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _unicornSmall = Builder(name = "UnicornSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(22.854f, 3.807f)
                 lineToRelative(-1.858f, 1.93f)
                 lineToRelative(-3.593f, 3.73f)
@@ -121,7 +109,7 @@ public val SBBIcons.UnicornSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _unicornSmall!!
     }
 

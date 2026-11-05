@@ -15,23 +15,11 @@ public val SBBIcons.SwisspassSmall: ImageVector
         if (_swisspassSmall != null) {
             return _swisspassSmall!!
         }
-        _swisspassSmall = Builder(
-            name = "SwisspassSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _swisspassSmall = Builder(name = "SwisspassSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 8.5f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 5.5f, 7.0f)
                 horizontalLineToRelative(13.0f)
@@ -85,7 +73,7 @@ public val SBBIcons.SwisspassSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _swisspassSmall!!
     }
 

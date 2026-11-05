@@ -15,22 +15,11 @@ public val SBBIcons.DownloadLargeDataSmall: ImageVector
         if (_downloadLargeDataSmall != null) {
             return _downloadLargeDataSmall!!
         }
-        _downloadLargeDataSmall = Builder(
-            name = "DownloadLargeDataSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _downloadLargeDataSmall = Builder(name = "DownloadLargeDataSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(12.0f, 8.293f)
                 lineToRelative(1.646f, -1.647f)
                 lineToRelative(0.708f, 0.707f)
@@ -74,7 +63,7 @@ public val SBBIcons.DownloadLargeDataSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _downloadLargeDataSmall!!
     }
 

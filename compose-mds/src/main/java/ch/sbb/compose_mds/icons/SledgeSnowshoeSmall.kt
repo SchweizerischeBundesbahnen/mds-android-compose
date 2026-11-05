@@ -15,22 +15,11 @@ public val SBBIcons.SledgeSnowshoeSmall: ImageVector
         if (_sledgeSnowshoeSmall != null) {
             return _sledgeSnowshoeSmall!!
         }
-        _sledgeSnowshoeSmall = Builder(
-            name = "SledgeSnowshoeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _sledgeSnowshoeSmall = Builder(name = "SledgeSnowshoeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.027f, 7.001f)
                 lineTo(7.0f, 7.001f)
                 lineTo(7.0f, 3.027f)
@@ -102,7 +91,7 @@ public val SBBIcons.SledgeSnowshoeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _sledgeSnowshoeSmall!!
     }
 

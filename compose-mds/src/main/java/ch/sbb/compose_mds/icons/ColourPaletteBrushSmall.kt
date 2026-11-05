@@ -15,22 +15,11 @@ public val SBBIcons.ColourPaletteBrushSmall: ImageVector
         if (_colourPaletteBrushSmall != null) {
             return _colourPaletteBrushSmall!!
         }
-        _colourPaletteBrushSmall = Builder(
-            name = "ColourPaletteBrushSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _colourPaletteBrushSmall = Builder(name = "ColourPaletteBrushSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.333f, 5.698f)
                 curveToRelative(0.339f, -0.958f, 1.0f, -1.955f, 2.335f, -2.46f)
                 arcToRelative(4.0f, 4.0f, 0.0f, false, false, -0.09f, 0.475f)
@@ -116,7 +105,7 @@ public val SBBIcons.ColourPaletteBrushSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _colourPaletteBrushSmall!!
     }
 

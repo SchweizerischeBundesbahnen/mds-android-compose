@@ -15,24 +15,12 @@ public val SBBIcons.CircleQuestionMarkMedium: ImageVector
         if (_circleQuestionMarkMedium != null) {
             return _circleQuestionMarkMedium!!
         }
-        _circleQuestionMarkMedium = Builder(
-            name = "CircleQuestionMarkMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _circleQuestionMarkMedium = Builder(name = "CircleQuestionMarkMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 4.75f)
                 curveToRelative(7.346f, 0.0f, 13.25f, 5.905f, 13.25f, 13.25f)
                 reflectiveCurveTo(25.346f, 31.25f, 18.0f, 31.25f)
@@ -71,7 +59,7 @@ public val SBBIcons.CircleQuestionMarkMedium: ImageVector
                 quadToRelative(1.213f, -0.611f, 2.728f, -0.611f)
             }
         }
-            .build()
+        .build()
         return _circleQuestionMarkMedium!!
     }
 

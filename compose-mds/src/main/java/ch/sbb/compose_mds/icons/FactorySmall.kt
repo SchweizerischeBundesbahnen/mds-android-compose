@@ -15,23 +15,11 @@ public val SBBIcons.FactorySmall: ImageVector
         if (_factorySmall != null) {
             return _factorySmall!!
         }
-        _factorySmall = Builder(
-            name = "FactorySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _factorySmall = Builder(name = "FactorySmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.5f, 3.5f)
                 horizontalLineToRelative(5.0f)
                 verticalLineTo(11.0f)
@@ -62,7 +50,7 @@ public val SBBIcons.FactorySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _factorySmall!!
     }
 

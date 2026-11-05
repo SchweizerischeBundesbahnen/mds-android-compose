@@ -15,24 +15,12 @@ public val SBBIcons.ArrowsUpDownPressureLarge: ImageVector
         if (_arrowsUpDownPressureLarge != null) {
             return _arrowsUpDownPressureLarge!!
         }
-        _arrowsUpDownPressureLarge = Builder(
-            name = "ArrowsUpDownPressureLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowsUpDownPressureLarge = Builder(name = "ArrowsUpDownPressureLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(29.854f, 35.148f)
                 lineToRelative(-0.707f, 0.706f)
                 lineTo(25.0f, 31.709f)
@@ -69,7 +57,7 @@ public val SBBIcons.ArrowsUpDownPressureLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowsUpDownPressureLarge!!
     }
 

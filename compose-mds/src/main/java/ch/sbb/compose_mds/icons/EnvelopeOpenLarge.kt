@@ -15,22 +15,11 @@ public val SBBIcons.EnvelopeOpenLarge: ImageVector
         if (_envelopeOpenLarge != null) {
             return _envelopeOpenLarge!!
         }
-        _envelopeOpenLarge = Builder(
-            name = "EnvelopeOpenLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _envelopeOpenLarge = Builder(name = "EnvelopeOpenLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(24.321f, 2.617f)
                 lineTo(24.0f, 2.347f)
                 lineToRelative(-0.321f, 0.27f)
@@ -64,7 +53,7 @@ public val SBBIcons.EnvelopeOpenLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _envelopeOpenLarge!!
     }
 

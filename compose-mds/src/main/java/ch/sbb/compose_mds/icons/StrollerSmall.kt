@@ -15,23 +15,11 @@ public val SBBIcons.StrollerSmall: ImageVector
         if (_strollerSmall != null) {
             return _strollerSmall!!
         }
-        _strollerSmall = Builder(
-            name = "StrollerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _strollerSmall = Builder(name = "StrollerSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.004f, 4.0f)
                 horizontalLineToRelative(0.5f)
                 arcToRelative(7.497f, 7.497f, 0.0f, false, true, 7.48f, 7.0f)
@@ -77,7 +65,7 @@ public val SBBIcons.StrollerSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _strollerSmall!!
     }
 

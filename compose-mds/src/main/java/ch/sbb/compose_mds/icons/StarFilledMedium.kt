@@ -15,23 +15,11 @@ public val SBBIcons.StarFilledMedium: ImageVector
         if (_starFilledMedium != null) {
             return _starFilledMedium!!
         }
-        _starFilledMedium = Builder(
-            name = "StarFilledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _starFilledMedium = Builder(name = "StarFilledMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(18.475f, 5.092f)
                 lineToRelative(2.885f, 8.658f)
                 horizontalLineToRelative(9.347f)
@@ -53,7 +41,7 @@ public val SBBIcons.StarFilledMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _starFilledMedium!!
     }
 

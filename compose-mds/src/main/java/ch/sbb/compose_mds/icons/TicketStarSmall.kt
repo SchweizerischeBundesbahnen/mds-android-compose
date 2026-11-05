@@ -15,23 +15,11 @@ public val SBBIcons.TicketStarSmall: ImageVector
         if (_ticketStarSmall != null) {
             return _ticketStarSmall!!
         }
-        _ticketStarSmall = Builder(
-            name = "TicketStarSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ticketStarSmall = Builder(name = "TicketStarSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 4.0f)
                 horizontalLineToRelative(20.0f)
                 verticalLineToRelative(5.0f)
@@ -128,7 +116,7 @@ public val SBBIcons.TicketStarSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ticketStarSmall!!
     }
 

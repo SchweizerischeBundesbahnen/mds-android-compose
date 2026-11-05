@@ -15,23 +15,11 @@ public val SBBIcons.RecordLarge: ImageVector
         if (_recordLarge != null) {
             return _recordLarge!!
         }
-        _recordLarge = Builder(
-            name = "RecordLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _recordLarge = Builder(name = "RecordLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.5f, 10.0f)
                 curveTo(30.956f, 10.0f, 37.0f, 16.044f, 37.0f, 23.5f)
                 reflectiveCurveTo(30.956f, 37.0f, 23.5f, 37.0f)
@@ -44,7 +32,7 @@ public val SBBIcons.RecordLarge: ImageVector
                 reflectiveCurveTo(30.404f, 11.0f, 23.5f, 11.0f)
             }
         }
-            .build()
+        .build()
         return _recordLarge!!
     }
 

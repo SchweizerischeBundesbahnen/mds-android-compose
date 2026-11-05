@@ -15,24 +15,12 @@ public val SBBIcons.UserGroupRoundTableLarge: ImageVector
         if (_userGroupRoundTableLarge != null) {
             return _userGroupRoundTableLarge!!
         }
-        _userGroupRoundTableLarge = Builder(
-            name = "UserGroupRoundTableLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _userGroupRoundTableLarge = Builder(name = "UserGroupRoundTableLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.5f, 10.0f)
                 curveToRelative(2.582f, 0.0f, 4.5f, 2.572f, 4.5f, 5.5f)
                 curveToRelative(0.0f, 1.463f, -0.479f, 2.838f, -1.28f, 3.847f)
@@ -115,7 +103,7 @@ public val SBBIcons.UserGroupRoundTableLarge: ImageVector
                 reflectiveCurveToRelative(-1.666f, -4.5f, -3.5f, -4.5f)
             }
         }
-            .build()
+        .build()
         return _userGroupRoundTableLarge!!
     }
 

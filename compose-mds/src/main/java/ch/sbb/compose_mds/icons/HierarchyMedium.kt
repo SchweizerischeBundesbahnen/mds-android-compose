@@ -15,23 +15,11 @@ public val SBBIcons.HierarchyMedium: ImageVector
         if (_hierarchyMedium != null) {
             return _hierarchyMedium!!
         }
-        _hierarchyMedium = Builder(
-            name = "HierarchyMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _hierarchyMedium = Builder(name = "HierarchyMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.75f, 6.25f)
                 horizontalLineToRelative(10.0f)
                 verticalLineToRelative(8.5f)
@@ -74,7 +62,7 @@ public val SBBIcons.HierarchyMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _hierarchyMedium!!
     }
 

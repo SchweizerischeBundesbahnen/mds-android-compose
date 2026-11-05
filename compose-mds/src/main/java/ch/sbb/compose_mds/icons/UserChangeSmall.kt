@@ -15,23 +15,11 @@ public val SBBIcons.UserChangeSmall: ImageVector
         if (_userChangeSmall != null) {
             return _userChangeSmall!!
         }
-        _userChangeSmall = Builder(
-            name = "UserChangeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userChangeSmall = Builder(name = "UserChangeSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.5f, 3.0f)
                 curveTo(5.738f, 3.0f, 5.0f, 3.815f, 5.0f, 5.0f)
                 curveToRelative(0.0f, 0.406f, 0.09f, 0.785f, 0.248f, 1.1f)
@@ -110,7 +98,7 @@ public val SBBIcons.UserChangeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _userChangeSmall!!
     }
 

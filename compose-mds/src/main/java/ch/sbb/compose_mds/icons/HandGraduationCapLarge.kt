@@ -15,22 +15,11 @@ public val SBBIcons.HandGraduationCapLarge: ImageVector
         if (_handGraduationCapLarge != null) {
             return _handGraduationCapLarge!!
         }
-        _handGraduationCapLarge = Builder(
-            name = "HandGraduationCapLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handGraduationCapLarge = Builder(name = "HandGraduationCapLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(24.0f, 6.45f)
                 lineToRelative(0.207f, 0.094f)
                 lineToRelative(16.5f, 7.5f)
@@ -140,7 +129,7 @@ public val SBBIcons.HandGraduationCapLarge: ImageVector
                 arcToRelative(2.4f, 2.4f, 0.0f, false, true, -0.299f, -0.355f)
             }
         }
-            .build()
+        .build()
         return _handGraduationCapLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.EyeDisabledLarge: ImageVector
         if (_eyeDisabledLarge != null) {
             return _eyeDisabledLarge!!
         }
-        _eyeDisabledLarge = Builder(
-            name = "EyeDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _eyeDisabledLarge = Builder(name = "EyeDisabledLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(15.85f, 15.557f)
                 lineToRelative(2.631f, 2.631f)
                 arcToRelative(8.0f, 8.0f, 0.0f, true, false, 11.31f, 11.31f)
@@ -128,7 +116,7 @@ public val SBBIcons.EyeDisabledLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _eyeDisabledLarge!!
     }
 

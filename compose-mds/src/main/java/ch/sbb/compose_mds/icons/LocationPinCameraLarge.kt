@@ -15,22 +15,11 @@ public val SBBIcons.LocationPinCameraLarge: ImageVector
         if (_locationPinCameraLarge != null) {
             return _locationPinCameraLarge!!
         }
-        _locationPinCameraLarge = Builder(
-            name = "LocationPinCameraLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locationPinCameraLarge = Builder(name = "LocationPinCameraLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.0f, 17.0f)
                 curveTo(9.0f, 8.716f, 15.716f, 2.0f, 24.0f, 2.0f)
                 reflectiveCurveToRelative(15.0f, 6.716f, 15.0f, 15.0f)
@@ -85,7 +74,7 @@ public val SBBIcons.LocationPinCameraLarge: ImageVector
                 arcToRelative(4.0f, 4.0f, 0.0f, false, false, 0.0f, -8.0f)
             }
         }
-            .build()
+        .build()
         return _locationPinCameraLarge!!
     }
 

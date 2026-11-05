@@ -15,22 +15,11 @@ public val SBBIcons.FogMedium: ImageVector
         if (_fogMedium != null) {
             return _fogMedium!!
         }
-        _fogMedium = Builder(
-            name = "FogMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fogMedium = Builder(name = "FogMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.5f, 7.25f)
                 lineTo(24.0f, 7.25f)
                 verticalLineToRelative(-1.0f)
@@ -63,7 +52,7 @@ public val SBBIcons.FogMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fogMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.EiffelTowerSmall: ImageVector
         if (_eiffelTowerSmall != null) {
             return _eiffelTowerSmall!!
         }
-        _eiffelTowerSmall = Builder(
-            name = "EiffelTowerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _eiffelTowerSmall = Builder(name = "EiffelTowerSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.5f, 2.0f)
                 horizontalLineToRelative(-0.449f)
                 lineToRelative(-0.048f, 0.446f)
@@ -79,7 +67,7 @@ public val SBBIcons.EiffelTowerSmall: ImageVector
                 arcToRelative(34.0f, 34.0f, 0.0f, false, true, -1.614f, -4.0f)
             }
         }
-            .build()
+        .build()
         return _eiffelTowerSmall!!
     }
 

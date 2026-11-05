@@ -15,23 +15,11 @@ public val SBBIcons.GitMergeSmall: ImageVector
         if (_gitMergeSmall != null) {
             return _gitMergeSmall!!
         }
-        _gitMergeSmall = Builder(
-            name = "GitMergeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _gitMergeSmall = Builder(name = "GitMergeSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(7.5f, 1.5f)
                 arcTo(2.5f, 2.5f, 0.0f, false, true, 8.0f, 6.45f)
                 verticalLineToRelative(10.1f)
@@ -60,7 +48,7 @@ public val SBBIcons.GitMergeSmall: ImageVector
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, 0.0f, -3.0f)
             }
         }
-            .build()
+        .build()
         return _gitMergeSmall!!
     }
 

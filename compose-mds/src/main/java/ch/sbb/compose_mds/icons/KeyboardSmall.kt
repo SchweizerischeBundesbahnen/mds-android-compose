@@ -15,23 +15,11 @@ public val SBBIcons.KeyboardSmall: ImageVector
         if (_keyboardSmall != null) {
             return _keyboardSmall!!
         }
-        _keyboardSmall = Builder(
-            name = "KeyboardSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _keyboardSmall = Builder(name = "KeyboardSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.5f, 6.0f)
                 lineTo(10.0f, 6.0f)
                 verticalLineToRelative(4.0f)
@@ -143,7 +131,7 @@ public val SBBIcons.KeyboardSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _keyboardSmall!!
     }
 

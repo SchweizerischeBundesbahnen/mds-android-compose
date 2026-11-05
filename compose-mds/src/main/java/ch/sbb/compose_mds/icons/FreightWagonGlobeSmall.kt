@@ -15,22 +15,11 @@ public val SBBIcons.FreightWagonGlobeSmall: ImageVector
         if (_freightWagonGlobeSmall != null) {
             return _freightWagonGlobeSmall!!
         }
-        _freightWagonGlobeSmall = Builder(
-            name = "FreightWagonGlobeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _freightWagonGlobeSmall = Builder(name = "FreightWagonGlobeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.022f, 9.0f)
                 curveToRelative(0.065f, -0.715f, 0.266f, -1.39f, 0.578f, -2.0f)
                 horizontalLineToRelative(1.68f)
@@ -149,7 +138,7 @@ public val SBBIcons.FreightWagonGlobeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _freightWagonGlobeSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.TriceratopsMedium: ImageVector
         if (_triceratopsMedium != null) {
             return _triceratopsMedium!!
         }
-        _triceratopsMedium = Builder(
-            name = "TriceratopsMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _triceratopsMedium = Builder(name = "TriceratopsMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(22.25f, 30.0f)
                 horizontalLineToRelative(-1.0f)
                 verticalLineToRelative(-4.75f)
@@ -130,7 +119,7 @@ public val SBBIcons.TriceratopsMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _triceratopsMedium!!
     }
 

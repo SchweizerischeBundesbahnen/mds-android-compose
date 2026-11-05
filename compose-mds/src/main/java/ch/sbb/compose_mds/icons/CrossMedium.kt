@@ -15,23 +15,11 @@ public val SBBIcons.CrossMedium: ImageVector
         if (_crossMedium != null) {
             return _crossMedium!!
         }
-        _crossMedium = Builder(
-            name = "CrossMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _crossMedium = Builder(name = "CrossMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.707f, 18.0f)
                 lineToRelative(8.647f, -8.647f)
                 lineToRelative(-0.707f, -0.707f)
@@ -47,7 +35,7 @@ public val SBBIcons.CrossMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _crossMedium!!
     }
 

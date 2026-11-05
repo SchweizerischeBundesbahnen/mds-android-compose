@@ -15,22 +15,11 @@ public val SBBIcons.FigmaLarge: ImageVector
         if (_figmaLarge != null) {
             return _figmaLarge!!
         }
-        _figmaLarge = Builder(
-            name = "FigmaLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _figmaLarge = Builder(name = "FigmaLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(31.5f, 5.0f)
                 arcToRelative(6.5f, 6.5f, 0.0f, false, true, 1.942f, 12.704f)
                 arcTo(6.5f, 6.5f, 0.0f, true, true, 25.0f, 26.962f)
@@ -80,7 +69,7 @@ public val SBBIcons.FigmaLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _figmaLarge!!
     }
 

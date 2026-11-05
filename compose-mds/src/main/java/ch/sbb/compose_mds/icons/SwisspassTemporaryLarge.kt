@@ -15,22 +15,11 @@ public val SBBIcons.SwisspassTemporaryLarge: ImageVector
         if (_swisspassTemporaryLarge != null) {
             return _swisspassTemporaryLarge!!
         }
-        _swisspassTemporaryLarge = Builder(
-            name = "SwisspassTemporaryLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _swisspassTemporaryLarge = Builder(name = "SwisspassTemporaryLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(5.003f, 37.955f)
                 quadTo(5.242f, 38.0f, 5.5f, 38.0f)
                 horizontalLineToRelative(0.487f)
@@ -443,7 +432,7 @@ public val SBBIcons.SwisspassTemporaryLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _swisspassTemporaryLarge!!
     }
 

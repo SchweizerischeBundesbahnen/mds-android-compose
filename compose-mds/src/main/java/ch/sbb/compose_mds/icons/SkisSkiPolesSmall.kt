@@ -15,22 +15,11 @@ public val SBBIcons.SkisSkiPolesSmall: ImageVector
         if (_skisSkiPolesSmall != null) {
             return _skisSkiPolesSmall!!
         }
-        _skisSkiPolesSmall = Builder(
-            name = "SkisSkiPolesSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _skisSkiPolesSmall = Builder(name = "SkisSkiPolesSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.0f, 2.0f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, -2.0f, 2.0f)
                 verticalLineToRelative(18.0f)
@@ -122,7 +111,7 @@ public val SBBIcons.SkisSkiPolesSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _skisSkiPolesSmall!!
     }
 

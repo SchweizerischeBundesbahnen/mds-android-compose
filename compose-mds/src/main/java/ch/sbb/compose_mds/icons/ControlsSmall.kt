@@ -15,23 +15,11 @@ public val SBBIcons.ControlsSmall: ImageVector
         if (_controlsSmall != null) {
             return _controlsSmall!!
         }
-        _controlsSmall = Builder(
-            name = "ControlsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _controlsSmall = Builder(name = "ControlsSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.5f, 5.0f)
                 curveTo(7.611f, 5.0f, 7.0f, 5.611f, 7.0f, 6.5f)
                 curveTo(7.0f, 7.39f, 7.611f, 8.0f, 8.5f, 8.0f)
@@ -82,7 +70,7 @@ public val SBBIcons.ControlsSmall: ImageVector
                 curveToRelative(-0.22f, -1.168f, -1.202f, -2.0f, -2.454f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _controlsSmall!!
     }
 

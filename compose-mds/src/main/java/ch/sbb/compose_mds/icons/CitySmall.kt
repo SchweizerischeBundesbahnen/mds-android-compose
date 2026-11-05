@@ -15,22 +15,11 @@ public val SBBIcons.CitySmall: ImageVector
         if (_citySmall != null) {
             return _citySmall!!
         }
-        _citySmall = Builder(
-            name = "CitySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _citySmall = Builder(name = "CitySmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.0f, 2.5f)
                 verticalLineToRelative(-0.61f)
                 lineToRelative(-0.598f, 0.12f)
@@ -158,7 +147,7 @@ public val SBBIcons.CitySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _citySmall!!
     }
 

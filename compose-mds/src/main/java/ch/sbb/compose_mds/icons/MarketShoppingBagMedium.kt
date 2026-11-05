@@ -15,22 +15,11 @@ public val SBBIcons.MarketShoppingBagMedium: ImageVector
         if (_marketShoppingBagMedium != null) {
             return _marketShoppingBagMedium!!
         }
-        _marketShoppingBagMedium = Builder(
-            name = "MarketShoppingBagMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _marketShoppingBagMedium = Builder(name = "MarketShoppingBagMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.25f, 6.25f)
                 horizontalLineToRelative(-0.36f)
                 lineToRelative(-0.114f, 0.342f)
@@ -111,7 +100,7 @@ public val SBBIcons.MarketShoppingBagMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _marketShoppingBagMedium!!
     }
 

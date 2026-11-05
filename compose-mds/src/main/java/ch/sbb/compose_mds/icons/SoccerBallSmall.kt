@@ -15,23 +15,11 @@ public val SBBIcons.SoccerBallSmall: ImageVector
         if (_soccerBallSmall != null) {
             return _soccerBallSmall!!
         }
-        _soccerBallSmall = Builder(
-            name = "SoccerBallSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _soccerBallSmall = Builder(name = "SoccerBallSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.0f, 12.0f)
                 curveToRelative(0.0f, -1.645f, 0.441f, -3.186f, 1.212f, -4.513f)
                 lineToRelative(0.862f, 2.935f)
@@ -104,7 +92,7 @@ public val SBBIcons.SoccerBallSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _soccerBallSmall!!
     }
 

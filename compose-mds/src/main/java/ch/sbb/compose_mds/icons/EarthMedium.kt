@@ -15,23 +15,11 @@ public val SBBIcons.EarthMedium: ImageVector
         if (_earthMedium != null) {
             return _earthMedium!!
         }
-        _earthMedium = Builder(
-            name = "EarthMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _earthMedium = Builder(name = "EarthMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.696f, 4.442f)
                 quadToRelative(1.126f, -0.19f, 2.304f, -0.192f)
                 curveToRelative(2.479f, 0.0f, 4.804f, 0.656f, 6.812f, 1.803f)
@@ -157,7 +145,7 @@ public val SBBIcons.EarthMedium: ImageVector
                 reflectiveCurveTo(26.146f, 3.25f, 18.0f, 3.25f)
             }
         }
-            .build()
+        .build()
         return _earthMedium!!
     }
 

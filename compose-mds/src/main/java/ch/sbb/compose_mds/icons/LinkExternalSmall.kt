@@ -15,22 +15,11 @@ public val SBBIcons.LinkExternalSmall: ImageVector
         if (_linkExternalSmall != null) {
             return _linkExternalSmall!!
         }
-        _linkExternalSmall = Builder(
-            name = "LinkExternalSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _linkExternalSmall = Builder(name = "LinkExternalSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.0f, 5.0f)
                 horizontalLineToRelative(2.293f)
                 lineToRelative(-3.647f, 3.646f)
@@ -55,7 +44,7 @@ public val SBBIcons.LinkExternalSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _linkExternalSmall!!
     }
 

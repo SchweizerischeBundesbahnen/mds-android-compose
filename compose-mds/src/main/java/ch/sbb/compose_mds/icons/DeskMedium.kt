@@ -15,22 +15,11 @@ public val SBBIcons.DeskMedium: ImageVector
         if (_deskMedium != null) {
             return _deskMedium!!
         }
-        _deskMedium = Builder(
-            name = "DeskMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _deskMedium = Builder(name = "DeskMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.25f, 15.249f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(16.25f)
@@ -48,7 +37,7 @@ public val SBBIcons.DeskMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _deskMedium!!
     }
 

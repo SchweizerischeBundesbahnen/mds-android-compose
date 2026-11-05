@@ -15,22 +15,11 @@ public val SBBIcons.TicketDisabledMedium: ImageVector
         if (_ticketDisabledMedium != null) {
             return _ticketDisabledMedium!!
         }
-        _ticketDisabledMedium = Builder(
-            name = "TicketDisabledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ticketDisabledMedium = Builder(name = "TicketDisabledMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(31.146f, 31.854f)
                 lineTo(29.04f, 29.75f)
                 lineTo(3.25f, 29.75f)
@@ -107,7 +96,7 @@ public val SBBIcons.TicketDisabledMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ticketDisabledMedium!!
     }
 

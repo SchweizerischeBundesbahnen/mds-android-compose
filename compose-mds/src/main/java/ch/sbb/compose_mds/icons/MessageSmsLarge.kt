@@ -15,23 +15,11 @@ public val SBBIcons.MessageSmsLarge: ImageVector
         if (_messageSmsLarge != null) {
             return _messageSmsLarge!!
         }
-        _messageSmsLarge = Builder(
-            name = "MessageSmsLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _messageSmsLarge = Builder(name = "MessageSmsLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.0f, 11.0f)
                 lineTo(6.5f, 11.0f)
                 curveToRelative(-0.413f, 0.0f, -0.689f, 0.102f, -0.879f, 0.229f)
@@ -115,7 +103,7 @@ public val SBBIcons.MessageSmsLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _messageSmsLarge!!
     }
 

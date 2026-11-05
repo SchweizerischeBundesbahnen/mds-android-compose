@@ -15,24 +15,12 @@ public val SBBIcons.PearlchainWithCrossLarge: ImageVector
         if (_pearlchainWithCrossLarge != null) {
             return _pearlchainWithCrossLarge!!
         }
-        _pearlchainWithCrossLarge = Builder(
-            name = "PearlchainWithCrossLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _pearlchainWithCrossLarge = Builder(name = "PearlchainWithCrossLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(32.338f, 15.37f)
                 lineToRelative(-8.132f, 8.13f)
                 lineToRelative(8.132f, 8.132f)
@@ -61,7 +49,7 @@ public val SBBIcons.PearlchainWithCrossLarge: ImageVector
                 arcToRelative(6.5f, 6.5f, 0.0f, false, true, 6.48f, -6.0f)
             }
         }
-            .build()
+        .build()
         return _pearlchainWithCrossLarge!!
     }
 

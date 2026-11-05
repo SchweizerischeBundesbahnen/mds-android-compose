@@ -15,24 +15,12 @@ public val SBBIcons.CircleTriangleSquareMedium: ImageVector
         if (_circleTriangleSquareMedium != null) {
             return _circleTriangleSquareMedium!!
         }
-        _circleTriangleSquareMedium = Builder(
-            name = "CircleTriangleSquareMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _circleTriangleSquareMedium = Builder(name = "CircleTriangleSquareMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.75f, 4.25f)
                 arcToRelative(5.5f, 5.5f, 0.0f, true, false, 0.0f, 11.0f)
                 arcToRelative(5.5f, 5.5f, 0.0f, false, false, 0.0f, -11.0f)
@@ -63,7 +51,7 @@ public val SBBIcons.CircleTriangleSquareMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _circleTriangleSquareMedium!!
     }
 

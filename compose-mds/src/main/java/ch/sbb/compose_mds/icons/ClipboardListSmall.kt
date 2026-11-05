@@ -15,22 +15,11 @@ public val SBBIcons.ClipboardListSmall: ImageVector
         if (_clipboardListSmall != null) {
             return _clipboardListSmall!!
         }
-        _clipboardListSmall = Builder(
-            name = "ClipboardListSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _clipboardListSmall = Builder(name = "ClipboardListSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.5f, 2.0f)
                 lineTo(9.0f, 2.0f)
                 verticalLineToRelative(1.0f)
@@ -78,7 +67,7 @@ public val SBBIcons.ClipboardListSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _clipboardListSmall!!
     }
 

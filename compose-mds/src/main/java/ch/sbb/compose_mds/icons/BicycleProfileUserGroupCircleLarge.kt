@@ -15,22 +15,12 @@ public val SBBIcons.BicycleProfileUserGroupCircleLarge: ImageVector
         if (_bicycleProfileUserGroupCircleLarge != null) {
             return _bicycleProfileUserGroupCircleLarge!!
         }
-        _bicycleProfileUserGroupCircleLarge = Builder(
-            name = "BicycleProfileUserGroupCircleLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bicycleProfileUserGroupCircleLarge = Builder(name = "BicycleProfileUserGroupCircleLarge",
+                defaultWidth = 48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f,
+                viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(25.0f, 3.0f)
                 horizontalLineToRelative(4.434f)
                 lineToRelative(-0.518f, 0.777f)
@@ -249,7 +239,7 @@ public val SBBIcons.BicycleProfileUserGroupCircleLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bicycleProfileUserGroupCircleLarge!!
     }
 

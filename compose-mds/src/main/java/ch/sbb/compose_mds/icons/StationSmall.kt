@@ -15,23 +15,11 @@ public val SBBIcons.StationSmall: ImageVector
         if (_stationSmall != null) {
             return _stationSmall!!
         }
-        _stationSmall = Builder(
-            name = "StationSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _stationSmall = Builder(name = "StationSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(21.689f, 4.837f)
                 curveTo(15.593f, 2.35f, 9.46f, 2.394f, 3.315f, 4.835f)
                 lineTo(3.0f, 4.961f)
@@ -73,7 +61,7 @@ public val SBBIcons.StationSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _stationSmall!!
     }
 

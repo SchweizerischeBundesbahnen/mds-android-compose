@@ -15,23 +15,11 @@ public val SBBIcons.AerosolCanSmall: ImageVector
         if (_aerosolCanSmall != null) {
             return _aerosolCanSmall!!
         }
-        _aerosolCanSmall = Builder(
-            name = "AerosolCanSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _aerosolCanSmall = Builder(name = "AerosolCanSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.504f, 2.0f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, false, -2.495f, 2.333f)
                 lineToRelative(-3.601f, 0.676f)
@@ -102,7 +90,7 @@ public val SBBIcons.AerosolCanSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _aerosolCanSmall!!
     }
 

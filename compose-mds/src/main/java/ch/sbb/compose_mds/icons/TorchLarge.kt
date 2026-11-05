@@ -15,22 +15,11 @@ public val SBBIcons.TorchLarge: ImageVector
         if (_torchLarge != null) {
             return _torchLarge!!
         }
-        _torchLarge = Builder(
-            name = "TorchLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _torchLarge = Builder(name = "TorchLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(27.99f, 30.598f)
                 lineToRelative(-2.0f, 10.0f)
                 lineToRelative(-0.08f, 0.402f)
@@ -102,7 +91,7 @@ public val SBBIcons.TorchLarge: ImageVector
                 curveToRelative(0.047f, -0.85f, -0.387f, -2.065f, -1.564f, -3.37f)
             }
         }
-            .build()
+        .build()
         return _torchLarge!!
     }
 

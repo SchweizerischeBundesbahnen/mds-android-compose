@@ -15,22 +15,11 @@ public val SBBIcons.ExclamationPointSmall: ImageVector
         if (_exclamationPointSmall != null) {
             return _exclamationPointSmall!!
         }
-        _exclamationPointSmall = Builder(
-            name = "ExclamationPointSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _exclamationPointSmall = Builder(name = "ExclamationPointSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(12.998f, 17.09f)
                 lineTo(12.998f, 19.0f)
                 horizontalLineToRelative(-1.995f)
@@ -45,7 +34,7 @@ public val SBBIcons.ExclamationPointSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _exclamationPointSmall!!
     }
 

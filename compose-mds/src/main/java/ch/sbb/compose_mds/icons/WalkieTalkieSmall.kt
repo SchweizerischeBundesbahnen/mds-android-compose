@@ -15,22 +15,11 @@ public val SBBIcons.WalkieTalkieSmall: ImageVector
         if (_walkieTalkieSmall != null) {
             return _walkieTalkieSmall!!
         }
-        _walkieTalkieSmall = Builder(
-            name = "WalkieTalkieSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _walkieTalkieSmall = Builder(name = "WalkieTalkieSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(15.0f, 6.0f)
                 horizontalLineToRelative(0.5f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 17.0f, 7.5f)
@@ -91,7 +80,7 @@ public val SBBIcons.WalkieTalkieSmall: ImageVector
                 curveTo(12.484f, 9.111f, 12.23f, 9.0f, 12.0f, 9.0f)
             }
         }
-            .build()
+        .build()
         return _walkieTalkieSmall!!
     }
 

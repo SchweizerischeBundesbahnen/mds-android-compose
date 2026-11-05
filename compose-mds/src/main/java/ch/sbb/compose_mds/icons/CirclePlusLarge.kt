@@ -15,23 +15,11 @@ public val SBBIcons.CirclePlusLarge: ImageVector
         if (_circlePlusLarge != null) {
             return _circlePlusLarge!!
         }
-        _circlePlusLarge = Builder(
-            name = "CirclePlusLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _circlePlusLarge = Builder(name = "CirclePlusLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(24.5f, 7.0f)
                 curveTo(33.612f, 7.0f, 41.0f, 14.388f, 41.0f, 23.5f)
                 curveTo(41.0f, 32.614f, 33.612f, 40.0f, 24.5f, 40.0f)
@@ -57,7 +45,7 @@ public val SBBIcons.CirclePlusLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _circlePlusLarge!!
     }
 

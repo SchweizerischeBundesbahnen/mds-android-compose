@@ -15,24 +15,12 @@ public val SBBIcons.UserHeadsetDisplayMedium: ImageVector
         if (_userHeadsetDisplayMedium != null) {
             return _userHeadsetDisplayMedium!!
         }
-        _userHeadsetDisplayMedium = Builder(
-            name = "UserHeadsetDisplayMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userHeadsetDisplayMedium = Builder(name = "UserHeadsetDisplayMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.56f, 9.25f)
                 lineTo(21.0f, 9.25f)
                 curveToRelative(0.369f, 0.0f, 0.702f, 0.12f, 0.938f, 0.38f)
@@ -123,7 +111,7 @@ public val SBBIcons.UserHeadsetDisplayMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _userHeadsetDisplayMedium!!
     }
 

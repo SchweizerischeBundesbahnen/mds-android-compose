@@ -15,22 +15,11 @@ public val SBBIcons.PieMedium: ImageVector
         if (_pieMedium != null) {
             return _pieMedium!!
         }
-        _pieMedium = Builder(
-            name = "PieMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _pieMedium = Builder(name = "PieMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.75f, 10.765f)
                 horizontalLineToRelative(-4.5f)
                 verticalLineToRelative(5.72f)
@@ -121,7 +110,7 @@ public val SBBIcons.PieMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _pieMedium!!
     }
 

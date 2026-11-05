@@ -15,24 +15,12 @@ public val SBBIcons.ArrowCircleTwoUsersSmall: ImageVector
         if (_arrowCircleTwoUsersSmall != null) {
             return _arrowCircleTwoUsersSmall!!
         }
-        _arrowCircleTwoUsersSmall = Builder(
-            name = "ArrowCircleTwoUsersSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowCircleTwoUsersSmall = Builder(name = "ArrowCircleTwoUsersSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 12.0f)
                 curveTo(2.0f, 6.477f, 6.477f, 2.0f, 12.0f, 2.0f)
                 reflectiveCurveToRelative(10.0f, 4.477f, 10.0f, 10.0f)
@@ -85,7 +73,7 @@ public val SBBIcons.ArrowCircleTwoUsersSmall: ImageVector
                 reflectiveCurveToRelative(-0.77f, -2.0f, -1.5f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _arrowCircleTwoUsersSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.MovingBusSmall: ImageVector
         if (_movingBusSmall != null) {
             return _movingBusSmall!!
         }
-        _movingBusSmall = Builder(
-            name = "MovingBusSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _movingBusSmall = Builder(name = "MovingBusSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.0f, 7.0f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, 2.0f, -2.0f)
                 horizontalLineToRelative(6.0f)
@@ -106,7 +94,7 @@ public val SBBIcons.MovingBusSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _movingBusSmall!!
     }
 

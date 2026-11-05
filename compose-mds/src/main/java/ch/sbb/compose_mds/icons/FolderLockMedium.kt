@@ -15,23 +15,11 @@ public val SBBIcons.FolderLockMedium: ImageVector
         if (_folderLockMedium != null) {
             return _folderLockMedium!!
         }
-        _folderLockMedium = Builder(
-            name = "FolderLockMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _folderLockMedium = Builder(name = "FolderLockMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.25f, 9.25f)
                 horizontalLineToRelative(-0.309f)
                 lineToRelative(-0.138f, 0.276f)
@@ -79,7 +67,7 @@ public val SBBIcons.FolderLockMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _folderLockMedium!!
     }
 

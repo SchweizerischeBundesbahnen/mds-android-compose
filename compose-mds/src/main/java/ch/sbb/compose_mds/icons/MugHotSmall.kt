@@ -15,23 +15,11 @@ public val SBBIcons.MugHotSmall: ImageVector
         if (_mugHotSmall != null) {
             return _mugHotSmall!!
         }
-        _mugHotSmall = Builder(
-            name = "MugHotSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _mugHotSmall = Builder(name = "MugHotSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(16.0f, 12.0f)
                 horizontalLineToRelative(0.5f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, 2.5f, 2.5f)
@@ -87,7 +75,7 @@ public val SBBIcons.MugHotSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _mugHotSmall!!
     }
 

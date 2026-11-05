@@ -15,22 +15,11 @@ public val SBBIcons.CloudCo2ArrowDownMedium: ImageVector
         if (_cloudCo2ArrowDownMedium != null) {
             return _cloudCo2ArrowDownMedium!!
         }
-        _cloudCo2ArrowDownMedium = Builder(
-            name = "CloudCo2ArrowDownMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudCo2ArrowDownMedium = Builder(name = "CloudCo2ArrowDownMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(26.723f, 11.349f)
                 curveToRelative(0.805f, 1.528f, 1.034f, 3.455f, 0.381f, 5.64f)
                 lineToRelative(-0.958f, -0.287f)
@@ -142,7 +131,7 @@ public val SBBIcons.CloudCo2ArrowDownMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudCo2ArrowDownMedium!!
     }
 

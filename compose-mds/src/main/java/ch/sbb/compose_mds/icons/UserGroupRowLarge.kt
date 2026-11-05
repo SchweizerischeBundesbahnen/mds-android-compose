@@ -15,22 +15,11 @@ public val SBBIcons.UserGroupRowLarge: ImageVector
         if (_userGroupRowLarge != null) {
             return _userGroupRowLarge!!
         }
-        _userGroupRowLarge = Builder(
-            name = "UserGroupRowLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _userGroupRowLarge = Builder(name = "UserGroupRowLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(32.501f, 6.998f)
                 curveToRelative(3.212f, 0.0f, 5.5f, 2.987f, 5.5f, 6.504f)
                 curveToRelative(0.0f, 1.668f, -0.517f, 3.215f, -1.401f, 4.382f)
@@ -141,7 +130,7 @@ public val SBBIcons.UserGroupRowLarge: ImageVector
                 curveToRelative(0.0f, -3.154f, -2.013f, -5.503f, -4.5f, -5.504f)
             }
         }
-            .build()
+        .build()
         return _userGroupRowLarge!!
     }
 

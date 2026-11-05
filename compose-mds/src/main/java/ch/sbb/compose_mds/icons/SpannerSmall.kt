@@ -15,23 +15,11 @@ public val SBBIcons.SpannerSmall: ImageVector
         if (_spannerSmall != null) {
             return _spannerSmall!!
         }
-        _spannerSmall = Builder(
-            name = "SpannerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _spannerSmall = Builder(name = "SpannerSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.0f, 6.5f)
                 arcTo(4.5f, 4.5f, 0.0f, false, true, 17.5f, 2.0f)
                 curveToRelative(0.663f, 0.0f, 1.285f, 0.151f, 1.846f, 0.403f)
@@ -99,7 +87,7 @@ public val SBBIcons.SpannerSmall: ImageVector
                 arcTo(3.4f, 3.4f, 0.0f, false, false, 17.5f, 3.0f)
             }
         }
-            .build()
+        .build()
         return _spannerSmall!!
     }
 

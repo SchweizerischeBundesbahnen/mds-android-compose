@@ -15,22 +15,12 @@ public val SBBIcons.ShelvesPansBottlesPlatesMedium: ImageVector
         if (_shelvesPansBottlesPlatesMedium != null) {
             return _shelvesPansBottlesPlatesMedium!!
         }
-        _shelvesPansBottlesPlatesMedium = Builder(
-            name = "ShelvesPansBottlesPlatesMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _shelvesPansBottlesPlatesMedium = Builder(name = "ShelvesPansBottlesPlatesMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(4.25f, 16.75f)
                 horizontalLineToRelative(3.5f)
                 verticalLineToRelative(-8.0f)
@@ -132,7 +122,7 @@ public val SBBIcons.ShelvesPansBottlesPlatesMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _shelvesPansBottlesPlatesMedium!!
     }
 

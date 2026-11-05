@@ -15,23 +15,11 @@ public val SBBIcons.ContainerSmall: ImageVector
         if (_containerSmall != null) {
             return _containerSmall!!
         }
-        _containerSmall = Builder(
-            name = "ContainerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _containerSmall = Builder(name = "ContainerSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.006f, 2.999f)
                 lineTo(13.0f, 5.062f)
                 lineToRelative(-0.001f, 0.388f)
@@ -96,7 +84,7 @@ public val SBBIcons.ContainerSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _containerSmall!!
     }
 

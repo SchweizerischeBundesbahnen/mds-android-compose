@@ -15,22 +15,11 @@ public val SBBIcons.CombinedMobilityLarge: ImageVector
         if (_combinedMobilityLarge != null) {
             return _combinedMobilityLarge!!
         }
-        _combinedMobilityLarge = Builder(
-            name = "CombinedMobilityLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _combinedMobilityLarge = Builder(name = "CombinedMobilityLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(35.5f, 18.999f)
                 curveToRelative(1.774f, 0.0f, 3.178f, 0.413f, 4.133f, 1.368f)
                 curveToRelative(0.954f, 0.955f, 1.367f, 2.359f, 1.367f, 4.132f)
@@ -128,7 +117,7 @@ public val SBBIcons.CombinedMobilityLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _combinedMobilityLarge!!
     }
 

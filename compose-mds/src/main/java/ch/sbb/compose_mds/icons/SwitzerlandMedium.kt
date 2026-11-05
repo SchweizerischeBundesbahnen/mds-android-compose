@@ -15,22 +15,11 @@ public val SBBIcons.SwitzerlandMedium: ImageVector
         if (_switzerlandMedium != null) {
             return _switzerlandMedium!!
         }
-        _switzerlandMedium = Builder(
-            name = "SwitzerlandMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _switzerlandMedium = Builder(name = "SwitzerlandMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.937f, 8.236f)
                 lineToRelative(0.4f, 0.353f)
                 lineToRelative(2.027f, 1.789f)
@@ -131,7 +120,7 @@ public val SBBIcons.SwitzerlandMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _switzerlandMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.CigaretteDisabledLarge: ImageVector
         if (_cigaretteDisabledLarge != null) {
             return _cigaretteDisabledLarge!!
         }
-        _cigaretteDisabledLarge = Builder(
-            name = "CigaretteDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _cigaretteDisabledLarge = Builder(name = "CigaretteDisabledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(45.354f, 43.646f)
                 lineToRelative(-0.707f, 0.707f)
                 lineTo(28.294f, 28.0f)
@@ -120,7 +109,7 @@ public val SBBIcons.CigaretteDisabledLarge: ImageVector
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 37.5f, 3.0f)
             }
         }
-            .build()
+        .build()
         return _cigaretteDisabledLarge!!
     }
 

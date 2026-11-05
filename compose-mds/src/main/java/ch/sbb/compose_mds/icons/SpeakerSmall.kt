@@ -15,23 +15,11 @@ public val SBBIcons.SpeakerSmall: ImageVector
         if (_speakerSmall != null) {
             return _speakerSmall!!
         }
-        _speakerSmall = Builder(
-            name = "SpeakerSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _speakerSmall = Builder(name = "SpeakerSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.0f, 6.066f)
                 lineTo(14.0f, 5.0f)
                 lineToRelative(-0.82f, 0.682f)
@@ -78,7 +66,7 @@ public val SBBIcons.SpeakerSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _speakerSmall!!
     }
 

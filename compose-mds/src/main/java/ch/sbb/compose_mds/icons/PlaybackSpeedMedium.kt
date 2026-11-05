@@ -15,22 +15,11 @@ public val SBBIcons.PlaybackSpeedMedium: ImageVector
         if (_playbackSpeedMedium != null) {
             return _playbackSpeedMedium!!
         }
-        _playbackSpeedMedium = Builder(
-            name = "PlaybackSpeedMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _playbackSpeedMedium = Builder(name = "PlaybackSpeedMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 3.249f)
                 curveToRelative(8.147f, 0.0f, 14.75f, 6.603f, 14.75f, 14.75f)
                 reflectiveCurveTo(26.147f, 32.749f, 18.0f, 32.749f)
@@ -74,7 +63,7 @@ public val SBBIcons.PlaybackSpeedMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _playbackSpeedMedium!!
     }
 

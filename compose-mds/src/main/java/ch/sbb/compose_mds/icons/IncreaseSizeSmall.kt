@@ -15,22 +15,11 @@ public val SBBIcons.IncreaseSizeSmall: ImageVector
         if (_increaseSizeSmall != null) {
             return _increaseSizeSmall!!
         }
-        _increaseSizeSmall = Builder(
-            name = "IncreaseSizeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _increaseSizeSmall = Builder(name = "IncreaseSizeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.0f, 4.0f)
                 horizontalLineToRelative(2.293f)
                 lineToRelative(-3.647f, 3.646f)
@@ -110,7 +99,7 @@ public val SBBIcons.IncreaseSizeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _increaseSizeSmall!!
     }
 

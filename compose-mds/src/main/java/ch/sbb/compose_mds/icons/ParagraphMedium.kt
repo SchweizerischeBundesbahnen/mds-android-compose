@@ -15,23 +15,11 @@ public val SBBIcons.ParagraphMedium: ImageVector
         if (_paragraphMedium != null) {
             return _paragraphMedium!!
         }
-        _paragraphMedium = Builder(
-            name = "ParagraphMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _paragraphMedium = Builder(name = "ParagraphMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.562f, 4.422f)
                 arcToRelative(4.0f, 4.0f, 0.0f, false, true, 4.625f, 1.828f)
                 lineToRelative(0.866f, -0.5f)
@@ -61,7 +49,7 @@ public val SBBIcons.ParagraphMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _paragraphMedium!!
     }
 

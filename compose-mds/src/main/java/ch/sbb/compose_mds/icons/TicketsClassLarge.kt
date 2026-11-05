@@ -15,22 +15,11 @@ public val SBBIcons.TicketsClassLarge: ImageVector
         if (_ticketsClassLarge != null) {
             return _ticketsClassLarge!!
         }
-        _ticketsClassLarge = Builder(
-            name = "TicketsClassLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _ticketsClassLarge = Builder(name = "TicketsClassLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(40.0f, 38.0f)
                 lineTo(28.0f, 38.0f)
                 verticalLineToRelative(4.0f)
@@ -121,7 +110,7 @@ public val SBBIcons.TicketsClassLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ticketsClassLarge!!
     }
 

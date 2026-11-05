@@ -15,23 +15,11 @@ public val SBBIcons.SbbSignetSmall: ImageVector
         if (_sbbSignetSmall != null) {
             return _sbbSignetSmall!!
         }
-        _sbbSignetSmall = Builder(
-            name = "SbbSignetSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _sbbSignetSmall = Builder(name = "SbbSignetSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(13.264f, 9.0f)
                 lineToRelative(2.352f, 2.318f)
                 horizontalLineToRelative(-2.924f)
@@ -57,7 +45,7 @@ public val SBBIcons.SbbSignetSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _sbbSignetSmall!!
     }
 

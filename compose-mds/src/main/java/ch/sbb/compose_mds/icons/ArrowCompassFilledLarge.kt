@@ -15,22 +15,11 @@ public val SBBIcons.ArrowCompassFilledLarge: ImageVector
         if (_arrowCompassFilledLarge != null) {
             return _arrowCompassFilledLarge!!
         }
-        _arrowCompassFilledLarge = Builder(
-            name = "ArrowCompassFilledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowCompassFilledLarge = Builder(name = "ArrowCompassFilledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(38.825f, 9.729f)
                 lineTo(23.945f, 38.61f)
                 lineToRelative(-0.944f, 1.833f)
@@ -42,7 +31,7 @@ public val SBBIcons.ArrowCompassFilledLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowCompassFilledLarge!!
     }
 

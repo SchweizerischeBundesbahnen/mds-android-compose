@@ -15,24 +15,12 @@ public val SBBIcons.BusSurroundingAreaMedium: ImageVector
         if (_busSurroundingAreaMedium != null) {
             return _busSurroundingAreaMedium!!
         }
-        _busSurroundingAreaMedium = Builder(
-            name = "BusSurroundingAreaMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _busSurroundingAreaMedium = Builder(name = "BusSurroundingAreaMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.519f, 6.519f)
                 curveTo(9.033f, 7.005f, 8.75f, 7.789f, 8.75f, 9.0f)
                 verticalLineToRelative(6.25f)
@@ -131,7 +119,7 @@ public val SBBIcons.BusSurroundingAreaMedium: ImageVector
                 arcToRelative(0.25f, 0.25f, 0.0f, false, false, 0.0f, -0.5f)
             }
         }
-            .build()
+        .build()
         return _busSurroundingAreaMedium!!
     }
 

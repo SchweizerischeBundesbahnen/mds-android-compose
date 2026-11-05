@@ -15,23 +15,11 @@ public val SBBIcons.ArmchairLarge: ImageVector
         if (_armchairLarge != null) {
             return _armchairLarge!!
         }
-        _armchairLarge = Builder(
-            name = "ArmchairLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _armchairLarge = Builder(name = "ArmchairLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.5f, 4.0f)
                 arcTo(4.5f, 4.5f, 0.0f, false, false, 10.0f, 8.5f)
                 verticalLineToRelative(7.725f)
@@ -180,7 +168,7 @@ public val SBBIcons.ArmchairLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _armchairLarge!!
     }
 

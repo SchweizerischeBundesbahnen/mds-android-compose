@@ -15,22 +15,11 @@ public val SBBIcons.ChargingStationMedium: ImageVector
         if (_chargingStationMedium != null) {
             return _chargingStationMedium!!
         }
-        _chargingStationMedium = Builder(
-            name = "ChargingStationMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chargingStationMedium = Builder(name = "ChargingStationMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.25f, 4.25f)
                 curveToRelative(-1.38f, 0.0f, -2.5f, 1.12f, -2.5f, 2.5f)
                 verticalLineToRelative(25.0f)
@@ -103,7 +92,7 @@ public val SBBIcons.ChargingStationMedium: ImageVector
                 arcToRelative(2.501f, 2.501f, 0.0f, false, true, -5.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _chargingStationMedium!!
     }
 

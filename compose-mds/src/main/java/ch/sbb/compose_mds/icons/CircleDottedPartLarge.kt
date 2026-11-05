@@ -15,22 +15,11 @@ public val SBBIcons.CircleDottedPartLarge: ImageVector
         if (_circleDottedPartLarge != null) {
             return _circleDottedPartLarge!!
         }
-        _circleDottedPartLarge = Builder(
-            name = "CircleDottedPartLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _circleDottedPartLarge = Builder(name = "CircleDottedPartLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(24.992f, 42.442f)
                 lineToRelative(0.04f, 0.498f)
                 arcToRelative(20.0f, 20.0f, 0.0f, false, true, -3.063f, 0.0f)
@@ -229,7 +218,7 @@ public val SBBIcons.CircleDottedPartLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _circleDottedPartLarge!!
     }
 

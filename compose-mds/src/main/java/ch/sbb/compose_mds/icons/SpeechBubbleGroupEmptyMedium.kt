@@ -15,24 +15,12 @@ public val SBBIcons.SpeechBubbleGroupEmptyMedium: ImageVector
         if (_speechBubbleGroupEmptyMedium != null) {
             return _speechBubbleGroupEmptyMedium!!
         }
-        _speechBubbleGroupEmptyMedium = Builder(
-            name = "SpeechBubbleGroupEmptyMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _speechBubbleGroupEmptyMedium = Builder(name = "SpeechBubbleGroupEmptyMedium", defaultWidth
+                = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.75f, 6.25f)
                 horizontalLineToRelative(13.0f)
                 verticalLineToRelative(8.5f)
@@ -90,7 +78,7 @@ public val SBBIcons.SpeechBubbleGroupEmptyMedium: ImageVector
                 lineTo(22.25f, 13.75f)
             }
         }
-            .build()
+        .build()
         return _speechBubbleGroupEmptyMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.LiftSmall: ImageVector
         if (_liftSmall != null) {
             return _liftSmall!!
         }
-        _liftSmall = Builder(
-            name = "LiftSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _liftSmall = Builder(name = "LiftSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.0f, 3.17f)
                 lineToRelative(0.354f, 0.355f)
                 lineToRelative(2.12f, 2.122f)
@@ -87,7 +76,7 @@ public val SBBIcons.LiftSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _liftSmall!!
     }
 

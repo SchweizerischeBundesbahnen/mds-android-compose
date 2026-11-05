@@ -15,22 +15,11 @@ public val SBBIcons.BluetoothDisabledMedium: ImageVector
         if (_bluetoothDisabledMedium != null) {
             return _bluetoothDisabledMedium!!
         }
-        _bluetoothDisabledMedium = Builder(
-            name = "BluetoothDisabledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bluetoothDisabledMedium = Builder(name = "BluetoothDisabledMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(17.585f, 4.129f)
                 lineToRelative(-0.835f, -0.751f)
                 lineTo(16.75f, 13.5f)
@@ -61,7 +50,7 @@ public val SBBIcons.BluetoothDisabledMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bluetoothDisabledMedium!!
     }
 

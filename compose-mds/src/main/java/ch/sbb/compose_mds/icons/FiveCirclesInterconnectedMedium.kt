@@ -15,22 +15,12 @@ public val SBBIcons.FiveCirclesInterconnectedMedium: ImageVector
         if (_fiveCirclesInterconnectedMedium != null) {
             return _fiveCirclesInterconnectedMedium!!
         }
-        _fiveCirclesInterconnectedMedium = Builder(
-            name = "FiveCirclesInterconnectedMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fiveCirclesInterconnectedMedium = Builder(name = "FiveCirclesInterconnectedMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.75f, 8.25f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, true, 2.0f, 0.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -2.0f, 0.0f)
@@ -86,7 +76,7 @@ public val SBBIcons.FiveCirclesInterconnectedMedium: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _fiveCirclesInterconnectedMedium!!
     }
 

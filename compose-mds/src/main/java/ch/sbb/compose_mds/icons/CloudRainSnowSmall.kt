@@ -15,22 +15,11 @@ public val SBBIcons.CloudRainSnowSmall: ImageVector
         if (_cloudRainSnowSmall != null) {
             return _cloudRainSnowSmall!!
         }
-        _cloudRainSnowSmall = Builder(
-            name = "CloudRainSnowSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudRainSnowSmall = Builder(name = "CloudRainSnowSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.312f, 9.856f)
                 curveToRelative(0.492f, 0.112f, 0.894f, 0.382f, 1.182f, 0.75f)
                 curveToRelative(0.393f, 0.502f, 0.555f, 1.16f, 0.506f, 1.796f)
@@ -91,7 +80,7 @@ public val SBBIcons.CloudRainSnowSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudRainSnowSmall!!
     }
 

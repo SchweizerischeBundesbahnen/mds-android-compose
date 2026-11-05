@@ -15,22 +15,11 @@ public val SBBIcons.ClockLarge: ImageVector
         if (_clockLarge != null) {
             return _clockLarge!!
         }
-        _clockLarge = Builder(
-            name = "ClockLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _clockLarge = Builder(name = "ClockLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.727f, 3.347f)
                 quadToRelative(0.562f, -0.105f, 1.133f, -0.178f)
                 lineToRelative(0.105f, 0.99f)
@@ -300,7 +289,7 @@ public val SBBIcons.ClockLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _clockLarge!!
     }
 

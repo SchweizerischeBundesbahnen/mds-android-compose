@@ -15,23 +15,11 @@ public val SBBIcons.EarEyeLarge: ImageVector
         if (_earEyeLarge != null) {
             return _earEyeLarge!!
         }
-        _earEyeLarge = Builder(
-            name = "EarEyeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _earEyeLarge = Builder(name = "EarEyeLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(32.5f, 28.0f)
                 curveToRelative(4.26f, 0.0f, 8.373f, 3.158f, 11.096f, 7.222f)
                 lineToRelative(0.186f, 0.278f)
@@ -109,7 +97,7 @@ public val SBBIcons.EarEyeLarge: ImageVector
                 curveTo(10.662f, 8.284f, 11.568f, 8.0f, 12.5f, 8.0f)
             }
         }
-            .build()
+        .build()
         return _earEyeLarge!!
     }
 

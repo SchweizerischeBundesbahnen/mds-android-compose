@@ -15,22 +15,11 @@ public val SBBIcons.BottleAppleMedium: ImageVector
         if (_bottleAppleMedium != null) {
             return _bottleAppleMedium!!
         }
-        _bottleAppleMedium = Builder(
-            name = "BottleAppleMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bottleAppleMedium = Builder(name = "BottleAppleMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.25f, 3.249f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(3.03f)
@@ -153,7 +142,7 @@ public val SBBIcons.BottleAppleMedium: ImageVector
                 curveToRelative(-0.687f, -0.015f, -1.456f, 0.0f, -2.07f, 0.467f)
             }
         }
-            .build()
+        .build()
         return _bottleAppleMedium!!
     }
 

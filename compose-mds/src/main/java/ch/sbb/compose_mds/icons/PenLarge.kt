@@ -15,22 +15,11 @@ public val SBBIcons.PenLarge: ImageVector
         if (_penLarge != null) {
             return _penLarge!!
         }
-        _penLarge = Builder(
-            name = "PenLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _penLarge = Builder(name = "PenLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(4.91f, 43.09f)
                 lineToRelative(0.121f, 0.485f)
                 lineToRelative(-0.808f, 0.202f)
@@ -83,7 +72,7 @@ public val SBBIcons.PenLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _penLarge!!
     }
 

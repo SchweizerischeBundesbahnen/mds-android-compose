@@ -15,23 +15,11 @@ public val SBBIcons.ControlsXMedium: ImageVector
         if (_controlsXMedium != null) {
             return _controlsXMedium!!
         }
-        _controlsXMedium = Builder(
-            name = "ControlsXMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _controlsXMedium = Builder(name = "ControlsXMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.75f, 7.25f)
                 arcToRelative(2.5f, 2.5f, 0.0f, true, false, 0.0f, 5.0f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, false, 0.0f, -5.0f)
@@ -85,7 +73,7 @@ public val SBBIcons.ControlsXMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _controlsXMedium!!
     }
 

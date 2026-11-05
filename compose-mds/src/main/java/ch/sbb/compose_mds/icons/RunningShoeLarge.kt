@@ -15,23 +15,11 @@ public val SBBIcons.RunningShoeLarge: ImageVector
         if (_runningShoeLarge != null) {
             return _runningShoeLarge!!
         }
-        _runningShoeLarge = Builder(
-            name = "RunningShoeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _runningShoeLarge = Builder(name = "RunningShoeLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(7.146f, 16.147f)
                 lineToRelative(13.0f, -13.0f)
                 lineToRelative(0.708f, 0.707f)
@@ -128,7 +116,7 @@ public val SBBIcons.RunningShoeLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _runningShoeLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.PauseLarge: ImageVector
         if (_pauseLarge != null) {
             return _pauseLarge!!
         }
-        _pauseLarge = Builder(
-            name = "PauseLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _pauseLarge = Builder(name = "PauseLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(21.0f, 37.0f)
                 horizontalLineToRelative(-7.0f)
                 lineTo(14.0f, 10.0f)
@@ -53,7 +42,7 @@ public val SBBIcons.PauseLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _pauseLarge!!
     }
 

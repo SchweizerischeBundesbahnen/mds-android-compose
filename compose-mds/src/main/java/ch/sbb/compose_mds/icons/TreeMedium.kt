@@ -15,22 +15,11 @@ public val SBBIcons.TreeMedium: ImageVector
         if (_treeMedium != null) {
             return _treeMedium!!
         }
-        _treeMedium = Builder(
-            name = "TreeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _treeMedium = Builder(name = "TreeMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.25f, 3.262f)
                 arcToRelative(8.0f, 8.0f, 0.0f, false, false, -8.0f, 8.0f)
                 quadToRelative(0.001f, 0.576f, 0.082f, 1.128f)
@@ -83,7 +72,7 @@ public val SBBIcons.TreeMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _treeMedium!!
     }
 

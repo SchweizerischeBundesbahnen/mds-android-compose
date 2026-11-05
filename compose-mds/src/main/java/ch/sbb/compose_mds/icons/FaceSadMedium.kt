@@ -15,23 +15,11 @@ public val SBBIcons.FaceSadMedium: ImageVector
         if (_faceSadMedium != null) {
             return _faceSadMedium!!
         }
-        _faceSadMedium = Builder(
-            name = "FaceSadMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _faceSadMedium = Builder(name = "FaceSadMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.75f, 18.0f)
                 curveToRelative(0.0f, -6.844f, 5.407f, -12.25f, 12.25f, -12.25f)
                 reflectiveCurveTo(30.25f, 11.156f, 30.25f, 18.0f)
@@ -63,7 +51,7 @@ public val SBBIcons.FaceSadMedium: ImageVector
                 arcToRelative(0.25f, 0.25f, 0.0f, false, true, -0.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _faceSadMedium!!
     }
 

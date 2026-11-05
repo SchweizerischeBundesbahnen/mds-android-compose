@@ -15,22 +15,11 @@ public val SBBIcons.SignNoEntryMedium: ImageVector
         if (_signNoEntryMedium != null) {
             return _signNoEntryMedium!!
         }
-        _signNoEntryMedium = Builder(
-            name = "SignNoEntryMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _signNoEntryMedium = Builder(name = "SignNoEntryMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(33.0f, 11.787f)
                 verticalLineToRelative(12.425f)
                 lineTo(24.213f, 33.0f)
@@ -61,7 +50,7 @@ public val SBBIcons.SignNoEntryMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _signNoEntryMedium!!
     }
 

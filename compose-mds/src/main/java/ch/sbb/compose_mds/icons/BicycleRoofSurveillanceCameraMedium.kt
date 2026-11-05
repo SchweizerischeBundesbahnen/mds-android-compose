@@ -15,22 +15,12 @@ public val SBBIcons.BicycleRoofSurveillanceCameraMedium: ImageVector
         if (_bicycleRoofSurveillanceCameraMedium != null) {
             return _bicycleRoofSurveillanceCameraMedium!!
         }
-        _bicycleRoofSurveillanceCameraMedium = Builder(
-            name = "BicycleRoofSurveillanceCameraMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bicycleRoofSurveillanceCameraMedium = Builder(name = "BicycleRoofSurveillanceCameraMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(4.896f, 3.138f)
                 lineToRelative(0.483f, 0.13f)
                 lineToRelative(8.694f, 2.328f)
@@ -120,7 +110,7 @@ public val SBBIcons.BicycleRoofSurveillanceCameraMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bicycleRoofSurveillanceCameraMedium!!
     }
 

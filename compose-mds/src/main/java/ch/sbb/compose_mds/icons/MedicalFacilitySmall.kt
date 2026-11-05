@@ -15,22 +15,11 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
         if (_medicalFacilitySmall != null) {
             return _medicalFacilitySmall!!
         }
-        _medicalFacilitySmall = Builder(
-            name = "MedicalFacilitySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _medicalFacilitySmall = Builder(name = "MedicalFacilitySmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(12.704f, 3.356f)
                 lineToRelative(-0.354f, -0.353f)
                 lineToRelative(-0.353f, 0.353f)
@@ -72,7 +61,7 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
                 verticalLineToRelative(-2.0f)
             }
         }
-            .build()
+        .build()
         return _medicalFacilitySmall!!
     }
 

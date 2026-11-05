@@ -15,24 +15,12 @@ public val SBBIcons.TimetableArrowsCircleSmall: ImageVector
         if (_timetableArrowsCircleSmall != null) {
             return _timetableArrowsCircleSmall!!
         }
-        _timetableArrowsCircleSmall = Builder(
-            name = "TimetableArrowsCircleSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _timetableArrowsCircleSmall = Builder(name = "TimetableArrowsCircleSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.0f, 4.0f)
                 horizontalLineToRelative(7.0f)
                 lineTo(9.0f, 3.0f)
@@ -111,7 +99,7 @@ public val SBBIcons.TimetableArrowsCircleSmall: ImageVector
                 lineTo(11.0f, 17.0f)
             }
         }
-            .build()
+        .build()
         return _timetableArrowsCircleSmall!!
     }
 

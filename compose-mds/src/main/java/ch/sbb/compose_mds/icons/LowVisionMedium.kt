@@ -15,23 +15,11 @@ public val SBBIcons.LowVisionMedium: ImageVector
         if (_lowVisionMedium != null) {
             return _lowVisionMedium!!
         }
-        _lowVisionMedium = Builder(
-            name = "LowVisionMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lowVisionMedium = Builder(name = "LowVisionMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(23.348f, 24.415f)
                 lineToRelative(4.964f, 4.964f)
                 lineToRelative(0.707f, -0.708f)
@@ -77,7 +65,7 @@ public val SBBIcons.LowVisionMedium: ImageVector
                 arcToRelative(5.69f, 5.69f, 0.0f, false, false, -4.025f, -6.975f)
             }
         }
-            .build()
+        .build()
         return _lowVisionMedium!!
     }
 

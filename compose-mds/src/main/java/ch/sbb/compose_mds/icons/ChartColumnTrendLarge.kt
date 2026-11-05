@@ -15,22 +15,11 @@ public val SBBIcons.ChartColumnTrendLarge: ImageVector
         if (_chartColumnTrendLarge != null) {
             return _chartColumnTrendLarge!!
         }
-        _chartColumnTrendLarge = Builder(
-            name = "ChartColumnTrendLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chartColumnTrendLarge = Builder(name = "ChartColumnTrendLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(38.0f, 7.5f)
                 arcToRelative(1.5f, 1.5f, 0.0f, true, true, 3.001f, 0.001f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 38.0f, 7.5f)
@@ -97,7 +86,7 @@ public val SBBIcons.ChartColumnTrendLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _chartColumnTrendLarge!!
     }
 

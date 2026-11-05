@@ -15,24 +15,12 @@ public val SBBIcons.MagnifyingGlassMinusMedium: ImageVector
         if (_magnifyingGlassMinusMedium != null) {
             return _magnifyingGlassMinusMedium!!
         }
-        _magnifyingGlassMinusMedium = Builder(
-            name = "MagnifyingGlassMinusMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _magnifyingGlassMinusMedium = Builder(name = "MagnifyingGlassMinusMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.25f, 5.75f)
                 curveToRelative(-5.524f, 0.0f, -10.0f, 4.478f, -10.0f, 10.0f)
                 curveToRelative(0.0f, 5.524f, 4.476f, 10.0f, 10.0f, 10.0f)
@@ -54,7 +42,7 @@ public val SBBIcons.MagnifyingGlassMinusMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _magnifyingGlassMinusMedium!!
     }
 

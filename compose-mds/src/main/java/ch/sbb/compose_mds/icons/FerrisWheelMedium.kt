@@ -15,22 +15,11 @@ public val SBBIcons.FerrisWheelMedium: ImageVector
         if (_ferrisWheelMedium != null) {
             return _ferrisWheelMedium!!
         }
-        _ferrisWheelMedium = Builder(
-            name = "FerrisWheelMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ferrisWheelMedium = Builder(name = "FerrisWheelMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.0f, 5.25f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, false, -2.0f, 0.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 2.0f, 0.0f)
@@ -117,7 +106,7 @@ public val SBBIcons.FerrisWheelMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _ferrisWheelMedium!!
     }
 

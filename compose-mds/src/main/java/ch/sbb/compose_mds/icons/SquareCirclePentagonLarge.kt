@@ -15,24 +15,12 @@ public val SBBIcons.SquareCirclePentagonLarge: ImageVector
         if (_squareCirclePentagonLarge != null) {
             return _squareCirclePentagonLarge!!
         }
-        _squareCirclePentagonLarge = Builder(
-            name = "SquareCirclePentagonLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _squareCirclePentagonLarge = Builder(name = "SquareCirclePentagonLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(43.0f, 43.0f)
                 horizontalLineTo(4.0f)
                 verticalLineTo(4.0f)
@@ -71,7 +59,7 @@ public val SBBIcons.SquareCirclePentagonLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _squareCirclePentagonLarge!!
     }
 

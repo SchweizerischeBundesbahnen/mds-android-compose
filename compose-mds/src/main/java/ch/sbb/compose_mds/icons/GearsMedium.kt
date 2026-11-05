@@ -15,23 +15,11 @@ public val SBBIcons.GearsMedium: ImageVector
         if (_gearsMedium != null) {
             return _gearsMedium!!
         }
-        _gearsMedium = Builder(
-            name = "GearsMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _gearsMedium = Builder(name = "GearsMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.25f, 4.5f)
                 verticalLineToRelative(3.261f)
                 curveToRelative(1.645f, 0.073f, 3.193f, 0.501f, 4.568f, 1.21f)
@@ -109,7 +97,7 @@ public val SBBIcons.GearsMedium: ImageVector
                 reflectiveCurveToRelative(-4.0f, -1.751f, -4.0f, -4.0f)
             }
         }
-            .build()
+        .build()
         return _gearsMedium!!
     }
 

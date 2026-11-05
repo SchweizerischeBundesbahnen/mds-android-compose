@@ -15,22 +15,11 @@ public val SBBIcons.TwoLinesDiagonalLarge: ImageVector
         if (_twoLinesDiagonalLarge != null) {
             return _twoLinesDiagonalLarge!!
         }
-        _twoLinesDiagonalLarge = Builder(
-            name = "TwoLinesDiagonalLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _twoLinesDiagonalLarge = Builder(name = "TwoLinesDiagonalLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(29.854f, 18.854f)
                 lineToRelative(-12.0f, 12.0f)
                 lineToRelative(-0.707f, -0.707f)
@@ -43,7 +32,7 @@ public val SBBIcons.TwoLinesDiagonalLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _twoLinesDiagonalLarge!!
     }
 

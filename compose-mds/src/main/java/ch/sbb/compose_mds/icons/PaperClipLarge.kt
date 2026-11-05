@@ -15,23 +15,11 @@ public val SBBIcons.PaperClipLarge: ImageVector
         if (_paperClipLarge != null) {
             return _paperClipLarge!!
         }
-        _paperClipLarge = Builder(
-            name = "PaperClipLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _paperClipLarge = Builder(name = "PaperClipLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(31.0f, 4.0f)
                 verticalLineToRelative(33.707f)
                 lineToRelative(-0.146f, 0.147f)
@@ -63,7 +51,7 @@ public val SBBIcons.PaperClipLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _paperClipLarge!!
     }
 

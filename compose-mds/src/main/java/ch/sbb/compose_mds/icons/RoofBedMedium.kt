@@ -15,23 +15,11 @@ public val SBBIcons.RoofBedMedium: ImageVector
         if (_roofBedMedium != null) {
             return _roofBedMedium!!
         }
-        _roofBedMedium = Builder(
-            name = "RoofBedMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _roofBedMedium = Builder(name = "RoofBedMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(4.58f, 25.09f)
                 horizontalLineToRelative(9.5f)
                 verticalLineToRelative(-6.0f)
@@ -69,7 +57,7 @@ public val SBBIcons.RoofBedMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _roofBedMedium!!
     }
 

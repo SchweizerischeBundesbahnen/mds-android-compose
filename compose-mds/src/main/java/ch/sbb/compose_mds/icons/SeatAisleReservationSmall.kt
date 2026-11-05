@@ -15,24 +15,12 @@ public val SBBIcons.SeatAisleReservationSmall: ImageVector
         if (_seatAisleReservationSmall != null) {
             return _seatAisleReservationSmall!!
         }
-        _seatAisleReservationSmall = Builder(
-            name = "SeatAisleReservationSmall",
-            defaultWidth =
-                24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight =
-            24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _seatAisleReservationSmall = Builder(name = "SeatAisleReservationSmall", defaultWidth =
+                24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight =
+                24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.0f, 7.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, true, 2.0f, 0.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -2.0f, 0.0f)
@@ -77,7 +65,7 @@ public val SBBIcons.SeatAisleReservationSmall: ImageVector
                 arcTo(0.51f, 0.51f, 0.0f, false, false, 9.306f, 11.0f)
             }
         }
-            .build()
+        .build()
         return _seatAisleReservationSmall!!
     }
 

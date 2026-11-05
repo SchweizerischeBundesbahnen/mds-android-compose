@@ -15,24 +15,12 @@ public val SBBIcons.SuitcaseQuestionMarkMedium: ImageVector
         if (_suitcaseQuestionMarkMedium != null) {
             return _suitcaseQuestionMarkMedium!!
         }
-        _suitcaseQuestionMarkMedium = Builder(
-            name = "SuitcaseQuestionMarkMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _suitcaseQuestionMarkMedium = Builder(name = "SuitcaseQuestionMarkMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(22.25f, 10.763f)
                 horizontalLineToRelative(9.0f)
                 lineTo(31.25f, 31.25f)
@@ -80,7 +68,7 @@ public val SBBIcons.SuitcaseQuestionMarkMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _suitcaseQuestionMarkMedium!!
     }
 

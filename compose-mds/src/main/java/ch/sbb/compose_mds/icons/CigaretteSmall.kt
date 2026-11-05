@@ -15,23 +15,11 @@ public val SBBIcons.CigaretteSmall: ImageVector
         if (_cigaretteSmall != null) {
             return _cigaretteSmall!!
         }
-        _cigaretteSmall = Builder(
-            name = "CigaretteSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cigaretteSmall = Builder(name = "CigaretteSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.0f, 5.469f)
                 curveToRelative(0.0f, -1.378f, 1.122f, -2.5f, 2.5f, -2.5f)
                 reflectiveCurveTo(21.0f, 4.09f, 21.0f, 5.469f)
@@ -78,7 +66,7 @@ public val SBBIcons.CigaretteSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cigaretteSmall!!
     }
 

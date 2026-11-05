@@ -15,22 +15,11 @@ public val SBBIcons.ArrowCompassMedium: ImageVector
         if (_arrowCompassMedium != null) {
             return _arrowCompassMedium!!
         }
-        _arrowCompassMedium = Builder(
-            name = "ArrowCompassMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowCompassMedium = Builder(name = "ArrowCompassMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(28.856f, 7.728f)
                 lineTo(17.696f, 29.39f)
                 lineToRelative(-0.945f, 1.833f)
@@ -47,7 +36,7 @@ public val SBBIcons.ArrowCompassMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowCompassMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.TwoHousesLarge: ImageVector
         if (_twoHousesLarge != null) {
             return _twoHousesLarge!!
         }
-        _twoHousesLarge = Builder(
-            name = "TwoHousesLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _twoHousesLarge = Builder(name = "TwoHousesLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(45.854f, 22.146f)
                 lineToRelative(-0.707f, 0.706f)
                 lineTo(43.0f, 20.707f)
@@ -80,7 +68,7 @@ public val SBBIcons.TwoHousesLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _twoHousesLarge!!
     }
 

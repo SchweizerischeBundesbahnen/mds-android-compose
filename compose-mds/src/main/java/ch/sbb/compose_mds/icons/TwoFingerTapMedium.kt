@@ -15,22 +15,11 @@ public val SBBIcons.TwoFingerTapMedium: ImageVector
         if (_twoFingerTapMedium != null) {
             return _twoFingerTapMedium!!
         }
-        _twoFingerTapMedium = Builder(
-            name = "TwoFingerTapMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _twoFingerTapMedium = Builder(name = "TwoFingerTapMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.75f, 4.75f)
                 arcToRelative(4.96f, 4.96f, 0.0f, false, false, -3.601f, 1.558f)
                 curveToRelative(-2.473f, 0.299f, -4.399f, 2.382f, -4.399f, 4.942f)
@@ -126,7 +115,7 @@ public val SBBIcons.TwoFingerTapMedium: ImageVector
                 arcToRelative(2.001f, 2.001f, 0.0f, false, true, 3.99f, 0.228f)
             }
         }
-            .build()
+        .build()
         return _twoFingerTapMedium!!
     }
 

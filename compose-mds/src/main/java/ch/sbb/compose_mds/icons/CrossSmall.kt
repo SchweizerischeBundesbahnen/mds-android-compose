@@ -15,22 +15,11 @@ public val SBBIcons.CrossSmall: ImageVector
         if (_crossSmall != null) {
             return _crossSmall!!
         }
-        _crossSmall = Builder(
-            name = "CrossSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _crossSmall = Builder(name = "CrossSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(12.707f, 12.0f)
                 lineToRelative(5.647f, -5.647f)
                 lineToRelative(-0.707f, -0.707f)
@@ -46,7 +35,7 @@ public val SBBIcons.CrossSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _crossSmall!!
     }
 

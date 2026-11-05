@@ -15,22 +15,11 @@ public val SBBIcons.BicycleTandemLarge: ImageVector
         if (_bicycleTandemLarge != null) {
             return _bicycleTandemLarge!!
         }
-        _bicycleTandemLarge = Builder(
-            name = "BicycleTandemLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bicycleTandemLarge = Builder(name = "BicycleTandemLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(36.916f, 12.777f)
                 lineToRelative(-3.84f, 5.758f)
                 lineToRelative(0.82f, 1.639f)
@@ -103,7 +92,7 @@ public val SBBIcons.BicycleTandemLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bicycleTandemLarge!!
     }
 

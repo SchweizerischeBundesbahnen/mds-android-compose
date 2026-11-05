@@ -15,22 +15,11 @@ public val SBBIcons.WaraWarnAppMedium: ImageVector
         if (_waraWarnAppMedium != null) {
             return _waraWarnAppMedium!!
         }
-        _waraWarnAppMedium = Builder(
-            name = "WaraWarnAppMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _waraWarnAppMedium = Builder(name = "WaraWarnAppMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(25.804f, 7.699f)
                 lineToRelative(-5.609f, -2.805f)
                 lineToRelative(0.447f, -0.894f)
@@ -99,7 +88,7 @@ public val SBBIcons.WaraWarnAppMedium: ImageVector
                 arcToRelative(0.3f, 0.3f, 0.0f, false, true, -0.601f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _waraWarnAppMedium!!
     }
 

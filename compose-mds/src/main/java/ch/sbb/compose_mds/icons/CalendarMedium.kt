@@ -15,23 +15,11 @@ public val SBBIcons.CalendarMedium: ImageVector
         if (_calendarMedium != null) {
             return _calendarMedium!!
         }
-        _calendarMedium = Builder(
-            name = "CalendarMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _calendarMedium = Builder(name = "CalendarMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.75f, 7.5f)
                 verticalLineToRelative(1.765f)
                 horizontalLineToRelative(12.5f)
@@ -92,7 +80,7 @@ public val SBBIcons.CalendarMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _calendarMedium!!
     }
 

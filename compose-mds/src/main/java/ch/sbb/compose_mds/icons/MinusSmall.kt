@@ -15,22 +15,11 @@ public val SBBIcons.MinusSmall: ImageVector
         if (_minusSmall != null) {
             return _minusSmall!!
         }
-        _minusSmall = Builder(
-            name = "MinusSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _minusSmall = Builder(name = "MinusSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.5f, 11.5f)
                 horizontalLineToRelative(15.0f)
                 verticalLineToRelative(1.0f)
@@ -38,7 +27,7 @@ public val SBBIcons.MinusSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _minusSmall!!
     }
 

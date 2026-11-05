@@ -15,23 +15,11 @@ public val SBBIcons.CloudFogMedium: ImageVector
         if (_cloudFogMedium != null) {
             return _cloudFogMedium!!
         }
-        _cloudFogMedium = Builder(
-            name = "CloudFogMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudFogMedium = Builder(name = "CloudFogMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(24.18f, 14.984f)
                 curveToRelative(0.792f, 0.118f, 1.43f, 0.514f, 1.88f, 1.076f)
                 curveToRelative(0.554f, 0.694f, 0.8f, 1.614f, 0.738f, 2.518f)
@@ -78,7 +66,7 @@ public val SBBIcons.CloudFogMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudFogMedium!!
     }
 

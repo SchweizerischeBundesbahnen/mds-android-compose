@@ -15,22 +15,11 @@ public val SBBIcons.ArrowCircleEyeMedium: ImageVector
         if (_arrowCircleEyeMedium != null) {
             return _arrowCircleEyeMedium!!
         }
-        _arrowCircleEyeMedium = Builder(
-            name = "ArrowCircleEyeMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowCircleEyeMedium = Builder(name = "ArrowCircleEyeMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 3.25f)
                 curveTo(9.854f, 3.25f, 3.25f, 9.854f, 3.25f, 18.0f)
                 horizontalLineToRelative(1.0f)
@@ -71,7 +60,7 @@ public val SBBIcons.ArrowCircleEyeMedium: ImageVector
                 arcToRelative(2.75f, 2.75f, 0.0f, false, false, 0.0f, -5.5f)
             }
         }
-            .build()
+        .build()
         return _arrowCircleEyeMedium!!
     }
 

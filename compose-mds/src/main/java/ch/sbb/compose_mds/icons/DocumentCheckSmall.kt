@@ -15,22 +15,11 @@ public val SBBIcons.DocumentCheckSmall: ImageVector
         if (_documentCheckSmall != null) {
             return _documentCheckSmall!!
         }
-        _documentCheckSmall = Builder(
-            name = "DocumentCheckSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _documentCheckSmall = Builder(name = "DocumentCheckSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.496f, 4.0f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(0.5f)
@@ -86,7 +75,7 @@ public val SBBIcons.DocumentCheckSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentCheckSmall!!
     }
 

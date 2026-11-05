@@ -15,22 +15,11 @@ public val SBBIcons.WaitingRoomMedium: ImageVector
         if (_waitingRoomMedium != null) {
             return _waitingRoomMedium!!
         }
-        _waitingRoomMedium = Builder(
-            name = "WaitingRoomMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _waitingRoomMedium = Builder(name = "WaitingRoomMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.25f, 11.25f)
                 curveToRelative(0.0f, -3.072f, 2.43f, -5.5f, 5.5f, -5.5f)
                 curveToRelative(3.072f, 0.0f, 5.5f, 2.428f, 5.5f, 5.5f)
@@ -92,7 +81,7 @@ public val SBBIcons.WaitingRoomMedium: ImageVector
                 horizontalLineToRelative(-1.5f)
             }
         }
-            .build()
+        .build()
         return _waitingRoomMedium!!
     }
 

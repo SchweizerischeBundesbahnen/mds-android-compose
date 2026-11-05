@@ -15,22 +15,11 @@ public val SBBIcons.PlayMedium: ImageVector
         if (_playMedium != null) {
             return _playMedium!!
         }
-        _playMedium = Builder(
-            name = "PlayMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _playMedium = Builder(name = "PlayMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(11.502f, 7.068f)
                 lineToRelative(18.0f, 10.5f)
                 lineToRelative(0.74f, 0.431f)
@@ -47,7 +36,7 @@ public val SBBIcons.PlayMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _playMedium!!
     }
 

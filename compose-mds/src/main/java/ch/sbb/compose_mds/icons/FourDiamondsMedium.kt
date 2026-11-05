@@ -15,22 +15,11 @@ public val SBBIcons.FourDiamondsMedium: ImageVector
         if (_fourDiamondsMedium != null) {
             return _fourDiamondsMedium!!
         }
-        _fourDiamondsMedium = Builder(
-            name = "FourDiamondsMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fourDiamondsMedium = Builder(name = "FourDiamondsMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.858f, 17.646f)
                 lineTo(3.504f, 18.0f)
                 lineToRelative(0.354f, 0.354f)
@@ -105,7 +94,7 @@ public val SBBIcons.FourDiamondsMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fourDiamondsMedium!!
     }
 

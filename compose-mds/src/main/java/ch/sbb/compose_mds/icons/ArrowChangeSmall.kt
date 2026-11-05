@@ -15,23 +15,11 @@ public val SBBIcons.ArrowChangeSmall: ImageVector
         if (_arrowChangeSmall != null) {
             return _arrowChangeSmall!!
         }
-        _arrowChangeSmall = Builder(
-            name = "ArrowChangeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _arrowChangeSmall = Builder(name = "ArrowChangeSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(2.65f, 7.65f)
                 lineToRelative(3.5f, -3.5f)
                 lineToRelative(0.353f, -0.354f)
@@ -61,7 +49,7 @@ public val SBBIcons.ArrowChangeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowChangeSmall!!
     }
 

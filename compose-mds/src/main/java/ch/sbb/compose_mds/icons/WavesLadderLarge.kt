@@ -15,23 +15,11 @@ public val SBBIcons.WavesLadderLarge: ImageVector
         if (_wavesLadderLarge != null) {
             return _wavesLadderLarge!!
         }
-        _wavesLadderLarge = Builder(
-            name = "WavesLadderLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _wavesLadderLarge = Builder(name = "WavesLadderLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(44.0f, 37.0f)
                 curveToRelative(-1.532f, 0.0f, -2.272f, 0.445f, -3.08f, 0.93f)
                 curveToRelative(-0.86f, 0.515f, -1.789f, 1.07f, -3.592f, 1.07f)
@@ -137,7 +125,7 @@ public val SBBIcons.WavesLadderLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wavesLadderLarge!!
     }
 

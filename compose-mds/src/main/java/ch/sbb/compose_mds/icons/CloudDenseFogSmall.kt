@@ -15,22 +15,11 @@ public val SBBIcons.CloudDenseFogSmall: ImageVector
         if (_cloudDenseFogSmall != null) {
             return _cloudDenseFogSmall!!
         }
-        _cloudDenseFogSmall = Builder(
-            name = "CloudDenseFogSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudDenseFogSmall = Builder(name = "CloudDenseFogSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.503f, 10.602f)
                 arcToRelative(2.1f, 2.1f, 0.0f, false, false, -1.19f, -0.746f)
                 curveToRelative(0.124f, -0.804f, -0.005f, -1.532f, -0.323f, -2.14f)
@@ -82,7 +71,7 @@ public val SBBIcons.CloudDenseFogSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudDenseFogSmall!!
     }
 

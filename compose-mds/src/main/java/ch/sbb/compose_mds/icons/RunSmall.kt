@@ -15,22 +15,11 @@ public val SBBIcons.RunSmall: ImageVector
         if (_runSmall != null) {
             return _runSmall!!
         }
-        _runSmall = Builder(
-            name = "RunSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _runSmall = Builder(name = "RunSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(16.5f, 5.0f)
                 curveToRelative(-0.257f, 0.0f, -0.5f, 0.243f, -0.5f, 0.5f)
                 reflectiveCurveToRelative(0.243f, 0.5f, 0.5f, 0.5f)
@@ -97,7 +86,7 @@ public val SBBIcons.RunSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _runSmall!!
     }
 

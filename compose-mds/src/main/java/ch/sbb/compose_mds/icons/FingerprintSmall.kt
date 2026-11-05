@@ -15,23 +15,11 @@ public val SBBIcons.FingerprintSmall: ImageVector
         if (_fingerprintSmall != null) {
             return _fingerprintSmall!!
         }
-        _fingerprintSmall = Builder(
-            name = "FingerprintSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fingerprintSmall = Builder(name = "FingerprintSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.78f, 3.1f)
                 quadToRelative(0.85f, -0.098f, 1.719f, -0.1f)
                 curveToRelative(2.876f, 0.0f, 5.561f, 0.791f, 7.869f, 2.158f)
@@ -98,7 +86,7 @@ public val SBBIcons.FingerprintSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fingerprintSmall!!
     }
 

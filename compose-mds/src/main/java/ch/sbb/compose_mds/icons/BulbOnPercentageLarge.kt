@@ -15,22 +15,11 @@ public val SBBIcons.BulbOnPercentageLarge: ImageVector
         if (_bulbOnPercentageLarge != null) {
             return _bulbOnPercentageLarge!!
         }
-        _bulbOnPercentageLarge = Builder(
-            name = "BulbOnPercentageLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bulbOnPercentageLarge = Builder(name = "BulbOnPercentageLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(42.5f, 24.689f)
                 lineToRelative(0.374f, 0.331f)
                 lineToRelative(-14.0f, 15.75f)
@@ -124,7 +113,7 @@ public val SBBIcons.BulbOnPercentageLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bulbOnPercentageLarge!!
     }
 

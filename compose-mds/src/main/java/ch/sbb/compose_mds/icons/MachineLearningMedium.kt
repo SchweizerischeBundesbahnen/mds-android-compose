@@ -15,22 +15,11 @@ public val SBBIcons.MachineLearningMedium: ImageVector
         if (_machineLearningMedium != null) {
             return _machineLearningMedium!!
         }
-        _machineLearningMedium = Builder(
-            name = "MachineLearningMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _machineLearningMedium = Builder(name = "MachineLearningMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(17.25f, 5.23f)
                 arcToRelative(9.6f, 9.6f, 0.0f, false, true, 3.0f, -0.48f)
                 arcToRelative(9.5f, 9.5f, 0.0f, false, true, 9.464f, 10.319f)
@@ -118,7 +107,7 @@ public val SBBIcons.MachineLearningMedium: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _machineLearningMedium!!
     }
 

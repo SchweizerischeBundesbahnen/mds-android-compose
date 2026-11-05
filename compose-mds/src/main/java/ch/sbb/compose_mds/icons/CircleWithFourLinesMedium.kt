@@ -15,24 +15,12 @@ public val SBBIcons.CircleWithFourLinesMedium: ImageVector
         if (_circleWithFourLinesMedium != null) {
             return _circleWithFourLinesMedium!!
         }
-        _circleWithFourLinesMedium = Builder(
-            name = "CircleWithFourLinesMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _circleWithFourLinesMedium = Builder(name = "CircleWithFourLinesMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(19.25f, 10.019f)
                 arcToRelative(7.25f, 7.25f, 0.0f, false, true, 6.73f, 6.731f)
                 lineTo(33.0f, 16.75f)
@@ -55,7 +43,7 @@ public val SBBIcons.CircleWithFourLinesMedium: ImageVector
                 arcToRelative(6.25f, 6.25f, 0.0f, false, false, 0.0f, -12.5f)
             }
         }
-            .build()
+        .build()
         return _circleWithFourLinesMedium!!
     }
 

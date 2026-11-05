@@ -15,23 +15,11 @@ public val SBBIcons.CheckpointsLarge: ImageVector
         if (_checkpointsLarge != null) {
             return _checkpointsLarge!!
         }
-        _checkpointsLarge = Builder(
-            name = "CheckpointsLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _checkpointsLarge = Builder(name = "CheckpointsLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(11.0f, 4.5f)
                 arcToRelative(6.5f, 6.5f, 0.0f, false, true, 6.478f, 6.0f)
                 horizontalLineTo(39.0f)
@@ -92,7 +80,7 @@ public val SBBIcons.CheckpointsLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _checkpointsLarge!!
     }
 

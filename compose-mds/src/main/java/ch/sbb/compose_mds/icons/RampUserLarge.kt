@@ -15,23 +15,11 @@ public val SBBIcons.RampUserLarge: ImageVector
         if (_rampUserLarge != null) {
             return _rampUserLarge!!
         }
-        _rampUserLarge = Builder(
-            name = "RampUserLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _rampUserLarge = Builder(name = "RampUserLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(12.947f, 20.276f)
                 lineToRelative(1.98f, 3.96f)
                 lineTo(17.9f, 28.2f)
@@ -83,7 +71,7 @@ public val SBBIcons.RampUserLarge: ImageVector
                 reflectiveCurveToRelative(-0.71f, -1.5f, -1.5f, -1.5f)
             }
         }
-            .build()
+        .build()
         return _rampUserLarge!!
     }
 

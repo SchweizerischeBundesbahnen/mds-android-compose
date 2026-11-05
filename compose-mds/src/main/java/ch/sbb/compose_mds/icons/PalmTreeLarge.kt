@@ -15,23 +15,11 @@ public val SBBIcons.PalmTreeLarge: ImageVector
         if (_palmTreeLarge != null) {
             return _palmTreeLarge!!
         }
-        _palmTreeLarge = Builder(
-            name = "PalmTreeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _palmTreeLarge = Builder(name = "PalmTreeLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(9.661f, 5.903f)
                 curveToRelative(1.327f, -1.327f, 3.29f, -1.678f, 5.316f, -1.273f)
                 curveToRelative(2.028f, 0.406f, 4.18f, 1.577f, 5.998f, 3.395f)
@@ -156,7 +144,7 @@ public val SBBIcons.PalmTreeLarge: ImageVector
                 curveTo(18.57f, 7.035f, 16.59f, 5.972f, 14.78f, 5.61f)
             }
         }
-            .build()
+        .build()
         return _palmTreeLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.RunMedium: ImageVector
         if (_runMedium != null) {
             return _runMedium!!
         }
-        _runMedium = Builder(
-            name = "RunMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _runMedium = Builder(name = "RunMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(24.75f, 7.25f)
                 curveToRelative(-0.523f, 0.0f, -1.0f, 0.477f, -1.0f, 1.0f)
                 reflectiveCurveToRelative(0.477f, 1.0f, 1.0f, 1.0f)
@@ -97,7 +86,7 @@ public val SBBIcons.RunMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _runMedium!!
     }
 

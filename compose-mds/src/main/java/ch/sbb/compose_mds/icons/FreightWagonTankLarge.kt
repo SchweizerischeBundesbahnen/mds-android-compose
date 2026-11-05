@@ -15,22 +15,11 @@ public val SBBIcons.FreightWagonTankLarge: ImageVector
         if (_freightWagonTankLarge != null) {
             return _freightWagonTankLarge!!
         }
-        _freightWagonTankLarge = Builder(
-            name = "FreightWagonTankLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _freightWagonTankLarge = Builder(name = "FreightWagonTankLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.0f, 11.0f)
                 verticalLineToRelative(1.0f)
                 horizontalLineToRelative(-8.5f)
@@ -139,7 +128,7 @@ public val SBBIcons.FreightWagonTankLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _freightWagonTankLarge!!
     }
 

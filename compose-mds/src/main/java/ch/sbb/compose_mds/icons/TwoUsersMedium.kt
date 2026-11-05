@@ -15,23 +15,11 @@ public val SBBIcons.TwoUsersMedium: ImageVector
         if (_twoUsersMedium != null) {
             return _twoUsersMedium!!
         }
-        _twoUsersMedium = Builder(
-            name = "TwoUsersMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _twoUsersMedium = Builder(name = "TwoUsersMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.139f, 6.793f)
                 curveToRelative(-0.61f, 0.58f, -1.025f, 1.412f, -1.119f, 2.487f)
                 curveToRelative(2.573f, 0.3f, 4.48f, 2.812f, 4.48f, 5.72f)
@@ -73,7 +61,7 @@ public val SBBIcons.TwoUsersMedium: ImageVector
                 curveToRelative(-1.141f, 0.0f, -2.175f, -0.431f, -3.003f, -1.148f)
             }
         }
-            .build()
+        .build()
         return _twoUsersMedium!!
     }
 

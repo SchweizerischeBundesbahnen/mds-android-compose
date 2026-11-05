@@ -15,22 +15,11 @@ public val SBBIcons.SmartphoneShakingSmall: ImageVector
         if (_smartphoneShakingSmall != null) {
             return _smartphoneShakingSmall!!
         }
-        _smartphoneShakingSmall = Builder(
-            name = "SmartphoneShakingSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _smartphoneShakingSmall = Builder(name = "SmartphoneShakingSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(5.569f, 3.69f)
                 lineToRelative(0.86f, -1.433f)
                 lineToRelative(-0.858f, -0.515f)
@@ -103,7 +92,7 @@ public val SBBIcons.SmartphoneShakingSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _smartphoneShakingSmall!!
     }
 

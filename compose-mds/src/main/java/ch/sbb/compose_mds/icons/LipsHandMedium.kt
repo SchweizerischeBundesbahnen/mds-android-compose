@@ -15,23 +15,11 @@ public val SBBIcons.LipsHandMedium: ImageVector
         if (_lipsHandMedium != null) {
             return _lipsHandMedium!!
         }
-        _lipsHandMedium = Builder(
-            name = "LipsHandMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lipsHandMedium = Builder(name = "LipsHandMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.031f, 9.856f)
                 curveToRelative(1.208f, -0.353f, 2.36f, -0.606f, 3.219f, -0.606f)
                 curveToRelative(1.65f, 0.0f, 2.623f, 0.397f, 3.235f, 0.847f)
@@ -150,7 +138,7 @@ public val SBBIcons.LipsHandMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _lipsHandMedium!!
     }
 

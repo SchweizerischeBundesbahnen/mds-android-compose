@@ -15,23 +15,11 @@ public val SBBIcons.UserTieMedium: ImageVector
         if (_userTieMedium != null) {
             return _userTieMedium!!
         }
-        _userTieMedium = Builder(
-            name = "UserTieMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userTieMedium = Builder(name = "UserTieMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 8.75f)
                 curveToRelative(-2.14f, 0.0f, -4.0f, 2.052f, -4.0f, 4.75f)
                 reflectiveCurveToRelative(1.86f, 4.75f, 4.0f, 4.75f)
@@ -74,7 +62,7 @@ public val SBBIcons.UserTieMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _userTieMedium!!
     }
 

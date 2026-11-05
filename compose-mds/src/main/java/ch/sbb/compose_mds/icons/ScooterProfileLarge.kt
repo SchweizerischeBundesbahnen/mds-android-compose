@@ -15,22 +15,11 @@ public val SBBIcons.ScooterProfileLarge: ImageVector
         if (_scooterProfileLarge != null) {
             return _scooterProfileLarge!!
         }
-        _scooterProfileLarge = Builder(
-            name = "ScooterProfileLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _scooterProfileLarge = Builder(name = "ScooterProfileLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(32.97f, 11.332f)
                 lineToRelative(4.886f, 13.677f)
                 arcToRelative(8.46f, 8.46f, 0.0f, false, true, 4.942f, 1.843f)
@@ -94,7 +83,7 @@ public val SBBIcons.ScooterProfileLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _scooterProfileLarge!!
     }
 

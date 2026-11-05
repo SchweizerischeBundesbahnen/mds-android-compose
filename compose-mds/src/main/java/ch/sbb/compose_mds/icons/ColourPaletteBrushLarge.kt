@@ -15,22 +15,11 @@ public val SBBIcons.ColourPaletteBrushLarge: ImageVector
         if (_colourPaletteBrushLarge != null) {
             return _colourPaletteBrushLarge!!
         }
-        _colourPaletteBrushLarge = Builder(
-            name = "ColourPaletteBrushLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _colourPaletteBrushLarge = Builder(name = "ColourPaletteBrushLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.054f, 5.02f)
                 horizontalLineToRelative(0.001f)
                 curveToRelative(2.712f, 0.083f, 5.3f, 0.74f, 7.661f, 1.87f)
@@ -148,7 +137,7 @@ public val SBBIcons.ColourPaletteBrushLarge: ImageVector
                 arcToRelative(2.5f, 2.5f, 0.0f, false, false, 0.0f, -5.0f)
             }
         }
-            .build()
+        .build()
         return _colourPaletteBrushLarge!!
     }
 

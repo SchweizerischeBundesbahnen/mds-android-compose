@@ -15,22 +15,11 @@ public val SBBIcons.HandBriefcaseMedium: ImageVector
         if (_handBriefcaseMedium != null) {
             return _handBriefcaseMedium!!
         }
-        _handBriefcaseMedium = Builder(
-            name = "HandBriefcaseMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handBriefcaseMedium = Builder(name = "HandBriefcaseMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 4.75f)
                 arcToRelative(2.75f, 2.75f, 0.0f, false, false, -2.75f, 2.75f)
                 verticalLineToRelative(0.25f)
@@ -135,7 +124,7 @@ public val SBBIcons.HandBriefcaseMedium: ImageVector
                 horizontalLineToRelative(3.155f)
             }
         }
-            .build()
+        .build()
         return _handBriefcaseMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.MedalLarge: ImageVector
         if (_medalLarge != null) {
             return _medalLarge!!
         }
-        _medalLarge = Builder(
-            name = "MedalLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _medalLarge = Builder(name = "MedalLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.5f, 3.0f)
                 horizontalLineToRelative(-0.732f)
                 lineToRelative(0.266f, 0.682f)
@@ -87,7 +76,7 @@ public val SBBIcons.MedalLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _medalLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.TreeLarge: ImageVector
         if (_treeLarge != null) {
             return _treeLarge!!
         }
-        _treeLarge = Builder(
-            name = "TreeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _treeLarge = Builder(name = "TreeLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.184f, 3.933f)
                 curveToRelative(-4.752f, 0.0f, -8.658f, 3.627f, -8.658f, 8.166f)
                 quadToRelative(0.002f, 0.593f, 0.09f, 1.159f)
@@ -119,7 +108,7 @@ public val SBBIcons.TreeLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _treeLarge!!
     }
 

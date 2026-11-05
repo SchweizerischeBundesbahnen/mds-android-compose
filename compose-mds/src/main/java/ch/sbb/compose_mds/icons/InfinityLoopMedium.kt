@@ -15,22 +15,11 @@ public val SBBIcons.InfinityLoopMedium: ImageVector
         if (_infinityLoopMedium != null) {
             return _infinityLoopMedium!!
         }
-        _infinityLoopMedium = Builder(
-            name = "InfinityLoopMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _infinityLoopMedium = Builder(name = "InfinityLoopMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(21.651f, 12.651f)
                 curveToRelative(2.536f, -2.535f, 6.647f, -2.534f, 9.197f, 0.0f)
                 curveToRelative(2.553f, 2.537f, 2.533f, 6.649f, 0.001f, 9.197f)
@@ -61,7 +50,7 @@ public val SBBIcons.InfinityLoopMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _infinityLoopMedium!!
     }
 

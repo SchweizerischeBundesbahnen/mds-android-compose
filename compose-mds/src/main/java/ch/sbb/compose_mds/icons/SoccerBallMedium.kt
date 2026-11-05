@@ -15,23 +15,11 @@ public val SBBIcons.SoccerBallMedium: ImageVector
         if (_soccerBallMedium != null) {
             return _soccerBallMedium!!
         }
-        _soccerBallMedium = Builder(
-            name = "SoccerBallMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _soccerBallMedium = Builder(name = "SoccerBallMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.25f, 18.0f)
                 curveToRelative(0.0f, -2.717f, 0.788f, -5.25f, 2.148f, -7.383f)
                 lineToRelative(1.5f, 5.11f)
@@ -104,7 +92,7 @@ public val SBBIcons.SoccerBallMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _soccerBallMedium!!
     }
 

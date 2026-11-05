@@ -15,24 +15,12 @@ public val SBBIcons.CustomerAssistanceSbbLarge: ImageVector
         if (_customerAssistanceSbbLarge != null) {
             return _customerAssistanceSbbLarge!!
         }
-        _customerAssistanceSbbLarge = Builder(
-            name = "CustomerAssistanceSbbLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _customerAssistanceSbbLarge = Builder(name = "CustomerAssistanceSbbLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.5f, 21.0f)
                 curveToRelative(2.582f, 0.0f, 4.5f, 2.572f, 4.5f, 5.5f)
                 curveToRelative(0.0f, 1.331f, -0.398f, 2.59f, -1.074f, 3.565f)
@@ -128,7 +116,7 @@ public val SBBIcons.CustomerAssistanceSbbLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _customerAssistanceSbbLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.TickSmall: ImageVector
         if (_tickSmall != null) {
             return _tickSmall!!
         }
-        _tickSmall = Builder(
-            name = "TickSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _tickSmall = Builder(name = "TickSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(19.353f, 7.363f)
                 lineToRelative(-9.0f, 8.99f)
                 lineToRelative(-0.353f, 0.354f)
@@ -42,7 +31,7 @@ public val SBBIcons.TickSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _tickSmall!!
     }
 

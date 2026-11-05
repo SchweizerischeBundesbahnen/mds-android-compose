@@ -15,22 +15,11 @@ public val SBBIcons.TrainCockpitLarge: ImageVector
         if (_trainCockpitLarge != null) {
             return _trainCockpitLarge!!
         }
-        _trainCockpitLarge = Builder(
-            name = "TrainCockpitLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _trainCockpitLarge = Builder(name = "TrainCockpitLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.3f, 18.0f)
                 curveToRelative(3.118f, 0.0f, 5.5f, 2.999f, 5.5f, 6.5f)
                 curveToRelative(0.0f, 1.864f, -0.676f, 3.585f, -1.777f, 4.787f)
@@ -153,7 +142,7 @@ public val SBBIcons.TrainCockpitLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainCockpitLarge!!
     }
 

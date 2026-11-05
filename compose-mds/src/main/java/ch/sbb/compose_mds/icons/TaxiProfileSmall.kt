@@ -15,23 +15,11 @@ public val SBBIcons.TaxiProfileSmall: ImageVector
         if (_taxiProfileSmall != null) {
             return _taxiProfileSmall!!
         }
-        _taxiProfileSmall = Builder(
-            name = "TaxiProfileSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _taxiProfileSmall = Builder(name = "TaxiProfileSmall", defaultWidth = 24.0.dp, defaultHeight
+                = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.0f, 4.0f)
                 horizontalLineToRelative(6.0f)
                 verticalLineToRelative(2.0f)
@@ -87,7 +75,7 @@ public val SBBIcons.TaxiProfileSmall: ImageVector
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, -0.001f, -3.002f)
             }
         }
-            .build()
+        .build()
         return _taxiProfileSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.RouteCircleEndMedium: ImageVector
         if (_routeCircleEndMedium != null) {
             return _routeCircleEndMedium!!
         }
-        _routeCircleEndMedium = Builder(
-            name = "RouteCircleEndMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _routeCircleEndMedium = Builder(name = "RouteCircleEndMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(21.75f, 10.25f)
                 arcToRelative(8.5f, 8.5f, 0.0f, true, false, 0.0f, 17.0f)
                 arcToRelative(8.5f, 8.5f, 0.0f, false, false, 0.0f, -17.0f)
@@ -47,7 +36,7 @@ public val SBBIcons.RouteCircleEndMedium: ImageVector
                 arcToRelative(5.25f, 5.25f, 0.0f, false, false, 0.0f, 10.5f)
             }
         }
-            .build()
+        .build()
         return _routeCircleEndMedium!!
     }
 

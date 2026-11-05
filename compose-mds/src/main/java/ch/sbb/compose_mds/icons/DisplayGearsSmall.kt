@@ -15,22 +15,11 @@ public val SBBIcons.DisplayGearsSmall: ImageVector
         if (_displayGearsSmall != null) {
             return _displayGearsSmall!!
         }
-        _displayGearsSmall = Builder(
-            name = "DisplayGearsSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _displayGearsSmall = Builder(name = "DisplayGearsSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(2.5f, 5.0f)
                 horizontalLineTo(2.0f)
                 verticalLineToRelative(12.0f)
@@ -104,7 +93,7 @@ public val SBBIcons.DisplayGearsSmall: ImageVector
                 arcTo(2.5f, 2.5f, 0.0f, false, false, 12.5f, 12.0f)
             }
         }
-            .build()
+        .build()
         return _displayGearsSmall!!
     }
 

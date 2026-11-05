@@ -15,22 +15,11 @@ public val SBBIcons.UserSmall: ImageVector
         if (_userSmall != null) {
             return _userSmall!!
         }
-        _userSmall = Builder(
-            name = "UserSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userSmall = Builder(name = "UserSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.5f, 9.0f)
                 curveToRelative(0.0f, -1.732f, 1.189f, -3.0f, 2.5f, -3.0f)
                 reflectiveCurveToRelative(2.5f, 1.268f, 2.5f, 3.0f)
@@ -54,7 +43,7 @@ public val SBBIcons.UserSmall: ImageVector
                 curveToRelative(-0.152f, -2.88f, -1.608f, -5.717f, -3.971f, -6.726f)
             }
         }
-            .build()
+        .build()
         return _userSmall!!
     }
 

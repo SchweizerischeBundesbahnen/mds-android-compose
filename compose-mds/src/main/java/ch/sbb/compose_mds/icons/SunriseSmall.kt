@@ -15,23 +15,11 @@ public val SBBIcons.SunriseSmall: ImageVector
         if (_sunriseSmall != null) {
             return _sunriseSmall!!
         }
-        _sunriseSmall = Builder(
-            name = "SunriseSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _sunriseSmall = Builder(name = "SunriseSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 7.0f)
                 lineTo(12.0f, 4.0f)
                 horizontalLineToRelative(1.0f)
@@ -75,7 +63,7 @@ public val SBBIcons.SunriseSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _sunriseSmall!!
     }
 

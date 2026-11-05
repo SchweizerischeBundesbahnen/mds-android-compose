@@ -15,22 +15,11 @@ public val SBBIcons.CarProfileRoofMedium: ImageVector
         if (_carProfileRoofMedium != null) {
             return _carProfileRoofMedium!!
         }
-        _carProfileRoofMedium = Builder(
-            name = "CarProfileRoofMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carProfileRoofMedium = Builder(name = "CarProfileRoofMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.627f, 19.75f)
                 curveToRelative(0.414f, 0.0f, 0.804f, 0.174f, 1.088f, 0.471f)
                 lineToRelative(3.658f, 3.825f)
@@ -99,7 +88,7 @@ public val SBBIcons.CarProfileRoofMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _carProfileRoofMedium!!
     }
 

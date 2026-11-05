@@ -15,22 +15,11 @@ public val SBBIcons.HeartFilledMedium: ImageVector
         if (_heartFilledMedium != null) {
             return _heartFilledMedium!!
         }
-        _heartFilledMedium = Builder(
-            name = "HeartFilledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _heartFilledMedium = Builder(name = "HeartFilledMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.25f, 6.25f)
                 arcToRelative(7.97f, 7.97f, 0.0f, false, true, 7.519f, 5.243f)
                 lineToRelative(0.11f, 0.325f)
@@ -54,7 +43,7 @@ public val SBBIcons.HeartFilledMedium: ImageVector
                 arcTo(7.91f, 7.91f, 0.0f, false, true, 23.25f, 6.25f)
             }
         }
-            .build()
+        .build()
         return _heartFilledMedium!!
     }
 

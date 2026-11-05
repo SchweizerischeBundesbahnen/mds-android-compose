@@ -15,22 +15,11 @@ public val SBBIcons.DocumentSoundMedium: ImageVector
         if (_documentSoundMedium != null) {
             return _documentSoundMedium!!
         }
-        _documentSoundMedium = Builder(
-            name = "DocumentSoundMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _documentSoundMedium = Builder(name = "DocumentSoundMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.944f, 6.246f)
                 lineToRelative(0.146f, 0.147f)
                 lineToRelative(7.514f, 7.509f)
@@ -80,7 +69,7 @@ public val SBBIcons.DocumentSoundMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentSoundMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.MountainSunMedium: ImageVector
         if (_mountainSunMedium != null) {
             return _mountainSunMedium!!
         }
-        _mountainSunMedium = Builder(
-            name = "MountainSunMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mountainSunMedium = Builder(name = "MountainSunMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.5f, 9.251f)
                 arcToRelative(5.75f, 5.75f, 0.0f, false, false, -0.828f, 11.44f)
                 lineToRelative(-5.606f, 9.811f)
@@ -79,7 +68,7 @@ public val SBBIcons.MountainSunMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _mountainSunMedium!!
     }
 

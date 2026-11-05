@@ -15,22 +15,11 @@ public val SBBIcons.RouteCircleStartLarge: ImageVector
         if (_routeCircleStartLarge != null) {
             return _routeCircleStartLarge!!
         }
-        _routeCircleStartLarge = Builder(
-            name = "RouteCircleStartLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _routeCircleStartLarge = Builder(name = "RouteCircleStartLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.5f, 12.0f)
                 curveToRelative(6.737f, 0.0f, 12.227f, 5.33f, 12.49f, 12.0f)
                 horizontalLineTo(42.0f)
@@ -52,7 +41,7 @@ public val SBBIcons.RouteCircleStartLarge: ImageVector
                 arcToRelative(5.5f, 5.5f, 0.0f, false, false, 0.0f, -11.0f)
             }
         }
-            .build()
+        .build()
         return _routeCircleStartLarge!!
     }
 

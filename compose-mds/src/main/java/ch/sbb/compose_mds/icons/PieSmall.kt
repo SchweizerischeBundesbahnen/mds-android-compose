@@ -15,22 +15,11 @@ public val SBBIcons.PieSmall: ImageVector
         if (_pieSmall != null) {
             return _pieSmall!!
         }
-        _pieSmall = Builder(
-            name = "PieSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _pieSmall = Builder(name = "PieSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.0f, 7.01f)
                 lineTo(4.0f, 7.01f)
                 verticalLineToRelative(3.975f)
@@ -121,7 +110,7 @@ public val SBBIcons.PieSmall: ImageVector
                 lineTo(5.0f, 8.01f)
             }
         }
-            .build()
+        .build()
         return _pieSmall!!
     }
 

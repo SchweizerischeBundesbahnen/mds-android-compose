@@ -15,22 +15,11 @@ public val SBBIcons.QuestionMarkLarge: ImageVector
         if (_questionMarkLarge != null) {
             return _questionMarkLarge!!
         }
-        _questionMarkLarge = Builder(
-            name = "QuestionMarkLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _questionMarkLarge = Builder(name = "QuestionMarkLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(25.558f, 33.582f)
                 verticalLineToRelative(3.878f)
                 horizontalLineToRelative(-4.03f)
@@ -59,7 +48,7 @@ public val SBBIcons.QuestionMarkLarge: ImageVector
                 quadToRelative(1.882f, -0.95f, 4.234f, -0.95f)
             }
         }
-            .build()
+        .build()
         return _questionMarkLarge!!
     }
 

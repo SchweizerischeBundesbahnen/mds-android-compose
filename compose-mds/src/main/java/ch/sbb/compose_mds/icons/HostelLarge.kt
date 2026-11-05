@@ -15,23 +15,11 @@ public val SBBIcons.HostelLarge: ImageVector
         if (_hostelLarge != null) {
             return _hostelLarge!!
         }
-        _hostelLarge = Builder(
-            name = "HostelLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _hostelLarge = Builder(name = "HostelLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(39.0f, 9.0f)
                 horizontalLineToRelative(4.5f)
                 verticalLineToRelative(1.0f)
@@ -117,7 +105,7 @@ public val SBBIcons.HostelLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _hostelLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CoinStackMedium: ImageVector
         if (_coinStackMedium != null) {
             return _coinStackMedium!!
         }
-        _coinStackMedium = Builder(
-            name = "CoinStackMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _coinStackMedium = Builder(name = "CoinStackMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.97f, 8.285f)
                 curveToRelative(-1.151f, 0.64f, -1.72f, 1.444f, -1.72f, 2.215f)
                 reflectiveCurveToRelative(0.569f, 1.575f, 1.72f, 2.215f)
@@ -130,7 +118,7 @@ public val SBBIcons.CoinStackMedium: ImageVector
                 reflectiveCurveToRelative(3.707f, -0.434f, 5.016f, -1.161f)
             }
         }
-            .build()
+        .build()
         return _coinStackMedium!!
     }
 

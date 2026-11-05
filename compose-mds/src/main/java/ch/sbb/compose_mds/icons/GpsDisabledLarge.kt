@@ -15,23 +15,11 @@ public val SBBIcons.GpsDisabledLarge: ImageVector
         if (_gpsDisabledLarge != null) {
             return _gpsDisabledLarge!!
         }
-        _gpsDisabledLarge = Builder(
-            name = "GpsDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _gpsDisabledLarge = Builder(name = "GpsDisabledLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(35.808f, 36.516f)
                 lineToRelative(9.839f, 9.838f)
                 lineToRelative(0.707f, -0.707f)
@@ -85,7 +73,7 @@ public val SBBIcons.GpsDisabledLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _gpsDisabledLarge!!
     }
 

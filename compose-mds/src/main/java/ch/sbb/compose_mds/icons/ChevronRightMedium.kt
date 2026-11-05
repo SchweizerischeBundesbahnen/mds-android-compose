@@ -15,22 +15,11 @@ public val SBBIcons.ChevronRightMedium: ImageVector
         if (_chevronRightMedium != null) {
             return _chevronRightMedium!!
         }
-        _chevronRightMedium = Builder(
-            name = "ChevronRightMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chevronRightMedium = Builder(name = "ChevronRightMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.293f, 18.0f)
                 lineTo(11.647f, 6.353f)
                 lineToRelative(0.707f, -0.707f)
@@ -42,7 +31,7 @@ public val SBBIcons.ChevronRightMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _chevronRightMedium!!
     }
 

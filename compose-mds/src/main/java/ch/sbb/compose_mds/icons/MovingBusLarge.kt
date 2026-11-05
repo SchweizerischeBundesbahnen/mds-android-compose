@@ -15,23 +15,11 @@ public val SBBIcons.MovingBusLarge: ImageVector
         if (_movingBusLarge != null) {
             return _movingBusLarge!!
         }
-        _movingBusLarge = Builder(
-            name = "MovingBusLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _movingBusLarge = Builder(name = "MovingBusLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(29.5f, 8.999f)
                 arcToRelative(5.5f, 5.5f, 0.0f, false, true, 5.5f, 5.5f)
                 verticalLineToRelative(4.5f)
@@ -122,7 +110,7 @@ public val SBBIcons.MovingBusLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _movingBusLarge!!
     }
 

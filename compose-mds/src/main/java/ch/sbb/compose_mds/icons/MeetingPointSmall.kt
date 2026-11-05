@@ -15,22 +15,11 @@ public val SBBIcons.MeetingPointSmall: ImageVector
         if (_meetingPointSmall != null) {
             return _meetingPointSmall!!
         }
-        _meetingPointSmall = Builder(
-            name = "MeetingPointSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _meetingPointSmall = Builder(name = "MeetingPointSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.293f, 8.0f)
                 lineTo(2.896f, 4.604f)
                 lineToRelative(0.708f, -0.707f)
@@ -84,7 +73,7 @@ public val SBBIcons.MeetingPointSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _meetingPointSmall!!
     }
 

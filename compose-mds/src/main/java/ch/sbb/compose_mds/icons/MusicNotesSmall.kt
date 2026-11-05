@@ -15,23 +15,11 @@ public val SBBIcons.MusicNotesSmall: ImageVector
         if (_musicNotesSmall != null) {
             return _musicNotesSmall!!
         }
-        _musicNotesSmall = Builder(
-            name = "MusicNotesSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _musicNotesSmall = Builder(name = "MusicNotesSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.0f, 1.9f)
                 verticalLineToRelative(13.6f)
                 arcToRelative(3.5f, 3.5f, 0.0f, true, true, -1.0f, -2.45f)
@@ -56,7 +44,7 @@ public val SBBIcons.MusicNotesSmall: ImageVector
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, -5.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _musicNotesSmall!!
     }
 

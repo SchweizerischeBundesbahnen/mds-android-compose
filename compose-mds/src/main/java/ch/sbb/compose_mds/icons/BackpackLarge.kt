@@ -15,23 +15,11 @@ public val SBBIcons.BackpackLarge: ImageVector
         if (_backpackLarge != null) {
             return _backpackLarge!!
         }
-        _backpackLarge = Builder(
-            name = "BackpackLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _backpackLarge = Builder(name = "BackpackLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(34.18f, 6.0f)
                 arcToRelative(0.5f, 0.5f, 0.0f, false, false, -0.466f, 0.315f)
                 lineTo(32.32f, 9.803f)
@@ -164,7 +152,7 @@ public val SBBIcons.BackpackLarge: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, 0.586f, -1.414f)
             }
         }
-            .build()
+        .build()
         return _backpackLarge!!
     }
 

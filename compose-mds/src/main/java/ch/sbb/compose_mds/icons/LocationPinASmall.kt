@@ -15,22 +15,11 @@ public val SBBIcons.LocationPinASmall: ImageVector
         if (_locationPinASmall != null) {
             return _locationPinASmall!!
         }
-        _locationPinASmall = Builder(
-            name = "LocationPinASmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locationPinASmall = Builder(name = "LocationPinASmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 4.002f)
                 arcToRelative(6.0f, 6.0f, 0.0f, false, false, -6.0f, 6.0f)
                 verticalLineToRelative(0.02f)
@@ -66,7 +55,7 @@ public val SBBIcons.LocationPinASmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _locationPinASmall!!
     }
 

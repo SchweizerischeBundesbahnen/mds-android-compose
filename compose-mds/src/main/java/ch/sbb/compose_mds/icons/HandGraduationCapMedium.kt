@@ -15,22 +15,11 @@ public val SBBIcons.HandGraduationCapMedium: ImageVector
         if (_handGraduationCapMedium != null) {
             return _handGraduationCapMedium!!
         }
-        _handGraduationCapMedium = Builder(
-            name = "HandGraduationCapMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handGraduationCapMedium = Builder(name = "HandGraduationCapMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.202f, 3.293f)
                 lineTo(18.0f, 3.203f)
                 lineToRelative(-0.202f, 0.09f)
@@ -121,7 +110,7 @@ public val SBBIcons.HandGraduationCapMedium: ImageVector
                 horizontalLineToRelative(3.16f)
             }
         }
-            .build()
+        .build()
         return _handGraduationCapMedium!!
     }
 

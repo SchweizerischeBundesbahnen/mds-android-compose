@@ -15,23 +15,11 @@ public val SBBIcons.BusSbbLarge: ImageVector
         if (_busSbbLarge != null) {
             return _busSbbLarge!!
         }
-        _busSbbLarge = Builder(
-            name = "BusSbbLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _busSbbLarge = Builder(name = "BusSbbLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(33.5f, 7.0f)
                 curveToRelative(1.774f, 0.0f, 3.178f, 0.412f, 4.133f, 1.367f)
                 curveTo(38.587f, 9.322f, 39.0f, 10.726f, 39.0f, 12.5f)
@@ -129,7 +117,7 @@ public val SBBIcons.BusSbbLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _busSbbLarge!!
     }
 

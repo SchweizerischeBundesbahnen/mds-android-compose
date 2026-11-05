@@ -15,22 +15,11 @@ public val SBBIcons.TrainProfileSignalSmall: ImageVector
         if (_trainProfileSignalSmall != null) {
             return _trainProfileSignalSmall!!
         }
-        _trainProfileSignalSmall = Builder(
-            name = "TrainProfileSignalSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _trainProfileSignalSmall = Builder(name = "TrainProfileSignalSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(10.0f, 2.899f)
                 lineToRelative(0.277f, 0.185f)
                 lineToRelative(3.0f, 2.0f)
@@ -119,7 +108,7 @@ public val SBBIcons.TrainProfileSignalSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainProfileSignalSmall!!
     }
 

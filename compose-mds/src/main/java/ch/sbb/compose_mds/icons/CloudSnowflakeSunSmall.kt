@@ -15,22 +15,11 @@ public val SBBIcons.CloudSnowflakeSunSmall: ImageVector
         if (_cloudSnowflakeSunSmall != null) {
             return _cloudSnowflakeSunSmall!!
         }
-        _cloudSnowflakeSunSmall = Builder(
-            name = "CloudSnowflakeSunSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudSnowflakeSunSmall = Builder(name = "CloudSnowflakeSunSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.925f, 6.536f)
                 curveToRelative(0.436f, 0.292f, 0.808f, 0.69f, 1.065f, 1.18f)
                 curveToRelative(0.318f, 0.609f, 0.448f, 1.337f, 0.322f, 2.143f)
@@ -93,7 +82,7 @@ public val SBBIcons.CloudSnowflakeSunSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudSnowflakeSunSmall!!
     }
 

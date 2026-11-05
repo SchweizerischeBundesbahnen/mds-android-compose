@@ -15,22 +15,11 @@ public val SBBIcons.MoneyExchangeSmall: ImageVector
         if (_moneyExchangeSmall != null) {
             return _moneyExchangeSmall!!
         }
-        _moneyExchangeSmall = Builder(
-            name = "MoneyExchangeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _moneyExchangeSmall = Builder(name = "MoneyExchangeSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.328f, 3.0f)
                 curveTo(7.147f, 2.99f, 3.01f, 7.03f, 3.0f, 12.001f)
                 lineTo(2.0f, 12.0f)
@@ -96,7 +85,7 @@ public val SBBIcons.MoneyExchangeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _moneyExchangeSmall!!
     }
 

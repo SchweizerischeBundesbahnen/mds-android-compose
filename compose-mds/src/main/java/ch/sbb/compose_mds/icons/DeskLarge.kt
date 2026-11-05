@@ -15,22 +15,11 @@ public val SBBIcons.DeskLarge: ImageVector
         if (_deskLarge != null) {
             return _deskLarge!!
         }
-        _deskLarge = Builder(
-            name = "DeskLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _deskLarge = Builder(name = "DeskLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(41.0f, 41.999f)
                 horizontalLineToRelative(-1.0f)
                 lineTo(40.0f, 33.0f)
@@ -59,7 +48,7 @@ public val SBBIcons.DeskLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _deskLarge!!
     }
 

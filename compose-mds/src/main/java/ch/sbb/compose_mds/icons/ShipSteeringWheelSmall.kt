@@ -15,22 +15,11 @@ public val SBBIcons.ShipSteeringWheelSmall: ImageVector
         if (_shipSteeringWheelSmall != null) {
             return _shipSteeringWheelSmall!!
         }
-        _shipSteeringWheelSmall = Builder(
-            name = "ShipSteeringWheelSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _shipSteeringWheelSmall = Builder(name = "ShipSteeringWheelSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.0f, 4.016f)
                 verticalLineTo(2.0f)
                 horizontalLineToRelative(1.0f)
@@ -115,7 +104,7 @@ public val SBBIcons.ShipSteeringWheelSmall: ImageVector
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 11.5f, 10.0f)
             }
         }
-            .build()
+        .build()
         return _shipSteeringWheelSmall!!
     }
 

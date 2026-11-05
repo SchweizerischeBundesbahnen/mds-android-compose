@@ -15,23 +15,11 @@ public val SBBIcons.DiscFloppySmall: ImageVector
         if (_discFloppySmall != null) {
             return _discFloppySmall!!
         }
-        _discFloppySmall = Builder(
-            name = "DiscFloppySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _discFloppySmall = Builder(name = "DiscFloppySmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.5f, 4.0f)
                 lineTo(4.0f, 4.0f)
                 verticalLineToRelative(16.0f)
@@ -82,7 +70,7 @@ public val SBBIcons.DiscFloppySmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _discFloppySmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.LocomotiveViaductLarge: ImageVector
         if (_locomotiveViaductLarge != null) {
             return _locomotiveViaductLarge!!
         }
-        _locomotiveViaductLarge = Builder(
-            name = "LocomotiveViaductLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locomotiveViaductLarge = Builder(name = "LocomotiveViaductLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(21.5f, 5.0f)
                 curveToRelative(-0.747f, 0.0f, -1.397f, 0.409f, -1.74f, 1.014f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, -0.118f, 3.954f)
@@ -182,7 +171,7 @@ public val SBBIcons.LocomotiveViaductLarge: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, true, -2.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _locomotiveViaductLarge!!
     }
 

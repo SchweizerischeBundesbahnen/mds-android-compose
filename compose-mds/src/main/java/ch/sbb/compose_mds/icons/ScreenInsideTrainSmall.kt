@@ -15,22 +15,11 @@ public val SBBIcons.ScreenInsideTrainSmall: ImageVector
         if (_screenInsideTrainSmall != null) {
             return _screenInsideTrainSmall!!
         }
-        _screenInsideTrainSmall = Builder(
-            name = "ScreenInsideTrainSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _screenInsideTrainSmall = Builder(name = "ScreenInsideTrainSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.0f, 4.0f)
                 horizontalLineToRelative(1.293f)
                 lineTo(20.0f, 7.707f)
@@ -77,7 +66,7 @@ public val SBBIcons.ScreenInsideTrainSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _screenInsideTrainSmall!!
     }
 

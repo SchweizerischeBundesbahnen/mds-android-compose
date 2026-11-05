@@ -15,23 +15,11 @@ public val SBBIcons.WheelchairSmall: ImageVector
         if (_wheelchairSmall != null) {
             return _wheelchairSmall!!
         }
-        _wheelchairSmall = Builder(
-            name = "WheelchairSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelchairSmall = Builder(name = "WheelchairSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.5f, 5.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, false, 0.0f, 2.0f)
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
@@ -56,7 +44,7 @@ public val SBBIcons.WheelchairSmall: ImageVector
                 arcToRelative(4.514f, 4.514f, 0.0f, false, true, -4.5f, -4.5f)
             }
         }
-            .build()
+        .build()
         return _wheelchairSmall!!
     }
 

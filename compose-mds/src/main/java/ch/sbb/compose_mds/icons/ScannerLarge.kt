@@ -15,23 +15,11 @@ public val SBBIcons.ScannerLarge: ImageVector
         if (_scannerLarge != null) {
             return _scannerLarge!!
         }
-        _scannerLarge = Builder(
-            name = "ScannerLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _scannerLarge = Builder(name = "ScannerLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(38.5f, 6.0f)
                 arcTo(2.5f, 2.5f, 0.0f, false, true, 41.0f, 8.5f)
                 verticalLineToRelative(4.118f)
@@ -91,7 +79,7 @@ public val SBBIcons.ScannerLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _scannerLarge!!
     }
 

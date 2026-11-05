@@ -15,23 +15,11 @@ public val SBBIcons.VeganMedium: ImageVector
         if (_veganMedium != null) {
             return _veganMedium!!
         }
-        _veganMedium = Builder(
-            name = "VeganMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _veganMedium = Builder(name = "VeganMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.38f, 3.25f)
                 horizontalLineToRelative(-0.376f)
                 lineToRelative(-0.104f, 0.362f)
@@ -81,7 +69,7 @@ public val SBBIcons.VeganMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _veganMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.BellMedium: ImageVector
         if (_bellMedium != null) {
             return _bellMedium!!
         }
-        _bellMedium = Builder(
-            name = "BellMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bellMedium = Builder(name = "BellMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.25f, 4.75f)
                 horizontalLineToRelative(5.5f)
                 verticalLineToRelative(1.853f)
@@ -78,7 +67,7 @@ public val SBBIcons.BellMedium: ImageVector
                 verticalLineToRelative(-9.0f)
             }
         }
-            .build()
+        .build()
         return _bellMedium!!
     }
 

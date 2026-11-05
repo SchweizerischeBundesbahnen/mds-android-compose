@@ -15,22 +15,11 @@ public val SBBIcons.MinimizeScreenSmall: ImageVector
         if (_minimizeScreenSmall != null) {
             return _minimizeScreenSmall!!
         }
-        _minimizeScreenSmall = Builder(
-            name = "MinimizeScreenSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _minimizeScreenSmall = Builder(name = "MinimizeScreenSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.0f, 9.0f)
                 lineTo(9.0f, 4.0f)
                 horizontalLineToRelative(1.0f)
@@ -62,7 +51,7 @@ public val SBBIcons.MinimizeScreenSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _minimizeScreenSmall!!
     }
 

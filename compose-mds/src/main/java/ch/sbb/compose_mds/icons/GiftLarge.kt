@@ -15,22 +15,11 @@ public val SBBIcons.GiftLarge: ImageVector
         if (_giftLarge != null) {
             return _giftLarge!!
         }
-        _giftLarge = Builder(
-            name = "GiftLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _giftLarge = Builder(name = "GiftLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(31.915f, 5.136f)
                 arcToRelative(4.14f, 4.14f, 0.0f, false, false, -3.119f, 0.417f)
                 lineToRelative(-0.005f, 0.003f)
@@ -138,7 +127,7 @@ public val SBBIcons.GiftLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _giftLarge!!
     }
 

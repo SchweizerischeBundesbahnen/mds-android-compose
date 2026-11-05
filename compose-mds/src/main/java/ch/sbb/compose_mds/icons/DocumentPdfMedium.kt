@@ -15,22 +15,11 @@ public val SBBIcons.DocumentPdfMedium: ImageVector
         if (_documentPdfMedium != null) {
             return _documentPdfMedium!!
         }
-        _documentPdfMedium = Builder(
-            name = "DocumentPdfMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _documentPdfMedium = Builder(name = "DocumentPdfMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(26.75f, 14.044f)
                 lineTo(26.75f, 29.75f)
                 lineTo(9.25f, 29.75f)
@@ -102,7 +91,7 @@ public val SBBIcons.DocumentPdfMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _documentPdfMedium!!
     }
 

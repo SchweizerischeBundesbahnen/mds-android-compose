@@ -15,22 +15,11 @@ public val SBBIcons.WifiDisabledMedium: ImageVector
         if (_wifiDisabledMedium != null) {
             return _wifiDisabledMedium!!
         }
-        _wifiDisabledMedium = Builder(
-            name = "WifiDisabledMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wifiDisabledMedium = Builder(name = "WifiDisabledMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(8.096f, 8.803f)
                 lineToRelative(-3.2f, -3.2f)
                 lineToRelative(0.708f, -0.707f)
@@ -81,7 +70,7 @@ public val SBBIcons.WifiDisabledMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wifiDisabledMedium!!
     }
 

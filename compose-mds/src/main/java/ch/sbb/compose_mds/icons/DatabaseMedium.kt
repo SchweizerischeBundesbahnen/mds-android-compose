@@ -15,23 +15,11 @@ public val SBBIcons.DatabaseMedium: ImageVector
         if (_databaseMedium != null) {
             return _databaseMedium!!
         }
-        _databaseMedium = Builder(
-            name = "DatabaseMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _databaseMedium = Builder(name = "DatabaseMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.75f, 9.0f)
                 curveToRelative(0.0f, -0.273f, 0.189f, -0.636f, 0.781f, -1.05f)
                 curveToRelative(0.579f, -0.406f, 1.45f, -0.791f, 2.575f, -1.123f)
@@ -107,7 +95,7 @@ public val SBBIcons.DatabaseMedium: ImageVector
                 quadToRelative(0.106f, -0.075f, 0.208f, -0.154f)
             }
         }
-            .build()
+        .build()
         return _databaseMedium!!
     }
 

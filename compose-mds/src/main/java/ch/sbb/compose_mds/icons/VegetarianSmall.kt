@@ -15,23 +15,11 @@ public val SBBIcons.VegetarianSmall: ImageVector
         if (_vegetarianSmall != null) {
             return _vegetarianSmall!!
         }
-        _vegetarianSmall = Builder(
-            name = "VegetarianSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _vegetarianSmall = Builder(name = "VegetarianSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.365f, 4.426f)
                 lineToRelative(-0.067f, -0.442f)
                 lineToRelative(-0.446f, 0.016f)
@@ -60,7 +48,7 @@ public val SBBIcons.VegetarianSmall: ImageVector
                 arcToRelative(45.2f, 45.2f, 0.0f, false, false, -8.023f, 9.571f)
             }
         }
-            .build()
+        .build()
         return _vegetarianSmall!!
     }
 

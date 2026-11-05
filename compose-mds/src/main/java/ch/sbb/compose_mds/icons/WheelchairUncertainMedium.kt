@@ -15,24 +15,12 @@ public val SBBIcons.WheelchairUncertainMedium: ImageVector
         if (_wheelchairUncertainMedium != null) {
             return _wheelchairUncertainMedium!!
         }
-        _wheelchairUncertainMedium = Builder(
-            name = "WheelchairUncertainMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelchairUncertainMedium = Builder(name = "WheelchairUncertainMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(24.138f, 8.29f)
                 curveToRelative(1.653f, -0.81f, 3.7f, -0.72f, 5.369f, 0.094f)
                 lineToRelative(0.008f, 0.004f)
@@ -88,7 +76,7 @@ public val SBBIcons.WheelchairUncertainMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, false, 0.0f, -2.5f)
             }
         }
-            .build()
+        .build()
         return _wheelchairUncertainMedium!!
     }
 

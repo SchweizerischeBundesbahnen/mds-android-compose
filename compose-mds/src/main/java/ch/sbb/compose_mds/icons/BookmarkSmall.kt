@@ -15,23 +15,11 @@ public val SBBIcons.BookmarkSmall: ImageVector
         if (_bookmarkSmall != null) {
             return _bookmarkSmall!!
         }
-        _bookmarkSmall = Builder(
-            name = "BookmarkSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bookmarkSmall = Builder(name = "BookmarkSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.0f, 2.0f)
                 horizontalLineToRelative(12.0f)
                 verticalLineToRelative(13.707f)
@@ -50,7 +38,7 @@ public val SBBIcons.BookmarkSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bookmarkSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.BellLarge: ImageVector
         if (_bellLarge != null) {
             return _bellLarge!!
         }
-        _bellLarge = Builder(
-            name = "BellLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bellLarge = Builder(name = "BellLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.0f, 5.5f)
                 curveTo(20.0f, 3.564f, 21.564f, 2.0f, 23.5f, 2.0f)
                 reflectiveCurveTo(27.0f, 3.564f, 27.0f, 5.5f)
@@ -99,7 +88,7 @@ public val SBBIcons.BellLarge: ImageVector
                 verticalLineToRelative(-4.373f)
             }
         }
-            .build()
+        .build()
         return _bellLarge!!
     }
 

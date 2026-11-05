@@ -15,22 +15,11 @@ public val SBBIcons.LocationPinAMedium: ImageVector
         if (_locationPinAMedium != null) {
             return _locationPinAMedium!!
         }
-        _locationPinAMedium = Builder(
-            name = "LocationPinAMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locationPinAMedium = Builder(name = "LocationPinAMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 6.253f)
                 arcToRelative(8.75f, 8.75f, 0.0f, false, false, -8.75f, 8.75f)
                 verticalLineToRelative(0.02f)
@@ -66,7 +55,7 @@ public val SBBIcons.LocationPinAMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _locationPinAMedium!!
     }
 

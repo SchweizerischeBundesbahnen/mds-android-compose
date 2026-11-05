@@ -15,22 +15,11 @@ public val SBBIcons.BedMedium: ImageVector
         if (_bedMedium != null) {
             return _bedMedium!!
         }
-        _bedMedium = Builder(
-            name = "BedMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _bedMedium = Builder(name = "BedMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(4.25f, 25.75f)
                 horizontalLineToRelative(9.5f)
                 verticalLineToRelative(-6.0f)
@@ -59,7 +48,7 @@ public val SBBIcons.BedMedium: ImageVector
                 arcToRelative(1.75f, 1.75f, 0.0f, false, false, 0.0f, -3.5f)
             }
         }
-            .build()
+        .build()
         return _bedMedium!!
     }
 

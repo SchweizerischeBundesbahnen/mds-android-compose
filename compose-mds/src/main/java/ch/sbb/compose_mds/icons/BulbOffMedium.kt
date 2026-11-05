@@ -15,23 +15,11 @@ public val SBBIcons.BulbOffMedium: ImageVector
         if (_bulbOffMedium != null) {
             return _bulbOffMedium!!
         }
-        _bulbOffMedium = Builder(
-            name = "BulbOffMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bulbOffMedium = Builder(name = "BulbOffMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.75f, 18.0f)
                 arcTo(6.22f, 6.22f, 0.0f, false, true, 18.0f, 11.75f)
                 arcTo(6.22f, 6.22f, 0.0f, false, true, 24.25f, 18.0f)
@@ -65,7 +53,7 @@ public val SBBIcons.BulbOffMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _bulbOffMedium!!
     }
 

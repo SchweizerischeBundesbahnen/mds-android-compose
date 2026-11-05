@@ -15,22 +15,11 @@ public val SBBIcons.TickLarge: ImageVector
         if (_tickLarge != null) {
             return _tickLarge!!
         }
-        _tickLarge = Builder(
-            name = "TickLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _tickLarge = Builder(name = "TickLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(37.854f, 14.873f)
                 lineToRelative(-18.0f, 17.98f)
                 lineToRelative(-0.354f, 0.352f)
@@ -43,7 +32,7 @@ public val SBBIcons.TickLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _tickLarge!!
     }
 

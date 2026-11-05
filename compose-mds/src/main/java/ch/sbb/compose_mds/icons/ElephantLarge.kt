@@ -15,23 +15,11 @@ public val SBBIcons.ElephantLarge: ImageVector
         if (_elephantLarge != null) {
             return _elephantLarge!!
         }
-        _elephantLarge = Builder(
-            name = "ElephantLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _elephantLarge = Builder(name = "ElephantLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(30.374f, 13.563f)
                 arcTo(10.48f, 10.48f, 0.0f, false, true, 34.0f, 21.5f)
                 verticalLineToRelative(2.0f)
@@ -117,7 +105,7 @@ public val SBBIcons.ElephantLarge: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, -4.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _elephantLarge!!
     }
 

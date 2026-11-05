@@ -15,22 +15,11 @@ public val SBBIcons.BanknotesDollarMedium: ImageVector
         if (_banknotesDollarMedium != null) {
             return _banknotesDollarMedium!!
         }
-        _banknotesDollarMedium = Builder(
-            name = "BanknotesDollarMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _banknotesDollarMedium = Builder(name = "BanknotesDollarMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.75f, 9.25f)
                 horizontalLineToRelative(25.0f)
                 verticalLineToRelative(13.0f)
@@ -93,7 +82,7 @@ public val SBBIcons.BanknotesDollarMedium: ImageVector
                 quadToRelative(-0.316f, -0.077f, -0.384f, -0.098f)
             }
         }
-            .build()
+        .build()
         return _banknotesDollarMedium!!
     }
 

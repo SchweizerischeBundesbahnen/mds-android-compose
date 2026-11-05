@@ -15,23 +15,11 @@ public val SBBIcons.AirplaneLarge: ImageVector
         if (_airplaneLarge != null) {
             return _airplaneLarge!!
         }
-        _airplaneLarge = Builder(
-            name = "AirplaneLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _airplaneLarge = Builder(name = "AirplaneLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(22.978f, 5.35f)
                 lineToRelative(4.89f, 15.649f)
                 lineTo(39.5f, 20.999f)
@@ -104,7 +92,7 @@ public val SBBIcons.AirplaneLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _airplaneLarge!!
     }
 

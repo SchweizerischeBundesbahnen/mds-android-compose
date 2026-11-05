@@ -15,22 +15,11 @@ public val SBBIcons.TelephoneReceiverLarge: ImageVector
         if (_telephoneReceiverLarge != null) {
             return _telephoneReceiverLarge!!
         }
-        _telephoneReceiverLarge = Builder(
-            name = "TelephoneReceiverLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _telephoneReceiverLarge = Builder(name = "TelephoneReceiverLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(16.31f, 5.326f)
                 curveToRelative(1.333f, -0.771f, 3.033f, -0.111f, 3.827f, 1.262f)
                 lineToRelative(3.514f, 6.084f)
@@ -92,7 +81,7 @@ public val SBBIcons.TelephoneReceiverLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _telephoneReceiverLarge!!
     }
 

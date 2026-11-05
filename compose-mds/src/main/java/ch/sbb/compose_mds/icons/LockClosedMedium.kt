@@ -15,23 +15,11 @@ public val SBBIcons.LockClosedMedium: ImageVector
         if (_lockClosedMedium != null) {
             return _lockClosedMedium!!
         }
-        _lockClosedMedium = Builder(
-            name = "LockClosedMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lockClosedMedium = Builder(name = "LockClosedMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 5.75f)
                 arcTo(3.25f, 3.25f, 0.0f, false, false, 14.75f, 9.0f)
                 verticalLineToRelative(4.75f)
@@ -59,7 +47,7 @@ public val SBBIcons.LockClosedMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _lockClosedMedium!!
     }
 

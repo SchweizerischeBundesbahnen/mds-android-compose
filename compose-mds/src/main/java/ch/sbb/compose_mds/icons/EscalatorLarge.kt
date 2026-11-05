@@ -15,23 +15,11 @@ public val SBBIcons.EscalatorLarge: ImageVector
         if (_escalatorLarge != null) {
             return _escalatorLarge!!
         }
-        _escalatorLarge = Builder(
-            name = "EscalatorLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _escalatorLarge = Builder(name = "EscalatorLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(37.5f, 11.0f)
                 curveToRelative(3.034f, 0.0f, 5.5f, 2.468f, 5.5f, 5.5f)
                 reflectiveCurveTo(40.534f, 22.0f, 37.5f, 22.0f)
@@ -80,7 +68,7 @@ public val SBBIcons.EscalatorLarge: ImageVector
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 16.495f, 10.0f)
             }
         }
-            .build()
+        .build()
         return _escalatorLarge!!
     }
 

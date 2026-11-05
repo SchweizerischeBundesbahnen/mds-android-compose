@@ -15,22 +15,11 @@ public val SBBIcons.MedicalFacilityMedium: ImageVector
         if (_medicalFacilityMedium != null) {
             return _medicalFacilityMedium!!
         }
-        _medicalFacilityMedium = Builder(
-            name = "MedicalFacilityMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _medicalFacilityMedium = Builder(name = "MedicalFacilityMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(18.879f, 5.211f)
                 lineToRelative(-0.354f, -0.353f)
                 lineToRelative(-0.353f, 0.353f)
@@ -85,7 +74,7 @@ public val SBBIcons.MedicalFacilityMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _medicalFacilityMedium!!
     }
 

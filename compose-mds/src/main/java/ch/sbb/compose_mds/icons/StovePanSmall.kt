@@ -15,23 +15,11 @@ public val SBBIcons.StovePanSmall: ImageVector
         if (_stovePanSmall != null) {
             return _stovePanSmall!!
         }
-        _stovePanSmall = Builder(
-            name = "StovePanSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _stovePanSmall = Builder(name = "StovePanSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(15.001f, 3.0f)
                 lineTo(12.0f, 3.0f)
                 verticalLineToRelative(1.0f)
@@ -84,7 +72,7 @@ public val SBBIcons.StovePanSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _stovePanSmall!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.BucketFoamBroomMedium: ImageVector
         if (_bucketFoamBroomMedium != null) {
             return _bucketFoamBroomMedium!!
         }
-        _bucketFoamBroomMedium = Builder(
-            name = "BucketFoamBroomMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bucketFoamBroomMedium = Builder(name = "BucketFoamBroomMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(26.75f, 18.275f)
                 arcToRelative(5.0f, 5.0f, 0.0f, false, true, 4.5f, 4.975f)
                 verticalLineToRelative(6.5f)
@@ -92,7 +81,7 @@ public val SBBIcons.BucketFoamBroomMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, true, -2.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _bucketFoamBroomMedium!!
     }
 

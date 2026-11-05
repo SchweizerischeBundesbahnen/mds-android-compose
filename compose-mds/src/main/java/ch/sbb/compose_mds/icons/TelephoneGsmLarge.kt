@@ -15,22 +15,11 @@ public val SBBIcons.TelephoneGsmLarge: ImageVector
         if (_telephoneGsmLarge != null) {
             return _telephoneGsmLarge!!
         }
-        _telephoneGsmLarge = Builder(
-            name = "TelephoneGsmLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _telephoneGsmLarge = Builder(name = "TelephoneGsmLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(29.0f, 8.0f)
                 horizontalLineToRelative(3.5f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, 2.5f, 2.5f)
@@ -115,7 +104,7 @@ public val SBBIcons.TelephoneGsmLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _telephoneGsmLarge!!
     }
 

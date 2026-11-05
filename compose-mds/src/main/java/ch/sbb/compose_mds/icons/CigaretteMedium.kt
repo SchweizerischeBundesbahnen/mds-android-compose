@@ -15,23 +15,11 @@ public val SBBIcons.CigaretteMedium: ImageVector
         if (_cigaretteMedium != null) {
             return _cigaretteMedium!!
         }
-        _cigaretteMedium = Builder(
-            name = "CigaretteMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cigaretteMedium = Builder(name = "CigaretteMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(23.75f, 8.203f)
                 curveToRelative(0.0f, -2.205f, 1.795f, -4.0f, 4.0f, -4.0f)
                 reflectiveCurveToRelative(4.0f, 1.795f, 4.0f, 4.0f)
@@ -79,7 +67,7 @@ public val SBBIcons.CigaretteMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cigaretteMedium!!
     }
 

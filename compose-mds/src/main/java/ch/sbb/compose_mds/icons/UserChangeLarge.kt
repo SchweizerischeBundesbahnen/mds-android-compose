@@ -15,23 +15,11 @@ public val SBBIcons.UserChangeLarge: ImageVector
         if (_userChangeLarge != null) {
             return _userChangeLarge!!
         }
-        _userChangeLarge = Builder(
-            name = "UserChangeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _userChangeLarge = Builder(name = "UserChangeLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(34.5f, 24.0f)
                 curveToRelative(2.68f, 0.0f, 4.5f, 2.671f, 4.5f, 5.5f)
                 arcToRelative(6.5f, 6.5f, 0.0f, false, true, -0.66f, 2.872f)
@@ -112,7 +100,7 @@ public val SBBIcons.UserChangeLarge: ImageVector
                 curveTo(16.0f, 6.977f, 14.409f, 5.0f, 12.5f, 5.0f)
             }
         }
-            .build()
+        .build()
         return _userChangeLarge!!
     }
 

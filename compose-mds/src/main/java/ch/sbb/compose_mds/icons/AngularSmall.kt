@@ -15,23 +15,11 @@ public val SBBIcons.AngularSmall: ImageVector
         if (_angularSmall != null) {
             return _angularSmall!!
         }
-        _angularSmall = Builder(
-            name = "AngularSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _angularSmall = Builder(name = "AngularSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.158f, 2.026f)
                 lineTo(12.0f, 1.973f)
                 lineToRelative(-0.158f, 0.053f)
@@ -83,7 +71,7 @@ public val SBBIcons.AngularSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _angularSmall!!
     }
 

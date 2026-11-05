@@ -15,22 +15,11 @@ public val SBBIcons.ArrowTurnDownLarge: ImageVector
         if (_arrowTurnDownLarge != null) {
             return _arrowTurnDownLarge!!
         }
-        _arrowTurnDownLarge = Builder(
-            name = "ArrowTurnDownLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowTurnDownLarge = Builder(name = "ArrowTurnDownLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(35.5f, 11.0f)
                 curveToRelative(-4.351f, 0.0f, -8.215f, 0.999f, -10.986f, 3.398f)
                 curveTo(21.756f, 16.785f, 20.0f, 20.63f, 20.0f, 26.5f)
@@ -49,7 +38,7 @@ public val SBBIcons.ArrowTurnDownLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowTurnDownLarge!!
     }
 

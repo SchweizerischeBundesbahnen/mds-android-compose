@@ -15,23 +15,11 @@ public val SBBIcons.HandSbbMedium: ImageVector
         if (_handSbbMedium != null) {
             return _handSbbMedium!!
         }
-        _handSbbMedium = Builder(
-            name = "HandSbbMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handSbbMedium = Builder(name = "HandSbbMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.829f, 10.056f)
                 lineTo(15.71f, 6.0f)
                 horizontalLineToRelative(3.06f)
@@ -96,7 +84,7 @@ public val SBBIcons.HandSbbMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handSbbMedium!!
     }
 

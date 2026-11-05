@@ -15,22 +15,11 @@ public val SBBIcons.WheelMicrophoneSmall: ImageVector
         if (_wheelMicrophoneSmall != null) {
             return _wheelMicrophoneSmall!!
         }
-        _wheelMicrophoneSmall = Builder(
-            name = "WheelMicrophoneSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _wheelMicrophoneSmall = Builder(name = "WheelMicrophoneSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(12.0f, 2.0f)
                 curveToRelative(3.485f, 0.0f, 6.625f, 1.76f, 8.417f, 4.475f)
                 lineToRelative(-0.834f, 0.55f)
@@ -90,7 +79,7 @@ public val SBBIcons.WheelMicrophoneSmall: ImageVector
                 arcToRelative(1.0f, 1.0f, 0.0f, false, false, 0.0f, -2.0f)
             }
         }
-            .build()
+        .build()
         return _wheelMicrophoneSmall!!
     }
 

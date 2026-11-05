@@ -15,22 +15,11 @@ public val SBBIcons.HexagonCircleTSmall: ImageVector
         if (_hexagonCircleTSmall != null) {
             return _hexagonCircleTSmall!!
         }
-        _hexagonCircleTSmall = Builder(
-            name = "HexagonCircleTSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _hexagonCircleTSmall = Builder(name = "HexagonCircleTSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(12.724f, 2.051f)
                 lineToRelative(9.0f, 4.5f)
                 lineToRelative(0.276f, 0.139f)
@@ -70,7 +59,7 @@ public val SBBIcons.HexagonCircleTSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _hexagonCircleTSmall!!
     }
 

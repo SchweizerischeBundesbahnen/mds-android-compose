@@ -15,22 +15,11 @@ public val SBBIcons.AirplaneTrainSmall: ImageVector
         if (_airplaneTrainSmall != null) {
             return _airplaneTrainSmall!!
         }
-        _airplaneTrainSmall = Builder(
-            name = "AirplaneTrainSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _airplaneTrainSmall = Builder(name = "AirplaneTrainSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.434f, 2.0f)
                 horizontalLineToRelative(3.448f)
                 lineToRelative(0.1f, 0.368f)
@@ -118,7 +107,7 @@ public val SBBIcons.AirplaneTrainSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _airplaneTrainSmall!!
     }
 

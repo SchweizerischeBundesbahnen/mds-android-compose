@@ -15,22 +15,11 @@ public val SBBIcons.BellDisabledLarge: ImageVector
         if (_bellDisabledLarge != null) {
             return _bellDisabledLarge!!
         }
-        _bellDisabledLarge = Builder(
-            name = "BellDisabledLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bellDisabledLarge = Builder(name = "BellDisabledLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(33.293f, 33.0f)
                 lineToRelative(5.0f, 5.0f)
                 lineTo(34.68f, 38.0f)
@@ -124,7 +113,7 @@ public val SBBIcons.BellDisabledLarge: ImageVector
                 reflectiveCurveTo(26.0f, 4.116f, 26.0f, 5.5f)
             }
         }
-            .build()
+        .build()
         return _bellDisabledLarge!!
     }
 

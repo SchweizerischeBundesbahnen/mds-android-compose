@@ -15,24 +15,12 @@ public val SBBIcons.BikeProfilePowerPlugMedium: ImageVector
         if (_bikeProfilePowerPlugMedium != null) {
             return _bikeProfilePowerPlugMedium!!
         }
-        _bikeProfilePowerPlugMedium = Builder(
-            name = "BikeProfilePowerPlugMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bikeProfilePowerPlugMedium = Builder(name = "BikeProfilePowerPlugMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(24.75f, 4.75f)
                 lineTo(19.5f, 4.75f)
                 verticalLineToRelative(1.0f)
@@ -102,7 +90,7 @@ public val SBBIcons.BikeProfilePowerPlugMedium: ImageVector
                 arcToRelative(2.498f, 2.498f, 0.0f, true, true, -0.003f, -4.998f)
             }
         }
-            .build()
+        .build()
         return _bikeProfilePowerPlugMedium!!
     }
 

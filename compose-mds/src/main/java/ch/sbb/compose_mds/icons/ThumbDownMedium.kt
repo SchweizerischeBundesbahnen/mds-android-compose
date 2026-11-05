@@ -15,23 +15,11 @@ public val SBBIcons.ThumbDownMedium: ImageVector
         if (_thumbDownMedium != null) {
             return _thumbDownMedium!!
         }
-        _thumbDownMedium = Builder(
-            name = "ThumbDownMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _thumbDownMedium = Builder(name = "ThumbDownMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.749f, 7.75f)
                 horizontalLineToRelative(5.501f)
                 verticalLineToRelative(1.547f)
@@ -88,7 +76,7 @@ public val SBBIcons.ThumbDownMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _thumbDownMedium!!
     }
 

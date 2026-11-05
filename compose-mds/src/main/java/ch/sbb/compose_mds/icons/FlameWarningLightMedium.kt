@@ -15,22 +15,11 @@ public val SBBIcons.FlameWarningLightMedium: ImageVector
         if (_flameWarningLightMedium != null) {
             return _flameWarningLightMedium!!
         }
-        _flameWarningLightMedium = Builder(
-            name = "FlameWarningLightMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _flameWarningLightMedium = Builder(name = "FlameWarningLightMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(11.502f, 3.943f)
                 lineToRelative(0.872f, 0.973f)
                 curveToRelative(1.434f, 1.6f, 2.625f, 2.859f, 3.672f, 3.965f)
@@ -115,7 +104,7 @@ public val SBBIcons.FlameWarningLightMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _flameWarningLightMedium!!
     }
 

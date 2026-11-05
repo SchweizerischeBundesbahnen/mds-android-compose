@@ -15,22 +15,11 @@ public val SBBIcons.WeatherUnknownMedium: ImageVector
         if (_weatherUnknownMedium != null) {
             return _weatherUnknownMedium!!
         }
-        _weatherUnknownMedium = Builder(
-            name = "WeatherUnknownMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _weatherUnknownMedium = Builder(name = "WeatherUnknownMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(17.86f, 25.499f)
                 horizontalLineToRelative(-1.321f)
                 verticalLineToRelative(-1.257f)
@@ -91,7 +80,7 @@ public val SBBIcons.WeatherUnknownMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _weatherUnknownMedium!!
     }
 

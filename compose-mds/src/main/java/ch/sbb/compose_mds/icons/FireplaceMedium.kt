@@ -15,23 +15,11 @@ public val SBBIcons.FireplaceMedium: ImageVector
         if (_fireplaceMedium != null) {
             return _fireplaceMedium!!
         }
-        _fireplaceMedium = Builder(
-            name = "FireplaceMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fireplaceMedium = Builder(name = "FireplaceMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.25f, 3.25f)
                 horizontalLineToRelative(29.5f)
                 verticalLineToRelative(2.957f)
@@ -111,7 +99,7 @@ public val SBBIcons.FireplaceMedium: ImageVector
                 curveToRelative(-0.08f, 0.742f, -0.277f, 1.384f, -0.619f, 1.872f)
             }
         }
-            .build()
+        .build()
         return _fireplaceMedium!!
     }
 

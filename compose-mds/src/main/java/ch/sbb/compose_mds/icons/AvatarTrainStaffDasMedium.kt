@@ -15,24 +15,12 @@ public val SBBIcons.AvatarTrainStaffDasMedium: ImageVector
         if (_avatarTrainStaffDasMedium != null) {
             return _avatarTrainStaffDasMedium!!
         }
-        _avatarTrainStaffDasMedium = Builder(
-            name = "AvatarTrainStaffDasMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _avatarTrainStaffDasMedium = Builder(name = "AvatarTrainStaffDasMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(27.0f, 17.175f)
                 lineToRelative(0.497f, 0.054f)
                 lineToRelative(-0.742f, 6.825f)
@@ -167,7 +155,7 @@ public val SBBIcons.AvatarTrainStaffDasMedium: ImageVector
                 curveToRelative(-1.594f, -0.265f, -3.815f, -0.433f, -6.281f, -0.433f)
             }
         }
-            .build()
+        .build()
         return _avatarTrainStaffDasMedium!!
     }
 

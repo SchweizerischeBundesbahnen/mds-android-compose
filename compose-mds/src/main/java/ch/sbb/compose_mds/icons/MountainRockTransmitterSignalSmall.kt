@@ -15,22 +15,12 @@ public val SBBIcons.MountainRockTransmitterSignalSmall: ImageVector
         if (_mountainRockTransmitterSignalSmall != null) {
             return _mountainRockTransmitterSignalSmall!!
         }
-        _mountainRockTransmitterSignalSmall = Builder(
-            name = "MountainRockTransmitterSignalSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _mountainRockTransmitterSignalSmall = Builder(name = "MountainRockTransmitterSignalSmall",
+                defaultWidth = 24.0.dp, defaultHeight = 24.0.dp, viewportWidth = 24.0f,
+                viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(2.0f, 2.433f)
                 lineToRelative(0.82f, 0.683f)
                 lineToRelative(3.0f, 2.5f)
@@ -102,7 +92,7 @@ public val SBBIcons.MountainRockTransmitterSignalSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _mountainRockTransmitterSignalSmall!!
     }
 

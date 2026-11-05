@@ -15,22 +15,12 @@ public val SBBIcons.WheelchairSubstituteTransportMedium: ImageVector
         if (_wheelchairSubstituteTransportMedium != null) {
             return _wheelchairSubstituteTransportMedium!!
         }
-        _wheelchairSubstituteTransportMedium = Builder(
-            name = "WheelchairSubstituteTransportMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _wheelchairSubstituteTransportMedium = Builder(name = "WheelchairSubstituteTransportMedium",
+                defaultWidth = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f,
+                viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(32.75f, 32.75f)
                 lineTo(3.25f, 32.75f)
                 lineTo(3.25f, 3.25f)
@@ -104,7 +94,7 @@ public val SBBIcons.WheelchairSubstituteTransportMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wheelchairSubstituteTransportMedium!!
     }
 

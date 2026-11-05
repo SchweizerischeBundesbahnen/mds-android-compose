@@ -15,22 +15,11 @@ public val SBBIcons.CalendarWeekdayMedium: ImageVector
         if (_calendarWeekdayMedium != null) {
             return _calendarWeekdayMedium!!
         }
-        _calendarWeekdayMedium = Builder(
-            name = "CalendarWeekdayMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _calendarWeekdayMedium = Builder(name = "CalendarWeekdayMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(11.75f, 9.265f)
                 horizontalLineToRelative(12.5f)
                 lineTo(24.25f, 7.5f)
@@ -121,7 +110,7 @@ public val SBBIcons.CalendarWeekdayMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _calendarWeekdayMedium!!
     }
 

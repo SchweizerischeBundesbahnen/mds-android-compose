@@ -15,22 +15,11 @@ public val SBBIcons.FlashlightOffMedium: ImageVector
         if (_flashlightOffMedium != null) {
             return _flashlightOffMedium!!
         }
-        _flashlightOffMedium = Builder(
-            name = "FlashlightOffMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _flashlightOffMedium = Builder(name = "FlashlightOffMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.75f, 9.25f)
                 horizontalLineToRelative(13.0f)
                 verticalLineToRelative(4.346f)
@@ -75,7 +64,7 @@ public val SBBIcons.FlashlightOffMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _flashlightOffMedium!!
     }
 

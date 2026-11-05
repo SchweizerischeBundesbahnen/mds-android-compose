@@ -15,22 +15,11 @@ public val SBBIcons.CloudLightningMedium: ImageVector
         if (_cloudLightningMedium != null) {
             return _cloudLightningMedium!!
         }
-        _cloudLightningMedium = Builder(
-            name = "CloudLightningMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudLightningMedium = Builder(name = "CloudLightningMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(26.043f, 16.063f)
                 arcToRelative(2.86f, 2.86f, 0.0f, false, false, -1.863f, -1.08f)
                 curveToRelative(0.246f, -1.253f, 0.065f, -2.373f, -0.417f, -3.293f)
@@ -92,7 +81,7 @@ public val SBBIcons.CloudLightningMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudLightningMedium!!
     }
 

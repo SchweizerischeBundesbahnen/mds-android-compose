@@ -15,23 +15,11 @@ public val SBBIcons.TrainSignalLarge: ImageVector
         if (_trainSignalLarge != null) {
             return _trainSignalLarge!!
         }
-        _trainSignalLarge = Builder(
-            name = "TrainSignalLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _trainSignalLarge = Builder(name = "TrainSignalLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.0f, 4.0f)
                 horizontalLineToRelative(-0.207f)
                 lineToRelative(-0.147f, 0.146f)
@@ -151,7 +139,7 @@ public val SBBIcons.TrainSignalLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _trainSignalLarge!!
     }
 

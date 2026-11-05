@@ -15,24 +15,12 @@ public val SBBIcons.ContactLineArrowTrainLarge: ImageVector
         if (_contactLineArrowTrainLarge != null) {
             return _contactLineArrowTrainLarge!!
         }
-        _contactLineArrowTrainLarge = Builder(
-            name = "ContactLineArrowTrainLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _contactLineArrowTrainLarge = Builder(name = "ContactLineArrowTrainLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(28.401f, 10.5f)
                 lineToRelative(-6.75f, 4.5f)
                 horizontalLineToRelative(7.916f)
@@ -103,7 +91,7 @@ public val SBBIcons.ContactLineArrowTrainLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _contactLineArrowTrainLarge!!
     }
 

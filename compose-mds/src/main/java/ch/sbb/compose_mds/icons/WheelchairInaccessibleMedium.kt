@@ -15,24 +15,12 @@ public val SBBIcons.WheelchairInaccessibleMedium: ImageVector
         if (_wheelchairInaccessibleMedium != null) {
             return _wheelchairInaccessibleMedium!!
         }
-        _wheelchairInaccessibleMedium = Builder(
-            name = "WheelchairInaccessibleMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _wheelchairInaccessibleMedium = Builder(name = "WheelchairInaccessibleMedium", defaultWidth
+                = 36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(15.75f, 8.75f)
                 arcToRelative(0.25f, 0.25f, 0.0f, true, false, 0.0f, 0.501f)
                 arcToRelative(0.25f, 0.25f, 0.0f, false, false, 0.0f, -0.5f)
@@ -71,7 +59,7 @@ public val SBBIcons.WheelchairInaccessibleMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _wheelchairInaccessibleMedium!!
     }
 

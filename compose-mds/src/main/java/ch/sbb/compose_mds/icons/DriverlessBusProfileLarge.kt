@@ -15,24 +15,12 @@ public val SBBIcons.DriverlessBusProfileLarge: ImageVector
         if (_driverlessBusProfileLarge != null) {
             return _driverlessBusProfileLarge!!
         }
-        _driverlessBusProfileLarge = Builder(
-            name = "DriverlessBusProfileLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _driverlessBusProfileLarge = Builder(name = "DriverlessBusProfileLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(5.0f, 35.499f)
                 curveToRelative(0.0f, 3.592f, 2.91f, 6.5f, 6.5f, 6.5f)
                 verticalLineToRelative(1.0f)
@@ -115,7 +103,7 @@ public val SBBIcons.DriverlessBusProfileLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _driverlessBusProfileLarge!!
     }
 

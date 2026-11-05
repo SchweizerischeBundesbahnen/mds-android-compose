@@ -15,23 +15,11 @@ public val SBBIcons.ParliamentLarge: ImageVector
         if (_parliamentLarge != null) {
             return _parliamentLarge!!
         }
-        _parliamentLarge = Builder(
-            name = "ParliamentLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _parliamentLarge = Builder(name = "ParliamentLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(28.0f, 7.0f)
                 horizontalLineToRelative(-4.0f)
                 verticalLineToRelative(3.02f)
@@ -120,7 +108,7 @@ public val SBBIcons.ParliamentLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _parliamentLarge!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.WalletMedium: ImageVector
         if (_walletMedium != null) {
             return _walletMedium!!
         }
-        _walletMedium = Builder(
-            name = "WalletMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _walletMedium = Builder(name = "WalletMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.75f, 7.75f)
                 horizontalLineToRelative(26.5f)
                 verticalLineToRelative(20.5f)
@@ -65,7 +53,7 @@ public val SBBIcons.WalletMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, false, 0.0f, -2.5f)
             }
         }
-            .build()
+        .build()
         return _walletMedium!!
     }
 

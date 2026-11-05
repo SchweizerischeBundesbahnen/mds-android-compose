@@ -15,22 +15,11 @@ public val SBBIcons.ArrowUpRightLarge: ImageVector
         if (_arrowUpRightLarge != null) {
             return _arrowUpRightLarge!!
         }
-        _arrowUpRightLarge = Builder(
-            name = "ArrowUpRightLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _arrowUpRightLarge = Builder(name = "ArrowUpRightLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(36.835f, 19.152f)
                 lineToRelative(0.353f, 0.354f)
                 lineToRelative(-0.353f, 0.352f)
@@ -49,7 +38,7 @@ public val SBBIcons.ArrowUpRightLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _arrowUpRightLarge!!
     }
 

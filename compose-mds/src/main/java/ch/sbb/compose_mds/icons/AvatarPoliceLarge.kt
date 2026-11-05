@@ -15,22 +15,11 @@ public val SBBIcons.AvatarPoliceLarge: ImageVector
         if (_avatarPoliceLarge != null) {
             return _avatarPoliceLarge!!
         }
-        _avatarPoliceLarge = Builder(
-            name = "AvatarPoliceLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _avatarPoliceLarge = Builder(name = "AvatarPoliceLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(24.5f, 1.982f)
                 lineToRelative(0.129f, 0.035f)
                 lineToRelative(15.0f, 4.0f)
@@ -159,7 +148,7 @@ public val SBBIcons.AvatarPoliceLarge: ImageVector
                 arcToRelative(0.5f, 0.5f, 0.0f, false, false, 0.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _avatarPoliceLarge!!
     }
 

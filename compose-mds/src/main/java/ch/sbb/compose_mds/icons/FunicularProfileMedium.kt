@@ -15,22 +15,11 @@ public val SBBIcons.FunicularProfileMedium: ImageVector
         if (_funicularProfileMedium != null) {
             return _funicularProfileMedium!!
         }
-        _funicularProfileMedium = Builder(
-            name = "FunicularProfileMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _funicularProfileMedium = Builder(name = "FunicularProfileMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(28.43f, 4.755f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, -0.87f, -0.042f)
                 horizontalLineToRelative(-0.002f)
@@ -133,7 +122,7 @@ public val SBBIcons.FunicularProfileMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _funicularProfileMedium!!
     }
 

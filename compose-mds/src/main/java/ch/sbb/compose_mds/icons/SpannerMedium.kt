@@ -15,23 +15,11 @@ public val SBBIcons.SpannerMedium: ImageVector
         if (_spannerMedium != null) {
             return _spannerMedium!!
         }
-        _spannerMedium = Builder(
-            name = "SpannerMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _spannerMedium = Builder(name = "SpannerMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(19.749f, 9.75f)
                 arcToRelative(6.5f, 6.5f, 0.0f, false, true, 6.5f, -6.5f)
                 curveToRelative(0.956f, 0.0f, 1.855f, 0.218f, 2.667f, 0.583f)
@@ -100,7 +88,7 @@ public val SBBIcons.SpannerMedium: ImageVector
                 arcToRelative(5.4f, 5.4f, 0.0f, false, false, -1.56f, -0.233f)
             }
         }
-            .build()
+        .build()
         return _spannerMedium!!
     }
 

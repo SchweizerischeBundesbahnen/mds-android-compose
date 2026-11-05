@@ -15,23 +15,11 @@ public val SBBIcons.RewindMedium: ImageVector
         if (_rewindMedium != null) {
             return _rewindMedium!!
         }
-        _rewindMedium = Builder(
-            name = "RewindMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _rewindMedium = Builder(name = "RewindMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(29.75f, 28.75f)
                 lineToRelative(-0.8f, -0.6f)
                 lineToRelative(-8.2f, -6.15f)
@@ -58,7 +46,7 @@ public val SBBIcons.RewindMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _rewindMedium!!
     }
 

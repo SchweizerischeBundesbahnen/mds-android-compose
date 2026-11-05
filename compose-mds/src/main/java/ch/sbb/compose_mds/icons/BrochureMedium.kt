@@ -15,23 +15,11 @@ public val SBBIcons.BrochureMedium: ImageVector
         if (_brochureMedium != null) {
             return _brochureMedium!!
         }
-        _brochureMedium = Builder(
-            name = "BrochureMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _brochureMedium = Builder(name = "BrochureMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(3.25f, 4.556f)
                 lineToRelative(0.658f, 0.22f)
                 lineTo(17.25f, 9.223f)
@@ -97,7 +85,7 @@ public val SBBIcons.BrochureMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _brochureMedium!!
     }
 

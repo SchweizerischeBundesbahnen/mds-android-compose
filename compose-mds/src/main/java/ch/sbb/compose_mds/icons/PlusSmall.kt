@@ -15,22 +15,11 @@ public val SBBIcons.PlusSmall: ImageVector
         if (_plusSmall != null) {
             return _plusSmall!!
         }
-        _plusSmall = Builder(
-            name = "PlusSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _plusSmall = Builder(name = "PlusSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.5f, 11.5f)
                 verticalLineToRelative(-7.0f)
                 horizontalLineToRelative(-1.0f)
@@ -46,7 +35,7 @@ public val SBBIcons.PlusSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _plusSmall!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.MuseumLarge: ImageVector
         if (_museumLarge != null) {
             return _museumLarge!!
         }
-        _museumLarge = Builder(
-            name = "MuseumLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _museumLarge = Builder(name = "MuseumLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(24.094f, 9.008f)
                 lineToRelative(-0.089f, -0.016f)
                 lineToRelative(-0.09f, 0.016f)
@@ -116,7 +104,7 @@ public val SBBIcons.MuseumLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _museumLarge!!
     }
 

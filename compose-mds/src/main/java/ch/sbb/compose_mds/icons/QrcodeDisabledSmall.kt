@@ -15,22 +15,11 @@ public val SBBIcons.QrcodeDisabledSmall: ImageVector
         if (_qrcodeDisabledSmall != null) {
             return _qrcodeDisabledSmall!!
         }
-        _qrcodeDisabledSmall = Builder(
-            name = "QrcodeDisabledSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _qrcodeDisabledSmall = Builder(name = "QrcodeDisabledSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(21.354f, 20.547f)
                 lineTo(21.0f, 20.9f)
                 verticalLineToRelative(0.105f)
@@ -344,7 +333,7 @@ public val SBBIcons.QrcodeDisabledSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _qrcodeDisabledSmall!!
     }
 

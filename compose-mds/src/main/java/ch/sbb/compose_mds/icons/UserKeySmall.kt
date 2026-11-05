@@ -15,23 +15,11 @@ public val SBBIcons.UserKeySmall: ImageVector
         if (_userKeySmall != null) {
             return _userKeySmall!!
         }
-        _userKeySmall = Builder(
-            name = "UserKeySmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userKeySmall = Builder(name = "UserKeySmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.0f, 6.0f)
                 curveToRelative(0.0f, -1.723f, 1.126f, -3.0f, 2.5f, -3.0f)
                 reflectiveCurveTo(12.0f, 4.277f, 12.0f, 6.0f)
@@ -88,7 +76,7 @@ public val SBBIcons.UserKeySmall: ImageVector
                 arcTo(1.49f, 1.49f, 0.0f, false, true, 15.0f, 15.499f)
             }
         }
-            .build()
+        .build()
         return _userKeySmall!!
     }
 

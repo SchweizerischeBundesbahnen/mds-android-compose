@@ -15,23 +15,11 @@ public val SBBIcons.ButterflyLarge: ImageVector
         if (_butterflyLarge != null) {
             return _butterflyLarge!!
         }
-        _butterflyLarge = Builder(
-            name = "ButterflyLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _butterflyLarge = Builder(name = "ButterflyLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(33.995f, 8.0f)
                 curveToRelative(-1.902f, -0.017f, -3.499f, 0.166f, -4.698f, 0.714f)
                 curveToRelative(-1.161f, 0.53f, -1.971f, 1.41f, -2.32f, 2.883f)
@@ -147,7 +135,7 @@ public val SBBIcons.ButterflyLarge: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, 0.0f, -4.0f)
             }
         }
-            .build()
+        .build()
         return _butterflyLarge!!
     }
 

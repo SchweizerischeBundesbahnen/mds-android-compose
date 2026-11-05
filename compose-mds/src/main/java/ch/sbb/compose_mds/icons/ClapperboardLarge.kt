@@ -15,22 +15,11 @@ public val SBBIcons.ClapperboardLarge: ImageVector
         if (_clapperboardLarge != null) {
             return _clapperboardLarge!!
         }
-        _clapperboardLarge = Builder(
-            name = "ClapperboardLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _clapperboardLarge = Builder(name = "ClapperboardLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(33.012f, 5.0f)
                 horizontalLineToRelative(8.061f)
                 curveToRelative(0.778f, 0.0f, 1.523f, 0.311f, 2.071f, 0.863f)
@@ -103,7 +92,7 @@ public val SBBIcons.ClapperboardLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _clapperboardLarge!!
     }
 

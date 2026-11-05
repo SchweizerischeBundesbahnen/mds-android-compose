@@ -15,23 +15,11 @@ public val SBBIcons.HandshakeSmall: ImageVector
         if (_handshakeSmall != null) {
             return _handshakeSmall!!
         }
-        _handshakeSmall = Builder(
-            name = "HandshakeSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _handshakeSmall = Builder(name = "HandshakeSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(22.0f, 6.0f)
                 verticalLineToRelative(7.994f)
                 lineToRelative(-0.257f, 0.143f)
@@ -111,7 +99,7 @@ public val SBBIcons.HandshakeSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _handshakeSmall!!
     }
 

@@ -15,24 +15,12 @@ public val SBBIcons.LocomotiveProfileMoonLarge: ImageVector
         if (_locomotiveProfileMoonLarge != null) {
             return _locomotiveProfileMoonLarge!!
         }
-        _locomotiveProfileMoonLarge = Builder(
-            name = "LocomotiveProfileMoonLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _locomotiveProfileMoonLarge = Builder(name = "LocomotiveProfileMoonLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(37.003f, 3.999f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, false, 2.0f, -2.0f)
                 horizontalLineToRelative(1.0f)
@@ -202,7 +190,7 @@ public val SBBIcons.LocomotiveProfileMoonLarge: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, -0.177f, 0.177f)
             }
         }
-            .build()
+        .build()
         return _locomotiveProfileMoonLarge!!
     }
 

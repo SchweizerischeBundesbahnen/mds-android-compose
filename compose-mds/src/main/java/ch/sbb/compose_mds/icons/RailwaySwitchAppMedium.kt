@@ -15,22 +15,11 @@ public val SBBIcons.RailwaySwitchAppMedium: ImageVector
         if (_railwaySwitchAppMedium != null) {
             return _railwaySwitchAppMedium!!
         }
-        _railwaySwitchAppMedium = Builder(
-            name = "RailwaySwitchAppMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _railwaySwitchAppMedium = Builder(name = "RailwaySwitchAppMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(4.5f, 6.5f)
                 lineTo(4.5f, 3.0f)
                 horizontalLineToRelative(1.0f)
@@ -160,7 +149,7 @@ public val SBBIcons.RailwaySwitchAppMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _railwaySwitchAppMedium!!
     }
 

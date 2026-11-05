@@ -15,24 +15,12 @@ public val SBBIcons.BarrierConstructionMedium: ImageVector
         if (_barrierConstructionMedium != null) {
             return _barrierConstructionMedium!!
         }
-        _barrierConstructionMedium = Builder(
-            name = "BarrierConstructionMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _barrierConstructionMedium = Builder(name = "BarrierConstructionMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.75f, 5.25f)
                 arcToRelative(1.0f, 1.0f, 0.0f, true, true, 2.0f, 0.0f)
                 verticalLineToRelative(2.5f)
@@ -133,7 +121,7 @@ public val SBBIcons.BarrierConstructionMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _barrierConstructionMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CalculatorSmall: ImageVector
         if (_calculatorSmall != null) {
             return _calculatorSmall!!
         }
-        _calculatorSmall = Builder(
-            name = "CalculatorSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _calculatorSmall = Builder(name = "CalculatorSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.0f, 3.5f)
                 arcToRelative(0.5f, 0.5f, 0.0f, false, true, 0.5f, -0.5f)
                 horizontalLineToRelative(12.0f)
@@ -116,7 +104,7 @@ public val SBBIcons.CalculatorSmall: ImageVector
                 arcToRelative(1.5f, 1.5f, 0.0f, false, false, -1.5f, -1.5f)
             }
         }
-            .build()
+        .build()
         return _calculatorSmall!!
     }
 

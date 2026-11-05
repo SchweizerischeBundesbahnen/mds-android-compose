@@ -15,22 +15,11 @@ public val SBBIcons.QuestionAnswerMedium: ImageVector
         if (_questionAnswerMedium != null) {
             return _questionAnswerMedium!!
         }
-        _questionAnswerMedium = Builder(
-            name = "QuestionAnswerMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _questionAnswerMedium = Builder(name = "QuestionAnswerMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.75f, 12.25f)
                 horizontalLineToRelative(7.5f)
                 verticalLineToRelative(14.5f)
@@ -100,7 +89,7 @@ public val SBBIcons.QuestionAnswerMedium: ImageVector
                 quadToRelative(0.591f, -0.298f, 1.328f, -0.297f)
             }
         }
-            .build()
+        .build()
         return _questionAnswerMedium!!
     }
 

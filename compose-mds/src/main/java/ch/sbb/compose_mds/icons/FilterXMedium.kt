@@ -15,23 +15,11 @@ public val SBBIcons.FilterXMedium: ImageVector
         if (_filterXMedium != null) {
             return _filterXMedium!!
         }
-        _filterXMedium = Builder(
-            name = "FilterXMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _filterXMedium = Builder(name = "FilterXMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.663f, 6.25f)
                 horizontalLineToRelative(24.674f)
                 lineToRelative(-0.707f, 0.825f)
@@ -66,7 +54,7 @@ public val SBBIcons.FilterXMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _filterXMedium!!
     }
 

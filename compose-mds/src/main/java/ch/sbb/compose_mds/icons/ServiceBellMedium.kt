@@ -15,22 +15,11 @@ public val SBBIcons.ServiceBellMedium: ImageVector
         if (_serviceBellMedium != null) {
             return _serviceBellMedium!!
         }
-        _serviceBellMedium = Builder(
-            name = "ServiceBellMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _serviceBellMedium = Builder(name = "ServiceBellMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.5f, 7.25f)
                 horizontalLineToRelative(3.97f)
                 verticalLineToRelative(-1.0f)
@@ -63,7 +52,7 @@ public val SBBIcons.ServiceBellMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _serviceBellMedium!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.HeartLarge: ImageVector
         if (_heartLarge != null) {
             return _heartLarge!!
         }
-        _heartLarge = Builder(
-            name = "HeartLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _heartLarge = Builder(name = "HeartLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(33.56f, 4.0f)
                 curveToRelative(6.894f, 0.0f, 12.45f, 5.522f, 12.45f, 12.43f)
                 curveToRelative(0.0f, 2.156f, -0.552f, 4.188f, -1.51f, 5.958f)
@@ -67,7 +56,7 @@ public val SBBIcons.HeartLarge: ImageVector
                 curveTo(45.01f, 10.077f, 39.905f, 5.0f, 33.56f, 5.0f)
             }
         }
-            .build()
+        .build()
         return _heartLarge!!
     }
 

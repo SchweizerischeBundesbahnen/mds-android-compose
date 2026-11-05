@@ -15,23 +15,11 @@ public val SBBIcons.PizzaSliceSmall: ImageVector
         if (_pizzaSliceSmall != null) {
             return _pizzaSliceSmall!!
         }
-        _pizzaSliceSmall = Builder(
-            name = "PizzaSliceSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _pizzaSliceSmall = Builder(name = "PizzaSliceSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(7.619f, 3.057f)
                 curveToRelative(0.294f, -0.826f, 1.228f, -1.294f, 2.069f, -0.937f)
                 curveToRelative(5.593f, 2.372f, 10.027f, 6.967f, 12.211f, 12.705f)
@@ -81,7 +69,7 @@ public val SBBIcons.PizzaSliceSmall: ImageVector
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, -4.0f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _pizzaSliceSmall!!
     }
 

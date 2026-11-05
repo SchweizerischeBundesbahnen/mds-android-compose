@@ -15,22 +15,11 @@ public val SBBIcons.CableCarProfileMedium: ImageVector
         if (_cableCarProfileMedium != null) {
             return _cableCarProfileMedium!!
         }
-        _cableCarProfileMedium = Builder(
-            name = "CableCarProfileMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cableCarProfileMedium = Builder(name = "CableCarProfileMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(3.301f, 11.72f)
                 lineTo(14.2f, 8.997f)
                 lineToRelative(-4.598f, 8.49f)
@@ -95,7 +84,7 @@ public val SBBIcons.CableCarProfileMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cableCarProfileMedium!!
     }
 

@@ -15,23 +15,11 @@ public val SBBIcons.CloudIceLarge: ImageVector
         if (_cloudIceLarge != null) {
             return _cloudIceLarge!!
         }
-        _cloudIceLarge = Builder(
-            name = "CloudIceLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _cloudIceLarge = Builder(name = "CloudIceLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(22.5f, 45.5f)
                 horizontalLineToRelative(-2.0f)
                 verticalLineToRelative(-2.0f)
@@ -143,7 +131,7 @@ public val SBBIcons.CloudIceLarge: ImageVector
                 curveToRelative(-0.593f, -1.134f, -1.604f, -1.96f, -2.771f, -2.384f)
             }
         }
-            .build()
+        .build()
         return _cloudIceLarge!!
     }
 

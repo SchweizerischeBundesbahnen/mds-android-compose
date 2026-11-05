@@ -15,22 +15,11 @@ public val SBBIcons.TravelBackpackLarge: ImageVector
         if (_travelBackpackLarge != null) {
             return _travelBackpackLarge!!
         }
-        _travelBackpackLarge = Builder(
-            name = "TravelBackpackLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _travelBackpackLarge = Builder(name = "TravelBackpackLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(31.0f, 1.998f)
                 horizontalLineToRelative(4.0f)
                 lineTo(35.0f, 3.0f)
@@ -183,7 +172,7 @@ public val SBBIcons.TravelBackpackLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _travelBackpackLarge!!
     }
 

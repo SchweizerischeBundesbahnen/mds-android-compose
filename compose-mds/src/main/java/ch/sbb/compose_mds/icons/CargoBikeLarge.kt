@@ -15,23 +15,11 @@ public val SBBIcons.CargoBikeLarge: ImageVector
         if (_cargoBikeLarge != null) {
             return _cargoBikeLarge!!
         }
-        _cargoBikeLarge = Builder(
-            name = "CargoBikeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cargoBikeLarge = Builder(name = "CargoBikeLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(20.5f, 17.0f)
                 lineTo(17.0f, 17.0f)
                 verticalLineToRelative(1.0f)
@@ -101,7 +89,7 @@ public val SBBIcons.CargoBikeLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cargoBikeLarge!!
     }
 

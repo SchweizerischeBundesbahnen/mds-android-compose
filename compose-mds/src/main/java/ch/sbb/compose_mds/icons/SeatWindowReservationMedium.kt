@@ -15,24 +15,12 @@ public val SBBIcons.SeatWindowReservationMedium: ImageVector
         if (_seatWindowReservationMedium != null) {
             return _seatWindowReservationMedium!!
         }
-        _seatWindowReservationMedium = Builder(
-            name = "SeatWindowReservationMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _seatWindowReservationMedium = Builder(name = "SeatWindowReservationMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.25f, 3.25f)
                 curveToRelative(-1.101f, 0.0f, -2.0f, 0.899f, -2.0f, 2.0f)
                 lineTo(9.25f, 6.0f)
@@ -95,7 +83,7 @@ public val SBBIcons.SeatWindowReservationMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _seatWindowReservationMedium!!
     }
 

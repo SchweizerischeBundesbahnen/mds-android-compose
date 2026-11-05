@@ -15,23 +15,11 @@ public val SBBIcons.HighlighterLarge: ImageVector
         if (_highlighterLarge != null) {
             return _highlighterLarge!!
         }
-        _highlighterLarge = Builder(
-            name = "HighlighterLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _highlighterLarge = Builder(name = "HighlighterLarge", defaultWidth = 48.0.dp, defaultHeight
+                = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(41.155f, 14.448f)
                 lineToRelative(-0.25f, 0.346f)
                 lineToRelative(-16.0f, 22.0f)
@@ -110,7 +98,7 @@ public val SBBIcons.HighlighterLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _highlighterLarge!!
     }
 

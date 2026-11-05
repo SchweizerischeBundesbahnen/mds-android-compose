@@ -15,24 +15,12 @@ public val SBBIcons.SignExclamationPointLarge: ImageVector
         if (_signExclamationPointLarge != null) {
             return _signExclamationPointLarge!!
         }
-        _signExclamationPointLarge = Builder(
-            name = "SignExclamationPointLarge",
-            defaultWidth =
-                48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight =
-            48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _signExclamationPointLarge = Builder(name = "SignExclamationPointLarge", defaultWidth =
+                48.0.dp, defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight =
+                48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveToRelative(23.947f, 6.276f)
                 lineToRelative(17.4f, 35.0f)
                 lineToRelative(0.36f, 0.723f)
@@ -57,7 +45,7 @@ public val SBBIcons.SignExclamationPointLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _signExclamationPointLarge!!
     }
 

@@ -15,22 +15,11 @@ public val SBBIcons.WashingMachineLarge: ImageVector
         if (_washingMachineLarge != null) {
             return _washingMachineLarge!!
         }
-        _washingMachineLarge = Builder(
-            name = "WashingMachineLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _washingMachineLarge = Builder(name = "WashingMachineLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.5f, 4.0f)
                 lineTo(8.0f, 4.0f)
                 verticalLineToRelative(40.0f)
@@ -130,7 +119,7 @@ public val SBBIcons.WashingMachineLarge: ImageVector
                 arcToRelative(8.5f, 8.5f, 0.0f, false, false, 0.0f, -17.0f)
             }
         }
-            .build()
+        .build()
         return _washingMachineLarge!!
     }
 

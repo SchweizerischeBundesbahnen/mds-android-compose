@@ -15,23 +15,11 @@ public val SBBIcons.ThumbDownLarge: ImageVector
         if (_thumbDownLarge != null) {
             return _thumbDownLarge!!
         }
-        _thumbDownLarge = Builder(
-            name = "ThumbDownLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _thumbDownLarge = Builder(name = "ThumbDownLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 12.414f)
                 curveToRelative(0.297f, -0.462f, 0.654f, -0.85f, 1.061f, -1.167f)
                 curveToRelative(1.255f, -0.977f, 2.893f, -1.23f, 4.439f, -1.23f)
@@ -89,7 +77,7 @@ public val SBBIcons.ThumbDownLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _thumbDownLarge!!
     }
 

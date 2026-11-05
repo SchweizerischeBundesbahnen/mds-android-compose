@@ -15,23 +15,11 @@ public val SBBIcons.SuitcaseSmall: ImageVector
         if (_suitcaseSmall != null) {
             return _suitcaseSmall!!
         }
-        _suitcaseSmall = Builder(
-            name = "SuitcaseSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _suitcaseSmall = Builder(name = "SuitcaseSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(9.5f, 4.009f)
                 horizontalLineTo(9.0f)
                 verticalLineToRelative(3.0f)
@@ -54,7 +42,7 @@ public val SBBIcons.SuitcaseSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _suitcaseSmall!!
     }
 

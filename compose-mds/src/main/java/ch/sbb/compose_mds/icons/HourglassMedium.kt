@@ -15,23 +15,11 @@ public val SBBIcons.HourglassMedium: ImageVector
         if (_hourglassMedium != null) {
             return _hourglassMedium!!
         }
-        _hourglassMedium = Builder(
-            name = "HourglassMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _hourglassMedium = Builder(name = "HourglassMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(8.226f, 4.75f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(0.5f)
@@ -87,7 +75,7 @@ public val SBBIcons.HourglassMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _hourglassMedium!!
     }
 

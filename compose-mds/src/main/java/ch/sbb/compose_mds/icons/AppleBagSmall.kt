@@ -15,23 +15,11 @@ public val SBBIcons.AppleBagSmall: ImageVector
         if (_appleBagSmall != null) {
             return _appleBagSmall!!
         }
-        _appleBagSmall = Builder(
-            name = "AppleBagSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _appleBagSmall = Builder(name = "AppleBagSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.232f, 3.0f)
                 horizontalLineToRelative(8.692f)
                 lineToRelative(0.07f, 0.418f)
@@ -130,7 +118,7 @@ public val SBBIcons.AppleBagSmall: ImageVector
                 curveToRelative(-0.387f, -0.77f, -0.623f, -1.91f, -0.623f, -3.316f)
             }
         }
-            .build()
+        .build()
         return _appleBagSmall!!
     }
 

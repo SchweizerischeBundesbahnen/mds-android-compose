@@ -15,22 +15,11 @@ public val SBBIcons.CarPowerPlugMedium: ImageVector
         if (_carPowerPlugMedium != null) {
             return _carPowerPlugMedium!!
         }
-        _carPowerPlugMedium = Builder(
-            name = "CarPowerPlugMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _carPowerPlugMedium = Builder(name = "CarPowerPlugMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.92f, 5.744f)
                 arcTo(2.77f, 2.77f, 0.0f, false, false, 8.744f, 8.92f)
                 lineToRelative(0.006f, 0.04f)
@@ -118,7 +107,7 @@ public val SBBIcons.CarPowerPlugMedium: ImageVector
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, -1.768f, -4.268f)
             }
         }
-            .build()
+        .build()
         return _carPowerPlugMedium!!
     }
 

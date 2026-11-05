@@ -15,22 +15,11 @@ public val SBBIcons.EyeLarge: ImageVector
         if (_eyeLarge != null) {
             return _eyeLarge!!
         }
-        _eyeLarge = Builder(
-            name = "EyeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _eyeLarge = Builder(name = "EyeLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(21.271f, 9.2f)
                 lineToRelative(0.54f, 2.933f)
                 quadToRelative(0.945f, -0.141f, 1.93f, -0.143f)
@@ -121,7 +110,7 @@ public val SBBIcons.EyeLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _eyeLarge!!
     }
 

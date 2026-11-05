@@ -15,23 +15,11 @@ public val SBBIcons.CameraMedium: ImageVector
         if (_cameraMedium != null) {
             return _cameraMedium!!
         }
-        _cameraMedium = Builder(
-            name = "CameraMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cameraMedium = Builder(name = "CameraMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(13.89f, 6.25f)
                 horizontalLineToRelative(8.221f)
                 lineToRelative(0.114f, 0.342f)
@@ -68,7 +56,7 @@ public val SBBIcons.CameraMedium: ImageVector
                 arcToRelative(5.75f, 5.75f, 0.0f, false, false, 0.0f, -11.5f)
             }
         }
-            .build()
+        .build()
         return _cameraMedium!!
     }
 

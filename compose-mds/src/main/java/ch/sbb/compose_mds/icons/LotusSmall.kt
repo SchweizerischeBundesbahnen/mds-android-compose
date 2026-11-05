@@ -15,22 +15,11 @@ public val SBBIcons.LotusSmall: ImageVector
         if (_lotusSmall != null) {
             return _lotusSmall!!
         }
-        _lotusSmall = Builder(
-            name = "LotusSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _lotusSmall = Builder(name = "LotusSmall", defaultWidth = 24.0.dp, defaultHeight = 24.0.dp,
+                viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.342f, 2.635f)
                 lineTo(12.0f, 2.315f)
                 lineToRelative(-0.342f, 0.32f)
@@ -104,7 +93,7 @@ public val SBBIcons.LotusSmall: ImageVector
                 arcToRelative(7.96f, 7.96f, 0.0f, false, false, 6.118f, -9.025f)
             }
         }
-            .build()
+        .build()
         return _lotusSmall!!
     }
 

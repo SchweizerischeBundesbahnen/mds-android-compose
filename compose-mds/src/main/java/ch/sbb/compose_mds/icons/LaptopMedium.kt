@@ -15,23 +15,11 @@ public val SBBIcons.LaptopMedium: ImageVector
         if (_laptopMedium != null) {
             return _laptopMedium!!
         }
-        _laptopMedium = Builder(
-            name = "LaptopMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _laptopMedium = Builder(name = "LaptopMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.25f, 6.25f)
                 horizontalLineToRelative(23.5f)
                 verticalLineToRelative(13.849f)
@@ -60,7 +48,7 @@ public val SBBIcons.LaptopMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _laptopMedium!!
     }
 

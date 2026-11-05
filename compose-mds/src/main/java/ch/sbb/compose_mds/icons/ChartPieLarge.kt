@@ -15,23 +15,11 @@ public val SBBIcons.ChartPieLarge: ImageVector
         if (_chartPieLarge != null) {
             return _chartPieLarge!!
         }
-        _chartPieLarge = Builder(
-            name = "ChartPieLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chartPieLarge = Builder(name = "ChartPieLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(22.434f, 3.027f)
                 quadToRelative(0.282f, -0.015f, 0.566f, -0.021f)
                 verticalLineToRelative(20.783f)
@@ -57,7 +45,7 @@ public val SBBIcons.ChartPieLarge: ImageVector
                 curveTo(2.0f, 12.0f, 11.028f, 2.61f, 22.383f, 2.029f)
             }
         }
-            .build()
+        .build()
         return _chartPieLarge!!
     }
 

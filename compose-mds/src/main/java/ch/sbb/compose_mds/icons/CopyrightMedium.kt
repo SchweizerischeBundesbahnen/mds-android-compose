@@ -15,23 +15,11 @@ public val SBBIcons.CopyrightMedium: ImageVector
         if (_copyrightMedium != null) {
             return _copyrightMedium!!
         }
-        _copyrightMedium = Builder(
-            name = "CopyrightMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _copyrightMedium = Builder(name = "CopyrightMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(18.0f, 3.25f)
                 curveToRelative(8.233f, 0.0f, 14.75f, 6.516f, 14.75f, 14.75f)
                 reflectiveCurveTo(26.233f, 32.75f, 18.0f, 32.75f)
@@ -63,7 +51,7 @@ public val SBBIcons.CopyrightMedium: ImageVector
                 quadToRelative(1.213f, -1.23f, 3.102f, -1.23f)
             }
         }
-            .build()
+        .build()
         return _copyrightMedium!!
     }
 

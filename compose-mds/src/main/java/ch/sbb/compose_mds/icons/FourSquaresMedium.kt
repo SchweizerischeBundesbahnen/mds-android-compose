@@ -15,22 +15,11 @@ public val SBBIcons.FourSquaresMedium: ImageVector
         if (_fourSquaresMedium != null) {
             return _fourSquaresMedium!!
         }
-        _fourSquaresMedium = Builder(
-            name = "FourSquaresMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _fourSquaresMedium = Builder(name = "FourSquaresMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.75f, 7.75f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(8.5f)
@@ -76,7 +65,7 @@ public val SBBIcons.FourSquaresMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _fourSquaresMedium!!
     }
 

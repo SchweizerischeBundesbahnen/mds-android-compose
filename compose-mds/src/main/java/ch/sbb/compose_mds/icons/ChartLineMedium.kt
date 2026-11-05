@@ -15,23 +15,11 @@ public val SBBIcons.ChartLineMedium: ImageVector
         if (_chartLineMedium != null) {
             return _chartLineMedium!!
         }
-        _chartLineMedium = Builder(
-            name = "ChartLineMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _chartLineMedium = Builder(name = "ChartLineMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(6.25f, 7.5f)
                 verticalLineToRelative(22.25f)
                 horizontalLineTo(30.0f)
@@ -64,7 +52,7 @@ public val SBBIcons.ChartLineMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _chartLineMedium!!
     }
 

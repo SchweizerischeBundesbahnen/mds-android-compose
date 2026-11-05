@@ -15,23 +15,11 @@ public val SBBIcons.ElephantMedium: ImageVector
         if (_elephantMedium != null) {
             return _elephantMedium!!
         }
-        _elephantMedium = Builder(
-            name = "ElephantMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _elephantMedium = Builder(name = "ElephantMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(10.5f, 4.75f)
                 arcTo(7.25f, 7.25f, 0.0f, false, false, 3.25f, 12.0f)
                 curveToRelative(0.0f, 1.575f, 0.58f, 4.826f, 1.724f, 7.64f)
@@ -113,7 +101,7 @@ public val SBBIcons.ElephantMedium: ImageVector
                 arcToRelative(1.25f, 1.25f, 0.0f, false, true, -2.5f, 0.0f)
             }
         }
-            .build()
+        .build()
         return _elephantMedium!!
     }
 

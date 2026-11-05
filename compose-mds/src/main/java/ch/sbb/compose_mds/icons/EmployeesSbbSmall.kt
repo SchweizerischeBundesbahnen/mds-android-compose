@@ -15,22 +15,11 @@ public val SBBIcons.EmployeesSbbSmall: ImageVector
         if (_employeesSbbSmall != null) {
             return _employeesSbbSmall!!
         }
-        _employeesSbbSmall = Builder(
-            name = "EmployeesSbbSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _employeesSbbSmall = Builder(name = "EmployeesSbbSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(12.0f, 6.0f)
                 curveToRelative(0.44f, 0.0f, 0.84f, 0.171f, 1.175f, 0.475f)
                 lineToRelative(0.016f, 0.015f)
@@ -130,7 +119,7 @@ public val SBBIcons.EmployeesSbbSmall: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _employeesSbbSmall!!
     }
 

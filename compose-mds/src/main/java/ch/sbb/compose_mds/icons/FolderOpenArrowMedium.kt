@@ -15,22 +15,11 @@ public val SBBIcons.FolderOpenArrowMedium: ImageVector
         if (_folderOpenArrowMedium != null) {
             return _folderOpenArrowMedium!!
         }
-        _folderOpenArrowMedium = Builder(
-            name = "FolderOpenArrowMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _folderOpenArrowMedium = Builder(name = "FolderOpenArrowMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(16.25f, 10.793f)
                 lineToRelative(3.647f, -3.647f)
                 lineToRelative(0.707f, 0.708f)
@@ -74,7 +63,7 @@ public val SBBIcons.FolderOpenArrowMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _folderOpenArrowMedium!!
     }
 

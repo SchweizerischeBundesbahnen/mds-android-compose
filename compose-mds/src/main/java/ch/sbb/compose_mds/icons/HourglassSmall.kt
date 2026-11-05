@@ -15,23 +15,11 @@ public val SBBIcons.HourglassSmall: ImageVector
         if (_hourglassSmall != null) {
             return _hourglassSmall!!
         }
-        _hourglassSmall = Builder(
-            name = "HourglassSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight =
-                24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _hourglassSmall = Builder(name = "HourglassSmall", defaultWidth = 24.0.dp, defaultHeight =
+                24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(5.484f, 3.0f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(0.5f)
@@ -82,7 +70,7 @@ public val SBBIcons.HourglassSmall: ImageVector
                 arcToRelative(4.2f, 4.2f, 0.0f, false, false, -1.035f, 1.098f)
             }
         }
-            .build()
+        .build()
         return _hourglassSmall!!
     }
 

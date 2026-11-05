@@ -15,22 +15,11 @@ public val SBBIcons.CityMedium: ImageVector
         if (_cityMedium != null) {
             return _cityMedium!!
         }
-        _cityMedium = Builder(
-            name = "CityMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cityMedium = Builder(name = "CityMedium", defaultWidth = 36.0.dp, defaultHeight = 36.0.dp,
+                viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(11.75f, 3.75f)
                 verticalLineToRelative(-0.61f)
                 lineToRelative(-0.598f, 0.119f)
@@ -158,7 +147,7 @@ public val SBBIcons.CityMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cityMedium!!
     }
 

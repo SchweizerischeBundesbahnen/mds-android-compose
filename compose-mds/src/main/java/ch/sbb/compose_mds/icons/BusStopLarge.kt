@@ -15,23 +15,11 @@ public val SBBIcons.BusStopLarge: ImageVector
         if (_busStopLarge != null) {
             return _busStopLarge!!
         }
-        _busStopLarge = Builder(
-            name = "BusStopLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _busStopLarge = Builder(name = "BusStopLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(43.998f, 9.0f)
                 horizontalLineToRelative(-1.996f)
                 verticalLineToRelative(35.002f)
@@ -100,7 +88,7 @@ public val SBBIcons.BusStopLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _busStopLarge!!
     }
 

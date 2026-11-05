@@ -15,23 +15,11 @@ public val SBBIcons.MicrophoneLarge: ImageVector
         if (_microphoneLarge != null) {
             return _microphoneLarge!!
         }
-        _microphoneLarge = Builder(
-            name = "MicrophoneLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight =
-                48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _microphoneLarge = Builder(name = "MicrophoneLarge", defaultWidth = 48.0.dp, defaultHeight =
+                48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.0f, 28.499f)
                 curveToRelative(0.0f, 5.18f, 4.182f, 8.5f, 9.5f, 8.5f)
                 curveToRelative(5.32f, 0.0f, 9.5f, -3.32f, 9.5f, -8.5f)
@@ -77,7 +65,7 @@ public val SBBIcons.MicrophoneLarge: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _microphoneLarge!!
     }
 

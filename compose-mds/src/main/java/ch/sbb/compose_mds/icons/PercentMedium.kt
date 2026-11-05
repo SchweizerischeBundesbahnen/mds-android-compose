@@ -15,23 +15,11 @@ public val SBBIcons.PercentMedium: ImageVector
         if (_percentMedium != null) {
             return _percentMedium!!
         }
-        _percentMedium = Builder(
-            name = "PercentMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _percentMedium = Builder(name = "PercentMedium", defaultWidth = 36.0.dp, defaultHeight =
+                36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.996f, 13.246f)
                 arcToRelative(1.749f, 1.749f, 0.0f, true, false, 0.0f, 3.5f)
                 arcToRelative(1.75f, 1.75f, 0.0f, true, false, 0.0f, -3.5f)
@@ -51,7 +39,7 @@ public val SBBIcons.PercentMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _percentMedium!!
     }
 

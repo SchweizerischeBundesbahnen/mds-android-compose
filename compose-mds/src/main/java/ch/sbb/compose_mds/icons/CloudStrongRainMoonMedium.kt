@@ -15,24 +15,12 @@ public val SBBIcons.CloudStrongRainMoonMedium: ImageVector
         if (_cloudStrongRainMoonMedium != null) {
             return _cloudStrongRainMoonMedium!!
         }
-        _cloudStrongRainMoonMedium = Builder(
-            name = "CloudStrongRainMoonMedium",
-            defaultWidth =
-                36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight =
-            36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _cloudStrongRainMoonMedium = Builder(name = "CloudStrongRainMoonMedium", defaultWidth =
+                36.0.dp, defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight =
+                36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(25.92f, 5.926f)
                 lineToRelative(0.524f, -1.038f)
                 lineToRelative(-1.114f, 0.333f)
@@ -108,7 +96,7 @@ public val SBBIcons.CloudStrongRainMoonMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _cloudStrongRainMoonMedium!!
     }
 

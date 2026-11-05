@@ -15,22 +15,11 @@ public val SBBIcons.GondolaProfileMedium: ImageVector
         if (_gondolaProfileMedium != null) {
             return _gondolaProfileMedium!!
         }
-        _gondolaProfileMedium = Builder(
-            name = "GondolaProfileMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _gondolaProfileMedium = Builder(name = "GondolaProfileMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(13.25f, 9.447f)
                 lineToRelative(19.894f, -5.968f)
                 lineToRelative(-0.288f, -0.958f)
@@ -77,7 +66,7 @@ public val SBBIcons.GondolaProfileMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _gondolaProfileMedium!!
     }
 

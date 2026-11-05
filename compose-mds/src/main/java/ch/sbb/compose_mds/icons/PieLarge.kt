@@ -15,22 +15,11 @@ public val SBBIcons.PieLarge: ImageVector
         if (_pieLarge != null) {
             return _pieLarge!!
         }
-        _pieLarge = Builder(
-            name = "PieLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _pieLarge = Builder(name = "PieLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(16.0f, 15.02f)
                 horizontalLineToRelative(5.0f)
                 lineTo(21.0f, 9.0f)
@@ -149,7 +138,7 @@ public val SBBIcons.PieLarge: ImageVector
                 arcToRelative(0.5f, 0.5f, 0.0f, false, false, 0.0f, -1.0f)
             }
         }
-            .build()
+        .build()
         return _pieLarge!!
     }
 

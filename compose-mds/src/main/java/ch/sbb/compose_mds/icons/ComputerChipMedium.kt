@@ -15,22 +15,11 @@ public val SBBIcons.ComputerChipMedium: ImageVector
         if (_computerChipMedium != null) {
             return _computerChipMedium!!
         }
-        _computerChipMedium = Builder(
-            name = "ComputerChipMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight = 36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _computerChipMedium = Builder(name = "ComputerChipMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(14.75f, 9.25f)
                 horizontalLineToRelative(3.5f)
                 lineTo(18.25f, 4.5f)
@@ -101,7 +90,7 @@ public val SBBIcons.ComputerChipMedium: ImageVector
                 close()
             }
         }
-            .build()
+        .build()
         return _computerChipMedium!!
     }
 

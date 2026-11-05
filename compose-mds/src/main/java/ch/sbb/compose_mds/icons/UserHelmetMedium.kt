@@ -15,23 +15,11 @@ public val SBBIcons.UserHelmetMedium: ImageVector
         if (_userHelmetMedium != null) {
             return _userHelmetMedium!!
         }
-        _userHelmetMedium = Builder(
-            name = "UserHelmetMedium",
-            defaultWidth = 36.0.dp,
-            defaultHeight =
-                36.0.dp,
-            viewportWidth = 36.0f,
-            viewportHeight = 36.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _userHelmetMedium = Builder(name = "UserHelmetMedium", defaultWidth = 36.0.dp, defaultHeight
+                = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(18.0f, 4.75f)
                 curveToRelative(-3.385f, 0.0f, -6.125f, 2.756f, -6.125f, 6.151f)
                 verticalLineToRelative(1.349f)
@@ -80,7 +68,7 @@ public val SBBIcons.UserHelmetMedium: ImageVector
                 curveToRelative(-0.157f, -4.522f, -2.44f, -9.088f, -6.262f, -10.628f)
             }
         }
-            .build()
+        .build()
         return _userHelmetMedium!!
     }
 

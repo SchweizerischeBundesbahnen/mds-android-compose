@@ -15,22 +15,11 @@ public val SBBIcons.OwnerUserGroupSmall: ImageVector
         if (_ownerUserGroupSmall != null) {
             return _ownerUserGroupSmall!!
         }
-        _ownerUserGroupSmall = Builder(
-            name = "OwnerUserGroupSmall",
-            defaultWidth = 24.0.dp,
-            defaultHeight = 24.0.dp,
-            viewportWidth = 24.0f,
-            viewportHeight = 24.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _ownerUserGroupSmall = Builder(name = "OwnerUserGroupSmall", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveTo(14.935f, 4.652f)
                 curveTo(15.286f, 3.515f, 16.245f, 2.8f, 17.4f, 2.8f)
                 curveToRelative(0.73f, 0.0f, 1.39f, 0.276f, 1.865f, 0.783f)
@@ -135,7 +124,7 @@ public val SBBIcons.OwnerUserGroupSmall: ImageVector
                 curveToRelative(-0.478f, -1.738f, -1.4f, -3.71f, -3.16f, -4.975f)
             }
         }
-            .build()
+        .build()
         return _ownerUserGroupSmall!!
     }
 

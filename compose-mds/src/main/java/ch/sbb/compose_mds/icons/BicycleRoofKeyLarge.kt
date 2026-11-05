@@ -15,22 +15,11 @@ public val SBBIcons.BicycleRoofKeyLarge: ImageVector
         if (_bicycleRoofKeyLarge != null) {
             return _bicycleRoofKeyLarge!!
         }
-        _bicycleRoofKeyLarge = Builder(
-            name = "BicycleRoofKeyLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = EvenOdd,
-            ) {
+        _bicycleRoofKeyLarge = Builder(name = "BicycleRoofKeyLarge", defaultWidth = 48.0.dp,
+                defaultHeight = 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = EvenOdd) {
                 moveToRelative(32.888f, 11.513f)
                 lineToRelative(0.188f, -0.043f)
                 lineToRelative(0.168f, 0.094f)
@@ -134,7 +123,7 @@ public val SBBIcons.BicycleRoofKeyLarge: ImageVector
                 curveTo(6.855f, 10.0f, 6.0f, 9.132f, 6.0f, 8.005f)
             }
         }
-            .build()
+        .build()
         return _bicycleRoofKeyLarge!!
     }
 

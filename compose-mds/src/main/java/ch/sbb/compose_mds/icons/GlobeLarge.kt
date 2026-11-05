@@ -15,22 +15,11 @@ public val SBBIcons.GlobeLarge: ImageVector
         if (_globeLarge != null) {
             return _globeLarge!!
         }
-        _globeLarge = Builder(
-            name = "GlobeLarge",
-            defaultWidth = 48.0.dp,
-            defaultHeight = 48.0.dp,
-            viewportWidth = 48.0f,
-            viewportHeight = 48.0f,
-        ).apply {
-            path(
-                fill = SolidColor(Color(0xFF000000)),
-                stroke = null,
-                strokeLineWidth = 0.0f,
-                strokeLineCap = Butt,
-                strokeLineJoin = Miter,
-                strokeLineMiter = 4.0f,
-                pathFillType = NonZero,
-            ) {
+        _globeLarge = Builder(name = "GlobeLarge", defaultWidth = 48.0.dp, defaultHeight = 48.0.dp,
+                viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
                 moveTo(23.5f, 7.0f)
                 curveToRelative(1.121f, 0.0f, 2.216f, 0.112f, 3.274f, 0.325f)
                 lineToRelative(0.148f, -0.094f)
@@ -106,7 +95,7 @@ public val SBBIcons.GlobeLarge: ImageVector
                 arcToRelative(15.53f, 15.53f, 0.0f, false, false, -8.76f, -6.424f)
             }
         }
-            .build()
+        .build()
         return _globeLarge!!
     }
 
