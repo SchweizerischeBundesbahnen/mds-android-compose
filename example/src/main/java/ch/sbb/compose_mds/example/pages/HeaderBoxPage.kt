@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,15 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBox
 import ch.sbb.compose_mds.composables.headerBox.SBBHeaderBoxFlap
+import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.example.composeable.Placeholder
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.SignExclamationPointSmall
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.CircleInformationSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.SignExclamationPointSmall
+import ch.sbb.compose_mds.icons.UnicornSmall
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun HeaderBoxPage() {
@@ -27,15 +26,16 @@ fun HeaderBoxPage() {
 
   Column(
       modifier =
-          Modifier.fillMaxSize()
-              .verticalScroll(
-                  state = rememberScrollState(),
+            Modifier
+                .fillMaxSize()
+                .verticalScroll(
+                    state = rememberScrollState(),
               ),
   ) {
     SBBListHeader(title = "Default:")
     SBBHeaderBox.Default(
-        icon = SBBIcons.Small.UnicornSmall,
-        title = "Title",
+            icon = SBBIcons.UnicornSmall,
+            title = "Title",
         subtext = "Subtext",
     )
 
@@ -46,10 +46,10 @@ fun HeaderBoxPage() {
 
     SBBListHeader(title = "With button:")
     SBBHeaderBox.WithButton(
-        icon = SBBIcons.Small.UnicornSmall,
+            icon = SBBIcons.UnicornSmall,
         title = "Title",
         subtext = "Subtext",
-        actionIcon = SBBIcons.Small.UnicornSmall,
+            actionIcon = SBBIcons.UnicornSmall,
         actionLabel = "Action",
         onClickAction = {
           Toast.makeText(currentContext, "Action executed.", Toast.LENGTH_LONG).show()
@@ -58,14 +58,14 @@ fun HeaderBoxPage() {
 
     SBBListHeader(title = "With flap:")
     SBBHeaderBox.Default(
-        icon = SBBIcons.Small.UnicornSmall,
+            icon = SBBIcons.UnicornSmall,
         title = "Title",
         subtext = "Subtext",
         headerBoxFlap =
             SBBHeaderBoxFlap.Default(
-                leadingIcon = SBBIcons.Small.SignExclamationPointSmall,
+                    leadingIcon = SBBIcons.SignExclamationPointSmall,
                 text = "Flap Text",
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                    trailingIcon = SBBIcons.CircleInformationSmall,
                 onClickTrailingIcon = {
                   Toast.makeText(currentContext, "Flap clicked.", Toast.LENGTH_LONG).show()
                 },

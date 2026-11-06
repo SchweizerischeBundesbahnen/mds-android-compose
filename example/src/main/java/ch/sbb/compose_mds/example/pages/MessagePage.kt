@@ -23,9 +23,8 @@ import ch.sbb.compose_mds.composables.message.Error
 import ch.sbb.compose_mds.composables.message.Loading
 import ch.sbb.compose_mds.composables.message.SBBMessage
 import ch.sbb.compose_mds.composables.message.SBBMessageIllustration
-import ch.sbb.compose_mds.sbbicons.Medium
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.medium.TrainMedium
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.TrainMedium
 import ch.sbb.compose_mds.theme.SBBTheme
 
 private const val MESSAGE =
@@ -69,9 +68,9 @@ private fun SBBMessageDefaultCustom() {
         title = "Title, single line",
         message = MESSAGE,
         illustration = SBBMessageIllustration.STAFF_FEMALE,
-        interactionIcon = SBBIcons.Medium.TrainMedium,
-        onInteraction = {
-          Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
+            interactionIcon = SBBIcons.TrainMedium,
+            onInteraction = {
+                Toast.makeText(context, "On interaction", Toast.LENGTH_SHORT).show()
         },
     )
   }

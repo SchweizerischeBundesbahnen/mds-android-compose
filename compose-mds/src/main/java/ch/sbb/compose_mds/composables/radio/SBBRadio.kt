@@ -29,9 +29,8 @@ import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
@@ -151,13 +150,13 @@ private fun SBBRadioPreview() {
             SBBRadio(
                 selected = true,
                 label = "Label",
-                icon = SBBIcons.Small.UnicornSmall,
+                icon = SBBIcons.UnicornSmall,
                 onClick = {},
             )
             SBBRadio(
                 selected = true,
                 label = "Disabled",
-                icon = SBBIcons.Small.UnicornSmall,
+                icon = SBBIcons.UnicornSmall,
                 enabled = false,
                 onClick = {},
             )

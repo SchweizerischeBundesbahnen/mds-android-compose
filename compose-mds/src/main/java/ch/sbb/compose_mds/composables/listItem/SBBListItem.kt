@@ -20,15 +20,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.composables.container.SBBContentBox
-import ch.sbb.compose_mds.sbbicons.Medium
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.medium.AirplaneMedium
-import ch.sbb.compose_mds.sbbicons.medium.AlarmClockMedium
-import ch.sbb.compose_mds.sbbicons.medium.ArchiveBoxMedium
-import ch.sbb.compose_mds.sbbicons.medium.ArrowRightMedium
-import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
-import ch.sbb.compose_mds.sbbicons.small.FaceKingSmall
+import ch.sbb.compose_mds.icons.AirplaneMedium
+import ch.sbb.compose_mds.icons.AlarmClockMedium
+import ch.sbb.compose_mds.icons.ArchiveBoxMedium
+import ch.sbb.compose_mds.icons.ArrowRightMedium
+import ch.sbb.compose_mds.icons.ChevronSmallRightSmall
+import ch.sbb.compose_mds.icons.FaceKingSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
@@ -123,7 +121,7 @@ object SBBListItem {
                 subtitle = subtitle,
                 leading = leading,
                 onClick = onClick,
-                trailing = SBBIcons.Small.ChevronSmallRightSmall,
+                trailing = SBBIcons.ChevronSmallRightSmall,
             )
         }
 
@@ -262,7 +260,7 @@ object SBBListItem {
             subtitle = subtitle,
             leading = leading,
             onClick = onClick,
-            trailing = SBBIcons.Small.ChevronSmallRightSmall,
+            trailing = SBBIcons.ChevronSmallRightSmall,
         )
     }
 
@@ -356,7 +354,7 @@ private fun PreviewSBBListItem_Default() {
         SBBListItem.Boxed.Default(
             title = "Item title",
             subtitle = "Subtext example",
-            leading = SBBIcons.Medium.AirplaneMedium,
+            leading = SBBIcons.AirplaneMedium,
         )
     }
 }
@@ -367,7 +365,7 @@ private fun PreviewSBBListItem_Pressed() {
     SBBTheme {
         SBBListItem.Boxed.Default(
             title = "Pressed item",
-            leading = SBBIcons.Medium.AlarmClockMedium,
+            leading = SBBIcons.AlarmClockMedium,
         )
     }
 }
@@ -379,7 +377,7 @@ private fun PreviewSBBListItem_Disabled() {
         SBBListItem.Boxed.Disabled(
             title = "Disabled item",
             subtitle = "Disabled subtext",
-            leading = SBBIcons.Medium.ArchiveBoxMedium,
+            leading = SBBIcons.ArchiveBoxMedium,
         )
     }
 }
@@ -391,7 +389,7 @@ private fun PreviewSBBListItem_Boxed() {
         SBBListItem.Boxed.Default(
             title = "Boxed item",
             subtitle = "Boxed subtext",
-            leading = SBBIcons.Medium.AirplaneMedium,
+            leading = SBBIcons.AirplaneMedium,
         )
     }
 }
@@ -403,7 +401,7 @@ private fun PreviewSBBListItem_IconRight() {
         SBBListItem.Boxed.Default(
             title = "Icon right",
             subtitle = "Icon right",
-            trailing = SBBIcons.Medium.ArrowRightMedium,
+            trailing = SBBIcons.ArrowRightMedium,
         )
     }
 }
@@ -425,7 +423,7 @@ private fun PreviewSBBListItem_Link() {
         SBBListItem.Boxed.Link(
             title = "Link",
             subtitle = "With subtitle and icon",
-            leading = SBBIcons.Small.FaceKingSmall,
+            leading = SBBIcons.FaceKingSmall,
             onClick = {},
         )
     }

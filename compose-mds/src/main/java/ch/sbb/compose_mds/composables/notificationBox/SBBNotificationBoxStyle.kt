@@ -7,12 +7,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CircleCrossSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleExclamationPointSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.CircleTickSmall
+import ch.sbb.compose_mds.icons.CircleCrossSmall
+import ch.sbb.compose_mds.icons.CircleExclamationPointSmall
+import ch.sbb.compose_mds.icons.CircleInformationSmall
+import ch.sbb.compose_mds.icons.CircleTickSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -43,7 +42,7 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
                 val alertColor by animateColorAsState(SBBTheme.colorScheme.error)
                 val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
-                    icon = SBBIcons.Small.CircleCrossSmall,
+                    icon = SBBIcons.CircleCrossSmall,
                     iconColor = SBBTheme.colorScheme.error,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = alertColor,
@@ -57,7 +56,7 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
                 )
                 val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
-                    icon = SBBIcons.Small.CircleExclamationPointSmall,
+                    icon = SBBIcons.CircleExclamationPointSmall,
                     iconColor = if (SBBTheme.isDarkMode) warningColor else SBBColors.black,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = warningColor,
@@ -71,7 +70,7 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
                 )
                 val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
-                    icon = SBBIcons.Small.CircleTickSmall,
+                    icon = SBBIcons.CircleTickSmall,
                     iconColor = successColor,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = successColor,
@@ -82,7 +81,7 @@ internal fun defaultSBBNotificationBoxStyle(): SBBNotificationBoxTokens =
                 val informationColor = SBBColors.smoke
                 val backgroundColor by animateColorAsState(SBBTheme.colorScheme.backgroundContent)
                 return SBBNotificationBoxStyle(
-                    icon = SBBIcons.Small.CircleInformationSmall,
+                    icon = SBBIcons.CircleInformationSmall,
                     iconColor = if (SBBTheme.isDarkMode) SBBColors.white else SBBColors.black,
                     backgroundColor = backgroundColor.copy(alpha = 0.95f),
                     borderColor = informationColor,

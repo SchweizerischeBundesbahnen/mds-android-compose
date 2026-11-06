@@ -36,11 +36,10 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.round
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ArrowLongRightSmall
-import ch.sbb.compose_mds.sbbicons.small.ArrowsLongRightLeftSmall
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.ArrowLongRightSmall
+import ch.sbb.compose_mds.icons.ArrowsLongRightLeftSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /**
@@ -214,12 +213,12 @@ private val twoSegments = listOf(
     SBBButtonSegment(
         value = 1,
         label = "Label 1",
-        icon = SBBIcons.Small.ArrowLongRightSmall,
+        icon = SBBIcons.ArrowLongRightSmall,
     ),
     SBBButtonSegment(
         value = 2,
         label = "Label 2",
-        icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
+        icon = SBBIcons.ArrowsLongRightLeftSmall,
     ),
 )
 
@@ -227,7 +226,7 @@ private val threeSegments = twoSegments.plus(
     SBBButtonSegment(
         value = 3,
         label = "Label 3",
-        icon = SBBIcons.Small.UnicornSmall,
+        icon = SBBIcons.UnicornSmall,
     ),
 )
 

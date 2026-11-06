@@ -13,12 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import ch.sbb.compose_mds.composables.status.theme.SBBStatusStyle
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.preview.SBBComponentPreviewWrapper
 import ch.sbb.compose_mds.preview.SBBThemeConfigProvider
 import ch.sbb.compose_mds.preview.ThemePreviewConfig
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 
@@ -88,7 +87,7 @@ private fun Preview_SBBStatus_Custom(
                     backgroundColor = SBBColors.turquoise,
                     borderColor = SBBColors.turquoise,
                 ),
-                iconData = SBBIcons.Small.UnicornSmall,
+                iconData = SBBIcons.UnicornSmall,
                 label = {
                     Text(
                         "Custom Text",

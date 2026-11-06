@@ -21,12 +21,11 @@ import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButtonSmall
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
+import ch.sbb.compose_mds.icons.DogSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.preview.SBBComponentPreviewWrapper
 import ch.sbb.compose_mds.preview.SBBThemeAllConfigProvider
 import ch.sbb.compose_mds.preview.ThemePreviewConfig
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.DogSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -144,7 +143,7 @@ private fun SBBTertiaryButtonSection() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButton(
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(context, "Tertiary Button with icon and text clicked")
@@ -152,7 +151,7 @@ private fun SBBTertiaryButtonSection() {
                 )
                 SBBTertiaryButton(
                     enabled = false,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(context, "Tertiary Button with icon and text clicked")
@@ -160,7 +159,7 @@ private fun SBBTertiaryButtonSection() {
                 )
                 SBBTertiaryButton(
                     isLoading = true,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(context, "Tertiary Button loading with icon and text clicked")
@@ -171,21 +170,21 @@ private fun SBBTertiaryButtonSection() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButton(
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button with icon clicked")
                     },
                 )
                 SBBTertiaryButton(
                     enabled = false,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button with icon clicked")
                     },
                 )
                 SBBTertiaryButton(
                     isLoading = true,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button loading with icon clicked")
                     },
@@ -211,7 +210,7 @@ private fun SBBTertiarySmallButtonSection() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButtonSmall(
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(context, "Tertiary Button small with icon and text clicked")
@@ -219,7 +218,7 @@ private fun SBBTertiarySmallButtonSection() {
                 )
                 SBBTertiaryButtonSmall(
                     enabled = false,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(context, "Tertiary Button small with icon and text clicked")
@@ -227,7 +226,7 @@ private fun SBBTertiarySmallButtonSection() {
                 )
                 SBBTertiaryButtonSmall(
                     isLoading = true,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     label = "dog",
                     onClick = {
                         showToast(
@@ -241,21 +240,21 @@ private fun SBBTertiarySmallButtonSection() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             ) {
                 SBBTertiaryButtonSmall(
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button small with icon clicked")
                     },
                 )
                 SBBTertiaryButtonSmall(
                     enabled = false,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button small with icon clicked")
                     },
                 )
                 SBBTertiaryButtonSmall(
                     isLoading = true,
-                    icon = SBBIcons.Small.DogSmall,
+                    icon = SBBIcons.DogSmall,
                     onClick = {
                         showToast(context, "Tertiary Button small loading with icon clicked")
                     },

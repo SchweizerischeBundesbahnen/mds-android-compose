@@ -21,9 +21,8 @@ import ch.sbb.compose_mds.beta.dropdown.SBBDropdown
 import ch.sbb.compose_mds.beta.dropdown.SBBDropdownItem
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -75,7 +74,7 @@ private fun SBBDropdownDefaultSection() {
             SBBDropdown(
                 value = value2,
                 items = items,
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 onValueChange = { value2 = it },
                 label = "Label",
                 selectionTitle = "Selection",
@@ -83,7 +82,7 @@ private fun SBBDropdownDefaultSection() {
             SBBDropdown(
                 value = value3,
                 items = items,
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 onValueChange = { value3 = it },
                 label = "Label",
                 placeholder = "With placeholder",
@@ -92,7 +91,7 @@ private fun SBBDropdownDefaultSection() {
             SBBDropdown(
                 value = value4,
                 items = items,
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 onValueChange = { value4 = it },
                 enabled = false,
                 label = "Disabled",
@@ -125,7 +124,7 @@ private fun SBBDropdownErrorSection() {
                 items = items,
                 onValueChange = { value1 = it },
                 label = "Error",
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 selectionTitle = "Selection",
                 isError = true,
             )
@@ -134,7 +133,7 @@ private fun SBBDropdownErrorSection() {
                 items = items,
                 onValueChange = { value2 = it },
                 label = "With error message",
-                leadingIcon = SBBIcons.Small.UnicornSmall,
+                leadingIcon = SBBIcons.UnicornSmall,
                 selectionTitle = "Selection",
                 isError = true,
                 errorText = "This is an error message",

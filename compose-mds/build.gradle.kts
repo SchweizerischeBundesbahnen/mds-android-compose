@@ -29,7 +29,7 @@ ktlint {
     // exclude generated code and icon assets from linting
     filter {
         exclude("**/generated/**")
-        exclude("**/sbbicons/**")
+        exclude("**/icons/**")
     }
 }
 
