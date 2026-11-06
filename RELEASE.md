@@ -15,6 +15,6 @@ The library version is version controlled in `gradle.properties` (`version=...`)
     * moves the `[Unreleased]` changelog entries to the new version,
     * updates `version` in `gradle.properties`,
     * bumps `versionCode` of the example app.
-3. Review and merge the PR. The [release](.github/workflows/github_release.yml) workflow then
+3. Review and merge the PR. The [release](.github/workflows/github-release.yml) workflow then
    creates the
    git tag and GitHub release with the changelog notes. JitPack builds the artifact from the tag.
