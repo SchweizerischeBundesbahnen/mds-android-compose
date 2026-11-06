@@ -22,7 +22,7 @@ configure<ApplicationExtension> {
         applicationId = "ch.sbb.compose_playground"
         minSdk = 24
         versionCode = 1
-        versionName = "1.0"
+        versionName = project.version.toString()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
