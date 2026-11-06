@@ -1,128 +1,54 @@
-# Contributing
+# Guidance on how to contribute
 
-#### Table Of Contents
+> All contributions to this project will be released under the MIT License. By submitting a pull request or filing a bug, issue, or feature request, you are agreeing to comply with this waiver of copyright interest.
+> Details can be found in our [LICENSE](LICENSE).
 
-[Code of Conduct](#code-of-conduct)
+There are two primary ways to help:
 
-[What should I know before I get started?](#what-should-i-know-before-i-get-started)
-* [Tools and Packages](#tools-and-packages)
-* [Design Decisions](#design-decisions)
+- Using the issue tracker, and
+- Changing the code-base.
 
-[How Can I Contribute?](#how-can-i-contribute)
-* [Issues and Bugs](#issue)
-* [Feature Requests](#feature)
-* [Pull Requests Guidelines](#submit-pr)
-* [Your First Code Contribution](#your-first-code-contribution)
-* [Coding Rules](#rules)
-* [Commit Message Guidelines](#commit)
+## Using the issue tracker
 
-<a id="code-of-conduct"></a>
-## Code of Conduct
+Use the issue tracker to suggest feature requests, report bugs, and ask questions. This is also a great way to connect with the developers of the project as well as others who are interested in this solution.
 
-This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code.
+Note that we will not accept all feature requests, since the UI elements in SBB DSM are closely tied to the SBB Design System.
 
-## <a id="what-should-i-know-before-i-get-started"></a> What should I know before I get started?
+Use the issue tracker to find ways to contribute. Find a bug or a feature, mention in the issue that you will take on that effort, then follow the _Changing the code-base_ guidance below.
 
-### <a id="tools-and-packages"></a> Tools and Packages
-A fully configured Android Studio or comparable IDE.
+## Changing the code-base
 
-### <a id="design-decisions"></a> Design Decisions
-Information or links about the Design Decisions or Design Architecture.
+Generally speaking, you should *fork* this repository, make changes in your own fork, and then submit a pull request. Refer to the official git documentation on [Contributing to a Project] for details.
 
-## <a id="issue"></a> Found an Issue?
-If you find a bug in the source code or a mistake in the documentation, you can help us by
-[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/mds-android-compose/issues/new). Including an issue
-reproduction (via StackBlitz, JsBin, Plunkr, etc.) is the absolute best way to help the team quickly
-diagnose the problem. Screenshots are also helpful.
+### Expectations for a pull request
 
-You can help the team even more and [submit a Pull Request](#submit-pr) with a fix.
+All new code should be covered by tests that validate the implemented features and the presence or lack of defects. See [Testing](#testing) for which kind of test we expect where.
 
+Additionally, the code should follow the patterns and structure found in other components, unless there is a clear reason why not to.
 
-## <a id="feature"></a> Want a Feature?
-You can *request* a new feature by [submitting an issue](#submit-issue)
-to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/mds-android-compose/issues/new).
-If you would like to *implement* a new feature, please submit an issue with
-a proposal for your work first, to be sure that we can use it.
-Please consider what kind of change it is:
+It is mandatory to update the [CHANGELOG.md](CHANGELOG.md) file with clear description of what has changed. Stick to the [Keep a Changelog] format and [Semantic Commit Messages].
 
-* For a **Major Feature**, first open an issue and outline your proposal so that it can be
-  discussed. This will also allow us to better coordinate our efforts, prevent duplication of work,
-  and help you to craft the change so that it is successfully accepted into the project.
-* **Small Features** can be crafted and directly [submitted as a Pull Request](#submit-pr).
+The naming of the Widgets should follow the naming from the [Design specs].
+
+### Testing
+
+This is a design system: what a component *looks like* is its contract. **We therefore prefer Golden Tests over any other kind of test.**
+A golden test pins down the rendered pixels, which covers layout, spacing, colors, typography, theming and state at once.
+
+#### Golden tests (the default)
+
+Write golden tests for each component and cover its relevant states (default, selected, disabled, long text, custom content, ...).
+Use`SBBThemeAllConfigProvider` with `@PreviewParameter` to test all theme variants, in both light and dark mode.
+
+#### Integration tests (only where a golden cannot reach)
+
+Some behavior cannot be captured visually: gestures, scroll and animation driven selection, overlays and controllers. For those, add a unit or/and integration test .
 
 
-### <a id="submit-issue"></a> Submitting an Issue
-If your issue appears to be a bug, and hasn't been reported, open a new issue.
-Providing the following information will increase the
-chances of your issue being dealt with quickly:
+[Keep A Changelog]: (https://keepachangelog.com/en/1.1.0/)
 
-* **Overview of the Issue** - if an error is being thrown a non-minified stack trace helps
-* **Toolchain and Environment Details** - which versions of libraries, toolchain, platform etc
-* **Motivation for or Use Case** - explain what are you trying to do and why the current behavior
-  is a bug for you
-* **Browsers and Operating System** - is this a problem with all browsers?
-* **Reproduce the Error** - provide a live example (using StackBlitz or similar) or a unambiguous set of steps
-* **Screenshots** - myybe screenshots can help the team
-  triage issues far more quickly than a text description.
-* **Related Issues** - has a similar issue been reported before?
-* **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
-  causing the problem (line of code or commit)
+[Semantic Commit Messages]: (https://sparkbox.com/foundry/semantic_commit_messages)
 
-You can file new issues by providing the above information [here](https://github.com/SchweizerischeBundesbahnen/mds-android-compose/issues/new).
+[Design Specs]: (https://digital.sbb.ch/de/design-system/mobile/overview/)
 
-
-### <a id="submit-pr"></a> Submitting a Pull Request (PR)
-Before you submit your Pull Request (PR) consider the following guidelines:
-
-* Make your changes in a new git branch:
-
-     ```shell
-     git checkout -b my-fix-branch main
-     ```
-
-* Create your patch, **including appropriate test cases**.
-* Follow our [Coding Rules](#rules).
-* Test your changes with our supported browsers and screen readers.
-* Run tests and ensure that all tests pass.
-* Commit your changes using a descriptive commit message that follows our
-  [commit message conventions](#commit). Adherence to these conventions
-  is necessary because release notes are automatically generated from these messages.
-
-     ```shell
-     git commit -a
-     ```
-  Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
-
-* Push your branch to GitHub:
-
-    ```shell
-    git push my-fork my-fix-branch
-    ```
-
-* In GitHub, send a pull request to `mds-android-compose:main`.
-  The PR title and message should as well conform to the [commit message conventions](#commit).
-
-## <a id="rules"></a> Coding Rules
-To ensure consistency throughout the source code, keep these rules in mind as you are working:
-
-* All features or bug fixes **must be tested** by one or more specs (unit-tests).
-* All public API methods **must be documented**.
-* Also see [CODING_STANDARDS](./CODING_STANDARDS.md)
-
-## <a id="commit"></a> Commit Message Guidelines
-
-This project uses [Conventional Commits](https://www.conventionalcommits.org/) to generate the changelog.
-As an example, please refer to: https://github.com/sbb-design-systems/sbb-angular
-
-<a id="your-first-code-contribution"></a>
-## Your First Code Contribution
-
-Unsure where to begin contributing to Atom? You can start by looking through these `beginner` and `help-wanted` issues:
-
-* [Beginner issues][beginner] - issues which should only require a few lines of code, and a test or two.
-* [Help wanted issues][help-wanted] - issues which should be a bit more involved than `beginner` issues.
-
-## Attribution
-
-This CONTRIBUTING guideline is adapted from the [sbb-design-systems/sbb-angular](https://github.com/sbb-design-systems/sbb-angular)
+[Contributing to a project]: https://git-scm.com/book/ms/v2/GitHub-Contributing-to-a-Project
