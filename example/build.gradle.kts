@@ -21,7 +21,7 @@ configure<ApplicationExtension> {
     defaultConfig {
         applicationId = "ch.sbb.compose_playground"
         minSdk = 24
-        versionCode = 1
+        versionCode = 2
         versionName = project.version.toString()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
