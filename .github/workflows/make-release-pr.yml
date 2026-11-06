@@ -1,0 +1,76 @@
+name: make_release_pr
+
+on:
+  workflow_dispatch:
+    inputs:
+      semantic-versioning:
+        description: Whether to increase major, minor or patch.
+        required: true
+        default: "patch"
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  pull-request-creation:
+    permissions:
+      pull-requests: write
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate Token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.APPBAKERYGITHUBAPP_APPID }}
+          private-key: ${{ secrets.APPBAKERYGITHUBAPP_PRIVATEKEY }}
+
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
+
+      - name: Update Changelog
+        id: update-changelog
+        uses: release-flow/keep-a-changelog-action@v3
+        with:
+          command: bump
+          version: ${{ inputs.semantic-versioning }}
+          tag-prefix: ""
+
+      - name: Update library version in gradle.properties
+        env:
+          VERSION: ${{ steps.update-changelog.outputs.version }}
+        run: |
+          sed -i -E "s/^version=.*/version=${VERSION}/" gradle.properties
+          grep '^version=' gradle.properties
+
+      - name: Bump versionCode of example app
+        id: bump-version-code
+        run: |
+          version_code=$(grep -E '^\s*versionCode = [0-9]+' example/build.gradle.kts | grep -oE '[0-9]+')
+          echo "Example versionCode found: $version_code"
+          new_version_code=$((version_code + 1))
+          sed -i -E "s/^(\s*versionCode = )[0-9]+/\1${new_version_code}/" example/build.gradle.kts
+          echo "version_code=$new_version_code" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8.1.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          committer: sbb-app-bakery[bot] <914587+sbb-app-bakery[bot]@users.noreply.github.com>
+          commit-message: ${{ format('chore{0} prepare version {1}', ':', steps.update-changelog.outputs.version) }}
+          branch: ${{ format('release/{0}', steps.update-changelog.outputs.version) }}
+          title: ${{ format('chore{0} release {1}', ':', steps.update-changelog.outputs.version) }}
+          body: |
+            Make changes for release.
+            - Update `version` in gradle.properties
+            - Update CHANGELOG.md
+            - Bump `versionCode` of example app to ${{ steps.bump-version-code.outputs.version_code }}
+
+            **Merging this PR will trigger a release using the corresponding workflows.**
+          labels: |
+            autorelease
