@@ -1,8 +1,15 @@
-name: Update SBB Icons
+# This workflow updates the Compose icon used by this package to match the version found at https://icons.app.sbb.ch.
+# If there is a new version, it will create / update a pull request.
+# It is run every night.
+#
+# The icons can be browsed on https://digital.sbb.ch/de/foundation/assets/icons/
+# They are guaranteed to be always backward compatible,
+# meaning that no icons will disappear or renamed in a minor or patch update.
+name: nightly_update_icons
 
 on:
   schedule:
-    - cron: '0 6 * * 1'
+    - cron: "20 3 * * *" # 03:20 am every day
   workflow_dispatch:
 
 permissions:
@@ -54,7 +61,15 @@ jobs:
         id: version
         run: echo "version=$(cat tool/sbb-icons/icons.version)" >> "$GITHUB_OUTPUT"
 
+      - name: Update changelog
+        if: steps.icons.outputs.changed == 'true'
+        uses: ./.github/actions/icon-lib-changelog-generator
+        with:
+          version: ${{ steps.version.outputs.version }}
+          changelog-path: CHANGELOG.md
+
       - name: Create Pull Request
+        if: steps.icons.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           branch: chore/update-sbb-icons
@@ -65,6 +80,7 @@ jobs:
 
             Generated with `./gradlew -p tool/sbb-icons run`. Golden files are automatically recorded with `./gradlew :example:recordRoborazziDebug` when icons change. Please review the visual changes.
           add-paths: |
+            CHANGELOG.md
             tool/sbb-icons/icons.version
             compose-mds/src/main/java/ch/sbb/compose_mds/icons/**
             goldenfiles/**

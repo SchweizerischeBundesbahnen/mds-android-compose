@@ -35,9 +35,9 @@ After an update, verify the build and golden files, e.g.
 `./gradlew :compose-mds:compileDebugKotlin :example:verifyRoborazziDebug`, and record new golden
 files if icons changed visually.
 
-The [`update-sbb-icons`](../../.github/workflows/update-sbb-icons.yml) workflow runs the tool weekly
-and
-opens a pull request when a new icon version is available. When generated icons change, it also
-records the golden files on macOS and includes them in the pull request for visual review.
+The [`nightly-update-icons`](../../.github/workflows/nightly-update-icons.yml) workflow runs the
+tool
+nightly and opens a pull request when a new icon version is available. When generated icons change,
+it also records the golden files on macOS and includes them in the pull request for visual review.
 
 > Do not edit the generated files in `icons` manually; they are overwritten on the next update.
