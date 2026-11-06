@@ -20,11 +20,10 @@ import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
 import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ArrowLongRightSmall
-import ch.sbb.compose_mds.sbbicons.small.ArrowsLongRightLeftSmall
-import ch.sbb.compose_mds.sbbicons.small.UnicornSmall
+import ch.sbb.compose_mds.icons.ArrowLongRightSmall
+import ch.sbb.compose_mds.icons.ArrowsLongRightLeftSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.UnicornSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -99,17 +98,17 @@ private fun threeButtonSegments() =
         SBBButtonSegment(
             label = "Label 1",
             value = "Selection 1",
-            icon = SBBIcons.Small.ArrowLongRightSmall,
+            icon = SBBIcons.ArrowLongRightSmall,
         ),
         SBBButtonSegment(
             label = "Label 2",
             value = "Selection 2",
-            icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
+            icon = SBBIcons.ArrowsLongRightLeftSmall,
         ),
         SBBButtonSegment(
             label = "Label 3",
             value = "Selection 3",
-            icon = SBBIcons.Small.UnicornSmall,
+            icon = SBBIcons.UnicornSmall,
         ),
     )
 
@@ -118,12 +117,12 @@ private fun twoButtonSegments() =
         SBBButtonSegment(
             label = "Label 1",
             value = "Selection 1",
-            icon = SBBIcons.Small.ArrowLongRightSmall,
+            icon = SBBIcons.ArrowLongRightSmall,
         ),
         SBBButtonSegment(
             label = "Label 2",
             value = "Selection 2",
-            icon = SBBIcons.Small.ArrowsLongRightLeftSmall,
+            icon = SBBIcons.ArrowsLongRightLeftSmall,
         ),
     )
 

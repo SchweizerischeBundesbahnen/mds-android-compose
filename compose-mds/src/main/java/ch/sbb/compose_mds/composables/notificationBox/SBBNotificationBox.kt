@@ -25,10 +25,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ChevronSmallRightSmall
-import ch.sbb.compose_mds.sbbicons.small.CrossSmall
+import ch.sbb.compose_mds.icons.ChevronSmallRightSmall
+import ch.sbb.compose_mds.icons.CrossSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -55,7 +54,7 @@ object SBBNotificationBox {
         onClose: OnClose? = null,
         onClick: OnClick? = null,
         maxLines: Int = 3,
-        interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
+        interactionIcon: ImageVector? = SBBIcons.ChevronSmallRightSmall,
     ) {
         SBBNotificationBoxInternal(
             modifier = modifier,
@@ -85,7 +84,7 @@ object SBBNotificationBox {
         onClose: OnClose? = null,
         onClick: OnClick? = null,
         maxLines: Int = 3,
-        interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
+        interactionIcon: ImageVector? = SBBIcons.ChevronSmallRightSmall,
     ) {
         SBBNotificationBoxInternal(
             modifier = modifier,
@@ -115,7 +114,7 @@ object SBBNotificationBox {
         onClose: OnClose? = null,
         onClick: OnClick? = null,
         maxLines: Int = 3,
-        interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
+        interactionIcon: ImageVector? = SBBIcons.ChevronSmallRightSmall,
     ) {
         SBBNotificationBoxInternal(
             modifier = modifier,
@@ -145,7 +144,7 @@ object SBBNotificationBox {
         onClose: OnClose? = null,
         onClick: OnClick? = null,
         maxLines: Int = 3,
-        interactionIcon: ImageVector? = SBBIcons.Small.ChevronSmallRightSmall,
+        interactionIcon: ImageVector? = SBBIcons.ChevronSmallRightSmall,
     ) {
         SBBNotificationBoxInternal(
             modifier = modifier,
@@ -271,7 +270,7 @@ private fun NotificationIcon(style: SBBNotificationBoxStyle) {
 private fun CloseButton(onClose: OnClose?) {
     Icon(
         modifier = Modifier.clickable { onClose?.invoke() },
-        imageVector = SBBIcons.Small.CrossSmall,
+        imageVector = SBBIcons.CrossSmall,
         contentDescription = null,
     )
 }

@@ -1,6 +1,5 @@
 package ch.sbb.compose_mds.example.pages
 
-import ch.sbb.compose_mds.theme.SBBTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,32 +14,32 @@ import ch.sbb.compose_mds.composables.tabBar.SBBTabBar
 import ch.sbb.compose_mds.composables.tabBar.SBBTabBarItemData
 import ch.sbb.compose_mds.composables.tabBar.SBBTabBarWarningData
 import ch.sbb.compose_mds.composables.tabBar.rememberSBBTabBarController
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ArchiveBoxSmall
-import ch.sbb.compose_mds.sbbicons.small.ArrowCompassSmall
-import ch.sbb.compose_mds.sbbicons.small.StationSmall
-import ch.sbb.compose_mds.sbbicons.small.TrainSmall
+import ch.sbb.compose_mds.icons.ArchiveBoxSmall
+import ch.sbb.compose_mds.icons.ArrowCompassSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.StationSmall
+import ch.sbb.compose_mds.icons.TrainSmall
+import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun TabBarPage() {
   val items =
       listOf(
           SBBTabBarItemData(
-              icon = SBBIcons.Small.StationSmall,
-              label = "Item 1",
+                icon = SBBIcons.StationSmall,
+                label = "Item 1",
+            ),
+            SBBTabBarItemData(
+                icon = SBBIcons.TrainSmall,
+                label = "Item 2",
+            ),
+          SBBTabBarItemData(
+                icon = SBBIcons.ArchiveBoxSmall,
+                label = "Item 3",
           ),
           SBBTabBarItemData(
-              icon = SBBIcons.Small.TrainSmall,
-              label = "Item 2",
-          ),
-          SBBTabBarItemData(
-              icon = SBBIcons.Small.ArchiveBoxSmall,
-              label = "Item 3",
-          ),
-          SBBTabBarItemData(
-              icon = SBBIcons.Small.ArrowCompassSmall,
-              label = "Item 4",
+                icon = SBBIcons.ArrowCompassSmall,
+                label = "Item 4",
           ),
       )
   val controller by rememberSBBTabBarController(items)

@@ -21,9 +21,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CrossSmall
+import ch.sbb.compose_mds.icons.CrossSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
@@ -87,7 +86,7 @@ fun SBBBottomSheet(
                 )
                 if (showCloseButton && isClosable) {
                     SBBTertiaryButton(
-                        icon = SBBIcons.Small.CrossSmall,
+                        icon = SBBIcons.CrossSmall,
                         onClick = {
                             scope.launch { sheetState.hide() }.invokeOnCompletion {
                                 if (!sheetState.isVisible) {

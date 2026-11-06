@@ -25,9 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ch.sbb.compose_mds.R
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.ChevronLeftSmall
+import ch.sbb.compose_mds.icons.ChevronLeftSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -174,7 +173,7 @@ private fun SBBHeaderInternal(
                         // Todo: translation
                         Icon(
                             modifier = Modifier.clickable { back() },
-                            imageVector = SBBIcons.Small.ChevronLeftSmall,
+                            imageVector = SBBIcons.ChevronLeftSmall,
                             contentDescription = "back",
                             tint = SBBColors.white,
                         )

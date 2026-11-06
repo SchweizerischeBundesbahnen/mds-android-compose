@@ -13,10 +13,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CircleInformationSmall
-import ch.sbb.compose_mds.sbbicons.small.DogSmall
+import ch.sbb.compose_mds.icons.CircleInformationSmall
+import ch.sbb.compose_mds.icons.DogSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
@@ -106,8 +105,8 @@ internal fun _Preview_SBBTextarea() {
                 onValueChange = { },
                 label = "Label",
                 placeholder = "Placeholder",
-                leadingIcon = SBBIcons.Small.DogSmall,
-                trailingIcon = SBBIcons.Small.CircleInformationSmall,
+                leadingIcon = SBBIcons.DogSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
             )
         }
     }

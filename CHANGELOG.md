@@ -11,9 +11,15 @@ This major release aims to bring a modern and flexible API to all SBB components
 stylable on component or
 theme level and supports a slot API (e.g. `label` composable and `labelText` string).
 
+### Added
+
+* Added `tool/sbb-icons` generator to update `SBBIcons` from icons.app.sbb.ch
+
 ### Changed
 
 * Migrated `SBBStatus` to new API
+* Updated `SBBIcons` to icon version 1.8.37 (all small, medium and large icons)
+* Flattened the icon API from `SBBIcons.Small.AdultKidsSmall` to `SBBIcons.AdultKidsSmall`
 
 ### Removed
 

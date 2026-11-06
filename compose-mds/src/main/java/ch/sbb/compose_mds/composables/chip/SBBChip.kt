@@ -19,9 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.CrossSmall
+import ch.sbb.compose_mds.icons.CrossSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
@@ -71,7 +70,7 @@ fun SBBChip(
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(
-                    imageVector = SBBIcons.Small.CrossSmall,
+                    imageVector = SBBIcons.CrossSmall,
                     contentDescription = null,
                     tint = colors.iconClose,
                 )

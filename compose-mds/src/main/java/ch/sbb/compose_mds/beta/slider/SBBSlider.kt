@@ -28,10 +28,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.MinusSmall
-import ch.sbb.compose_mds.sbbicons.small.PlusSmall
+import ch.sbb.compose_mds.icons.MinusSmall
+import ch.sbb.compose_mds.icons.PlusSmall
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -44,8 +43,8 @@ fun SBBSlider(
     enabled: Boolean = true,
     colors: SliderColors = SBBSliderDefaults.colors(),
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-    leadingIcon: ImageVector = SBBIcons.Small.MinusSmall,
-    trailingIcon: ImageVector = SBBIcons.Small.PlusSmall,
+    leadingIcon: ImageVector = SBBIcons.MinusSmall,
+    trailingIcon: ImageVector = SBBIcons.PlusSmall,
 ) {
     Row(
         modifier = modifier.alpha(if (enabled) 1f else .5f),

@@ -18,10 +18,8 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.container.SBBContentBox
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
-import ch.sbb.compose_mds.sbbicons.Medium
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.all
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.all
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -42,7 +40,7 @@ fun IconPage() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
                 contentPadding = PaddingValues(SBBSpacing.XSmall),
             ) {
-                items(SBBIcons.Small.all) {
+                items(SBBIcons.all.filter { it.name.endsWith("Small") }) {
                     Icon(
                         imageVector = it,
                         contentDescription = null,
@@ -59,7 +57,7 @@ fun IconPage() {
                 horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
                 contentPadding = PaddingValues(SBBSpacing.XSmall),
             ) {
-                items(SBBIcons.Medium.all) {
+                items(SBBIcons.all.filter { it.name.endsWith("Medium") }) {
                     Icon(
                         imageVector = it,
                         contentDescription = null,

@@ -16,9 +16,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import ch.sbb.compose_mds.R
 import ch.sbb.compose_mds.composables.button.SBBTertiaryButton
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
-import ch.sbb.compose_mds.sbbicons.Medium
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.medium.ArrowsCircleMedium
+import ch.sbb.compose_mds.icons.ArrowsCircleMedium
+import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -201,7 +200,7 @@ private fun SBBMessageInternal(
         if (onInteraction != null) {
             Spacer(Modifier.height(SBBSpacing.Large))
             SBBTertiaryButton(
-                icon = interactionIcon ?: SBBIcons.Medium.ArrowsCircleMedium,
+                icon = interactionIcon ?: SBBIcons.ArrowsCircleMedium,
                 onClick = onInteraction,
             )
         }

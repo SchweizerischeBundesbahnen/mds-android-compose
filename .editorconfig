@@ -34,7 +34,7 @@ ktlint_standard_property-naming = disabled
 ij_formatter_enabled = false
 ktlint = disabled
 
-[**/sbbicons/**]
+[**/icons/**]
 ij_formatter_enabled = false
 ktlint = disabled
 

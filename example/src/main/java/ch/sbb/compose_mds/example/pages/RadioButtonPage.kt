@@ -13,9 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.radio.SBBRadio
-import ch.sbb.compose_mds.sbbicons.SBBIcons
-import ch.sbb.compose_mds.sbbicons.Small
-import ch.sbb.compose_mds.sbbicons.small.TrainSmall
+import ch.sbb.compose_mds.icons.SBBIcons
+import ch.sbb.compose_mds.icons.TrainSmall
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -41,15 +40,15 @@ fun RadioButtonPage() {
     SBBRadio(
         label = "Label",
         selected = selectedValue == 1,
-        icon = SBBIcons.Small.TrainSmall,
-        onClick = { selectedValue = 1 },
+            icon = SBBIcons.TrainSmall,
+            onClick = { selectedValue = 1 },
     )
 
     SBBListHeader(title = "Disabled RadioButton")
     SBBRadio(
         label = "Label",
         selected = true,
-        icon = SBBIcons.Small.TrainSmall,
+            icon = SBBIcons.TrainSmall,
         enabled = false,
         onClick = {},
     )
