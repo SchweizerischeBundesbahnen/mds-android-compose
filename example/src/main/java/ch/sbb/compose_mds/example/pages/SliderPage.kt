@@ -20,13 +20,10 @@ import ch.sbb.compose_mds.theme.SBBTheme
 @Composable
 fun SliderPage() {
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
     ) {
         val sliderState = SliderState(value = .25f)
         SBBListHeader(title = "Default")

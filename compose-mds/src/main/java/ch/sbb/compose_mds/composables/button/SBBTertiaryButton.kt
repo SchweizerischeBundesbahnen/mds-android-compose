@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.loadingIndicator.SBBLoadingIndicator
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 /***
@@ -98,7 +99,7 @@ private enum class SBBTertiaryButtonSize(
     val verticalPadding: Dp,
 ) {
     Regular(height = 44.dp, iconOnlyWidth = 44.dp, verticalPadding = 10.dp),
-    Small(height = 32.dp, iconOnlyWidth = 32.dp, verticalPadding = 4.dp),
+    Small(height = 32.dp, iconOnlyWidth = 32.dp, verticalPadding = SBBSpacing.XXSmall),
 }
 
 @Composable
@@ -136,7 +137,7 @@ private fun SBBTertiaryButtonImpl(
         } else {
             if (icon != null) {
                 Icon(
-                    modifier = Modifier.padding(end = if (label != null) 4.dp else 0.dp),
+                    modifier = Modifier.padding(end = if (label != null) SBBSpacing.XXSmall else SBBSpacing.Zero),
                     imageVector = icon,
                     contentDescription = null,
                     tint = if (isEnabled) colors.contentColor else colors.disabledContentColor,
@@ -157,9 +158,9 @@ private fun contentPadding(
     label: String?,
 ): PaddingValues =
     PaddingValues(
-        start = if (label == null) 0.dp else 16.dp,
+        start = if (label == null) SBBSpacing.Zero else SBBSpacing.Medium,
         top = size.verticalPadding,
-        end = if (label == null) 0.dp else 16.dp,
+        end = if (label == null) SBBSpacing.Zero else SBBSpacing.Medium,
         bottom = size.verticalPadding,
     )
 

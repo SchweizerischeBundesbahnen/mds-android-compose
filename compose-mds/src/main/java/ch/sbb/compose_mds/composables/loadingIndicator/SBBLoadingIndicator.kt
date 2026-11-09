@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 object SBBLoadingIndicator {
@@ -56,7 +57,7 @@ object SBBLoadingIndicator {
             offsetY = 6.25.dp,
             rotationY = 70f,
             cameraDistance = 4f,
-            windowPadding = 4.dp,
+            windowPadding = SBBSpacing.XXSmall,
         )
     }
 

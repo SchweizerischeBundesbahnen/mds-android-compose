@@ -24,16 +24,14 @@ import kotlinx.datetime.Month
 fun DatePickerPage() {
     var date by remember { mutableStateOf(LocalDate(year = 2026, month = Month.AUGUST, day = 4)) }
     Column(
-        modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(horizontal = SBBSpacing.Small)
-                .verticalScroll(rememberScrollState()),
-        verticalArrangement =
-            Arrangement.spacedBy(
-                SBBSpacing.Large,
-                alignment = Alignment.CenterVertically,
-            ),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = SBBSpacing.Small)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(
+            SBBSpacing.Large,
+            alignment = Alignment.CenterVertically,
+        ),
     ) {
         SBBDatePicker.Default(selectedDate = date, onDateChange = { date = it })
         SBBDatePicker.Boxed(selectedDate = date, onDateChange = { date = it })

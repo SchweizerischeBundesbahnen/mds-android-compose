@@ -21,13 +21,10 @@ import ch.sbb.compose_mds.theme.SBBTheme
 @Composable
 fun StatusPage() {
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBListHeader(title = "Success")

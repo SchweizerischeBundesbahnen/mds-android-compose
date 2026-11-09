@@ -33,16 +33,14 @@ fun DateTimePickerPage() {
         )
     }
     Column(
-        modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(horizontal = SBBSpacing.Small)
-                .verticalScroll(rememberScrollState()),
-        verticalArrangement =
-            Arrangement.spacedBy(
-                SBBSpacing.Large,
-                alignment = Alignment.CenterVertically,
-            ),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = SBBSpacing.Small)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(
+            SBBSpacing.Large,
+            alignment = Alignment.CenterVertically,
+        ),
     ) {
         SBBDateTimePicker.Default(selectedDateTime = dateTime, onDateTimeChange = { dateTime = it })
         SBBDateTimePicker.Boxed(selectedDateTime = dateTime, onDateTimeChange = { dateTime = it })

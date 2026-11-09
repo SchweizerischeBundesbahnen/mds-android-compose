@@ -94,10 +94,7 @@ private fun TextStylePreview(
 @Composable
 private fun TextStyleInfos(style: TextStyle) {
     Text(
-        text =
-            "fontWeight: ${style.fontWeight}\n" +
-                "fontSize: ${style.fontSize}\n" +
-                "lineHeight: ${style.lineHeight}",
+        text = "fontWeight: ${style.fontWeight}\n" + "fontSize: ${style.fontSize}\n" + "lineHeight: ${style.lineHeight}",
         style = MaterialTheme.typography.bodyMedium,
         modifier = Modifier.padding(all = SBBSpacing.XSmall),
     )

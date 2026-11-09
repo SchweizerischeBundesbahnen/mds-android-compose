@@ -23,44 +23,43 @@ import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun TabBarPage() {
-  val items =
-      listOf(
-          SBBTabBarItemData(
-                icon = SBBIcons.StationSmall,
-                label = "Item 1",
-            ),
-            SBBTabBarItemData(
-                icon = SBBIcons.TrainSmall,
-                label = "Item 2",
-            ),
-          SBBTabBarItemData(
-                icon = SBBIcons.ArchiveBoxSmall,
-                label = "Item 3",
-          ),
-          SBBTabBarItemData(
-                icon = SBBIcons.ArrowCompassSmall,
-                label = "Item 4",
-          ),
-      )
-  val controller by rememberSBBTabBarController(items)
-  controller.setWarnings(
-      listOf(SBBTabBarWarningData(index = 1, semantics = "Warning")),
-  )
-  Box(
-      modifier = Modifier.fillMaxSize(),
-      contentAlignment = Alignment.BottomCenter,
-  ) {
-    SBBTabBar(
-        modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
-        controller = controller,
+    val items = listOf(
+        SBBTabBarItemData(
+            icon = SBBIcons.StationSmall,
+            label = "Item 1",
+        ),
+        SBBTabBarItemData(
+            icon = SBBIcons.TrainSmall,
+            label = "Item 2",
+        ),
+        SBBTabBarItemData(
+            icon = SBBIcons.ArchiveBoxSmall,
+            label = "Item 3",
+        ),
+        SBBTabBarItemData(
+            icon = SBBIcons.ArrowCompassSmall,
+            label = "Item 4",
+        ),
     )
-  }
+    val controller by rememberSBBTabBarController(items)
+    controller.setWarnings(
+        listOf(SBBTabBarWarningData(index = 1, semantics = "Warning")),
+    )
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.BottomCenter,
+    ) {
+        SBBTabBar(
+            modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
+            controller = controller,
+        )
+    }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_TabBarPage() {
-  SBBTheme(includeSurface = true) {
-    TabBarPage()
-  }
+    SBBTheme(includeSurface = true) {
+        TabBarPage()
+    }
 }

@@ -17,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.text.SBBTextInput
 import ch.sbb.compose_mds.composables.bottomSheet.SBBBottomSheet
@@ -45,12 +44,11 @@ fun TextInputPage() {
     }
 
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(state = rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
     ) {
         SBBTextareaDefaultSection(onShowSheet = { showSheet = true })
         SBBTextareaErrorSection(onShowSheet = { showSheet = true })
@@ -71,7 +69,7 @@ private fun SBBTextareaDefaultSection(onShowSheet: () -> Unit) {
     ) {
         SBBListHeader(title = "Default")
         Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
         ) {
             SBBTextInput(
                 value = text1,
@@ -128,7 +126,7 @@ private fun SBBTextareaErrorSection(onShowSheet: () -> Unit) {
     ) {
         SBBListHeader(title = "Error")
         Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
         ) {
             SBBTextInput(
                 value = text5,

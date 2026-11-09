@@ -85,7 +85,7 @@ private fun ColorEntry(
 ) {
     SBBContentBox(
         modifier = Modifier.size(100.dp),
-        contentPadding = PaddingValues(0.dp),
+        contentPadding = PaddingValues(SBBSpacing.Zero),
     ) {
         val textPadding = PaddingValues(
             start = SBBSpacing.XSmall,

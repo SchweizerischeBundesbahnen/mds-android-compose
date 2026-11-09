@@ -25,16 +25,14 @@ fun TimePickerPage() {
         mutableStateOf(LocalTime(15, 15))
     }
     Column(
-        modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(horizontal = SBBSpacing.Small)
-                .verticalScroll(rememberScrollState()),
-        verticalArrangement =
-            Arrangement.spacedBy(
-                SBBSpacing.Large,
-                alignment = Alignment.CenterVertically,
-            ),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = SBBSpacing.Small)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(
+            SBBSpacing.Large,
+            alignment = Alignment.CenterVertically,
+        ),
     ) {
         SBBTimePicker(selectedTime = time, onTimeChange = { time = it })
         SBBTimePicker.Boxed(selectedTime = time, onTimeChange = { time = it })

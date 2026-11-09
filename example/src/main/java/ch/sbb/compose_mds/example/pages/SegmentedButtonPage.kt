@@ -16,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.composables.listItem.SBBListHeader
 import ch.sbb.compose_mds.composables.segmentedButton.SBBButtonSegment
 import ch.sbb.compose_mds.composables.segmentedButton.SBBSegmentedButton
@@ -32,14 +31,11 @@ fun SegmentedButtonPage() {
     val context = LocalContext.current
 
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         // DEFAULT
         SBBListHeader(title = "Default")
@@ -134,8 +130,7 @@ private fun toastSelection(
         context,
         "Selection changed: $selection",
         Toast.LENGTH_SHORT,
-    )
-        .show()
+    ).show()
 }
 
 @PreviewLightDark

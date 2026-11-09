@@ -15,7 +15,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.beta.ExperimentalSBBComponent
 import ch.sbb.compose_mds.beta.dropdown.SBBDropdown
 import ch.sbb.compose_mds.beta.dropdown.SBBDropdownItem
@@ -29,12 +28,11 @@ import ch.sbb.compose_mds.theme.SBBTheme
 @Composable
 fun DropdownPage() {
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(state = rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.Medium),
     ) {
         SBBDropdownDefaultSection()
         SBBDropdownErrorSection()
@@ -48,13 +46,12 @@ private fun SBBDropdownDefaultSection() {
     var value2 by remember { mutableStateOf<Int?>(null) }
     var value3 by remember { mutableStateOf<Int?>(3) }
     var value4 by remember { mutableStateOf<Int?>(4) }
-    val items =
-        listOf(
-            SBBDropdownItem(value = 1, label = "Value 1"),
-            SBBDropdownItem(value = 2, label = "Value 2"),
-            SBBDropdownItem(value = 3, label = "Value 3"),
-            SBBDropdownItem(value = 4, label = "Value 4"),
-        )
+    val items = listOf(
+        SBBDropdownItem(value = 1, label = "Value 1"),
+        SBBDropdownItem(value = 2, label = "Value 2"),
+        SBBDropdownItem(value = 3, label = "Value 3"),
+        SBBDropdownItem(value = 4, label = "Value 4"),
+    )
 
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
@@ -106,11 +103,10 @@ private fun SBBDropdownDefaultSection() {
 private fun SBBDropdownErrorSection() {
     var value1 by remember { mutableIntStateOf(1) }
     var value2 by remember { mutableIntStateOf(2) }
-    val items =
-        listOf(
-            SBBDropdownItem(value = 1, label = "Value 1"),
-            SBBDropdownItem(value = 2, label = "Value 2"),
-        )
+    val items = listOf(
+        SBBDropdownItem(value = 1, label = "Value 1"),
+        SBBDropdownItem(value = 2, label = "Value 2"),
+    )
     SBBContentBox(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(SBBSpacing.XSmall),

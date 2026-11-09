@@ -162,7 +162,7 @@ fun defaultSBBPickerStyle(): SBBPickerStyle =
                 ),
                 separatorTextStyle = SBBTheme.sbbTypography.smallLight,
                 horizontalPadding = SBBSpacing.Medium,
-                selectedShape = RoundedCornerShape(8.dp),
+                selectedShape = RoundedCornerShape(SBBSpacing.XSmall),
                 dateFormat = { locale ->
                     val symbols = DateFormatSymbols(locale)
                     val shortWeekdays = symbols.shortWeekdays.drop(1).take(7)

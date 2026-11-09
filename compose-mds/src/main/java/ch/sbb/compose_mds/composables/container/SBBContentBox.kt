@@ -19,7 +19,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
@@ -57,7 +56,7 @@ fun SBBContentBox(
 private fun Preview_SBBContentBox() {
     SBBTheme {
         Surface {
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(SBBSpacing.Medium)) {
                 SBBContentBox {
                     Text(
                         text = "Preview",

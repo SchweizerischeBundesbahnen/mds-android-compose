@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.toSize
 import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.icons.SignExclamationPointSmall
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 
 @Composable
 internal fun RowScope.SBBTabBarItem(
@@ -93,7 +94,7 @@ internal fun RowScope.SBBTabBarItem(
         Row(
             modifier = warningSemanticsModifier,
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.Small),
         ) {
             Icon(
                 modifier = Modifier
