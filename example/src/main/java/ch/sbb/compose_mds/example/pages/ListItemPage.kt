@@ -42,10 +42,9 @@ import ch.sbb.compose_mds.theme.SBBTheme
 fun ListItemPage() {
     val scrollState = rememberScrollState()
     Column(
-        modifier =
-            Modifier
-                .verticalScroll(scrollState)
-                .padding(horizontal = SBBSpacing.XSmall),
+        modifier = Modifier
+            .verticalScroll(scrollState)
+            .padding(horizontal = SBBSpacing.XSmall),
     ) {
         SBBListHeader(title = "List items")
 

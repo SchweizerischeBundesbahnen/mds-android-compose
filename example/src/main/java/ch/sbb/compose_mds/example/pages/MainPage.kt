@@ -20,13 +20,10 @@ import ch.sbb.compose_mds.theme.SBBTheme
 @Composable
 fun MainPage(navController: NavController) {
     Column(
-        modifier =
-            Modifier
-                .padding(horizontal = SBBSpacing.Small)
-                .fillMaxSize()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
+        modifier = Modifier
+            .padding(horizontal = SBBSpacing.Small)
+            .fillMaxSize()
+            .verticalScroll(state = rememberScrollState()),
     ) {
         SBBListHeader(title = "Basics")
         SBBList.Wrap {

@@ -176,7 +176,7 @@ object SBBHeaderBox {
         ) {
             Column {
                 Row(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     if (icon != null) {

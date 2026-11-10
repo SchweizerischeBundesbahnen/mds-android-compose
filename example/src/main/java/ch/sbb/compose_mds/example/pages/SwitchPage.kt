@@ -20,34 +20,31 @@ import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun SwitchPage() {
-  Column(
-      modifier =
-          Modifier
-              .fillMaxWidth()
-              .verticalScroll(
-                  state = rememberScrollState(),
-              )
-              .padding(SBBSpacing.XSmall),
-      verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
-  ) {
-    var checkedState: Boolean by remember { mutableStateOf(true) }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState())
+            .padding(SBBSpacing.XSmall),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
+    ) {
+        var checkedState: Boolean by remember { mutableStateOf(true) }
 
-    SBBListHeader(title = "Default")
-    SBBSwitch(
-        checked = checkedState,
-        onCheckedChange = { checked -> checkedState = checked },
-    )
+        SBBListHeader(title = "Default")
+        SBBSwitch(
+            checked = checkedState,
+            onCheckedChange = { checked -> checkedState = checked },
+        )
 
-    SBBListHeader(title = "Disabled")
-    SBBSwitch(checked = true, enabled = false, onCheckedChange = {})
-    SBBSwitch(checked = false, enabled = false, onCheckedChange = {})
-  }
+        SBBListHeader(title = "Disabled")
+        SBBSwitch(checked = true, enabled = false, onCheckedChange = {})
+        SBBSwitch(checked = false, enabled = false, onCheckedChange = {})
+    }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_SwitchPage() {
-  SBBTheme(includeSurface = true) {
-    SwitchPage()
-  }
+    SBBTheme(includeSurface = true) {
+        SwitchPage()
+    }
 }

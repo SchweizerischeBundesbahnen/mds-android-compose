@@ -21,13 +21,10 @@ private const val text =
 @Composable
 fun NotificationBoxPage() {
     Column(
-        modifier =
-            Modifier
-                .padding(SBBSpacing.XSmall)
-                .fillMaxWidth()
-                .verticalScroll(
-                    state = rememberScrollState(),
-                ),
+        modifier = Modifier
+            .padding(SBBSpacing.XSmall)
+            .fillMaxWidth()
+            .verticalScroll(state = rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBNotificationBox.Alert(title = "Title", text = text, isCloseable = true)

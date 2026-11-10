@@ -32,6 +32,7 @@ import ch.sbb.compose_mds.icons.MinusSmall
 import ch.sbb.compose_mds.icons.PlusSmall
 import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,7 +81,7 @@ fun SBBSlider(
                     modifier = Modifier.height(4.dp),
                     sliderState = sliderState,
                     drawStopIndicator = null,
-                    thumbTrackGapSize = 0.dp,
+                    thumbTrackGapSize = SBBSpacing.Zero,
                     colors = colors,
                 )
             },

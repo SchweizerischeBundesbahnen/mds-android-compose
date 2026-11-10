@@ -32,6 +32,7 @@ import androidx.compose.ui.semantics.collectionInfo
 import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import ch.sbb.compose_mds.theme.SBBSpacing
 import kotlinx.coroutines.launch
 
 /***
@@ -75,7 +76,7 @@ fun SBBTabBar(
                 }
             }
             .then(modifier),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         Row(
             modifier = Modifier
@@ -88,7 +89,7 @@ fun SBBTabBar(
                         columnCount = controller.items.size,
                     )
                 },
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
             verticalAlignment = Alignment.Top,
         ) {
             controller.items.mapIndexed { i, data ->

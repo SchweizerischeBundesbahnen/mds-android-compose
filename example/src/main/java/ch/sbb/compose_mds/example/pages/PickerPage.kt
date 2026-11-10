@@ -30,19 +30,18 @@ data class City(
 fun PickerPage() {
     val bern = City("Bern")
     val stGallen = City("St. Gallen")
-    val cities =
-        remember {
-            listOf(
-                City("Zürich"),
-                bern,
-                City("Basel"),
-                City("Genève"),
-                City("Lausanne"),
-                City("Luzern"),
-                stGallen,
-                City("Lugano"),
-            )
-        }
+    val cities = remember {
+        listOf(
+            City("Zürich"),
+            bern,
+            City("Basel"),
+            City("Genève"),
+            City("Lausanne"),
+            City("Luzern"),
+            stGallen,
+            City("Lugano"),
+        )
+    }
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
@@ -51,12 +50,13 @@ fun PickerPage() {
         var selection2 by remember { mutableStateOf(stGallen) }
 
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
-            verticalArrangement =
-                Arrangement.spacedBy(
-                    SBBSpacing.Large,
-                    alignment = Alignment.CenterVertically,
-                ),
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(
+                SBBSpacing.Large,
+                alignment = Alignment.CenterVertically,
+            ),
         ) {
             Text("Selected 1: ${selection1.name}, Selected 2: ${selection2.name}")
             SBBPickerWheelContainer(boxed = false) {

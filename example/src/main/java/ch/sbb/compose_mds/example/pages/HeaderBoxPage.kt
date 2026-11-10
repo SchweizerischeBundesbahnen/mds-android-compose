@@ -22,72 +22,69 @@ import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun HeaderBoxPage() {
-  val currentContext = LocalContext.current
+    val currentContext = LocalContext.current
 
-  Column(
-      modifier =
-            Modifier
-                .fillMaxSize()
-                .verticalScroll(
-                    state = rememberScrollState(),
-              ),
-  ) {
-    SBBListHeader(title = "Default:")
-    SBBHeaderBox.Default(
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(
+                state = rememberScrollState(),
+            ),
+    ) {
+        SBBListHeader(title = "Default:")
+        SBBHeaderBox.Default(
             icon = SBBIcons.UnicornSmall,
             title = "Title",
-        subtext = "Subtext",
-    )
+            subtext = "Subtext",
+        )
 
-    SBBListHeader(title = "Simple:")
-    SBBHeaderBox.Default(
-        title = "Title",
-    )
+        SBBListHeader(title = "Simple:")
+        SBBHeaderBox.Default(
+            title = "Title",
+        )
 
-    SBBListHeader(title = "With button:")
-    SBBHeaderBox.WithButton(
+        SBBListHeader(title = "With button:")
+        SBBHeaderBox.WithButton(
             icon = SBBIcons.UnicornSmall,
-        title = "Title",
-        subtext = "Subtext",
+            title = "Title",
+            subtext = "Subtext",
             actionIcon = SBBIcons.UnicornSmall,
-        actionLabel = "Action",
-        onClickAction = {
-          Toast.makeText(currentContext, "Action executed.", Toast.LENGTH_LONG).show()
-        },
-    )
+            actionLabel = "Action",
+            onClickAction = {
+                Toast.makeText(currentContext, "Action executed.", Toast.LENGTH_LONG).show()
+            },
+        )
 
-    SBBListHeader(title = "With flap:")
-    SBBHeaderBox.Default(
+        SBBListHeader(title = "With flap:")
+        SBBHeaderBox.Default(
             icon = SBBIcons.UnicornSmall,
-        title = "Title",
-        subtext = "Subtext",
-        headerBoxFlap =
-            SBBHeaderBoxFlap.Default(
-                    leadingIcon = SBBIcons.SignExclamationPointSmall,
+            title = "Title",
+            subtext = "Subtext",
+            headerBoxFlap = SBBHeaderBoxFlap.Default(
+                leadingIcon = SBBIcons.SignExclamationPointSmall,
                 text = "Flap Text",
-                    trailingIcon = SBBIcons.CircleInformationSmall,
+                trailingIcon = SBBIcons.CircleInformationSmall,
                 onClickTrailingIcon = {
-                  Toast.makeText(currentContext, "Flap clicked.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(currentContext, "Flap clicked.", Toast.LENGTH_LONG).show()
                 },
             ),
-    )
+        )
 
-    SBBListHeader(title = "Custom:")
-    SBBHeaderBox.Custom(
-        headerBoxFlap =
-            SBBHeaderBoxFlap.Custom {
-              Placeholder(modifier = Modifier.fillMaxWidth())
+        SBBListHeader(title = "Custom:")
+        SBBHeaderBox.Custom(
+            headerBoxFlap = SBBHeaderBoxFlap.Custom {
+                Placeholder(modifier = Modifier.fillMaxWidth())
             },
-    ) {
-      Placeholder(modifier = Modifier.fillMaxWidth())
+        ) {
+            Placeholder(modifier = Modifier.fillMaxWidth())
+        }
     }
-  }
 }
 
 @PreviewLightDark
 @Composable
 fun HeaderBoxPagePreview() {
-  SBBTheme(includeSurface = true) {
-    HeaderBoxPage()
-  }
+    SBBTheme(includeSurface = true) {
+        HeaderBoxPage()
+    }
 }

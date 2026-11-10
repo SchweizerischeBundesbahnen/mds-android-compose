@@ -155,7 +155,7 @@ fun SBBTextInput(
                             )
 
                             Row(
-                                modifier = Modifier.padding(top = 2.dp, bottom = 4.dp),
+                                modifier = Modifier.padding(top = 2.dp, bottom = SBBSpacing.XXSmall),
                                 verticalAlignment = Alignment.Top,
                             ) {
                                 Box(modifier = Modifier.weight(1f)) {

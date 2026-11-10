@@ -35,9 +35,7 @@ fun ButtonPage() {
         Modifier
             .padding(SBBSpacing.XSmall)
             .fillMaxWidth()
-            .verticalScroll(
-                state = rememberScrollState(),
-            ),
+            .verticalScroll(state = rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(SBBSpacing.XSmall),
     ) {
         SBBPrimaryButtonSection()

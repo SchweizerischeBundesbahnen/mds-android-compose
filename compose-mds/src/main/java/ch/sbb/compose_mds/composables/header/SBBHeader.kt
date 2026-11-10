@@ -28,6 +28,7 @@ import ch.sbb.compose_mds.R
 import ch.sbb.compose_mds.icons.ChevronLeftSmall
 import ch.sbb.compose_mds.icons.SBBIcons
 import ch.sbb.compose_mds.theme.SBBColors
+import ch.sbb.compose_mds.theme.SBBSpacing
 import ch.sbb.compose_mds.theme.SBBTheme
 
 object SBBHeader
@@ -158,7 +159,7 @@ private fun SBBHeaderInternal(
                 when (navigationType) {
                     NavigationType.Cancel -> {
                         TextButton(
-                            contentPadding = PaddingValues(all = 0.dp),
+                            contentPadding = PaddingValues(all = SBBSpacing.Zero),
                             onClick = { back() },
                         ) {
                             Text(

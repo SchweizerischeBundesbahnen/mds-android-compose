@@ -28,16 +28,14 @@ fun TimeRangePickerPage() {
         mutableStateOf(LocalTime(22, 50))
     }
     Column(
-        modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(horizontal = SBBSpacing.Small)
-                .verticalScroll(rememberScrollState()),
-        verticalArrangement =
-            Arrangement.spacedBy(
-                SBBSpacing.Large,
-                alignment = Alignment.CenterVertically,
-            ),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = SBBSpacing.Small)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(
+            SBBSpacing.Large,
+            alignment = Alignment.CenterVertically,
+        ),
     ) {
         SBBTimeRangePicker(
             startTime = startTime,

@@ -20,45 +20,42 @@ import ch.sbb.compose_mds.theme.SBBTheme
 
 @Composable
 fun RadioButtonPage() {
-  var selectedValue: Int by remember { mutableIntStateOf(0) }
-  Column(
-      modifier =
-          Modifier
-              .verticalScroll(
-                  state = rememberScrollState(),
-              )
-              .padding(SBBSpacing.XSmall),
-  ) {
-    SBBListHeader(title = "RadioButton")
-    SBBRadio(
-        label = "Label",
-        selected = selectedValue == 0,
-        onClick = { selectedValue = 0 },
-    )
+    var selectedValue: Int by remember { mutableIntStateOf(0) }
+    Column(
+        modifier = Modifier
+            .verticalScroll(state = rememberScrollState())
+            .padding(SBBSpacing.XSmall),
+    ) {
+        SBBListHeader(title = "RadioButton")
+        SBBRadio(
+            label = "Label",
+            selected = selectedValue == 0,
+            onClick = { selectedValue = 0 },
+        )
 
-    SBBListHeader(title = "RadioButton with Icon")
-    SBBRadio(
-        label = "Label",
-        selected = selectedValue == 1,
+        SBBListHeader(title = "RadioButton with Icon")
+        SBBRadio(
+            label = "Label",
+            selected = selectedValue == 1,
             icon = SBBIcons.TrainSmall,
             onClick = { selectedValue = 1 },
-    )
+        )
 
-    SBBListHeader(title = "Disabled RadioButton")
-    SBBRadio(
-        label = "Label",
-        selected = true,
+        SBBListHeader(title = "Disabled RadioButton")
+        SBBRadio(
+            label = "Label",
+            selected = true,
             icon = SBBIcons.TrainSmall,
-        enabled = false,
-        onClick = {},
-    )
-  }
+            enabled = false,
+            onClick = {},
+        )
+    }
 }
 
 @PreviewLightDark
 @Composable
 fun Preview_RadioButtonPage() {
-  SBBTheme(includeSurface = true) {
-    RadioButtonPage()
-  }
+    SBBTheme(includeSurface = true) {
+        RadioButtonPage()
+    }
 }
