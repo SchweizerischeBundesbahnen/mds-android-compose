@@ -20,20 +20,20 @@ public val SBBIcons.HamburgerMenuMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(6.0f, 7.75f)
-                horizontalLineToRelative(24.0f)
+                moveTo(30.0f, 7.75f)
                 verticalLineToRelative(1.0f)
                 lineTo(6.0f, 8.75f)
+                verticalLineToRelative(-1.0f)
                 close()
-                moveTo(6.0f, 28.75f)
-                horizontalLineToRelative(24.0f)
+                moveTo(30.0f, 28.75f)
                 verticalLineToRelative(1.0f)
                 lineTo(6.0f, 29.75f)
+                verticalLineToRelative(-1.0f)
                 close()
-                moveTo(30.0f, 18.25f)
+                moveTo(30.0f, 19.25f)
+                verticalLineToRelative(-1.0f)
                 lineTo(6.0f, 18.25f)
                 verticalLineToRelative(1.0f)
-                horizontalLineToRelative(24.0f)
                 close()
             }
         }

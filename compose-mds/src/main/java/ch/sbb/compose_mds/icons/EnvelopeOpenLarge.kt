@@ -20,15 +20,15 @@ public val SBBIcons.EnvelopeOpenLarge: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(24.321f, 2.617f)
-                lineTo(24.0f, 2.347f)
+                moveToRelative(42.821f, 18.117f)
+                lineToRelative(-18.5f, -15.5f)
+                lineToRelative(-0.321f, -0.27f)
                 lineToRelative(-0.321f, 0.27f)
                 lineToRelative(-18.5f, 15.5f)
                 lineToRelative(-0.179f, 0.15f)
                 lineTo(5.0f, 46.0f)
                 horizontalLineToRelative(38.0f)
                 lineTo(43.0f, 18.267f)
-                lineToRelative(-0.179f, -0.15f)
                 close()
                 moveTo(6.0f, 19.707f)
                 verticalLineToRelative(24.586f)
@@ -43,13 +43,11 @@ public val SBBIcons.EnvelopeOpenLarge: ImageVector
                 lineTo(29.707f, 32.0f)
                 close()
                 moveTo(41.76f, 18.533f)
-                lineTo(24.0f, 3.653f)
+                lineTo(24.0f, 3.65f)
                 lineTo(6.24f, 18.532f)
                 lineTo(19.0f, 31.293f)
-                lineToRelative(4.646f, -4.647f)
-                lineToRelative(0.354f, -0.353f)
-                lineToRelative(0.354f, 0.353f)
-                lineTo(29.0f, 31.293f)
+                lineToRelative(5.0f, -5.0f)
+                lineToRelative(5.0f, 5.0f)
                 close()
             }
         }

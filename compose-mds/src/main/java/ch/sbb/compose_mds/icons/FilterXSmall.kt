@@ -20,8 +20,7 @@ public val SBBIcons.FilterXSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(3.413f, 4.0f)
-                horizontalLineToRelative(17.174f)
+                moveToRelative(20.587f, 4.0f)
                 lineToRelative(-0.707f, 0.825f)
                 lineToRelative(-5.88f, 6.86f)
                 verticalLineToRelative(1.397f)
@@ -30,14 +29,15 @@ public val SBBIcons.FilterXSmall: ImageVector
                 lineToRelative(0.12f, -0.14f)
                 lineTo(18.413f, 5.0f)
                 horizontalLineTo(5.587f)
-                lineToRelative(5.293f, 6.174f)
+                lineToRelative(5.293f, 6.175f)
                 lineToRelative(0.12f, 0.14f)
                 verticalLineTo(18.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(1.0f)
                 horizontalLineToRelative(-2.0f)
-                verticalLineToRelative(-7.315f)
+                verticalLineToRelative(-7.316f)
                 lineToRelative(-5.88f, -6.86f)
+                lineTo(3.413f, 4.0f)
                 close()
                 moveTo(15.5f, 18.207f)
                 lineToRelative(-2.146f, 2.146f)

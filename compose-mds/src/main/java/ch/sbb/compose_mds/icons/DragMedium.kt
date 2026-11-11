@@ -20,20 +20,20 @@ public val SBBIcons.DragMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(6.0f, 10.75f)
-                horizontalLineToRelative(24.0f)
+                moveTo(30.0f, 10.75f)
                 verticalLineToRelative(1.0f)
                 lineTo(6.0f, 11.75f)
+                verticalLineToRelative(-1.0f)
                 close()
-                moveTo(6.0f, 22.75f)
-                horizontalLineToRelative(24.0f)
+                moveTo(30.0f, 22.75f)
                 verticalLineToRelative(1.0f)
                 lineTo(6.0f, 23.75f)
+                verticalLineToRelative(-1.0f)
                 close()
-                moveTo(30.0f, 16.75f)
+                moveTo(30.0f, 17.75f)
+                verticalLineToRelative(-1.0f)
                 lineTo(6.0f, 16.75f)
                 verticalLineToRelative(1.0f)
-                horizontalLineToRelative(24.0f)
                 close()
             }
         }

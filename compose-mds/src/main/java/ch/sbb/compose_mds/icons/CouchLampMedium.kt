@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,7 +19,7 @@ public val SBBIcons.CouchLampMedium: ImageVector
                 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
+                    pathFillType = NonZero) {
                 moveTo(23.75f, 19.815f)
                 arcToRelative(2.0f, 2.0f, 0.0f, false, true, 1.23f, 2.935f)
                 horizontalLineToRelative(0.27f)
