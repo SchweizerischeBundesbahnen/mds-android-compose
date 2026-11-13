@@ -12,17 +12,14 @@ import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.time.Duration
-import java.util.concurrent.Callable
-import java.util.concurrent.Executors
-import java.util.concurrent.atomic.AtomicInteger
+import java.util.zip.ZipInputStream
 import kotlin.system.exitProcess
 
-private const val BASE_URL = "https://icons.app.sbb.ch/icons"
+private const val REPOSITORY = "sbb-design-systems/sbb-icons"
 private const val ICON_PACKAGE = "ch.sbb.compose_mds"
 private const val ACCESSOR_NAME = "SBBIcons"
 private const val TARGET_PACKAGE = "$ICON_PACKAGE.icons"
 private const val ALL_ASSETS_PROPERTY = "all"
-private const val PARALLEL_DOWNLOADS = 16
 private const val MAX_ATTEMPTS = 3
 
 private val SIZES = listOf("small", "medium", "large")
@@ -41,17 +38,20 @@ private data class Options(
 fun main(args: Array<String>) {
     val options = parseOptions(args)
 
-    println("Fetching $BASE_URL/index.json ...")
-    val index = Json.parseToJsonElement(get("$BASE_URL/index.json").decodeToString()).jsonObject
-    val remoteVersion = index.getValue("version").jsonPrimitive.content
-    val localVersion = options.versionFile.takeIf { it.exists() }?.readText()?.trim()
+    println("Fetching the tags of $REPOSITORY ...")
+    val remoteVersion = fetchLatestVersion()
+    val localVersion = options.versionFile.takeIf { it.exists() }?.readText()?.let(Version::parse)
     println("Remote version: $remoteVersion - Local version: ${localVersion ?: "none"}")
 
-    if (!options.force && localVersion != null && compareVersions(localVersion, remoteVersion) >= 0) {
+    if (!options.force && localVersion != null && localVersion >= remoteVersion) {
         println("All up to date!")
         return
     }
+    setOutput("new_version", remoteVersion.toString())
 
+    println("Downloading icons v$remoteVersion ...")
+    val files = downloadArchive(remoteVersion)
+    val index = Json.parseToJsonElement(files.getValue("icons/index.json").decodeToString()).jsonObject
     val icons = index.getValue("icons").jsonArray
         .map { it.jsonObject }
         .mapNotNull { icon ->
@@ -64,7 +64,7 @@ fun main(args: Array<String>) {
     val workDir = createTempDirectory()
     try {
         val svgDir = File(workDir, "svg")
-        downloadIcons(icons, svgDir)
+        writeIcons(icons, files, svgDir)
 
         println("Generating Compose ImageVectors ...")
         val generatedRoot = File(workDir, "generated")
@@ -92,10 +92,11 @@ private fun parseOptions(args: Array<String>): Options {
                     """
                     Usage: ./gradlew -p tool/sbb-icons run [--args="<options>"]
 
-                    Downloads the SBB icons from $BASE_URL and generates the Compose SBBIcons.
+                    Downloads the SBB icons of the latest vX.Y.Z tag of https://github.com/$REPOSITORY
+                    and generates the Compose SBBIcons. Set GITHUB_TOKEN to avoid the GitHub API rate limit.
 
                     Options:
-                      -f, --force             Regenerate even if the local version is up to date
+                      -f, --force             Regenerate the latest tag even if the local version is up to date
                       --source-root <dir>     Kotlin source root (default: compose-mds/src/main/java)
                       --version-file <file>   File tracking the icon version (default: tool/sbb-icons/icons.version)
                     """.trimIndent(),
@@ -111,23 +112,52 @@ private fun parseOptions(args: Array<String>): Options {
     return Options(force, sourceRoot.absoluteFile, versionFile.absoluteFile)
 }
 
-private fun downloadIcons(icons: List<String>, targetDir: File) {
+/** Sets a step output when running in GitHub Actions. */
+private fun setOutput(name: String, value: String) {
+    val path = System.getenv("GITHUB_OUTPUT") ?: return
+    File(path).appendText("$name=$value\n")
+}
+
+private val githubHeaders: Map<String, String>
+    get() = buildMap {
+        put("Accept", "application/vnd.github+json")
+        System.getenv("GITHUB_TOKEN")?.takeIf { it.isNotEmpty() }?.let { put("Authorization", "Bearer $it") }
+    }
+
+/** Returns the highest `vX.Y.Z` tag of the icon repository, following the pagination of the tags API. */
+private fun fetchLatestVersion(): Version {
+    val tagNames = mutableListOf<String>()
+    var uri: URI? = URI("https://api.github.com/repos/$REPOSITORY/tags?per_page=100")
+    while (uri != null) {
+        val response = get(uri, githubHeaders)
+        Json.parseToJsonElement(response.body().decodeToString()).jsonArray
+            .mapTo(tagNames) { it.jsonObject.getValue("name").jsonPrimitive.content }
+        uri = nextPage(response.headers().firstValue("link").orElse(null))
+    }
+    return checkNotNull(latestVersionTag(tagNames)) { "No vX.Y.Z tag found in $REPOSITORY" }
+}
+
+private fun nextPage(linkHeader: String?): URI? =
+    Regex("""<([^>]+)>;\s*rel="next"""").find(linkHeader.orEmpty())?.let { URI(it.groupValues[1]) }
+
+/** Downloads the tagged archive and returns its files keyed by their path inside the repository. */
+private fun downloadArchive(version: Version): Map<String, ByteArray> {
+    val response = get(URI("https://github.com/$REPOSITORY/archive/refs/tags/v$version.zip"))
+    val files = mutableMapOf<String, ByteArray>()
+    ZipInputStream(response.body().inputStream()).use { zip ->
+        generateSequence { zip.nextEntry }
+            .filterNot { it.isDirectory }
+            .forEach { entry -> files[entry.name.substringAfter('/')] = zip.readBytes() }
+    }
+    return files
+}
+
+private fun writeIcons(icons: List<String>, files: Map<String, ByteArray>, targetDir: File) {
     targetDir.mkdirs()
-    val done = AtomicInteger()
-    val executor = Executors.newFixedThreadPool(PARALLEL_DOWNLOADS)
-    try {
-        val tasks = icons.map { name ->
-            Callable {
-                val bytes = get("$BASE_URL/$name.svg")
-                // Svg2Compose converts lower_underscore file names to PascalCase property names.
-                File(targetDir, "${name.replace('-', '_')}.svg").writeBytes(bytes)
-                val count = done.incrementAndGet()
-                if (count % 100 == 0 || count == icons.size) println("Downloaded $count/${icons.size} icons")
-            }
-        }
-        executor.invokeAll(tasks).forEach { it.get() }
-    } finally {
-        executor.shutdownNow()
+    icons.forEach { name ->
+        val svg = files["icons/$name.svg"] ?: return@forEach
+        // Svg2Compose converts lower_underscore file names to PascalCase property names.
+        File(targetDir, "${name.replace('-', '_')}.svg").writeBytes(svg)
     }
 }
 
@@ -145,20 +175,22 @@ internal fun generateIcons(svgDir: File, generatedRoot: File, sourceRoot: File) 
     replaceGeneratedSources(generatedRoot, sourceRoot)
 }
 
-private fun get(url: String): ByteArray {
-    val request = HttpRequest.newBuilder(URI(url)).timeout(Duration.ofSeconds(60)).GET().build()
+private fun get(uri: URI, headers: Map<String, String> = emptyMap()): HttpResponse<ByteArray> {
+    val request = HttpRequest.newBuilder(uri).timeout(Duration.ofSeconds(60)).GET()
+        .apply { headers.forEach { (name, value) -> header(name, value) } }
+        .build()
     var lastError: Exception? = null
     repeat(MAX_ATTEMPTS) { attempt ->
         try {
             val response = httpClient.send(request, HttpResponse.BodyHandlers.ofByteArray())
-            if (response.statusCode() == 200) return response.body()
-            lastError = IllegalStateException("HTTP ${response.statusCode()} for $url")
+            if (response.statusCode() == 200) return response
+            lastError = IllegalStateException("HTTP ${response.statusCode()} for $uri")
         } catch (e: java.io.IOException) {
             lastError = e
         }
         Thread.sleep(500L * (attempt + 1))
     }
-    throw IllegalStateException("Failed to download $url", lastError)
+    throw IllegalStateException("Failed to download $uri", lastError)
 }
 
 /**
@@ -193,16 +225,5 @@ private fun String.toPascalCase(): String = split('_', '-')
     .filter { it.isNotEmpty() }
     .joinToString("") { part -> part.replaceFirstChar { it.uppercaseChar() } }
     .let { if (it.first().isDigit()) "_$it" else it }
-
-/** Compares dot-separated numeric versions, e.g. `1.8.37`. */
-internal fun compareVersions(a: String, b: String): Int {
-    val left = a.split('.').map { it.toIntOrNull() ?: 0 }
-    val right = b.split('.').map { it.toIntOrNull() ?: 0 }
-    for (i in 0 until maxOf(left.size, right.size)) {
-        val diff = left.getOrElse(i) { 0 }.compareTo(right.getOrElse(i) { 0 })
-        if (diff != 0) return diff
-    }
-    return 0
-}
 
 private fun createTempDirectory(): File = kotlin.io.path.createTempDirectory("sbb-icons").toFile()
