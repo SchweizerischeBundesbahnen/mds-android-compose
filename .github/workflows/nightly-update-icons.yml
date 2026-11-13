@@ -61,7 +61,7 @@ jobs:
       - name: Check for icon changes
         id: icons
         run: |
-          if [[ -n "$(git status --porcelain -- compose-mds/src/main/java/ch/sbb/compose_mds/icons/ compose-mds/src/main/java/ch/sbb/compose_mds/sbbicons/)" ]]; then
+          if [[ -n "$(git status --porcelain -- compose-mds/src/main/java/ch/sbb/compose_mds/icons/)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
