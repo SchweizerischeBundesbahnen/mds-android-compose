@@ -26,8 +26,6 @@ private const val TARGET_PACKAGE = "$ICON_PACKAGE.icons"
 private const val ALL_ASSETS_PROPERTY = "all"
 private const val RETRIES = 3
 
-private val SIZES = listOf("small", "medium", "large")
-
 private val httpClient: HttpClient = HttpClient.newBuilder()
     .connectTimeout(Duration.ofSeconds(30))
     .followRedirects(HttpClient.Redirect.NORMAL)
@@ -60,15 +58,14 @@ fun main(args: Array<String>) {
 
     println("Downloading icons v$remoteVersion ...")
     val files = downloadArchive(remoteVersion)
-    val index = Json.parseToJsonElement(files.getValue("icons/index.json").decodeToString()).jsonObject
-    val icons = index.getValue("icons").jsonArray
-        .map { it.jsonObject }
-        .mapNotNull { icon ->
-            val name = icon.getValue("name").jsonPrimitive.content
-            val tags = icon["tags"]?.jsonArray?.map { it.jsonPrimitive.content }.orEmpty()
-            name.takeIf { SIZES.any { "Size=$it" in tags } }
-        }
-        .distinct()
+    val indexFile = files["icons/index.json"]
+        ?: throw UpdateFailure("The archive of v$remoteVersion has no icons/index.json")
+    val index = Json.parseToJsonElement(indexFile.decodeToString()).jsonObject
+    val svgNames = files.keys
+        .filter { it.startsWith("icons/") && it.endsWith(".svg") }
+        .mapTo(mutableSetOf()) { it.removePrefix("icons/").removeSuffix(".svg") }
+    val failures = checkIndex(index, remoteVersion, svgNames).toMutableList()
+    val icons = SIZES.flatMapTo(mutableSetOf()) { iconNames(index, it) }
 
     val workDir = createTempDirectory()
     try {
@@ -77,7 +74,10 @@ fun main(args: Array<String>) {
 
         println("Generating Compose ImageVectors ...")
         val generatedRoot = File(workDir, "generated")
-        generateIcons(svgDir, generatedRoot, options.sourceRoot)
+        generateIcons(svgDir, generatedRoot)
+        if (failures.isNotEmpty()) throw UpdateFailure(failures)
+
+        replaceGeneratedSources(generatedRoot, options.sourceRoot)
         options.versionFile.parentFile?.mkdirs()
         options.versionFile.writeText("$remoteVersion\n")
         println("Updated SBBIcons to version $remoteVersion (${icons.size} icons).")
@@ -161,7 +161,7 @@ private fun downloadArchive(version: Version): Map<String, ByteArray> {
     return files
 }
 
-private fun writeIcons(icons: List<String>, files: Map<String, ByteArray>, targetDir: File) {
+private fun writeIcons(icons: Set<String>, files: Map<String, ByteArray>, targetDir: File) {
     targetDir.mkdirs()
     icons.forEach { name ->
         val svg = files["icons/$name.svg"] ?: return@forEach
@@ -170,7 +170,7 @@ private fun writeIcons(icons: List<String>, files: Map<String, ByteArray>, targe
     }
 }
 
-internal fun generateIcons(svgDir: File, generatedRoot: File, sourceRoot: File) {
+private fun generateIcons(svgDir: File, generatedRoot: File) {
     Svg2Compose.parse(
         applicationIconPackage = ICON_PACKAGE,
         accessorName = ACCESSOR_NAME,
@@ -181,7 +181,6 @@ internal fun generateIcons(svgDir: File, generatedRoot: File, sourceRoot: File) 
         allAssetsPropertyName = ALL_ASSETS_PROPERTY,
         generatePreview = false,
     )
-    replaceGeneratedSources(generatedRoot, sourceRoot)
 }
 
 /**
