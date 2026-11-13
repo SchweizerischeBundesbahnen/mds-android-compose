@@ -1,5 +1,8 @@
-# This workflow updates the Compose icon used by this package to match the version found at https://icons.app.sbb.ch.
-# If there is a new version, it will create / update a pull request.
+# This workflow updates the Compose icons used by this package to the latest vX.Y.Z tag of
+# https://github.com/sbb-design-systems/sbb-icons.
+# If there is a new version, it opens an issue labeled icon-lib-update and creates / updates a pull request closing it.
+# If the update fails, no pull request is created or updated, a comment linking the run is added
+# on the issue and the run fails.
 # It is run every night.
 #
 # The icons can be browsed on https://digital.sbb.ch/de/foundation/assets/icons/
@@ -15,6 +18,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   update:
@@ -40,12 +44,24 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Generate SBB Icons
+        id: update
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: ./gradlew -p tool/sbb-icons run
+
+      - name: Open or update tracking issue
+        id: issue
+        if: ${{ !cancelled() && steps.update.outputs.new_version != '' }}
+        uses: ./.github/actions/icon-lib-tracking-issue
+        with:
+          version: ${{ steps.update.outputs.new_version }}
+          outcome: ${{ steps.update.outcome == 'failure' && 'failure' || 'pending' }}
+          token: ${{ github.token }}
 
       - name: Check for icon changes
         id: icons
         run: |
-          if [[ -n "$(git status --porcelain -- compose-mds/src/main/java/ch/sbb/compose_mds/icons/ compose-mds/src/main/java/ch/sbb/compose_mds/sbbicons/)" ]]; then
+          if [[ -n "$(git status --porcelain -- compose-mds/src/main/java/ch/sbb/compose_mds/icons/)" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -76,11 +92,21 @@ jobs:
           commit-message: 'chore: update SBB icons to ${{ steps.version.outputs.version }}'
           title: 'chore: update SBB icons to ${{ steps.version.outputs.version }}'
           body: |
-            Automated update of the Compose `SBBIcons` from https://icons.app.sbb.ch (version ${{ steps.version.outputs.version }}).
+            Automated update of the Compose `SBBIcons` to the [sbb-icons](https://github.com/sbb-design-systems/sbb-icons) tag v${{ steps.version.outputs.version }}.
 
             Generated with `./gradlew -p tool/sbb-icons run`. Golden files are automatically recorded with `./gradlew :example:recordRoborazziDebug` when icons change. Please review the visual changes.
+
+            Closes #${{ steps.issue.outputs.issue-number }}
           add-paths: |
             CHANGELOG.md
             tool/sbb-icons/icons.version
             compose-mds/src/main/java/ch/sbb/compose_mds/icons/**
             goldenfiles/**
+
+      - name: Mark reported failure as resolved
+        if: steps.icons.outputs.changed == 'true'
+        uses: ./.github/actions/icon-lib-tracking-issue
+        with:
+          version: ${{ steps.version.outputs.version }}
+          outcome: success
+          token: ${{ github.token }}
