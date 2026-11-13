@@ -10,6 +10,7 @@ import kotlin.test.assertNull
 private fun index(json: String): JsonObject = Json.parseToJsonElement(json).jsonObject
 
 class ChecksTest {
+    private val expectedIcons = setOf("arrow-turn-right-small", "bike-small", "train-small")
     private val sizedIndex = index(
         """
         {
@@ -88,6 +89,33 @@ class ChecksTest {
         assertEquals(
             listOf("small: no SVG in the archive for bike-small", "large: no SVG in the archive for bike-large"),
             checkIndex(sizedIndex, Version(1, 8, 38), svgs),
+        )
+    }
+
+    @Test
+    fun `checkGenerated passes when every expected icon has exactly one file`() {
+        val generated = listOf("ArrowTurnRightSmall", "BikeSmall", "TrainSmall")
+
+        assertEquals(emptyList(), checkGenerated(expectedIcons, generated))
+    }
+
+    @Test
+    fun `checkGenerated reports missing files with the counts`() {
+        val generated = listOf("BikeSmall")
+
+        assertEquals(
+            listOf("1 generated icons, expected 3; missing ArrowTurnRightSmall, TrainSmall"),
+            checkGenerated(expectedIcons, generated),
+        )
+    }
+
+    @Test
+    fun `checkGenerated reports unexpected files with the counts`() {
+        val generated = listOf("ArrowTurnRightSmall", "BikeSmall", "TrainSmall", "TramSmall")
+
+        assertEquals(
+            listOf("4 generated icons, expected 3; unexpected TramSmall"),
+            checkGenerated(expectedIcons, generated),
         )
     }
 }

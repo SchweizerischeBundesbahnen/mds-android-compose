@@ -49,3 +49,25 @@ fun checkIndex(index: JsonObject, version: Version, svgNames: Set<String>): List
         if (missing.isNotEmpty()) add("$size: no SVG in the archive for ${missing.joinToString()}")
     }
 }
+
+/** The property and file name Svg2Compose gives an icon, e.g. `AdultKidsSmall` for `adult-kids-small`. */
+fun propertyName(iconName: String): String = iconName.split('_', '-')
+    .filter { it.isNotEmpty() }
+    .joinToString("") { part -> part.replaceFirstChar { it.uppercaseChar() } }
+    .let { if (it.first().isDigit()) "_$it" else it }
+
+/** Checks that exactly one icon was generated per name in [expectedIcons], given the [generatedNames] of the files. */
+fun checkGenerated(expectedIcons: Set<String>, generatedNames: Iterable<String>): List<String> {
+    val expected = expectedIcons.mapTo(mutableSetOf(), ::propertyName)
+    val actual = generatedNames.toSet()
+    val missing = expected - actual
+    val unexpected = actual - expected
+    if (missing.isEmpty() && unexpected.isEmpty()) return emptyList()
+    return listOf(
+        listOfNotNull(
+            "${actual.size} generated icons, expected ${expected.size}",
+            missing.takeIf { it.isNotEmpty() }?.let { "missing ${it.joinToString()}" },
+            unexpected.takeIf { it.isNotEmpty() }?.let { "unexpected ${it.joinToString()}" },
+        ).joinToString("; "),
+    )
+}

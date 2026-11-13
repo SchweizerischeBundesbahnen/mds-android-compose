@@ -75,6 +75,10 @@ fun main(args: Array<String>) {
         println("Generating Compose ImageVectors ...")
         val generatedRoot = File(workDir, "generated")
         generateIcons(svgDir, generatedRoot)
+        val generatedNames = generatedPackageDir(generatedRoot).listFiles { file -> file.extension == "kt" }
+            .orEmpty()
+            .map { it.nameWithoutExtension }
+        failures += checkGenerated(icons, generatedNames)
         if (failures.isNotEmpty()) throw UpdateFailure(failures)
 
         replaceGeneratedSources(generatedRoot, options.sourceRoot)
@@ -177,7 +181,7 @@ private fun generateIcons(svgDir: File, generatedRoot: File) {
         outputSourceDirectory = generatedRoot,
         vectorsDirectory = svgDir,
         type = VectorType.SVG,
-        iconNameTransformer = { name, _ -> name.toPascalCase() },
+        iconNameTransformer = { name, _ -> propertyName(name) },
         allAssetsPropertyName = ALL_ASSETS_PROPERTY,
         generatePreview = false,
     )
@@ -215,13 +219,17 @@ private fun get(uri: URI, headers: Map<String, String> = emptyMap()): HttpRespon
     }
 }
 
+private val GENERATED_PACKAGE = "$ICON_PACKAGE.${ACCESSOR_NAME.lowercase()}"
+
+private fun generatedPackageDir(generatedRoot: File) =
+    File(generatedRoot, GENERATED_PACKAGE.replace('.', File.separatorChar))
+
 /**
  * Replaces the previously generated `icons` folder with the freshly generated one,
  * so icons removed upstream are removed here as well.
  */
 private fun replaceGeneratedSources(generatedRoot: File, sourceRoot: File) {
-    val generatedPackage = "$ICON_PACKAGE.${ACCESSOR_NAME.lowercase()}"
-    val generatedPackageDir = File(generatedRoot, generatedPackage.replace('.', File.separatorChar))
+    val generatedPackageDir = generatedPackageDir(generatedRoot)
     val targetPackageDir = File(sourceRoot, TARGET_PACKAGE.replace('.', File.separatorChar))
     val accessorFile = File(generatedRoot, ICON_PACKAGE.replace('.', File.separatorChar) + "/__$ACCESSOR_NAME.kt")
     check(generatedPackageDir.isDirectory && accessorFile.isFile) { "Unexpected generator output in $generatedRoot" }
@@ -231,21 +239,16 @@ private fun replaceGeneratedSources(generatedRoot: File, sourceRoot: File) {
     val samePackageImport = Regex("""^import ${Regex.escape(TARGET_PACKAGE)}\.\w+\n""", RegexOption.MULTILINE)
     val accessor = accessorFile.readText()
         .replaceFirst("package $ICON_PACKAGE\n", "package $TARGET_PACKAGE\n")
-        .replace("import $generatedPackage.", "import $TARGET_PACKAGE.")
+        .replace("import $GENERATED_PACKAGE.", "import $TARGET_PACKAGE.")
         .replace(samePackageImport, "")
     File(targetPackageDir, "__$ACCESSOR_NAME.kt").writeText(accessor)
     targetPackageDir.listFiles { file -> file.extension == "kt" }?.forEach { file ->
         file.writeText(
             file.readText()
-                .replaceFirst("package $generatedPackage\n", "package $TARGET_PACKAGE\n")
+                .replaceFirst("package $GENERATED_PACKAGE\n", "package $TARGET_PACKAGE\n")
                 .replace("import $ICON_PACKAGE.$ACCESSOR_NAME\n", ""),
         )
     }
 }
-
-private fun String.toPascalCase(): String = split('_', '-')
-    .filter { it.isNotEmpty() }
-    .joinToString("") { part -> part.replaceFirstChar { it.uppercaseChar() } }
-    .let { if (it.first().isDigit()) "_$it" else it }
 
 private fun createTempDirectory(): File = kotlin.io.path.createTempDirectory("sbb-icons").toFile()
