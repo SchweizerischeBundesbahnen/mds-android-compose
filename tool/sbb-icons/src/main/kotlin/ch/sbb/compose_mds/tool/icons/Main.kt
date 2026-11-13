@@ -7,11 +7,15 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import java.io.File
+import java.io.IOException
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.time.Duration
+import java.util.concurrent.ExecutionException
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeoutException
 import java.util.zip.ZipInputStream
 import kotlin.system.exitProcess
 
@@ -20,7 +24,7 @@ private const val ICON_PACKAGE = "ch.sbb.compose_mds"
 private const val ACCESSOR_NAME = "SBBIcons"
 private const val TARGET_PACKAGE = "$ICON_PACKAGE.icons"
 private const val ALL_ASSETS_PROPERTY = "all"
-private const val MAX_ATTEMPTS = 3
+private const val RETRIES = 3
 
 private val SIZES = listOf("small", "medium", "large")
 
@@ -28,6 +32,11 @@ private val httpClient: HttpClient = HttpClient.newBuilder()
     .connectTimeout(Duration.ofSeconds(30))
     .followRedirects(HttpClient.Redirect.NORMAL)
     .build()
+
+/** Failed checks that stop the update. Each message names one thing that went wrong. */
+class UpdateFailure(val messages: List<String>) : Exception(messages.joinToString("\n")) {
+    constructor(message: String) : this(listOf(message))
+}
 
 private data class Options(
     val force: Boolean,
@@ -134,7 +143,7 @@ private fun fetchLatestVersion(): Version {
             .mapTo(tagNames) { it.jsonObject.getValue("name").jsonPrimitive.content }
         uri = nextPage(response.headers().firstValue("link").orElse(null))
     }
-    return checkNotNull(latestVersionTag(tagNames)) { "No vX.Y.Z tag found in $REPOSITORY" }
+    return latestVersionTag(tagNames) ?: throw UpdateFailure("No vX.Y.Z tag found in $REPOSITORY")
 }
 
 private fun nextPage(linkHeader: String?): URI? =
@@ -175,22 +184,36 @@ internal fun generateIcons(svgDir: File, generatedRoot: File, sourceRoot: File) 
     replaceGeneratedSources(generatedRoot, sourceRoot)
 }
 
+/**
+ * GETs [uri], retrying network errors and 5xx responses with exponential backoff.
+ * Throws an [UpdateFailure] if the final response is not 200.
+ */
 private fun get(uri: URI, headers: Map<String, String> = emptyMap()): HttpResponse<ByteArray> {
-    val request = HttpRequest.newBuilder(uri).timeout(Duration.ofSeconds(60)).GET()
+    val request = HttpRequest.newBuilder(uri).GET()
         .apply { headers.forEach { (name, value) -> header(name, value) } }
         .build()
-    var lastError: Exception? = null
-    repeat(MAX_ATTEMPTS) { attempt ->
-        try {
-            val response = httpClient.send(request, HttpResponse.BodyHandlers.ofByteArray())
-            if (response.statusCode() == 200) return response
-            lastError = IllegalStateException("HTTP ${response.statusCode()} for $uri")
-        } catch (e: java.io.IOException) {
-            lastError = e
+    var attempt = 0
+    while (true) {
+        val problem = try {
+            // The request timeout stops once the headers arrive, so the whole download is bounded here.
+            val response = httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofByteArray())
+                .get(2, TimeUnit.MINUTES)
+            val status = response.statusCode()
+            if (status == 200) return response
+            if (status < 500) throw UpdateFailure("GET $uri failed with HTTP $status")
+            "HTTP $status"
+        } catch (e: ExecutionException) {
+            if (e.cause !is IOException) throw e
+            e.cause.toString()
+        } catch (e: TimeoutException) {
+            "timed out after 2 minutes"
         }
-        Thread.sleep(500L * (attempt + 1))
+        if (attempt >= RETRIES) throw UpdateFailure("GET $uri failed after ${RETRIES + 1} attempts: $problem")
+        val delay = Duration.ofSeconds(2L shl attempt)
+        println("GET $uri failed ($problem), retrying in ${delay.seconds}s")
+        Thread.sleep(delay.toMillis())
+        attempt++
     }
-    throw IllegalStateException("Failed to download $uri", lastError)
 }
 
 /**
