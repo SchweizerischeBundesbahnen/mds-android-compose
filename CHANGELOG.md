@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Used `SBBSpacing` on all components
+- Updated `tool/sbb-icons` to read icons from the latest sbb-icons GitHub tag and to fail without changes if the archive or the generated icons are incomplete
 
 ## [0.2.0] - 2026-11-06
 
