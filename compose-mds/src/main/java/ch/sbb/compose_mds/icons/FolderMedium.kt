@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,9 +19,8 @@ public val SBBIcons.FolderMedium: ImageVector
                 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
-                moveTo(22.941f, 9.25f)
-                horizontalLineToRelative(6.802f)
+                    pathFillType = NonZero) {
+                moveTo(29.743f, 9.25f)
                 verticalLineToRelative(0.5f)
                 lineToRelative(0.007f, 16.5f)
                 verticalLineToRelative(0.5f)
@@ -29,14 +28,15 @@ public val SBBIcons.FolderMedium: ImageVector
                 verticalLineToRelative(-14.5f)
                 horizontalLineToRelative(15.191f)
                 lineToRelative(1.362f, -2.724f)
+                lineToRelative(0.138f, -0.276f)
                 close()
-                moveTo(23.559f, 10.25f)
-                lineTo(22.197f, 12.974f)
+                moveTo(22.197f, 12.974f)
                 lineTo(22.059f, 13.25f)
                 lineTo(7.25f, 13.25f)
                 verticalLineToRelative(12.5f)
                 horizontalLineToRelative(21.5f)
                 lineToRelative(-0.007f, -15.5f)
+                lineTo(23.56f, 10.25f)
                 close()
             }
         }

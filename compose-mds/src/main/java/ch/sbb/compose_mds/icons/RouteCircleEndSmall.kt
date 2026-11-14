@@ -20,14 +20,15 @@ public val SBBIcons.RouteCircleEndSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(14.5f, 7.0f)
-                arcToRelative(5.5f, 5.5f, 0.0f, true, false, 0.002f, 11.002f)
-                arcTo(5.5f, 5.5f, 0.0f, false, false, 14.5f, 7.0f)
-                moveTo(3.0f, 13.0f)
+                moveTo(20.0f, 12.5f)
+                arcToRelative(5.5f, 5.5f, 0.0f, true, false, -11.002f, 0.002f)
+                arcTo(5.5f, 5.5f, 0.0f, false, false, 20.0f, 12.5f)
+                moveToRelative(1.0f, 0.0f)
+                arcToRelative(6.5f, 6.5f, 0.0f, false, true, -12.981f, 0.5f)
+                horizontalLineTo(3.0f)
+                verticalLineToRelative(-1.0f)
                 horizontalLineToRelative(5.019f)
-                arcToRelative(6.5f, 6.5f, 0.0f, true, false, 0.0f, -1.0f)
-                lineTo(3.0f, 12.0f)
-                close()
+                arcTo(6.5f, 6.5f, 0.0f, false, true, 21.0f, 12.5f)
                 moveTo(14.5f, 16.0f)
                 arcToRelative(3.5f, 3.5f, 0.0f, true, false, 0.0f, -7.0f)
                 arcToRelative(3.5f, 3.5f, 0.0f, false, false, 0.0f, 7.0f)

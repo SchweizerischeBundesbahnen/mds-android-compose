@@ -20,21 +20,22 @@ public val SBBIcons.RssMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(28.75f, 30.0f)
-                curveTo(28.75f, 17.435f, 18.565f, 7.25f, 6.0f, 7.25f)
-                verticalLineToRelative(-1.0f)
+                moveTo(6.0f, 6.25f)
                 curveToRelative(13.118f, 0.0f, 23.75f, 10.633f, 23.75f, 23.75f)
+                horizontalLineToRelative(-1.0f)
+                curveTo(28.75f, 17.435f, 18.565f, 7.25f, 6.0f, 7.25f)
                 close()
-                moveTo(6.25f, 27.0f)
+                moveTo(10.75f, 27.0f)
+                arcToRelative(1.75f, 1.75f, 0.0f, true, false, -3.5f, 0.0f)
+                arcToRelative(1.75f, 1.75f, 0.0f, false, false, 3.5f, 0.0f)
+                moveToRelative(1.0f, 0.0f)
+                curveToRelative(0.0f, 1.52f, -1.23f, 2.75f, -2.75f, 2.75f)
+                reflectiveCurveTo(6.25f, 28.52f, 6.25f, 27.0f)
                 arcToRelative(2.75f, 2.75f, 0.0f, true, true, 5.5f, 0.0f)
-                arcToRelative(2.75f, 2.75f, 0.0f, false, true, -5.5f, 0.0f)
-                moveTo(9.0f, 25.25f)
-                arcToRelative(1.75f, 1.75f, 0.0f, true, false, 0.0f, 3.5f)
-                arcToRelative(1.75f, 1.75f, 0.0f, false, false, 0.0f, -3.5f)
-                moveToRelative(-3.0f, -9.0f)
-                curveToRelative(7.594f, 0.0f, 13.75f, 6.156f, 13.75f, 13.75f)
-                horizontalLineToRelative(1.0f)
+                moveToRelative(9.0f, 3.0f)
                 curveToRelative(0.0f, -8.146f, -6.603f, -14.75f, -14.75f, -14.75f)
+                verticalLineToRelative(1.0f)
+                curveToRelative(7.594f, 0.0f, 13.75f, 6.156f, 13.75f, 13.75f)
                 close()
             }
         }

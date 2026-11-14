@@ -20,18 +20,19 @@ public val SBBIcons.ClockSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(5.0f, 12.0f)
-                arcToRelative(7.0f, 7.0f, 0.0f, true, true, 14.0f, 0.0f)
-                arcToRelative(7.0f, 7.0f, 0.0f, false, true, -14.0f, 0.0f)
-                moveToRelative(7.0f, -8.0f)
-                arcToRelative(8.0f, 8.0f, 0.0f, true, false, 0.0f, 16.0f)
-                arcToRelative(8.0f, 8.0f, 0.0f, false, false, 0.0f, -16.0f)
-                moveToRelative(0.0f, 3.0f)
-                verticalLineToRelative(5.0f)
-                horizontalLineToRelative(5.0f)
-                verticalLineToRelative(1.0f)
-                horizontalLineToRelative(-6.0f)
+                moveTo(12.0f, 5.0f)
+                arcToRelative(7.0f, 7.0f, 0.0f, false, true, 7.0f, 7.0f)
+                curveToRelative(0.0f, 3.867f, -3.133f, 7.0f, -7.0f, 7.0f)
+                arcToRelative(7.0f, 7.0f, 0.0f, false, true, 0.0f, -14.0f)
+                moveToRelative(0.0f, 15.0f)
+                curveToRelative(4.42f, 0.0f, 8.0f, -3.581f, 8.0f, -8.0f)
+                arcToRelative(8.0f, 8.0f, 0.0f, true, false, -8.0f, 8.0f)
+                moveToRelative(0.0f, -8.0f)
                 verticalLineTo(7.0f)
+                horizontalLineToRelative(-1.0f)
+                verticalLineToRelative(6.0f)
+                horizontalLineToRelative(6.0f)
+                verticalLineToRelative(-1.0f)
                 close()
             }
         }

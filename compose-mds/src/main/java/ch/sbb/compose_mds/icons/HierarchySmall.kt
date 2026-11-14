@@ -20,8 +20,7 @@ public val SBBIcons.HierarchySmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(9.0f, 4.0f)
-                horizontalLineToRelative(7.0f)
+                moveTo(16.0f, 4.0f)
                 verticalLineToRelative(6.0f)
                 horizontalLineToRelative(-3.0f)
                 verticalLineToRelative(2.0f)
@@ -45,20 +44,21 @@ public val SBBIcons.HierarchySmall: ImageVector
                 verticalLineToRelative(-2.0f)
                 lineTo(9.0f, 10.0f)
                 lineTo(9.0f, 4.0f)
-                moveToRelative(1.0f, 1.0f)
-                verticalLineToRelative(4.0f)
+                close()
+                moveTo(10.0f, 9.0f)
                 horizontalLineToRelative(5.0f)
                 lineTo(15.0f, 5.0f)
+                horizontalLineToRelative(-5.0f)
                 close()
-                moveTo(5.0f, 16.0f)
-                verticalLineToRelative(4.0f)
+                moveTo(5.0f, 20.0f)
                 horizontalLineToRelative(5.0f)
                 verticalLineToRelative(-4.0f)
+                lineTo(5.0f, 16.0f)
                 close()
-                moveTo(15.0f, 16.0f)
-                verticalLineToRelative(4.0f)
+                moveTo(15.0f, 20.0f)
                 horizontalLineToRelative(5.0f)
                 verticalLineToRelative(-4.0f)
+                horizontalLineToRelative(-5.0f)
                 close()
             }
         }

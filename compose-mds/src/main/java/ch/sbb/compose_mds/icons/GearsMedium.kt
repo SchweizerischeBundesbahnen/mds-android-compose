@@ -90,11 +90,11 @@ public val SBBIcons.GearsMedium: ImageVector
                 reflectiveCurveToRelative(0.809f, 3.176f, 2.07f, 4.076f)
                 lineToRelative(-2.504f, 4.337f)
                 arcTo(9.96f, 9.96f, 0.0f, false, true, 8.75f, 18.75f)
-                moveToRelative(6.0f, 0.0f)
-                curveToRelative(0.0f, -2.248f, 1.752f, -4.0f, 4.0f, -4.0f)
-                reflectiveCurveToRelative(4.0f, 1.752f, 4.0f, 4.0f)
+                moveToRelative(10.0f, -4.0f)
+                curveToRelative(2.249f, 0.0f, 4.0f, 1.752f, 4.0f, 4.0f)
                 reflectiveCurveToRelative(-1.751f, 4.0f, -4.0f, 4.0f)
                 reflectiveCurveToRelative(-4.0f, -1.751f, -4.0f, -4.0f)
+                reflectiveCurveToRelative(1.752f, -4.0f, 4.0f, -4.0f)
             }
         }
         .build()
