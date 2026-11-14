@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,23 +19,22 @@ public val SBBIcons.FactoryMedium: ImageVector
                 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
-                moveTo(5.5f, 5.5f)
-                horizontalLineToRelative(7.0f)
-                verticalLineTo(17.0f)
+                    pathFillType = NonZero) {
+                moveTo(12.5f, 5.5f)
+                verticalLineToRelative(11.499f)
                 lineToRelative(5.2f, -3.9f)
-                lineToRelative(0.8f, -0.6f)
-                verticalLineTo(17.0f)
+                lineToRelative(0.8f, -0.599f)
+                verticalLineToRelative(4.499f)
                 lineToRelative(5.2f, -3.9f)
-                lineToRelative(0.8f, -0.6f)
-                verticalLineTo(17.0f)
+                lineToRelative(0.8f, -0.599f)
+                verticalLineToRelative(4.499f)
                 lineToRelative(5.2f, -3.9f)
-                lineToRelative(0.8f, -0.6f)
+                lineToRelative(0.8f, -0.599f)
                 verticalLineToRelative(18.0f)
                 horizontalLineToRelative(-25.0f)
                 verticalLineToRelative(-25.0f)
-                moveToRelative(1.0f, 1.0f)
-                verticalLineToRelative(23.0f)
+                close()
+                moveTo(6.5f, 29.5f)
                 horizontalLineToRelative(23.0f)
                 verticalLineToRelative(-15.0f)
                 lineToRelative(-5.2f, 3.9f)
@@ -46,7 +45,8 @@ public val SBBIcons.FactoryMedium: ImageVector
                 verticalLineToRelative(-4.5f)
                 lineToRelative(-5.2f, 3.9f)
                 lineToRelative(-0.8f, 0.6f)
-                verticalLineTo(6.5f)
+                lineTo(11.5f, 6.5f)
+                horizontalLineToRelative(-5.0f)
                 close()
             }
         }

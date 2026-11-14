@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,7 +19,7 @@ public val SBBIcons.HouseCellarStairsSmall: ImageVector
                 defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
+                    pathFillType = NonZero) {
                 moveToRelative(20.353f, 10.644f)
                 lineToRelative(-0.707f, 0.707f)
                 lineToRelative(-0.646f, -0.647f)
@@ -36,7 +36,7 @@ public val SBBIcons.HouseCellarStairsSmall: ImageVector
                 verticalLineToRelative(-4.293f)
                 lineToRelative(-0.647f, 0.647f)
                 lineToRelative(-0.707f, -0.707f)
-                lineTo(12.0f, 2.29f)
+                lineTo(12.0f, 2.289f)
                 close()
                 moveTo(8.0f, 16.997f)
                 horizontalLineToRelative(2.0f)

@@ -20,21 +20,14 @@ public val SBBIcons.LaptopMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(6.25f, 6.25f)
-                horizontalLineToRelative(23.5f)
+                moveTo(29.75f, 6.25f)
                 verticalLineToRelative(13.849f)
-                lineToRelative(2.916f, 4.374f)
-                lineToRelative(0.084f, 0.126f)
+                lineToRelative(3.0f, 4.5f)
                 verticalLineToRelative(3.651f)
                 lineTo(3.25f, 28.25f)
                 verticalLineToRelative(-3.651f)
-                lineToRelative(0.084f, -0.126f)
-                lineToRelative(2.916f, -4.374f)
+                lineToRelative(3.0f, -4.5f)
                 lineTo(6.25f, 6.25f)
-                moveToRelative(1.0f, 1.0f)
-                verticalLineToRelative(12.5f)
-                horizontalLineToRelative(21.5f)
-                lineTo(28.75f, 7.25f)
                 close()
                 moveTo(4.684f, 24.25f)
                 lineTo(7.018f, 20.75f)
@@ -45,6 +38,11 @@ public val SBBIcons.LaptopMedium: ImageVector
                 verticalLineToRelative(2.0f)
                 horizontalLineToRelative(27.5f)
                 verticalLineToRelative(-2.0f)
+                close()
+                moveTo(28.75f, 7.25f)
+                verticalLineToRelative(12.5f)
+                lineTo(7.25f, 19.75f)
+                lineTo(7.25f, 7.25f)
                 close()
             }
         }

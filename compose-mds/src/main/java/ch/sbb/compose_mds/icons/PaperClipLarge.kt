@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,29 +19,23 @@ public val SBBIcons.PaperClipLarge: ImageVector
                 48.0.dp, viewportWidth = 48.0f, viewportHeight = 48.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
+                    pathFillType = NonZero) {
                 moveTo(31.0f, 4.0f)
                 verticalLineToRelative(33.707f)
-                lineToRelative(-0.146f, 0.147f)
-                lineToRelative(-7.0f, 7.0f)
-                lineToRelative(-0.354f, 0.353f)
-                lineToRelative(-0.354f, -0.353f)
-                lineToRelative(-7.0f, -7.0f)
-                lineToRelative(-0.146f, -0.147f)
+                lineToRelative(-7.5f, 7.5f)
+                lineToRelative(-7.5f, -7.5f)
                 verticalLineTo(5.0f)
                 horizontalLineToRelative(11.0f)
                 verticalLineToRelative(24.768f)
-                lineToRelative(-0.223f, 0.148f)
-                lineToRelative(-3.0f, 2.0f)
+                lineToRelative(-3.223f, 2.148f)
                 lineToRelative(-0.277f, 0.185f)
                 lineToRelative(-0.277f, -0.185f)
-                lineToRelative(-3.0f, -2.0f)
-                lineToRelative(-0.223f, -0.148f)
+                lineTo(20.0f, 29.768f)
                 verticalLineTo(16.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(13.232f)
-                lineToRelative(2.5f, 1.667f)
-                lineToRelative(2.5f, -1.667f)
+                lineToRelative(2.5f, 1.666f)
+                lineToRelative(2.5f, -1.666f)
                 verticalLineTo(6.0f)
                 horizontalLineToRelative(-9.0f)
                 verticalLineToRelative(31.293f)

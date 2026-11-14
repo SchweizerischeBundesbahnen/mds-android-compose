@@ -20,19 +20,18 @@ public val SBBIcons.DeskSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(3.5f, 10.0f)
-                horizontalLineTo(3.0f)
+                moveTo(21.0f, 21.0f)
+                lineTo(21.0f, 10.0f)
+                lineTo(3.0f, 10.0f)
                 verticalLineToRelative(11.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(-8.0f)
                 horizontalLineToRelative(16.0f)
                 verticalLineToRelative(8.0f)
-                horizontalLineToRelative(1.0f)
-                verticalLineTo(10.0f)
-                horizontalLineTo(3.5f)
+                close()
                 moveTo(20.0f, 12.0f)
                 verticalLineToRelative(-1.0f)
-                horizontalLineTo(4.0f)
+                lineTo(4.0f, 11.0f)
                 verticalLineToRelative(1.0f)
                 close()
             }

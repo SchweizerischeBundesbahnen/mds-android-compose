@@ -20,8 +20,9 @@ public val SBBIcons.OfficeChairMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(12.75f, 6.25f)
-                horizontalLineToRelative(-0.5f)
+                moveTo(23.75f, 19.25f)
+                verticalLineToRelative(-13.0f)
+                horizontalLineToRelative(-11.5f)
                 verticalLineToRelative(13.0f)
                 horizontalLineToRelative(4.5f)
                 verticalLineToRelative(2.0f)
@@ -39,10 +40,8 @@ public val SBBIcons.OfficeChairMedium: ImageVector
                 verticalLineToRelative(-4.0f)
                 horizontalLineToRelative(-6.0f)
                 verticalLineToRelative(-2.0f)
-                horizontalLineToRelative(4.5f)
-                verticalLineToRelative(-13.0f)
-                horizontalLineToRelative(-11.0f)
-                moveToRelative(5.5f, 13.0f)
+                close()
+                moveTo(18.25f, 19.25f)
                 horizontalLineToRelative(-0.5f)
                 verticalLineToRelative(2.0f)
                 horizontalLineToRelative(0.5f)

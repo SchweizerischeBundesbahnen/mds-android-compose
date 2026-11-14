@@ -20,11 +20,11 @@ public val SBBIcons.HouseSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(12.354f, 3.646f)
+                moveToRelative(19.647f, 12.353f)
+                lineToRelative(0.707f, -0.707f)
                 lineTo(12.0f, 3.293f)
-                lineToRelative(-0.354f, 0.353f)
-                lineToRelative(-8.0f, 8.0f)
-                lineToRelative(0.708f, 0.707f)
+                lineToRelative(-8.353f, 8.353f)
+                lineToRelative(0.707f, 0.707f)
                 lineToRelative(0.646f, -0.646f)
                 verticalLineTo(20.0f)
                 horizontalLineToRelative(4.99f)
@@ -33,10 +33,8 @@ public val SBBIcons.HouseSmall: ImageVector
                 verticalLineToRelative(5.0f)
                 horizontalLineTo(19.0f)
                 verticalLineToRelative(-8.293f)
-                lineToRelative(0.646f, 0.646f)
-                lineToRelative(0.708f, -0.707f)
                 close()
-                moveTo(18.0f, 10.706f)
+                moveTo(18.0f, 10.707f)
                 lineToRelative(-6.0f, -6.0f)
                 lineToRelative(-6.0f, 6.0f)
                 verticalLineTo(19.0f)

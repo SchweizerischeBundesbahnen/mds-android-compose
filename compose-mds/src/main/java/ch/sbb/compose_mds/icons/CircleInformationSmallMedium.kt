@@ -21,17 +21,17 @@ public val SBBIcons.CircleInformationSmallMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(7.25f, 18.0f)
-                curveToRelative(0.0f, -6.006f, 4.744f, -10.75f, 10.75f, -10.75f)
+                moveTo(18.0f, 7.25f)
                 curveToRelative(6.004f, 0.0f, 10.75f, 4.745f, 10.75f, 10.75f)
                 curveToRelative(0.0f, 6.006f, -4.746f, 10.75f, -10.75f, 10.75f)
                 curveToRelative(-6.006f, 0.0f, -10.75f, -4.744f, -10.75f, -10.75f)
-                moveTo(18.0f, 6.25f)
-                curveTo(11.442f, 6.25f, 6.25f, 11.442f, 6.25f, 18.0f)
-                reflectiveCurveTo(11.442f, 29.75f, 18.0f, 29.75f)
-                reflectiveCurveTo(29.75f, 24.558f, 29.75f, 18.0f)
+                reflectiveCurveTo(11.994f, 7.25f, 18.0f, 7.25f)
+                moveToRelative(0.0f, 22.5f)
+                curveToRelative(6.557f, 0.0f, 11.75f, -5.192f, 11.75f, -11.75f)
                 reflectiveCurveTo(24.557f, 6.25f, 18.0f, 6.25f)
-                moveToRelative(1.22f, 7.25f)
+                reflectiveCurveTo(6.25f, 11.442f, 6.25f, 18.0f)
+                reflectiveCurveTo(11.442f, 29.75f, 18.0f, 29.75f)
+                moveToRelative(1.22f, -16.25f)
                 verticalLineToRelative(-3.0f)
                 horizontalLineToRelative(-1.0f)
                 verticalLineToRelative(3.0f)
@@ -46,7 +46,7 @@ public val SBBIcons.CircleInformationSmallMedium: ImageVector
                 lineTo(15.0f, 16.235f)
                 verticalLineToRelative(-1.0f)
                 horizontalLineToRelative(4.22f)
-                verticalLineToRelative(7.5f)
+                close()
             }
         }
         .build()
