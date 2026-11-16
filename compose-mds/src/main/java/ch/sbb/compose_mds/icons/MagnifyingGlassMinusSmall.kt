@@ -21,19 +21,19 @@ public val SBBIcons.MagnifyingGlassMinusSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(9.5f, 4.0f)
-                arcToRelative(6.5f, 6.5f, 0.0f, true, false, 0.0f, 13.0f)
-                arcToRelative(6.5f, 6.5f, 0.0f, false, false, 0.0f, -13.0f)
-                moveTo(2.0f, 10.5f)
+                moveTo(16.0f, 10.5f)
+                arcToRelative(6.5f, 6.5f, 0.0f, true, false, -13.0f, 0.0f)
+                arcToRelative(6.5f, 6.5f, 0.0f, false, false, 13.0f, 0.0f)
+                moveToRelative(-1.478f, 5.57f)
+                arcTo(7.5f, 7.5f, 0.0f, false, true, 2.0f, 10.5f)
                 arcToRelative(7.5f, 7.5f, 0.0f, true, true, 13.22f, 4.852f)
                 lineToRelative(6.107f, 5.27f)
-                lineToRelative(-0.654f, 0.756f)
-                lineToRelative(-6.15f, -5.307f)
-                arcTo(7.5f, 7.5f, 0.0f, false, true, 2.0f, 10.5f)
-                moveToRelative(12.0f, 0.5f)
+                lineToRelative(-0.653f, 0.756f)
+                close()
+                moveTo(14.0f, 10.0f)
+                verticalLineToRelative(1.0f)
                 horizontalLineTo(5.0f)
                 verticalLineToRelative(-1.0f)
-                horizontalLineToRelative(9.0f)
                 close()
             }
         }

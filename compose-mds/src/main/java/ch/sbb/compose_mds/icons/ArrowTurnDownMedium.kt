@@ -20,22 +20,22 @@ public val SBBIcons.ArrowTurnDownMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(14.75f, 20.25f)
-                curveToRelative(0.0f, -4.377f, 1.308f, -7.222f, 3.342f, -8.982f)
-                curveToRelative(2.047f, -1.772f, 4.91f, -2.518f, 8.158f, -2.518f)
+                moveTo(18.092f, 11.268f)
+                curveToRelative(2.047f, -1.773f, 4.91f, -2.518f, 8.158f, -2.518f)
                 verticalLineToRelative(-1.0f)
                 curveToRelative(-3.38f, 0.0f, -6.516f, 0.774f, -8.812f, 2.762f)
                 curveToRelative(-2.31f, 2.0f, -3.688f, 5.155f, -3.688f, 9.738f)
                 verticalLineToRelative(6.268f)
-                lineToRelative(-3.857f, -3.849f)
-                lineToRelative(-0.707f, 0.708f)
-                lineToRelative(4.724f, 4.713f)
-                lineToRelative(0.353f, 0.353f)
-                lineToRelative(0.354f, -0.354f)
-                lineToRelative(4.711f, -4.713f)
-                lineToRelative(-0.707f, -0.707f)
+                lineToRelative(-3.858f, -3.849f)
+                lineToRelative(-0.706f, 0.707f)
+                lineToRelative(4.724f, 4.714f)
+                lineToRelative(0.354f, 0.353f)
+                lineToRelative(0.353f, -0.354f)
+                lineToRelative(4.71f, -4.713f)
+                lineToRelative(-0.706f, -0.707f)
                 lineToRelative(-3.871f, 3.872f)
-                close()
+                verticalLineTo(20.25f)
+                curveToRelative(0.0f, -4.377f, 1.308f, -7.222f, 3.342f, -8.982f)
             }
         }
         .build()

@@ -20,17 +20,19 @@ public val SBBIcons.GearChangingSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(12.0f, 3.0f)
+                moveTo(21.0f, 12.0f)
+                arcToRelative(9.0f, 9.0f, 0.0f, false, false, -9.0f, -9.0f)
                 arcToRelative(9.0f, 9.0f, 0.0f, false, false, -9.0f, 9.0f)
                 arcToRelative(9.0f, 9.0f, 0.0f, false, false, 9.0f, 9.0f)
                 arcToRelative(9.0f, 9.0f, 0.0f, false, false, 9.0f, -9.0f)
-                arcToRelative(9.0f, 9.0f, 0.0f, false, false, -9.0f, -9.0f)
-                moveTo(2.0f, 12.0f)
-                curveTo(2.0f, 6.477f, 6.477f, 2.0f, 12.0f, 2.0f)
-                reflectiveCurveToRelative(10.0f, 4.477f, 10.0f, 10.0f)
-                reflectiveCurveToRelative(-4.477f, 10.0f, -10.0f, 10.0f)
+                moveToRelative(1.0f, 0.0f)
+                curveToRelative(0.0f, 5.523f, -4.477f, 10.0f, -10.0f, 10.0f)
                 reflectiveCurveTo(2.0f, 17.523f, 2.0f, 12.0f)
-                moveToRelative(5.0f, -4.0f)
+                reflectiveCurveTo(6.477f, 2.0f, 12.0f, 2.0f)
+                reflectiveCurveToRelative(10.0f, 4.477f, 10.0f, 10.0f)
+                moveTo(8.0f, 12.0f)
+                verticalLineTo(8.0f)
+                horizontalLineTo(7.0f)
                 verticalLineToRelative(9.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(-4.0f)
@@ -46,8 +48,6 @@ public val SBBIcons.GearChangingSmall: ImageVector
                 verticalLineTo(8.0f)
                 horizontalLineToRelative(-1.0f)
                 verticalLineToRelative(4.0f)
-                horizontalLineTo(8.0f)
-                verticalLineTo(8.0f)
                 close()
             }
         }

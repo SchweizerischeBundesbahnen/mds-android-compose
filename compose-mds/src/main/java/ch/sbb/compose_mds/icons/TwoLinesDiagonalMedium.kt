@@ -20,15 +20,15 @@ public val SBBIcons.TwoLinesDiagonalMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(22.147f, 13.896f)
-                lineToRelative(-9.0f, 9.0f)
-                lineToRelative(0.707f, 0.708f)
+                moveToRelative(13.854f, 23.604f)
                 lineToRelative(9.0f, -9.0f)
+                lineToRelative(-0.707f, -0.707f)
+                lineToRelative(-9.0f, 9.0f)
                 close()
-                moveTo(22.147f, 19.896f)
-                lineTo(19.147f, 22.896f)
-                lineTo(19.854f, 23.604f)
+                moveTo(19.854f, 23.604f)
                 lineTo(22.854f, 20.604f)
+                lineTo(22.147f, 19.897f)
+                lineTo(19.147f, 22.897f)
                 close()
             }
         }

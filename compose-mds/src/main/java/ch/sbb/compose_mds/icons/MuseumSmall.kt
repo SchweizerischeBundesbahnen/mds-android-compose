@@ -20,7 +20,8 @@ public val SBBIcons.MuseumSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(12.1f, 2.01f)
+                moveToRelative(21.6f, 3.94f)
+                lineToRelative(-9.5f, -1.93f)
                 lineToRelative(-0.1f, -0.02f)
                 lineToRelative(-0.1f, 0.02f)
                 lineToRelative(-9.5f, 1.93f)
@@ -40,7 +41,6 @@ public val SBBIcons.MuseumSmall: ImageVector
                 lineTo(20.0f, 7.0f)
                 horizontalLineToRelative(2.0f)
                 lineTo(22.0f, 4.021f)
-                lineToRelative(-0.4f, -0.081f)
                 close()
                 moveTo(19.0f, 7.0f)
                 verticalLineToRelative(10.0f)
@@ -68,19 +68,19 @@ public val SBBIcons.MuseumSmall: ImageVector
                 horizontalLineToRelative(2.0f)
                 close()
                 moveTo(3.0f, 6.0f)
-                lineTo(3.0f, 4.839f)
-                lineToRelative(9.0f, -1.829f)
-                lineToRelative(9.0f, 1.829f)
+                lineTo(3.0f, 4.838f)
+                lineToRelative(9.0f, -1.828f)
+                lineToRelative(9.0f, 1.828f)
                 lineTo(21.0f, 6.0f)
                 close()
-                moveTo(3.0f, 21.0f)
-                verticalLineToRelative(-1.0f)
+                moveTo(3.0f, 20.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(-2.0f)
                 horizontalLineToRelative(16.0f)
                 verticalLineToRelative(2.0f)
                 horizontalLineToRelative(1.0f)
                 verticalLineToRelative(1.0f)
+                lineTo(3.0f, 21.0f)
                 close()
             }
         }

@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,7 +19,7 @@ public val SBBIcons.CarProfileRoofMedium: ImageVector
                 defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
+                    pathFillType = NonZero) {
                 moveTo(19.627f, 19.75f)
                 curveToRelative(0.414f, 0.0f, 0.804f, 0.174f, 1.088f, 0.471f)
                 lineToRelative(3.658f, 3.825f)
@@ -82,9 +82,9 @@ public val SBBIcons.CarProfileRoofMedium: ImageVector
                 lineTo(32.723f, 18.416f)
                 lineTo(23.916f, 12.544f)
                 lineTo(3.138f, 18.481f)
-                lineTo(2.862f, 17.52f)
-                lineTo(23.862f, 11.52f)
-                lineTo(24.085f, 11.457f)
+                lineTo(2.863f, 17.52f)
+                lineTo(23.863f, 11.52f)
+                lineTo(24.085f, 11.456f)
                 close()
             }
         }

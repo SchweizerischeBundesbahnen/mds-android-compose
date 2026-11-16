@@ -20,22 +20,22 @@ public val SBBIcons.ArrowStartLeftSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(8.146f, 8.146f)
-                lineToRelative(-3.99f, 3.992f)
+                moveToRelative(4.156f, 12.138f)
                 lineToRelative(-0.352f, 0.353f)
-                lineToRelative(0.352f, 0.354f)
-                lineToRelative(3.99f, 4.007f)
-                lineToRelative(0.708f, -0.705f)
+                lineToRelative(0.351f, 0.353f)
+                lineToRelative(3.99f, 4.008f)
+                lineToRelative(0.71f, -0.705f)
                 lineToRelative(-3.141f, -3.156f)
                 horizontalLineTo(15.0f)
                 verticalLineToRelative(-1.0f)
                 horizontalLineTo(5.717f)
                 lineToRelative(3.137f, -3.138f)
+                lineToRelative(-0.708f, -0.707f)
                 close()
-                moveTo(20.0f, 9.0f)
-                verticalLineToRelative(7.0f)
+                moveTo(20.0f, 16.0f)
                 horizontalLineToRelative(-1.0f)
                 verticalLineTo(9.0f)
+                horizontalLineToRelative(1.0f)
                 close()
             }
         }

@@ -20,11 +20,11 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(12.704f, 3.356f)
-                lineToRelative(-0.354f, -0.353f)
-                lineToRelative(-0.353f, 0.353f)
-                lineToRelative(-8.0f, 8.0f)
-                lineToRelative(0.707f, 0.708f)
+                moveToRelative(19.997f, 12.064f)
+                lineToRelative(0.707f, -0.707f)
+                lineToRelative(-8.354f, -8.354f)
+                lineToRelative(-8.353f, 8.354f)
+                lineToRelative(0.707f, 0.707f)
                 lineToRelative(0.646f, -0.647f)
                 verticalLineToRelative(9.293f)
                 horizontalLineToRelative(4.99f)
@@ -33,8 +33,6 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
                 verticalLineToRelative(5.0f)
                 horizontalLineToRelative(5.01f)
                 verticalLineToRelative(-9.293f)
-                lineToRelative(0.647f, 0.647f)
-                lineToRelative(0.707f, -0.707f)
                 close()
                 moveTo(18.35f, 10.417f)
                 lineTo(12.35f, 4.417f)
@@ -46,8 +44,7 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
                 verticalLineToRelative(5.0f)
                 horizontalLineToRelative(3.01f)
                 close()
-                moveTo(11.35f, 7.71f)
-                horizontalLineToRelative(2.0f)
+                moveTo(13.35f, 7.71f)
                 verticalLineToRelative(2.0f)
                 horizontalLineToRelative(2.0f)
                 verticalLineToRelative(2.0f)
@@ -59,6 +56,7 @@ public val SBBIcons.MedicalFacilitySmall: ImageVector
                 verticalLineToRelative(-2.0f)
                 horizontalLineToRelative(2.0f)
                 verticalLineToRelative(-2.0f)
+                close()
             }
         }
         .build()

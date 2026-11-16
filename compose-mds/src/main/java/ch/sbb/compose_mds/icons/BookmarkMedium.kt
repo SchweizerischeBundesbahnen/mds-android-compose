@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -19,22 +19,18 @@ public val SBBIcons.BookmarkMedium: ImageVector
                 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
-                moveTo(9.25f, 3.25f)
-                horizontalLineToRelative(17.5f)
+                    pathFillType = NonZero) {
+                moveTo(26.75f, 3.25f)
                 verticalLineToRelative(20.207f)
-                lineToRelative(-0.146f, 0.147f)
-                lineToRelative(-8.25f, 8.25f)
-                lineToRelative(-0.354f, 0.353f)
-                lineToRelative(-0.354f, -0.353f)
-                lineToRelative(-8.25f, -8.25f)
-                lineToRelative(-0.146f, -0.147f)
-                verticalLineTo(3.25f)
-                moveToRelative(1.0f, 1.0f)
-                verticalLineToRelative(18.793f)
-                lineToRelative(7.75f, 7.75f)
-                lineToRelative(7.75f, -7.75f)
-                verticalLineTo(4.25f)
+                lineTo(18.0f, 32.207f)
+                lineToRelative(-8.75f, -8.75f)
+                lineTo(9.25f, 3.25f)
+                close()
+                moveTo(10.25f, 23.043f)
+                lineTo(18.0f, 30.793f)
+                lineTo(25.75f, 23.043f)
+                lineTo(25.75f, 4.25f)
+                horizontalLineToRelative(-15.5f)
                 close()
             }
         }

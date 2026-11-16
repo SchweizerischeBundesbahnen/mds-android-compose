@@ -20,12 +20,15 @@ public val SBBIcons.BridgeSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(2.0f, 7.0f)
-                horizontalLineToRelative(20.0f)
+                moveTo(22.0f, 7.0f)
                 lineTo(22.0f, 6.0f)
                 lineTo(2.0f, 6.0f)
+                verticalLineToRelative(1.0f)
                 close()
-                moveTo(2.0f, 9.02f)
+                moveTo(22.0f, 9.02f)
+                verticalLineToRelative(-1.0f)
+                lineTo(2.0f, 8.02f)
+                verticalLineToRelative(1.0f)
                 horizontalLineToRelative(2.0f)
                 verticalLineToRelative(4.188f)
                 quadToRelative(-0.932f, 0.612f, -1.834f, 1.42f)
@@ -35,9 +38,6 @@ public val SBBIcons.BridgeSmall: ImageVector
                 lineToRelative(0.668f, -0.744f)
                 arcTo(15.5f, 15.5f, 0.0f, false, false, 20.0f, 13.208f)
                 lineTo(20.0f, 9.02f)
-                horizontalLineToRelative(2.0f)
-                verticalLineToRelative(-1.0f)
-                lineTo(2.0f, 8.02f)
                 close()
                 moveTo(19.0f, 12.61f)
                 lineTo(19.0f, 9.02f)

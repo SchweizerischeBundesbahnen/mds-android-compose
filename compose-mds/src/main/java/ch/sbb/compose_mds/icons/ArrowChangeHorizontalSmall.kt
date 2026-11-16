@@ -21,11 +21,8 @@ public val SBBIcons.ArrowChangeHorizontalSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(16.354f, 2.647f)
-                lineToRelative(3.5f, 3.5f)
-                lineToRelative(0.353f, 0.353f)
-                lineToRelative(-0.353f, 0.354f)
-                lineToRelative(-3.5f, 3.5f)
+                moveToRelative(20.207f, 6.5f)
+                lineToRelative(-3.853f, 3.854f)
                 lineToRelative(-0.707f, -0.707f)
                 lineTo(18.293f, 7.0f)
                 horizontalLineTo(7.5f)
@@ -35,10 +32,8 @@ public val SBBIcons.ArrowChangeHorizontalSmall: ImageVector
                 horizontalLineTo(5.708f)
                 lineToRelative(2.646f, 2.646f)
                 lineToRelative(-0.707f, 0.707f)
-                lineToRelative(-3.5f, -3.5f)
-                lineToRelative(-0.354f, -0.353f)
-                lineToRelative(0.354f, -0.354f)
-                lineToRelative(3.5f, -3.5f)
+                lineTo(3.793f, 18.5f)
+                lineToRelative(3.854f, -3.854f)
                 lineToRelative(0.707f, 0.707f)
                 lineTo(5.707f, 18.0f)
                 horizontalLineTo(16.5f)
@@ -47,6 +42,7 @@ public val SBBIcons.ArrowChangeHorizontalSmall: ImageVector
                 arcToRelative(3.5f, 3.5f, 0.0f, false, true, 0.0f, -7.0f)
                 horizontalLineToRelative(10.792f)
                 lineToRelative(-2.646f, -2.646f)
+                lineToRelative(0.707f, -0.707f)
                 close()
             }
         }

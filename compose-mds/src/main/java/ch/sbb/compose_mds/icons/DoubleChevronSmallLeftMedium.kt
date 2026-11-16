@@ -21,23 +21,23 @@ public val SBBIcons.DoubleChevronSmallLeftMedium: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveToRelative(17.16f, 11.789f)
+                moveToRelative(12.298f, 18.0f)
+                lineToRelative(5.566f, -5.5f)
+                lineToRelative(-0.704f, -0.711f)
                 lineToRelative(-5.924f, 5.855f)
                 lineToRelative(-0.36f, 0.356f)
                 lineToRelative(0.36f, 0.355f)
-                lineToRelative(5.922f, 5.856f)
-                lineToRelative(0.703f, -0.71f)
-                lineToRelative(-5.562f, -5.5f)
-                lineToRelative(5.565f, -5.501f)
+                lineToRelative(5.922f, 5.857f)
+                lineToRelative(0.703f, -0.711f)
                 close()
-                moveTo(23.161f, 11.789f)
+                moveTo(18.298f, 18.0f)
+                lineTo(23.864f, 12.5f)
+                lineTo(23.161f, 11.789f)
                 lineTo(17.236f, 17.644f)
                 lineTo(16.876f, 18.0f)
                 lineTo(17.236f, 18.355f)
-                lineTo(23.158f, 24.211f)
-                lineTo(23.862f, 23.501f)
-                lineTo(18.299f, 18.001f)
-                lineTo(23.864f, 12.5f)
+                lineTo(23.158f, 24.212f)
+                lineTo(23.861f, 23.501f)
                 close()
             }
         }

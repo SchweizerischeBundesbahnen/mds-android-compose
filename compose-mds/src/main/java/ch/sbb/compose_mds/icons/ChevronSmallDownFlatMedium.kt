@@ -1,7 +1,7 @@
 package ch.sbb.compose_mds.icons
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
@@ -20,14 +20,17 @@ public val SBBIcons.ChevronSmallDownFlatMedium: ImageVector
                 36.0f).apply {
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
-                    pathFillType = EvenOdd) {
-                moveToRelative(24.175f, 17.718f)
-                lineToRelative(-6.005f, 2.25f)
+                    pathFillType = NonZero) {
+                moveToRelative(24.176f, 17.718f)
+                lineToRelative(-6.006f, 2.25f)
+                lineToRelative(-0.176f, -0.469f)
+                verticalLineToRelative(0.001f)
+                lineToRelative(0.176f, 0.468f)
                 lineToRelative(-0.176f, 0.066f)
-                lineToRelative(-0.175f, -0.066f)
-                lineToRelative(-5.995f, -2.25f)
+                lineToRelative(-0.176f, -0.066f)
+                lineToRelative(-5.994f, -2.25f)
                 lineToRelative(0.352f, -0.936f)
-                lineToRelative(5.819f, 2.184f)
+                lineToRelative(5.818f, 2.184f)
                 lineToRelative(5.83f, -2.184f)
                 close()
             }

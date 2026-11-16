@@ -20,12 +20,12 @@ public val SBBIcons.DisplayLarge: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(3.0f, 8.5f)
-                arcTo(1.5f, 1.5f, 0.0f, false, true, 4.5f, 7.0f)
-                horizontalLineToRelative(39.0f)
+                moveTo(43.5f, 7.0f)
                 arcTo(1.5f, 1.5f, 0.0f, false, true, 45.0f, 8.5f)
                 lineTo(45.0f, 31.0f)
                 lineTo(3.0f, 31.0f)
+                lineTo(3.0f, 8.5f)
+                arcTo(1.5f, 1.5f, 0.0f, false, true, 4.5f, 7.0f)
                 close()
                 moveTo(3.0f, 32.0f)
                 verticalLineToRelative(1.5f)
@@ -44,8 +44,8 @@ public val SBBIcons.DisplayLarge: ImageVector
                 verticalLineToRelative(25.0f)
                 arcToRelative(2.5f, 2.5f, 0.0f, false, true, -2.5f, 2.5f)
                 lineTo(27.194f, 36.0f)
-                lineToRelative(1.666f, 5.0f)
-                horizontalLineToRelative(5.64f)
+                lineToRelative(1.667f, 5.0f)
+                lineTo(34.5f, 41.0f)
                 verticalLineToRelative(1.0f)
                 horizontalLineToRelative(-21.0f)
                 verticalLineToRelative(-1.0f)

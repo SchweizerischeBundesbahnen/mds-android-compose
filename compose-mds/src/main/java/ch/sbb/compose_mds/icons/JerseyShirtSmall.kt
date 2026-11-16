@@ -20,7 +20,8 @@ public val SBBIcons.JerseyShirtSmall: ImageVector
             path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
                     strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
                     pathFillType = EvenOdd) {
-                moveTo(7.0f, 2.5f)
+                moveTo(7.0f, 8.0f)
+                lineTo(7.0f, 2.5f)
                 horizontalLineToRelative(3.0f)
                 verticalLineToRelative(1.498f)
                 lineTo(9.0f, 3.998f)
@@ -46,8 +47,7 @@ public val SBBIcons.JerseyShirtSmall: ImageVector
                 verticalLineToRelative(-13.0f)
                 horizontalLineToRelative(0.5f)
                 arcTo(1.5f, 1.5f, 0.0f, false, false, 7.0f, 8.0f)
-                lineTo(7.0f, 2.5f)
-                moveTo(10.0f, 4.0f)
+                moveToRelative(3.0f, -4.0f)
                 arcToRelative(2.0f, 2.0f, 0.0f, true, false, 4.0f, 0.0f)
                 horizontalLineToRelative(1.0f)
                 arcToRelative(3.0f, 3.0f, 0.0f, true, true, -6.0f, 0.0f)
