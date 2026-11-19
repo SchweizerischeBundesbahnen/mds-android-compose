@@ -1,0 +1,78 @@
+package ch.sbb.compose_mds.icons
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+public val SBBIcons.ClipboardNoteMedium: ImageVector
+    get() {
+        if (_clipboardNoteMedium != null) {
+            return _clipboardNoteMedium!!
+        }
+        _clipboardNoteMedium = Builder(name = "ClipboardNoteMedium", defaultWidth = 36.0.dp,
+                defaultHeight = 36.0.dp, viewportWidth = 36.0f, viewportHeight = 36.0f).apply {
+            path(fill = SolidColor(Color(0xFF000000)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
+                moveTo(20.75f, 4.75f)
+                horizontalLineToRelative(7.5f)
+                verticalLineToRelative(9.0f)
+                horizontalLineToRelative(4.5f)
+                verticalLineToRelative(19.0f)
+                horizontalLineToRelative(-16.0f)
+                verticalLineToRelative(-3.0f)
+                horizontalLineToRelative(-12.0f)
+                verticalLineToRelative(-25.0f)
+                horizontalLineToRelative(7.5f)
+                verticalLineToRelative(-1.5f)
+                horizontalLineToRelative(8.5f)
+                close()
+                moveTo(17.75f, 31.75f)
+                horizontalLineToRelative(14.0f)
+                verticalLineToRelative(-17.0f)
+                horizontalLineToRelative(-14.0f)
+                close()
+                moveTo(5.75f, 28.75f)
+                horizontalLineToRelative(11.0f)
+                verticalLineToRelative(-15.0f)
+                horizontalLineToRelative(10.5f)
+                verticalLineToRelative(-8.0f)
+                horizontalLineToRelative(-6.5f)
+                verticalLineToRelative(1.5f)
+                horizontalLineToRelative(-8.5f)
+                verticalLineToRelative(-1.5f)
+                horizontalLineToRelative(-6.5f)
+                close()
+                moveTo(25.5f, 28.25f)
+                lineTo(21.0f, 28.25f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(4.5f)
+                close()
+                moveTo(28.5f, 23.75f)
+                lineTo(21.0f, 23.75f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(7.5f)
+                close()
+                moveTo(28.5f, 19.25f)
+                lineTo(21.0f, 19.25f)
+                verticalLineToRelative(-1.0f)
+                horizontalLineToRelative(7.5f)
+                close()
+                moveTo(13.25f, 6.25f)
+                horizontalLineToRelative(6.5f)
+                verticalLineToRelative(-2.0f)
+                horizontalLineToRelative(-6.5f)
+                close()
+            }
+        }
+        .build()
+        return _clipboardNoteMedium!!
+    }
+
+private var _clipboardNoteMedium: ImageVector? = null
